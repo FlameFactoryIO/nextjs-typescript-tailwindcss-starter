@@ -10,6 +10,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          {/* add google fonts to document and to .storybook/preview-head.html */}
           <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@400;600;700&display=block" rel="stylesheet" />
         </Head>
         <body>
@@ -21,4 +22,5 @@ class MyDocument extends Document {
   }
 }
 
+// noinspection JSUnusedGlobalSymbols
 export default MyDocument

@@ -1,11 +1,13 @@
 import Head from 'next/head'
+import Footer from "../components/Footer";
 
+// noinspection JSUnusedGlobalSymbols
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
         <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/mtc.svg" />
       </Head>
 
       <header>
@@ -60,7 +62,7 @@ export default function Home() {
         className="container mx-auto py-7 bg-gray-100 grid grid-rows-3 gap-2 text-center">
         <p className="text-28 leading-none">
           Supporting more than{' '}
-          <span className="font-bold text-orange">140k+</span> vetted nonprofit
+          <span className="font-bold text-primary">140k+</span> vetted nonprofit
           organizations.
         </p>
         <p className="text-18 font-bold leading-none">
@@ -117,9 +119,7 @@ export default function Home() {
       </div>
       </main>
 
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        foooooooter
-      </footer>
+      <Footer />
     </div>
   )
 }

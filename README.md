@@ -1,7 +1,10 @@
 ```bash
 # install dependencies
-npm install
+yarn install
 
 # run development server
-npm run dev
+yarn dev
+
+# run storybook
+yarn storybook
 ```
