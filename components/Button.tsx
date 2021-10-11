@@ -15,12 +15,12 @@ const Button: FC<{
   variant = "primary",
 }) => {
   // we need to add this to force the creation of the classes, and are dynamically generated
-  // `bg-primary-500 hover:bg-primary-700 rounded-fullbg-primary-500 hover:bg-primary-700`;
-  // `bg-secondary-500 hover:bg-secondary-700 rounded-fullbg-secondary-500 hover:bg-secondary-700`;
+  // `bg-primary-500 hover:bg-primary-700 rounded bg-primary-500 hover:bg-primary-700`;
+  // `bg-secondary-500 hover:bg-secondary-700 rounded bg-secondary-500 hover:bg-secondary-700`;
 
   let classes = `bg-${variant}-500 text-white font-bold py-2 px-4 rounded leading-24px ${size} `;
   if (!disabled) {
-    classes += `hover:bg-${variant}-700 rounded-fullbg-${variant}-500 hover:bg-${variant}-700`;
+    classes += `hover:bg-${variant}-700 rounded bg-${variant}-500 hover:bg-${variant}-700`;
   } else {
     classes += ` opacity-50 cursor-not-allowed`;
   }
