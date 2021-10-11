@@ -29,7 +29,7 @@ const Footer: FC = () => {
               <Input placeholder="Email address..." onChange={handleEmailAddressChange} />
             </div>
             <div className="mx-auto md:ml-1 md:mt-0 mt-15px">
-              <Button type="submit" variant="primary">Subscribe</Button>
+              <Button type="submit">Subscribe</Button>
             </div>
           </div>
         </form>
