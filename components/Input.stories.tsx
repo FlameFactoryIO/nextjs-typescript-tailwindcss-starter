@@ -1,25 +1,27 @@
-import Input from './Input';
+import Input from "./Input";
 
 // noinspection JSUnusedGlobalSymbols
 export default {
-  title: "Inputs"
-}
+  title: "Inputs",
+};
 
-const Template = arguments_ => <Input {...arguments_} /> //creating a template
+const Template = (arguments_) => <Input {...arguments_} />; //creating a template
 
-export const Primary = Template.bind({})
-Primary.args ={
-  value:"Value-test",
-}
+export const Primary = Template.bind({});
 
-export const Secondary = Template.bind({})
-Secondary.args ={
+Primary.args = {
+  value: "Value-test",
+};
 
-  placeholder:"placeholder input"
-}
+export const Secondary = Template.bind({});
+Secondary.args = {
+  placeholder: "placeholder input",
+  variant: "secondary",
+};
 
-export const Disabled = Template.bind({})
-Disabled.args ={
-  value:"value",
+export const Disabled = Template.bind({});
+Disabled.args = {
+  value: "value",
+
   disabled: true,
-}
+};
