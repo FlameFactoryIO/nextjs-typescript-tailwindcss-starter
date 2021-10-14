@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Footer from "../components/Footer";
+import Footer from "../sections/Footer";
 import Button from "../components/Button";
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
