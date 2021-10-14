@@ -109,10 +109,21 @@ export default function Home() {
         </div>
         <div
           id="trending-campaigns"
-          className="container grid grid-rows-3 gap-2  mx-auto text-center my-20 bg-blue"
+          className="container flex flex-col mx-auto text-center my-20 bg-blue"
         >
-          <p className="m-50 font-bold text-3xl">What's Move the chain</p>
+          <p className="m-50 font-bold text-3xl">Trending Campaigns</p>
+          <p className="m-50 font-bold text-3xl">
+            Campaigns are an opportunity for nonprofits to organize short burst
+            fundraising to fund a specific need. The campaign is created by the
+            nonprofit to explain the impact of your donation. #Transparencyiskey
+          </p>
+          <div className="grid grid-col-4 justify-center gap-x-20">
+            <div className="ml-auto bg-gray-500 flex flex-col">
+              <img style={{ width: 261, height: 320 }} />
+            </div>
+          </div>
         </div>
+
         <div
           id="featured-nonprofits"
           className="container grid grid-rows-3 gap-2  mx-auto text-center my-20 bg-blue"
