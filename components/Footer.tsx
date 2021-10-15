@@ -15,7 +15,7 @@ const Footer: FC = () => {
   }
 
   return (
-    <footer className="grid d:grid-cols-4 grid-cols-2 bg-footer p-30px mb-0">
+    <div className="grid d:grid-cols-4 grid-cols-2">
       <div className="d:col-span-4 col-span-2 pt-30px">
         <img className="mx-auto" src="/mtc.svg" alt="logo" />
         <div className="mx-auto text-center text-26px font-bold d:invisible">Move the Chain</div>
@@ -67,7 +67,7 @@ const Footer: FC = () => {
           <a className="d:pl-5" href="/ccpta">CCPTA</a>
         </div>
       </div>
-    </footer>
+    </div>
   );
 };
 

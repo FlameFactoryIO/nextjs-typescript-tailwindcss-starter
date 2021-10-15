@@ -205,11 +205,11 @@ const VideoPlayer: FC<{
   };
 
   return (
-    <div ref={wrapperRef} className={`relative bg-black rounded-16px overflow-hidden ${className}`}>
+    <div ref={wrapperRef} className={`relative bg-black rounded-16px overflow-hidden w-260px h-320px ${className}`}>
       <video
         ref={videoRef}
         poster={videoImage}
-        className="video-js object-contain h-full"
+        className="video-js object-contain h-full mx-auto"
       />
 
       { hasOverlay ? (

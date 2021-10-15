@@ -16,7 +16,7 @@ export default {
     ),
   ],
   args: {
-    videoImage: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+    // videoImage: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
     videoUrl: "https://mtc-media-staging.s3.us-east-2.amazonaws.com/mtc_video.mp4",
     presentOverlay: true,
   }
