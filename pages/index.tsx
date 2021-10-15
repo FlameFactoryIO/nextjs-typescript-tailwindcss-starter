@@ -5,113 +5,121 @@ import Button from "../components/Button";
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-green-200 t:bg-red-200 d:bg-blue-200">
+    <div className="w-full flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header>Move the Chain [login]</header>
+      <div className="w-full">Move the Chain [login]</div>
 
-      <main>
-        <div className="flex flex-col t:flex-row  pt-36px pl-13px pr-14px pb-40px t:pt-54px t:py-20px t:pb-50px d:pt-21px d:px-120px d:pb-59px bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right">
+      <div className="w-full">
+
+        <div className="pt-36px pl-13px pr-14px pb-40px t:pt-54px t:py-20px t:pb-50px d:pt-21px d:px-120px d:pb-59px bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right">
           <div
             id="we-connect-charities"
-            className="w-320 t:w-768px d:w-1380px px-20px t:pl-29  t:flex-1 flex-none t:order-1 order-2 grid grid-cols-2 grid-rows-3 gap-2"
+            className="w-280px t:w-768px d:w-1140px flex flex-col t:flex-row mx-auto"
           >
-            <div className=" row-span-2 ml-auto bg-gray-300 ">
-              {/* <img
-                className="t:hidden  d:hidden "
-                style={{ width: 122.4, height: 163.2 }}
-              />
-              <img
-                className="t:block sm:hidden d:hidden "
-                style={{ width: 150, height: 220 }}
-              />
-              <img
-                className="sm:hidden t:hidden d:block"
-                style={{ width: 240, height: 320 }}
-              /> */}
-              <img style={{ width: 240, height: 320 }} />
-            </div>
-            <div className="row-span-3 mr-auto bg-gray-100">
-              {/* <img
-                className="t:hidden  d:hidden "
-                style={{ width: 153, height: 245 }}
-              />
-              <img
-                className="t:block sm:hidden d:hidden "
-                style={{ width: 185, height: 340 }}
-              />
-
-              <img
-                className="sm:hidden t:hidden d:block"
-                style={{ width: 300, height: 480 }}
-              /> */}
-              <img style={{ width: 300, height: 480 }} />
-            </div>
-            <div className="ml-auto bg-gray-200">
-              {/* <img
-                className="t:hidden  d:hidden "
-                style={{ width: 122.4, height: 76.5 }}
-              />
-              <img
-                className="t:block sm:hidden d:hidden "
-                style={{ width: 150, height: 110 }}
-              />
-
-              <img
-                className="sm:hidden t:hidden d:block"
-                style={{ width: 240, height: 150 }}
-              /> */}
-              <img style={{ width: 240, height: 150 }} />
-            </div>
-          </div>
-
-          <div className="t:flex-1 px-20px py-10px t:py-0 flex-none t:order-2 order-1 flex flex-col">
-            <p className="text-white text-26px d:text-48px leading-31-2px d:leading-57-6px text-center t:text-left">
-              We connect charities, corporations and donors.
-            </p>
-            <p className="text-white text-14px d:text-18px leading-18-2px d:leading-26px py-12px t:py-9px d:py-19 text-center t:text-left">
-              Making a difference has never been more fun and rewarding.
-            </p>
-            <p className="font-hand text-26px d:text-32px leading-38px text-primary py-13px t:py-16px d:py-17">
-              How you can help move the chain [ARROW]
-            </p>
-
-            <div className="flex flex-col d:flex-row space-y-20px d:space-x-41px d:space-y-0 py-29px t:py-9px d:py-52px">
-              <div className="grid grid-cols-2 grid-rows-2 d:grid-rows-3 d:grid-cols-1">
-                <p className="text-white text-16px leading-24px flex-1">
-                  Individuals
-                </p>
-                <a className="text-12px leading-18px d:text-14px d:leading-21px text-primary ">
-                  Support a cause [ARROW]
-                </a>
-                <p className="text-white text-12px leading-18px col-span-2 d:col-span-1">
-                  Donate, share and support your favorite nonprofits.
-                </p>
+            <div
+              className="t:pl-29 t:flex-1 flex-none t:order-1 order-2 grid grid-cols-2 grid-rows-3 gap-2"
+            >
+              <div className=" row-span-2 ml-auto bg-gray-300 ">
+                {/* <img
+                  className="t:hidden  d:hidden "
+                  style={{ width: 122.4, height: 163.2 }}
+                />
+                <img
+                  className="t:block sm:hidden d:hidden "
+                  style={{ width: 150, height: 220 }}
+                />
+                <img
+                  className="sm:hidden t:hidden d:block"
+                  style={{ width: 240, height: 320 }}
+                /> */}
+                <img style={{ width: 240, height: 320 }} />
               </div>
+              <div className="row-span-3 mr-auto bg-gray-100">
+                {/* <img
+                  className="t:hidden  d:hidden "
+                  style={{ width: 153, height: 245 }}
+                />
+                <img
+                  className="t:block sm:hidden d:hidden "
+                  style={{ width: 185, height: 340 }}
+                />
 
-              <div className="grid grid-cols-2 grid-row-2 d:grid-rows-3 d:grid-cols-1">
-                <p className="text-white text-16px leading-24px ">Nonprofits</p>
-                <a className="text-12px leading-18px d:text-14px d:leading-21px text-primary row-span-2">
-                  Claim your page [ARROW]
-                </a>
-                <p className="text-white text-12px leading-18px col-span-2">
-                  Tell your story to raise funds.
-                </p>
+                <img
+                  className="sm:hidden t:hidden d:block"
+                  style={{ width: 300, height: 480 }}
+                /> */}
+                <img style={{ width: 300, height: 480 }} />
               </div>
+              <div className="ml-auto bg-gray-200">
+                {/* <img
+                  className="t:hidden  d:hidden "
+                  style={{ width: 122.4, height: 76.5 }}
+                />
+                <img
+                  className="t:block sm:hidden d:hidden "
+                  style={{ width: 150, height: 110 }}
+                />
 
-              <div className="grid grid-cols-2 grid-row-2 d:grid-rows-3 d:grid-cols-1">
-                <p className="text-white text-16px leading-24px">
-                  Corporations
-                </p>
-                <a className="text-12 leading-18px d:text-14px d:leading-21px text-primary row-span-2">
-                  Sponsor an event [ARROW]
-                </a>
-                <p className="text-white text-12px leading-18px col-span-2">
-                  Find nonprofits that need your support.
-                </p>
+                <img
+                  className="sm:hidden t:hidden d:block"
+                  style={{ width: 240, height: 150 }}
+                /> */}
+                <img style={{ width: 240, height: 150 }} />
+              </div>
+            </div>
+
+            <div className="t:flex-1 px-20px py-10px t:py-0 flex-none t:order-2 order-1 flex flex-col">
+              <p className="text-white text-26px d:text-48px leading-31-2px d:leading-57-6px text-center t:text-left">
+                We connect charities, corporations and donors.
+              </p>
+              <p className="text-white text-14px d:text-18px leading-18-2px d:leading-26px py-12px t:py-9px d:py-19 text-center t:text-left">
+                Making a difference has never been more fun and rewarding.
+              </p>
+              <p className="font-hand text-26px d:text-32px leading-38px text-primary py-13px t:py-16px d:py-17">
+                How you can help move the chain [ARROW]
+              </p>
+
+              <div className="flex flex-col d:flex-row space-y-20px d:space-x-41px d:space-y-0 py-29px t:py-9px d:py-52px">
+
+                <div className="grid grid-cols-2 grid-rows-2 d:grid-rows-3 d:grid-cols-1">
+                  <p className="text-white text-16px leading-24px d:flex-1">
+                    Individuals
+                  </p>
+                  <a className="text-12px leading-18px d:text-14px d:leading-21px text-primary d:order-3 row-span-2 d:row-span-1">
+                    Support a cause [ARROW]
+                  </a>
+                  <p className="text-white text-12px leading-18px col-span-2 d:col-span-1">
+                    Donate, share and support your favorite nonprofits.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 grid-rows-2 d:grid-rows-3 d:grid-cols-1">
+                  <p className="text-white text-16px leading-24px d:flex-1">
+                    Nonprofits
+                  </p>
+                  <a className="text-12px leading-18px d:text-14px d:leading-21px text-primary d:order-3 row-span-2 d:row-span-1">
+                    Claim your page [ARROW]
+                  </a>
+                  <p className="text-white text-12px leading-18px col-span-2">
+                    Tell your story to raise funds.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 grid-rows-2 d:grid-rows-3 d:grid-cols-1">
+                  <p className="text-white text-16px leading-24px d:flex-1">
+                    Corporations
+                  </p>
+                  <a className="text-12px leading-18px d:text-14px d:leading-21px text-primary d:order-3 row-span-2 d:row-span-1">
+                    Sponsor an event [ARROW]
+                  </a>
+                  <p className="text-white text-12px leading-18px col-span-2">
+                    Find nonprofits that need your support.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -120,7 +128,7 @@ export default function Home() {
         <div className="bg-supporting-more-than-140k pt-15px pb-14px px-16px t:px-125px d:pt-28px d:pb-27px d:px-245px">
           <div
             id="supporting"
-            className="w-320 t:w-768px d:w-1380px  mx-auto  grid grid-rows-3 gap-2 text-center"
+            className="w-280px t:w-768px d:w-1380px mx-auto grid grid-rows-3 gap-2 text-center"
           >
             <p className="text-18px leading-21-6px t:text-20px t:leading-24px d:text-28px d:leading-26px text-center">
               Supporting more than{" "}
@@ -134,36 +142,39 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="medio-blanco-medio-crema">
-          <div className="grid grid-rows-2 gap-2 mx-auto text-center">
+        <div style={{
+          backgroundImage: "linear-gradient(to bottom, #FFFFFF 50%, #FEF4F0 50%)"
+        }} className="d:pt-84px d:pb-100px">
+
+          <div className="w-280px t:w-768px d:w-1140px mx-auto grid grid-rows-2 gap-2 text-center">
             <div className="mt-16 mb-6 font-bold text-43px">
               What's Move the chain
             </div>
-            <p className="mt-2 mx-auto text-18px max-w-800">
+            <p className="mt-2 mx-auto text-18px d:w-800px">
               Move the Chain is a social giving platform, changing the way you
               give back to causes you care about. We make it fun, transparent
               and empowering to donate to and promote causes that matter to you.
             </p>
-            <div style={{ width: 520, height: 520, margin: "0 auto" }}>
+            <div className="d:w-520px d:h-520px mx-auto">
               [IMAGE]
             </div>
           </div>
 
-          <div className="grid grid-rows-3 gap-2 mx-auto text-center my-20 text-18px">
-            <p className="font-bold">
+          <div className="grid grid-rows-3 gap-2 mx-auto text-center text-18px d:w-800px">
+            <p className="d:text-18px d:leading-26px font-bold h-70px">
               From being inspired by a campaign, to challenging your circle of
               friends and family to take positive action, there are so many ways
               to make a positive impact
             </p>
             <p className=" m-auto text-16px">
-              "67% of americans believe social media sites are important for
-              creating sustained movements for social change"
+              <span className="text-primary-500 font-bold">“</span>
+              67% of americans believe social media sites are important for
+              creating sustained movements for social change...
+              <span className="text-primary-500 font-bold">”</span>
             </p>
-            <div className=" flex justify-center mx-auto mt-15px">
-              <Button type="button" variant="primary">
-                Get to know us
-              </Button>
-            </div>
+            <Button type="button" variant="primary" className="mx-auto mt-30px">
+              Get to know us
+            </Button>
           </div>
         </div>
 
@@ -171,17 +182,19 @@ export default function Home() {
           {/*maybe padding not working*/}
           <div
             id="trending-campaigns"
-            className="w-320 t:w-768px d:w-1380px  flex flex-col text-center mx-auto"
+            className="w-280px t:w-768px d:w-1140px mx-auto flex flex-col text-center"
           >
             <h1 className="font-bold text-24px leading-28-8px d:text-43px d:leading-65px text-white">
               Trending Campaigns
             </h1>
-            <p className="text-14px leading-18-2px d:text-18px d:leading-24px text-white pt-20px pb-23px t:pb-10px">
+
+            <p className="text-14px leading-18-2px d:text-18px d:leading-24px text-white pt-20px pb-23px t:pb-10px d:w-740px mx-auto">
               Campaigns are an opportunity for nonprofits to organize short
               burst fundraising to fund a specific need. The campaign is created
               by the nonprofit to explain the impact of your donation.{" "}
               <span className="font-bold ">#Transparencyiskey </span>
             </p>
+
             <div className="flex flex-col d:flex-row mx-auto w-286px h-489px gap-10px">
               <div className=" bg-gray-300 ">
                 <img style={{ width: 261, height: 320 }} />
@@ -205,10 +218,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-white pt-83px pb-62px">
+        <div className=" bg-white pt-83px pb-62px">
           <div
             id="featured-nonprofits"
-            className="flex flex-col mx-auto text-center"
+            className="w-280px t:w-768px d:w-1140px mx-auto flex flex-col text-center"
           >
             <h1 className="font-bold text-26px t:text-43px">
               Featured Nonprofits
@@ -298,7 +311,7 @@ export default function Home() {
                   </Button>
                 </div>
 
-                <div className="flex-1 t:p-15px t:pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-160px text-center t:text-left bg-gradient-to-b from-your-opportunity-card-top to-your-opportunity-card-bottom">
+                <div className="flex-1 p-15px pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-160px text-center t:text-left bg-gradient-to-b from-your-opportunity-card-top to-your-opportunity-card-bottom">
                   <h1 className="text-15px leading-22-5px d:text-20px d:leading-30px font-bold">
                     Nonprofits
                   </h1>
@@ -310,13 +323,13 @@ export default function Home() {
                   <Button
                     type="button"
                     variant="primary"
-                    className="mt-15px rounded-10pxi px-20px mx-auto t:px-auto t:mx-0"
+                    className="mt-15px rounded-10pxi t:px-13px d:px-20px mx-auto t:px-auto t:mx-0"
                   >
                     Claim your page
                   </Button>
                 </div>
 
-                <div className="flex-1 t:p-15px t:pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-160px text-center t:text-left bg-gradient-to-b from-your-opportunity-card-top to-your-opportunity-card-bottom">
+                <div className="flex-1 p-15px pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-160px text-center t:text-left bg-gradient-to-b from-your-opportunity-card-top to-your-opportunity-card-bottom">
                   <h1 className="text-15px leading-22-5px d:text-20px d:leading-30px font-bold">
                     Corporations
                   </h1>
@@ -328,7 +341,7 @@ export default function Home() {
                   <Button
                     type="button"
                     variant="primary"
-                    className="mt-15px rounded-10pxi px-20px mx-auto t:px-auto t:mx-0"
+                    className="mt-15px rounded-10pxi t:px-13px d:px-20px mx-auto t:px-auto t:mx-0"
                   >
                     Find out more
                   </Button>
@@ -337,9 +350,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </main>
-      <div id="footer" className="container">
-        <Footer />
+      </div>
+
+      <div id="footer" className="w-full bg-footer">
+        <div className="w-280px t:w-708px d:w-1140px mx-auto">
+          <Footer />
+        </div>
       </div>
     </div>
   );
