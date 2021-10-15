@@ -155,12 +155,12 @@ export default function Home() {
               give back to causes you care about. We make it fun, transparent
               and empowering to donate to and promote causes that matter to you.
             </p>
-            <div style={{ width: 520, height: 520, margin: "0 auto" }}>
+            <div className="d:w-520px d:h-520px mx-auto">
               [IMAGE]
             </div>
           </div>
 
-          <div className="grid grid-rows-3 gap-2 mx-auto text-center text-18px w-800px">
+          <div className="grid grid-rows-3 gap-2 mx-auto text-center text-18px d:w-800px">
             <p className="d:text-18px d:leading-26px font-bold h-70px">
               From being inspired by a campaign, to challenging your circle of
               friends and family to take positive action, there are so many ways
