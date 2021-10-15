@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Footer from "../sections/Footer";
+import Footer from "../components/Footer";
 import Button from "../components/Button";
 
 // noinspection JSUnusedGlobalSymbols
@@ -68,7 +68,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="t:flex-1 px-7px py-10px t:py-0 flex-none t:order-2 order-1 flex flex-col">
+          <div className="t:flex-1 px-20px py-10px t:py-0 flex-none t:order-2 order-1 flex flex-col">
             <p className="text-white text-26px d:text-48px leading-31-2px d:leading-57-6px text-center t:text-left">
               We connect charities, corporations and donors.
             </p>
@@ -103,7 +103,9 @@ export default function Home() {
               </div>
 
               <div className="grid grid-cols-2 grid-row-2 d:grid-rows-3 d:grid-cols-1">
-                <p className="text-white text-16px leading-24px">Corporations</p>
+                <p className="text-white text-16px leading-24px">
+                  Corporations
+                </p>
                 <a className="text-12 leading-18px d:text-14px d:leading-21px text-primary row-span-2">
                   Sponsor an event [ARROW]
                 </a>
@@ -114,8 +116,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
-        <div className="bg-supporting-more-than-140k  pt-15px pb-14px px-16px t:px-125 d:pt-28px d:pb-27px d:px-245px">{/* maybe px-16px not working */}
+
+        <div className="bg-supporting-more-than-140k pt-15px pb-14px px-16px t:px-125px d:pt-28px d:pb-27px d:px-245px">
           <div
             id="supporting"
             className="w-320 t:w-768px d:w-1380px  mx-auto  grid grid-rows-3 gap-2 text-center"
@@ -165,32 +167,39 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-blue-800">
+        <div className="bg-we-connect-charities-bg-left pt-44px pb-50px pl-20px pr-14px t:px-30px t:pt-44px t:pb-50px d:px-120px d:py-82px">
+          {/*maybe padding not working*/}
           <div
             id="trending-campaigns"
-            className="flex flex-col text-center mx-auto"
+            className="w-320 t:w-768px d:w-1380px  flex flex-col text-center mx-auto"
           >
-            <h1 className="font-bold text-26px t:text-43px text-white">
+            <h1 className="font-bold text-24px leading-28-8px d:text-43px d:leading-65px text-white">
               Trending Campaigns
             </h1>
-            <p className="text-14px t:text-18px text-white">
+            <p className="text-14px leading-18-2px d:text-18px d:leading-24px text-white pt-20px pb-23px t:pb-10px">
               Campaigns are an opportunity for nonprofits to organize short
               burst fundraising to fund a specific need. The campaign is created
               by the nonprofit to explain the impact of your donation.{" "}
               <span className="font-bold ">#Transparencyiskey </span>
             </p>
-            <div className="flex flex-col t:flex-row mx-auto gap-10">
-              <div className=" bg-gray-300 flex flex-col">
+            <div className="flex flex-col d:flex-row mx-auto w-286px h-489px gap-10px">
+              <div className=" bg-gray-300 ">
                 <img style={{ width: 261, height: 320 }} />
               </div>
-              <div className=" bg-gray-300 flex flex-col">
-                <img style={{ width: 261, height: 320 }} />
-              </div>
-              <div className=" bg-gray-300 flex flex-col">
-                <img style={{ width: 261, height: 320 }} />
-              </div>
-              <div className=" bg-gray-300 flex flex-col">
-                <img style={{ width: 261, height: 320 }} />
+
+              <div className="bg-looking-for-a-cause flex-1 rounded-26px pt-27px pb-11px px-15px">
+                <div>
+                  <h1 className="text-16px leading-20-8px t:text-24px d:text-20px d:leading-30px font-bold">
+                    Looking for a cause to support?
+                  </h1>
+                  <p className="text-13px leading-17px d:text-16px d:leading-20px py-26px">
+                    You can support campaigns by different nonprofits by
+                    donating, sharing, or participating in challenges.
+                  </p>
+                </div>
+                <Button type="button" variant="primary" className="text-13px leading-19-5px d:text-14px d:leading-20px rounded-10pxi" >
+                  View all campaigns 👉
+                </Button>
               </div>
             </div>
           </div>
@@ -201,7 +210,9 @@ export default function Home() {
             id="featured-nonprofits"
             className="flex flex-col mx-auto text-center"
           >
-            <h1 className="font-bold text-26px t:text-43px">Featured Nonprofits</h1>
+            <h1 className="font-bold text-26px t:text-43px">
+              Featured Nonprofits
+            </h1>
             <p className="text-18px font-light t:w-max-740px">
               All nonprofits on{" "}
               <span className="font-bold ">
