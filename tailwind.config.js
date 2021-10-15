@@ -2,11 +2,19 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   mode: "jit",
-  purge: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./public/**/*.html",
-  ],
+  purge: {
+    content: [
+      "./pages/**/*.{js,ts,jsx,tsx}",
+      "./components/**/*.{js,ts,jsx,tsx}",
+      "./public/**/*.html",
+    ],
+    safelist: ['primary', 'secondary'].flatMap(variant => [
+      `bg-${variant}-500`,
+      `active:bg-${variant}-600`,
+      `ring-${variant}-100`,
+      `focus:ring-${variant}-50`,
+    ]),
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
@@ -35,9 +43,10 @@ module.exports = {
       borderRadius: {
         "10px": "10px",
         "10pxi": "10px !important",
+        "16px" : "16px !important",
         "24px": "24px",
-        "26px": "26px",
         "24pxi": "24px !important",
+        "26px": "26px",
       },
       lineHeight: {
         128: "1.56rem",
@@ -105,6 +114,9 @@ module.exports = {
         "245px": "245px",
       },
       width: {
+        '50px': '50px',
+        '60px': '60px',
+        '100px': '100px',
         "160px": "160px",
         "240px": "240px",
         "280px": "280px",
@@ -119,7 +131,10 @@ module.exports = {
       },
       height: {
         "37px": "37px",
+        '50px': '50px',
+        '60px': '60px',
         93: "93",
+        '100px': '100px',
         "160px": "160px",
         "170px": "170px",
         "190px": "190px",
@@ -128,6 +143,7 @@ module.exports = {
         "290px": "290px",
         "450px": "450px",
         "489px": "489px",
+        "534px": "534px",
       },
       minWidth: {
         "300px": "300px",
@@ -136,6 +152,8 @@ module.exports = {
         "300px": "300px",
         "760px": "760px",
         "740px": "740px",
+      },
+      minHeight: {
       },
       colors: {
         primary: {

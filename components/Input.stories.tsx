@@ -5,7 +5,7 @@ export default {
   title: "Inputs",
 };
 
-const Template = (arguments_) => <Input {...arguments_} />; //creating a template
+const Template = (arguments_) => <Input {...arguments_} />;
 
 export const Primary = Template.bind({});
 
