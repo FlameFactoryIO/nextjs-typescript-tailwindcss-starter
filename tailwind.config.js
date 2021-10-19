@@ -8,7 +8,7 @@ module.exports = {
       "./components/**/*.{js,ts,jsx,tsx}",
       "./public/**/*.html",
     ],
-    safelist: ['primary', 'secondary'].flatMap(variant => [
+    safelist: ["primary", "secondary"].flatMap((variant) => [
       `bg-${variant}-500`,
       `active:bg-${variant}-600`,
       `ring-${variant}-100`,
@@ -45,7 +45,7 @@ module.exports = {
       borderRadius: {
         "10px": "10px",
         "10pxi": "10px !important",
-        "16px" : "16px !important",
+        "16px": "16px !important",
         "24px": "24px",
         "24pxi": "24px !important",
         "26px": "26px",
@@ -100,6 +100,7 @@ module.exports = {
         "30px": "30px",
         "35px": "35px",
         "36px": "36px",
+        "38px": "38px",
         "40px": "40px",
         "41px": "41px",
         "44px": "44px",
@@ -119,9 +120,9 @@ module.exports = {
         "330px": "330px",
       },
       width: {
-        '50px': '50px',
-        '60px': '60px',
-        '100px': '100px',
+        "50px": "50px",
+        "60px": "60px",
+        "100px": "100px",
         "160px": "160px",
         "240px": "240px",
         "260px": "260px",
@@ -129,6 +130,8 @@ module.exports = {
         "286px": "286px",
         "300px": "300px",
         "320px": "320px",
+        "380px": "380px",
+        "520px": "520px",
         "550px": "550px",
         "708px": "708px",
         "740px": "740px",
@@ -142,19 +145,26 @@ module.exports = {
         "70px": "70px",
         "160px": "160px",
         "320px": "320px",
+        "380px": "380px",
         "489px": "489px",
+        "520px": "520px",
       },
       minWidth: {
+        "280px": "280px",
         "300px": "300px",
         "320px": "320px",
+        "768px": "768px",
+        "1140px": "1140px",
       },
       maxWidth: {
+        "280px": "280px",
         "300px": "300px",
         "760px": "760px",
         "740px": "740px",
+        "768px": "768px",
+        "1140px": "1140px",
       },
-      minHeight: {
-      },
+      minHeight: {},
       colors: {
         primary: {
           DEFAULT: "#E84300",
