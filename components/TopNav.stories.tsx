@@ -8,9 +8,9 @@ export default {
 }
 
 export const Default = arguments_ => (
-  <div style={{ backgroundColor: "yellowgreen", width: "100%", paddingBottom: 200 }}>
+  <div className="bg-green-300 w-full pb-200px">
     <TopNav {...arguments_} />
-    <div style={{ backgroundColor: "red", color: "white" }} className={"pt-48px d:pt-77px"}>
+    <div className={"bg-red-200 pt-62px pb-10px px-10px d:pt-77px"}>
       Storybook adds some padding to the top and left, making this component look bad on the right.<br/>
       The green background represents the page and the red one is a section.<br/>
       Note the bottom rounded borders in tablet and mobile view.<br/>

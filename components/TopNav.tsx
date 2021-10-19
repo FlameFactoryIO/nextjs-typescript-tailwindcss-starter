@@ -6,32 +6,32 @@ import {FaChevronDown, FaChevronUp, FaUser} from "react-icons/fa";
 const TopNavItem: FC<{ title: string, href: string }> = ({title, href}) => {
   const router = useRouter();
   return (
-    <Link href={href}><a className={router?.asPath === href ? "border-b bg-primary-500" : ""}>{title}</a></Link>
+    <Link href={href}><a className={router?.asPath === href ? "border-b border-primary-500" : ""}>{title}</a></Link>
   );
 }
 
 const SideNavItem: FC<{ initialOpen?: boolean, title: string, className?: string }> = ({
-  initialOpen,
-  title,
-  className,
-  children
+   initialOpen,
+   title,
+   className,
+   children
 }) => {
-const [isOpen, setOpen] = useState<boolean>(initialOpen ?? false);
-return (
-<div className={`flex flex-col cursor-pointer p-20px border-b border-primary-100 ${className ?? ""}`}>
+  const [isOpen, setOpen] = useState<boolean>(initialOpen ?? false);
+  return (
+    <div className={`flex flex-col cursor-pointer p-20px border-b border-primary-100 ${className ?? ""}`}>
 
-<div className="flex" onClick={children && (() => setOpen(prev => !prev))}>
-<div className={`flex-1 ${isOpen ? "opacity-60" : ""}`}>{title}</div>
-{children ? (
-<div className="cursor-pointer text-primary flex items-center">
-{isOpen ? <FaChevronUp/> : <FaChevronDown/>}
-</div>
-) : null}
-</div>
+      <div className="flex" onClick={children && (() => setOpen(prev => !prev))}>
+        <div className={`flex-1 ${isOpen ? "opacity-60" : ""}`}>{title}</div>
+        {children ? (
+          <div className="cursor-pointer text-primary flex items-center">
+            {isOpen ? <FaChevronUp/> : <FaChevronDown/>}
+          </div>
+        ) : null}
+      </div>
 
-{isOpen && <div className="flex-1 pt-10px">{children}</div>}
-</div>
-);
+      {isOpen && <div className="flex-1 pt-10px">{children}</div>}
+    </div>
+  );
 };
 
 const TopNav: FC<{
