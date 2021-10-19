@@ -105,6 +105,7 @@ module.exports = {
         "50px": "50px",
         "52px": "52px",
         "54px": "54px",
+        "55px": "55px",
         "59px": "59px",
         "62px": "62px",
         "75px": "75px",
@@ -146,10 +147,12 @@ module.exports = {
         "520px": "520px",
       },
       minWidth: {
+        "42px": "42px",
         "280px": "280px",
         "300px": "300px",
         "768px": "768px",
         "1140px": "1140px",
+        "1380px": "1380px",
       },
       maxWidth: {
         "280px": "280px",

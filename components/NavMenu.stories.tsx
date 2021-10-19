@@ -1,13 +1,13 @@
-import OverlayMenu from "./OverlayMenu";
+import NavMenu from "./NavMenu";
 
 // noinspection JSUnusedGlobalSymbols
 export default {
-  title: "Overlay Menu",
-  component: OverlayMenu,
+  title: "Nav Menu",
+  component: NavMenu,
   parameters: { actions: { argTypesRegex: '^on.*' } },
 }
 
-const Template = arguments_ => <OverlayMenu {...arguments_} />
+const Template = arguments_ => <NavMenu {...arguments_} />
 
 export const Default = Template.bind({})
 Default.args = {

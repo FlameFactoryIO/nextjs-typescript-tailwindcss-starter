@@ -7,8 +7,7 @@ export default function Home() {
   return (
     <div className="w-full flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Move the Chain</title>
       </Head>
 
       <div className="w-full">Move the Chain [login]</div>
