@@ -1,7 +1,7 @@
 import {FC, useCallback, useContext, useEffect, useRef, useState} from "react";
 import Hls from "hls.js";
 import PlayOneVideoAtOnceContext from "./PlayOneVideoAtOnceContext";
-import {FaExpand, FaPlay, FaVolumeMute, FaVolumeUp} from "react-icons/all";
+import {FaExpand, FaPlay, FaVolumeMute, FaVolumeUp} from "react-icons/fa";
 import useDeviceType from "./useDeviceType";
 import FullScreenContext from "./FullScreenContext";
 

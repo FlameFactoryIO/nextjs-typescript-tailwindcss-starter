@@ -1,14 +1,12 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
-import Button from "../components/Button";
 
 // noinspection JSUnusedGlobalSymbols
 export default function AboutUs() {
   return (
     <div className="w-full flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>About Us</title>
       </Head>
 
       <div className="w-full">Move the Chain [login]</div>
