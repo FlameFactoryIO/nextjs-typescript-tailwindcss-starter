@@ -109,6 +109,7 @@ module.exports = {
         "59px": "59px",
         "62px": "62px",
         "75px": "75px",
+        "77px": "77px",
         "82px": "82px",
         "83px": "83px",
         "92px": "92px",
@@ -150,6 +151,7 @@ module.exports = {
         "42px": "42px",
         "280px": "280px",
         "300px": "300px",
+        "320px": "320px",
         "768px": "768px",
         "1140px": "1140px",
         "1380px": "1380px",
@@ -157,6 +159,7 @@ module.exports = {
       maxWidth: {
         "280px": "280px",
         "300px": "300px",
+        "320px": "320px",
         "760px": "760px",
         "740px": "740px",
         "768px": "768px",

@@ -1,20 +1,20 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
+import TopNav from "../components/TopNav";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
   return (
-    <div className="w-full flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="w-full min-w-320px">
       <Head>
         <title>Move the Chain</title>
       </Head>
 
-      <div className="w-full">Move the Chain [login]</div>
+      <TopNav onSearch={(searchValue => window.alert(searchValue))} />
 
-      <div className="w-full">
-
-        <div className="pt-36px pl-13px pr-14px pb-40px t:pt-54px t:py-20px t:pb-50px d:pt-21px d:px-120px d:pb-59px bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right">
+      <div className="w-full pt-48px d:pt-77px bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right">
+        <div className="pt-36px pl-13px pr-14px pb-40px t:pt-54px t:pb-50px d:pt-21px d:px-120px d:pb-59px">
           <div
             id="we-connect-charities"
             className="min-w-280px t:min-w-768px d:max-w-1140px flex flex-col t:flex-row mx-auto"
@@ -133,14 +133,14 @@ export default function Home() {
         <div className="bg-supporting-more-than-140k pt-15px pb-14px px-16px t:px-125px d:pt-28px d:pb-27px d:px-245px">
           <div
             id="supporting"
-            className="w-280px t:w-768px d:w-1380px mx-auto grid grid-rows-3 gap-2 text-center"
+            className="mx-auto grid grid-rows-3 gap-2 text-center"
           >
             <p className="text-18px leading-21-6px t:text-20px t:leading-24px d:text-28px d:leading-26px text-center">
               Supporting more than{" "}
               <span className="font-bold text-primary">140k+</span> vetted
               nonprofit organizations.
             </p>
-            <p className="text-12px leading-26px  d:text-18px d:leading-26px font-bold ">
+            <p className="text-12px leading-26px d:text-18px d:leading-26px font-bold ">
               All donations are tax deductible.
             </p>
             <p className="text-24px leading-26px d:text-34px">🙌</p>
