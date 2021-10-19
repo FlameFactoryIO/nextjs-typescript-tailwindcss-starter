@@ -35,9 +35,11 @@ module.exports = {
         "16px": "16px",
         "18px": "18px",
         "20px": "20px",
+        "24px": "24px",
         "26px": "26px",
         "32px": "32px",
         "43px": "43px",
+        "46px": "46px",
         "48px": "48px",
       },
       borderRadius: {
@@ -63,6 +65,7 @@ module.exports = {
         "22-5px": "22.5px",
         "24px": "24px",
         "26px": "26px",
+        "28-5px": "28.5px",
         "28-8px": "28.8px",
         "30px": "30px",
         "31-2px": "31.2px",
@@ -74,6 +77,7 @@ module.exports = {
       spacing: {
         "5px": "5px",
         "7px": "7px",
+        "8px": "8px",
         "9px": "9px",
         "10px": "10px",
         "11px": "11px",
@@ -94,6 +98,7 @@ module.exports = {
         "28px": "28px",
         "29px": "29px",
         "30px": "30px",
+        "35px": "35px",
         "36px": "36px",
         "40px": "40px",
         "41px": "41px",
@@ -111,6 +116,7 @@ module.exports = {
         "100px": "100px",
         "120px": "120px",
         "245px": "245px",
+        "330px": "330px",
       },
       width: {
         '50px': '50px',
@@ -140,6 +146,7 @@ module.exports = {
       },
       minWidth: {
         "300px": "300px",
+        "320px": "320px",
       },
       maxWidth: {
         "300px": "300px",
