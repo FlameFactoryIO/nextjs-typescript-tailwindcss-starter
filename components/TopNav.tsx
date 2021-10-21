@@ -10,7 +10,7 @@ const TopNavItem: FC<{ title: string, href: string }> = ({title, href}) => {
   );
 }
 
-const SideNavItem: FC<{ initialOpen?: boolean, title: string, className?: string }> = ({
+const SideNavItem: FC<{ initialOpen?: boolean, title: Element, className?: string }> = ({
    initialOpen,
    title,
    className,
