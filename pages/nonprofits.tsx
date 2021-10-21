@@ -9,7 +9,6 @@ export default function Home() {
     <div className="w-full min-w-320px">
       <Head>
         <title>Nonprofits</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />

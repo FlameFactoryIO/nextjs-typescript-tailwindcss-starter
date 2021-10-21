@@ -40,7 +40,7 @@ const VideoPlayer: FC<{
 }) => {
   const deviceType = useDeviceType();
 
-  const wrapperRef = useRef<HTMLElement>();
+  const wrapperRef = useRef<HTMLDivElement>();
   const videoRef = useRef<HTMLVideoElement>();
   const intervalRef = useRef<number | null>(null);
 
@@ -145,11 +145,11 @@ const VideoPlayer: FC<{
 
   useEffect(() => {
     if (videoStatus === 'playing') {
-      intervalRef.current = setInterval(() => {
+      intervalRef.current = window.setInterval(() => {
         setTimeWatched((prev) => prev + 1);
       }, 500);
     } else if (videoStatus === 'paused') {
-      clearInterval(intervalRef.current);
+      window.clearInterval(intervalRef.current);
       intervalRef.current = null;
     }
     return () => {

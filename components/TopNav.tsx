@@ -1,4 +1,4 @@
-import {FC, useCallback, useState} from "react";
+import {FC, ReactNode, useCallback, useState} from "react";
 import {useRouter} from "next/router";
 import Link from 'next/link'
 import {FaChevronDown, FaChevronUp, FaUser} from "react-icons/fa";
@@ -10,7 +10,7 @@ const TopNavItem: FC<{ title: string, href: string }> = ({title, href}) => {
   );
 }
 
-const SideNavItem: FC<{ initialOpen?: boolean, title: string, className?: string }> = ({
+const SideNavItem: FC<{ initialOpen?: boolean, title: ReactNode, className?: string }> = ({
    initialOpen,
    title,
    className,

@@ -12,7 +12,7 @@ const FullScreenContext = createContext<{
 });
 
 export const FullScreenProvider = ({ children }) => {
-  const [isFullscreen, setFullScreen] = useState(false);
+  const [isFullScreen, setFullScreen] = useState(false);
 
   const enterFullScreen = async (element: Element) => {
     return fscreen.requestFullscreen(element);
@@ -35,7 +35,7 @@ export const FullScreenProvider = ({ children }) => {
   }, []);
 
   return (
-    <FullScreenContext.Provider value={{ isFullscreen, enterFullScreen, exitFullScreen }}>
+    <FullScreenContext.Provider value={{ isFullScreen, enterFullScreen, exitFullScreen }}>
       {children}
     </FullScreenContext.Provider>
   );
