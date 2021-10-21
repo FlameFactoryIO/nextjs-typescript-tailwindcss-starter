@@ -130,7 +130,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-supporting-more-than-140k pt-15px pb-14px px-16px t:px-125px d:pt-28px d:pb-27px d:px-245px">
+        <div className="bg-footer pt-15px pb-14px px-16px t:px-125px d:pt-28px d:pb-27px d:px-245px">
           <div
             id="supporting"
             className="mx-auto grid grid-rows-3 gap-2 text-center"

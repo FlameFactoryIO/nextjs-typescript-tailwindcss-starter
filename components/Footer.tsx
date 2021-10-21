@@ -17,7 +17,7 @@ const Footer: FC = () => {
   return (
     <div className="grid d:grid-cols-4 grid-cols-2">
       <div className="d:col-span-4 col-span-2 pt-30px">
-        <img className="mx-auto" src="/mtc.svg" alt="logo" />
+        <img className="mx-auto" src="/images/mtc.svg" alt="logo" />
         <div className="mx-auto text-center text-26px font-bold d:invisible">Move the Chain</div>
       </div>
       <div className="col-span-2 mt-36px d:mt-48px text-center d:text-left">

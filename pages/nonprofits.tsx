@@ -37,7 +37,7 @@ export default function Home() {
           className="grid grid-rows-5 gap-15px mx-auto text-center "
         >
           <div>
-            <img className="mx-auto pb-20px" src="/mtc.svg" alt="logo" />
+            <img className="mx-auto pb-20px" src="/images/mtc.svg" alt="logo" />
             <div className="mx-auto pb-35px text-center text-24px font-bold leading-28-5px">
               Why Move the Chain is right for your nonprofit?
             </div>
