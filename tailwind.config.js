@@ -121,6 +121,7 @@ module.exports = {
         "82px": "82px",
         "83px": "83px",
         "84px": "84px",
+        "90px": "90px",
         "92px": "92px",
         "100px": "100px",
         "120px": "120px",
@@ -129,6 +130,7 @@ module.exports = {
         "330px": "330px",
       },
       width: {
+        "50px": "50px",
         "50px": "50px",
         "60px": "60px",
         "100px": "100px",
@@ -174,6 +176,7 @@ module.exports = {
         "640px": "640px",
       },
       minWidth: {
+        "13px": "13px",
         "42px": "42px",
         "280px": "280px",
         "300px": "300px",
@@ -183,6 +186,7 @@ module.exports = {
         "1380px": "1380px",
       },
       maxWidth: {
+        "64px": "64px",
         "280px": "280px",
         "300px": "300px",
         "320px": "320px",
@@ -192,7 +196,11 @@ module.exports = {
         "768px": "768px",
         "1140px": "1140px",
       },
-      minHeight: {},
+      minHeight: {
+        "8px":"8px"
+      },
+      maxHeight: {
+      },
       colors: {
         primary: {
           DEFAULT: "#E84300",

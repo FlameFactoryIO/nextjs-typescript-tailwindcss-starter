@@ -18,8 +18,3 @@ Secondary.args ={
   variant: "secondary",
 }
 
-export const Disabled = Template.bind({})
-Disabled.args ={
-  children: "Disabled Primary Button",
-  disabled: true,
-}

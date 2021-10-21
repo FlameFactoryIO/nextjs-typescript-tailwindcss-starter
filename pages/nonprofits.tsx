@@ -21,13 +21,13 @@ export default function Home() {
             <span className="font-bold text-primary">Move the Chain</span> is to
             offer a platform to help promote your cause and raise funds.
           </p>
-          <p className="text-16px pt-21px text-white text-center leading-20-8px">
+          <p className="text-16px pt-21px text-white text-center leading-20-8px font-light pb-50px">
             We offer a{" "}
             <span className="font-bold text-white">free platform</span> for your
             nonprofits allowing you to raise funds digitally, improve your
             online presence and expand your network to a broader audience.
           </p>
-          <div className="absolute "></div>
+          <div>{/* TODO: move images */}</div>
         </div>
       </div>
 
@@ -51,10 +51,9 @@ export default function Home() {
             <div className="mx-auto pb-8px text-center text-16px font-bold leading-24px">
               We 'll cover the cost
             </div>
-            <p className="mx-auto text-center text-13px leading-17px">
-              Using video based campaigns, explain why you are raising funds and
-              connect with current and new donors in a genuine and transparent
-              way.
+            <p className="mx-auto text-center text-13px leading-17px font-light">
+              Move the Chain provides a free platform for nonprofits to promote
+              causes, fundraise digitally and engage with donors.
             </p>
           </div>
           <div>
@@ -66,7 +65,7 @@ export default function Home() {
             <div className="mx-auto pb-8px text-center text-16px font-bold leading-24px">
               Create campaigns
             </div>
-            <p className="mx-auto text-center text-13px leading-17px">
+            <p className="mx-auto text-center text-13px leading-17px font-light">
               Using video based campaigns, explain why you are raising funds and
               connect with current and new donors in a genuine and transparent
               way.
@@ -81,17 +80,18 @@ export default function Home() {
             <div className="mx-auto pb-8px text-center text-16px font-bold leading-24px">
               Boost your presence
             </div>
-            <p className="mx-auto text-center text-13px leading-17px">
+            <p className="mx-auto text-center text-13px leading-17px font-light">
               Leverage our platform to raise funds and bring awareness to your
               cause. Connect with donors and corporations easiler than ever
               before.
             </p>
           </div>
           <div>
-            <div className="flex flex-row">
+            <div className="flex flex-row pb-29px">
               <div className="font-hand text-primary mx-auto text-center text-46px leading-38px">
                 Claim your page
               </div>
+
               <svg
                 className="ml-10px mt-15px"
                 width="42"
@@ -110,8 +110,8 @@ export default function Home() {
                 />
               </svg>
             </div>
-            {/* move firulete */}
-            <p className="mx-auto text-center text-13px leading-17px pb-24px">
+            {/* TODO: move firulete */}
+            <p className="mx-auto text-center text-13px leading-17px pb-24px font-light">
               Find your nonprofit in our database and provide information to
               verify your nonprofit.
             </p>
@@ -129,7 +129,7 @@ export default function Home() {
       <div className="px-20px py-50px  w-full">
         <div id="steps" className="grid grid-rows-4 space-y-40px">
           <div id="step-1" className="grid grid-rows-2">
-            <div id="step-1-steps" className="flex flex-col">
+            <div id="step-1-steps" className="flex flex-col pb-15px">
               <button className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 1
               </button>
@@ -142,16 +142,16 @@ export default function Home() {
                 <span className="font-bold">simple steps </span>to get started:
               </p>
               <div className="px-20px ">
-                <ol className="list-decimal text-primary text-13px leading-17px flex flex-col gap-y-14px">
+                <ol className="list-decimal text-primary text-13px leading-17px flex flex-col gap-y-14px font-bold">
                   <li>
-                    <p className="text-black">
+                    <p className="text-black font-light pl-9px">
                       Click on{" "}
                       <span className="font-bold">“Claim your page”</span> and
                       search for your nonprofit
                     </p>
                   </li>
                   <li>
-                    <p className="text-black">
+                    <p className="text-black font-light pl-9px">
                       If you are part of{" "}
                       <span className="font-bold">PayPal Giving Fund</span>, you
                       will find your nonprofit. Simply click the{" "}
@@ -160,7 +160,7 @@ export default function Home() {
                     </p>
                   </li>
                   <li>
-                    <p className="text-black">
+                    <p className="text-black font-light pl-9px">
                       If you are not registered with PayPal Giving Fund, simply
                       enroll your nonprofit so you can start accepting donations
                       and create a <span className="font-bold"> profile</span>{" "}
@@ -174,30 +174,28 @@ export default function Home() {
               id="step-1-img"
               className="grid grid-col-2 grid-rows-2  relative"
             >
-              <div className="bg-red-500"></div>
-              <div className="bg-yellow-300"></div>
-              <div className="bg-green-500 col-span-2"></div>
+              <div className=" bg-gray-200 col-span-2 row-span-2"></div>
             </div>
           </div>
-          <div id="step-2">
-            <div id="step-2-steps" className="flex flex-col">
+          <div id="step-2" className="grid grid-rows-2">
+            <div id="step-2-steps" className="flex flex-col pb-20px">
               <button className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 2
               </button>
               <div className="text-20px font-bold leading-24px mb-22px">
                 Update your Profile
               </div>
-              <p className="text-13px leading-17px pb-22px">
+              <p className="text-13px leading-17px pb-22px font-light">
                 Within <span className="font-bold">a few minutes </span> you can
                 update your profile!
               </p>
-              <p className="text-13px leading-17px pb-22px">
+              <p className="text-13px leading-17px pb-22px font-light">
                 Be sure to include the best possible photos and videos to{" "}
                 <span className="font-bold">emphasize the great work </span>
                 you’re doing! Your “About” section should be both concise and
                 heartfelt.
               </p>
-              <p className="text-13px leading-17px pb-12px">
+              <p className="text-13px leading-17px pb-12px font-light">
                 This is your opportunity to create a profile that best
                 represents your organization to
                 <span className="font-bold">
@@ -213,15 +211,10 @@ export default function Home() {
               id="step-2-img"
               className="grid grid-col-2 grid-rows-2  relative"
             >
-              <div className="bg-nonprofit-step2"></div>
-              <img
-                className="col-span-2 mx-auto pb-13px absolute"
-                src="/images/iPad-Pro-11-Mockup.svg"
-                alt="iMac"
-              />
+              <div className=" bg-gray-200 col-span-2 row-span-2"></div>
             </div>
           </div>
-          <div id="step-3">
+          <div id="step-3" className="grid grid-rows-2">
             <div id="step-3-steps" className="flex flex-col">
               <button className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 3
@@ -229,11 +222,11 @@ export default function Home() {
               <div className="text-20px font-bold leading-24px mb-22px">
                 Create a campaign!
               </div>
-              <p className="text-13px leading-17px pb-22px">
+              <p className="text-13px leading-17px pb-22px font-light">
                 Once you claim your page, you can get started right away by
                 launching a fundraising campaign.
               </p>
-              <p className="text-13px leading-17px pb-22px">
+              <p className="text-13px leading-17px pb-22px font-light">
                 This is your{" "}
                 <span className="font-bold">opportunity to create </span> a
                 genuine and compelling video message that tells the story of
@@ -247,9 +240,13 @@ export default function Home() {
             <div
               id="step-3-img"
               className="grid grid-col-2 grid-rows-2  relative"
-            ></div>
+            >
+              <div className=" bg-gray-200 col-span-2 row-span-2">
+                {/* TODO: move images */}
+              </div>
+            </div>
           </div>
-          <div id="step-4">
+          <div id="step-4" className="grid grid-rows-2">
             <div id="step-4-steps" className="flex flex-col">
               <button className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 4
@@ -257,11 +254,11 @@ export default function Home() {
               <div className="text-20px font-bold leading-24px mb-22px">
                 Spread the word and ask your supporters to give.
               </div>
-              <p className="text-13px leading-17px pb-22px">
+              <p className="text-13px leading-17px pb-22px font-light">
                 Last but certainly not least,{" "}
                 <span className="font-bold"> sharing is key. </span>
               </p>
-              <p className="text-13px leading-17px pb-22px">
+              <p className="text-13px leading-17px pb-22px font-light">
                 The impact of sharing on social media, email and text messages
                 cannot be understated in its ability to make your campaign
                 successful. Once your campaign is created, tell everyone about
@@ -272,7 +269,11 @@ export default function Home() {
             <div
               id="step-4-img"
               className="grid grid-col-2 grid-rows-2  relative"
-            ></div>
+            >
+              <div className=" bg-gray-200 col-span-2 row-span-2">
+                {/* TODO: move images */}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -282,18 +283,59 @@ export default function Home() {
           <h1 className="text-20px leading-24px  text-center font-bold pb-20px">
             What nonprofits are saying about Move the Chain
           </h1>
-          <div id="nonprofits-logos" className="pb-29px">[NONPROFIT LOGOS]</div>
-          <p className="text-16px leading-20-8px  text-center pb-40px">
+          <div id="nonprofits-logos" className="pb-29px">
+            <div className="bg-gray-200 text-center ">
+              {/* TODO: logos */}LOGOS
+            </div>
+          </div>
+          <p className="text-16px leading-20-8px  text-center pb-40px ">
             <span className="font-bold text-primary">“</span>Move the Chain is
             helping us easily connect with new donors without having to worry
             about the back end of tax receipting - so we can focus on our
             mission.<span className="font-bold text-primary">” </span>
           </p>
-          <div id="ceo-at-prove" className="pb-80px">[CREO PROVE]</div>
-          <h1 className="text-24px leading-28-8px  text-center font-bold">
-          Frequently Asked Questions
-
-
+          <div id="ceo-at-prove" className="pb-80px">
+            <div className="bg-gray-200 text-center ">
+              {/* TODO: CEO PROVE */}CEO PROVE
+            </div>
+          </div>
+          <h1 className="text-24px leading-28-8px  text-center font-bold pb-24px">
+            Frequently Asked Questions
+          </h1>
+          <div id="dropdown-1" className="relative inline-flex ">
+            <svg
+              className="w-4px h-8px absolute top-15px right-24px m-4 pointer-events-none"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 412 232"
+            >
+              <path
+                d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
+                fill="#648299"
+                fillRule="nonzero"
+              />
+            </svg>
+            <select className="min-w-280px min-h-64px border border-primary font-light rounded-full text-gray-600 py-21px pl-21px pr-90px bg-white hover:border-gray-400 focus:outline-none appearance-none">
+              <option>Corporate Question #1</option>
+            </select>
+          </div>
+          <div id="dropdown-1" className="relative inline-flex ">
+            <svg
+              className="w-4px h-8px absolute top-15px right-24px m-4 pointer-events-none"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 412 232"
+            >
+              <path
+                d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
+                fill="#648299"
+                fillRule="nonzero"
+              />
+            </svg>
+            <select className="min-w-280px min-h-64px border border-primary font-light rounded-full text-gray-600 py-21px pl-21px pr-90px bg-white hover:border-gray-400 focus:outline-none appearance-none">
+              <option>Corporate Question #2</option>
+            </select>
+          </div>
+          <h1 className="text-16px leading-20-8px  text-center text-primary underline font-bold pb-24px">
+            Have another quesiton? Visit our Full FAQ page
           </h1>
         </div>
       </div>
@@ -303,7 +345,7 @@ export default function Home() {
           <h1 className="text-20px leading-24px text-white text-center font-bold">
             Questions?
           </h1>
-          <p className="text-16px leading-20-8px text-white text-center">
+          <p className="text-16px leading-20-8px text-white text-center font-light">
             Do you have questions about Move the Chain? Reach out and we’ll be
             happy to answer your questions!
           </p>
