@@ -18,8 +18,8 @@ export default function Home() {
         <div id="our-purpose" className="flex flex-col  mx-auto relative">
           <p className="text-26px text-white text-center leading-31-2px">
             Our purpose at{" "}
-            <span className="font-bold text-primary">Move the Chain</span> is to
-            offer a platform to help promote your cause and raise funds.
+            <span className="font-bold text-primary">Mo ve the Chain</span> is
+            to offer a platform to help promote your cause and raise funds.
           </p>
           <p className="text-16px pt-21px text-white text-center leading-20-8px font-light pb-50px">
             We offer a{" "}
@@ -128,8 +128,11 @@ export default function Home() {
 
       <div className="px-20px py-50px  w-full">
         <div id="steps" className="grid grid-rows-4 space-y-40px">
-          <div id="step-1" className="grid grid-rows-2">
-            <div id="step-1-steps" className="flex flex-col pb-15px">
+          <div
+            id="step-1"
+            className="grid grid-rows-2 t:grid-cols-2 t:grid-rows-1"
+          >
+            <div id="step-1-steps" className=" flex flex-col pb-15px">
               <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 1
               </div>
@@ -172,13 +175,19 @@ export default function Home() {
             </div>
             <div
               id="step-1-img"
-              className="grid grid-col-2 grid-rows-2  relative"
+              className="grid grid-col-2 grid-rows-2 t:pl-34px relative"
             >
               <div className=" bg-gray-200 col-span-2 row-span-2"></div>
             </div>
           </div>
-          <div id="step-2" className="grid grid-rows-2">
-            <div id="step-2-steps" className="flex flex-col pb-20px">
+          <div
+            id="step-2"
+            className="grid grid-rows-2 t:grid-cols-2  t:grid-rows-1"
+          >
+            <div
+              id="step-2-steps"
+              className="t:col-start-2 flex flex-col pb-20px t:pl-34px"
+            >
               <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 2
               </div>
@@ -209,13 +218,16 @@ export default function Home() {
             </div>
             <div
               id="step-2-img"
-              className="grid grid-col-2 grid-rows-2  relative"
+              className="t:col-start-1 t:row-start-1 grid grid-col-2 grid-rows-2  relative"
             >
               <div className=" bg-gray-200 col-span-2 row-span-2"></div>
             </div>
           </div>
-          <div id="step-3" className="grid grid-rows-2">
-            <div id="step-3-steps" className="flex flex-col">
+          <div
+            id="step-3"
+            className="grid grid-rows-2 t:grid-cols-2 t:grid-rows-1"
+          >
+            <div id="step-3-steps" className=" flex flex-col pb-15px">
               <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 3
               </div>
@@ -239,26 +251,32 @@ export default function Home() {
             </div>
             <div
               id="step-3-img"
-              className="grid grid-col-2 grid-rows-2  relative"
+              className="grid grid-col-2 grid-rows-2 t:pl-34px relative"
             >
               <div className=" bg-gray-200 col-span-2 row-span-2">
                 {/* TODO: move images */}
               </div>
             </div>
           </div>
-          <div id="step-4" className="grid grid-rows-2">
-            <div id="step-4-steps" className="flex flex-col">
+          <div
+            id="step-4"
+            className="grid grid-rows-2 t:grid-cols-2  t:grid-rows-1"
+          >
+            <div
+              id="step-4-steps"
+              className="t:col-start-2 flex flex-col pb-20px t:pl-34px"
+            >
               <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 4
               </div>
-              <div className="text-20px font-bold leading-24px mb-22px">
+              <div className="text-20px  leading-24px d:text-34px d:leading-41px font-bold mb-22px">
                 Spread the word and ask your supporters to give.
               </div>
-              <p className="text-13px leading-17px pb-22px font-light">
+              <p className="text-13px leading-17px  d:text-16px d:leading-20-8px pb-22px font-light">
                 Last but certainly not least,{" "}
                 <span className="font-bold"> sharing is key. </span>
               </p>
-              <p className="text-13px leading-17px pb-22px font-light">
+              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
                 The impact of sharing on social media, email and text messages
                 cannot be understated in its ability to make your campaign
                 successful. Once your campaign is created, tell everyone about
@@ -268,7 +286,7 @@ export default function Home() {
             </div>
             <div
               id="step-4-img"
-              className="grid grid-col-2 grid-rows-2  relative"
+              className="t:col-start-1 t:row-start-1 grid grid-col-2 grid-rows-2  relative"
             >
               <div className=" bg-gray-200 col-span-2 row-span-2">
                 {/* TODO: move images */}
@@ -280,7 +298,7 @@ export default function Home() {
 
       <div className="px-20px pb-44px pt-50px w-full bg-your-opportunity">
         <div id="what-nonprofit-are" className="flex flex-col gap-30px ">
-          <h1 className="text-20px leading-24px  text-center font-bold pb-20px">
+          <h1 className="text-20px leading-24px d:text-34px d:leading-41px  text-center font-bold pb-20px">
             What nonprofits are saying about Move the Chain
           </h1>
           <div id="nonprofits-logos" className="pb-29px">
@@ -288,74 +306,56 @@ export default function Home() {
               {/* TODO: logos */}LOGOS
             </div>
           </div>
-          <p className="text-16px leading-20-8px  text-center pb-40px ">
+          <p className="text-16px leading-20-8px  d:text-18px d:leading-25-2px text-center pb-40px ">
             <span className="font-bold text-primary">“</span>Move the Chain is
             helping us easily connect with new donors without having to worry
             about the back end of tax receipting - so we can focus on our
             mission.<span className="font-bold text-primary">” </span>
           </p>
-          <div id="ceo-at-prove" className="pb-80px">
-            <div className="bg-gray-200 text-center ">
-              {/* TODO: CEO PROVE */}CEO PROVE
+          <div
+            id="ceo-at-prove"
+            className="pb-80px flex flex-row justify-center gap-10px "
+          >
+            <div className=" bg-gray-200 h-43px w-43px">
+              {/* TODO: move images */}CEO
+            </div>
+            <div className="flex flex-col text-16px leading-20-8px  d:text-18px d:leading-24px text-center">
+              <span className="font-bold text-primary">Name of individual</span>
+              <span className="font-bold hidden t:block">
+                - CEO at Girls Who Code
+              </span>
+              <span className="font-bold t:hidden">- CEO at Prove</span>
             </div>
           </div>
-          <h1 className="text-24px leading-28-8px  text-center font-bold pb-24px">
+          <h1 className="text-24px leading-28-8px d:text-43px d:leading-51-6px  text-center font-bold pb-24px">
             Frequently Asked Questions
           </h1>
-          <div id="dropdown-1" className="relative inline-flex ">
-            <svg
-              className="w-4px h-8px absolute top-15px right-24px m-4 pointer-events-none"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 412 232"
-            >
-              <path
-                d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
-                fill="#648299"
-                fillRule="nonzero"
-              />
-            </svg>
-            <select className="min-w-280px min-h-64px border border-primary font-light rounded-full text-gray-600 py-21px pl-21px pr-90px bg-white hover:border-gray-400 focus:outline-none appearance-none">
-              <option>Corporate Question #1</option>
-            </select>
-          </div>
-          <div id="dropdown-1" className="relative inline-flex ">
-            <svg
-              className="w-4px h-8px absolute top-15px right-24px m-4 pointer-events-none"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 412 232"
-            >
-              <path
-                d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
-                fill="#648299"
-                fillRule="nonzero"
-              />
-            </svg>
-            <select className="min-w-280px min-h-64px border border-primary font-light rounded-full text-gray-600 py-21px pl-21px pr-90px bg-white hover:border-gray-400 focus:outline-none appearance-none">
-              <option>Corporate Question #2</option>
-            </select>
-          </div>
-          <h1 className="text-16px leading-20-8px  text-center text-primary underline font-bold pb-24px">
+          <h1 className="text-16px leading-20-8px d:text-18px d:leading-21-6px text-center text-primary underline font-bold pb-24px">
             Have another quesiton? Visit our Full FAQ page
           </h1>
         </div>
       </div>
 
-      <div className="px-20px pt-44px pb-50px w-full bg-nonprofit-questions">
-        <div id="questions" className="flex flex-col gap-30px">
-          <h1 className="text-20px leading-24px text-white text-center font-bold">
-            Questions?
-          </h1>
-          <p className="text-16px leading-20-8px text-white text-center font-light">
-            Do you have questions about Move the Chain? Reach out and we’ll be
-            happy to answer your questions!
-          </p>
-          <Button
-            type="button"
-            variant="primary"
-            className="mx-auto px-30px py-11px w-140px h-46px rounded-10pxi"
-          >
-            Contact Us
-          </Button>
+      <div className="px-20px pt-44px pb-50px w-full bg-nonprofit-questions ">
+        <div id="questions" className="flex flex-col t:flex-row gap-30px">
+          <div>
+            <h1 className="text-20px leading-24px d:text-34px d:leading-41px text-white text-center t:text-left font-bold">
+              Questions?
+            </h1>
+            <p className="text-16px leading-20-8px d:text-18px d:leading-25px text-white text-center t:text-left font-light">
+              Do you have questions about Move the Chain? Reach out and we’ll be
+              happy to answer your questions!
+            </p>
+          </div>
+          <div className="mx-auto t:pl-107px d:t:pl-276px d:pr-151px">
+            <Button
+              type="button"
+              variant="primary"
+              className="px-30px py-11px w-140px h-46px rounded-10pxi "
+            >
+              Contact Us
+            </Button>
+          </div>
         </div>
       </div>
       <div id="footer" className="w-full bg-footer">
