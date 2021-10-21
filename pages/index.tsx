@@ -147,39 +147,40 @@ export default function Home() {
           </div>
         </div>
 
-        <div style={{
-          backgroundImage: "linear-gradient(to bottom, #FFFFFF 50%, #FEF4F0 50%)"
-        }} className="pt-44px pb-50px t:pt-44px t:pb-38px d:pt-84px d:pb-100px">
+        <div
+          style={{ backgroundImage: "linear-gradient(to bottom, #FFFFFF 50%, #FEF4F0 50%)"}}
+          className="pt-44px pb-50px t:pt-44px t:pb-38px d:pt-84px d:pb-100px"
+        >
 
-          <div className="w-280px t:w-768px d:w-1140px mx-auto grid grid-rows-2 gap-2 text-center">
-            <div className="font-bold text-24px leading-28-8px d:text-43px">
-              What's Move the chain
+          <div className="w-280px t:w-768px d:w-1140px mx-auto text-center">
+            <div className="font-bold text-24px leading-28-8px d:text-43px d:leading-65px">
+              What&apos;s Move the chain
             </div>
-            <p className="mt-2 mx-auto text-18px d:w-800px">
+            <p className="pt-20px mx-auto text-14px leading-18-2px d:leading-24px d:w-800px">
               Move the Chain is a social giving platform, changing the way you
               give back to causes you care about. We make it fun, transparent
               and empowering to donate to and promote causes that matter to you.
             </p>
 
-            <div className="hidden d:block relative d:w-520px d:h-520px mx-auto" style={{marginTop: 93}}> {/*todo remove hidden for*/}
-              <img alt="" src="/portrait-white-man-isolated_53876-40306 1.png" className="absolute w-90px h-70px rounded-full" style={{top: -35, left: 245 }} />
-              <img alt="" src="/IMG_20200729_115836 1.png" className="absolute w-90px h-121px rounded-full" style={{top: 0, left: 260 }} />
-              <img alt="" src="/maxresdefault 1.png" className="absolute w-120px h-104px rounded-full" />
-              <div className="w-520px h-520px rounded-full border-2 flex justify-center items-center" style={{borderColor: "#FEF4F0", boxSizing: "border-box"}}>
-                <div className="w-380px h-380px rounded-full border-2 flex justify-center items-center" style={{borderColor: "#FEF4F0", boxSizing: "border-box"}}>
-                  <img alt="" src="/joel-muniz-KodMXENNaas-unsplash 1.png" className="w-284px h-422px rounded-full" />
-                </div>
-              </div>
+            <div className="relative w-280px h-245px t:w-370px t:h-352px d:w-542px d:h-542px mx-auto">
+              {/*<img alt="" src="/images/portrait-white-man-isolated_53876-40306 1.png" className="absolute w-90px h-70px rounded-full" style={{top: -35, left: 245 }} />*/}
+              {/*<img alt="" src="/images/IMG_20200729_115836 1.png" className="absolute w-90px h-121px rounded-full " style={{top: 0, left: 260 }} />*/}
+              {/*<img alt="" src="/images/maxresdefault 1.png" className="absolute w-120px h-104px rounded-full" />*/}
+              {/*<div className="absolute w-520px h-520px rounded-full border-2 flex justify-center items-center" style={{borderColor: "#FEF4F0", boxSizing: "border-box"}}>*/}
+              {/*  <div className="absolute w-380px h-380px rounded-full border-2 flex justify-center items-center" style={{borderColor: "#FEF4F0", boxSizing: "border-box"}}>*/}
+              {/*    <img alt="" src="/images/joel-muniz-KodMXENNaas-unsplash 1.png" className="w-284px h-422px rounded-full" />*/}
+              {/*  </div>*/}
+              {/*</div>*/}
             </div>
           </div>
 
-          <div className="grid grid-rows-3 gap-2 mx-auto text-center text-18px d:w-800px">
+          <div className="grid grid-rows-3 gap-2 mx-auto text-center text-18px w-280px t:w-708px d:w-800px">
             <p className="d:text-18px d:leading-26px font-bold">
               From being inspired by a campaign, to challenging your circle of
               friends and family to take positive action, there are so many ways
               to make a positive impact
             </p>
-            <p className=" m-auto text-16px">
+            <p className="mx-auto text-16px">
               <span className="text-primary-500 font-bold">“</span>
               67% of americans believe social media sites are important for
               creating sustained movements for social change...
