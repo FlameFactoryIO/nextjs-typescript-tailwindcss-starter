@@ -54,6 +54,7 @@ module.exports = {
         128: "1.56rem",
         "13px": "13px",
         "14-4px": "14.4px",
+        "16px": "16px",
         "16-9px": "16.9px",
         "17px": "17px",
         "18px": "18px",
@@ -65,7 +66,9 @@ module.exports = {
         "21-6px": "21.6px",
         "22-5px": "22.5px",
         "24px": "24px",
+        "25px": "25px",
         "26px": "26px",
+        "27px": "27px",
         "28-5px": "28.5px",
         "28-8px": "28.8px",
         "30px": "30px",
@@ -77,6 +80,10 @@ module.exports = {
         "65px": "65px",
       },
       spacing: {
+        "1px": "1px",
+        "2px": "2px",
+        "3px": "3px",
+        "4px": "4px",
         "5px": "5px",
         "7px": "7px",
         "8px": "8px",
@@ -136,6 +143,7 @@ module.exports = {
         "330px": "330px",
       },
       width: {
+        "32px": "32px",
         "50px": "50px",
         "60px": "60px",
         "100px": "100px",
@@ -163,6 +171,7 @@ module.exports = {
         "1380px": "1380px",
       },
       height: {
+        "32px": "32px",
         "46px": "46px",
         "50px": "50px",
         "70px": "70px",
@@ -207,10 +216,9 @@ module.exports = {
         "1140px": "1140px",
       },
       minHeight: {
-        "8px":"8px"
+        "8px": "8px",
       },
-      maxHeight: {
-      },
+      maxHeight: {},
       colors: {
         primary: {
           DEFAULT: "#E84300",

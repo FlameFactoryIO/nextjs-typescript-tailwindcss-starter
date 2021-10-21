@@ -130,9 +130,9 @@ export default function Home() {
         <div id="steps" className="grid grid-rows-4 space-y-40px">
           <div id="step-1" className="grid grid-rows-2">
             <div id="step-1-steps" className="flex flex-col pb-15px">
-              <button className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
+              <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 1
-              </button>
+              </div>
               <div className="text-20px font-bold leading-24px mb-22px">
                 Start by claiming your page!
               </div>
@@ -179,9 +179,9 @@ export default function Home() {
           </div>
           <div id="step-2" className="grid grid-rows-2">
             <div id="step-2-steps" className="flex flex-col pb-20px">
-              <button className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
+              <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 2
-              </button>
+              </div>
               <div className="text-20px font-bold leading-24px mb-22px">
                 Update your Profile
               </div>
@@ -216,9 +216,9 @@ export default function Home() {
           </div>
           <div id="step-3" className="grid grid-rows-2">
             <div id="step-3-steps" className="flex flex-col">
-              <button className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
+              <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 3
-              </button>
+              </div>
               <div className="text-20px font-bold leading-24px mb-22px">
                 Create a campaign!
               </div>
@@ -248,9 +248,9 @@ export default function Home() {
           </div>
           <div id="step-4" className="grid grid-rows-2">
             <div id="step-4-steps" className="flex flex-col">
-              <button className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
+              <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 4
-              </button>
+              </div>
               <div className="text-20px font-bold leading-24px mb-22px">
                 Spread the word and ask your supporters to give.
               </div>
@@ -359,7 +359,7 @@ export default function Home() {
         </div>
       </div>
       <div id="footer" className="w-full bg-footer">
-        <div className="px-20px pt-30px mx-auto">
+        <div className="px-20px pt-30px pb-15px mx-auto">
           <Footer />
         </div>
       </div>
