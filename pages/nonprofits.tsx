@@ -13,27 +13,42 @@ export default function Home() {
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
 
-      <div className="px-20px pt-82px pb-330px bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right">
-        <div id="our-purpose" className="flex flex-col  mx-auto relative">
-          <p className="text-26px text-white text-center leading-31-2px">
+      <div
+        className="px-20px pt-82px  
+      t:pt-104px t:px-30px 
+      d:pt-148px d:pr-50px  d:pl-120px
+
+      bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right"
+      >
+        <div
+          id="our-purpose"
+          className="flex flex-col  mx-auto relative t:justify-start  t:pb-50px d:pb-100px "
+        >
+          <p className="text-26px text-white text-center leading-31-2px d:text-48px d:leading-57-6px t:text-left t:pr-160px d:pr-170px">
             Our purpose at{" "}
             <span className="font-bold text-primary">Mo ve the Chain</span> is
             to offer a platform to help promote your cause and raise funds.
           </p>
-          <p className="text-16px pt-21px text-white text-center leading-20-8px font-light pb-50px">
+          <p className="text-16px pt-21px text-white text-center leading-56-6px d:text-18px d:leading-26px font-light pb-50px t:text-left t:pr-364px d:pr-685px">
             We offer a{" "}
             <span className="font-bold text-white">free platform</span> for your
             nonprofits allowing you to raise funds digitally, improve your
             online presence and expand your network to a broader audience.
           </p>
-          <div>{/* TODO: move images */}</div>
+          <Button
+            type="button"
+            variant="primary"
+            className=" px-30px py-11px w-140px h-46px rounded-10pxi hidden t:block"
+          >
+            Get started
+          </Button>
         </div>
       </div>
 
       <div className="bg-footer px-20px pt-50px pb-62px">
         <div
           id="why-move-the-chain"
-          className="grid grid-rows-5 gap-15px mx-auto text-center "
+          className="flex-col gap-15px mx-auto text-center"
         >
           <div>
             <img className="mx-auto pb-20px" src="/images/mtc.svg" alt="logo" />
@@ -41,53 +56,55 @@ export default function Home() {
               Why Move the Chain is right for your nonprofit?
             </div>
           </div>
-          <div>
-            <img
-              className="mx-auto pb-13px"
-              src="/images/piggy-bank.svg"
-              alt="logo"
-            />
-            <div className="mx-auto pb-8px text-center text-16px font-bold leading-24px">
-              We 'll cover the cost
+          <div className="flex flex-col t:flex-row gap-39px pb-17px t:pb-33px d:pb-58px">
+            <div>
+              <img
+                className="mx-auto pb-13px"
+                src="/images/piggy-bank.svg"
+                alt="logo"
+              />
+              <div className="mx-auto pb-8px text-center text-16px font-bold leading-24px d:text-20px d:leading-24px">
+                We 'll cover the cost
+              </div>
+              <p className="mx-auto text-center text-13px leading-17px d:text-16px d:leading-20-8px font-light">
+                Move the Chain provides a free platform for nonprofits to
+                promote causes, fundraise digitally and engage with donors.
+              </p>
             </div>
-            <p className="mx-auto text-center text-13px leading-17px font-light">
-              Move the Chain provides a free platform for nonprofits to promote
-              causes, fundraise digitally and engage with donors.
-            </p>
-          </div>
-          <div>
-            <img
-              className="mx-auto pb-13px"
-              src="/images/connection.svg"
-              alt="logo"
-            />
-            <div className="mx-auto pb-8px text-center text-16px font-bold leading-24px">
-              Create campaigns
+            <div>
+              <img
+                className="mx-auto pb-13px"
+                src="/images/connection.svg"
+                alt="logo"
+              />
+              <div className="mx-auto pb-8px text-center text-16px font-bold leading-24px d:text-20px d:leading-24px">
+                Create campaigns
+              </div>
+              <p className="mx-auto text-center text-13px leading-17px d:text-16px d:leading-20-8px font-light">
+                Using video based campaigns, explain why you are raising funds
+                and connect with current and new donors in a genuine and
+                transparent way.
+              </p>
             </div>
-            <p className="mx-auto text-center text-13px leading-17px font-light">
-              Using video based campaigns, explain why you are raising funds and
-              connect with current and new donors in a genuine and transparent
-              way.
-            </p>
-          </div>
-          <div>
-            <img
-              className="mx-auto pb-13px"
-              src="/images/social-media.svg"
-              alt="logo"
-            />
-            <div className="mx-auto pb-8px text-center text-16px font-bold leading-24px">
-              Boost your presence
+            <div>
+              <img
+                className="mx-auto pb-13px"
+                src="/images/social-media.svg"
+                alt="logo"
+              />
+              <div className="mx-auto pb-8px text-center text-16px font-bold leading-24px d:text-20px d:leading-24px">
+                Boost your presence
+              </div>
+              <p className="mx-auto text-center text-13px leading-17px d:text-16px d:leading-20-8px font-light">
+                Leverage our platform to raise funds and bring awareness to your
+                cause. Connect with donors and corporations easiler than ever
+                before.
+              </p>
             </div>
-            <p className="mx-auto text-center text-13px leading-17px font-light">
-              Leverage our platform to raise funds and bring awareness to your
-              cause. Connect with donors and corporations easiler than ever
-              before.
-            </p>
           </div>
           <div>
             <div className="flex flex-row pb-29px">
-              <div className="font-hand text-primary mx-auto text-center text-46px leading-38px">
+              <div className="font-hand text-primary mx-auto text-center text-46px leading-38px d:text-46px d:leading-38px">
                 Claim your page
               </div>
 
@@ -110,7 +127,7 @@ export default function Home() {
               </svg>
             </div>
             {/* TODO: move firulete */}
-            <p className="mx-auto text-center text-13px leading-17px pb-24px font-light">
+            <p className="mx-auto text-center text-13px leading-17px d:text-16px d:leading-20-8px pb-24px font-light">
               Find your nonprofit in our database and provide information to
               verify your nonprofit.
             </p>
@@ -126,19 +143,19 @@ export default function Home() {
       </div>
 
       <div className="px-20px py-50px  w-full">
-        <div id="steps" className="grid grid-rows-4 space-y-40px">
+        <div id="steps" className="grid grid-rows-4 space-y-40px ">
           <div
             id="step-1"
-            className="grid grid-rows-2 t:grid-cols-2 t:grid-rows-1"
+            className="grid grid-rows-2 t:grid-cols-2 t:grid-rows-1 t:gap-x-20"
           >
             <div id="step-1-steps" className=" flex flex-col pb-15px">
               <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 1
               </div>
-              <div className="text-20px font-bold leading-24px mb-22px">
+              <div className="text-20px font-bold leading-24px d:text-34px d:leading-41px mb-22px">
                 Start by claiming your page!
               </div>
-              <p className="text-13px leading-17px pb-22px">
+              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px">
                 With a simple click of a button, you can claim your page on Move
                 the Chain! Follow those{" "}
                 <span className="font-bold">simple steps </span>to get started:
@@ -174,36 +191,36 @@ export default function Home() {
             </div>
             <div
               id="step-1-img"
-              className="grid grid-col-2 grid-rows-2 t:pl-34px relative"
+              className="grid grid-col-2 grid-rows-2  relative"
             >
               <div className=" bg-gray-200 col-span-2 row-span-2"></div>
             </div>
           </div>
           <div
             id="step-2"
-            className="grid grid-rows-2 t:grid-cols-2  t:grid-rows-1"
+            className="grid grid-rows-2 t:grid-cols-2  t:grid-rows-1 t:gap-x-20"
           >
             <div
               id="step-2-steps"
-              className="t:col-start-2 flex flex-col pb-20px t:pl-34px"
+              className="t:col-start-2 flex flex-col pb-20px "
             >
               <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 2
               </div>
-              <div className="text-20px font-bold leading-24px mb-22px">
+              <div className="text-20px font-bold leading-24px d:text-34px d:leading-41px mb-22px">
                 Update your Profile
               </div>
-              <p className="text-13px leading-17px pb-22px font-light">
+              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
                 Within <span className="font-bold">a few minutes </span> you can
                 update your profile!
               </p>
-              <p className="text-13px leading-17px pb-22px font-light">
+              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
                 Be sure to include the best possible photos and videos to{" "}
                 <span className="font-bold">emphasize the great work </span>
                 you’re doing! Your “About” section should be both concise and
                 heartfelt.
               </p>
-              <p className="text-13px leading-17px pb-12px font-light">
+              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-12px font-light">
                 This is your opportunity to create a profile that best
                 represents your organization to
                 <span className="font-bold">
@@ -224,20 +241,20 @@ export default function Home() {
           </div>
           <div
             id="step-3"
-            className="grid grid-rows-2 t:grid-cols-2 t:grid-rows-1"
+            className="grid grid-rows-2 t:grid-cols-2 t:grid-rows-1  t:gap-x-20"
           >
             <div id="step-3-steps" className=" flex flex-col pb-15px">
               <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 3
               </div>
-              <div className="text-20px font-bold leading-24px mb-22px">
+              <div className="text-20px font-bold leading-24px d:text-34px d:leading-41px mb-22px">
                 Create a campaign!
               </div>
-              <p className="text-13px leading-17px pb-22px font-light">
+              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
                 Once you claim your page, you can get started right away by
                 launching a fundraising campaign.
               </p>
-              <p className="text-13px leading-17px pb-22px font-light">
+              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
                 This is your{" "}
                 <span className="font-bold">opportunity to create </span> a
                 genuine and compelling video message that tells the story of
@@ -250,7 +267,7 @@ export default function Home() {
             </div>
             <div
               id="step-3-img"
-              className="grid grid-col-2 grid-rows-2 t:pl-34px relative"
+              className="grid grid-col-2 grid-rows-2  relative"
             >
               <div className=" bg-gray-200 col-span-2 row-span-2">
                 {/* TODO: move images */}
@@ -259,11 +276,11 @@ export default function Home() {
           </div>
           <div
             id="step-4"
-            className="grid grid-rows-2 t:grid-cols-2  t:grid-rows-1"
+            className="grid grid-rows-2 t:grid-cols-2  t:grid-rows-1  t:gap-x-20"
           >
             <div
               id="step-4-steps"
-              className="t:col-start-2 flex flex-col pb-20px t:pl-34px"
+              className="t:col-start-2 flex flex-col pb-20px "
             >
               <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 4
