@@ -45,7 +45,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-footer px-20px pt-50px pb-62px">
+      <div className="bg-footer px-20px pt-50px pb-51px
+      t:pb-61px t:px-30px
+      d:pt-98px d:pb-80px d:px-240px">
         <div
           id="why-move-the-chain"
           className="flex-col gap-15px mx-auto text-center"
@@ -312,13 +314,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="px-20px pb-44px pt-50px w-full bg-your-opportunity">
+      <div className="px-20px pb-43px pt-56px t:pt-46px t:px-30px d:pt-72px d:px-232px d:pb-68px  w-full bg-your-opportunity">
         <div id="what-nonprofit-are" className="flex flex-col gap-30px ">
           <h1 className="text-20px leading-24px d:text-34px d:leading-41px  text-center font-bold pb-20px">
             What nonprofits are saying about Move the Chain
           </h1>
           <div id="nonprofits-logos" className="pb-29px">
-            <div className="bg-gray-200 text-center ">
+            <div className="bg-gray-200  ">
               {/* TODO: logos */}LOGOS
             </div>
           </div>
@@ -352,22 +354,22 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="px-20px pt-44px pb-50px w-full bg-nonprofit-questions ">
-        <div id="questions" className="flex flex-col t:flex-row gap-30px">
+      <div className="px-20px pt-44px pb-50px t:pb-36px t:px-30px d:pt-52px d:pb-44px d:px-120px w-full bg-nonprofit-questions ">
+        <div id="questions" className="flex flex-col t:flex-row gap-40px justify-between">
           <div>
-            <h1 className="text-20px leading-24px d:text-34px d:leading-41px text-white text-center t:text-left font-bold">
+            <h1 className="text-20px leading-24px d:text-34px d:leading-41px text-white text-center t:text-left font-bold t:pb-14px">
               Questions?
             </h1>
-            <p className="text-16px leading-20-8px d:text-18px d:leading-25px text-white text-center t:text-left font-light">
+            <p className="text-16px leading-20-8px d:text-18px d:leading-25px text-white text-center t:text-left font-light t:pr-77px d:pr-276px">
               Do you have questions about Move the Chain? Reach out and we’ll be
               happy to answer your questions!
             </p>
           </div>
-          <div className="mx-auto t:pl-107px d:t:pl-276px d:pr-151px">
+          <div className="d:pt-30px">
             <Button
               type="button"
               variant="primary"
-              className="px-30px py-11px w-140px h-46px rounded-10pxi "
+              className="w-140px h-46px rounded-10pxi"
             >
               Contact Us
             </Button>
