@@ -26,7 +26,7 @@ export default function Home() {
         >
           <p className="text-26px text-white text-center leading-31-2px d:text-48px d:leading-57-6px t:text-left t:pr-160px d:pr-170px">
             Our purpose at{" "}
-            <span className="font-bold text-primary">Mo ve the Chain</span> is
+            <span className="font-bold text-primary">Move the Chain</span> is
             to offer a platform to help promote your cause and raise funds.
           </p>
           <p className="text-16px pt-21px text-white text-center leading-56-6px d:text-18px d:leading-26px font-light pb-50px t:text-left t:pr-364px d:pr-685px">
@@ -59,7 +59,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col t:flex-row gap-39px pb-17px t:pb-33px d:pb-58px">
-            <div>
+            <div className="flex-1">
               <img
                 className="mx-auto pb-13px"
                 src="/images/piggy-bank.svg"
@@ -73,7 +73,7 @@ export default function Home() {
                 promote causes, fundraise digitally and engage with donors.
               </p>
             </div>
-            <div>
+            <div className="flex-1">
               <img
                 className="mx-auto pb-13px"
                 src="/images/connection.svg"
@@ -88,7 +88,7 @@ export default function Home() {
                 transparent way.
               </p>
             </div>
-            <div>
+            <div className="flex-1">
               <img
                 className="mx-auto pb-13px"
                 src="/images/social-media.svg"
@@ -105,8 +105,8 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="flex flex-row pb-29px">
-              <div className="font-hand text-primary mx-auto text-center text-46px leading-38px d:text-46px d:leading-38px">
+            <div className="flex flex-row justify-center pb-29px">
+              <div className="font-hand text-primary text-46px leading-38px d:text-46px d:leading-38px">
                 Claim your page
               </div>
 
@@ -128,7 +128,6 @@ export default function Home() {
                 />
               </svg>
             </div>
-            {/* TODO: move firulete */}
             <p className="mx-auto text-center text-13px leading-17px d:text-16px d:leading-20-8px pb-24px font-light">
               Find your nonprofit in our database and provide information to
               verify your nonprofit.
