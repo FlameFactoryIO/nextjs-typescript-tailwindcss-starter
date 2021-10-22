@@ -5,7 +5,7 @@ const Input: FC<{
   className?: string,
   value?: string,
   placeholder?: string,
-  onChange?: () => void,
+  onChange?: (value: string) => void,
   variant?: "primary" | "secondary",
 }> = ({
   disabled,
@@ -19,7 +19,7 @@ const Input: FC<{
     className={`appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-24px focus:outline-none focus:ring focus:ring-${variant}-50 ${disabled ? "bg-gray-200 cursor-not-allowed" : ""} ${className}`}
     placeholder={placeholder}
     value={value}
-    onChange={onChange}
+    onChange={(e) => onChange(e.target.value)}
     disabled={disabled}
   />;
 

@@ -6,8 +6,8 @@ import Input from "./Input";
 const Footer: FC = () => {
   const [emailAddress, setEmailAddress] = useState<string>("");
 
-  const handleEmailAddressChange = (e) => {
-    setEmailAddress(e.target.value);
+  const handleEmailAddressChange = (e: string) => {
+    setEmailAddress(e);
   };
 
   const handleSubscribeSubmit = () => {
