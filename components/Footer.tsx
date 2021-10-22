@@ -19,7 +19,7 @@ const Footer: FC = () => {
     <div className="grid t:grid-cols-4 grid-cols-2">
       <div className="t:col-span-4 col-span-2 pt-30px">
         <img className="mx-auto" src="/images/mtc.svg" alt="logo" />
-        <div className="mx-auto text-center text-26px t:leading-16px font-bold d:invisible">
+        <div className="mx-auto text-center text-26px t:leading-16px font-bold d:hidden mt-13px t:mt-21px d:mt-16px">
           Move the Chain
         </div>
       </div>
@@ -35,12 +35,11 @@ const Footer: FC = () => {
           <div className="d:mt-28px flex flex-col d:flex-row d:flex-wrap">
             <div className="t:min-w-300px t:max-w-300px t:mt-0 mt-25px t:mb-20px">
               <Input
-                className="rounded-10pxi"
                 placeholder="Email address..."
-                // onChange={handleEmailAddressChange}
+                onChange={handleEmailAddressChange}
               />
             </div>
-            <div className="mx-auto t:ml-1px t:mt-0 mt-15px">
+            <div className="mx-auto t:ml-1px t:mt-0 mt-15px d:ml-5px">
               <Button type="submit">Subscribe</Button>
             </div>
           </div>
@@ -75,7 +74,7 @@ const Footer: FC = () => {
         <div className="text-15px leading-22-5px t:text-18px t:leading-27px d:text-18px font-bold d:font-extrabold ">
           Contact
         </div>
-        <ul className="text-13px t:text-14px  leading-25px pb-5px font-normal t:font-light d:font-normal">
+        <ul className="text-13px t:text-14px leading-25px pb-5px font-normal t:font-light d:font-normal">
           <li>
             <a href="/corporation-contact">Corporation Contact</a>
           </li>

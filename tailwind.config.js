@@ -52,6 +52,10 @@ module.exports = {
         "24pxi": "24px !important",
         "26px": "26px",
       },
+      borderWidth: {
+        "1px": "1px",
+        "2px": "2px",
+      },
       lineHeight: {
         128: "1.56rem",
         "13px": "13px",
@@ -83,6 +87,7 @@ module.exports = {
         "65px": "65px",
       },
       spacing: {
+        "0-5px": "0.5px",
         "1px": "1px",
         "2px": "2px",
         "3px": "3px",
@@ -125,6 +130,7 @@ module.exports = {
         "45px": "45px",
         "46px": "46px",
         "48px": "48px",
+        "49px": "49px",
         "50px": "50px",
         "51px": "51px",
         "52px": "52px",
@@ -138,6 +144,7 @@ module.exports = {
         "62px": "62px",
         "67px": "67px",
         "68px": "68px",
+        "69px": "69px",
         "70px": "70px",
         "72px": "72px",
         "75px": "75px",
@@ -171,7 +178,10 @@ module.exports = {
       },
       width: {
         "32px": "32px",
+        "42px": "42px",
         "43px": "43px",
+        "44px": "44px",
+        "46px": "46px",
         "50px": "50px",
         "60px": "60px",
         "90px": "90px",
@@ -204,7 +214,9 @@ module.exports = {
       },
       height: {
         "32px": "32px",
+        "42px": "42px",
         "43px": "43px",
+        "44px": "44px",
         "46px": "46px",
         "50px": "50px",
         "70px": "70px",
@@ -223,7 +235,9 @@ module.exports = {
         "333px": "333px",
         "380px": "380px",
         "352px": "352px",
+        "480px": "480px",
         "489px": "489px",
+        "500px": "500px",
         "520px": "520px",
         "542px": "542px",
         "640px": "640px",
@@ -250,6 +264,7 @@ module.exports = {
         "760px": "760px",
         "740px": "740px",
         "768px": "768px",
+        "914px": "914px",
         "1140px": "1140px",
       },
       minHeight: {

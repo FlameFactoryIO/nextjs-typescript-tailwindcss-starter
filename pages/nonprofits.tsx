@@ -15,14 +15,14 @@ export default function Home() {
 
       <div
         className="px-20px pt-82px  
-      t:pt-104px t:px-30px 
-      d:pt-148px d:pr-50px  d:pl-120px
-
-      bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right"
+          t:pt-104px t:px-30px t:pb-50px
+          d:pt-148px d:pr-50px d:pl-120px d:pb-100px
+        "
+        style={{backgroundImage: "url('/images/nonprofits/background.png')", backgroundRepeat: "no-repeat", backgroundPosition: "top", backgroundSize: "cover"}}
       >
         <div
           id="our-purpose"
-          className="flex flex-col  mx-auto relative t:justify-start  t:pb-50px d:pb-100px "
+          className="flex flex-col mx-auto t:justify-start"
         >
           <p className="text-26px text-white text-center leading-31-2px d:text-48px d:leading-57-6px t:text-left t:pr-160px d:pr-170px">
             Our purpose at{" "}
@@ -38,7 +38,7 @@ export default function Home() {
           <Button
             type="button"
             variant="primary"
-            className=" px-30px py-11px w-140px h-46px rounded-10pxi hidden t:block"
+            className="px-30px w-140px h-46px rounded-10pxi hidden t:block"
           >
             Get started
           </Button>
@@ -66,7 +66,7 @@ export default function Home() {
                 alt="logo"
               />
               <div className="mx-auto pb-8px text-center text-16px font-bold leading-24px d:text-20px d:leading-24px">
-                We 'll cover the cost
+                We'll cover the cost
               </div>
               <p className="mx-auto text-center text-13px leading-17px d:text-16px d:leading-20-8px font-light">
                 Move the Chain provides a free platform for nonprofits to
@@ -143,13 +143,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="px-20px py-50px  w-full">
-        <div id="steps" className="grid grid-rows-4 space-y-40px ">
+      <div className="px-20px py-50px">
+        <div id="steps" className="grid grid-rows-4 space-y-40px t:max-w-1140px mx-auto">
           <div
             id="step-1"
-            className="grid grid-rows-2 t:grid-cols-2 t:grid-rows-1 t:gap-x-20"
+            className="t:grid t:grid-cols-2 t:grid-rows-1 t:gap-x-20"
           >
-            <div id="step-1-steps" className=" flex flex-col pb-15px">
+            <div className="self-center flex flex-col pb-15px">
               <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 1
               </div>
@@ -161,7 +161,7 @@ export default function Home() {
                 the Chain! Follow those{" "}
                 <span className="font-bold">simple steps </span>to get started:
               </p>
-              <div className="px-20px ">
+              <div className="px-20px">
                 <ol className="list-decimal text-primary text-13px leading-17px flex flex-col gap-y-14px font-bold">
                   <li>
                     <p className="text-black font-light pl-9px">
@@ -190,21 +190,20 @@ export default function Home() {
                 </ol>
               </div>
             </div>
-            <div
-              id="step-1-img"
-              className="grid grid-col-2 grid-rows-2  relative"
-            >
-              <div className=" bg-gray-200 col-span-2 row-span-2"></div>
+
+            <div className="t:relative">
+              <div className="t:absolute w-1/2 top-0 right-0 bottom-0 rounded-10px" style={{backgroundColor: "#FFD234"}} />
+              <div className="t:absolute top-10px left-10px bottom-10px right-10px flex">
+                <img alt="" src="/images/nonprofits/step1.png" className="object-contain w-full" />
+              </div>
             </div>
           </div>
+
           <div
             id="step-2"
-            className="grid grid-rows-2 t:grid-cols-2  t:grid-rows-1 t:gap-x-20"
+            className="grid grid-rows-2 t:grid-cols-2 t:grid-rows-1 t:gap-x-20"
           >
-            <div
-              id="step-2-steps"
-              className="t:col-start-2 flex flex-col pb-20px "
-            >
+            <div className="self-center t:col-start-2 flex flex-col pb-20px">
               <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 2
               </div>
@@ -233,18 +232,20 @@ export default function Home() {
                 </span>
               </p>
             </div>
-            <div
-              id="step-2-img"
-              className="t:col-start-1 t:row-start-1 grid grid-col-2 grid-rows-2  relative"
-            >
-              <div className=" bg-gray-200 col-span-2 row-span-2"></div>
+
+            <div className="t:col-start-1 t:row-start-1 grid relative">
+              <div className="absolute w-1/2 top-0 left-0 bottom-0 rounded-10px" style={{backgroundColor: "#2D75F8"}} />
+              <div className="absolute top-10px left-10px bottom-10px right-10px flex">
+                <img alt="" src="/images/nonprofits/step2.png" className="object-contain w-full" />
+              </div>
             </div>
           </div>
+
           <div
             id="step-3"
-            className="grid grid-rows-2 t:grid-cols-2 t:grid-rows-1  t:gap-x-20"
+            className="grid grid-rows-2 t:grid-cols-2 t:grid-rows-1 t:gap-x-20 h-500px"
           >
-            <div id="step-3-steps" className=" flex flex-col pb-15px">
+            <div className="self-center flex flex-col pb-15px">
               <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 3
               </div>
@@ -266,48 +267,48 @@ export default function Home() {
                 to do good.{" "}
               </p>
             </div>
-            <div
-              id="step-3-img"
-              className="grid grid-col-2 grid-rows-2  relative"
-            >
-              <div className=" bg-gray-200 col-span-2 row-span-2">
-                {/* TODO: move images */}
+
+            <div aria-hidden className="relative">
+              <div className="absolute w-2/3 top-0 right-0 bottom-0 rounded-10px" style={{backgroundColor: "#091023"}} />
+              <div className="absolute grid grid-cols-2">
+                <img alt="" src="/images/nonprofits/step3-1.png" className="object-contain h-full w-full" />
+                <div className="flex flex-col">
+                  <div className="flex">
+                    <img alt="" src="/images/nonprofits/step3-arrow.svg" className="" />
+                    <div className="font-hand text-white">You get this</div>
+                  </div>
+                  <img alt="" src="/images/nonprofits/step3-2.png" className="" />
+                </div>
               </div>
             </div>
           </div>
+
           <div
             id="step-4"
             className="grid grid-rows-2 t:grid-cols-2  t:grid-rows-1  t:gap-x-20"
           >
-            <div
-              id="step-4-steps"
-              className="t:col-start-2 flex flex-col pb-20px "
-            >
+            <div className="self-center t:col-start-2 flex flex-col pb-20px">
               <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
                 Step 4
               </div>
               <div className="text-20px  leading-24px d:text-34px d:leading-41px font-bold mb-22px">
                 Spread the word and ask your supporters to give.
               </div>
-              <p className="text-13px leading-17px  d:text-16px d:leading-20-8px pb-22px font-light">
+              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
                 Last but certainly not least,{" "}
-                <span className="font-bold"> sharing is key. </span>
+                <span className="font-bold">sharing is key.</span>
               </p>
               <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
                 The impact of sharing on social media, email and text messages
                 cannot be understated in its ability to make your campaign
                 successful. Once your campaign is created, tell everyone about
-                it. The more you share, the more likely you are to
-                <span className="font-bold">reach your goal. </span>{" "}
+                it. The more you share, the more likely you are to{" "}
+                <span className="font-bold">reach your goal.</span>
               </p>
             </div>
-            <div
-              id="step-4-img"
-              className="t:col-start-1 t:row-start-1 grid grid-col-2 grid-rows-2  relative"
-            >
-              <div className=" bg-gray-200 col-span-2 row-span-2">
-                {/* TODO: move images */}
-              </div>
+            <div className="t:col-start-1 t:row-start-1 relative">
+              <div className="absolute w-1/2 top-0 left-0 bottom-0 rounded-10px" style={{backgroundColor: "#FFD234"}} />
+              <img alt="" src="/images/nonprofits/step4-1.png" className="absolute" />
             </div>
           </div>
         </div>
@@ -315,56 +316,76 @@ export default function Home() {
 
       <div className="px-20px pb-43px pt-56px t:pt-46px t:px-30px d:pt-72px d:px-232px d:pb-68px  w-full bg-your-opportunity">
         <div id="what-nonprofit-are" className="flex flex-col gap-30px ">
-          <h1 className="text-20px leading-24px d:text-34px d:leading-41px  text-center font-bold pb-20px">
+          <div className="text-20px leading-24px d:text-34px d:leading-41px  text-center font-bold pb-20px">
             What nonprofits are saying about Move the Chain
-          </h1>
-          <div id="nonprofits-logos" className="pb-29px">
-            <div className="bg-gray-200  ">
-              {/* TODO: logos */}LOGOS
+          </div>
+          <div aria-hidden id="nonprofits-logos" className="grid grid-cols-5 mx-auto">
+
+            <div className="flex">
+              <img alt="" src="/images/nonprofits/arrow-left.svg" className="w-40px" />
+            </div>
+            <div className="flex items-center justify-center">
+              <div className="border-purple-200 border-2px rounded-full p-4px">
+                <img alt="" src="/images/nonprofits/prove.png" className="bg-white rounded-full" />
+              </div>
+            </div>
+            <div className="flex items-center justify-center">
+              <div className="border-primary border-2px rounded-full p-4px">
+                <img alt="" src="/images/nonprofits/girls-who-code.png" className="bg-white rounded-full" />
+              </div>
+            </div>
+            <div className="flex items-center justify-center">
+              <div className="border-purple-200 border-2px rounded-full p-4px">
+                <img alt="" src="/images/nonprofits/chrons.png" className="bg-white rounded-full" />
+              </div>
+            </div>
+            <div className="flex">
+              <img alt="" src="/images/nonprofits/arrow-right.svg" className="w-40px ml-auto" />
             </div>
           </div>
-          <p className="text-16px leading-20-8px  d:text-18px d:leading-25-2px text-center pb-40px ">
+          <p className="text-16px leading-20-8px d:text-18px d:leading-25-2px text-center pb-40px t:w-708px d:max-w-914px mx-auto">
             <span className="font-bold text-primary">“</span>Move the Chain is
             helping us easily connect with new donors without having to worry
             about the back end of tax receipting - so we can focus on our
-            mission.<span className="font-bold text-primary">” </span>
+            mission.<span className="font-bold text-primary">”</span>
           </p>
           <div
             id="ceo-at-prove"
-            className="pb-80px flex flex-row justify-center gap-10px "
+            className="pb-80px t:pb-49px d:pb-69px flex flex-row justify-center gap-10px "
           >
-            <div className=" bg-gray-200 h-43px w-43px">
-              {/* TODO: move images */}CEO
+            <div className="h-50px w-50px border-primary border-2px rounded-full p-2px">
+              <img alt="" src="/images/nonprofits/ceo.png" className="h-42px w-42px rounded-full" />
             </div>
-            <div className="flex flex-col text-16px leading-20-8px  d:text-18px d:leading-24px text-center">
+
+            <div className="flex flex-col text-16px leading-20-8px d:text-18px d:leading-24px">
               <span className="font-bold text-primary">Name of individual</span>
-              <span className="font-bold hidden t:block">
+              <span className="font-bold">
                 - CEO at Girls Who Code
               </span>
-              <span className="font-bold t:hidden">- CEO at Prove</span>
             </div>
           </div>
-          <h1 className="text-24px leading-28-8px d:text-43px d:leading-51-6px  text-center font-bold pb-24px">
-            Frequently Asked Questions
-          </h1>
-          <h1 className="text-16px leading-20-8px d:text-18px d:leading-21-6px text-center text-primary underline font-bold pb-24px">
-            Have another quesiton? Visit our Full FAQ page
-          </h1>
+
+          {/*<div className="text-24px leading-28-8px d:text-43px d:leading-51-6px text-center font-bold pb-24px">*/}
+          {/*  Frequently Asked Questions*/}
+          {/*</div>*/}
+          {/*<div className="text-16px leading-20-8px d:text-18px d:leading-21-6px text-center text-primary underline font-bold pb-24px">*/}
+          {/*  Have another quesiton? Visit our Full FAQ page*/}
+          {/*</div>*/}
         </div>
       </div>
 
-      <div className="px-20px pt-44px pb-50px t:pb-36px t:px-30px d:pt-52px d:pb-44px d:px-120px w-full bg-nonprofit-questions ">
-        <div id="questions" className="flex flex-col t:flex-row gap-40px justify-between">
+      <div className="px-20px pt-44px pb-50px t:pb-36px t:px-30px d:pt-52px d:pb-44px d:px-120px w-full bg-nonprofit-questions">
+        <div id="questions" className="flex flex-col t:flex-row gap-40px justify-between d:max-w-1140px">
           <div>
-            <h1 className="text-20px leading-24px d:text-34px d:leading-41px text-white text-center t:text-left font-bold t:pb-14px">
+            <div className="text-20px leading-24px d:text-34px d:leading-41px text-white text-center t:text-left font-bold t:pb-14px">
               Questions?
-            </h1>
+            </div>
             <p className="text-16px leading-20-8px d:text-18px d:leading-25px text-white text-center t:text-left font-light t:pr-77px d:pr-276px">
               Do you have questions about Move the Chain? Reach out and we’ll be
               happy to answer your questions!
             </p>
           </div>
-          <div className="d:pt-30px">
+          <div className="mx-auto t:mr-0 mt-auto">
             <Button
               type="button"
               variant="primary"
