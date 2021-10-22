@@ -30,7 +30,7 @@ export default function Home() {
              grid t:grid-cols-2"
         >
           <div className="order-2 t:order-1 flex gap-5px max-w-280px">
-            <div className="flex flex-col gap-5px flex-124px ">
+            <div className="flex flex-col gap-5px flex-124px">
               <img aria-hidden alt="" src="/images/home/Rectangle 379.png" />
               <img aria-hidden alt="" src="/images/home/Rectangle 381.png" />
             </div>
