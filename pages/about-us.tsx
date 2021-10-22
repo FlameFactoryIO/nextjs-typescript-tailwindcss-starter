@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Footer from "../components/Footer";
 import TopNav from "../components/TopNav";
+import Image from "next/image";
 
 // noinspection JSUnusedGlobalSymbols
 export default function AboutUs() {
@@ -21,24 +22,15 @@ export default function AboutUs() {
             d:pt-120px d:pb-0 d:gap-0
             flex flex-col t:grid t:grid-cols-2 t:gap-30px items-center"
         >
-          <div className="grid grid-cols-2 t:grid-cols-3 gap-5px d:gap-15px d:w-576px mx-auto t:mr-0 order-2 t:order-first">
-
-            <div className="flex flex-col gap-5px d:gap-15px">
-              <div className="bg-gray-100 w-133px t:w-106px d:w-182px h-133px t:h-104px d:h-180px rounded-24px" />
-              <div className="bg-gray-200 w-133px t:w-106px d:w-182px h-183px t:h-144px d:h-248px rounded-24px" />
-              <div className="bg-gray-300 d:w-182px h-140px hidden d:block rounded-t-24px" />
+          <div className="mx-auto t:mr-0 order-2 t:order-first">
+            <div className="hidden d:block" style={{marginBottom: -7}}>
+              <Image src="/images/about-us/hero-d.png" width={575} height={598} />
             </div>
-
-            <div className="flex flex-col gap-5px d:gap-15px">
-              <div className="bg-gray-400 w-133px t:w-106px d:w-182px h-183px t:h-144px d:h-248px rounded-24px" />
-              <div className="bg-gray-500 w-133px t:w-106px d:w-182px h-133px t:h-104px d:h-180px rounded-24px" />
-              <div className="bg-gray-600 w-133px t:w-106px d:w-182px h-140px hidden d:block rounded-t-24px" />
+            <div className="hidden t:block d:hidden">
+              <Image src="/images/about-us/hero-t.png" width={575} height={444} />
             </div>
-
-            <div className="hidden t:flex flex-col gap-5px d:gap-15px">
-              <div className="bg-gray-700 w-133px t:w-106px d:w-182px t:h-104px d:h-180px rounded-24px" />
-              <div className="bg-gray-800 w-133px t:w-106px d:w-182px t:h-144px d:h-248px rounded-24px" />
-              <div className="bg-gray-900 w-133px t:w-106px d:w-182px h-140px hidden d:block rounded-t-24px" />
+            <div className="t:hidden">
+              <Image src="/images/about-us/hero.png" width={378} height={444} />
             </div>
           </div>
 
@@ -56,21 +48,22 @@ export default function AboutUs() {
       <div className="w-full grid gird-cols-1 t:grid-cols-2">
         <div
           id="our-mission"
-          className="
-            t:max-w-335px d:max-w-570px mx-auto
-            pt-44px pb-0 pl-0 pr-20px
+          className=" t:mr-0
+            pt-44px pb-0 pl-0
             t:pt-98px t:pb-0
             d:pt-67px d:pb-0 d:gap-0
           "
         >
-          <div className="mx-auto t:mr-0 text-center t:max-w-335px">
-            <div className="font-bold text-24px leading-28-8px d:text-43px d:leading-51-6px">
-              Our Mission
+          <div className="d:max-w-570px ml-auto">
+            <div className="mx-auto text-center">
+              <div className="font-bold text-24px leading-28-8px d:text-43px d:leading-51-6px mx-auto">
+                Our Mission
+              </div>
+              <div className="font-light text-13px leading-16-9px d:text-16px d:leading-24px mt-20px t:max-w-335px d:max-w-none mx-auto">
+                The mission of <span className="text-primary font-bold">Move the Chain</span> is to challenge society to evolve positively and make the world a better place. Move the Chain makes it fun, transparent and empowering to donate and promote good causes.
+              </div>
+              <Image alt="" src="/images/about-us/our-mission.png" layout="responsive" objectFit="contain" width={643} height={583} />
             </div>
-            <div className="font-light text-13px leading-16-9px d:text-16px d:leading-24px mt-20px">
-              The mission of <span className="text-primary font-bold">Move the Chain</span> is to challenge society to evolve positively and make the world a better place. Move the Chain makes it fun, transparent and empowering to donate and promote good causes.
-            </div>
-            <img src="/images/about-us/our-mission.png" />
           </div>
         </div>
         <div
@@ -83,45 +76,32 @@ export default function AboutUs() {
             d:pt-120px d:pb-0 d:gap-0
           "
         >
-          <div className="mx-auto t:ml-0 text-center">
-            <img src="/images/about-us/our-vision.png" className="" />
-            <div className="font-light text-25px leading-24px t:mt-35px">👐</div>
-            <div className="font-bold text-24px leading-28-8px t:mt-6">
-              Our Vision
-            </div>
-            <div className="t:font-light t:text-13px t:leading-16-9px t:mt-12px t:max-w-280px t:mx-auto">
-              A world where everyone can make a positive change leveraging the power of action and connection.
+          <div className="d:max-w-570px mr-auto">
+            <div className="mx-auto t:ml-0 text-center">
+              <Image alt="" src="/images/about-us/our-vision.png" layout="responsive" objectFit="contain" width={558} height={442} />
+              <div className="font-light text-25px leading-24px t:mt-35px">👐</div>
+              <div className="font-bold text-24px leading-28-8px d:text-43px d:leading-51-6px mx-auto t:mt-6">
+                Our Vision
+              </div>
+              <div className="t:font-light t:text-13px t:leading-16-9px t:mt-12px t:max-w-335px mx-auto">
+                A world where everyone can make a positive change leveraging the power of action and connection.
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="w-full grid gird-cols-1 t:grid-cols-2"
-           style={{backgroundImage: "url('/images/about-us/why-move-the-chain-background.png')"}}>
-        <div
-          id="why-move-the-chain"
-          className="
-            pt-44px pb-0 pl-0 pr-20px
-            t:pt-98px t:pb-0
-            d:pt-67px d:pb-0 d:gap-0
-          "
-        >
-        </div>
-      </div>
-
-      {/*<div className="w-full pt-48px d:pt-77px bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right">*/}
-      {/*</div>*/}
-
-      {/*<div className="w-full">*/}
-      {/*</div>*/}
-
-      {/*<div className="w-full pt-48px d:pt-77px bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right">*/}
-      {/*</div>*/}
-
-      {/*<div className="w-full">*/}
-      {/*</div>*/}
-
-      {/*<div className="w-full pt-48px d:pt-77px bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right">*/}
+      {/*<div className="w-full grid gird-cols-1 t:grid-cols-2"*/}
+      {/*     style={{backgroundImage: "url('/images/about-us/why-move-the-chain-background.png')"}}>*/}
+      {/*  <div*/}
+      {/*    id="why-move-the-chain"*/}
+      {/*    className="*/}
+      {/*      pt-44px pb-0 pl-0 pr-20px*/}
+      {/*      t:pt-98px t:pb-0*/}
+      {/*      d:pt-67px d:pb-0 d:gap-0*/}
+      {/*    "*/}
+      {/*  >*/}
+      {/*  </div>*/}
       {/*</div>*/}
 
       <div id="footer" className="w-full bg-footer">

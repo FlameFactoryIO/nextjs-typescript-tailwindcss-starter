@@ -50,13 +50,11 @@ export default function Home() {
       d:pt-98px d:pb-80px d:px-240px">
         <div
           id="why-move-the-chain"
-          className="flex-col gap-15px mx-auto text-center"
+          className="flex-col gap-15px mx-auto text-center min-w-280px t:max-w-576px d:max-w-1140px"
         >
-          <div>
-            <img className="mx-auto pb-20px" src="/images/mtc.svg" alt="logo" />
-            <div className="mx-auto pb-35px text-center text-24px font-bold leading-28-5px">
-              Why Move the Chain is right for your nonprofit?
-            </div>
+          <img className="mx-auto pb-20px" src="/images/mtc.svg" alt="logo" />
+          <div className="mx-auto pb-35px text-center text-24px font-bold leading-28-5px">
+            Why Move the Chain is right for your nonprofit?
           </div>
           <div className="flex flex-col t:flex-row gap-39px pb-17px t:pb-33px d:pb-58px">
             <div className="flex-1">
