@@ -57,42 +57,57 @@ export default function AboutUs() {
         <div
           id="our-mission"
           className="
+            t:max-w-335px d:max-w-570px mx-auto
             pt-44px pb-0 pl-0 pr-20px
             t:pt-98px t:pb-0
             d:pt-67px d:pb-0 d:gap-0
           "
         >
-          <div className="w-280px mx-auto t:mr-0 t:w-335px d:w-576px text-center bg-gray-100">
-            <div className="font-bold text-24px leading-28-8px d:text-43px d:leading-51-6px bg-red-100">
+          <div className="mx-auto t:mr-0 text-center t:max-w-335px">
+            <div className="font-bold text-24px leading-28-8px d:text-43px d:leading-51-6px">
               Our Mission
             </div>
-            <div className="font-light text-13px leading-16-9px d:text-16px d:leading-24px bg-green-100">
+            <div className="font-light text-13px leading-16-9px d:text-16px d:leading-24px mt-20px">
               The mission of <span className="text-primary font-bold">Move the Chain</span> is to challenge society to evolve positively and make the world a better place. Move the Chain makes it fun, transparent and empowering to donate and promote good causes.
             </div>
-            <div className="h-333px relative">
-              <div className="bg-purple-200" style={{position: "absolute", height:100, width:100, left: -75, top: 25}}>
-                Girls who Code
-              </div>
-            </div>
+            <img src="/images/about-us/our-mission.png" />
           </div>
         </div>
         <div
           id="our-vision"
           className="
             bg-footer
-            pt-86px pb-20px px-20px
+            pt-50px d:pt-86px
+            pb-20px px-20px
             t:pt-98px t:pb-40px t:px-30px
             d:pt-120px d:pb-0 d:gap-0
           "
         >
-          <div className="w-280px mx-auto t:mr-0 t:w-576px">
-            our vision
+          <div className="mx-auto t:ml-0 text-center">
+            <img src="/images/about-us/our-vision.png" className="" />
+            <div className="font-light text-25px leading-24px t:mt-35px">👐</div>
+            <div className="font-bold text-24px leading-28-8px t:mt-6">
+              Our Vision
+            </div>
+            <div className="t:font-light t:text-13px t:leading-16-9px t:mt-12px t:max-w-280px t:mx-auto">
+              A world where everyone can make a positive change leveraging the power of action and connection.
+            </div>
           </div>
         </div>
       </div>
 
-      {/*<div className="w-full">*/}
-      {/*</div>*/}
+      <div className="w-full grid gird-cols-1 t:grid-cols-2"
+           style={{backgroundImage: "url('/images/about-us/why-move-the-chain-background.png')"}}>
+        <div
+          id="why-move-the-chain"
+          className="
+            pt-44px pb-0 pl-0 pr-20px
+            t:pt-98px t:pb-0
+            d:pt-67px d:pb-0 d:gap-0
+          "
+        >
+        </div>
+      </div>
 
       {/*<div className="w-full pt-48px d:pt-77px bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right">*/}
       {/*</div>*/}
