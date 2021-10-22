@@ -26,10 +26,10 @@ export default function Home() {
         <div
           id="we-connect-charities"
           className="
-            min-w-280px t:min-w-708px d:min-w-1140px t:max-w-708px d:max-w-1140px mx-auto
+            min-w-280px px d:min-w-1140px t:max-w-708px d:max-w-1140px mx-auto
              grid t:grid-cols-2"
         >
-          <div className="order-2 t:order-1 flex gap-5px max-w-280px">
+          <div className="order-2 t:order-1 flex gap-5px max-w-280px t:max-w-345 d:max-w-550px">
             <div className="flex flex-col gap-5px flex-124px">
               <img aria-hidden alt="" src="/images/home/Rectangle 379.png" />
               <img aria-hidden alt="" src="/images/home/Rectangle 381.png" />
