@@ -27,21 +27,16 @@ export default function Home() {
           id="we-connect-charities"
           className="
             min-w-280px px d:min-w-1140px t:max-w-708px d:max-w-1140px mx-auto
-             grid t:grid-cols-2"
+             grid t:grid-cols-2 gap-20px"
         >
-          <div className="order-2 t:order-1 flex gap-5px max-w-280px t:max-w-345 d:max-w-550px">
-            <div className="flex flex-col gap-5px flex-124px">
+          <div
+            className="order-2 t:order-1 grid grid-cols-2 gap-9px ml-auto"
+          >
+            <div className="flex flex-col gap-9px">
               <img aria-hidden alt="" src="/images/home/Rectangle 379.png" />
               <img aria-hidden alt="" src="/images/home/Rectangle 381.png" />
             </div>
-            <div className="flex flex-col gap-9px flex-153px">
-              <img
-                aria-hidden
-                className="object-cover"
-                alt=""
-                src="/images/home/Rectangle 380.png"
-              />
-            </div>{" "}
+            <img aria-hidden alt="" src="/images/home/Rectangle 380.png" />
           </div>
 
           <div className="t:flex-1 flex-none t:order-2 order-1 flex flex-col">
