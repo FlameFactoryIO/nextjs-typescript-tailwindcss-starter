@@ -2,6 +2,7 @@ import Head from "next/head";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
 import TopNav from "../components/TopNav";
+import Image from "next/image";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
@@ -13,40 +14,44 @@ export default function Home() {
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
 
-      <div
-        className="pt-84px px-12px pb-40px 
-        t:pt-97px t:px-30px t:pb-50px 
-        d:pt-98px d:px-120px d:pb-59px
-        bg-we-connect-charities-bg-left"
-        style={{
-          backgroundImage: "url('/images/home/hero-background.png')",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      <div className="w-full bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right">
         <div
-          id="we-connect-charities"
+          id="hero"
           className="
-            min-w-280px px d:min-w-1140px t:max-w-708px d:max-w-1140px mx-auto
-             grid t:grid-cols-2 gap-20px"
+          pt-84px px-12px pb-40px 
+          t:pt-97px t:px-30px t:pb-50px 
+          d:pt-98px d:px-120px d:pb-59px
+          flex flex-col t:grid t:grid-cols-2 gap-36px t:gap-20px d:gap-49px items-center"
         >
-          <div
-            className="order-2 t:order-1 grid grid-cols-2 gap-9px ml-auto"
+          <div id="hero-img" className="w-293px t:min-w-344px t:max-w-340px d:min-w-540px d:max-w-540px  mx-auto t:mr-0 order-2 t:order-first"
           >
-            <div className="flex flex-col gap-9px">
-              <img aria-hidden alt="" src="/images/home/Rectangle 379.png" />
-              <img aria-hidden alt="" src="/images/home/Rectangle 381.png" />
+            <div className="hidden d:block" style={{ marginBottom: -7 }}>
+              <Image
+                src="/images/about-us/hero-d.png"
+                width={540}
+                height={480}
+              />
             </div>
-            <img aria-hidden alt="" src="/images/home/Rectangle 380.png" />
+            <div className="hidden t:block d:hidden">
+              <Image
+                src="/images/about-us/hero-t.png"
+                width={344}
+                height={340}
+              />
+            </div>
+            <div className="t:hidden">
+              <Image src="/images/about-us/hero.png" width={280} height={245} />
+            </div>
           </div>
-
-          <div className="t:flex-1 flex-none t:order-2 order-1 flex flex-col">
-            <p className="text-white text-26px d:text-48px leading-31-2px d:leading-57-6px text-center t:text-left">
+          <div id="hero-we-connect" className="w-293px t:min-w-343px t:max-h-343px d:max-h-480px d:w-544px t:flex-1 flex-none t:order-2 order-1 flex flex-col  d:items-start"
+          >
+            <p className="t:flex-1 text-white text-26px d:text-48px leading-31-2px d:leading-57-6px  text-center t:text-left font-bold  pb-12px t:pb-9px d:pb-19px ">
               We connect charities, corporations and donors.
             </p>
-            <p className="text-white text-14px d:text-18px leading-18-2px d:leading-26px py-12px t:py-9px d:py-19 text-center t:text-left">
+            <p className="t:flex-1 text-white text-14px d:text-18px leading-18-2px d:leading-26px  text-center t:text-left pb-13px t:pb-16px d:pb-17px">
               Making a difference has never been more fun and rewarding.
             </p>
-            <div className="font-hand text-26px d:text-32px leading-38px text-primary py-13px t:py-16px d:py-17 flex">
+            <div className="font-hand text-18px d:text-32px leading-38px text-primary pb-29px t:pb-9px d:pb-52px  flex ">
               <div>How you can help move the chain</div>
               <svg
                 className="ml-10px mt-15px"
@@ -67,41 +72,48 @@ export default function Home() {
               </svg>
             </div>
 
-            <div className="grid grid-cols-1 d:grid-cols-3 grid-rows-3 d:grid-rows-1">
-              <div className="grid grid-cols-2 grid-rows-2 d:grid-cols-1 d:grid-rows-3">
-                <p className="text-white text-16px leading-24px d:flex-1">
+            <div className="flex flex-col d:flex-row gap-10px ">
+              <div className=" grid grid-cols-2 grid-rows-2 d:grid-cols-1 d:grid-rows-3 d:max-w-168px">
+                <p className="text-white text-16px leading-24px d:flex-1 font-bold ">
                   Individuals
                 </p>
-
-                <a className="text-12px leading-18px d:text-14px d:leading-21px text-primary d:order-3 row-span-2 d:row-span-1">
-                  Support a cause →
-                </a>
-
-                <p className="text-white text-12px leading-18px col-span-2 d:col-span-1">
+                <div className="flex d:order-3 d:pb-30px">
+                  <a className="text-12px leading-18px d:text-14px d:leading-21px text-primary font-bold">
+                    Support a cause →
+                  </a>
+                </div>
+                <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light">
                   Donate, share and support your favorite nonprofits.
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 grid-rows-2 d:grid-rows-3 d:grid-cols-1">
-                <p className="text-white text-16px leading-24px d:flex-1">
+              <div className="grid grid-cols-2 grid-rows-2 d:grid-cols-1 d:grid-rows-3">
+                <p className="text-white text-16px leading-24px d:flex-1 font-bold ">
                   Nonprofits
                 </p>
-                <a className="text-12px leading-18px d:text-14px d:leading-21px text-primary d:order-3 row-span-2 d:row-span-1">
-                  Claim your page →
-                </a>
-                <p className="text-white text-12px leading-18px col-span-2">
+                <div className="flex d:order-3">
+                  <a className="text-12px leading-18px d:text-14px d:leading-21px text-primary  font-bold ">
+                    Claim your page →
+                  </a>
+                </div>
+                <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light hidden d:block ">
                   Tell your story to raise funds.
+                </p>
+                <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light d:hidden">
+                  Use your page to start fundraising.{" "}
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 grid-rows-2 d:grid-rows-3 d:grid-cols-1">
-                <p className="text-white text-16px leading-24px d:flex-1">
+              <div className="grid grid-cols-2 grid-rows-2 d:grid-cols-1 d:grid-rows-3">
+                <p className="text-white text-16px leading-24px d:flex-1 font-bold ">
                   Corporations
                 </p>
-                <a className="text-12px leading-18px d:text-14px d:leading-21px text-primary d:order-3 row-span-2 d:row-span-1">
-                  Sponsor an event →
-                </a>
-                <p className="text-white text-12px leading-18px col-span-2">
+                <div className="flex d:order-3">
+                  <a className="text-12px leading-18px d:text-14px d:leading-21px text-primary  font-bold ">
+                    Sponsor an event →
+                  </a>
+                </div>
+                <p className="text-white text-12px leading-18px col-span-2 font-light">
                   Find nonprofits that need your support.
                 </p>
               </div>
@@ -109,6 +121,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       <div className="bg-footer pt-15px pb-14px px-16px t:px-125px d:pt-28px d:pb-27px d:px-245px">
         <div
           id="supporting"
