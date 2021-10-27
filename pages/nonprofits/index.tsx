@@ -174,7 +174,7 @@ export default function Home() {
                       <span className="font-bold">PayPal Giving Fund</span>, you
                       will find your nonprofit. Simply click the{" "}
                       <span className="font-bold">“Claim Page”</span> button to
-                      beging the process
+                      begin the process
                     </p>
                   </li>
                   <li>
