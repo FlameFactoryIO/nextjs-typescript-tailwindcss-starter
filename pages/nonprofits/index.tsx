@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Footer from "../components/Footer";
-import Button from "../components/Button";
-import TopNav from "../components/TopNav";
+import Footer from "../../components/Footer";
+import Button from "../../components/Button";
+import TopNav from "../../components/TopNav";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
