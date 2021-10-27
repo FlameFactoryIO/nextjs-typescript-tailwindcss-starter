@@ -107,8 +107,8 @@ const Footer: FC = () => {
             Terms of Use
           </a>
           <div>|</div>
-          <a className="pl-5px d:pl-5px" href="/ccpta">
-            CCPTA
+          <a className="pl-5px d:pl-5px" href="/ccpa">
+            CCPA
           </a>
         </div>
       </div>

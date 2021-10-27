@@ -55,7 +55,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <div className="w-full grid gird-cols-1 t:grid-cols-2">
+      <div className="w-full grid grid-cols-1 t:grid-cols-2">
         <div
           id="our-mission"
           className=" t:mr-0
