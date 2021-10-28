@@ -1,0 +1,50 @@
+import Challenge from './Challenge';
+import Post from './Post';
+import PostToUser from './PostToUser';
+import Activity from './Activity';
+import ActivityToUser from './ActivityToUser';
+import PostLike from './PostLike';
+import UserFollow from './UserFollow';
+import InterestToUser from './InterestToUser';
+import Contact from './Contact';
+
+export default interface User {
+  id: number;
+  role: 'ADMIN'|'USER'|'ANONYMOUS';
+  name: string;
+  username: string;
+  email: string;
+  mobile: string;
+  otp: number;
+  status: number;
+  password: string;
+  provider: 'GOOGLE'|'FACEBOOK'|'APPLE'|'PHONE'|'EMAIL'|'NONE';
+  socialId: string;
+  profileImage: string;
+  pushToken?: string;
+  bio?: string;
+  nonProfitOrganizations?: [{
+    nonprofit_id?: string;
+    name?: string;
+    logo_url?: string;
+  }];
+  posts: Post[];
+  challenges: Challenge[];
+  contacts: Contact[];
+  activities: Activity[];
+  postToUsers: PostToUser[];
+  activityToUsers: ActivityToUser[];
+  interests: InterestToUser[];
+  likedPosts: PostLike[];
+  followers: UserFollow[];
+  followings: UserFollow[];
+  createdAt?: Date;
+  updatedAt?: Date;
+  justSignedUp?: boolean;
+  testUser: boolean;
+  nonprofitOnboardingFinished: boolean;
+  lastCompletedOnboardingStep?: 'SignedUp'|'EnterYourName'|'CreateAUsername'|'BuildYourBio'|'AddNonprofits'|'ConnectYourFriends'|'AddAPhoto'|'AddABio' | null;
+  type?: 'NONE'|'INFLUENCER'|'BUSINESS'|'NOT_VERIFIED';
+  nonprofitRole: string;
+  paypalId: string;
+}
