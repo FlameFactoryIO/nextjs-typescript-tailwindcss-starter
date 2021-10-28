@@ -34,7 +34,7 @@ const TrendingCampaign: FC<{
   const textColor = variant === "light" ? "text-black" : "text-white";
 
   return (
-    <div className={`flex flex-col ${className}`} onClick={onClick}>
+    <div className={`flex flex-col ${className}`} onClick={() => onDonate(campaign)}>
       <div className="relative select-none">
         {campaign.videoUrl ? (
           <VideoPlayer videoUrl={campaign.videoUrl} videoImage={campaign.imageUrl} className="rounded-20px" />
@@ -103,7 +103,7 @@ const TrendingCampaign: FC<{
         <div className="font-bold text-12px leading-15px underline">Learn more</div>
       </a>
 
-      <Button onClick={onDonate} variant={variant === "light" ? "black" : "white"} className="mt-10px">
+      <Button onClick={() => onDonate(campaign)} variant={variant === "light" ? "black" : "white"} className="mt-10px">
         Donate
       </Button>
     </div>
