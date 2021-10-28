@@ -3,9 +3,76 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import TopNav from "../components/TopNav";
 import Image from "next/image";
+import {useState} from "react";
+import FeaturedNonprofit from "../components/FeaturedNonprofit";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
+  const [featuredNonprofits] = useState([{
+    id: 2354,
+    claimed: true,
+    name: "Nonprofit Name",
+    description: "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
+    path: "nonprofit-name",
+    logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+    bannerUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+    logoBg: "#FFFFFF",
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    interests: [],
+    payments: [],
+    testimonials: [],
+    contacts: [],
+    locations: [],
+    hasCampaigns: 0,
+    campaigns: [],
+    challenges: [],
+    pastCampaigns: [],
+    draftCampaigns: [],
+  },{
+    id: 2355,
+    claimed: true,
+    name: "Nonprofit Name",
+    description: "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
+    path: "nonprofit-name",
+    logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+    bannerUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+    logoBg: "#FFFFFF",
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    interests: [],
+    payments: [],
+    testimonials: [],
+    contacts: [],
+    locations: [],
+    hasCampaigns: 0,
+    campaigns: [],
+    challenges: [],
+    pastCampaigns: [],
+    draftCampaigns: [],
+  },{
+    id: 2356,
+    claimed: true,
+    name: "Nonprofit Name",
+    description: "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
+    path: "nonprofit-name",
+    logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+    bannerUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+    logoBg: "#FFFFFF",
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    interests: [],
+    payments: [],
+    testimonials: [],
+    contacts: [],
+    locations: [],
+    hasCampaigns: 0,
+    campaigns: [],
+    challenges: [],
+    pastCampaigns: [],
+    draftCampaigns: [],
+  }]);
+
   return (
     <div className="w-full min-w-320px">
       <Head>
@@ -18,40 +85,23 @@ export default function Home() {
         <div
           id="hero"
           className="
-          pt-84px px-12px pb-40px 
+          min-w-280px pt-84px px-20px pb-40px
           t:pt-97px t:px-30px t:pb-50px 
           d:pt-98px d:px-120px d:pb-59px
-          flex flex-col t:grid t:grid-cols-2 gap-36px t:gap-20px d:gap-49px items-center"
+          flex flex-col t:grid t:grid-cols-2 gap-36px t:gap-20px d:gap-49px items-center
+          "
         >
-          <div id="hero-img" className="w-293px t:min-w-344px t:max-w-340px d:min-w-540px d:max-w-540px  mx-auto t:mr-0 order-2 t:order-first"
-          >
-            <div className="hidden d:block" style={{ marginBottom: -7 }}>
-              <Image
-                src="/images/about-us/hero-d.png"
-                width={540}
-                height={480}
-              />
-            </div>
-            <div className="hidden t:block d:hidden">
-              <Image
-                src="/images/about-us/hero-t.png"
-                width={344}
-                height={340}
-              />
-            </div>
-            <div className="t:hidden">
-              <Image src="/images/about-us/hero.png" width={280} height={245} />
-            </div>
+          <div id="hero-img" className="t:min-w-344px t:max-w-340px d:min-w-540px d:max-w-540px  mx-auto t:mr-0 order-2 t:order-first">
+            <Image src="/images/home/hero.png" width={549} height={480} />
           </div>
-          <div id="hero-we-connect" className="w-293px t:min-w-343px t:max-h-343px d:max-h-480px d:w-544px t:flex-1 flex-none t:order-2 order-1 flex flex-col  d:items-start"
-          >
+          <div id="hero-we-connect" className="w-293px t:min-w-343px t:max-h-343px d:max-h-480px d:w-544px t:flex-1 flex-none t:order-2 order-1 flex flex-col d:items-start">
             <p className="t:flex-1 text-white text-26px d:text-48px leading-31-2px d:leading-57-6px  text-center t:text-left font-bold  pb-12px t:pb-9px d:pb-19px ">
               We connect charities, corporations and donors.
             </p>
             <p className="t:flex-1 text-white text-14px d:text-18px leading-18-2px d:leading-26px  text-center t:text-left pb-13px t:pb-16px d:pb-17px">
               Making a difference has never been more fun and rewarding.
             </p>
-            <div className="font-hand text-18px d:text-32px leading-38px text-primary pb-29px t:pb-9px d:pb-52px  flex ">
+            <div className="font-hand text-26px leading-38px d:text-32px leading-38px text-primary pb-29px t:pb-9px d:pb-52px  flex ">
               <div>How you can help move the chain</div>
               <svg
                 className="ml-10px mt-15px"
@@ -230,10 +280,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className=" bg-white pt-83px pb-62px">
+      <div className="bg-white pt-83px pb-62px">
         <div
           id="featured-nonprofits"
-          className="w-280px t:w-768px d:w-1140px mx-auto flex flex-col text-center"
+          className="min-w-280px t:min-w-768px d:max-w-1140px mx-auto flex flex-col"
         >
           <h1 className="font-bold text-26px t:text-43px">
             Featured Nonprofits
@@ -245,18 +295,13 @@ export default function Home() {
             </span>{" "}
             All donations to any of the nonprofits are tax deductible.
           </p>
-          <div className="flex flex-col t:flex-row mx-auto gap-10">
-            <div className=" bg-gray-300 flex flex-col">
-              <img style={{ width: 261, height: 320 }} />
-            </div>
-            <div className=" bg-gray-300 flex flex-col">
-              <img style={{ width: 261, height: 320 }} />
-            </div>
-            <div className=" bg-gray-300 flex flex-col">
-              <img style={{ width: 261, height: 320 }} />
-            </div>
-            <div className=" bg-gray-300 flex flex-col">
-              <img style={{ width: 261, height: 320 }} />
+
+          <div className="grid grid-cols-1 grid-rows-2 t:grid-cols-3 d:grid-cols-4 grid-rows-1 gap-32px">
+            {featuredNonprofits.map(fnp => (
+              <FeaturedNonprofit key={fnp.id} nonprofit={fnp} />
+            ))}
+            <div className="">
+              Are youuu
             </div>
           </div>
           <div className=" flex justify-center mx-auto mt-15px">
@@ -270,39 +315,28 @@ export default function Home() {
       <div className="bg-your-opportunity d:py-100px">
         <div
           id="your-opportunity-to-make-impact"
-          className="w-280px t:w-708px d:w-1140px mx-auto  relative flex flex-col t:flex-row "
+          className="min-w-280px d:max-w-1140px mx-auto px-20px t:px-30px d:px-120px relative flex flex-col t:flex-row "
         >
-          <div className="flex-none t:flex-1  t:order-1 order-2 grid grid-cols-2 grid-rows-4 gap-2">
-            <div className="row-span-2 bg-red-300 rounded-2xl ">
-              <img style={{ width: 240, height: 290 }} />
-            </div>
-            <div className="row-span-3 bg-blue-300 rounded-2xl ">
-              <img style={{ width: 300, height: 460 }} />
-            </div>
-            <div className="bg-gray-300 rounded-2xl ">
-              <img style={{ width: 240, height: 160 }} />
-            </div>
-            <div className="col-span-2 bg-green-300 rounded-2xl ">
-              <img style={{ width: 550, height: 190 }} />
-            </div>
+          <div className="t:flex-1 t:order-1 order-2">
+            <Image src="/images/home/impact.png" width={549} height={660} />
           </div>
 
-          <div className="t:flex-1 px-7 flex-none t:order-2 order-1 flex flex-col ">
-            <p className="text-43px font-bold pt-20 pb-10">
+          <div className="t:flex-1 px-7 t:order-2 order-1 flex flex-col">
+            <p className=" d:mt-63px text-24px leading-28-8px d:text-43px d:leading-52px font-bold">
               Your opportunity to make an impact
             </p>
-            <p className="text-18px leading-24px">
+            <p className="d:mt-25px d:-mr-10px text-14px leading-18-2px d:text-18px d:leading-24px font-light">
               Whether you are a nonprofit looking for a{" "}
               <span className="font-bold ">quality channel</span> to spread
               their cause and raise funds, a donor looking to contribute, or a
               corporation looking to partner with nonprofits, we stand by you.{" "}
               <span className="font-bold">
-                We want to Move the Chain together. Whether you are a nonprofit
+                We want to Move the Chain together.
               </span>
             </p>
           </div>
 
-          <div className="static t:absolute flex flex-1 bottom-75px right-0 d:max-w-760px">
+          <div className="static t:absolute flex flex-1 bottom-75px right-0">
             <div className="flex flex-col t:flex-row gap-10px d:gap-20px t:gap-10px mx-auto">
               <div className="flex-1 p-15px pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-160px text-center t:text-left bg-gradient-to-b from-your-opportunity-card-top to-your-opportunity-card-bottom">
                 <h1 className="text-15px leading-22-5px d:text-20px d:leading-30px font-bold">
