@@ -150,7 +150,7 @@ export default function Home() {
           <div className="font-bold text-24px leading-28-8px d:text-43px d:leading-65px">
             What&apos;s Move the chain
           </div>
-          <p className="pt-20px mx-auto text-14px leading-18-2px d:leading-24px d:w-800px">
+          <p className="pt-20px mx-auto text-14px leading-18-2px d:leading-24px d:w-800px font-light">
             Move the Chain is a social giving platform, changing the way you
             give back to causes you care about. We make it fun, transparent and
             empowering to donate to and promote causes that matter to you.

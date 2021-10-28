@@ -138,7 +138,7 @@ const TopNav: FC<{
             <input type="text" placeholder="Search" onChange={handleSearchChange}
                    className="pl-20px py-14px placeholder-gray-400 text-16px leading-24px text-gray-900 relative bg-gray-200 outline-none focus:outline-none w-full pr-10"/>
             <span
-              className="z-10 h-full leading-snug font-normal absolute text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3 cursor-pointer"
+              className="z-10 h-full leading-snug font-normal absolute text-gray-400 bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3 cursor-pointer"
               onClick={handleSearchSubmit}
             >
         <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
