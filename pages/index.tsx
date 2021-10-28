@@ -247,30 +247,32 @@ export default function Home() {
               </svg>
             </div>
 
-            <div className="flex flex-col d:flex-row gap-10px ">
-              <div className=" grid grid-cols-2 grid-rows-2 d:grid-cols-1 d:grid-rows-3 d:max-w-168px">
+            <div className="flex flex-col d:flex-row gap-20px ">
+              <div className="flex-1 grid grid-cols-2 grid-rows-2 d:grid-cols-1 d:grid-rows-3 d:max-w-168px">
                 <p className="text-white text-16px leading-24px d:flex-1 font-bold ">
                   Individuals
                 </p>
-                <div className="flex d:order-3 d:pb-30px">
-                  <a className="text-12px leading-18px d:text-14px d:leading-21px text-primary font-bold">
-                    Support a cause →
-                  </a>
-                </div>
+                <a
+                  href="/individuals"
+                  className="text-12px leading-18px d:text-14px d:leading-21px text-primary font-bold d:order-3 d:mb-30px flex items-center justify-between gap-5px"
+                >
+                  Support a cause <img src="/images/home/➡.svg" />
+                </a>
                 <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light">
                   Donate, share and support your favorite nonprofits.
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 grid-rows-2 d:grid-cols-1 d:grid-rows-3">
+              <div className="flex-1 grid grid-cols-2 grid-rows-2 d:grid-cols-1 d:grid-rows-3">
                 <p className="text-white text-16px leading-24px d:flex-1 font-bold ">
                   Nonprofits
                 </p>
-                <div className="flex d:order-3">
-                  <a className="text-12px leading-18px d:text-14px d:leading-21px text-primary  font-bold ">
-                    Claim your page →
-                  </a>
-                </div>
+                <a
+                  href="/nonprofits"
+                  className="text-12px leading-18px d:text-14px d:leading-21px text-primary font-bold d:order-3 d:mb-30px flex items-center justify-between gap-5px"
+                >
+                    Claim your page <img src="/images/home/➡.svg" />
+                </a>
                 <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light hidden d:block ">
                   Tell your story to raise funds.
                 </p>
@@ -279,15 +281,16 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 grid-rows-2 d:grid-cols-1 d:grid-rows-3">
+              <div className="flex-1 grid grid-cols-2 grid-rows-2 d:grid-cols-1 d:grid-rows-3">
                 <p className="text-white text-16px leading-24px d:flex-1 font-bold ">
                   Corporations
                 </p>
-                <div className="flex d:order-3">
-                  <a className="text-12px leading-18px d:text-14px d:leading-21px text-primary  font-bold ">
-                    Sponsor an event →
-                  </a>
-                </div>
+                <a
+                  href="/corporations"
+                  className="text-12px leading-18px d:text-14px d:leading-21px text-primary font-bold d:order-3 d:mb-30px flex items-center justify-between gap-5px"
+                >
+                  Sponsor an event <img src="/images/home/➡.svg" />
+                </a>
                 <p className="text-white text-12px leading-18px col-span-2 font-light">
                   Find nonprofits that need your support.
                 </p>
