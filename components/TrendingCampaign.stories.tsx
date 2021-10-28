@@ -90,6 +90,6 @@ export const VariantLight = () => (
 // noinspection JSUnusedGlobalSymbols
 export const VariantDark = () => (
   <div className="w-320px bg-black p-20px">
-    <TrendingCampaign campaign={campaign} variant="Dark" />
+    <TrendingCampaign campaign={campaign} variant="dark" />
   </div>
 );

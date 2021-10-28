@@ -4,16 +4,18 @@ import Image from "next/image";
 import Nonprofit from "../shared/Nonprofit";
 import Ellipsis from "@quid/react-ellipsis"
 
-const TrendingCampaign: FC<{
+const FeaturedNonprofit: FC<{
   nonprofit: Nonprofit,
+  className?: string,
 }> = ({
   nonprofit,
+  className = "",
 }) => {
   return (
-    <div className="flex flex-col">
+    <div className={`flex flex-col ${className}`}>
       <a href={`${nonprofit.path}`}>
         <div className="relative select-none cursor-pointer">
-          <Image src={nonprofit.bannerUrl} width="100%" height={322} objectFit="cover" layout="responsive" className="rounded-20px" />
+          <Image src={nonprofit.bannerUrl} width="100%" height="100%" objectFit="cover" layout="responsive" className="rounded-20px" />
 
           <div className="absolute left-10px bottom-10px right-0 flex items-center gap-10px">
             <Image src={nonprofit.logoUrl} width={50} height={50} objectFit="cover" objectPosition="center" className="rounded-full" />
@@ -35,4 +37,4 @@ const TrendingCampaign: FC<{
   );
 }
 
-export default TrendingCampaign;
+export default FeaturedNonprofit;

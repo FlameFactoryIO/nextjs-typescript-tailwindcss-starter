@@ -7,7 +7,7 @@ import {
   FaLinkedinIn,
   FaRegEnvelope,
   FaTwitter,
-} from "react-icons/all";
+} from "react-icons/fa";
 import Image from "next/image";
 import Ellipsis from "@quid/react-ellipsis"
 import Button from "./Button";
@@ -20,9 +20,11 @@ const TrendingCampaign: FC<{
   onShare?: (campaign: Campaign, media: "facebook" | "twitter" | "instagram" | "linkedin" | "email") => void,
   onDonate?: (campaign: Campaign) => void,
   variant?: "dark" | "light",
+  className?: string,
 }> = ({
   campaign,
   variant = "light",
+  className= "",
   onClick = () => {},
   onShare = () => {},
   onDonate = () => {},
@@ -32,12 +34,12 @@ const TrendingCampaign: FC<{
   const textColor = variant === "light" ? "text-black" : "text-white";
 
   return (
-    <div className="flex flex-col" onClick={onClick}>
+    <div className={`flex flex-col ${className}`} onClick={onClick}>
       <div className="relative select-none">
         {campaign.videoUrl ? (
           <VideoPlayer videoUrl={campaign.videoUrl} videoImage={campaign.imageUrl} className="rounded-20px" />
         ) : (
-          <Image src={campaign.imageUrl} width="100%" height={322} objectFit="cover" layout="responsive" className="rounded-20px" />
+          <Image src={campaign.imageUrl} width="100%" height="100%" objectFit="cover" layout="responsive" className="rounded-20px" />
         )}
 
         <div className="absolute top-10px right-10px bg-black bg-opacity-70 text-white rounded-full w-40px">

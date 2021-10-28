@@ -5,9 +5,134 @@ import TopNav from "../components/TopNav";
 import Image from "next/image";
 import {useState} from "react";
 import FeaturedNonprofit from "../components/FeaturedNonprofit";
+import TrendingCampaign from "../components/TrendingCampaign";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
+  const [trendingCampaigns] = useState([{
+    id: 1,
+    title: "Nature Scapes",
+    description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
+    startDate: new Date("2021-09-28T00:00:00-04:00"),
+    endDate: new Date("2022-09-28T00:00:00-04:00"),
+    goal: 10000,
+    raised: 2000,
+    donors: 50,
+    challenges: [],
+    payments: [],
+    // videoUrl: undefined,
+    imageUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+    createdAt: new Date("2021-09-01T00:00:00-04:00"),
+    updatedAt: new Date("2021-09-27T00:00:00-04:00"),
+    nonprofitId: 1,
+    nonprofit: {
+      id: 1,
+      logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+      path: "cool-nonprofit",
+      draftCampaigns: [],
+      pastCampaigns: [],
+      campaigns: [],
+      hasCampaigns: 1,
+      challenges: [],
+      claimed: true,
+      contacts: [],
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      interests: [],
+      locations: [],
+      name: "Cool nonprofit",
+      payments: [],
+      testimonials: [],
+    },
+    timesShared: 50,
+    order: 1,
+    isOpen: true,
+    totalSupporters: 150,
+    shares: 1,
+    totalChallenges: 1,
+  },{
+    id: 1,
+    title: "Nature Scapes",
+    description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
+    startDate: new Date("2021-09-28T00:00:00-04:00"),
+    endDate: new Date("2022-09-28T00:00:00-04:00"),
+    goal: 10000,
+    raised: 2000,
+    donors: 50,
+    challenges: [],
+    payments: [],
+    // videoUrl: undefined,
+    imageUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+    createdAt: new Date("2021-09-01T00:00:00-04:00"),
+    updatedAt: new Date("2021-09-27T00:00:00-04:00"),
+    nonprofitId: 1,
+    nonprofit: {
+      id: 1,
+      logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+      path: "cool-nonprofit",
+      draftCampaigns: [],
+      pastCampaigns: [],
+      campaigns: [],
+      hasCampaigns: 1,
+      challenges: [],
+      claimed: true,
+      contacts: [],
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      interests: [],
+      locations: [],
+      name: "Cool nonprofit",
+      payments: [],
+      testimonials: [],
+    },
+    timesShared: 50,
+    order: 1,
+    isOpen: true,
+    totalSupporters: 150,
+    shares: 1,
+    totalChallenges: 1,
+  },{
+    id: 1,
+    title: "Nature Scapes",
+    description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
+    startDate: new Date("2021-09-28T00:00:00-04:00"),
+    endDate: new Date("2022-09-28T00:00:00-04:00"),
+    goal: 10000,
+    raised: 2000,
+    donors: 50,
+    challenges: [],
+    payments: [],
+    // videoUrl: undefined,
+    imageUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+    createdAt: new Date("2021-09-01T00:00:00-04:00"),
+    updatedAt: new Date("2021-09-27T00:00:00-04:00"),
+    nonprofitId: 1,
+    nonprofit: {
+      id: 1,
+      logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+      path: "cool-nonprofit",
+      draftCampaigns: [],
+      pastCampaigns: [],
+      campaigns: [],
+      hasCampaigns: 1,
+      challenges: [],
+      claimed: true,
+      contacts: [],
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      interests: [],
+      locations: [],
+      name: "Cool nonprofit",
+      payments: [],
+      testimonials: [],
+    },
+    timesShared: 50,
+    order: 1,
+    isOpen: true,
+    totalSupporters: 150,
+    shares: 1,
+    totalChallenges: 1,
+  }])
   const [featuredNonprofits] = useState([{
     id: 2354,
     claimed: true,
@@ -86,7 +211,7 @@ export default function Home() {
           id="hero"
           className="
           min-w-280px pt-84px px-20px pb-40px
-          t:pt-97px t:px-30px t:pb-50px 
+          t:pt-97px t:px-30px t:pb-50px
           d:pt-98px d:px-120px d:pb-59px
           flex flex-col t:grid t:grid-cols-2 gap-36px t:gap-20px d:gap-49px items-center
           "
@@ -205,17 +330,10 @@ export default function Home() {
             give back to causes you care about. We make it fun, transparent and
             empowering to donate to and promote causes that matter to you.
           </p>
+        </div>
 
-          <div className="relative w-280px h-245px t:w-370px t:h-352px d:w-542px d:h-542px mx-auto">
-            {/*<img alt="" src="/images/portrait-white-man-isolated_53876-40306 1.png" className="absolute w-90px h-70px rounded-full" style={{top: -35, left: 245 }} />*/}
-            {/*<img alt="" src="/images/IMG_20200729_115836 1.png" className="absolute w-90px h-121px rounded-full " style={{top: 0, left: 260 }} />*/}
-            {/*<img alt="" src="/images/maxresdefault 1.png" className="absolute w-120px h-104px rounded-full" />*/}
-            {/*<div className="absolute w-520px h-520px rounded-full border-2 flex justify-center items-center" style={{borderColor: "#FEF4F0", boxSizing: "border-box"}}>*/}
-            {/*  <div className="absolute w-380px h-380px rounded-full border-2 flex justify-center items-center" style={{borderColor: "#FEF4F0", boxSizing: "border-box"}}>*/}
-            {/*    <img alt="" src="/images/joel-muniz-KodMXENNaas-unsplash 1.png" className="w-284px h-422px rounded-full" />*/}
-            {/*  </div>*/}
-            {/*</div>*/}
-          </div>
+        <div className="d:mt-60px text-center">
+          <Image src="/images/home/whats-move-the-chain.png" width={540} height={553} className="mx-auto" />
         </div>
 
         <div className="grid grid-rows-3 gap-2 mx-auto text-center text-18px w-280px t:w-708px d:w-800px">
@@ -253,28 +371,18 @@ export default function Home() {
             <span className="font-bold ">#Transparencyiskey </span>
           </p>
 
-          <div className="flex flex-col d:flex-row mx-auto w-286px h-489px gap-10px">
-            <div className=" bg-gray-300 ">
-              <img style={{ width: 261, height: 320 }} />
-            </div>
+          {/* todo(eric): está resuelto para desktop únicamente */}
+          <div className="grid grid-cols-1 grid-rows-2 t:grid-cols-3 d:grid-cols-4 grid-rows-1 gap-32px">
+            {trendingCampaigns.map((tc, index) => (
+              <TrendingCampaign key={tc.id} campaign={tc} variant="dark" />
+            ))}
 
-            <div className="bg-looking-for-a-cause flex-1 rounded-26px pt-27px pb-11px px-15px">
-              <div>
-                <h1 className="text-16px leading-20-8px t:text-24px d:text-20px d:leading-30px font-bold">
-                  Looking for a cause to support?
-                </h1>
-                <p className="text-13px leading-17px d:text-16px d:leading-20px py-26px">
-                  You can support campaigns by different nonprofits by donating,
-                  sharing, or participating in challenges.
-                </p>
+            <div className="flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px" style={{backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6"}}> {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
+              <div className="d:text-20px d:leading-30px font-bold">Looking for a cause to support?</div>
+              <div className="font-light d:text-16px d:leading-20px d:px-20px d:text-center">
+                You can support campaigns by different nonprofits by donating, sharing, or participating in challenges.
               </div>
-              <Button
-                type="button"
-                variant="primary"
-                className="text-13px leading-19-5px d:text-14px d:leading-20px rounded-10pxi"
-              >
-                View all campaigns 👉
-              </Button>
+              <Button variant="primary" className="d:mt-22px rounded-10pxi">View all campaigns  👉</Button>
             </div>
           </div>
         </div>
@@ -296,12 +404,18 @@ export default function Home() {
             All donations to any of the nonprofits are tax deductible.
           </p>
 
+
+          {/* todo(eric): está resuelto para desktop únicamente */}
           <div className="grid grid-cols-1 grid-rows-2 t:grid-cols-3 d:grid-cols-4 grid-rows-1 gap-32px">
-            {featuredNonprofits.map(fnp => (
-              <FeaturedNonprofit key={fnp.id} nonprofit={fnp} />
+            {featuredNonprofits.map((fnp, index) => (
+              <FeaturedNonprofit key={fnp.id} nonprofit={fnp} className={`h-398px ${index > 0 ? "hidden t:block" : ""}`} />
             ))}
-            <div className="">
-              Are youuu
+            <div className="flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px" style={{backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6"}}> {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
+              <div className="d:text-20px d:leading-30px font-bold">Are you a nonprofit?</div>
+              <div className="font-light d:text-16px d:leading-20px d:px-20px d:text-center">
+                Tell your story to raise funds. We’re here to help you spread the word.
+              </div>
+              <Button variant="primary" className="d:mt-22px rounded-10pxi">Claim your page 👉</Button>
             </div>
           </div>
           <div className=" flex justify-center mx-auto mt-15px">
