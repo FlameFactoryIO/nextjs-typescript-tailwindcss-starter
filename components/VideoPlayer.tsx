@@ -4,38 +4,21 @@ import PlayOneVideoAtOnceContext from "./PlayOneVideoAtOnceContext";
 import {FaExpand, FaPlay, FaVolumeMute, FaVolumeUp} from "react-icons/fa";
 import useDeviceType from "./useDeviceType";
 import FullScreenContext from "./FullScreenContext";
+import fscreen from "fscreen";
 
 const VideoPlayer: FC<{
   videoImage: string;
   videoUrl: string;
-  // videoStyle,
-  // videoOverlayStyle,
   presentOverlay?: boolean;
   hideMuteButton?: boolean,
   sendPostView?: () => void; // todo change to onViewed
-  // renderPlayButton,
-  // nativeID,
-  // desktop,
-  // playIconSize,
-  // playButtonStyles,
-  // fullscreenButtonStyle,
   className?: string;
 }> = ({
   videoImage,
   videoUrl,
-  // style,
-  // videoStyle,
-  // videoOverlayStyle,
   presentOverlay = false,
   hideMuteButton = false,
   sendPostView,
-  // renderPlayButton,
-  // nativeID,
-  // desktop,
-  // playIconSize,
-  // playButtonStyles,
-  // fullscreenButtonStyle = {},
-  // useAlternatePlayButtonStyle = false,
   className = "",
 }) => {
   const deviceType = useDeviceType();
@@ -49,8 +32,8 @@ const VideoPlayer: FC<{
   const [hasOverlay, setHasOverlay] = useState(!!presentOverlay);
   const [timeWatched, setTimeWatched] = useState(0);
 
-  const { onPlay } = useContext(PlayOneVideoAtOnceContext);
-  const { enterFullScreen, exitFullScreen, isFullScreen } = useContext(FullScreenContext);
+  const {onPlay} = useContext(PlayOneVideoAtOnceContext);
+  const {exitFullScreen, isFullScreen} = useContext(FullScreenContext);
 
   const isHLSVideo = (videoUrl) => videoUrl.indexOf('.m3u8') > -1;
 
@@ -172,8 +155,10 @@ const VideoPlayer: FC<{
       exitFullScreen().catch(console.error);
       return;
     }
-    enterFullScreen(videoRef.current).catch(console.error);
-  }, [isFullScreen]);
+
+    // enterFullScreen(videoRef.current); // fixme(hmassad): using the context function doesn't work
+    fscreen.requestFullscreen(videoRef.current);
+  }, [exitFullScreen, isFullScreen]);
 
   const handlePlayClick = async () => {
     if (videoRef.current?.paused) {
@@ -181,12 +166,14 @@ const VideoPlayer: FC<{
 
       await videoRef.current.play();
       if (deviceType === "android") {
-        await enterFullScreen(wrapperRef.current);
+        // enterFullScreen(wrapperRef.current); // fixme(hmassad): using the context function doesn't work
+        fscreen.requestFullscreen(wrapperRef.current);
         setTimeout(() => {
           videoRef.current.play();
         }, 100);
       } else if (deviceType === "ios") {
-        enterFullScreen(videoRef.current).catch(console.error);
+        // enterFullScreen(videoRef.current); // fixme(hmassad): using the context function doesn't work
+        fscreen.requestFullscreen(videoRef.current);
       }
       setVideoStatus('playing');
       if (presentOverlay) {
@@ -205,40 +192,46 @@ const VideoPlayer: FC<{
   };
 
   return (
-    <div ref={wrapperRef} className={`relative bg-black rounded-16px overflow-hidden w-260px h-320px ${className}`}>
+    <div ref={wrapperRef} className={`relative bg-black rounded-16px overflow-hidden ${className}`}>
       <video
         ref={videoRef}
         poster={videoImage}
-        className="video-js object-contain h-full mx-auto"
+        className="video-js h-full w-full"
       />
 
-      { hasOverlay ? (
-        <div className={`absolute left-0 top-0 right-0 bottom-0 bg-black bg-opacity-40`} />
-      ) : null }
+      {hasOverlay ? (
+        <div className={`absolute left-0 top-0 right-0 bottom-0 bg-black bg-opacity-40`}/>
+      ) : null}
 
-      { videoStatus !== 'playing' ? (
-        <div className={`absolute left-0 top-0 right-0 bottom-0 flex align-center justify-center items-center`}>
+      {videoStatus !== 'playing' ? (
+        <div className={`absolute left-0 top-0 right-0 bottom-0 flex align-center justify-center items-center cursor-pointer`} onClick={handlePlayClick}>
           <div className="border-4 border-opacity-50 border-white-500 bg-black bg-opacity-50 w-50px h-50px rounded-full flex align-center justify-center items-center">
-            <FaPlay className="text-white" onClick={handlePlayClick} />
+            <FaPlay className="text-white"/>
           </div>
         </div>
-      ) : null }
+      ) : null}
 
-      { videoStatus !== 'loading' && (
-        <div className={`absolute left-0 top-0 right-0 bottom-0`} onClick={handlePlayClick}>
-          { !hideMuteButton ? (
-            isMuted ? (
-              <FaVolumeMute onClick={handleMuteClick} />
-            ) : (
-              <FaVolumeUp onClick={handleMuteClick} />
-            )
-          ) : null }
-
-          { deviceType === "desktop" && !isFullScreen ? (
-            <FaExpand onClick={toggleFullScreen} />
-          ) : null }
-        </div>
+      {videoStatus !== 'loading' && (
+        <div className={`absolute left-0 top-0 right-0 bottom-0 text-white cursor-pointer`} onClick={handlePlayClick}/>
       )}
+
+      {!hideMuteButton ? (
+        <div
+          className="absolute bottom-10px left-10px flex items-center justify-center cursor-pointer hover:bg-black hover:bg-opacity-70 text-white rounded-full h-40px w-40px"
+          onClick={handleMuteClick}
+        >
+          {isMuted ? <FaVolumeMute/> : <FaVolumeUp/>}
+        </div>
+      ) : null}
+
+      {deviceType === "desktop" && !isFullScreen ? (
+        <div
+          className="absolute bottom-10px right-10px flex items-center justify-center cursor-pointer hover:bg-black hover:bg-opacity-70 text-white rounded-full h-40px w-40px"
+          onClick={toggleFullScreen}
+        >
+          <FaExpand/>
+        </div>
+      ) : null}
     </div>
   );
 };
