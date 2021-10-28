@@ -8,7 +8,7 @@ module.exports = {
       "./components/**/*.{js,ts,jsx,tsx}",
       "./public/**/*.html",
     ],
-    safelist: ["primary", "secondary"].flatMap((variant) => [
+    safelist: ["primary", "black", "white"].flatMap((variant) => [
       `bg-${variant}-500`,
       `active:bg-${variant}-600`,
       `ring-${variant}-100`,
@@ -353,7 +353,32 @@ module.exports = {
           800: "#4F1700",
           900: "#1C0800",
         },
-        secondary: defaultTheme.colors.black,
+        'black': {
+          DEFAULT: '#000000',
+          '50': '#737373',
+          '100': '#666666',
+          '200': '#4D4D4D',
+          '300': '#333333',
+          '400': '#1A1A1A',
+          '500': '#000000',
+          '600': '#000000',
+          '700': '#000000',
+          '800': '#000000',
+          '900': '#000000'
+        },
+        'white': {
+          DEFAULT: '#FFFFFF',
+          '50': '#FFFFFF',
+          '100': '#FFFFFF',
+          '200': '#FFFFFF',
+          '300': '#FFFFFF',
+          '400': '#FFFFFF',
+          '500': '#FFFFFF',
+          '600': '#E6E6E6',
+          '700': '#CCCCCC',
+          '800': '#B3B3B3',
+          '900': '#999999'
+        },
         "your-opportunity": "#FEF4F0",
         footer: "#F0F3F8",
         "your-opportunity-card-top": "#0A173C",

@@ -6,7 +6,7 @@ const Input: FC<{
   value?: string,
   placeholder?: string,
   onChange?: (value: string) => void,
-  variant?: "primary" | "secondary",
+  variant?: "primary" | "black" | "white",
 }> = ({
   disabled,
   className = "",
