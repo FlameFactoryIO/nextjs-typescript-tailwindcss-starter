@@ -5,64 +5,34 @@ import {
   FaInstagram,
   FaFacebookF,
   FaLinkedinIn,
-  FaMapMarkerAlt,
   FaRegEnvelope,
-  FaTwitter
+  FaTwitter,
 } from "react-icons/all";
-import Button from "./Button";
 import Image from "next/image";
+import Ellipsis from "@quid/react-ellipsis"
+import Button from "./Button";
 import VideoPlayer from "./VideoPlayer";
+import Campaign from "../shared/Campaign";
 
-export interface Nonprofit {
-  id: number;
-  imageUrl?: string;
-}
-
-export interface Campaign {
-  id: number;
-  title: string;
-  description: string;
-  startDate: Date;
-  endDate: Date;
-  goal: number;
-  raised: number;
-  donors: number;
-  // challenges: Challenge[];
-  // payments: Payment[];
-  videoUrl?: string;
-  originalVideoUrl?: string;
-  imageUrl?: string;
-  shareImageUrl?: string;
-  linkedInImageUrl?: string;
-  createdAt: Date;
-  updatedAt: Date;
-  nonprofitId: number;
-  nonprofit: Nonprofit;
-  timesShared: number;
-  order: number;
-  isOpen: boolean;
-  totalSupporters: number;
-  shares: number;
-  totalChallenges?: number;
-}
-
-const CampaignCard: FC<{
+const TrendingCampaign: FC<{
   campaign: Campaign,
   onClick?: (campaign: Campaign) => void,
   onShare?: (campaign: Campaign, media: "facebook" | "twitter" | "instagram" | "linkedin" | "email") => void,
   onDonate?: (campaign: Campaign) => void,
+  variant?: "dark" | "light",
 }> = ({
   campaign,
+  variant = "light",
   onClick = () => {},
   onShare = () => {},
   onDonate = () => {},
 }) => {
   const [isShareMenuOpen, setShareMenuOpen] = useState(false);
 
+  const textColor = variant === "light" ? "text-black" : "text-white";
+
   return (
-    <div className="flex flex-col"
-      onClick={onClick}
-    >
+    <div className="flex flex-col" onClick={onClick}>
       <div className="relative select-none">
         {campaign.videoUrl ? (
           <VideoPlayer videoUrl={campaign.videoUrl} videoImage={campaign.imageUrl} className="rounded-20px" />
@@ -104,10 +74,10 @@ const CampaignCard: FC<{
         </div>
       </div>
 
-      <a href={`/campaigns/${campaign.id}`}>
-        <div className="mt-10px flex gap-10px">
+      <a href={`/campaigns/${campaign.id}`} className={`${textColor} mt-10px`}>
+        <div className="flex gap-10px">
           <div className="w-60px h-60px rounded-25px">
-            <Image src={campaign.nonprofit.imageUrl} width={60} height={60} objectFit="cover" objectPosition="center" className="rounded-full" />
+            <Image src={campaign.nonprofit.logoUrl} width={60} height={60} objectFit="cover" objectPosition="center" className="rounded-full" />
           </div>
           <div className="flex-1 flex flex-col justify-center gap-6px">
             <div className="font-bold text-14px leading-16px">{campaign.title}</div>
@@ -125,20 +95,17 @@ const CampaignCard: FC<{
           </div>
         </div>
 
-        <div className="mt-10px flex font-light text-12px leading-15px">
-          <div className="overflow-ellipsis whitespace-nowrap overflow-hidden">{campaign.description}</div>
-        </div>
+        <Ellipsis className="mt-10px font-light text-12px leading-15px" maxHeight={40} title={campaign.description}>
+          {campaign.description}
+        </Ellipsis>
         <div className="font-bold text-12px leading-15px underline">Learn more</div>
-        <div className="mt-5px flex items-center text-14px leading-21px">
-          <span className="text-primary"><FaMapMarkerAlt /></span> Austin, TX
-        </div>
       </a>
 
-      <Button onClick={onDonate} variant="black" className="mt-10px bg-black ring-black white">
+      <Button onClick={onDonate} variant={variant === "light" ? "black" : "white"} className="mt-10px">
         Donate
       </Button>
     </div>
   );
 }
 
-export default CampaignCard;
+export default TrendingCampaign;

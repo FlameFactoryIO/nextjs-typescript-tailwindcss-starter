@@ -8,6 +8,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@quid/react-ellipsis": "^4.0.0",
     "fscreen": "^1.2.0",
     "hls.js": "^1.0.11",
     "mobile-detect": "^1.4.5",
