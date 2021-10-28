@@ -24,7 +24,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
-        hand: ["Dancing Script"],
+        hand: ["January Handwriting"],
       },
       fontSize: {
         ...defaultTheme.fontSize,
@@ -88,6 +88,7 @@ module.exports = {
         "38px": "38px",
         "41px": "41px",
         "51-6px": "51.6px",
+        "52px": "52px",
         "56px": "56px",
         "57-6px": "57.6px",
         "65px": "65px",
@@ -124,6 +125,7 @@ module.exports = {
         "29px": "29px",
         "30px": "30px",
         "31px": "31px",
+        "32px": "32px",
         "33px": "33px",
         "34px": "34px",
         "35px": "35px",
@@ -149,8 +151,10 @@ module.exports = {
         "57px": "57px",
         "58px": "58px",
         "59px": "59px",
+        "60px": "60px",
         "61px": "61px",
         "62px": "62px",
+        "63px": "63px",
         "67px": "67px",
         "68px": "68px",
         "69px": "69px",
