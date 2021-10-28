@@ -16,7 +16,7 @@ const Button: FC<{
 }) =>
   <button
     type={type}
-    className={`bg-${variant}-500 text-white active:bg-${variant}-600 font-bold py-2 px-4 leading-24px rounded shadow hover:shadow-lg outline-none focus:ring hover:ring ring-${variant}-100 ease-linear transition-all duration-150 ${disabled ? "opacity-50 cursor-not-allowed" : ""} ${className}`}
+    className={`bg-${variant}-500 text-white active:bg-${variant}-600 font-bold py-2 px-4 leading-24px rounded shadow hover:shadow-lg outline-none focus:ring hover:ring ring-${variant}-100 ease-linear transition-all duration-150 select-none ${disabled ? "opacity-50 cursor-not-allowed" : ""} ${className}`}
     disabled={disabled}
     onClick={onClick}
   >
