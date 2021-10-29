@@ -67,7 +67,7 @@ export default function CorporationsHome() {
         </div>
       </div>
 
-      <div className=" bg-your-opportunity">
+      <div className=" bg-cream">
 
         <div
           id="more-brands"
@@ -142,7 +142,7 @@ export default function CorporationsHome() {
       <div>
 
 
-        <div className="w-full bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right">
+        <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
           <div
             id="corporation"
             className="pt-82px pb-789px px-20px
@@ -205,7 +205,7 @@ export default function CorporationsHome() {
         </div>
       </div>
 
-      <div className="bg-your-opportunity px-20px pt-44px pb-44px
+      <div className="bg-cream px-20px pt-44px pb-44px
                         t:pb-43px t:px-30px
                         d:pt-73px d:pb-52px d:px-380px">
         <div
@@ -250,7 +250,7 @@ export default function CorporationsHome() {
       </div>*/}
 
 
-      <div className="w-full bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right">
+      <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
         <div
           id="provide-contact"
           className="flex flex-col t:grid t:grid-cols-2 t:gap-14px items-center
@@ -276,7 +276,7 @@ export default function CorporationsHome() {
           </div>
 
           <div className="pt-40px">
-            <div className="bg-form-contact w-280px h-635px rounded-40px
+            <div className="bg-white w-280px h-635px rounded-40px
                             t:w-708px t:h-514px
                             d:w-575px d:h-592px">
                        
