@@ -2,6 +2,7 @@ import Head from "next/head";
 import Footer from "../../components/Footer";
 import Button from "../../components/Button";
 import TopNav from "../../components/TopNav";
+import Image from "next/image";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
@@ -14,45 +15,110 @@ export default function Home() {
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
 
       <div
-        className="px-20px pt-82px  
-          t:pt-104px t:px-30px t:pb-50px
-          d:pt-148px d:pr-50px d:pl-120px d:pb-100px
-        "
-        style={{backgroundImage: "url('/images/nonprofits/background.png')", backgroundRepeat: "no-repeat", backgroundPosition: "top", backgroundSize: "cover"}}
+        // style={{
+        //   backgroundImage: "url('/images/nonprofits/background.png')",
+        //   backgroundRepeat: "no-repeat",
+        //   backgroundPosition: "top",
+        //   backgroundSize: "cover",
+        // }}
+        className="w-full bg-gradient-to-r t:relative from-we-connect-charities-bg-left to-we-connect-charities-bg-right
+      flex flex-col "
       >
-        <div
-          id="our-purpose"
-          className="flex flex-col mx-auto t:justify-start"
-        >
-          <p className="text-26px text-white text-center leading-31-2px d:text-48px d:leading-57-6px t:text-left t:pr-160px d:pr-170px">
-            Our purpose at{" "}
-            <span className="font-bold text-primary">Move the Chain</span> is
-            to offer a platform to help promote your cause and raise funds.
-          </p>
-          <p className="text-16px pt-21px text-white text-center leading-56-6px d:text-18px d:leading-26px font-light pb-50px t:text-left t:pr-364px d:pr-685px">
-            We offer a{" "}
-            <span className="font-bold text-white">free platform</span> for your
-            nonprofits allowing you to raise funds digitally, improve your
-            online presence and expand your network to a broader audience.
-          </p>
-          <Button
-            type="button"
-            variant="primary"
-            className="px-30px w-140px h-46px rounded-10pxi hidden t:block"
+        <div className=" d:w-1140px">
+          <div
+            id="our-propose"
+            className="
+            pt-82px px-20px pb-49px
+            t:pb-50px t:pr-0
+            d:pt-148px d:pb-100px
+            flex flex-col   "
           >
-            Get started
-          </Button>
+            <p
+              className="text-26px text-white text-center t:text-left
+          leading-31-2px d:text-48px d:leading-57-6px 
+          pb-19px  
+          px-20px t:pl-31px t:pr-0 t:max-w-579px d:max-w-1040px
+          mx-auto t:ml-0 t:mr-auto
+          relative
+          "
+            >
+              Our purpose at{" "}
+              <span className="font-bold text-primary">Move the Chain</span> is
+              to offer a platform to help promote your cause and raise funds.
+            </p>
+            <p
+              className=" text-16px leading-20-8px
+              d:text-18px d:leading-26px
+              text-white text-center t:text-left 
+                font-light 
+                px-20px  t:pl-31px t:pr-0 t:max-w-375px d:max-w-545px
+                t:pb-25px d:pb-53px
+                mx-auto t:ml-0 t:mr-auto"
+            >
+              We offer a{" "}
+              <span className="font-bold text-white">free platform</span> for
+              your nonprofits allowing you to raise funds digitally, improve
+              your online presence and expand your network to a broader
+              audience.
+            </p>
+            <div className="t:pl-31px">
+              <Button
+                type="button"
+                variant="primary"
+                className="px-30px  w-140px h-46px rounded-10pxi hidden t:block"
+              >
+                Get started
+              </Button>
+            </div>
+          </div>
+          <div
+            id="hero-img"
+            className="flex flex-col items-center t:items-end
+          t:absolute   bottom-0 right-10
+          t:pt-94px
+          "
+          >
+            <div className="block t:hidden d:block">
+              <Image
+                alt=""
+                src="/images/nonprofits/nonprofit-hero-section.png"
+                width={640}
+                height={449}
+                objectFit="contain"
+              />
+            </div>
+
+            <div className="hidden t:block d:hidden ">
+              <Image
+                alt=""
+                src="/images/nonprofits/nonprofit-hero-section.png"
+                width={400}
+                height={282}
+              />
+            </div>
+            {/* <div className="t:hidden bg-yellow-300">
+            <Image
+              alt=""
+              src="/images/nonprofits/nonprofit-hero-section.png"
+              width={320}
+              height={254}
+              
+            />
+          </div> */}
+          </div>
         </div>
       </div>
 
-      <div className="bg-footer px-20px pt-50px pb-51px
+      <div
+        className="bg-footer px-20px pt-50px pb-51px
       t:pb-61px t:px-30px
-      d:pt-98px d:pb-80px d:px-240px">
+      d:pt-98px d:pb-80px d:px-240px"
+      >
         <div
           id="why-move-the-chain"
           className="flex-col gap-15px mx-auto text-center min-w-280px t:max-w-576px d:max-w-1140px"
         >
-          <img className="mx-auto pb-20px" src="/images/mtc.svg" alt="logo" />
+          <image className="mx-auto pb-20px" src="/images/mtc.svg" alt="logo" />
           <div className="mx-auto pb-35px text-center text-24px font-bold leading-28-5px">
             Why Move the Chain is right for your nonprofit?
           </div>
@@ -142,7 +208,10 @@ export default function Home() {
       </div>
 
       <div className="px-20px py-50px">
-        <div id="steps" className="grid grid-rows-4 space-y-40px t:max-w-1140px mx-auto">
+        <div
+          id="steps"
+          className="grid grid-rows-4 space-y-40px t:max-w-1140px mx-auto"
+        >
           <div
             id="step-1"
             className="t:grid t:grid-cols-2 t:grid-rows-1 t:gap-x-20"
@@ -190,9 +259,16 @@ export default function Home() {
             </div>
 
             <div className="t:relative">
-              <div className="t:absolute w-1/2 top-0 right-0 bottom-0 rounded-10px" style={{backgroundColor: "#FFD234"}} />
+              <div
+                className="t:absolute w-1/2 top-0 right-0 bottom-0 rounded-10px"
+                style={{ backgroundColor: "#FFD234" }}
+              />
               <div className="t:absolute top-10px left-10px bottom-10px right-10px flex">
-                <img alt="" src="/images/nonprofits/step1.png" className="object-contain w-full" />
+                <img
+                  alt=""
+                  src="/images/nonprofits/step1.png"
+                  className="object-contain w-full"
+                />
               </div>
             </div>
           </div>
@@ -232,9 +308,16 @@ export default function Home() {
             </div>
 
             <div className="t:col-start-1 t:row-start-1 grid relative">
-              <div className="absolute w-1/2 top-0 left-0 bottom-0 rounded-10px" style={{backgroundColor: "#2D75F8"}} />
+              <div
+                className="absolute w-1/2 top-0 left-0 bottom-0 rounded-10px"
+                style={{ backgroundColor: "#2D75F8" }}
+              />
               <div className="absolute top-10px left-10px bottom-10px right-10px flex">
-                <img alt="" src="/images/nonprofits/step2.png" className="object-contain w-full" />
+                <img
+                  alt=""
+                  src="/images/nonprofits/step2.png"
+                  className="object-contain w-full"
+                />
               </div>
             </div>
           </div>
@@ -267,15 +350,30 @@ export default function Home() {
             </div>
 
             <div aria-hidden className="relative">
-              <div className="absolute w-2/3 top-0 right-0 bottom-0 rounded-10px" style={{backgroundColor: "#091023"}} />
+              <div
+                className="absolute w-2/3 top-0 right-0 bottom-0 rounded-10px"
+                style={{ backgroundColor: "#091023" }}
+              />
               <div className="absolute grid grid-cols-2">
-                <img alt="" src="/images/nonprofits/step3-1.png" className="object-contain h-full w-full" />
+                <img
+                  alt=""
+                  src="/images/nonprofits/step3-1.png"
+                  className="object-contain h-full w-full"
+                />
                 <div className="flex flex-col">
                   <div className="flex">
-                    <img alt="" src="/images/nonprofits/step3-arrow.svg" className="" />
+                    <img
+                      alt=""
+                      src="/images/nonprofits/step3-arrow.svg"
+                      className=""
+                    />
                     <div className="font-hand text-white">You get this</div>
                   </div>
-                  <img alt="" src="/images/nonprofits/step3-2.png" className="" />
+                  <img
+                    alt=""
+                    src="/images/nonprofits/step3-2.png"
+                    className=""
+                  />
                 </div>
               </div>
             </div>
@@ -305,8 +403,15 @@ export default function Home() {
               </p>
             </div>
             <div className="t:col-start-1 t:row-start-1 relative">
-              <div className="absolute w-1/2 top-0 left-0 bottom-0 rounded-10px" style={{backgroundColor: "#FFD234"}} />
-              <img alt="" src="/images/nonprofits/step4-1.png" className="absolute" />
+              <div
+                className="absolute w-1/2 top-0 left-0 bottom-0 rounded-10px"
+                style={{ backgroundColor: "#FFD234" }}
+              />
+              <img
+                alt=""
+                src="/images/nonprofits/step4-1.png"
+                className="absolute"
+              />
             </div>
           </div>
         </div>
@@ -317,28 +422,51 @@ export default function Home() {
           <div className="text-20px leading-24px d:text-34px d:leading-41px  text-center font-bold pb-20px">
             What nonprofits are saying about Move the Chain
           </div>
-          <div aria-hidden id="nonprofits-logos" className="grid grid-cols-5 mx-auto">
-
+          <div
+            aria-hidden
+            id="nonprofits-logos"
+            className="grid grid-cols-5 mx-auto"
+          >
             <div className="flex">
-              <img alt="" src="/images/nonprofits/arrow-left.svg" className="w-40px" />
+              <img
+                alt=""
+                src="/images/nonprofits/arrow-left.svg"
+                className="w-40px"
+              />
             </div>
             <div className="flex items-center justify-center">
               <div className="border-purple-200 border-2px rounded-full p-4px">
-                <img alt="" src="/images/nonprofits/prove.png" className="bg-white rounded-full" />
+                <img
+                  alt=""
+                  src="/images/nonprofits/prove.png"
+                  className="bg-white rounded-full"
+                />
               </div>
             </div>
             <div className="flex items-center justify-center">
               <div className="border-primary border-2px rounded-full p-4px">
-                <img alt="" src="/images/nonprofits/girls-who-code.png" className="bg-white rounded-full" />
+                <img
+                  alt=""
+                  src="/images/nonprofits/girls-who-code.png"
+                  className="bg-white rounded-full"
+                />
               </div>
             </div>
             <div className="flex items-center justify-center">
               <div className="border-purple-200 border-2px rounded-full p-4px">
-                <img alt="" src="/images/nonprofits/chrons.png" className="bg-white rounded-full" />
+                <img
+                  alt=""
+                  src="/images/nonprofits/chrons.png"
+                  className="bg-white rounded-full"
+                />
               </div>
             </div>
             <div className="flex">
-              <img alt="" src="/images/nonprofits/arrow-right.svg" className="w-40px ml-auto" />
+              <img
+                alt=""
+                src="/images/nonprofits/arrow-right.svg"
+                className="w-40px ml-auto"
+              />
             </div>
           </div>
           <p className="text-16px leading-20-8px d:text-18px d:leading-25-2px text-center pb-40px t:w-708px d:max-w-914px mx-auto">
@@ -352,14 +480,16 @@ export default function Home() {
             className="pb-80px t:pb-49px d:pb-69px flex flex-row justify-center gap-10px "
           >
             <div className="h-50px w-50px border-primary border-2px rounded-full p-2px">
-              <img alt="" src="/images/nonprofits/ceo.png" className="h-42px w-42px rounded-full" />
+              <img
+                alt=""
+                src="/images/nonprofits/ceo.png"
+                className="h-42px w-42px rounded-full"
+              />
             </div>
 
             <div className="flex flex-col text-16px leading-20-8px d:text-18px d:leading-24px">
               <span className="font-bold text-primary">Name of individual</span>
-              <span className="font-bold">
-                - CEO at Girls Who Code
-              </span>
+              <span className="font-bold">- CEO at Girls Who Code</span>
             </div>
           </div>
 
@@ -373,7 +503,10 @@ export default function Home() {
       </div>
 
       <div className="px-20px pt-44px pb-50px t:pb-36px t:px-30px d:pt-52px d:pb-44px d:px-120px w-full bg-nonprofit-questions">
-        <div id="questions" className="flex flex-col t:flex-row gap-40px justify-between d:max-w-1140px">
+        <div
+          id="questions"
+          className="flex flex-col t:flex-row gap-40px justify-between d:max-w-1140px"
+        >
           <div>
             <div className="text-20px leading-24px d:text-34px d:leading-41px text-white text-center t:text-left font-bold t:pb-14px">
               Questions?
