@@ -1,9 +1,10 @@
+import {useState} from "react";
 import Head from "next/head";
+import Link from 'next/link'
 import Footer from "../components/Footer";
 import Button from "../components/Button";
 import TopNav from "../components/TopNav";
 import Image from "next/image";
-import {useState} from "react";
 import FeaturedNonprofit from "../components/FeaturedNonprofit";
 import TrendingCampaign from "../components/TrendingCampaign";
 
@@ -206,7 +207,7 @@ export default function Home() {
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
 
-      <div className="w-full bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right">
+      <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
         <div
           id="hero"
           className="
@@ -357,7 +358,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-we-connect-charities-bg-left
+      <div className="bg-blue-dark
         px-20px pt-44px pb-50px
         t:px-30px t:pt-44px t:pb-50px
         d:px-120px d:py-82px">
@@ -407,11 +408,10 @@ export default function Home() {
         </div>
       </div>
 
-
       <div className="bg-white
         px-20px pt-44px pb-50px
         t:px-30px t:pt-44px t:pb-50px
-        d:px-120px d:py-82px">
+        d:px-120px d:pt-82px d:pb-62px">
         <div
           id="featured-nonprofits"
           className="t:max-w-1140px mx-auto flex flex-col text-center"
@@ -454,95 +454,98 @@ export default function Home() {
             <Button variant="primary" className="mt-22px t:m-0 rounded-10pxi whitespace-nowrap">Claim your page 👉</Button>
           </div>
 
-          <a href="/nonprofits/search" className="hidden d:block mx-auto mt-57px">
+          <Link href="/nonprofits/search">
+          <a className="hidden d:block mx-auto mt-57px">
             <Button>Discover more nonprofits</Button>
           </a>
+          </Link>
         </div>
       </div>
 
-
-
-
-
-
-
-
-      <div className="bg-your-opportunity d:py-100px">
+      <div className="pt-44px t:pt-50px d:pt-100px pb-50px d:pb-100px px-20px t:px-30px d:px-120px bg-gradient-to-b from-cream to-white">
         <div
           id="your-opportunity-to-make-impact"
-          className="min-w-280px d:max-w-1140px mx-auto px-20px t:px-30px d:px-120px relative flex flex-col t:flex-row "
+          className="d:max-w-1140px mx-auto t:max-w-768px"
         >
-          <div className="t:flex-1 t:order-1 order-2">
-            <Image src="/images/home/impact.png" width={549} height={660} />
+          <div className="t:grid t:grid-cols-2 t:gap-20px d:gap-30px t:mb-50px">
+            <div className="order-1 t:order-2 flex flex-col">
+              <p className="t:mt-15px d:mt-63px text-24px leading-28-8px d:text-43px d:leading-52px font-bold">
+                Your opportunity to make an impact
+              </p>
+              <p className="mt-20px d:mt-25px d:-mr-10px text-14px leading-18-2px d:text-18px d:leading-24px font-light">
+                Whether you are a nonprofit looking for a{" "}
+                <span className="font-bold ">quality channel</span> to spread
+                their cause and raise funds, a donor looking to contribute, or a
+                corporation looking to partner with nonprofits, we stand by you.{" "}
+                <span className="font-bold">
+                  We want to Move the Chain together.
+                </span>
+              </p>
+            </div>
+
+            <div className="mt-20px t:mt-0">
+              <Image src="/images/home/impact.png" width={549} height={660} layout="responsive" />
+            </div>
           </div>
 
-          <div className="t:flex-1 px-7 t:order-2 order-1 flex flex-col">
-            <p className=" d:mt-63px text-24px leading-28-8px d:text-43px d:leading-52px font-bold">
-              Your opportunity to make an impact
-            </p>
-            <p className="d:mt-25px d:-mr-10px text-14px leading-18-2px d:text-18px d:leading-24px font-light">
-              Whether you are a nonprofit looking for a{" "}
-              <span className="font-bold ">quality channel</span> to spread
-              their cause and raise funds, a donor looking to contribute, or a
-              corporation looking to partner with nonprofits, we stand by you.{" "}
-              <span className="font-bold">
-                We want to Move the Chain together.
-              </span>
-            </p>
-          </div>
-
-          <div className="static t:absolute flex flex-1 bottom-75px right-0">
-            <div className="flex flex-col t:flex-row gap-10px d:gap-20px t:gap-10px mx-auto">
-              <div className="flex-1 p-15px pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-160px text-center t:text-left bg-gradient-to-b from-your-opportunity-card-top to-your-opportunity-card-bottom">
-                <h1 className="text-15px leading-22-5px d:text-20px d:leading-30px font-bold">
-                  Donors
+          <div className="mt-20px t:mt-0 flex flex-1 t:transform t:-translate-y-276px t:-my-276px d:-translate-y-170px d:-my-170px">
+            <div className="flex flex-col t:flex-row gap-10px d:gap-20px mx-auto t:mr-0">
+              <div className="flex-1 p-15px pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-170px text-center t:text-left bg-gradient-to-b from-blue-dark to-blue-darker">
+                <h1 className="text-15px leading-22px d:text-20px d:leading-30px font-bold">
+                  Individuals
                 </h1>
-                <p className="flex-1 mt-5px text-12px leading-14-4px t:text-14px t:leading-18px font-light">
-                  By donating through the Move the Chain platform, you will
-                  always know how your donations make a difference for different
-                  causes.
+                <p className="flex-1 mt-3px text-12px leading-14px d:text-14px d:leading-18px font-light">
+                  By donating through the Move the Chain platform,
+                  you will always know how your donations make a
+                  difference for different causes.
                 </p>
-                <Button
-                  type="button"
-                  variant="primary"
-                  className="mt-15px rounded-10pxi t:px-13px d:px-20px mx-auto t:px-auto t:mx-0"
-                >
-                  Support a cause
-                </Button>
+                <Link href="/individuals">
+                  <Button
+                    type="button"
+                    variant="primary"
+                    className="mt-15px rounded-10pxi t:px-13px d:px-20px mx-auto t:mx-0 t:text-13px t:leading-19px"
+                  >
+                    Support a cause
+                  </Button>
+                </Link>
               </div>
 
-              <div className="flex-1 p-15px pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-160px text-center t:text-left bg-gradient-to-b from-your-opportunity-card-top to-your-opportunity-card-bottom">
-                <h1 className="text-15px leading-22-5px d:text-20px d:leading-30px font-bold">
+              <div className="flex-1 p-15px pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-170px text-center t:text-left bg-gradient-to-b from-blue-dark to-blue-darker">
+                <h1 className="text-15px leading-22px d:text-20px d:leading-30px font-bold">
                   Nonprofits
                 </h1>
-                <p className="flex-1 mt-5px text-12px leading-14-4px t:text-14px t:leading-18px font-light">
+                <p className="flex-1 mt-3px text-12px leading-14px d:text-14px d:leading-18px font-light">
                   Your page on the platform is a channel to promote causes, raise funds, and connect with individuals
                   and corporations for support.
                 </p>
-                <Button
-                  type="button"
-                  variant="primary"
-                  className="mt-15px rounded-10pxi t:px-13px d:px-20px mx-auto t:px-auto t:mx-0"
-                >
-                  Claim your page
-                </Button>
+                <Link href="/nonprofits">
+                  <Button
+                    type="button"
+                    variant="primary"
+                    className="mt-15px rounded-10pxi t:px-13px d:px-20px mx-auto t:px-auto t:mx-0 t:text-13px t:leading-19px"
+                  >
+                    Claim your page
+                  </Button>
+                </Link>
               </div>
 
-              <div className="flex-1 p-15px pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-160px text-center t:text-left bg-gradient-to-b from-your-opportunity-card-top to-your-opportunity-card-bottom">
-                <h1 className="text-15px leading-22-5px d:text-20px d:leading-30px font-bold">
+              <div className="flex-1 p-15px pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-170px text-center t:text-left bg-gradient-to-b from-blue-dark to-blue-darker">
+                <h1 className="text-15px leading-22px d:text-20px d:leading-30px font-bold">
                   Corporations
                 </h1>
-                <p className="flex-1 mt-5px text-12px leading-14-4px t:text-14px t:leading-18px font-light">
+                <p className="flex-1 mt-3px text-12px leading-14px d:text-14px d:leading-18px font-light">
                   Find nonprofit organizations that need your support. Partner with them and their supporters to aim
                   your efforts where you are needed the most.
                 </p>
-                <Button
-                  type="button"
-                  variant="primary"
-                  className="mt-15px rounded-10pxi t:px-13px d:px-20px mx-auto t:px-auto t:mx-0"
-                >
-                  Find out more
-                </Button>
+                <Link href="/corporations">
+                  <Button
+                    type="button"
+                    variant="primary"
+                    className="mt-15px rounded-10pxi t:px-13px d:px-20px mx-auto t:px-auto t:mx-0 t:text-13px t:leading-19-5px"
+                  >
+                    Find out more
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

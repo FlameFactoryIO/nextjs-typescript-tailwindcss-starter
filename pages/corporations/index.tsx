@@ -13,7 +13,7 @@ export default function CorporationsHome() {
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
 
-      <div className="w-full bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right">
+      <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
         <div
           id="hero"
           className="
