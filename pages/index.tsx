@@ -418,7 +418,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 t:grid-cols-3 d:grid-cols-4 mt-23px t:mt-30px d:mt-50px gap-32px">
             {featuredNonprofits.map((fnp, index) => (
-              <FeaturedNonprofit key={fnp.id} nonprofit={fnp} variant="light" className={index > 0 ? "hidden t:block" : ""} />
+              <FeaturedNonprofit key={fnp.id} nonprofit={fnp} className={index > 0 ? "hidden t:block" : ""} />
             ))}
 
             <div className="hidden d:flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px" style={{backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6"}}> {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
