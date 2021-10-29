@@ -51,7 +51,7 @@ export default function Home() {
     shares: 1,
     totalChallenges: 1,
   },{
-    id: 1,
+    id: 2,
     title: "Nature Scapes",
     description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
     startDate: new Date("2021-09-28T00:00:00-04:00"),
@@ -67,7 +67,7 @@ export default function Home() {
     updatedAt: new Date("2021-09-27T00:00:00-04:00"),
     nonprofitId: 1,
     nonprofit: {
-      id: 1,
+      id: 3,
       logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
       path: "cool-nonprofit",
       draftCampaigns: [],
@@ -92,7 +92,7 @@ export default function Home() {
     shares: 1,
     totalChallenges: 1,
   },{
-    id: 1,
+    id: 3,
     title: "Nature Scapes",
     description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
     startDate: new Date("2021-09-28T00:00:00-04:00"),
@@ -303,17 +303,17 @@ export default function Home() {
       <div className="bg-footer pt-15px pb-14px px-16px t:px-125px d:pt-28px d:pb-27px d:px-245px">
         <div
           id="supporting"
-          className="mx-auto grid grid-rows-3 gap-2 text-center"
+          className="mx-auto text-center"
         >
           <p className="text-18px leading-21-6px t:text-20px t:leading-24px d:text-28px d:leading-26px text-center">
             Supporting more than{" "}
-            <span className="font-bold text-primary">140k+</span> vetted
-            nonprofit organizations.
+            <span className="font-bold text-primary">140k+</span>{" "}
+            vetted nonprofit organizations.
           </p>
-          <p className="text-12px leading-26px d:text-18px d:leading-26px font-bold ">
+          <p className="text-12px leading-26px d:text-18px d:leading-26px font-bold">
             All donations are tax deductible.
           </p>
-          <p className="text-24px leading-26px d:text-34px">🙌</p>
+          <p className="text-24px leading-26px d:text-34px my-14px">🙌</p>
         </div>
       </div>
 
@@ -363,7 +363,7 @@ export default function Home() {
         d:px-120px d:py-82px">
         <div
           id="trending-campaigns"
-          className="flex flex-col text-center"
+          className="t:max-w-1140px mx-auto flex flex-col text-center"
         >
           <h1 className="font-bold text-24px leading-28-8px d:text-43px d:leading-65px text-white">
             Trending Campaigns
@@ -394,7 +394,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="d:hidden mt-23px t:mt-28px flex flex-col t:flex-row items-center rounded-26px p-15px t:p-20px" style={{backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6"}}> {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
+          <div className="d:hidden mt-23px t:mt-28px flex flex-col t:flex-row items-center justify-between rounded-26px p-15px t:p-20px" style={{backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6"}}> {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
             <div className="t:text-left">
               <div className="text-16px leading-20-8px t:text-15px t:leading-22-5px font-bold">Looking for a cause to support?</div>
               <div className="mt-10px text-13px leading-16-9px font-light">
@@ -407,43 +407,65 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white pt-83px pb-62px">
+
+      <div className="bg-white
+        px-20px pt-44px pb-50px
+        t:px-30px t:pt-44px t:pb-50px
+        d:px-120px d:py-82px">
         <div
           id="featured-nonprofits"
-          className="min-w-280px t:min-w-768px d:max-w-1140px mx-auto flex flex-col"
+          className="t:max-w-1140px mx-auto flex flex-col text-center"
         >
-          <h1 className="font-bold text-26px t:text-43px">
+          <h1 className="text-24px leading-28-8px d:text-43px d:leading-65px font-bold">
             Featured Nonprofits
           </h1>
-          <p className="text-18px font-light t:w-max-740px">
-            All nonprofits on{" "}
-            <span className="font-bold ">
-              Move the Chain verified 501c3 nonprofit organizations.
-            </span>{" "}
+
+          <p className="
+            mt-20px text-14px leading-18-2px
+            d:mt-37px d:text-18px d:leading-24px
+            font-light
+          ">
+            All nonprofits on{' '}
+            <span className="font-bold ">Move the Chain verified 501c3 nonprofit organizations</span>.
             All donations to any of the nonprofits are tax deductible.
           </p>
 
-
-          {/* todo(eric): está resuelto para desktop únicamente */}
-          <div className="grid grid-cols-1 grid-rows-2 t:grid-cols-3 d:grid-cols-4 grid-rows-1 gap-32px">
+          <div className="grid grid-cols-1 t:grid-cols-3 d:grid-cols-4 mt-23px t:mt-30px d:mt-50px gap-32px">
             {featuredNonprofits.map((fnp, index) => (
-              <FeaturedNonprofit key={fnp.id} nonprofit={fnp} className={`h-398px ${index > 0 ? "hidden t:block" : ""}`} />
+              <FeaturedNonprofit key={fnp.id} nonprofit={fnp} variant="light" className={index > 0 ? "hidden t:block" : ""} />
             ))}
-            <div className="flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px" style={{backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6"}}> {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
-              <div className="d:text-20px d:leading-30px font-bold">Are you a nonprofit?</div>
+
+            <div className="hidden d:flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px" style={{backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6"}}> {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
+              <div className="d:text-20px d:leading-30px font-bold">Looking for a cause to support?</div>
               <div className="font-light d:text-16px d:leading-20px d:px-20px d:text-center">
                 Tell your story to raise funds. We’re here to help you spread the word.
               </div>
               <Button variant="primary" className="d:mt-22px rounded-10pxi">Claim your page 👉</Button>
             </div>
           </div>
-          <div className=" flex justify-center mx-auto mt-15px">
-            <Button type="button" variant="primary">
-              Discover more nonprofits
-            </Button>
+
+          <div className="d:hidden mt-23px t:mt-28px flex flex-col t:flex-row items-center justify-between rounded-26px p-15px t:p-20px" style={{backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6"}}> {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
+            <div className="t:text-left">
+              <div className="text-16px leading-20-8px t:text-15px t:leading-22-5px font-bold">Looking for a cause to support?</div>
+              <div className="mt-10px text-13px leading-16-9px font-light">
+                Tell your story to raise funds. We’re here to help you spread the word.
+              </div>
+            </div>
+            <Button variant="primary" className="mt-22px t:m-0 rounded-10pxi whitespace-nowrap">Claim your page 👉</Button>
           </div>
+
+          <a href="/nonprofits/search" className="hidden d:block mx-auto mt-57px">
+            <Button>Discover more nonprofits</Button>
+          </a>
         </div>
       </div>
+
+
+
+
+
+
+
 
       <div className="bg-your-opportunity d:py-100px">
         <div
