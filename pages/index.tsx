@@ -3,200 +3,226 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import TopNav from "../components/TopNav";
 import Image from "next/image";
-import {useState} from "react";
+import { useState } from "react";
 import FeaturedNonprofit from "../components/FeaturedNonprofit";
 import TrendingCampaign from "../components/TrendingCampaign";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
-  const [trendingCampaigns] = useState([{
-    id: 1,
-    title: "Nature Scapes",
-    description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
-    startDate: new Date("2021-09-28T00:00:00-04:00"),
-    endDate: new Date("2022-09-28T00:00:00-04:00"),
-    goal: 10000,
-    raised: 2000,
-    donors: 50,
-    challenges: [],
-    payments: [],
-    // videoUrl: undefined,
-    imageUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-    createdAt: new Date("2021-09-01T00:00:00-04:00"),
-    updatedAt: new Date("2021-09-27T00:00:00-04:00"),
-    nonprofitId: 1,
-    nonprofit: {
+  const [trendingCampaigns] = useState([
+    {
       id: 1,
-      logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-      path: "cool-nonprofit",
-      draftCampaigns: [],
-      pastCampaigns: [],
-      campaigns: [],
-      hasCampaigns: 1,
+      title: "Nature Scapes",
+      description:
+        "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
+      startDate: new Date("2021-09-28T00:00:00-04:00"),
+      endDate: new Date("2022-09-28T00:00:00-04:00"),
+      goal: 10000,
+      raised: 2000,
+      donors: 50,
       challenges: [],
+      payments: [],
+      // videoUrl: undefined,
+      imageUrl:
+        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+      createdAt: new Date("2021-09-01T00:00:00-04:00"),
+      updatedAt: new Date("2021-09-27T00:00:00-04:00"),
+      nonprofitId: 1,
+      nonprofit: {
+        id: 1,
+        logoUrl:
+          "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+        path: "cool-nonprofit",
+        draftCampaigns: [],
+        pastCampaigns: [],
+        campaigns: [],
+        hasCampaigns: 1,
+        challenges: [],
+        claimed: true,
+        contacts: [],
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        interests: [],
+        locations: [],
+        name: "Cool nonprofit",
+        payments: [],
+        testimonials: [],
+      },
+      timesShared: 50,
+      order: 1,
+      isOpen: true,
+      totalSupporters: 150,
+      shares: 1,
+      totalChallenges: 1,
+    },
+    {
+      id: 1,
+      title: "Nature Scapes",
+      description:
+        "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
+      startDate: new Date("2021-09-28T00:00:00-04:00"),
+      endDate: new Date("2022-09-28T00:00:00-04:00"),
+      goal: 10000,
+      raised: 2000,
+      donors: 50,
+      challenges: [],
+      payments: [],
+      // videoUrl: undefined,
+      imageUrl:
+        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+      createdAt: new Date("2021-09-01T00:00:00-04:00"),
+      updatedAt: new Date("2021-09-27T00:00:00-04:00"),
+      nonprofitId: 1,
+      nonprofit: {
+        id: 1,
+        logoUrl:
+          "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+        path: "cool-nonprofit",
+        draftCampaigns: [],
+        pastCampaigns: [],
+        campaigns: [],
+        hasCampaigns: 1,
+        challenges: [],
+        claimed: true,
+        contacts: [],
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        interests: [],
+        locations: [],
+        name: "Cool nonprofit",
+        payments: [],
+        testimonials: [],
+      },
+      timesShared: 50,
+      order: 1,
+      isOpen: true,
+      totalSupporters: 150,
+      shares: 1,
+      totalChallenges: 1,
+    },
+    {
+      id: 1,
+      title: "Nature Scapes",
+      description:
+        "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
+      startDate: new Date("2021-09-28T00:00:00-04:00"),
+      endDate: new Date("2022-09-28T00:00:00-04:00"),
+      goal: 10000,
+      raised: 2000,
+      donors: 50,
+      challenges: [],
+      payments: [],
+      // videoUrl: undefined,
+      imageUrl:
+        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+      createdAt: new Date("2021-09-01T00:00:00-04:00"),
+      updatedAt: new Date("2021-09-27T00:00:00-04:00"),
+      nonprofitId: 1,
+      nonprofit: {
+        id: 1,
+        logoUrl:
+          "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+        path: "cool-nonprofit",
+        draftCampaigns: [],
+        pastCampaigns: [],
+        campaigns: [],
+        hasCampaigns: 1,
+        challenges: [],
+        claimed: true,
+        contacts: [],
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        interests: [],
+        locations: [],
+        name: "Cool nonprofit",
+        payments: [],
+        testimonials: [],
+      },
+      timesShared: 50,
+      order: 1,
+      isOpen: true,
+      totalSupporters: 150,
+      shares: 1,
+      totalChallenges: 1,
+    },
+  ]);
+  const [featuredNonprofits] = useState([
+    {
+      id: 2354,
       claimed: true,
-      contacts: [],
+      name: "Nonprofit Name",
+      description:
+        "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
+      path: "nonprofit-name",
+      logoUrl:
+        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+      bannerUrl:
+        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+      logoBg: "#FFFFFF",
       createdAt: new Date(),
       updatedAt: new Date(),
       interests: [],
-      locations: [],
-      name: "Cool nonprofit",
       payments: [],
       testimonials: [],
-    },
-    timesShared: 50,
-    order: 1,
-    isOpen: true,
-    totalSupporters: 150,
-    shares: 1,
-    totalChallenges: 1,
-  },{
-    id: 1,
-    title: "Nature Scapes",
-    description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
-    startDate: new Date("2021-09-28T00:00:00-04:00"),
-    endDate: new Date("2022-09-28T00:00:00-04:00"),
-    goal: 10000,
-    raised: 2000,
-    donors: 50,
-    challenges: [],
-    payments: [],
-    // videoUrl: undefined,
-    imageUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-    createdAt: new Date("2021-09-01T00:00:00-04:00"),
-    updatedAt: new Date("2021-09-27T00:00:00-04:00"),
-    nonprofitId: 1,
-    nonprofit: {
-      id: 1,
-      logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-      path: "cool-nonprofit",
-      draftCampaigns: [],
-      pastCampaigns: [],
-      campaigns: [],
-      hasCampaigns: 1,
-      challenges: [],
-      claimed: true,
       contacts: [],
+      locations: [],
+      hasCampaigns: 0,
+      campaigns: [],
+      challenges: [],
+      pastCampaigns: [],
+      draftCampaigns: [],
+    },
+    {
+      id: 2355,
+      claimed: true,
+      name: "Nonprofit Name",
+      description:
+        "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
+      path: "nonprofit-name",
+      logoUrl:
+        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+      bannerUrl:
+        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+      logoBg: "#FFFFFF",
       createdAt: new Date(),
       updatedAt: new Date(),
       interests: [],
-      locations: [],
-      name: "Cool nonprofit",
       payments: [],
       testimonials: [],
-    },
-    timesShared: 50,
-    order: 1,
-    isOpen: true,
-    totalSupporters: 150,
-    shares: 1,
-    totalChallenges: 1,
-  },{
-    id: 1,
-    title: "Nature Scapes",
-    description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
-    startDate: new Date("2021-09-28T00:00:00-04:00"),
-    endDate: new Date("2022-09-28T00:00:00-04:00"),
-    goal: 10000,
-    raised: 2000,
-    donors: 50,
-    challenges: [],
-    payments: [],
-    // videoUrl: undefined,
-    imageUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-    createdAt: new Date("2021-09-01T00:00:00-04:00"),
-    updatedAt: new Date("2021-09-27T00:00:00-04:00"),
-    nonprofitId: 1,
-    nonprofit: {
-      id: 1,
-      logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-      path: "cool-nonprofit",
-      draftCampaigns: [],
-      pastCampaigns: [],
-      campaigns: [],
-      hasCampaigns: 1,
-      challenges: [],
-      claimed: true,
       contacts: [],
+      locations: [],
+      hasCampaigns: 0,
+      campaigns: [],
+      challenges: [],
+      pastCampaigns: [],
+      draftCampaigns: [],
+    },
+    {
+      id: 2356,
+      claimed: true,
+      name: "Nonprofit Name",
+      description:
+        "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
+      path: "nonprofit-name",
+      logoUrl:
+        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+      bannerUrl:
+        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+      logoBg: "#FFFFFF",
       createdAt: new Date(),
       updatedAt: new Date(),
       interests: [],
-      locations: [],
-      name: "Cool nonprofit",
       payments: [],
       testimonials: [],
+      contacts: [],
+      locations: [],
+      hasCampaigns: 0,
+      campaigns: [],
+      challenges: [],
+      pastCampaigns: [],
+      draftCampaigns: [],
     },
-    timesShared: 50,
-    order: 1,
-    isOpen: true,
-    totalSupporters: 150,
-    shares: 1,
-    totalChallenges: 1,
-  }]);
-  const [featuredNonprofits] = useState([{
-    id: 2354,
-    claimed: true,
-    name: "Nonprofit Name",
-    description: "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
-    path: "nonprofit-name",
-    logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-    bannerUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-    logoBg: "#FFFFFF",
-    createdAt: new Date(),
-    updatedAt: new Date(),
-    interests: [],
-    payments: [],
-    testimonials: [],
-    contacts: [],
-    locations: [],
-    hasCampaigns: 0,
-    campaigns: [],
-    challenges: [],
-    pastCampaigns: [],
-    draftCampaigns: [],
-  },{
-    id: 2355,
-    claimed: true,
-    name: "Nonprofit Name",
-    description: "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
-    path: "nonprofit-name",
-    logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-    bannerUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-    logoBg: "#FFFFFF",
-    createdAt: new Date(),
-    updatedAt: new Date(),
-    interests: [],
-    payments: [],
-    testimonials: [],
-    contacts: [],
-    locations: [],
-    hasCampaigns: 0,
-    campaigns: [],
-    challenges: [],
-    pastCampaigns: [],
-    draftCampaigns: [],
-  },{
-    id: 2356,
-    claimed: true,
-    name: "Nonprofit Name",
-    description: "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
-    path: "nonprofit-name",
-    logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-    bannerUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-    logoBg: "#FFFFFF",
-    createdAt: new Date(),
-    updatedAt: new Date(),
-    interests: [],
-    payments: [],
-    testimonials: [],
-    contacts: [],
-    locations: [],
-    hasCampaigns: 0,
-    campaigns: [],
-    challenges: [],
-    pastCampaigns: [],
-    draftCampaigns: [],
-  }]);
+  ]);
 
   return (
     <div className="w-full min-w-320px">
@@ -216,17 +242,25 @@ export default function Home() {
           flex flex-col t:grid t:grid-cols-2 gap-36px t:gap-20px d:gap-49px items-center
           "
         >
-          <div id="hero-img" className="t:min-w-344px t:max-w-340px d:min-w-540px d:max-w-540px  mx-auto t:mr-0 order-2 t:order-first">
-            <Image src="/images/home/hero.png" width={549} height={480} />
+          <div id="hero-img" className=" mx-auto t:mr-0 order-2 t:order-first">
+            <Image
+              src="/images/home/hero.png"
+              width={540}
+              height={553}
+              className="mx-auto"
+            />
           </div>
-          <div id="hero-we-connect" className="w-293px t:min-w-343px t:max-h-343px d:max-h-480px d:w-544px t:flex-1 flex-none t:order-2 order-1 flex flex-col d:items-start">
+          <div
+            id="hero-we-connect"
+            className=" min-w-280px t:min-w-343px  max-w-540px t:flex-1 t:order-2 order-1 flex flex-col "
+          >
             <p className="t:flex-1 text-white text-26px d:text-48px leading-31-2px d:leading-57-6px  text-center t:text-left font-bold  pb-12px t:pb-9px d:pb-19px ">
               We connect charities, corporations and donors.
             </p>
             <p className="t:flex-1 text-white text-14px d:text-18px leading-18-2px d:leading-26px  text-center t:text-left pb-13px t:pb-16px d:pb-17px">
               Making a difference has never been more fun and rewarding.
             </p>
-            <div className="font-hand text-26px leading-38px d:text-32px leading-38px text-primary pb-29px t:pb-9px d:pb-52px  flex ">
+            <div className="font-hand text-26px leading-38px d:text-32px text-primary pb-29px t:pb-9px d:pb-52px  flex justify-between d:justify-start">
               <div>How you can help move the chain</div>
               <svg
                 className="ml-10px mt-15px"
@@ -245,55 +279,93 @@ export default function Home() {
                   fill="white"
                 />
               </svg>
+              <div></div>
             </div>
 
-            <div className="flex flex-col d:flex-row gap-20px ">
-              <div className="flex-1 grid grid-cols-2 grid-rows-2 d:grid-cols-1 d:grid-rows-3 d:max-w-168px">
-                <p className="text-white text-16px leading-24px d:flex-1 font-bold ">
-                  Individuals
-                </p>
-                <a
-                  href="/individuals"
-                  className="text-12px leading-18px d:text-14px d:leading-21px text-primary font-bold d:order-3 d:mb-30px flex items-center justify-between gap-5px"
-                >
-                  Support a cause <img alt="" src="/images/home/➡.svg"/>
-                </a>
-                <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light">
+            <div className="flex flex-col d:flex d:flex-row gap-20px divide-y-reverse ">
+              <div className="flex-1 flex flex-col d:max-w-168px">
+                <div className="flex flex-row justify-between">
+                  <p className="text-white text-16px leading-24px d:flex-1 font-bold d:pb-10px ">
+                    Individuals
+                  </p>
+                  <a
+                    href="/individuals"
+                    className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px"
+                  >
+                    Support a cause <img alt="" src="/images/home/➡.svg" />
+                  </a>
+                </div>
+
+                <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px d:flex-1">
                   Donate, share and support your favorite nonprofits.
                 </p>
+                <div className="border-gray-500 border-b-1px d:hidden"></div>
+                <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"></div>
+                <a
+                  href="/individuals"
+                  className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px"
+                >
+                  <span>Support a cause</span>
+                  <img alt="" src="/images/home/➡.svg" />
+                </a>
+              </div>
+              <div className="flex flex-col d:flex d:flex-row gap-20px divide-y-reverse ">
+                <div className="flex-1 flex flex-col d:max-w-168px">
+                  <div className="flex flex-row justify-between">
+                    <p className="text-white text-16px leading-24px d:flex-1 font-bold d:pb-10px ">
+                      Nonprofits
+                    </p>
+                    <a
+                      href="/nonprofits"
+                      className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px"
+                    >
+                      Claim your page <img alt="" src="/images/home/➡.svg" />
+                    </a>
+                  </div>
+
+                  <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px hidden d:block d:h-49px d:flex-1">
+                    Tell your story to raise funds.
+                  </p>
+                  <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px d:hidden">
+                    Use your page to start fundraising.{" "}
+                  </p>
+                  <div className="border-gray-500 border-b-1px d:hidden"></div>
+                  <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"></div>
+                  <a
+                    href="/individuals"
+                    className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px"
+                  >
+                    <span>Claim your page</span>
+                    <img alt="" src="/images/home/➡.svg" />
+                  </a>
+                </div>
               </div>
 
-              <div className="flex-1 grid grid-cols-2 grid-rows-2 d:grid-cols-1 d:grid-rows-3">
-                <p className="text-white text-16px leading-24px d:flex-1 font-bold ">
-                  Nonprofits
-                </p>
-                <a
-                  href="/nonprofits"
-                  className="text-12px leading-18px d:text-14px d:leading-21px text-primary font-bold d:order-3 d:mb-30px flex items-center justify-between gap-5px"
-                >
-                    Claim your page <img alt="" src="/images/home/➡.svg" />
-                </a>
-                <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light hidden d:block ">
-                  Tell your story to raise funds.
-                </p>
-                <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light d:hidden">
-                  Use your page to start fundraising.{" "}
-                </p>
-              </div>
+              <div className="flex-1 flex flex-col d:max-w-168px">
+                <div className="flex flex-row justify-between">
+                  <p className="text-white text-16px leading-24px d:flex-1 font-bold d:pb-10px ">
+                    Corporations
+                  </p>
+                  <a
+                    href="/corporations"
+                    className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px"
+                  >
+                    Sponsor an event <img alt="" src="/images/home/➡.svg" />
+                  </a>
+                </div>
 
-              <div className="flex-1 grid grid-cols-2 grid-rows-2 d:grid-cols-1 d:grid-rows-3">
-                <p className="text-white text-16px leading-24px d:flex-1 font-bold ">
-                  Corporations
-                </p>
-                <a
-                  href="/corporations"
-                  className="text-12px leading-18px d:text-14px d:leading-21px text-primary font-bold d:order-3 d:mb-30px flex items-center justify-between gap-5px"
-                >
-                  Sponsor an event <img alt="" src="/images/home/➡.svg" />
-                </a>
-                <p className="text-white text-12px leading-18px col-span-2 font-light">
+                <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px">
                   Find nonprofits that need your support.
                 </p>
+                <div className="border-gray-500 border-b-1px d:hidden"></div>
+                <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"></div>
+                <a
+                  href="/corporations"
+                  className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px"
+                >
+                  <span>Sponsor an event</span>
+                  <img alt="" src="/images/home/➡.svg" />
+                </a>
               </div>
             </div>
           </div>
@@ -336,7 +408,12 @@ export default function Home() {
         </div>
 
         <div className="d:mt-60px text-center">
-          <Image src="/images/home/whats-move-the-chain.png" width={540} height={553} className="mx-auto" />
+          <Image
+            src="/images/home/whats-move-the-chain.png"
+            width={540}
+            height={553}
+            className="mx-auto"
+          />
         </div>
 
         <div className="grid grid-rows-3 gap-2 mx-auto text-center text-18px w-280px t:w-708px d:w-800px">
@@ -357,23 +434,24 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-we-connect-charities-bg-left
+      <div
+        className="bg-we-connect-charities-bg-left
         px-20px pt-44px pb-50px
         t:px-30px t:pt-44px t:pb-50px
-        d:px-120px d:py-82px">
-        <div
-          id="trending-campaigns"
-          className="flex flex-col text-center"
-        >
+        d:px-120px d:py-82px"
+      >
+        <div id="trending-campaigns" className="flex flex-col text-center">
           <h1 className="font-bold text-24px leading-28-8px d:text-43px d:leading-65px text-white">
             Trending Campaigns
           </h1>
 
-          <p className="
+          <p
+            className="
             mt-20px text-14px leading-18-2px
             d:mt-37px d:text-18px d:leading-24px
             text-white font-light
-          ">
+          "
+          >
             Campaigns are an opportunity for nonprofits to organize short burst
             fundraising to fund a specific need. The campaign is created by the
             nonprofit to explain the impact of your donation.{" "}
@@ -382,28 +460,58 @@ export default function Home() {
 
           <div className="grid grid-cols-1 t:grid-cols-3 d:grid-cols-4 mt-23px t:mt-30px d:mt-50px gap-32px">
             {trendingCampaigns.map((tc, index) => (
-              <TrendingCampaign key={tc.id} campaign={tc} variant="dark" className={index > 0 ? "hidden t:block" : ""} />
+              <TrendingCampaign
+                key={tc.id}
+                campaign={tc}
+                variant="dark"
+                className={index > 0 ? "hidden t:block" : ""}
+              />
             ))}
 
-            <div className="hidden d:flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px" style={{backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6"}}> {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
-              <div className="d:text-20px d:leading-30px font-bold">Looking for a cause to support?</div>
+            <div
+              className="hidden d:flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px"
+              style={{
+                backgroundColor: "#F7F9FC",
+                border: "1px solid #E3E5E6",
+              }}
+            >
+              {" "}
+              {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
+              <div className="d:text-20px d:leading-30px font-bold">
+                Looking for a cause to support?
+              </div>
               <div className="font-light d:text-16px d:leading-20px d:px-20px d:text-center">
-                You can support campaigns by different nonprofits by donating, sharing, or participating in challenges.
+                You can support campaigns by different nonprofits by donating,
+                sharing, or participating in challenges.
               </div>
-              <Button variant="primary" className="d:mt-22px rounded-10pxi">View all campaigns 👉</Button>
+              <Button variant="primary" className="d:mt-22px rounded-10pxi">
+                View all campaigns 👉
+              </Button>
             </div>
           </div>
 
-          <div className="d:hidden mt-23px t:mt-28px flex flex-col t:flex-row items-center rounded-26px p-15px t:p-20px" style={{backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6"}}> {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
+          <div
+            className="d:hidden mt-23px t:mt-28px flex flex-col t:flex-row items-center rounded-26px p-15px t:p-20px"
+            style={{ backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6" }}
+          >
+            {" "}
+            {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
             <div className="t:text-left">
-              <div className="text-16px leading-20-8px t:text-15px t:leading-22-5px font-bold">Looking for a cause to support?</div>
+              <div className="text-16px leading-20-8px t:text-15px t:leading-22-5px font-bold">
+                Looking for a cause to support?
+              </div>
               <div className="mt-10px text-13px leading-16-9px font-light">
-                You can support campaigns by different nonprofits by donating, sharing, or participating in challenges.
+                You can support campaigns by different nonprofits by donating,
+                sharing, or participating in challenges.
               </div>
             </div>
-            <Button variant="primary" className="mt-22px t:m-0 rounded-10pxi whitespace-nowrap">View all campaigns 👉</Button>
+            <Button
+              variant="primary"
+              className="mt-22px t:m-0 rounded-10pxi whitespace-nowrap"
+            >
+              View all campaigns 👉
+            </Button>
           </div>
-
         </div>
       </div>
 
@@ -423,18 +531,34 @@ export default function Home() {
             All donations to any of the nonprofits are tax deductible.
           </p>
 
-
           {/* todo(eric): está resuelto para desktop únicamente */}
           <div className="grid grid-cols-1 grid-rows-2 t:grid-cols-3 d:grid-cols-4 grid-rows-1 gap-32px">
             {featuredNonprofits.map((fnp, index) => (
-              <FeaturedNonprofit key={fnp.id} nonprofit={fnp} className={`h-398px ${index > 0 ? "hidden t:block" : ""}`} />
+              <FeaturedNonprofit
+                key={fnp.id}
+                nonprofit={fnp}
+                className={`h-398px ${index > 0 ? "hidden t:block" : ""}`}
+              />
             ))}
-            <div className="flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px" style={{backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6"}}> {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
-              <div className="d:text-20px d:leading-30px font-bold">Are you a nonprofit?</div>
-              <div className="font-light d:text-16px d:leading-20px d:px-20px d:text-center">
-                Tell your story to raise funds. We’re here to help you spread the word.
+            <div
+              className="flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px"
+              style={{
+                backgroundColor: "#F7F9FC",
+                border: "1px solid #E3E5E6",
+              }}
+            >
+              {" "}
+              {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
+              <div className="d:text-20px d:leading-30px font-bold">
+                Are you a nonprofit?
               </div>
-              <Button variant="primary" className="d:mt-22px rounded-10pxi">Claim your page 👉</Button>
+              <div className="font-light d:text-16px d:leading-20px d:px-20px d:text-center">
+                Tell your story to raise funds. We’re here to help you spread
+                the word.
+              </div>
+              <Button variant="primary" className="d:mt-22px rounded-10pxi">
+                Claim your page 👉
+              </Button>
             </div>
           </div>
           <div className=" flex justify-center mx-auto mt-15px">
@@ -494,8 +618,9 @@ export default function Home() {
                   Nonprofits
                 </h1>
                 <p className="flex-1 mt-5px text-12px leading-14-4px t:text-14px t:leading-18px font-light">
-                  Your page on the platform is a channel to promote causes, raise funds, and connect with individuals
-                  and corporations for support.
+                  Your page on the platform is a channel to promote causes,
+                  raise funds, and connect with individuals and corporations for
+                  support.
                 </p>
                 <Button
                   type="button"
@@ -510,9 +635,10 @@ export default function Home() {
                 <h1 className="text-15px leading-22-5px d:text-20px d:leading-30px font-bold">
                   Corporations
                 </h1>
-                <p className="flex-1 mt-5px text-12px leading-14-4px t:text-14px t:leading-18px font-light">
-                  Find nonprofit organizations that need your support. Partner with them and their supporters to aim
-                  your efforts where you are needed the most.
+                <p className="flex-1 mt-5px text-12px leading-14-4px t:text-14px t:leading-18px font-light d:flex-1">
+                  Find nonprofit organizations that need your support. Partner
+                  with them and their supporters to aim your efforts where you
+                  are needed the most.
                 </p>
                 <Button
                   type="button"
