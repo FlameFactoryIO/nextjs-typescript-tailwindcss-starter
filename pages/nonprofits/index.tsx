@@ -21,7 +21,7 @@ export default function Home() {
         //   backgroundPosition: "top",
         //   backgroundSize: "cover",
         // }}
-        className="w-full bg-gradient-to-r t:relative from-we-connect-charities-bg-left to-we-connect-charities-bg-right
+        className="w-full bg-gradient-to-r t:relative from-blue-dark to-we-connect-charities-bg-right
       flex flex-col "
       >
         <div className=" d:w-1140px">
@@ -118,7 +118,7 @@ export default function Home() {
           id="why-move-the-chain"
           className="flex-col gap-15px mx-auto text-center min-w-280px t:max-w-576px d:max-w-1140px"
         >
-          <image className="mx-auto pb-20px" src="/images/mtc.svg" alt="logo" />
+          <img className="mx-auto pb-20px" src="/images/mtc.svg" alt="logo" />
           <div className="mx-auto pb-35px text-center text-24px font-bold leading-28-5px">
             Why Move the Chain is right for your nonprofit?
           </div>
@@ -417,7 +417,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="px-20px pb-43px pt-56px t:pt-46px t:px-30px d:pt-72px d:px-232px d:pb-68px  w-full bg-your-opportunity">
+      <div className="px-20px pb-43px pt-56px t:pt-46px t:px-30px d:pt-72px d:px-232px d:pb-68px  w-full bg-cream">
         <div id="what-nonprofit-are" className="flex flex-col gap-30px ">
           <div className="text-20px leading-24px d:text-34px d:leading-41px  text-center font-bold pb-20px">
             What nonprofits are saying about Move the Chain

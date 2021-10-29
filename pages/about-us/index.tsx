@@ -14,7 +14,7 @@ export default function AboutUs() {
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
 
-      <div className="w-full bg-gradient-to-r from-we-connect-charities-bg-left to-we-connect-charities-bg-right">
+      <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
         <div
           id="hero"
           className="
@@ -124,7 +124,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <div className="w-full bg-we-connect-charities-bg-left ">
+      <div className="w-full bg-blue-dark">
         <div
           id="why-move-the-chain"
           className="flex flex-col t:grid grid-cols-2 t:gap-30px items-center d:max-h-640px"
@@ -219,7 +219,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <div className="w-full bg-your-opportunity">
+      <div className="w-full bg-cream">
         <div
           id="about-our-platform"
           className="flex flex-col  

@@ -3,22 +3,22 @@ import {useRouter} from "next/router";
 import Link from 'next/link'
 import {FaChevronDown, FaChevronUp, FaUser} from "react-icons/fa";
 
-const TopNavItem: FC<{ title: string, href: string }> = ({title, href}) => {
-  const router = useRouter();
+const TopNavItem: FC<{ title: string, path: string, href: string }> = ({title, path, href}) => {
   return (
-    <Link href={href}><a className={router?.asPath === href ? "border-b border-primary-500" : ""}>{title}</a></Link>
+    <Link href={href}><a className={path === href ? "border-b-2 border-primary-500" : ""}>{title}</a></Link>
   );
 }
 
-const SideNavItem: FC<{ initialOpen?: boolean, title: ReactNode, className?: string }> = ({
-   initialOpen,
-   title,
-   className,
-   children
+const SideNavItem: FC<{ initialOpen?: boolean, title: ReactNode, isSelected?: boolean, className?: string }> = ({
+  initialOpen,
+  title,
+  isSelected = false,
+  className,
+  children
 }) => {
   const [isOpen, setOpen] = useState<boolean>(initialOpen ?? false);
   return (
-    <div className={`flex flex-col cursor-pointer p-20px border-b border-primary-100 ${className ?? ""}`}>
+    <div className={`flex flex-col cursor-pointer p-20px border-b ${isSelected ? "bg-primary-500 text-white" : ""} ${className ?? ""}`}>
 
       <div className="flex" onClick={children && (() => setOpen(prev => !prev))}>
         <div className={`flex-1 ${isOpen ? "opacity-60" : ""}`}>{title}</div>
@@ -41,6 +41,8 @@ const TopNav: FC<{
   onSearch,
   className,
 }) => {
+  const router = useRouter();
+
   const [isOpen, setOpen] = useState<boolean>(false);
 
   const [searchValue, setSearchValue] = useState<string>("");
@@ -75,11 +77,11 @@ const TopNav: FC<{
         </Link>
 
         <div className="flex-1 flex gap-20px items-center justify-center text-14px leading-21px">
-          <TopNavItem title="About us" href="/about-us"/>
-          <TopNavItem title="Individuals" href="/individuals"/>
-          <TopNavItem title="Nonprofits" href="/nonprofits"/>
-          <TopNavItem title="Corporations" href="/corporations"/>
-          <TopNavItem title="Resources" href="/resources"/>
+          <TopNavItem title="About us" path={router?.asPath} href="/about-us"/>
+          <TopNavItem title="Individuals" path={router?.asPath} href="/individuals"/>
+          <TopNavItem title="Nonprofits" path={router?.asPath} href="/nonprofits"/>
+          <TopNavItem title="Corporations" path={router?.asPath} href="/corporations"/>
+          <TopNavItem title="Resources" path={router?.asPath} href="/resources"/>
         </div>
 
         <div className="mr-40px">
@@ -148,26 +150,34 @@ const TopNav: FC<{
         </span>
           </form>
 
-          <SideNavItem title={<Link href="/about-us"><a>About us</a></Link>} className="mt-14px"/>
+          <SideNavItem title={<Link href="/about-us"><a>About us</a></Link>}
+                       isSelected={router?.asPath === "/about-us"}
+                       className="mt-14px" />
           <SideNavItem title="Individuals">
-            <SideNavItem title={<Link href="/sign-up"><a className="font-light">Create account or sign up</a></Link>}
+            <SideNavItem title={<Link href="/sign-up"><a className="font-light" >Create account or sign up</a></Link>}
+                         isSelected={router?.asPath === "/sign-up"}
                          className="border-none py-8px"/>
-            <SideNavItem title={<Link href="/campaigns"><a className="font-light">Discover campaigns</a></Link>}
+            <SideNavItem title={<Link href="/campaigns/search"><a className="font-light">Discover campaigns</a></Link>}
+                         isSelected={router?.asPath === "/campaigns/search"}
                          className="border-none py-8px"/>
-            <SideNavItem
-              title={<Link href="/challenges"><a className="font-light">Create or join a challenge</a></Link>}
-              className="border-none py-8px"/>
-            <SideNavItem title={<Link href="/match"><a className="font-light">Find your match</a></Link>}
+            <SideNavItem title={<Link href="/challenges"><a className="font-light">Create or join a challenge</a></Link>}
+                         isSelected={router?.asPath === "/challenges"}
+                         className="border-none py-8px"/>
+            <SideNavItem title={<Link href="/nonprofits/search"><a className="font-light">Find your match</a></Link>}
+                         isSelected={router?.asPath === "/nonprofits/search"}
                          className="border-none py-8px"/>
           </SideNavItem>
-          <SideNavItem title={<Link href="/nonprofits"><a>Nonprofits</a></Link>}/>
-          <SideNavItem title={<Link href="/corporations"><a>Corporations</a></Link>}/>
+          <SideNavItem title={<Link href="/nonprofits"><a>Nonprofits</a></Link>}
+                       isSelected={router?.asPath === "/nonprofits"} />
+          <SideNavItem title={<Link href="/corporations"><a>Corporations</a></Link>}
+                       isSelected={router?.asPath === "/corporations"} />
           <SideNavItem title="Resources"/>
           <SideNavItem
             title={<Link href="/log-in"><a className="flex items-center">
               <FaUser className="text-primary"/>
               &nbsp;Log In
             </a></Link>}
+            isSelected={router?.asPath === "/log-in"}
             className="border-none"/>
         </div>
       )}
