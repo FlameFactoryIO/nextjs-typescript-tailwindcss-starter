@@ -421,7 +421,6 @@ module.exports = {
         "we-connect-charities-bg-right": "#10143c",
         "looking-for-a-cause": "#F7F9FC",
         "nonprofit-step2": "#2D75F8",
-        "nonprofit-questions": "#091023",
         cream: "#FEF4F0",
         "blue-darker": "#080719",
         "blue-dark": "#0A173C",

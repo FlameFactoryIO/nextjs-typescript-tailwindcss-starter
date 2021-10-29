@@ -502,26 +502,21 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="px-20px pt-44px pb-50px t:pb-36px t:px-30px d:pt-52px d:pb-44px d:px-120px w-full bg-nonprofit-questions">
+      <div className="px-20px pt-44px pb-50px t:pb-36px t:px-30px d:pt-52px d:pb-44px d:px-120px bg-gradient-to-b from-blue-dark to-blue-darker">
         <div
           id="questions"
-          className="flex flex-col t:flex-row gap-40px justify-between d:max-w-1140px"
+          className="d:max-w-1140px mx-auto"
         >
-          <div>
-            <div className="text-20px leading-24px d:text-34px d:leading-41px text-white text-center t:text-left font-bold t:pb-14px">
-              Questions?
-            </div>
+          <div className="text-20px leading-24px d:text-34px d:leading-41px text-white text-center t:text-left font-bold t:pb-14px">
+            Questions?
+          </div>
+          <div className="t:flex">
             <p className="text-16px leading-20-8px d:text-18px d:leading-25px text-white text-center t:text-left font-light t:pr-77px d:pr-276px">
               Do you have questions about Move the Chain? Reach out and we’ll be
               happy to answer your questions!
             </p>
-          </div>
-          <div className="mx-auto t:mr-0 mt-auto">
-            <Button
-              type="button"
-              variant="primary"
-              className="w-140px h-46px rounded-10pxi"
-            >
+
+            <Button type="button" variant="primary" className="w-140px h-46px rounded-10pxi whitespace-nowrap">
               Contact Us
             </Button>
           </div>
