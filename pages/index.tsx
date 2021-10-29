@@ -132,7 +132,7 @@ export default function Home() {
     totalSupporters: 150,
     shares: 1,
     totalChallenges: 1,
-  }])
+  }]);
   const [featuredNonprofits] = useState([{
     id: 2354,
     claimed: true,
@@ -256,7 +256,7 @@ export default function Home() {
                   href="/individuals"
                   className="text-12px leading-18px d:text-14px d:leading-21px text-primary font-bold d:order-3 d:mb-30px flex items-center justify-between gap-5px"
                 >
-                  Support a cause <img src="/images/home/➡.svg" />
+                  Support a cause <img alt="" src="/images/home/➡.svg"/>
                 </a>
                 <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light">
                   Donate, share and support your favorite nonprofits.
@@ -271,7 +271,7 @@ export default function Home() {
                   href="/nonprofits"
                   className="text-12px leading-18px d:text-14px d:leading-21px text-primary font-bold d:order-3 d:mb-30px flex items-center justify-between gap-5px"
                 >
-                    Claim your page <img src="/images/home/➡.svg" />
+                    Claim your page <img alt="" src="/images/home/➡.svg" />
                 </a>
                 <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light hidden d:block ">
                   Tell your story to raise funds.
@@ -289,7 +289,7 @@ export default function Home() {
                   href="/corporations"
                   className="text-12px leading-18px d:text-14px d:leading-21px text-primary font-bold d:order-3 d:mb-30px flex items-center justify-between gap-5px"
                 >
-                  Sponsor an event <img src="/images/home/➡.svg" />
+                  Sponsor an event <img alt="" src="/images/home/➡.svg" />
                 </a>
                 <p className="text-white text-12px leading-18px col-span-2 font-light">
                   Find nonprofits that need your support.
@@ -357,37 +357,53 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-we-connect-charities-bg-left pt-44px pb-50px pl-20px pr-14px t:px-30px t:pt-44px t:pb-50px d:px-120px d:py-82px">
-        {/*maybe padding not working*/}
+      <div className="bg-we-connect-charities-bg-left
+        px-20px pt-44px pb-50px
+        t:px-30px t:pt-44px t:pb-50px
+        d:px-120px d:py-82px">
         <div
           id="trending-campaigns"
-          className="w-280px t:w-768px d:w-1140px mx-auto flex flex-col text-center"
+          className="flex flex-col text-center"
         >
           <h1 className="font-bold text-24px leading-28-8px d:text-43px d:leading-65px text-white">
             Trending Campaigns
           </h1>
 
-          <p className="text-14px leading-18-2px d:text-18px d:leading-24px text-white pt-20px pb-23px t:pb-10px d:w-740px mx-auto">
+          <p className="
+            mt-20px text-14px leading-18-2px
+            d:mt-37px d:text-18px d:leading-24px
+            text-white font-light
+          ">
             Campaigns are an opportunity for nonprofits to organize short burst
             fundraising to fund a specific need. The campaign is created by the
             nonprofit to explain the impact of your donation.{" "}
-            <span className="font-bold ">#Transparencyiskey </span>
+            <span className="font-bold ">#Transparencyiskey</span>
           </p>
 
-          {/* todo(eric): está resuelto para desktop únicamente */}
-          <div className="grid grid-cols-1 grid-rows-2 t:grid-cols-3 d:grid-cols-4 grid-rows-1 gap-32px">
+          <div className="grid grid-cols-1 t:grid-cols-3 d:grid-cols-4 mt-23px t:mt-30px d:mt-50px gap-32px">
             {trendingCampaigns.map((tc, index) => (
-              <TrendingCampaign key={tc.id} campaign={tc} variant="dark" />
+              <TrendingCampaign key={tc.id} campaign={tc} variant="dark" className={index > 0 ? "hidden t:block" : ""} />
             ))}
 
-            <div className="flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px" style={{backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6"}}> {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
+            <div className="hidden d:flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px" style={{backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6"}}> {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
               <div className="d:text-20px d:leading-30px font-bold">Looking for a cause to support?</div>
               <div className="font-light d:text-16px d:leading-20px d:px-20px d:text-center">
                 You can support campaigns by different nonprofits by donating, sharing, or participating in challenges.
               </div>
-              <Button variant="primary" className="d:mt-22px rounded-10pxi">View all campaigns  👉</Button>
+              <Button variant="primary" className="d:mt-22px rounded-10pxi">View all campaigns 👉</Button>
             </div>
           </div>
+
+          <div className="d:hidden mt-23px t:mt-28px flex flex-col t:flex-row items-center rounded-26px p-15px t:p-20px" style={{backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6"}}> {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
+            <div className="t:text-left">
+              <div className="text-16px leading-20-8px t:text-15px t:leading-22-5px font-bold">Looking for a cause to support?</div>
+              <div className="mt-10px text-13px leading-16-9px font-light">
+                You can support campaigns by different nonprofits by donating, sharing, or participating in challenges.
+              </div>
+            </div>
+            <Button variant="primary" className="mt-22px t:m-0 rounded-10pxi whitespace-nowrap">View all campaigns 👉</Button>
+          </div>
+
         </div>
       </div>
 
@@ -478,9 +494,8 @@ export default function Home() {
                   Nonprofits
                 </h1>
                 <p className="flex-1 mt-5px text-12px leading-14-4px t:text-14px t:leading-18px font-light">
-                  Your page on the platform is a channel to promote causes,
-                  raise funds, and connect with individuals and corporations for
-                  support.
+                  Your page on the platform is a channel to promote causes, raise funds, and connect with individuals
+                  and corporations for support.
                 </p>
                 <Button
                   type="button"
@@ -496,9 +511,8 @@ export default function Home() {
                   Corporations
                 </h1>
                 <p className="flex-1 mt-5px text-12px leading-14-4px t:text-14px t:leading-18px font-light">
-                  Find nonprofit organizations that need your support. Partner
-                  with them and their supporters to aim your efforts where you
-                  are needed the most.
+                  Find nonprofit organizations that need your support. Partner with them and their supporters to aim
+                  your efforts where you are needed the most.
                 </p>
                 <Button
                   type="button"
