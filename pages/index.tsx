@@ -1,10 +1,10 @@
 import {useState} from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Link from 'next/link'
 import Footer from "../components/Footer";
 import Button from "../components/Button";
 import TopNav from "../components/TopNav";
-import Image from "next/image";
 import FeaturedNonprofit from "../components/FeaturedNonprofit";
 import TrendingCampaign from "../components/TrendingCampaign";
 
@@ -318,43 +318,43 @@ export default function Home() {
         </div>
       </div>
 
-      <div
-        style={{
-          backgroundImage:
-            "linear-gradient(to bottom, #FFFFFF 50%, #FEF4F0 50%)",
-        }}
-        className="pt-44px pb-50px t:pt-44px t:pb-38px d:pt-84px d:pb-100px"
-      >
-        <div className="w-280px t:w-768px d:w-1140px mx-auto text-center">
+      <div className="">
+        <div className="pt-44px d:pt-84px px-20px w-280px t:w-768px d:w-1140px mx-auto text-center">
           <div className="font-bold text-24px leading-28-8px d:text-43px d:leading-65px">
             What&apos;s Move the chain
           </div>
-          <p className="pt-20px mx-auto text-14px leading-18-2px d:leading-24px d:w-800px font-light">
+          <p className="pt-20px mx-auto text-14px leading-18-2px d:text-18px d:leading-24px d:w-800px font-light">
             Move the Chain is a social giving platform, changing the way you
             give back to causes you care about. We make it fun, transparent and
             empowering to donate to and promote causes that matter to you.
           </p>
         </div>
 
-        <div className="d:mt-60px text-center">
-          <Image src="/images/home/whats-move-the-chain.png" width={540} height={553} className="mx-auto" />
+        <div className="mt-17px t:mt-40px d:mt-60px px-20px text-center">
+          <Image src="/images/home/whats-move-the-chain.png" width={540} height={434} className="mx-auto" />
         </div>
 
-        <div className="grid grid-rows-3 gap-2 mx-auto text-center text-18px w-280px t:w-708px d:w-800px">
-          <p className="d:text-18px d:leading-26px font-bold">
-            From being inspired by a campaign, to challenging your circle of
-            friends and family to take positive action, there are so many ways
-            to make a positive impact
-          </p>
-          <p className="mx-auto text-16px">
-            <span className="text-primary-500 font-bold">“</span>
-            67% of americans believe social media sites are important for
-            creating sustained movements for social change...
-            <span className="text-primary-500 font-bold">”</span>
-          </p>
-          <Button type="button" variant="primary" className="mx-auto mt-30px">
-            Get to know us
-          </Button>
+        <div className="bg-cream">
+          <div className="flex flex-col mx-auto text-center text-18px w-280px
+            t:w-708px d:w-800px -mt-90px pt-110px t:-mt-150px t:pt-177px d:-mt-145px d:pt-170px
+            pb-61px t:pb-38px d:pb-100px">
+            <p className="text-15px leading-19-5px d:text-18px d:leading-26px font-bold">
+              From being inspired by a campaign, to challenging your circle of
+              friends and family to take positive action, there are so many ways
+              to make a positive impact
+            </p>
+            <p className="mx-auto text-13px leading-16-9px d:text-16px leading-26px">
+              <span className="text-primary-500 font-bold">“</span>
+              67% of americans believe social media sites are important for
+              creating sustained movements for social change...
+              <span className="text-primary-500 font-bold">”</span>
+            </p>
+            <Link href="/about-us">
+              <Button type="button" variant="primary" className="mx-auto mt-30px">
+                Get to know us
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -454,10 +454,8 @@ export default function Home() {
             <Button variant="primary" className="mt-22px t:m-0 rounded-10pxi whitespace-nowrap">Claim your page 👉</Button>
           </div>
 
-          <Link href="/nonprofits/search">
-          <a className="hidden d:block mx-auto mt-57px">
-            <Button>Discover more nonprofits</Button>
-          </a>
+          <Link href="/nonprofits">
+            <Button className="hidden d:block mx-auto mt-57px">Discover more nonprofits</Button>
           </Link>
         </div>
       </div>
