@@ -13,10 +13,10 @@ Primary.args = {
   value: "Value-test",
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
+export const Black = Template.bind({});
+Black.args = {
   placeholder: "placeholder input",
-  variant: "secondary",
+  variant: "black",
 };
 
 export const Disabled = Template.bind({});

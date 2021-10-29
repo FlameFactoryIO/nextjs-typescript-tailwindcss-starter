@@ -8,13 +8,18 @@ export default {
 const Template = arguments_ => <Button {...arguments_} /> //creating a template
 
 export const Primary = Template.bind({})
-Primary.args ={
+Primary.args = {
   children: "Primary Button",
 }
 
-export const Secondary = Template.bind({})
-Secondary.args ={
-  children: "Secondary Button",
-  variant: "secondary",
+export const Black = Template.bind({})
+Black.args = {
+  children: "Black Button",
+  variant: "black",
 }
 
+export const White = Template.bind({})
+White.args = {
+  children: "White Button",
+  variant: "white",
+}

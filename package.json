@@ -4,10 +4,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@quid/react-ellipsis": "^4.0.0",
     "fscreen": "^1.2.0",
     "hls.js": "^1.0.11",
     "mobile-detect": "^1.4.5",
@@ -33,7 +34,7 @@
     "@types/react": "^17.0.27",
     "autoprefixer": "^10.3.7",
     "babel-loader": "^8.2.2",
-    "eslint": "8.0.1",
+    "eslint": "^8.1.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
     "postcss": "^8",

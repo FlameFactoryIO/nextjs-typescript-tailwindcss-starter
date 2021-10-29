@@ -3,20 +3,18 @@ import fscreen from "fscreen";
 
 const FullScreenContext = createContext<{
   isFullScreen: boolean;
-  enterFullScreen: (element: Element) => Promise<void>;
+  enterFullScreen: (element: Element) => void;
   exitFullScreen: () => Promise<void>;
 }>({
   isFullScreen: false,
-  enterFullScreen: async () => {},
+  enterFullScreen: () => {},
   exitFullScreen: async () => {},
 });
 
 export const FullScreenProvider = ({ children }) => {
   const [isFullScreen, setFullScreen] = useState(false);
 
-  const enterFullScreen = async (element: Element) => {
-    return fscreen.requestFullscreen(element);
-  };
+  const enterFullScreen = fscreen.requestFullscreen;
 
   const exitFullScreen = async () => {
     try {
