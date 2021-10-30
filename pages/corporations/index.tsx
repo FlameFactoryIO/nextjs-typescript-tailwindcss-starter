@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import TopNav from "../../components/TopNav";
 import Image from "next/image";
 import Button from '../../components/Button';
+import Input from '../../components/Input';
 
 // noinspection JSUnusedGlobalSymbols
 export default function CorporationsHome() {
@@ -77,7 +78,7 @@ export default function CorporationsHome() {
         >
 
 
-          <div className="max-w-280px t:max-w-708px d:max-w-1140px
+          <div className="max-w-280px t:max-w-708px d:max-w-1140px items-center
                               font-bold text-center text-16px leading-21-6px
                               t:text-18px t:leading-21-6px
                               d:text-28px d:leading-33-6px
@@ -145,9 +146,9 @@ export default function CorporationsHome() {
         <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
           <div
             id="corporation"
-            className="pt-82px pb-789px px-20px
-                       t:pt-154px t:pb-300px t:px-30px
-                       d:pt-213px d:pb-502px d:px-170px"
+            className="pt-82px pb-50px px-20px
+                       t:pt-148px  t:px-30px
+                       d:pt-213px d:pb-96px d:px-170px"
           >
             <div className="flex flex-col t:flex-row">
               <div className="flex-1 text-white font-bold text-center 
@@ -165,10 +166,56 @@ export default function CorporationsHome() {
                 , all that while <span className="font-bold">doing good</span>.
               </div>
             </div>
-            <div className="flex flex-col t:flex-row gap-39px pb-17px t:pb-33px d:pb-58px">
-              <div className="flex-1"></div>
-              <div className="flex-1"></div>
-              <div className="flex-1"></div>
+            <div className="flex flex-col t:flex-row gap-21px text-center pt-23px items-center
+                            d:gap-20px">
+              <div className="flex-1 bg-white w-280px h-240px rounded-26px pt-20px pb-14px
+                             t:w-222px t:h-281px
+                             d:w-367px d:h-369px">
+                <Image src="/images/corporations/corporate-fundraisers.png" width={55} height={69} />
+                <div className="font-bold text-16px leading-24px pb-11px
+                                t:leading-20-8px
+                                d:text-20px d:leading-30px">
+                  Corporate Fundraisers
+                </div>
+                <div className="font-light text-13px leading-16-9px px-20px
+                                 t:px-15px
+                                 d:text-16px d:leading-24px d:px-39px">
+                  Host fundraisers where customers and emloyees participate in fun challenges in exchange
+                  for donations to the corporation’s chosen nonprofit
+                </div>
+              </div>
+              <div className="flex-1 bg-white w-280px h-240px rounded-26px pt-20px pb-14px
+                             t:w-222px t:h-281px
+                             d:w-367px d:h-369px">
+                <Image src="/images/corporations/corporate-profile.png" width={69} height={60} />
+                <div className="font-bold text-16px leading-24px pb-11px
+                                t:leading-20-8px
+                                d:text-20px d:leading-30px">
+                  Corporate Profile
+                </div>
+                <div className="font-light text-13px leading-16-9px px-20px
+                                 t:px-15px
+                                 d:text-16px d:leading-24px d:px-39px">
+                  The profile showcases your corporation’s social responsibillity,
+                   donations, fundraisers, and nonprofits supported. 
+                </div>
+              </div>
+              <div className="flex-1 bg-white w-280px h-240px rounded-26px pt-20px pb-14px
+                             t:w-222px t:h-281px
+                             d:w-367px d:h-369px">
+                <Image src="/images/corporations/web-api.png" width={64} height={64} />
+                <div className="font-bold text-16px leading-24px pb-11px
+                                t:leading-20-8px
+                                d:text-20px d:leading-30px">
+                  Web API
+                </div>
+                <div className="font-light text-13px leading-16-9px px-20px
+                                 t:px-15px
+                                 d:text-16px d:leading-24px d:px-39px">
+                  A summary of the Corporation’s  fundraisers, donations and nonprofit supported 
+                  can be integrated in the Corporation’s website, via API or SDK.
+                </div>
+              </div>
             </div>
           </div>
 
@@ -256,7 +303,7 @@ export default function CorporationsHome() {
           className="flex flex-col t:grid t:grid-cols-2 t:gap-14px items-center
                     pt-44px px-20px pb-51px
                     t:pt-47px t:px-29px
-                    d:px-170px d:gap-112px" 
+                    d:px-170px d:gap-112px"
         >
 
           <div className="text-white text-center t:text-left d:text-left">
@@ -276,10 +323,33 @@ export default function CorporationsHome() {
           </div>
 
           <div className="pt-40px">
-            <div className="bg-white w-280px h-635px rounded-40px
+            <div className="bg-white w-280px h-635px rounded-40px pt-30px px-15px pb-29px
                             t:w-708px t:h-514px
                             d:w-575px d:h-592px">
-                       
+              <div className="pb-20px">
+                <Input className="w-250px rounded-10px
+                                  t:w-313" placeholder="Contact Name" />
+              </div>
+              <div className="pb-20px">
+                <Input className="w-250px rounded-10px" placeholder="Mobile Number" />
+              </div>
+              <div className="pb-20px">
+                <Input className="w-250px rounded-10px" placeholder="Company Name" />
+              </div>
+              <div className="pb-20px">
+                <Input className="w-250px rounded-10px" placeholder="Role/Position" />
+              </div>
+              <div className="pb-20px">
+                <Input className="w-250px rounded-10px" placeholder="Email Address" />
+              </div>
+              <div className="pb-20px">
+                <Input className="w-250px h-150px rounded-10px" placeholder="Comments" />
+              </div>
+              <div className="text-center">
+                <Button className="w-201px h-46px rounded-10px" type="submit">Join Us</Button>
+              </div>
+
+
             </div>
           </div>
 
