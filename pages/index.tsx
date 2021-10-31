@@ -230,7 +230,7 @@ const [featuredNonprofits] = useState([{
             className=" min-w-280px t:min-w-343px  max-w-540px t:flex-1 t:order-2 order-1 flex flex-col "
           >
             <p className="t:flex-1 text-white text-26px d:text-48px leading-31-2px d:leading-57-6px  text-center t:text-left font-bold  pb-12px t:pb-9px d:pb-19px ">
-              We connect charities, corporations and donors.
+              We connect charities, corporations and donors. %
             </p>
             <p className="t:flex-1 text-white text-14px d:text-18px leading-18-2px d:leading-26px  text-center t:text-left pb-13px t:pb-16px d:pb-17px">
               Making a difference has never been more fun and rewarding.
