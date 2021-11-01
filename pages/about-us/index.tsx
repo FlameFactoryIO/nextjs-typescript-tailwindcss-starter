@@ -43,9 +43,9 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div className="max-w-380px text-center t:text-left text-white d:w-576px flex flex-col gap-17px d:gap-20px t:items-center t:max-w-343px d:max-w-520px d:pl-45px pb-35px">
+          <div className="max-w-380px text-center t:text-left text-white d:w-576px flex flex-col gap-17px d:gap-20px t:items-center t:max-w-343px d:max-w-560px d:pl-45px pb-35px">
             <div className="font-bold text-26px leading-31-2px d:text-48px d:leading-57-6px">
-              <span className=" text-primary font-black ">Move the Chain</span>{" "}
+              <span className="text-primary font-black ">Move the Chain</span>{" "}
               connects nonprofits, corporations, and individuals. 🙌
             </div>
             <div className=" text-16px leading-20-8px t:text-14px t:leading-18-2px d:text-18px d:leading-24px font-light">
