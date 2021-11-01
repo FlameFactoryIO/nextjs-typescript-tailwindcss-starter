@@ -5,7 +5,7 @@ import {FaChevronDown, FaChevronUp, FaUser} from "react-icons/fa";
 
 const TopNavItem: FC<{ title: string, path: string, href: string }> = ({title, path, href}) => {
   return (
-    <Link href={href}><a className={path === href ? "border-b-2 border-primary-500" : ""}>{title}</a></Link>
+    <Link href={href}><a className={path === href ? "border-b-2 border-primary-500 font-bold" : ""}>{title}</a></Link>
   );
 }
 

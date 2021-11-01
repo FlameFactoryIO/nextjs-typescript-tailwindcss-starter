@@ -11,7 +11,7 @@ const Button: FC<{
   type,
   className = "",
   disabled = false,
-  onClick,
+  onClick = () => {},
   variant = "primary",
 }) =>
   <button
