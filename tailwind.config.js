@@ -139,6 +139,7 @@ module.exports = {
         cream: "#FEF4F0",
         "blue-darker": "#080719",
         "blue-dark": "#0A173C",
+        "blue": "#091023",
       },
     },
   },
