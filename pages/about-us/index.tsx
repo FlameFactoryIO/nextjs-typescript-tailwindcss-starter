@@ -147,7 +147,8 @@ export default function AboutUs() {
                             "
             >
               <h1>
-                Why, <span className=" text-primary">"Move the Chain"</span> ?
+                Why, <span className=" text-primary">&#34;Move the Chain&#34; </span>{" "}
+                ?
               </h1>
             </div>
             <div
@@ -180,6 +181,7 @@ export default function AboutUs() {
           >
             <div className="hidden d:block" style={{ marginBottom: -7 }}>
               <Image
+                alt=""
                 className="rounded-24px"
                 src="/images/about-us/istockphoto-ball.png"
                 width={575}
@@ -209,9 +211,9 @@ export default function AboutUs() {
       <div className="w-full bg-footer ">
         <div
           className="font-bold text-center
-        text-24px leading-28-8px  :text-43px d:leading-51-6px 
+        text-24px leading-28-8px  d:text-43px d:leading-51-6px 
         pt-103px px-20px pb-141px
-        t::pt-84px t:px-151px t:pb-137px
+        t::pt-84px t:px-151px t:pb-137px 
         d:pt-137px d:px-273px d:pb-201px"
         >
           What makes <span className="text-primary">Move the Chain</span>{" "}
@@ -228,7 +230,6 @@ export default function AboutUs() {
         items-center
         t:max-h-554px d:max-h-772px
         gap-43px t:gap-25px d:gap-42px"
-
         >
           <div
             id="about-our-platform-cards"
@@ -498,7 +499,10 @@ export default function AboutUs() {
               Do you have questions about Move the Chain? Reach out and we’ll be
               happy to answer your questions!
             </p>
-            <Button className=" font-bold rounded-10pxi text-14px leading-21px py-13px px-62px">Contact Us</Button>
+            <Button className=" font-bold rounded-10pxi text-14px leading-21px py-13px px-62px
+            w-200px">
+              Contact Us
+            </Button>
           </div>
         </div>
       </div>
