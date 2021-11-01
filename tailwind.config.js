@@ -167,6 +167,7 @@ module.exports = {
                 "69px": "69px",
                 "70px": "70px",
                 "72px": "72px",
+                "73px": "73px",
                 "75px": "75px",
                 "77px": "77px",
                 "80px": "80px",
@@ -330,6 +331,7 @@ module.exports = {
             maxWidth: {
                 "64px": "64px",
                 "168px": "168px",
+                "278px": "278px",
                 "280px": "280px",
                 "288px": "288px",
                 "290px": "290px",
@@ -348,6 +350,7 @@ module.exports = {
                 "380px": "380px",
                 "418px": "418px",
                 "452px": "452px",
+                "491px": "491px",
                 "500px": "500px",
                 "520px": "520px",
                 "540px": "540px",
@@ -430,6 +433,7 @@ module.exports = {
                 cream: "#FEF4F0",
                 "blue-darker": "#080719",
                 "blue-dark": "#0A173C",
+                "blue": "#091023"
             },
         },
     },
