@@ -10,220 +10,9 @@ import TrendingCampaign from "../components/TrendingCampaign";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
-  const [trendingCampaigns] = useState([
-    {
-      id: 1,
-      title: "Nature Scapes",
-      description:
-        "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
-      startDate: new Date("2021-09-28T00:00:00-04:00"),
-      endDate: new Date("2022-09-28T00:00:00-04:00"),
-      goal: 10000,
-      raised: 2000,
-      donors: 50,
-      challenges: [],
-      payments: [],
-      // videoUrl: undefined,
-      imageUrl:
-        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-      createdAt: new Date("2021-09-01T00:00:00-04:00"),
-      updatedAt: new Date("2021-09-27T00:00:00-04:00"),
-      nonprofitId: 1,
-      nonprofit: {
-        id: 1,
-        logoUrl:
-          "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-        path: "cool-nonprofit",
-        draftCampaigns: [],
-        pastCampaigns: [],
-        campaigns: [],
-        hasCampaigns: 1,
-        challenges: [],
-        claimed: true,
-        contacts: [],
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        interests: [],
-        locations: [],
-        name: "Cool nonprofit",
-        payments: [],
-        testimonials: [],
-      },
-      timesShared: 50,
-      order: 1,
-      isOpen: true,
-      totalSupporters: 150,
-      shares: 1,
-      totalChallenges: 1,
-    },
-    {
-      id: 2,
-      title: "Nature Scapes",
-      description:
-        "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
-      startDate: new Date("2021-09-28T00:00:00-04:00"),
-      endDate: new Date("2022-09-28T00:00:00-04:00"),
-      goal: 10000,
-      raised: 2000,
-      donors: 50,
-      challenges: [],
-      payments: [],
-      // videoUrl: undefined,
-      imageUrl:
-        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-      createdAt: new Date("2021-09-01T00:00:00-04:00"),
-      updatedAt: new Date("2021-09-27T00:00:00-04:00"),
-      nonprofitId: 1,
-      nonprofit: {
-        id: 3,
-        logoUrl:
-          "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-        path: "cool-nonprofit",
-        draftCampaigns: [],
-        pastCampaigns: [],
-        campaigns: [],
-        hasCampaigns: 1,
-        challenges: [],
-        claimed: true,
-        contacts: [],
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        interests: [],
-        locations: [],
-        name: "Cool nonprofit",
-        payments: [],
-        testimonials: [],
-      },
-      timesShared: 50,
-      order: 1,
-      isOpen: true,
-      totalSupporters: 150,
-      shares: 1,
-      totalChallenges: 1,
-    },
-    {
-      id: 3,
-      title: "Nature Scapes",
-      description:
-        "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
-      startDate: new Date("2021-09-28T00:00:00-04:00"),
-      endDate: new Date("2022-09-28T00:00:00-04:00"),
-      goal: 10000,
-      raised: 2000,
-      donors: 50,
-      challenges: [],
-      payments: [],
-      // videoUrl: undefined,
-      imageUrl:
-        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-      createdAt: new Date("2021-09-01T00:00:00-04:00"),
-      updatedAt: new Date("2021-09-27T00:00:00-04:00"),
-      nonprofitId: 1,
-      nonprofit: {
-        id: 1,
-        logoUrl:
-          "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-        path: "cool-nonprofit",
-        draftCampaigns: [],
-        pastCampaigns: [],
-        campaigns: [],
-        hasCampaigns: 1,
-        challenges: [],
-        claimed: true,
-        contacts: [],
-        createdAt: new Date(),
-        updatedAt: new Date(),
-        interests: [],
-        locations: [],
-        name: "Cool nonprofit",
-        payments: [],
-        testimonials: [],
-      },
-      timesShared: 50,
-      order: 1,
-      isOpen: true,
-      totalSupporters: 150,
-      shares: 1,
-      totalChallenges: 1,
-    },
-  ]);
-  const [featuredNonprofits] = useState([
-    {
-      id: 2354,
-      claimed: true,
-      name: "Nonprofit Name",
-      description:
-        "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
-      path: "nonprofit-name",
-      logoUrl:
-        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-      bannerUrl:
-        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-      logoBg: "#FFFFFF",
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      interests: [],
-      payments: [],
-      testimonials: [],
-      contacts: [],
-      locations: [],
-      hasCampaigns: 0,
-      campaigns: [],
-      challenges: [],
-      pastCampaigns: [],
-      draftCampaigns: [],
-    },
-    {
-      id: 2355,
-      claimed: true,
-      name: "Nonprofit Name",
-      description:
-        "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
-      path: "nonprofit-name",
-      logoUrl:
-        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-      bannerUrl:
-        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-      logoBg: "#FFFFFF",
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      interests: [],
-      payments: [],
-      testimonials: [],
-      contacts: [],
-      locations: [],
-      hasCampaigns: 0,
-      campaigns: [],
-      challenges: [],
-      pastCampaigns: [],
-      draftCampaigns: [],
-    },
-    {
-      id: 2356,
-      claimed: true,
-      name: "Nonprofit Name",
-      description:
-        "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
-      path: "nonprofit-name",
-      logoUrl:
-        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-      bannerUrl:
-        "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-      logoBg: "#FFFFFF",
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      interests: [],
-      payments: [],
-      testimonials: [],
-      contacts: [],
-      locations: [],
-      hasCampaigns: 0,
-      campaigns: [],
-      challenges: [],
-      pastCampaigns: [],
-      draftCampaigns: [],
-    },
-  ]);
+  
+const [trendingCampaigns] = useState(stub1);
+const [featuredNonprofits] = useState(stub2);
 
   return (
     <div className="w-full min-w-320px">
@@ -245,8 +34,8 @@ export default function Home() {
           <div id="hero-img" className=" mx-auto t:mr-0 order-2 t:order-first">
             <Image
               src="/images/home/hero.png"
-              width={540}
-              height={553}
+              width={549}
+              height={480}
               className="mx-auto"
             />
           </div>
@@ -260,7 +49,7 @@ export default function Home() {
             <p className="t:flex-1 text-white text-14px d:text-18px leading-18-2px d:leading-26px  text-center t:text-left pb-13px t:pb-16px d:pb-17px">
               Making a difference has never been more fun and rewarding.
             </p>
-            <div className="font-hand text-26px leading-38px d:text-32px text-primary pb-29px t:pb-9px d:pb-52px  flex justify-between d:justify-start">
+            <div className="font-hand text-26px leading-38px d:text-32px text-primary pb-29px t:pb-9px d:pb-52px flex justify-start gap-20px">
               <div>How you can help move the chain</div>
               <svg
                 className="ml-10px mt-15px"
@@ -279,7 +68,6 @@ export default function Home() {
                   fill="white"
                 />
               </svg>
-              <div></div>
             </div>
 
             <div className="flex flex-col d:flex d:flex-row gap-20px divide-y-reverse ">
@@ -299,8 +87,8 @@ export default function Home() {
                 <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px d:flex-1">
                   Donate, share and support your favorite nonprofits.
                 </p>
-                <div className="border-gray-500 border-b-1px d:hidden"></div>
-                <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"></div>
+                <div className="border-gray-500 border-b-1px d:hidden"/>
+                <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
                 <a
                   href="/individuals"
                   className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px"
@@ -329,8 +117,8 @@ export default function Home() {
                   <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px d:hidden">
                     Use your page to start fundraising.{" "}
                   </p>
-                  <div className="border-gray-500 border-b-1px d:hidden"></div>
-                  <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"></div>
+                  <div className="border-gray-500 border-b-1px d:hidden"/>
+                  <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
                   <a
                     href="/individuals"
                     className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px"
@@ -357,8 +145,7 @@ export default function Home() {
                 <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px">
                   Find nonprofits that need your support.
                 </p>
-                <div className="border-gray-500 border-b-1px d:hidden"></div>
-                <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"></div>
+                <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
                 <a
                   href="/corporations"
                   className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px"
@@ -722,3 +509,193 @@ export default function Home() {
     </div>
   );
 }
+
+const stub1 = [{
+  id: 1,
+  title: "Nature Scapes",
+  description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
+  startDate: new Date("2021-09-28T00:00:00-04:00"),
+  endDate: new Date("2022-09-28T00:00:00-04:00"),
+  goal: 10000,
+  raised: 2000,
+  donors: 50,
+  challenges: [],
+  payments: [],
+  // videoUrl: undefined,
+  imageUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+  createdAt: new Date("2021-09-01T00:00:00-04:00"),
+  updatedAt: new Date("2021-09-27T00:00:00-04:00"),
+  nonprofitId: 1,
+  nonprofit: {
+    id: 1,
+    logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+    path: "cool-nonprofit",
+    draftCampaigns: [],
+    pastCampaigns: [],
+    campaigns: [],
+    hasCampaigns: 1,
+    challenges: [],
+    claimed: true,
+    contacts: [],
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    interests: [],
+    locations: [],
+    name: "Cool nonprofit",
+    payments: [],
+    testimonials: [],
+  },
+  timesShared: 50,
+  order: 1,
+  isOpen: true,
+  totalSupporters: 150,
+  shares: 1,
+  totalChallenges: 1,
+},{
+  id: 2,
+  title: "Nature Scapes",
+  description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
+  startDate: new Date("2021-09-28T00:00:00-04:00"),
+  endDate: new Date("2022-09-28T00:00:00-04:00"),
+  goal: 10000,
+  raised: 2000,
+  donors: 50,
+  challenges: [],
+  payments: [],
+  // videoUrl: undefined,
+  imageUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+  createdAt: new Date("2021-09-01T00:00:00-04:00"),
+  updatedAt: new Date("2021-09-27T00:00:00-04:00"),
+  nonprofitId: 1,
+  nonprofit: {
+    id: 3,
+    logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+    path: "cool-nonprofit",
+    draftCampaigns: [],
+    pastCampaigns: [],
+    campaigns: [],
+    hasCampaigns: 1,
+    challenges: [],
+    claimed: true,
+    contacts: [],
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    interests: [],
+    locations: [],
+    name: "Cool nonprofit",
+    payments: [],
+    testimonials: [],
+  },
+  timesShared: 50,
+  order: 1,
+  isOpen: true,
+  totalSupporters: 150,
+  shares: 1,
+  totalChallenges: 1,
+},{
+  id: 3,
+  title: "Nature Scapes",
+  description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
+  startDate: new Date("2021-09-28T00:00:00-04:00"),
+  endDate: new Date("2022-09-28T00:00:00-04:00"),
+  goal: 10000,
+  raised: 2000,
+  donors: 50,
+  challenges: [],
+  payments: [],
+  // videoUrl: undefined,
+  imageUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+  createdAt: new Date("2021-09-01T00:00:00-04:00"),
+  updatedAt: new Date("2021-09-27T00:00:00-04:00"),
+  nonprofitId: 1,
+  nonprofit: {
+    id: 1,
+    logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+    path: "cool-nonprofit",
+    draftCampaigns: [],
+    pastCampaigns: [],
+    campaigns: [],
+    hasCampaigns: 1,
+    challenges: [],
+    claimed: true,
+    contacts: [],
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    interests: [],
+    locations: [],
+    name: "Cool nonprofit",
+    payments: [],
+    testimonials: [],
+  },
+  timesShared: 50,
+  order: 1,
+  isOpen: true,
+  totalSupporters: 150,
+  shares: 1,
+  totalChallenges: 1,
+}];
+
+const stub2 = [{
+  id: 2354,
+  claimed: true,
+  name: "Nonprofit Name",
+  description: "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
+  path: "nonprofit-name",
+  logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+  bannerUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+  logoBg: "#FFFFFF",
+  createdAt: new Date(),
+  updatedAt: new Date(),
+  interests: [],
+  payments: [],
+  testimonials: [],
+  contacts: [],
+  locations: [],
+  hasCampaigns: 0,
+  campaigns: [],
+  challenges: [],
+  pastCampaigns: [],
+  draftCampaigns: [],
+},{
+  id: 2355,
+  claimed: true,
+  name: "Nonprofit Name",
+  description: "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
+  path: "nonprofit-name",
+  logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+  bannerUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+  logoBg: "#FFFFFF",
+  createdAt: new Date(),
+  updatedAt: new Date(),
+  interests: [],
+  payments: [],
+  testimonials: [],
+  contacts: [],
+  locations: [],
+  hasCampaigns: 0,
+  campaigns: [],
+  challenges: [],
+  pastCampaigns: [],
+  draftCampaigns: [],
+},{
+  id: 2356,
+  claimed: true,
+  name: "Nonprofit Name",
+  description: "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
+  path: "nonprofit-name",
+  logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+  bannerUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+  logoBg: "#FFFFFF",
+  createdAt: new Date(),
+  updatedAt: new Date(),
+  interests: [],
+  payments: [],
+  testimonials: [],
+  contacts: [],
+  locations: [],
+  hasCampaigns: 0,
+  campaigns: [],
+  challenges: [],
+  pastCampaigns: [],
+  draftCampaigns: [],
+}];

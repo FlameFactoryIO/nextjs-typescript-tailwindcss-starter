@@ -1,5 +1,6 @@
 import {FC} from "react";
 import Button from "./Button";
+import Link from "next/link";
 import Image from "next/image";
 import Nonprofit from "../shared/Nonprofit";
 import Ellipsis from "@quid/react-ellipsis"
@@ -28,11 +29,13 @@ const FeaturedNonprofit: FC<{
         {nonprofit.description}
       </Ellipsis>
 
-      <a href={`${nonprofit.path}`}>
-        <Button variant="black" className="mt-10px w-full rounded-10pxi">
-          Find out more
-        </Button>
-      </a>
+      <Link href={`${nonprofit.path}`}>
+        <a>
+          <Button variant="black" className="mt-10px rounded-10pxi mx-auto w-220px d:w-full">
+            Find out more
+          </Button>
+        </a>
+      </Link>
     </div>
   );
 }
