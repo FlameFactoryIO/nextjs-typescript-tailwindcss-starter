@@ -45,7 +45,7 @@ export default function CorporationsHome() {
             </div>
           </div>
 
-          <div className="min-w-280px mx-auto t:mr-0">
+          <div className="min-w-280px ">
             <div className="hidden d:block" style={{ marginBottom: -7 }}>
               <Image
                 src="/images/corporations/hero.png"
@@ -70,15 +70,15 @@ export default function CorporationsHome() {
 
       <div className=" bg-cream">
 
+
+
         <div
           id="more-brands"
           className="pt-46px pb-139px px-20px
                     t:pt-44px t:pb-262px t:px-30px
                     d:pt-58px d:pb-400px d:px-120px"
         >
-
-
-          <div className="max-w-280px t:max-w-708px d:max-w-1140px items-center
+          <div className="items-center
                               font-bold text-center text-16px leading-21-6px
                               t:text-18px t:leading-21-6px
                               d:text-28px d:leading-33-6px
@@ -118,11 +118,10 @@ export default function CorporationsHome() {
             </div>
           </div>
 
-
-          {/*<div className="absolute 
-                        pt-70px px-20px
-                        t:pt-80px t:px-239px
-                        d:pt-80px d:px-239px">
+          <div className="absolute w-full items-center text-center
+                        pt-70px px-10px
+                        t:pt-100px t:px-150px
+                        d:pt-80px d:px-10px">
             <div className="hidden d:block ">
               <Image src="/images/corporations/shape.png" width={907} height={422} />
             </div>
@@ -132,7 +131,7 @@ export default function CorporationsHome() {
             <div className="t:hidden">
               <Image src="/images/corporations/shape.png" width={280} height={130} />
             </div>
-          </div>*/}
+          </div>
 
         </div>
 
@@ -150,7 +149,7 @@ export default function CorporationsHome() {
                        t:pt-148px  t:px-30px
                        d:pt-213px d:pb-96px d:px-170px"
           >
-            <div className="flex flex-col t:flex-row">
+            <div className="flex flex-col d:flex-row">
               <div className="flex-1 text-white font-bold text-center 
                               text-24px leading-28-8px
                               d:text-43px d:leading-51-6px d:text-left
@@ -197,7 +196,7 @@ export default function CorporationsHome() {
                                  t:px-15px
                                  d:text-16px d:leading-24px d:px-39px">
                   The profile showcases your corporation’s social responsibillity,
-                   donations, fundraisers, and nonprofits supported. 
+                  donations, fundraisers, and nonprofits supported.
                 </div>
               </div>
               <div className="flex-1 bg-white w-280px h-240px rounded-26px pt-20px pb-14px
@@ -212,12 +211,19 @@ export default function CorporationsHome() {
                 <div className="font-light text-13px leading-16-9px px-20px
                                  t:px-15px
                                  d:text-16px d:leading-24px d:px-39px">
-                  A summary of the Corporation’s  fundraisers, donations and nonprofit supported 
+                  A summary of the Corporation’s  fundraisers, donations and nonprofit supported
                   can be integrated in the Corporation’s website, via API or SDK.
                 </div>
               </div>
             </div>
           </div>
+
+
+
+
+
+
+
 
         </div>
       </div>
@@ -300,7 +306,7 @@ export default function CorporationsHome() {
       <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
         <div
           id="provide-contact"
-          className="flex flex-col t:grid t:grid-cols-2 t:gap-14px items-center
+          className="flex flex-col t:grid t:grid-cols-2 t:gap-14px items-center text-center
                     pt-44px px-20px pb-51px
                     t:pt-47px t:px-29px
                     d:px-170px d:gap-112px"
@@ -317,27 +323,33 @@ export default function CorporationsHome() {
                             d:pb-11px d:text-16px d:leading-24px">
               Provide your contact information and we will get in touch with you on how to start partnering with us.
             </div>
-            <div>
+            <div className="t:hidden d:block">
               <Image src="/images/corporations/contact-information.png" width={469} height={269} />
             </div>
           </div>
 
-          <div className="pt-40px">
+          <div className=" t:gap-33px hidden t:block d:hidden">
+            <Image src="/images/corporations/contact-information.png" width={469} height={269} />
+          </div>
+
+          <div className="pt-40px t:text-center t:items-center t:px-31px">
             <div className="bg-white w-280px h-635px rounded-40px pt-30px px-15px pb-29px
                             t:w-708px t:h-514px
                             d:w-575px d:h-592px">
-              <div className="pb-20px">
-                <Input className="w-250px rounded-10px
-                                  t:w-313" placeholder="Contact Name" />
-              </div>
-              <div className="pb-20px">
-                <Input className="w-250px rounded-10px" placeholder="Mobile Number" />
-              </div>
-              <div className="pb-20px">
-                <Input className="w-250px rounded-10px" placeholder="Company Name" />
-              </div>
-              <div className="pb-20px">
-                <Input className="w-250px rounded-10px" placeholder="Role/Position" />
+              <div className="t:grid t:grid-cols-2 t:gap-21px items-center">
+                <div className="pb-20px">
+                  <Input className="w-250px rounded-10px
+                                    t:w-313" placeholder="Contact Name" />
+                </div>
+                <div className="pb-20px">
+                  <Input className="w-250px rounded-10px" placeholder="Mobile Number" />
+                </div>
+                <div className="pb-20px">
+                  <Input className="w-250px rounded-10px" placeholder="Company Name" />
+                </div>
+                <div className="pb-20px">
+                  <Input className="w-250px rounded-10px" placeholder="Role/Position" />
+                </div>
               </div>
               <div className="pb-20px">
                 <Input className="w-250px rounded-10px" placeholder="Email Address" />
