@@ -150,6 +150,7 @@ module.exports = {
         "blue-darker": "#080719",
         "blue-dark": "#0A173C",
         "form-contact": "#FFFFFF",
+        "blue": "#091023",
       },
     },
   },
