@@ -1,4 +1,4 @@
-import Nonprofit from "../shared/Nonprofit";
+import Nonprofit from "../dtos/Nonprofit";
 import FeaturedNonprofit from "./FeaturedNonprofit";
 
 const nonprofit: Nonprofit = {

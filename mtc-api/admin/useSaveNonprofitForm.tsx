@@ -1,0 +1,72 @@
+import { useMutation, useQueryClient } from 'react-query';
+import { v4 as uuidV4 } from 'uuid';
+import client from '../apiClient';
+
+export const saveNonprofitForm = ({ token, formType, payload }) => {
+  return client.patch(
+    `/admin/nonprofit`,
+    {
+      ...payload,
+      formType,
+    },
+    {
+      headers: { auth: token },
+    },
+  );
+};
+
+export const useSaveNonprofitForm = () => {
+  const queryClient = useQueryClient();
+  return useMutation(
+    ["ADMIN_NONPROFIT_SAVE_FORM"],
+    ({ token, formType, payload }) =>
+      saveNonprofitForm({ token, formType, payload }),
+    {
+      onSuccess: (response, { payload, formType }) => {
+        const interestsData = queryClient.getQueryData("INTERESTS");
+        queryClient.cancelQueries("ADMIN_NONPROFIT_INFO").catch();
+        queryClient.setQueryData(
+          "ADMIN_NONPROFIT_INFO",
+          (current) => {
+            if (formType == 'cover') {
+              current.bannerUrl = payload.bannerUrl;
+              current.logoUrl = payload.logoUrl;
+              current.linkedIn = payload.linkedIn;
+              current.facebook = payload.facebook;
+              current.twitter = payload.twitter;
+              current.instagram = payload.instagram;
+            }
+            if (formType === 'info') {
+              current.description = payload.description;
+              current.interests = (payload.categories || [])
+                .map((id) => interestsData?.find((i) => i.id == id))
+                .filter((i) => !!i);
+            }
+
+            if (payload.locations) {
+              current.locations = payload.locations.map((address) => ({
+                id: uuidV4(),
+                address,
+              }));
+            }
+
+            if (payload.testimonials) {
+              current.testimonials = payload.testimonials;
+            }
+            if (payload.contacts) {
+              current.contacts = payload.contacts;
+            }
+            if (payload.impact) {
+              current.impact = payload.impact;
+            }
+            return current;
+          },
+        );
+      },
+      onError: (error) => {
+        console.log(error);
+        console.log(error?.response);
+      },
+    },
+  );
+};

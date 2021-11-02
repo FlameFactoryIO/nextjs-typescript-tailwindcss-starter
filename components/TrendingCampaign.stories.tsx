@@ -1,4 +1,4 @@
-import Campaign from "../shared/Campaign";
+import Campaign from "../dtos/Campaign";
 import TrendingCampaign from './TrendingCampaign';
 
 const campaign: Campaign = {

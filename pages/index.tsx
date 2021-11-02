@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,17 +6,93 @@ import Button from "../components/Button";
 import TopNav from "../components/TopNav";
 import FeaturedNonprofit from "../components/FeaturedNonprofit";
 import TrendingCampaign from "../components/TrendingCampaign";
+import {dehydrate, QueryClient, useQuery} from "react-query";
+import {getTrendingCampaigns} from "../mtc-api/campaign/useGetCampaigns";
+import Campaign from "../dtos/Campaign";
+import Nonprofit from "../dtos/Nonprofit";
+import {getFeaturedNonprofits} from "../mtc-api/nonprofit/useGetClaimedNonprofits";
+import "keen-slider/keen-slider.min.css";
+import {useKeenSlider} from "keen-slider/react";
+import {useState} from "react";
+
 
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
-  
-const [trendingCampaigns] = useState(stub1);
-const [featuredNonprofits] = useState(stub2);
+
+  const { data: trendingCampaigns } = useQuery("TRENDING_CAMPAIGNS", getTrendingCampaigns);
+  const { data: featuredNonprofits } = useQuery("FEATURED_NONPROFITS", getFeaturedNonprofits);
+
+  const [trendingCampaignsSliderCurrentSlide, setTrendingCampaignsSliderCurrentSlide] = useState(0);
+
+  const [trendingCampaignsSliderRef, trendingCampaignsSlider] = useKeenSlider({
+    initial: 0,
+    slideChanged(s) {
+      setTrendingCampaignsSliderCurrentSlide(s.details().relativeSlide)
+    },
+    spacing: 32,
+    loop: false,
+    mode: "snap",
+    breakpoints: {
+      "(max-width: 767px)": {
+        slidesPerView: 1,
+      },
+      "(min-width: 768px)": {
+        slidesPerView: 3,
+      },
+    },
+  });
+
+  const [featuredNonprofitsSliderCurrentSlide, setFeaturedNonprofitsSliderCurrentSlide] = useState(0);
+
+  const [featuredNonprofitsSliderRef, featuredNonprofitsSlider] = useKeenSlider({
+    initial: 0,
+    slideChanged(s) {
+      setFeaturedNonprofitsSliderCurrentSlide(s.details().relativeSlide)
+    },
+    spacing: 32,
+    loop: false,
+    mode: "snap",
+    breakpoints: {
+      "(max-width: 767px)": {
+        slidesPerView: 1,
+      },
+      "(min-width: 768px)": {
+        slidesPerView: 3,
+      },
+    },
+  });
 
   return (
     <div className="w-full min-w-320px">
       <Head>
         <title>Move the Chain</title>
+        <style type="text/css">{`
+          .dots {
+            display: flex;
+            padding: 10px 0;
+            justify-content: center;
+          }
+  
+          .dot {
+            border: none;
+            width: 10px;
+            height: 10px;
+            background: #c5c5c5;
+            border-radius: 50%;
+            margin: 0 5px;
+            padding: 5px;
+            cursor: pointer;
+          }
+  
+          .dot:focus {
+            outline: none;
+          }
+  
+          .dot.active {
+            background: #000;
+          }
+        `}
+        </style>
       </Head>
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
@@ -252,14 +327,31 @@ const [featuredNonprofits] = useState(stub2);
           </p>
 
           <div className="grid grid-cols-1 t:grid-cols-3 d:grid-cols-4 mt-23px t:mt-30px d:mt-50px gap-32px">
-            {trendingCampaigns.map((tc, index) => (
-              <TrendingCampaign
-                key={tc.id}
-                campaign={tc}
-                variant="dark"
-                className={index > 0 ? "hidden t:block" : ""}
-              />
-            ))}
+            <div className="t:col-span-3 keen-slider" ref={trendingCampaignsSliderRef}>
+              {trendingCampaigns && trendingCampaigns.map((tc) => (
+                <TrendingCampaign
+                  key={tc.id}
+                  campaign={tc}
+                  variant="dark"
+                  className="keen-slider__slide"
+                />
+              ))}
+            </div>
+            {trendingCampaignsSlider && (
+              <div className="t:hidden dots">
+                {[...Array(trendingCampaignsSlider.details().size).keys()].map((idx) => {
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => {
+                        trendingCampaignsSlider.moveToSlideRelative(idx)
+                      }}
+                      className={"dot" + (trendingCampaignsSliderCurrentSlide === idx ? " active" : "")}
+                    />
+                  )
+                })}
+              </div>
+            )}
 
             <div
               className="hidden d:flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px"
@@ -337,13 +429,26 @@ const [featuredNonprofits] = useState(stub2);
           </p>
 
           <div className="grid grid-cols-1 t:grid-cols-3 d:grid-cols-4 mt-23px t:mt-30px d:mt-50px gap-32px">
-            {featuredNonprofits.map((fnp, index) => (
-              <FeaturedNonprofit
-                key={fnp.id}
-                nonprofit={fnp}
-                className={index > 0 ? "hidden t:block" : ""}
-              />
-            ))}
+            <div className="t:col-span-3 keen-slider" ref={featuredNonprofitsSliderRef}>
+              {featuredNonprofits && featuredNonprofits.map((fnp) => (
+                <FeaturedNonprofit key={fnp.id} nonprofit={fnp} className="keen-slider__slide" />
+              ))}
+            </div>
+            {featuredNonprofitsSlider && (
+              <div className="t:hidden dots">
+                {[...Array(featuredNonprofitsSlider.details().size).keys()].map((idx) => {
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => {
+                        featuredNonprofitsSlider.moveToSlideRelative(idx)
+                      }}
+                      className={"dot" + (featuredNonprofitsSliderCurrentSlide === idx ? " active" : "")}
+                    />
+                  )
+                })}
+              </div>
+            )}
 
             <div
               className="hidden d:flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px"
@@ -510,192 +615,13 @@ const [featuredNonprofits] = useState(stub2);
   );
 }
 
-const stub1 = [{
-  id: 1,
-  title: "Nature Scapes",
-  description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
-  startDate: new Date("2021-09-28T00:00:00-04:00"),
-  endDate: new Date("2022-09-28T00:00:00-04:00"),
-  goal: 10000,
-  raised: 2000,
-  donors: 50,
-  challenges: [],
-  payments: [],
-  // videoUrl: undefined,
-  imageUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-  createdAt: new Date("2021-09-01T00:00:00-04:00"),
-  updatedAt: new Date("2021-09-27T00:00:00-04:00"),
-  nonprofitId: 1,
-  nonprofit: {
-    id: 1,
-    logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-    path: "cool-nonprofit",
-    draftCampaigns: [],
-    pastCampaigns: [],
-    campaigns: [],
-    hasCampaigns: 1,
-    challenges: [],
-    claimed: true,
-    contacts: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-    interests: [],
-    locations: [],
-    name: "Cool nonprofit",
-    payments: [],
-    testimonials: [],
-  },
-  timesShared: 50,
-  order: 1,
-  isOpen: true,
-  totalSupporters: 150,
-  shares: 1,
-  totalChallenges: 1,
-},{
-  id: 2,
-  title: "Nature Scapes",
-  description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
-  startDate: new Date("2021-09-28T00:00:00-04:00"),
-  endDate: new Date("2022-09-28T00:00:00-04:00"),
-  goal: 10000,
-  raised: 2000,
-  donors: 50,
-  challenges: [],
-  payments: [],
-  // videoUrl: undefined,
-  imageUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-  createdAt: new Date("2021-09-01T00:00:00-04:00"),
-  updatedAt: new Date("2021-09-27T00:00:00-04:00"),
-  nonprofitId: 1,
-  nonprofit: {
-    id: 3,
-    logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-    path: "cool-nonprofit",
-    draftCampaigns: [],
-    pastCampaigns: [],
-    campaigns: [],
-    hasCampaigns: 1,
-    challenges: [],
-    claimed: true,
-    contacts: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-    interests: [],
-    locations: [],
-    name: "Cool nonprofit",
-    payments: [],
-    testimonials: [],
-  },
-  timesShared: 50,
-  order: 1,
-  isOpen: true,
-  totalSupporters: 150,
-  shares: 1,
-  totalChallenges: 1,
-},{
-  id: 3,
-  title: "Nature Scapes",
-  description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
-  startDate: new Date("2021-09-28T00:00:00-04:00"),
-  endDate: new Date("2022-09-28T00:00:00-04:00"),
-  goal: 10000,
-  raised: 2000,
-  donors: 50,
-  challenges: [],
-  payments: [],
-  // videoUrl: undefined,
-  imageUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-  createdAt: new Date("2021-09-01T00:00:00-04:00"),
-  updatedAt: new Date("2021-09-27T00:00:00-04:00"),
-  nonprofitId: 1,
-  nonprofit: {
-    id: 1,
-    logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-    path: "cool-nonprofit",
-    draftCampaigns: [],
-    pastCampaigns: [],
-    campaigns: [],
-    hasCampaigns: 1,
-    challenges: [],
-    claimed: true,
-    contacts: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
-    interests: [],
-    locations: [],
-    name: "Cool nonprofit",
-    payments: [],
-    testimonials: [],
-  },
-  timesShared: 50,
-  order: 1,
-  isOpen: true,
-  totalSupporters: 150,
-  shares: 1,
-  totalChallenges: 1,
-}];
-
-const stub2 = [{
-  id: 2354,
-  claimed: true,
-  name: "Nonprofit Name",
-  description: "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
-  path: "nonprofit-name",
-  logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-  bannerUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-  logoBg: "#FFFFFF",
-  createdAt: new Date(),
-  updatedAt: new Date(),
-  interests: [],
-  payments: [],
-  testimonials: [],
-  contacts: [],
-  locations: [],
-  hasCampaigns: 0,
-  campaigns: [],
-  challenges: [],
-  pastCampaigns: [],
-  draftCampaigns: [],
-},{
-  id: 2355,
-  claimed: true,
-  name: "Nonprofit Name",
-  description: "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
-  path: "nonprofit-name",
-  logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-  bannerUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-  logoBg: "#FFFFFF",
-  createdAt: new Date(),
-  updatedAt: new Date(),
-  interests: [],
-  payments: [],
-  testimonials: [],
-  contacts: [],
-  locations: [],
-  hasCampaigns: 0,
-  campaigns: [],
-  challenges: [],
-  pastCampaigns: [],
-  draftCampaigns: [],
-},{
-  id: 2356,
-  claimed: true,
-  name: "Nonprofit Name",
-  description: "Duis eu tellus dignissim, pellentesque a lacus eu, hendrerit turpis. Cras iaculis  un hendrerit com und commodo",
-  path: "nonprofit-name",
-  logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-  bannerUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-  logoBg: "#FFFFFF",
-  createdAt: new Date(),
-  updatedAt: new Date(),
-  interests: [],
-  payments: [],
-  testimonials: [],
-  contacts: [],
-  locations: [],
-  hasCampaigns: 0,
-  campaigns: [],
-  challenges: [],
-  pastCampaigns: [],
-  draftCampaigns: [],
-}];
+export async function getStaticProps() {
+  const queryClient = new QueryClient() // new query client not to share data between users and server
+  await queryClient.prefetchQuery<Campaign[]>("TRENDING_CAMPAIGNS", getTrendingCampaigns);
+  await queryClient.prefetchQuery<Nonprofit[]>("FEATURED_NONPROFITS", getFeaturedNonprofits);
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  }
+}
