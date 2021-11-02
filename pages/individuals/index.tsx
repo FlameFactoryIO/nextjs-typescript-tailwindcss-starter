@@ -75,83 +75,128 @@ export default function Individuals() {
 
             </div>
 
-            <div className="t:bg-gradient-to-b t:from-cream t:to-white">
+            <div className="t:bg-gradient-to-b t:from-cream t:to-white"> {/*TODO: Falta componente de 2da columna */}
                 <div id="find"
-                    className="
+                    className="d:grid d:grid-cols-2 d:gap-30px text-center
                             pt-49px px-20px pb-50px
-                            flex flex-col items-center">
+                            t:pt-132px t:pb-42px t:px-30px
+                            ">
 
-                    <div className="flex-1 max-w-280px">
-                        <div className=" text-center font-bold text-18px leading-22px">
-                            Find a specific nonprofit or cause
+                    <div className="flex flex-col t:flex-row d:flex-col t:gap-24px items-center justify-center">
+                        <div className="flex-1 max-w-280px items-center
+                                        t:max-w-220px
+                                        d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left">
+                            <div>
+                                <div className="font-bold text-18px leading-22px
+                                                d:text-28px d:leading-33px"> 
+                                    Find a specific nonprofit or cause
+                                </div>
+                                <div className="font-light text-13px leading-16-9px pt-19px pb-15px
+                                                t:pt-22px t:pb-7px
+                                                d:max-w-320px d:text-16px d:leading-20-8px d:pt-18px d:pb-18px">
+                                    Our <span className="font-bold">easy search tool</span> allows you to find nonprofits of any size in your area and/or <span className="font-bold">causes that interest</span> you.
+                                </div>
+                                <div className="pb-20px">
+                                    <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Search for nonprofit</Button>
+                                </div>
+                            </div>
+                            <div>
+                                <Image
+                                    className="pt-20px pb-10px"
+                                    src="/images/individuals/find-cause.png"
+                                    width={280}
+                                    height={210}
+                                />
+                                <div className="text-center t:hidden">
+                                    <Image
+                                        className="pb-6px "
+                                        src="/images/individuals/Vector-1.png"
+                                        width={100}
+                                        height={50}
+                                    />
+                                </div>
+                            </div>
                         </div>
-                        <div className=" text-center font-light text-13px leading-16-9px pt-19px pb-15px">
-                            Our easy search tool allows you to find nonprofits of any size in your area and/or causes that interest you.
-                        </div>
-                        <div className="text-center pb-20px">
-                            <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Search for nonprofit</Button>
-                        </div>
-                        <Image
-                            className="pt-20px pb-10px"
-                            src="/images/individuals/find-cause.png"
-                            width={280}
-                            height={210}
-                        />
-                        <div className="text-center">
+                        <div className="hidden t:hidden d:block">
                             <Image
-                                className="pb-6px"
-                                src="/images/individuals/Vector-1.png"
-                                width={100}
-                                height={50}
+                                className="pb-6px "
+                                src="/images/individuals/Vector-1-d.png"
+                                width={280}
+                                height={60}
                             />
                         </div>
 
-                    </div>
-                    <div className="flex-2 max-w-280px">
-                        <div className=" text-center font-bold text-18px leading-22px">
-                            Help raise funds
+                        <div className="flex-1 max-w-280px 
+                                        t:max-w-220px
+                                        d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left">
+                            <div>
+                                <div className="font-bold text-18px leading-22px
+                                                d:text-28px d:leading-34px">
+                                    Help raise funds
+                                </div>
+                                <div className="font-light text-13px leading-16-9px pt-19px pb-15px
+                                                t:pt-21px t:pb-13px
+                                                d:max-w-320px d:text-16px d:leading-20-8px d:pt-18px d:pb-18px">
+                                    Campaigns allow nonprofits to tell you exactly why they need to raise funds and how <span className="font-bold">your donations will make a difference.</span>
+                                </div>
+                                <div className="pb-20px">
+                                    <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Find a campaign</Button>
+                                </div>
+                            </div>
+                            <div>
+                                <Image
+                                    className="pt-20px pb-10px"
+                                    src="/images/individuals/help-raise.png"
+                                    width={280}
+                                    height={210}
+                                />
+                                <div className="t:hidden">
+                                    <Image
+                                        className="pb-6px"
+                                        src="/images/individuals/Vector-2.png"
+                                        width={100}
+                                        height={50}
+                                    />
+                                </div>
+                            </div>
+
                         </div>
-                        <div className=" text-center font-light text-13px leading-16-9px pt-19px pb-15px">
-                            Campaigns allow nonprofits to tell you exactly why they need to raise funds and how your donations will make a difference.
-                        </div>
-                        <div className="text-center pb-20px">
-                            <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Find a campaign</Button>
-                        </div>
-                        <Image
-                            className="pt-20px pb-10px"
-                            src="/images/individuals/help-raise.png"
-                            width={280}
-                            height={210}
-                        />
-                        <div className="text-center">
+                        <div className=" hidden t:hidden d:block">
                             <Image
-                                className="pb-6px"
-                                src="/images/individuals/Vector-2.png"
-                                width={100}
-                                height={50}
+                                className="pb-6px "
+                                src="/images/individuals/Vector-2-d.png"
+                                width={280}
+                                height={60}
                             />
                         </div>
 
+                        <div className="flex-1 max-w-280px 
+                                        t:max-w-220px
+                                        d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left">
+                            <div>
+                                <div className="font-bold text-18px leading-22px
+                                                d:text-28px d:leading-34px">
+                                    Join a fundraiser
+                                </div>
+                                <div className="font-light text-13px leading-16-9px pt-19px pb-15px
+                                            t:pt-21px t:pb-28px
+                                            d:max-w-320px d:text-16px d:leading-20-8px d:pt-18px d:pb-18px">
+                                    Companies sponsor fundraisers for specific causes. Join a fundraiser today and make your donation go further.
+                                </div>
+                                <div className="pb-20px">
+                                    <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Join a fundraiser</Button>
+                                </div>
+                            </div>
+                            <div>
+                                <Image
+                                    className="pt-20px pb-10px"
+                                    src="/images/individuals/join-fundraiser.png"
+                                    width={280}
+                                    height={210}
+                                />
+                            </div>
+                        </div>
                     </div>
-                    <div className="flex-3 max-w-280px">
-                        <div className=" text-center font-bold text-18px leading-22px">
-                            Join a fundraiser
-                        </div>
-                        <div className=" text-center font-light text-13px leading-16-9px pt-19px pb-15px">
-                            Companies sponsor fundraisers for specific causes. Join a fundraiser today and make your donation go further.
-                        </div>
-                        <div className="text-center pb-20px">
-                            <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Join a fundraiser</Button>
-                        </div>
-                        <Image
-                            className="pt-20px"
-                            src="/images/individuals/help-raise.png"
-                            width={280}
-                            height={210}
-                        />
-                    </div>
-
-
                 </div>
             </div>
 
