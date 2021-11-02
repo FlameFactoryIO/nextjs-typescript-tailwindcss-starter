@@ -87,7 +87,9 @@ module.exports = {
         "65px": "65px",
       },
       boxShadow: {
-        "0-6-24": '0 6px 24px rgba(0, 0, 0, 0.12)',
+        "0-6-24": "0 6px 24px rgba(0, 0, 0, 0.12)",
+        "2-5-15": "2px 5px 15px rgba(0, 0, 0, 0.28)",
+        "0-2-5": "0px 2px 5px rgba(0, 0, 0, 0.25)",
       },
       spacing: {},
       width: {},
