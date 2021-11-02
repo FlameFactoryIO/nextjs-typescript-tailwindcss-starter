@@ -210,7 +210,7 @@ export default function Home() {
       <div className="px-20px py-50px t:max-w-1140px t:mx-auto">
         <div
           id="step-1"
-          className="flex flex-col t:flex-row gap-x-20 items-center"
+          className="t:mt-0 flex flex-col t:flex-row gap-18px d:gap-50px items-center"
         >
           <div className="t:flex-1 flex flex-col pb-15px">
             <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
@@ -265,7 +265,7 @@ export default function Home() {
 
         <div
           id="step-2"
-          className="mt-40px t:mt-0 flex flex-col t:flex-row gap-x-20 items-center"
+          className="mt-40px t:mt-50px flex flex-col t:flex-row gap-18px d:gap-50px items-center"
         >
           <div className="t:flex-1 flex flex-col pb-15px">
             <div className="px-51px py-9px border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
@@ -308,7 +308,7 @@ export default function Home() {
 
         <div
           id="step-3"
-          className="mt-40px t:mt-0 flex flex-col t:flex-row gap-x-20 items-center"
+          className="mt-40px t:mt-50px flex flex-col t:flex-row gap-18px d:gap-50px items-center"
         >
           <div className="t:flex-1 flex flex-col pb-15px">
             <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
@@ -344,7 +344,7 @@ export default function Home() {
 
         <div
           id="step-4"
-          className="mt-40px t:mt-0 flex flex-col t:flex-row gap-x-20 items-center"
+          className="mt-40px t:mt-50px flex flex-col t:flex-row gap-18px d:gap-50px items-center"
         >
           <div className="t:flex-1 flex flex-col pb-15px">
             <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
