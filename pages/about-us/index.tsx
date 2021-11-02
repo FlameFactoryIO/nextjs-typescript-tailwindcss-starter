@@ -7,7 +7,7 @@ import Button from "../../components/Button";
 // noinspection JSUnusedGlobalSymbols
 export default function AboutUs() {
   return (
-    <div className="w-full min-w-320px">
+    <div className="w-full min-w-320px ">
       <Head>
         <title>Move the Chain</title>
       </Head>
@@ -390,7 +390,7 @@ export default function AboutUs() {
         transform -translate-y-112px 
         items-center
         max-h-750px t:max-h-340px d:max-h-448px
-        gap-43px t:gap-25px d:gap-42px"
+        gap-43px t:gap-25px d:gap-42px "
         >
           <div
             id="questions-cards"

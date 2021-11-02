@@ -366,6 +366,7 @@ module.exports = {
         "914px": "914px",
         "1040px": "1040px",
         "1140px": "1140px",
+        "2170px": "2170px",
       },
       minHeight: {
         "6px": "6px",

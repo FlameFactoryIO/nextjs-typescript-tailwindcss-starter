@@ -7,7 +7,7 @@ import Image from "next/image";
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
   return (
-    <div className="w-full min-w-320px">
+    <div className="w-full min-w-320px ">
       <Head>
         <title>Nonprofits</title>
       </Head>
@@ -21,17 +21,17 @@ export default function Home() {
         //   backgroundPosition: "top",
         //   backgroundSize: "cover",
         // }}
-        className="w-full bg-gradient-to-r t:relative from-blue-dark to-we-connect-charities-bg-right
-      flex flex-col "
+        className="w-full bg-gradient-to-r  from-blue-dark to-we-connect-charities-bg-right
+      "
       >
-        <div className=" d:w-1140px">
+        <div className="t:relative flex flex-col d:mx-auto  d:max-w-2170px d:items-center">
           <div
             id="our-propose"
             className="
             pt-82px px-20px pb-49px
             t:pb-50px t:pr-0
             d:pt-148px d:pb-100px
-            flex flex-col   "
+            flex flex-col   d:max-w-1140px"
           >
             <p
               className="text-26px text-white text-center t:text-left
@@ -259,10 +259,6 @@ export default function Home() {
             </div>
 
             <div className="t:relative">
-              <div
-                className="t:absolute w-1/2 top-0 right-0 bottom-0 rounded-10px"
-                style={{ backgroundColor: "#FFD234" }}
-              />
               <div className="t:absolute top-10px left-10px bottom-10px right-10px flex">
                 <img
                   alt=""
@@ -308,10 +304,6 @@ export default function Home() {
             </div>
 
             <div className="t:col-start-1 t:row-start-1 grid relative">
-              <div
-                className="absolute w-1/2 top-0 left-0 bottom-0 rounded-10px"
-                style={{ backgroundColor: "#2D75F8" }}
-              />
               <div className="absolute top-10px left-10px bottom-10px right-10px flex">
                 <img
                   alt=""
@@ -349,32 +341,13 @@ export default function Home() {
               </p>
             </div>
 
-            <div aria-hidden className="relative">
-              <div
-                className="absolute w-2/3 top-0 right-0 bottom-0 rounded-10px"
-                style={{ backgroundColor: "#091023" }}
-              />
-              <div className="absolute grid grid-cols-2">
+            <div aria-hidden className="t:relative">
+              <div className="t:absolute top-10px left-10px bottom-10px right-10px flex">
                 <img
                   alt=""
-                  src="/images/nonprofits/step3-1.png"
+                  src="/images/nonprofits/step3.png"
                   className="object-contain h-full w-full"
                 />
-                <div className="flex flex-col">
-                  <div className="flex">
-                    <img
-                      alt=""
-                      src="/images/nonprofits/step3-arrow.svg"
-                      className=""
-                    />
-                    <div className="font-hand text-white">You get this</div>
-                  </div>
-                  <img
-                    alt=""
-                    src="/images/nonprofits/step3-2.png"
-                    className=""
-                  />
-                </div>
               </div>
             </div>
           </div>
@@ -402,16 +375,14 @@ export default function Home() {
                 <span className="font-bold">reach your goal.</span>
               </p>
             </div>
-            <div className="t:col-start-1 t:row-start-1 relative">
-              <div
-                className="absolute w-1/2 top-0 left-0 bottom-0 rounded-10px"
-                style={{ backgroundColor: "#FFD234" }}
-              />
-              <img
-                alt=""
-                src="/images/nonprofits/step4-1.png"
-                className="absolute"
-              />
+            <div className="t:col-start-1 t:row-start-1 grid relative">
+              <div className="absolute top-10px left-10px bottom-10px right-10px flex">
+                <img
+                  alt=""
+                  src="/images/nonprofits/step4.png"
+                  className="object-contain w-full"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -503,10 +474,7 @@ export default function Home() {
       </div>
 
       <div className="px-20px pt-44px pb-50px t:pb-36px t:px-30px d:pt-52px d:pb-44px d:px-120px bg-gradient-to-b from-blue-dark to-blue-darker">
-        <div
-          id="questions"
-          className="d:max-w-1140px mx-auto"
-        >
+        <div id="questions" className="d:max-w-1140px mx-auto">
           <div className="text-20px leading-24px d:text-34px d:leading-41px text-white text-center t:text-left font-bold t:pb-14px">
             Questions?
           </div>
@@ -516,14 +484,18 @@ export default function Home() {
               happy to answer your questions!
             </p>
 
-            <Button type="button" variant="primary" className="w-140px h-46px rounded-10pxi whitespace-nowrap">
+            <Button
+              type="button"
+              variant="primary"
+              className="w-140px h-46px rounded-10pxi whitespace-nowrap"
+            >
               Contact Us
             </Button>
           </div>
         </div>
       </div>
       <div id="footer" className="w-full bg-footer">
-        <div className="px-20px pt-30px pb-15px mx-auto">
+        <div className="w-280px t:w-708px d:w-1140px mx-auto">
           <Footer />
         </div>
       </div>
