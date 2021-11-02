@@ -82,7 +82,7 @@ export const Video = () => (
 
 // noinspection JSUnusedGlobalSymbols
 export const VariantLight = () => (
-  <div className="w-270px">
+  <div className="w-320px bg-white p-20px">
     <TrendingCampaign campaign={campaign} variant="light" />
   </div>
 );

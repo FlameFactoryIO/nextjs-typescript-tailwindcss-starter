@@ -2,6 +2,7 @@ import React, { FC, useState } from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Button from "./Button";
 import Input from "./Input";
+import Link from "next/link";
 
 const Footer: FC = () => {
   const [emailAddress, setEmailAddress] = useState<string>("");
@@ -25,10 +26,10 @@ const Footer: FC = () => {
       </div>
       <div className="col-span-2 mt-36px d:mt-48px text-center t:text-left">
         <form onSubmit={handleSubscribeSubmit}>
-          <h1 className="text-15px leading-22-5px t:text-18px t:leading-27px    font-bold">
+          <h1 className="text-15px leading-22-5px t:text-18px t:leading-27px font-bold">
             Subscribe to our newsletter 💌
           </h1>
-          <div className="mt-13px leading-17px t:text-14px t:leading-18px px t:mt-5px ">
+          <div className="mt-13px leading-17px t:text-14px t:leading-18px px t:mt-5px t:max-w-420px">
             Never miss  a new campaign, discover nonprofit organizations, and
             learn how you can make a difference.
           </div>
@@ -45,47 +46,47 @@ const Footer: FC = () => {
           </div>
         </form>
       </div>
-      <div className="t:mx-auto mt-48px t:mt-48px">
-        <div className="text-15px leading-22-5px t:text-18px t:leading-27px d:text-18px font-bold d:font-extrabold">
-          Useful links
+      <div className="t:mx-auto mt-48px t:mt-48px mx-auto">
+        <div className="text-15px leading-22-5px t:text-18px t:leading-27px d:text-18px font-bold d:font-extrabold text-primary flex items-center whitespace-nowrap">
+          <img src="/images/mtc.svg" className="h-16px" />&nbsp;Move The Chain
         </div>
         <ul className="text-13px t:text-14px  leading-25px pb-5px font-normal t:font-light d:font-normal ">
           <li>
-            <a href="/create-account">Create account</a>
+            <Link href="/about-us">About</Link>
           </li>
           <li>
-            <a href="/discover-campaigns">Discover campaigns</a>
+            <Link href="/individuals">Individuals</Link>
           </li>
           <li>
-            <a href="/create-challenge">Create a challenge</a>
+            <Link href="/nonprofits">Nonprofits</Link>
           </li>
           <li>
-            <a href="/join-challenge">Join a challenge</a>
+            <Link href="/corporations">Corporations</Link>
           </li>
           <li>
-            <a href="/find-match">Find your match</a>
+            <Link href="/nonprofits/search">Find your match</Link>
           </li>
           <li>
-            <a href="/faq">How to or FAQ</a>
+            <Link href="/faq">FAQs</Link>
           </li>
         </ul>
       </div>
       <div className="ml-20px d:mx-auto mt-48px d:mt-48px ">
-        <div className="text-15px leading-22-5px t:text-18px t:leading-27px d:text-18px font-bold d:font-extrabold ">
+        <div className="text-15px leading-22-5px t:text-18px t:leading-27px d:text-18px font-bold d:font-extrabold">
           Contact
         </div>
         <ul className="text-13px t:text-14px leading-25px pb-5px font-normal t:font-light d:font-normal">
           <li>
-            <a href="/corporation-contact">Corporation Contact</a>
+            <Link href="/corporation-contact">Corporation Contact</Link>
           </li>
           <li>
-            <a href="/customer-support">Customer Support</a>
+            <Link href="/customer-support">Customer Support</Link>
           </li>
           <li>
-            <a href="/feature-suggestions">Feature Suggestions</a>
+            <Link href="/feature-suggestions">Feature Suggestions</Link>
           </li>
           <li>
-            <a href="/legal-feedback">Legal Feedback</a>
+            <Link href="/legal-feedback">Legal Feedback</Link>
           </li>
         </ul>
         <div className="flex flex-rows gap-10px t:pt-44px">
