@@ -81,7 +81,7 @@ export default function Home() {
             <div className="block t:hidden d:block">
               <Image
                 alt=""
-                src="/images/nonprofits/nonprofit-hero-section.png"
+                src="/images/nonprofits/hero.png"
                 width={640}
                 height={449}
                 objectFit="contain"
@@ -91,7 +91,7 @@ export default function Home() {
             <div className="hidden t:block d:hidden ">
               <Image
                 alt=""
-                src="/images/nonprofits/nonprofit-hero-section.png"
+                src="/images/nonprofits/hero.png"
                 width={400}
                 height={282}
               />
@@ -99,7 +99,7 @@ export default function Home() {
             {/* <div className="t:hidden bg-yellow-300">
             <Image
               alt=""
-              src="/images/nonprofits/nonprofit-hero-section.png"
+                src="/images/nonprofits/hero.png"
               width={320}
               height={254}
               
@@ -130,7 +130,7 @@ export default function Home() {
                 alt="logo"
               />
               <div className="mx-auto pb-8px text-center text-16px font-bold leading-24px d:text-20px d:leading-24px">
-                We'll cover the cost
+                We&apos;ll cover the cost
               </div>
               <p className="mx-auto text-center text-13px leading-17px d:text-16px d:leading-20-8px font-light">
                 Move the Chain provides a free platform for nonprofits to
@@ -170,7 +170,7 @@ export default function Home() {
           </div>
           <div>
             <div className="flex flex-row justify-center pb-29px">
-              <div className="font-hand text-primary text-46px leading-38px d:text-46px d:leading-38px">
+              <div className="font-hand text-primary text-46px leading-38px">
                 Claim your page
               </div>
 
@@ -207,183 +207,171 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="px-20px py-50px">
+      <div className="px-20px py-50px t:max-w-1140px t:mx-auto">
         <div
-          id="steps"
-          className="grid grid-rows-4 space-y-40px t:max-w-1140px mx-auto"
+          id="step-1"
+          className="flex flex-col t:flex-row gap-x-20 items-center"
         >
-          <div
-            id="step-1"
-            className="t:grid t:grid-cols-2 t:grid-rows-1 t:gap-x-20"
-          >
-            <div className="self-center flex flex-col pb-15px">
-              <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
-                Step 1
-              </div>
-              <div className="text-20px font-bold leading-24px d:text-34px d:leading-41px mb-22px">
-                Start by claiming your page!
-              </div>
-              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px">
-                With a simple click of a button, you can claim your page on Move
-                the Chain! Follow those{" "}
-                <span className="font-bold">simple steps </span>to get started:
-              </p>
-              <div className="px-20px">
-                <ol className="list-decimal text-primary text-13px leading-17px flex flex-col gap-y-14px font-bold">
-                  <li>
-                    <p className="text-black font-light pl-9px">
-                      Click on{" "}
-                      <span className="font-bold">“Claim your page”</span> and
-                      search for your nonprofit
-                    </p>
-                  </li>
-                  <li>
-                    <p className="text-black font-light pl-9px">
-                      If you are part of{" "}
-                      <span className="font-bold">PayPal Giving Fund</span>, you
-                      will find your nonprofit. Simply click the{" "}
-                      <span className="font-bold">“Claim Page”</span> button to
-                      begin the process
-                    </p>
-                  </li>
-                  <li>
-                    <p className="text-black font-light pl-9px">
-                      If you are not registered with PayPal Giving Fund, simply
-                      enroll your nonprofit so you can start accepting donations
-                      and create a <span className="font-bold"> profile</span>{" "}
-                      on Move the Chain
-                    </p>
-                  </li>
-                </ol>
-              </div>
+          <div className="t:flex-1 flex flex-col pb-15px">
+            <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
+              Step 1
             </div>
-
-            <div className="t:relative">
-              <div className="t:absolute top-10px left-10px bottom-10px right-10px flex">
-                <img
-                  alt=""
-                  src="/images/nonprofits/step1.png"
-                  className="object-contain w-full"
-                />
-              </div>
+            <div className="text-20px font-bold leading-24px d:text-34px d:leading-41px mb-22px">
+              Start by claiming your page!
+            </div>
+            <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px">
+              With a simple click of a button, you can claim your page on Move
+              the Chain! Follow those{" "}
+              <span className="font-bold">simple steps </span>to get started:
+            </p>
+            <div className="px-20px">
+              <ol className="list-decimal text-primary text-13px leading-17px flex flex-col gap-y-14px font-bold">
+                <li>
+                  <p className="text-black font-light pl-9px">
+                    Click on{" "}
+                    <span className="font-bold">“Claim your page”</span> and
+                    search for your nonprofit
+                  </p>
+                </li>
+                <li>
+                  <p className="text-black font-light pl-9px">
+                    If you are part of{" "}
+                    <span className="font-bold">PayPal Giving Fund</span>, you
+                    will find your nonprofit. Simply click the{" "}
+                    <span className="font-bold">“Claim Page”</span> button to
+                    begin the process
+                  </p>
+                </li>
+                <li>
+                  <p className="text-black font-light pl-9px">
+                    If you are not registered with PayPal Giving Fund, simply
+                    enroll your nonprofit so you can start accepting donations
+                    and create a <span className="font-bold"> profile</span>{" "}
+                    on Move the Chain
+                  </p>
+                </li>
+              </ol>
             </div>
           </div>
 
-          <div
-            id="step-2"
-            className="grid grid-rows-2 t:grid-cols-2 t:grid-rows-1 t:gap-x-20"
-          >
-            <div className="self-center t:col-start-2 flex flex-col pb-20px">
-              <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
-                Step 2
-              </div>
-              <div className="text-20px font-bold leading-24px d:text-34px d:leading-41px mb-22px">
-                Update your Profile
-              </div>
-              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
-                Within <span className="font-bold">a few minutes </span> you can
-                update your profile!
-              </p>
-              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
-                Be sure to include the best possible photos and videos to{" "}
-                <span className="font-bold">emphasize the great work </span>
-                you’re doing! Your “About” section should be both concise and
-                heartfelt.
-              </p>
-              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-12px font-light">
-                This is your opportunity to create a profile that best
-                represents your organization to
-                <span className="font-bold">
-                  {" "}
-                  maximize the potential{" "}
-                </span> of{" "}
-                <span className="font-bold">
-                  turning visitors into donors!{" "}
-                </span>
-              </p>
-            </div>
+          <div aria-hidden className="t:flex-1">
+            <Image
+              src="/images/nonprofits/step1.png"
+              width={540} height={500}
+              objectFit="contain"
+            />
+          </div>
+        </div>
 
-            <div className="t:col-start-1 t:row-start-1 grid relative">
-              <div className="absolute top-10px left-10px bottom-10px right-10px flex">
-                <img
-                  alt=""
-                  src="/images/nonprofits/step2.png"
-                  className="object-contain w-full"
-                />
-              </div>
+        <div
+          id="step-2"
+          className="mt-40px t:mt-0 flex flex-col t:flex-row gap-x-20 items-center"
+        >
+          <div className="t:flex-1 flex flex-col pb-15px">
+            <div className="px-51px py-9px border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
+              Step 2
             </div>
+            <div className="text-20px font-bold leading-24px d:text-34px d:leading-41px mb-22px">
+              Update your Profile
+            </div>
+            <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
+              Within <span className="font-bold">a few minutes </span> you can
+              update your profile!
+            </p>
+            <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
+              Be sure to include the best possible photos and videos to{" "}
+              <span className="font-bold">emphasize the great work </span>
+              you’re doing! Your “About” section should be both concise and
+              heartfelt.
+            </p>
+            <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-12px font-light">
+              This is your opportunity to create a profile that best
+              represents your organization to
+              <span className="font-bold">
+                {" "}
+                maximize the potential{" "}
+              </span> of{" "}
+              <span className="font-bold">
+                turning visitors into donors!{" "}
+              </span>
+            </p>
           </div>
 
-          <div
-            id="step-3"
-            className="grid grid-rows-2 t:grid-cols-2 t:grid-rows-1 t:gap-x-20 h-500px"
-          >
-            <div className="self-center flex flex-col pb-15px">
-              <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
-                Step 3
-              </div>
-              <div className="text-20px font-bold leading-24px d:text-34px d:leading-41px mb-22px">
-                Create a campaign!
-              </div>
-              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
-                Once you claim your page, you can get started right away by
-                launching a fundraising campaign.
-              </p>
-              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
-                This is your{" "}
-                <span className="font-bold">opportunity to create </span> a
-                genuine and compelling video message that tells the story of
-                <span className="font-bold">
-                  your organization’s mission{" "}
-                </span>{" "}
-                the cause you are trying to fund and how donations will be used
-                to do good.{" "}
-              </p>
-            </div>
+          <div aria-hidden className="t:flex-1 order-last t:order-first">
+            <Image
+              src="/images/nonprofits/step2.png"
+              width={473} height={500}
+              objectFit="contain"
+            />
+          </div>
+        </div>
 
-            <div aria-hidden className="t:relative">
-              <div className="t:absolute top-10px left-10px bottom-10px right-10px flex">
-                <img
-                  alt=""
-                  src="/images/nonprofits/step3.png"
-                  className="object-contain h-full w-full"
-                />
-              </div>
+        <div
+          id="step-3"
+          className="mt-40px t:mt-0 flex flex-col t:flex-row gap-x-20 items-center"
+        >
+          <div className="t:flex-1 flex flex-col pb-15px">
+            <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
+              Step 3
             </div>
+            <div className="text-20px font-bold leading-24px d:text-34px d:leading-41px mb-22px">
+              Create a campaign!
+            </div>
+            <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
+              Once you claim your page, you can get started right away by
+              launching a fundraising campaign.
+            </p>
+            <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
+              This is your{" "}
+              <span className="font-bold">opportunity to create </span> a
+              genuine and compelling video message that tells the story of
+              <span className="font-bold">
+                your organization’s mission{" "}
+              </span>{" "}
+              the cause you are trying to fund and how donations will be used
+              to do good.{" "}
+            </p>
           </div>
 
-          <div
-            id="step-4"
-            className="grid grid-rows-2 t:grid-cols-2  t:grid-rows-1  t:gap-x-20"
-          >
-            <div className="self-center t:col-start-2 flex flex-col pb-20px">
-              <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
-                Step 4
-              </div>
-              <div className="text-20px  leading-24px d:text-34px d:leading-41px font-bold mb-22px">
-                Spread the word and ask your supporters to give.
-              </div>
-              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
-                Last but certainly not least,{" "}
-                <span className="font-bold">sharing is key.</span>
-              </p>
-              <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
-                The impact of sharing on social media, email and text messages
-                cannot be understated in its ability to make your campaign
-                successful. Once your campaign is created, tell everyone about
-                it. The more you share, the more likely you are to{" "}
-                <span className="font-bold">reach your goal.</span>
-              </p>
+          <div aria-hidden className="t:flex-1">
+            <Image
+              src="/images/nonprofits/step3.png"
+              width={499} height={512}
+              objectFit="contain"
+            />
+          </div>
+        </div>
+
+        <div
+          id="step-4"
+          className="mt-40px t:mt-0 flex flex-col t:flex-row gap-x-20 items-center"
+        >
+          <div className="t:flex-1 flex flex-col pb-15px">
+            <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
+              Step 4
             </div>
-            <div className="t:col-start-1 t:row-start-1 grid relative">
-              <div className="absolute top-10px left-10px bottom-10px right-10px flex">
-                <img
-                  alt=""
-                  src="/images/nonprofits/step4.png"
-                  className="object-contain w-full"
-                />
-              </div>
+            <div className="text-20px  leading-24px d:text-34px d:leading-41px font-bold mb-22px">
+              Spread the word and ask your supporters to give.
             </div>
+            <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
+              Last but certainly not least,{" "}
+              <span className="font-bold">sharing is key.</span>
+            </p>
+            <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
+              The impact of sharing on social media, email and text messages
+              cannot be understated in its ability to make your campaign
+              successful. Once your campaign is created, tell everyone about
+              it. The more you share, the more likely you are to{" "}
+              <span className="font-bold">reach your goal.</span>
+            </p>
+          </div>
+
+          <div aria-hidden className="t:flex-1 order-last t:order-first">
+            <Image
+              src="/images/nonprofits/step4.png"
+              width={540} height={500}
+              objectFit="contain"
+            />
           </div>
         </div>
       </div>

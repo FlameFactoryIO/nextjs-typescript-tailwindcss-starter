@@ -145,7 +145,7 @@ module.exports = {
   plugins: [],
 };
 
-const range = (start, end, step = 1) => Array.from({ length: (end - start) / step + 1 }, (_, i) => i);
+const range = (start, end, step = 1) => Array.from({ length: (end - start) / step + 1 }, (_, i) => i + start);
 
 range(12, 50).forEach((i) => module.exports.theme.extend.fontSize[`${i}px`] = `${i}px`)
 range(1, 1000).forEach((i) => module.exports.theme.extend.spacing[`${i}px`] = `${i}px`)
