@@ -9,28 +9,51 @@ const TopNavItem: FC<{ title: string, path: string, href: string }> = ({title, p
   );
 }
 
-const SideNavItem: FC<{ initialOpen?: boolean, title: ReactNode, isSelected?: boolean, className?: string }> = ({
-  initialOpen,
+const SideNavItem: FC<{
+  title: ReactNode,
+  className?: string,
+  href?: string
+}> = ({
   title,
-  isSelected = false,
   className,
-  children
+  href,
+  children,
 }) => {
-  const [isOpen, setOpen] = useState<boolean>(initialOpen ?? false);
-  return (
-    <div className={`flex flex-col cursor-pointer p-20px border-b ${isSelected ? "bg-primary-500 text-white" : ""} ${className ?? ""}`}>
+  const [isOpen, setOpen] = useState<boolean>(false);
+  const router = useRouter();
+  const isSelected = router?.asPath === href;
 
-      <div className="flex" onClick={children && (() => setOpen(prev => !prev))}>
-        <div className={`flex-1 ${isOpen ? "opacity-60" : ""}`}>{title}</div>
-        {children ? (
+  if (!href) {
+    return (
+      <div className={`flex flex-col cursor-pointer p-20px border-b ${className ?? ""}`}
+           onClick={() => setOpen(prev => !prev)}>
+        <div className="flex">
+          <div className={`flex-1 ${isOpen ? "opacity-60" : ""}`}>{title}</div>
           <div className="cursor-pointer text-primary flex items-center">
             {isOpen ? <FaChevronUp/> : <FaChevronDown/>}
           </div>
-        ) : null}
-      </div>
+        </div>
 
-      {isOpen && <div className="flex-1 pt-10px">{children}</div>}
-    </div>
+        {isOpen && <div className="flex-1 pt-10px">{children}</div>}
+      </div>
+    );
+  }
+
+  return (
+    <Link href={href}>
+      <a className={`flex flex-col cursor-pointer p-20px border-b ${isSelected ? "bg-primary-500 text-white" : ""} ${className ?? ""}`}>
+        <div className="flex" onClick={children && (() => setOpen(prev => !prev))}>
+          <div className={`flex-1 ${isOpen ? "opacity-60" : ""}`}>{title}</div>
+          {children ? (
+            <div className="cursor-pointer text-primary flex items-center">
+              {isOpen ? <FaChevronUp/> : <FaChevronDown/>}
+            </div>
+          ) : null}
+        </div>
+
+        {isOpen && <div className="flex-1 pt-10px">{children}</div>}
+      </a>
+    </Link>
   );
 };
 
@@ -148,33 +171,23 @@ const TopNav: FC<{
         </span>
           </form>
 
-          <SideNavItem title={<Link href="/about-us"><a>About us</a></Link>}
-                       isSelected={router?.asPath === "/about-us"}
-                       className="mt-14px" />
+          <SideNavItem title="About us" href="/about-us" className="mt-14px" />
           <SideNavItem title="Individuals">
-            <SideNavItem title={<Link href="/sign-up"><a className="font-light" >Create account or sign up</a></Link>}
-                         isSelected={router?.asPath === "/sign-up"}
-                         className="border-none py-8px"/>
-            <SideNavItem title={<Link href="/campaigns/search"><a className="font-light">Discover campaigns</a></Link>}
-                         isSelected={router?.asPath === "/campaigns/search"}
-                         className="border-none py-8px"/>
-            <SideNavItem title={<Link href="/challenges"><a className="font-light">Create or join a challenge</a></Link>}
-                         isSelected={router?.asPath === "/challenges"}
-                         className="border-none py-8px"/>
-            <SideNavItem title={<Link href="/nonprofits/search"><a className="font-light">Find your match</a></Link>}
-                         isSelected={router?.asPath === "/nonprofits/search"}
-                         className="border-none py-8px"/>
+            <SideNavItem title="Join a corporate fundraiser" href="/sign-up" className="border-none py-8px font-light"/>
+            <SideNavItem title="Discover campaigns" href="/campaigns/search" className="border-none py-8px font-light"/>
+            <SideNavItem title="Search nonprofits" href="/nonprofits/search" className="border-none py-8px font-light"/>
           </SideNavItem>
-          <SideNavItem title={<Link href="/nonprofits"><a>Nonprofits</a></Link>}
-                       isSelected={router?.asPath === "/nonprofits"} />
-          <SideNavItem title={<Link href="/corporations"><a>Corporations</a></Link>}
-                       isSelected={router?.asPath === "/corporations"} />
+          <SideNavItem title="Nonprofits" href="/nonprofits" />
+          <SideNavItem title="Corporations" href="/corporations" />
           <SideNavItem title="Resources"/>
           <SideNavItem
-            title={<Link href="/log-in"><a className="flex items-center">
-              <FaUser className="text-primary"/>
-              &nbsp;Log In
-            </a></Link>}
+            href="/log-in"
+            title={
+              <div className="flex items-center">
+                <FaUser className="text-primary"/>
+                &nbsp;Log In
+              </div>
+            }
             isSelected={router?.asPath === "/log-in"}
             className="border-none"/>
         </div>
