@@ -83,6 +83,9 @@ module.exports = {
                 "57-6px": "57.6px",
                 "65px": "65px",
             },
+            boxShadow: {
+              "0-6-24": '0 6px 24px rgba(0, 0, 0, 0.12)',
+            },
             spacing: {},
             width: {},
             height: {},
@@ -146,13 +149,30 @@ module.exports = {
     plugins: [],
 };
 
-const range = (start, end, step = 1) => Array.from({ length: (end - start) / step + 1 }, (_, i) => i);
+const range = (start, end, step = 1) =>
+  Array.from({ length: (end - start) / step + 1 }, (_, i) => i + start);
 
-range(12, 50).forEach((i) => module.exports.theme.extend.fontSize[`${i}px`] = `${i}px`)
-range(1, 1000).forEach((i) => module.exports.theme.extend.spacing[`${i}px`] = `${i}px`)
-range(1, 1380).forEach((i) => module.exports.theme.extend.width[`${i}px`] = `${i}px`)
-range(1, 1380).forEach((i) => module.exports.theme.extend.minWidth[`${i}px`] = `${i}px`)
-range(1, 1380).forEach((i) => module.exports.theme.extend.maxWidth[`${i}px`] = `${i}px`)
-range(1, 1000).forEach((i) => module.exports.theme.extend.height[`${i}px`] = `${i}px`)
-range(1, 1000).forEach((i) => module.exports.theme.extend.minHeight[`${i}px`] = `${i}px`)
-range(1, 1000).forEach((i) => module.exports.theme.extend.maxHeight[`${i}px`] = `${i}px`)
+range(12, 50).forEach(
+  (i) => (module.exports.theme.extend.fontSize[`${i}px`] = `${i}px`)
+);
+range(1, 1000).forEach(
+  (i) => (module.exports.theme.extend.spacing[`${i}px`] = `${i}px`)
+);
+range(1, 1380).forEach(
+  (i) => (module.exports.theme.extend.width[`${i}px`] = `${i}px`)
+);
+range(1, 1380).forEach(
+  (i) => (module.exports.theme.extend.minWidth[`${i}px`] = `${i}px`)
+);
+range(1, 1380).forEach(
+  (i) => (module.exports.theme.extend.maxWidth[`${i}px`] = `${i}px`)
+);
+range(1, 1000).forEach(
+  (i) => (module.exports.theme.extend.height[`${i}px`] = `${i}px`)
+);
+range(1, 1000).forEach(
+  (i) => (module.exports.theme.extend.minHeight[`${i}px`] = `${i}px`)
+);
+range(1, 1000).forEach(
+  (i) => (module.exports.theme.extend.maxHeight[`${i}px`] = `${i}px`)
+);

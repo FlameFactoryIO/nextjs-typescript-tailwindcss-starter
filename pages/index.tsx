@@ -174,7 +174,7 @@ const [featuredNonprofits] = useState(stub2);
       </div>
 
       <div className="">
-        <div className="pt-44px d:pt-84px px-20px w-280px t:w-768px d:w-1140px mx-auto text-center">
+        <div className="pt-44px d:pt-84px px-20px min-w-280px t:max-w-1140px mx-auto text-center t:w-708px d:w-800px">
           <div className="font-bold text-24px leading-28-8px d:text-43px d:leading-65px">
             What&apos;s Move the chain
           </div>
@@ -444,7 +444,7 @@ const [featuredNonprofits] = useState(stub2);
                   <Button
                     type="button"
                     variant="primary"
-                    className="mt-15px rounded-10pxi t:px-1px d:px-20px mx-auto d:mx-0 
+                    className="mt-15px rounded-10pxi t:px-1px d:px-20px mx-auto d:mx-0
                     text-13px leading-19-5px
                     w-160px t:w-130px d:w-200px"
                   >
@@ -466,7 +466,7 @@ const [featuredNonprofits] = useState(stub2);
                   <Button
                     type="button"
                     variant="primary"
-                    className="mt-15px rounded-10pxi t:px-1px d:px-20px mx-auto d:mx-0 
+                    className="mt-15px rounded-10pxi t:px-1px d:px-20px mx-auto d:mx-0
                     text-13px leading-19-5px
                     w-160px t:w-130px d:w-200px"
                   >
@@ -488,7 +488,7 @@ const [featuredNonprofits] = useState(stub2);
                   <Button
                     type="button"
                     variant="primary"
-                    className="mt-15px rounded-10pxi t:px-1px d:px-20px mx-auto d:mx-0 
+                    className="mt-15px rounded-10pxi t:px-1px d:px-20px mx-auto d:mx-0
                     text-13px leading-19-5px
                     w-160px t:w-130px d:w-200px"
                   >
@@ -502,7 +502,7 @@ const [featuredNonprofits] = useState(stub2);
       </div>
 
       <div id="footer" className="w-full bg-footer">
-        <div className="w-280px t:w-708px d:w-1140px mx-auto">
+        <div className="min-w-280px t:max-w-1140px t:px-30px d:px-0 mx-auto">
           <Footer />
         </div>
       </div>

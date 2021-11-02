@@ -147,7 +147,8 @@ export default function AboutUs() {
                             "
             >
               <h1>
-                Why, <span className=" text-primary">&#34;Move the Chain&#34; </span>{" "}
+                Why,{" "}
+                <span className=" text-primary">&#34;Move the Chain&#34; </span>{" "}
                 ?
               </h1>
             </div>
@@ -221,7 +222,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <div className="w-full bg-cream">
+      <div className="w-full bg-gradient-to-b from-white to-cream">
         <div
           id="about-our-platform"
           className="flex flex-col  
@@ -242,8 +243,10 @@ export default function AboutUs() {
               id="card-1"
               className="bg-white
                         pt-22px px-20px pb-21px
-                        rounded-26px shadow border-1px
-                        flex-1 w-280px t:w-222px d:w-280px"
+                        rounded-26px 
+                        flex-1 w-280px t:w-222px d:w-367px
+                        border-1px  shadow-0-6-24"
+             
             >
               <img
                 className="mr-auto pb-15px"
@@ -269,8 +272,8 @@ export default function AboutUs() {
               id="card-2"
               className="bg-white
               pt-22px px-20px pb-21px
-              rounded-26px shadow border-1px
-              flex-1 w-280px t:w-222px d:w-280px"
+              rounded-26px border-1px  shadow-0-6-24
+              flex-1 w-280px t:w-222px d:w-367px"
             >
               <img
                 className="mr-auto pb-15px"
@@ -296,8 +299,8 @@ export default function AboutUs() {
               id="card-3"
               className="bg-white
               pt-22px px-20px pb-21px
-              rounded-26px shadow border-1px
-              flex-1 w-280px t:w-222px d:w-280px"
+              rounded-26px border-1px  shadow-0-6-24
+              flex-1 w-280px t:w-222px d:w-367px"
             >
               <img
                 className="mr-auto pb-15px"
@@ -404,7 +407,7 @@ export default function AboutUs() {
               className="bg-footer
                         pt-22px px-20px pb-21px
                         rounded-26px shadow border-1px
-                        flex-1 w-280px t:w-222px d:w-280px"
+                        flex-1 w-280px t:w-222px d:w-367px"
             >
               <img
                 className="mr-auto pb-15px"
@@ -433,7 +436,7 @@ export default function AboutUs() {
               className="bg-footer
               pt-22px px-20px pb-21px
               rounded-26px shadow border-1px
-              flex-1 w-280px t:w-222px d:w-280px"
+              flex-1 w-280px t:w-222px d:w-367px"
             >
               <img
                 className="mr-auto pb-15px"
@@ -461,7 +464,7 @@ export default function AboutUs() {
               className="bg-footer
               pt-22px px-20px pb-21px
               rounded-26px shadow border-1px
-              flex-1 w-280px t:w-222px d:w-280px"
+              flex-1 w-280px t:w-222px d:w-367px"
             >
               <img
                 className="mr-auto pb-15px"
@@ -499,8 +502,10 @@ export default function AboutUs() {
               Do you have questions about Move the Chain? Reach out and we’ll be
               happy to answer your questions!
             </p>
-            <Button className=" font-bold rounded-10pxi text-14px leading-21px py-13px px-62px
-            w-200px">
+            <Button
+              className=" font-bold rounded-10pxi text-14px leading-21px py-13px px-62px
+            w-200px"
+            >
               Contact Us
             </Button>
           </div>
