@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'January Handwriting';
+    src: url('JanuaryHandwriting.eot');
+    src: url('JanuaryHandwriting.eot?#iefix') format('embedded-opentype'),
+    url('JanuaryHandwriting.woff2') format('woff2'),
+    url('JanuaryHandwriting.woff') format('woff'),
+    url('JanuaryHandwriting.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}

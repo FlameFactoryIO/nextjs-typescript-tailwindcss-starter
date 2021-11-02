@@ -5,7 +5,7 @@ import {FaChevronDown, FaChevronUp, FaUser} from "react-icons/fa";
 
 const TopNavItem: FC<{ title: string, path: string, href: string }> = ({title, path, href}) => {
   return (
-    <Link href={href}><a className={path === href ? "border-b-2 border-primary-500" : ""}>{title}</a></Link>
+    <Link href={href}><a className={path === href ? "border-b-2 border-primary-500 font-bold" : ""}>{title}</a></Link>
   );
 }
 
@@ -61,7 +61,8 @@ const TopNav: FC<{
   return (
     <>
       <div
-        className={`z-50 hidden d:flex fixed w-full select-none bg-white px-50px py-20px items-center ${className ?? ""}`}>
+        className={`z-50 hidden  fixed d:flex w-full select-none bg-white px-50px py-20px items-center d:justify-between ${className ?? ""}`}>
+        
         <Link href="/">
           <a className="flex">
             <svg width="41" height="37" viewBox="0 0 41 37" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +77,7 @@ const TopNav: FC<{
           </a>
         </Link>
 
-        <div className="flex-1 flex gap-20px items-center justify-center text-14px leading-21px">
+        <div className="flex-1 d:flex-none flex gap-20px items-center justify-center text-14px leading-21px">
           <TopNavItem title="About us" path={router?.asPath} href="/about-us"/>
           <TopNavItem title="Individuals" path={router?.asPath} href="/individuals"/>
           <TopNavItem title="Nonprofits" path={router?.asPath} href="/nonprofits"/>
