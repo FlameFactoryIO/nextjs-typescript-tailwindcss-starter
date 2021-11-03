@@ -68,10 +68,10 @@ export default function Individuals() {
                            d:pt-70px d:pl-32px d:pr-120px
                            flex flex-col t:grid grid-cols-2 t:gap-18px d:gap-30px items-center">
 
-                    <div>
-                        <div className="font-bold text-center text-24px leading-28-8px pb-23px
+                    <div className="flex flex-col items-center">
+                        <div className="max-w-176px font-bold text-center text-24px leading-28-8px pb-23px
                                 t:pb-67px
-                                d:pb-17px d:text-43px d:leading-51-6px">
+                                d:pb-17px d:text-43px d:leading-51-6px d:max-w-315px">
                             Be the change
                         </div>
                         <div className="block t:hidden" style={{ marginBottom: -30 }}>
