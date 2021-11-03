@@ -19,20 +19,24 @@ export default function Individuals() {
                     id="hero"
                     className="
                                 pt-84px pb-50px px-20px
-                                t:pt-82px t:pb-30px t:px-30px
-                                d:pt-136px d:pb-42px d:pl-119px d:pr-104px d:gap-89px
-                                flex flex-col t:grid grid-cols-2 t:gap-20px items-center"
+                                t:pt-82px t:pb-30px t:px-30px t:gap-20px
+                                d:pt-136px d:pb-42px d:pl-119px d:pr-104px d:gap-47px
+                                flex flex-col t:grid grid-cols-2 items-center"
                 >
-                    <div className="max-w-280px font-sans text-center text-white d:w-452px flex flex-col gap-17px
-                                    t:max-w-341px t:text-left t:items-center
-                                    d:max-w-452px d:pt-113px d:pb-135px d:gap-37px">
-                        <div className="font-bold text-26px leading-31-2px d:text-48px d:leading-57-6px
+                    <div className=" font-sans text-center text-white d:w-452px flex flex-col gap-17px
+                                    t:text-left t:items-center t:gap-19px
+                                    d:pt-113px d:pb-135px d:gap-37px">
+                        <div className="max-w-280px font-bold text-26px leading-31-2px 
+                                        t:max-w-341px
+                                        d:max-w-452px d:text-48px d:leading-57-6px
                                         ">
                             <span className=" text-primary font-black ">Move the Chain</span>{" "}
                             is a platform for the modern donor.
                         </div>
-                        <div className=" text-16px leading-20-8px d:text-18px d:leading-24px font-light
-                                         ">
+                        <div className=" max-w-279px text-16px leading-20-8px 
+                                        t:max-w-343px
+                                        d:max-w-494px d:text-18px d:leading-24px font-light
+                                        ">
                             We offer a social giving platform, changing the way you <span className="font-bold">give back</span> to causes you care about… and all donations <span className="font-bold">are tax deductible!</span>
                             <div className="pt-10px font-bold">Receive an automated tax receipt after each donation.</div>
                         </div>
@@ -62,7 +66,7 @@ export default function Individuals() {
 
 
             <div>
-                <div id="change"
+                <div id="be-the-change"
                     className="pt-40px px-12px
                            t:pt-39px t:pl-24px t:pr-30px
                            d:pt-70px d:pl-32px d:pr-120px
@@ -122,14 +126,14 @@ export default function Individuals() {
                         <div className="flex-1 max-w-280px items-center
                                         t:max-w-220px
                                         d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left">
-                            <div>
-                                <div className="font-bold text-18px leading-22px
-                                                d:text-28px d:leading-33px">
+                            <div className="d:max-w-320px d:max-h-240px">
+                                <div className="font-bold text-18px leading-21-6px
+                                                d:text-28px d:leading-33px  d:pt-3px">
                                     Find a specific nonprofit or cause
                                 </div>
                                 <div className="font-light text-13px leading-16-9px pt-19px pb-15px
                                                 t:pt-22px t:pb-7px
-                                                d:max-w-320px d:text-16px d:leading-20-8px d:pt-18px d:pb-18px">
+                                                d:text-16px d:leading-20-8px d:pt-18px d:pb-18px">
                                     Our <span className="font-bold">easy search tool</span> allows you to find nonprofits of any size in your area and/or <span className="font-bold">causes that interest</span> you.
                                 </div>
                                 <div className="pb-20px">
@@ -155,7 +159,7 @@ export default function Individuals() {
                         </div>
                         <div className="hidden t:hidden d:block">
                             <Image
-                                className="pb-6px "
+                                className="pb-10px "
                                 src="/images/individuals/Vector-1-d.png"
                                 width={280}
                                 height={60}
@@ -165,7 +169,7 @@ export default function Individuals() {
                         <div className="flex-1 max-w-280px 
                                         t:max-w-220px
                                         d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left">
-                            <div>
+                            <div className="d:max-w-320px d:max-h-240px d:pt-24px">
                                 <div className="font-bold text-18px leading-22px
                                                 d:text-28px d:leading-34px">
                                     Help raise funds
@@ -199,7 +203,7 @@ export default function Individuals() {
                         </div>
                         <div className=" hidden t:hidden d:block">
                             <Image
-                                className="pb-6px "
+                                className="pb-10px "
                                 src="/images/individuals/Vector-2-d.png"
                                 width={280}
                                 height={60}
@@ -209,9 +213,9 @@ export default function Individuals() {
                         <div className="flex-1 max-w-280px 
                                         t:max-w-220px
                                         d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left">
-                            <div>
+                            <div className="d:max-w-320px d:max-h-240px ">
                                 <div className="font-bold text-18px leading-22px
-                                                d:text-28px d:leading-34px">
+                                                d:text-28px d:leading-34px d:pt-30px">
                                     Join a fundraiser
                                 </div>
                                 <div className="font-light text-13px leading-16-9px pt-19px pb-15px
@@ -220,7 +224,7 @@ export default function Individuals() {
                                     Companies sponsor fundraisers for specific causes. Join a fundraiser today and make your donation go further.
                                 </div>
                                 <div className="pb-20px">
-                                    <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Join a fundraiser</Button>
+                                    <Button className="w-190px font-bold rounded-10px text-14px leading-24px">Join a fundraiser</Button>
                                 </div>
                             </div>
                             <div>
