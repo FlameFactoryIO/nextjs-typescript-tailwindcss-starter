@@ -110,7 +110,7 @@ export default function Individuals() {
                         src="/images/individuals/people.png"
                         width={271.82}
                         height={36}
-                    />TODO: Falta imagen agrupada */} 
+                    />TODO: Falta imagen agrupada */}
                 </div>
             </div>
 
@@ -120,6 +120,7 @@ export default function Individuals() {
                     className="d:grid d:grid-cols-2 d:gap-30px text-center
                             pt-49px px-20px pb-50px
                             t:pt-132px t:pb-42px t:px-30px
+                            d:pt-161px d:pb-80px d:px-120px
                             ">
 
                     <div className="flex flex-col t:flex-row d:flex-col t:gap-24px items-center justify-center">
@@ -140,13 +141,34 @@ export default function Individuals() {
                                     <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Search for nonprofit</Button>
                                 </div>
                             </div>
-                            <div>
-                                <Image
-                                    className="pt-20px pb-10px"
-                                    src="/images/individuals/find-cause.png"
-                                    width={280}
-                                    height={210}
-                                />
+                            <div className="d:max-w-320px">
+                                <div className="block t:hidden">
+                                    <Image
+                                        className="pt-20px pb-10px block t:hidden"
+                                        src="/images/individuals/find-cause.png"
+                                        width={280}
+                                        height={210}
+                                    />
+                                </div>
+
+                                <div className="hidden t:block d:hidden">
+                                    <Image
+                                        className="pt-20px pb-10px hidden t:block d:hidden"
+                                        src="/images/individuals/find-cause.png"
+                                        width={220}
+                                        height={166}
+                                    />
+                                </div>
+
+                                <div className="hidden t:hidden d:block">
+                                    <Image
+                                        className="hidden t:hidden d:block"
+                                        src="/images/individuals/find-cause.png"
+                                        width={320}
+                                        height={240}
+                                    />
+                                </div>
+
                                 <div className="text-center t:hidden">
                                     <Image
                                         className="pb-6px "
