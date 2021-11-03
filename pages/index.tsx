@@ -150,12 +150,11 @@ export default function Home() {
                   <p className="text-white text-16px leading-24px d:flex-1 font-bold d:pb-10px ">
                     Individuals
                   </p>
-                  <a
-                    href="/individuals"
-                    className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px"
-                  >
-                    Support a cause <img alt="" src="/images/home/➡.svg" />
-                  </a>
+                  <Link href="/individuals">
+                    <a className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px">
+                      Support a cause <img alt="" src="/images/home/➡.svg" />
+                    </a>
+                  </Link>
                 </div>
 
                 <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px d:flex-1">
@@ -163,13 +162,12 @@ export default function Home() {
                 </p>
                 <div className="border-gray-500 border-b-1px d:hidden"/>
                 <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
-                <a
-                  href="/individuals"
-                  className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px"
-                >
-                  <span>Support a cause</span>
-                  <img alt="" src="/images/home/➡.svg" />
-                </a>
+                <Link href="/individuals">
+                  <a className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px">
+                    <span>Support a cause</span>
+                    <img alt="" src="/images/home/➡.svg" />
+                  </a>
+                </Link>
               </div>
               <div className="flex flex-col d:flex d:flex-row gap-20px divide-y-reverse ">
                 <div className="flex-1 flex flex-col d:max-w-168px">
@@ -192,13 +190,12 @@ export default function Home() {
                   </p>
                   <div className="border-gray-500 border-b-1px d:hidden"/>
                   <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
-                  <a
-                    href="/individuals"
-                    className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px"
-                  >
-                    <span>Claim your page</span>
-                    <img alt="" src="/images/home/➡.svg" />
-                  </a>
+                  <Link href="/individuals">
+                    <a className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px">
+                      <span>Claim your page</span>
+                      <img alt="" src="/images/home/➡.svg" />
+                    </a>
+                  </Link>
                 </div>
               </div>
 
