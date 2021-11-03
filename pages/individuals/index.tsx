@@ -60,20 +60,56 @@ export default function Individuals() {
                 </div>
             </div>
 
-            <div id="change"
-                className="pt-40px px-12px
+
+            <div>
+                <div id="change"
+                    className="pt-40px px-12px
                            t:pt-39px t:pl-24px t:pr-30px
                            d:pt-70px d:pl-32px d:pr-120px
                            flex flex-col t:grid grid-cols-2 t:gap-18px d:gap-30px items-center">
 
-                <div className="font-bold text-center text-24px leading-28-8px pb-23px
+                    <div>
+                        <div className="font-bold text-center text-24px leading-28-8px pb-23px
                                 t:pb-67px
-                                d:pb-17px">
-                    Be the change
+                                d:pb-17px d:text-43px d:leading-51-6px">
+                            Be the change
+                        </div>
+                        <div className="block t:hidden" style={{ marginBottom: -30 }}>
+                            <Image
+                                src="/images/individuals/link-chain.png"
+                                width={295.92}
+                                height={249.74}
+                            />
+                        </div>
+                        <div className="hidden t:block d:hidden" style={{ marginBottom: -80 }}>
+                            <Image
+                                src="/images/individuals/link-chain-t.png"
+                                width={376}
+                                height={310.26}
+                            />
+                        </div>
+                        <div className="hidden d:block" style={{ marginBottom: -50 }}>
+                            <Image
+                                src="/images/individuals/link-chain-d.png"
+                                width={747.9}
+                                height={573.72}
+                            />
+                        </div>
+                    </div>
+                    <div>
+
+                    </div>
+
                 </div>
-
-
+                <div className="block t:hidden bg-cream h-126px text-center pt-72px">
+                    {/*<Image
+                        src="/images/individuals/people.png"
+                        width={271.82}
+                        height={36}
+                    />TODO: Falta imagen agrupada */} 
+                </div>
             </div>
+
 
             <div className="t:bg-gradient-to-b t:from-cream t:to-white"> {/*TODO: Falta componente de 2da columna */}
                 <div id="find"
@@ -88,7 +124,7 @@ export default function Individuals() {
                                         d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left">
                             <div>
                                 <div className="font-bold text-18px leading-22px
-                                                d:text-28px d:leading-33px"> 
+                                                d:text-28px d:leading-33px">
                                     Find a specific nonprofit or cause
                                 </div>
                                 <div className="font-light text-13px leading-16-9px pt-19px pb-15px
