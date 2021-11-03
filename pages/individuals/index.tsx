@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import TopNav from "../../components/TopNav";
 import Image from "next/image";
 import Button from '../../components/Button';
+import Questions from '../../components/Questions';
 
 // noinspection JSUnusedGlobalSymbols
 export default function Individuals() {
@@ -200,30 +201,14 @@ export default function Individuals() {
                 </div>
             </div>
 
-            <div className="w-full bg-blue">
-                <div id="questions"
-                    className="pt-44px px-21px pb-61px text-center text-white
-                                t:pb-36px t:px-30px
-                                flex flex-col t:grid t:grid-cols-2 t:gap-77px">
-                    <div className="text-center pb-20px px-20px
-                                    t:text-left t:max-w-491px">
-                        <div className="font-bold text-20px leading-24px pb-20px">
-                            Questions?
-                        </div>
-                        <div className="font-light text-16px leading-20-8px ">
-                            Do you have questions about Move the Chain? Reach out and we’ll be happy to answer your questions!
-                        </div>
-                    </div>
-
-                    <div className="text-center t:pt-44px">
-                        <Button className="w-140px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Contact Us</Button>
-                    </div>
-
+            <div id="questions" className="w-full bg-blue-questions">
+                <div className="w-280px t:w-768px d:w-1380px mx-auto items-center">
+                    <Questions />
                 </div>
             </div>
 
             <div id="footer" className="w-full bg-footer">
-                <div className="w-280px t:w-708px d:w-1140px mx-auto">
+                <div className="w-280px t:w-708px d:w-1380px mx-auto">
                     <Footer />
                 </div>
             </div>
