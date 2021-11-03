@@ -24,4 +24,5 @@ export default interface Challenge {
   updatedAt: Date;
   originalPost?: Partial<Post>;
   supporterCount?: number;
+  viewCount?: number;
 }

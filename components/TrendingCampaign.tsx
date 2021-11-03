@@ -12,12 +12,12 @@ import Image from "next/image";
 import Ellipsis from "@quid/react-ellipsis"
 import Button from "./Button";
 import VideoPlayer from "./VideoPlayer";
-import Campaign from "../shared/Campaign";
+import Campaign from "../dtos/Campaign";
+import {shareCampaign} from "../mtc-api/campaign/shareCampaign";
 
 const TrendingCampaign: FC<{
   campaign: Campaign,
   onClick?: (campaign: Campaign) => void,
-  onShare?: (campaign: Campaign, media: "facebook" | "twitter" | "instagram" | "linkedin" | "email") => void,
   onDonate?: (campaign: Campaign) => void,
   variant?: "dark" | "light",
   className?: string,
@@ -26,7 +26,6 @@ const TrendingCampaign: FC<{
   variant = "light",
   className= "",
   onClick = () => {},
-  onShare = () => {},
   onDonate = () => {},
 }) => {
   const [isShareMenuOpen, setShareMenuOpen] = useState(false);
@@ -38,9 +37,9 @@ const TrendingCampaign: FC<{
       <div className={`flex flex-col`} onClick={() => onClick(campaign)}>
         <div className="relative select-none">
           {campaign.videoUrl ? (
-            <VideoPlayer videoUrl={campaign.videoUrl} videoImage={campaign.imageUrl} className="rounded-20px" />
+            <VideoPlayer videoUrl={campaign.videoUrl} videoImage={campaign.imageUrl} className="rounded-20px w-full h-320px" />
           ) : (
-            <Image src={campaign.imageUrl} width="100%" height="100%" objectFit="cover" layout="responsive" className="rounded-20px" />
+            <img src={campaign.imageUrl} className="rounded-20px object-cover h-320px" />
           )}
 
           <div className="absolute top-10px right-10px bg-black bg-opacity-70 text-white rounded-full w-40px">
@@ -57,19 +56,19 @@ const TrendingCampaign: FC<{
                     <path d="M12 10.586L16.95 5.63599L18.364 7.04999L13.414 12L18.364 16.95L16.95 18.364L12 13.414L7.04999 18.364L5.63599 16.95L10.586 12L5.63599 7.04999L7.04999 5.63599L12 10.586Z" fill="white"/>
                   </svg>
                 </div>
-                <div className="h-40px flex items-center justify-center cursor-pointer" onClick={() => onShare(campaign, "facebook")}>
+                <div className="h-40px flex items-center justify-center cursor-pointer" onClick={() => shareCampaign({ campaign: campaign, channel: "facebook", shareUrl: campaign.shareImageUrl, action: "share" })}>
                   <FaFacebookF />
                 </div>
-                <div className="h-40px flex items-center justify-center cursor-pointer" onClick={() => onShare(campaign, "twitter")}>
+                <div className="h-40px flex items-center justify-center cursor-pointer" onClick={() => shareCampaign({ campaign: campaign, channel: "twitter", shareUrl: campaign.shareImageUrl, action: "share" })}>
                   <FaTwitter />
                 </div>
-                <div className="h-40px flex items-center justify-center cursor-pointer" onClick={() => onShare(campaign, "instagram")}>
+                <div className="h-40px flex items-center justify-center cursor-pointer" onClick={() => shareCampaign({ campaign: campaign, channel: "instagram", shareUrl: campaign.shareImageUrl, action: "share" })}>
                   <FaInstagram />
                 </div>
-                <div className="h-40px flex items-center justify-center cursor-pointer" onClick={() => onShare(campaign, "linkedin")}>
+                <div className="h-40px flex items-center justify-center cursor-pointer" onClick={() => shareCampaign({ campaign: campaign, channel: "linkedin", shareUrl: campaign.shareImageUrl, action: "share" })}>
                   <FaLinkedinIn />
                 </div>
-                <div className="h-40px flex items-center justify-center cursor-pointer" onClick={() => onShare(campaign, "email")}>
+                <div className="h-40px flex items-center justify-center cursor-pointer" onClick={() => shareCampaign({ campaign: campaign, channel: "email", shareUrl: campaign.shareImageUrl, action: "share" })}>
                   <FaRegEnvelope />
                 </div>
               </div>

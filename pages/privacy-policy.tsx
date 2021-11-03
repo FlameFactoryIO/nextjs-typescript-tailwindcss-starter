@@ -15,7 +15,7 @@ export default function Ccpa() {
         <p>
           Welcome to Move the Chain (the &ldquo;Platform&rdquo;). The Platform is
           provided and controlled by Move the Chain, Inc. and its affiliated
-          entities (collectively, "Move the Chain ", " us" or " we"). We are
+          entities (collectively, &quot;Move the Chain &quot;, &quot; us&quot; or &quot; we&quot;). We are
           committed to protecting your privacy. This Privacy Policy describes Move
           the Chain&rsquo;s information practices and the choices available to you
           regarding Move the Chain&rsquo;s use of information that can be used to
@@ -268,13 +268,13 @@ export default function Ccpa() {
             disclosure is reasonably necessary to comply with the law, prevent
             imminent physical harm or financial loss, or investigate, prevent, or
             take action regarding illegal activities, suspected fraud, threats to
-            our property, or violations of Move the Chain's Terms of Use.
+            our property, or violations of Move the Chain&apos;s Terms of Use.
           </li>
           <li>
             Business Reorganization:&nbsp;In some cases, we may choose to buy or
             sell assets. In these types of transactions (such as a sale, merger,
             liquidation, receivership, or transfer of all or substantially all of
-            Move the Chain's assets), member information is typically one of the
+            Move the Chain&apos;s assets), member information is typically one of the
             business assets that is transferred. If we intend to transfer
             information about you, we will notify you by email or by putting a
             prominent notice on the Platform, and you will be afforded an
@@ -296,7 +296,7 @@ export default function Ccpa() {
             to exercise or defend legal claims.
           </li>
           <li>
-            It is necessary for the purposes of our or a third party's legitimate
+            It is necessary for the purposes of our or a third party&apos;s legitimate
             interests, such as those of visitors, members, or partners.
           </li>
           <li>You have expressly made the information public.</li>
@@ -372,7 +372,7 @@ export default function Ccpa() {
             href="https://www.google.com/url?q=https://www.movethechain.com/%2520&amp;sa=D&amp;source=editors&amp;ust=1615497507411000&amp;usg=AOvVaw1H9YHj2DpPfGIBH2lZktBd">
             https://www.movethechain.com/
           </a>
-          and click on "Settings". You have also the following additional rights
+          and click on &quot;Settings&quot;. You have also the following additional rights
           with respect to your information:
         </p>
         <ul className="list-inside list-disc">
@@ -384,7 +384,7 @@ export default function Ccpa() {
             applicable law and subject to proper verification. We do not
             discriminate based on the exercise of any privacy rights that you
             might have, so long as the information is not necessary to the
-            Platform's operation or usage.
+            Platform&apos;s operation or usage.
           </li>
           <li>
             Data correction and/or editing: Personal, password and payment
@@ -414,7 +414,7 @@ export default function Ccpa() {
           <li>
             Marketing communications: Where we use your data for direct marketing
             purposes, you can always object by withdrawing your consent, using the
-            "unsubscribe" link in such communications or changing your marketing
+            &quot;unsubscribe&quot; link in such communications or changing your marketing
             preference settings.
           </li>
           <li>
@@ -426,12 +426,12 @@ export default function Ccpa() {
           </li>
           <li>
             Right not to be subject to a decision based only on automated
-            processing: Much of Move the Chain's processing (challenge creation,
+            processing: Much of Move the Chain&apos;s processing (challenge creation,
             content sharing, etc.) is automated in order to protect the security
             of your information and bring you high quality services. Decisions
             based on automated processing cannot be avoided when they are
             necessary to perform the services or authorized by law. Move the Chain
-            strives to meet its customers' inquiries. If you have a concern about
+            strives to meet its customers&apos; inquiries. If you have a concern about
             your service or the processing of your information, please contact{' '}
             <a className="text-blue-500 font-bold"
               href="https://www.google.com/url?q=https://www.groundlink.com/contact-us&amp;sa=D&amp;source=editors&amp;ust=1615497507412000&amp;usg=AOvVaw3Umbgdm6KQx_pWCSySrRIV">

@@ -100,17 +100,23 @@ const Footer: FC = () => {
           All rights reserved © Move the Chain
         </div>
         <div className="text-14px leading-16 t:text-14px t:leading-16px flex justify-center mt-12px t:mt-0">
-          <a className="pr-5px d:pr-5px" href="/privacy-policy">
-            Privacy Policy
-          </a>
+          <Link href="/privacy-policy">
+            <a className="pr-5px d:pr-5px">
+              Privacy Policy
+            </a>
+          </Link>
           <div>|</div>
-          <a className=" px-5px d:px-5px" href=" /terms-of-use">
-            Terms of Use
-          </a>
+          <Link href="/terms-of-use">
+            <a className=" px-5px d:px-5px">
+              Terms of Use
+            </a>
+          </Link>
           <div>|</div>
-          <a className="pl-5px d:pl-5px" href="/ccpa">
-            CCPA
-          </a>
+          <Link href="/ccpa">
+            <a className="pl-5px d:pl-5px">
+              CCPA
+            </a>
+          </Link>
         </div>
       </div>
     </div>
