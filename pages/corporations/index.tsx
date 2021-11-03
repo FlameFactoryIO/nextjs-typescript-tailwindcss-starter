@@ -51,7 +51,10 @@ export default function CorporationsHome() {
               through corporate
               <span className="font-bold"> charitable giving.</span>
             </div>
-            <Button variant="primary" className="rounded-10pxi shadow-2-5-15 w-124px">
+            <Button
+              variant="primary"
+              className="rounded-10pxi shadow-2-5-15 w-124px"
+            >
               Join us
             </Button>
           </div>
@@ -73,9 +76,11 @@ export default function CorporationsHome() {
       <div className=" bg-cream">
         <div
           id="more-brands"
-          className="pt-46px pb-139px px-20px
-                    t:pt-44px t:pb-262px t:px-30px
-                    d:pt-58px d:pb-400px d:px-120px"
+          className="pt-46px pb-0 px-20px
+                    t:pt-44px  t:px-30px
+                    d:pt-58px  d:px-120px
+                    flex flex-col items-center
+                    "
         >
           <div
             className="items-center
@@ -83,56 +88,60 @@ export default function CorporationsHome() {
                               t:text-18px t:leading-21-6px
                               d:text-28px d:leading-33-6px
                               pb-25px t:pb-23px d:pb-21px
-                              "
+                              min-w-280px t:max-w-708px d:max-w-1140px"
           >
             More brands are trying to connect with the younger generation...
             while they want to work for and support social concious brands
           </div>
+
           <div
-            className="grid grid-cols-1 items-center t:grid-cols-3 text-center
+            className="flex-1 flex flex-col t:flex-row t:justify-center 
+                        items-center text-center 
                               text-13px leading-16-9px
                               d:text-16px d:leading-24px
-                              d:px-72px"
+                              min-w-280px t:max-w-708px d:max-w-280px"
           >
-            <div className="">
-              <div className="">
-                <Image
-                  src="/images/corporations/86.png"
-                  width={149}
-                  height={149}
-                />
-              </div>
-              <div className="t:px-48px d:px-53px">
+            <div aria-hidden className="t:flex-1">
+              <Image
+                alt=""
+                src="/images/corporations/86.png"
+                width={149}
+                height={149}
+                objectFit="contain"
+              />
+              <div className="w-280px t:max-w-210px d:max-w-236px text-center">
                 of Millennials would consider{" "}
                 <span className="font-bold">taking a pay cut </span> to work at
                 a company whose mission and values align with their own.
               </div>
             </div>
-            <div className="">
-              <div>
-                <Image
-                  src="/images/corporations/55.png"
-                  width={149}
-                  height={149}
-                />
-              </div>
 
-              <div className="t:px-48px d:px-53px">
+            <div aria-hidden className="t:flex-1">
+              <Image
+              alt=""
+                src="/images/corporations/55.png"
+                width={149}
+                height={149}
+                objectFit="contain"
+              />
+
+              <div className="w-280px t:max-w-210px d:max-w-236px">
                 {/*max-w-280px t:max-w-210px d:max-w-236px text-center */}
                 of GenZers value and would prefer to buy from brands that are{" "}
                 <span className="font-bold">eco-friendly</span> and that are
                 socially responsible
               </div>
             </div>
-            <div className="">
-              <div>
-                <Image
-                  src="/images/corporations/48.png"
-                  width={149}
-                  height={149}
-                />
-              </div>
-              <div className="t:px-48px d:px-53px">
+            <div aria-hidden className="t:flex-1">
+              <Image
+                alt=""
+                src="/images/corporations/48.png"
+                width={149}
+                height={149}
+                objectFit="contain"
+              />
+
+              <div className="w-280px t:max-w-210px d:max-w-236px">
                 of GenZers say they would{" "}
                 <span className="font-bold">
                   participate in online games for a campaign benefiting a cause
@@ -143,30 +152,16 @@ export default function CorporationsHome() {
           </div>
 
           <div
-            className="absolute w-full items-center text-center
-                        pt-70px px-10px
-                        t:pt-100px t:px-150px
-                        d:pt-80px d:px-10px"
+            className="min-w-280px t:max-w-708px d:max-w-907px border-4 border-black-900
+          transform translate-y-35px t:translate-y-111px d:translate-y-95px"
           >
-            <div className="hidden d:block ">
+            <div aria-hidden className="flex-1">
               <Image
+                alt=""
                 src="/images/corporations/shape.png"
                 width={907}
                 height={422}
-              />
-            </div>
-            <div className="hidden t:block d:hidden">
-              <Image
-                src="/images/corporations/shape.png"
-                width={708}
-                height={329}
-              />
-            </div>
-            <div className="t:hidden">
-              <Image
-                src="/images/corporations/shape.png"
-                width={280}
-                height={130}
+                objectFit="contain"
               />
             </div>
           </div>
