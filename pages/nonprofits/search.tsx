@@ -3,9 +3,24 @@ import Footer from "../../components/Footer";
 import Button from "../../components/Button";
 import TopNav from "../../components/TopNav";
 import Input from "../../components/Input";
+import { useState } from "react";
+import { useSearchNonprofit } from "../../mtc-api/nonprofit/useSearchNonprofit";
 
 // noinspection JSUnusedGlobalSymbols
-export default function Home() {
+export default function NonprofitsSearch() {
+
+  const [term, setTerm] = useState("");
+  const { data: nonprofits, isFetching } = useSearchNonprofit({
+    search: term,
+    country_code: 'US',
+    page: 1,
+    pageSize: 20,
+    options: {
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+    },
+  });
+
   return (
     <div className="w-full min-w-320px">
       <Head>
@@ -15,7 +30,7 @@ export default function Home() {
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
 
       <div
-        className="px-20px pt-82px  
+        className="px-20px pt-82px
           t:pt-104px t:px-30px t:pb-50px
           d:pt-148px d:pr-50px d:pb-100px
         "
@@ -27,7 +42,8 @@ export default function Home() {
           All nonprofits on Move the Chain verified 501c3 nonprofit organizations. All donations to any of the nonprofits are tax deductible.
         </div>
         <div className="flex flex-col t:flex-row gap-5px items-center">
-          <Input className="min-w-280px" placeholder="Search for a nonprofit or keyword" /> <Button className="w-120px">Search</Button>
+          <Input className="min-w-280px" placeholder="Search for a nonprofit or keyword" onChange={(value) => setTerm(value)} />
+          <Button className="w-120px">Search</Button>
         </div>
       </div>
 

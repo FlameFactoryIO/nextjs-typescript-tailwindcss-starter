@@ -3,6 +3,7 @@ import client from "../apiClient";
 import paypalClient from "../paypalClient";
 import usePaypalToken from "./usePaypalToken";
 import debounce from "debounce-promise";
+import Nonprofit from "../../dtos/Nonprofit";
 
 const DEFAULT_NONPROFIT_IMAGE_URL =
   'https://imagesapp.s3.us-east-2.amazonaws.com/non-profit-icon-extra-padding.png';
@@ -121,7 +122,7 @@ export const useSearchNonprofit = ({
       enabled: !!token && options.enabled,
     },
   );
-  const data = (query?.data?.pages || []).reduce(
+  const data: Nonprofit[] | undefined = (query?.data?.pages || []).reduce(
     (prev, current) => prev.concat(current.results || []),
     [],
   );
