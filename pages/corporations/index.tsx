@@ -180,20 +180,23 @@ export default function CorporationsHome() {
                        t:pt-148px  t:px-30px
                        d:pt-213px d:pb-96px d:px-170px"
           >
-            <div className="flex flex-col d:flex-row">
+            <div className="flex flex-col d:flex-row items-center
+                            d:gap-66px">
               <div
-                className="flex-1 text-white font-bold text-center 
-                              text-24px leading-28-8px
-                              d:text-43px d:leading-51-6px d:text-left
+                className="flex-1 text-white font-bold text-center
+                              text-24px leading-28-8px max-w-280px
+                              t:max-w-708px
+                              d:max-w-703px d:text-43px d:leading-51-6px d:text-left
                               pb-20px"
               >
                 Corporations can now do good and engage their employees and
                 consumers along the way.
               </div>
               <div
-                className="flex-1 font-light text-white text-center
+                className="flex-1 font-light text-white text-center max-w-280px
                               text-13px leading-16-9px
-                              d:text-16px d:leading-24px d:text-left
+                              t:max-w-708px
+                              d:max-w-351px d:text-16px d:leading-24px d:text-left
                               "
               >
                 Brands give to charities every year, why not get consumers and
@@ -206,13 +209,13 @@ export default function CorporationsHome() {
               </div>
             </div>
             <div
-              className="flex flex-col t:flex-row gap-21px text-center pt-23px items-center
-                            d:gap-20px"
+              className="flex flex-col t:flex-row gap-21px text-center pt-23px items-center justify-center
+                        t:gap-20px" 
             >
               <div
                 className="flex-1 bg-white w-280px h-240px rounded-26px pt-20px pb-14px
-                             t:w-222px t:h-281px
-                             d:w-367px d:h-369px"
+                             t:max-w-222px t:h-281px
+                             d:max-w-367px d:h-369px"
               >
                 <Image
                   src="/images/corporations/corporate-fundraisers.png"
@@ -237,9 +240,9 @@ export default function CorporationsHome() {
                 </div>
               </div>
               <div
-                className="flex-1 bg-white w-280px h-240px rounded-26px pt-20px pb-14px
-                             t:w-222px t:h-281px
-                             d:w-367px d:h-369px"
+                className="flex-1 bg-white max-w-280px h-240px rounded-26px pt-20px pb-14px
+                             t:max-w-222px t:h-281px
+                             d:max-w-367px d:h-369px"
               >
                 <Image
                   alt=""
@@ -265,9 +268,9 @@ export default function CorporationsHome() {
                 </div>
               </div>
               <div
-                className="flex-1 bg-white w-280px h-240px rounded-26px pt-20px pb-14px
-                             t:w-222px t:h-281px
-                             d:w-367px d:h-369px"
+                className="flex-1 bg-white max-w-280px h-240px rounded-26px pt-20px pb-14px
+                             t:max-w-222px t:h-281px
+                             d:max-w-367px d:h-369px"
               >
                 <Image
                   src="/images/corporations/web-api.png"
