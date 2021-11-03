@@ -178,10 +178,11 @@ export default function CorporationsHome() {
             id="corporation"
             className="pt-82px pb-50px px-20px
                        t:pt-148px  t:px-30px
-                       d:pt-213px d:pb-96px d:px-170px"
+                       d:pt-213px d:pb-96px d:px-170px
+                       flex flex-col items-center"
           >
             <div className="flex flex-col d:flex-row items-center
-                            d:gap-66px">
+                            d:gap-66px ">
               <div
                 className="flex-1 text-white font-bold text-center
                               text-24px leading-28-8px max-w-280px
