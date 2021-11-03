@@ -211,7 +211,7 @@ export default function CorporationsHome() {
             </div>
             <div
               className="flex flex-col t:flex-row gap-21px text-center pt-23px items-center justify-center
-                        t:gap-20px" 
+                        t:gap-20px"
             >
               <div
                 className="flex-1 bg-white w-280px h-240px rounded-26px pt-20px pb-14px
@@ -338,15 +338,18 @@ export default function CorporationsHome() {
       </div>
 
       <div
-        className="bg-cream px-20px pt-44px pb-44px
-                        t:pb-43px t:px-30px
-                        d:pt-73px d:pb-52px d:px-380px"
+        className="bg-cream"
       >
-        <div id="companies-we-call-partners" className="text-center">
+        <div
+          className="text-center flex flex-col items-center  px-20px pt-44px pb-44px
+                        t:pb-43px t:px-30px
+                        d:pt-73px d:pb-88px d:px-234px"
+          id="companies-we-call-partners"
+        >
           <div
-            className="pb-44px d:pb-66px
-                          font-bold text-24px leading-28-8px
-                          d:text-43px d:leading-51-6px"
+            className="pb-44px d:pb-66px max-w-280px font-bold text-24px leading-28-8px
+                    t:max-w-620px
+                    d:text-43px d:leading-51-6px d:max-w-640px"
           >
             Companies we call partners
           </div>
@@ -357,8 +360,9 @@ export default function CorporationsHome() {
           />
 
           <div
-            className="pt-17px font-light text-18px leading-23-4px
-                          d:pt-29px d:px-233px d:text-24px d:leading-35-5px"
+            className="pt-17px font-light text-18px leading-23-4px max-w-280px text-center
+                        t:max-w-708px
+                        d:max-w-914px d:pt-29px d:text-24px d:leading-35-5px"
           >
             <span className="text-primary-400">“</span>I love the vision behind
             Move the Chain. This is a movement driven by thoughtful people who
@@ -366,13 +370,12 @@ export default function CorporationsHome() {
             I'm excited to be a small part of it.
             <span className="text-primary-400">”</span>
           </div>
-          <div className="pt-6px d:pt-10px">
+          <div className="pt-6px d:pt-10px text-16px leading-24px d:text-18px">
             <span className="text-primary-400 font-bold ">Roger Desai </span>{" "}
             <span className="font-bold">- CEO at Prove</span>
           </div>
         </div>
       </div>
-
       {/*<div className=" px-20px pt-50px pb-51px">
         <div
           id="frequently-asked-questions"
