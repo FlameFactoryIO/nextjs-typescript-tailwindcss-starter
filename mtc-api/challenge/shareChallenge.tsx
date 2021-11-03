@@ -47,7 +47,7 @@ const getMessage = ({ channel, url, challenge, action }: {channel: ShareChannel,
   return getDonateMessage({ channel, url, challenge });
 };
 
-export const shareChallenge = ({ challenge, channel, action, shareUrl }: {channel: ShareChannel, challenge: Challenge, shareUrl: string}): void => {
+export const shareChallenge = ({ challenge, channel, action, shareUrl }: { challenge: Challenge, channel: ShareChannel, action: string, shareUrl: string }): void => {
   const message = getMessage({ challenge, channel, action, url: shareUrl });
   if (channel === "twitter") {
     twitterShare({ url: shareUrl, text: message });

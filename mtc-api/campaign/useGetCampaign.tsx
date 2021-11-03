@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
 import client from '../apiClient';
 
-export const getCampaign = (id, action) => {
+export const getCampaign = (id, action?) => {
   return client
     .get(`/campaigns/${id}`, {
       params: { action },

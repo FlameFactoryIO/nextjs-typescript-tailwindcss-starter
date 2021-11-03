@@ -15,7 +15,7 @@ export default function Ccpa() {
         <p>
           Welcome to Move the Chain (the &ldquo;Platform&rdquo;). The Platform is
           provided and controlled by Move the Chain, Inc. and its affiliated
-          entities (collectively, "Move the Chain ", " us" or " we").
+          entities (collectively, &quot;Move the Chain &quot;, &quot; us&quot; or &quot; we&quot;).
         </p>
         <p>
           The Terms of Use govern the relationship and serve as an agreement
@@ -392,8 +392,8 @@ export default function Ccpa() {
             any computer software or hardware or telecommunications equipment;
             (iv) poses or creates a privacy or security risk to any person; (v)
             constitutes unsolicited or unauthorized advertising, promotional
-            materials, commercial activities and/or sales, "junk mail," "spam,"
-            "chain letters," "pyramid schemes," "contests," "sweepstakes," or any
+            materials, commercial activities and/or sales, &quot;junk mail,&quot; &quot;spam,&quot;
+            &quot;chain letters,&quot; &quot;pyramid schemes,&quot; &quot;contests,&quot; &quot;sweepstakes,&quot; or any
             other form of solicitation; or (vi) in the sole judgment of Move the
             Chain, is objectionable or which restricts or inhibits any other
             person from using or enjoying the Services, or which may expose Move
@@ -419,7 +419,7 @@ export default function Ccpa() {
             express consent of that third party.
           </li>
           <li>
-            Not to use another User's account or URL without permission,
+            Not to use another User&apos;s account or URL without permission,
             impersonate any person or entity, falsely state or otherwise
             misrepresent your affiliation with a person or entity, misrepresent a
             Charity or Campaign through the Services, or post User Content in any
@@ -594,7 +594,7 @@ export default function Ccpa() {
           <li>
             Attempt to upload or transmit viruses, Trojan horses, or other
             materials (including excessive use of capital letters and spamming)
-            that interferes with any party's uninterrupted use of the Platform and
+            that interferes with any party&apos;s uninterrupted use of the Platform and
             its features.
           </li>
           <li>
@@ -709,7 +709,7 @@ export default function Ccpa() {
           content and materials to us or on the Platform, including but not
           limited to text, writings, video, audio, photographs, graphics,
           comments, suggestions, or personal information or other material
-          (collectively, "Contributions"). Contributions may be viewable by other
+          (collectively, &quot;Contributions&quot;). Contributions may be viewable by other
           Users of the Platform and through third-party websites and mobile
           applications. As such, any Contributions you transmit may be treated in
           accordance with our Privacy Policy. When you create or make available
@@ -823,7 +823,7 @@ export default function Ccpa() {
         <p>
           Other Submissions:You acknowledge and agree that any questions,
           comments, suggestions, ideas, feedback, or other information regarding
-          the Platform ("Submissions") provided by you to us are non-confidential
+          the Platform (&quot;Submissions&quot;) provided by you to us are non-confidential
           and shall become our sole property. We shall own exclusive rights,
           including all intellectual property rights, and shall be entitled to the
           unrestricted use and dissemination of these Submissions for any lawful
@@ -974,11 +974,11 @@ export default function Ccpa() {
           THESE LAWS APPLY TO YOU, SOME OR ALL OF THE ABOVE DISCLAIMERS OR
           LIMITATIONS MAY NOT APPLY TO YOU, AND YOU MAY HAVE ADDITIONAL RIGHTS. IF
           YOU ARE A CALIFORNIA RESIDENT, YOU WAIVE CALIFORNIA CIVIL CODE SECTION
-          1542, WHICH SAYS: "A GENERAL RELEASE DOES NOT EXTEND TO CLAIMS THAT THE
+          1542, WHICH SAYS: &quot;A GENERAL RELEASE DOES NOT EXTEND TO CLAIMS THAT THE
           CREDITOR OR RELEASING PARTY DOES NOT KNOW OR SUSPECT TO EXIST IN HIS OR
           HER FAVOR AT THE TIME OF EXECUTING THE RELEASE, AND THAT IF KNOWN BY HIM
           OR HER WOULD HAVE MATERIALLY AFFECTED HIS OR HER SETTLEMENT WITH THE
-          DEBTOR OR RELEASED PARTY." IF YOU ARE A RESIDENT OF ANOTHER
+          DEBTOR OR RELEASED PARTY.&quot; IF YOU ARE A RESIDENT OF ANOTHER
           JURISDICTION&mdash;IN OR OUTSIDE OF THE UNITED STATES&mdash;YOU WAIVE
           ANY COMPARABLE STATUTE OR DOCTRINE.
         </p>

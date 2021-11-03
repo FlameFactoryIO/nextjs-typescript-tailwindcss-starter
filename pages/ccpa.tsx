@@ -20,7 +20,7 @@ export default function Ccpa() {
         <p>
           Welcome to Move the Chain (the &ldquo;Platform&rdquo;). The Platform is
           provided and controlled by Move the Chain, Inc. and its affiliated
-          entities (collectively, "Move the Chain", "us" or "we"). We are
+          entities (collectively, &aquot;Move the Chain&aquot;, &aquot;us&aquot; or &aquot;we&aquot;). We are
           committed to protecting your privacy.
         </p>
         <p>

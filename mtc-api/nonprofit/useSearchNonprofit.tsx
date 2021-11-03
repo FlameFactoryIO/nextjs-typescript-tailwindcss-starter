@@ -1,8 +1,8 @@
-import { useInfiniteQuery } from 'react-query';
-import client from '../apiClient';
-import paypalClient from '../../utils/paypalClient';
-import usePaypalToken from './usePaypalToken';
-import debounce from 'debounce-promise';
+import { useInfiniteQuery } from "react-query";
+import client from "../apiClient";
+import paypalClient from "../paypalClient";
+import usePaypalToken from "./usePaypalToken";
+import debounce from "debounce-promise";
 
 const DEFAULT_NONPROFIT_IMAGE_URL =
   'https://imagesapp.s3.us-east-2.amazonaws.com/non-profit-icon-extra-padding.png';
@@ -116,7 +116,7 @@ export const useSearchNonprofit = ({
       });
     },
     {
-      getNextPageParam: (lastGroup, allGroups) => lastGroup.lastPage,
+      getNextPageParam: (lastGroup) => lastGroup.lastPage,
       ...options,
       enabled: !!token && options.enabled,
     },

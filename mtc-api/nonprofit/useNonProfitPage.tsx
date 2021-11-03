@@ -14,7 +14,10 @@ export const getNonProfitData = (name) => {
 export const getNonProfitDataByPaypalId = (paypalId) => {
   return client
     .get(`/nonprofit/id/${paypalId}`)
-    .then(({ data }) => console.log('getNonProfitDataByPaypalId') || data.data)
+    .then(({ data }) => {
+      console.log('getNonProfitDataByPaypalId')
+      return data.data;
+    })
     .catch((e) => {
       console.log(e);
       return null;

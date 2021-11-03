@@ -1,8 +1,9 @@
 import { useMutation, useQueryClient } from 'react-query';
 import { v4 as uuidV4 } from 'uuid';
 import client from '../apiClient';
+import Nonprofit from "../../dtos/Nonprofit";
 
-export const saveNonprofitForm = ({ token, formType, payload }) => {
+export const saveNonprofitForm = ({ token, formType, payload }): Promise<Nonprofit> => {
   return client.patch(
     `/admin/nonprofit`,
     {
@@ -15,12 +16,11 @@ export const saveNonprofitForm = ({ token, formType, payload }) => {
   );
 };
 
-export const useSaveNonprofitForm = () => {
+export const useSaveNonprofitForm = ({ token, formType, payload }) => {
   const queryClient = useQueryClient();
-  return useMutation(
+  return useMutation<Nonprofit>(
     ["ADMIN_NONPROFIT_SAVE_FORM"],
-    ({ token, formType, payload }) =>
-      saveNonprofitForm({ token, formType, payload }),
+    () => saveNonprofitForm({ token, formType, payload }),
     {
       onSuccess: (response, { payload, formType }) => {
         const interestsData = queryClient.getQueryData("INTERESTS");

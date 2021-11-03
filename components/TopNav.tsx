@@ -79,7 +79,7 @@ const TopNav: FC<{
     if (onSearch) {
       onSearch(searchValue);
     }
-  }, [searchValue]);
+  }, [onSearch, searchValue]);
 
   return (
     <>

@@ -1,3 +1,4 @@
+import {useState} from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,8 +14,6 @@ import Nonprofit from "../dtos/Nonprofit";
 import {getFeaturedNonprofits} from "../mtc-api/nonprofit/useGetClaimedNonprofits";
 import "keen-slider/keen-slider.min.css";
 import {useKeenSlider} from "keen-slider/react";
-import {useState} from "react";
-
 
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
@@ -24,7 +23,7 @@ export default function Home() {
 
   const [trendingCampaignsSliderCurrentSlide, setTrendingCampaignsSliderCurrentSlide] = useState(0);
 
-  const [trendingCampaignsSliderRef, trendingCampaignsSlider] = useKeenSlider({
+  const [trendingCampaignsSliderRef, trendingCampaignsSlider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slideChanged(s) {
       setTrendingCampaignsSliderCurrentSlide(s.details().relativeSlide)
@@ -44,7 +43,7 @@ export default function Home() {
 
   const [featuredNonprofitsSliderCurrentSlide, setFeaturedNonprofitsSliderCurrentSlide] = useState(0);
 
-  const [featuredNonprofitsSliderRef, featuredNonprofitsSlider] = useKeenSlider({
+  const [featuredNonprofitsSliderRef, featuredNonprofitsSlider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slideChanged(s) {
       setFeaturedNonprofitsSliderCurrentSlide(s.details().relativeSlide)
@@ -178,12 +177,11 @@ export default function Home() {
                     <p className="text-white text-16px leading-24px d:flex-1 font-bold d:pb-10px ">
                       Nonprofits
                     </p>
-                    <a
-                      href="/nonprofits"
-                      className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px"
-                    >
-                      Claim your page <img alt="" src="/images/home/➡.svg" />
-                    </a>
+                    <Link href="/nonprofits">
+                      <a className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px">
+                        Claim your page <img alt="" src="/images/home/➡.svg" />
+                      </a>
+                    </Link>
                   </div>
 
                   <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px hidden d:block d:h-49px d:flex-1">
@@ -209,25 +207,24 @@ export default function Home() {
                   <p className="text-white text-16px leading-24px d:flex-1 font-bold d:pb-10px ">
                     Corporations
                   </p>
-                  <a
-                    href="/corporations"
-                    className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px"
-                  >
-                    Sponsor an event <img alt="" src="/images/home/➡.svg" />
-                  </a>
+                  <Link href="/corporations">
+                    <a className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px">
+                      <span>Sponsor an event</span>
+                      <img alt="" src="/images/home/➡.svg" />
+                    </a>
+                  </Link>
                 </div>
 
                 <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px">
                   Find nonprofits that need your support.
                 </p>
                 <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
-                <a
-                  href="/corporations"
-                  className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px"
-                >
-                  <span>Sponsor an event</span>
-                  <img alt="" src="/images/home/➡.svg" />
-                </a>
+                <Link href="/corporations">
+                  <a className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px">
+                    <span>Sponsor an event</span>
+                    <img alt="" src="/images/home/➡.svg" />
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -339,7 +336,7 @@ export default function Home() {
             </div>
             {trendingCampaignsSlider && (
               <div className="t:hidden dots">
-                {[...Array(trendingCampaignsSlider.details().size).keys()].map((idx) => {
+                {[...Array.from(Array(trendingCampaignsSlider.details().size).keys())].map((idx) => {
                   return (
                     <button
                       key={idx}
@@ -436,7 +433,7 @@ export default function Home() {
             </div>
             {featuredNonprofitsSlider && (
               <div className="t:hidden dots">
-                {[...Array(featuredNonprofitsSlider.details().size).keys()].map((idx) => {
+                {[...Array.from(Array(featuredNonprofitsSlider.details().size).keys())].map((idx) => {
                   return (
                     <button
                       key={idx}
@@ -546,15 +543,17 @@ export default function Home() {
                   causes.
                 </p>
                 <Link href="/individuals">
-                  <Button
-                    type="button"
-                    variant="primary"
-                    className="mt-15px rounded-10pxi t:px-1px d:px-20px mx-auto d:mx-0
-                    text-13px leading-19-5px
-                    w-160px t:w-130px d:w-200px"
-                  >
-                    Support a cause
-                  </Button>
+                  <a>
+                    <Button
+                      type="button"
+                      variant="primary"
+                      className="mt-15px rounded-10pxi t:px-1px d:px-20px mx-auto d:mx-0
+                      text-13px leading-19-5px
+                      w-160px t:w-130px d:w-200px"
+                    >
+                      Support a cause
+                    </Button>
+                  </a>
                 </Link>
               </div>
 
@@ -568,15 +567,17 @@ export default function Home() {
                   support.
                 </p>
                 <Link href="/nonprofits">
-                  <Button
-                    type="button"
-                    variant="primary"
-                    className="mt-15px rounded-10pxi t:px-1px d:px-20px mx-auto d:mx-0
-                    text-13px leading-19-5px
-                    w-160px t:w-130px d:w-200px"
-                  >
-                    Claim your page
-                  </Button>
+                  <a>
+                    <Button
+                      type="button"
+                      variant="primary"
+                      className="mt-15px rounded-10pxi t:px-1px d:px-20px mx-auto d:mx-0
+                      text-13px leading-19-5px
+                      w-160px t:w-130px d:w-200px"
+                    >
+                      Claim your page
+                    </Button>
+                  </a>
                 </Link>
               </div>
 

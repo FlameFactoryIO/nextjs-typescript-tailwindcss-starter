@@ -58,32 +58,33 @@ const VideoPlayer: FC<{
       setVideoStatus('paused');
     };
 
-    if (!videoRef.current || !videoUrl || isHLSVideo(videoUrl)) return;
+    const player = videoRef.current;
+    if (!player || !videoUrl || isHLSVideo(videoUrl)) return;
     setVideoStatus('loading');
 
     // mp4 videos will most probably not be completely loaded, so canplay is enough
-    videoRef.current.addEventListener(
+    player.addEventListener(
       'canplay',
       () => {
-        if (videoRef.current && videoRef.current.paused) {
+        if (player && player.paused) {
           handleReady();
         }
       },
       false,
     );
-    videoRef.current.addEventListener('ended', handleEnded, false);
-    videoRef.current.addEventListener('play', handlePlay, false);
-    videoRef.current.addEventListener('pause', handlePause, false);
+    player.addEventListener('ended', handleEnded, false);
+    player.addEventListener('play', handlePlay, false);
+    player.addEventListener('pause', handlePause, false);
 
-    videoRef.current.src = videoUrl;
-    videoRef.current.load();
+    player.src = videoUrl;
+    player.load();
 
     return () => {
-      videoRef.current?.pause();
-      videoRef.current?.removeEventListener('canplay', handleReady);
-      videoRef.current?.removeEventListener('ended', handleEnded);
-      videoRef.current?.removeEventListener('play', handlePlay);
-      videoRef.current?.removeEventListener('pause', handlePause);
+      player?.pause();
+      player?.removeEventListener('canplay', handleReady);
+      player?.removeEventListener('ended', handleEnded);
+      player?.removeEventListener('play', handlePlay);
+      player?.removeEventListener('pause', handlePause);
     };
   }, [videoUrl]);
 
