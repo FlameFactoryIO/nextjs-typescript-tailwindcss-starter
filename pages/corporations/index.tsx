@@ -59,7 +59,7 @@ export default function CorporationsHome() {
             </Button>
           </div>
 
-          <div className="w-280px  t:w-335px d:w-582px">
+          <div className="w-280px t:w-335px d:w-582px">
             <div aria-hidden className="t:flex-1">
               <Image
                 alt=""
@@ -96,9 +96,9 @@ export default function CorporationsHome() {
 
           <div
             id="brands"
-            className="min-w-280px t:max-w-708px d:max-w-907px 
+            className="min-w-280px t:max-w-708px d:max-w-907px
                       flex-1 flex flex-col t:flex-row  t:gap-39px d:gap-100px
-                      items-center text-center 
+                      items-center text-center
                       text-13px leading-16-9px
                       d:text-16px d:leading-24px
                       -mb-11px t:-mb-74px d:-mb-22px
@@ -154,12 +154,12 @@ export default function CorporationsHome() {
             </div>
           </div>
           <div
-            className="min-w-280px t:max-w-708px d:max-w-907px 
+            className="min-w-280px t:max-w-708px d:max-w-907px
           transform translate-y-35px t:translate-y-111px d:translate-y-95px"
           >
             <div aria-hidden className="flex-1">
               {/*shadow-4-10-24-8*/}
-              <Image 
+              <Image
                 className="rounded-16pxi"
                 alt=""
                 src="/images/corporations/shape.png"
@@ -316,9 +316,9 @@ export default function CorporationsHome() {
           </div>
 
           <div
-            className="font-bold text-24px leading-28-8px pb-20px 
+            className="font-bold text-24px leading-28-8px pb-20px
                           t:pb-21px t:px-10px
-                          d:text-43px d:leading-51-6px d:pb-29px 
+                          d:text-43px d:leading-51-6px d:pb-29px
                           "
           >
             Why Move the Chain is right for your brand?
@@ -403,7 +403,7 @@ export default function CorporationsHome() {
           <div className="text-white text-center t:text-left d:text-left">
             <div
               className="text-24px font-bold leading-28-8px pb-26px
-                            t:pt-29px 
+                            t:pt-29px
                             d:text-43px d:leading-51-6px"
             >
               Ready to join us and help promote your corporate responsibility?
