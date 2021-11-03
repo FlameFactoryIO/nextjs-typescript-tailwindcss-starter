@@ -91,16 +91,18 @@ export default function CorporationsHome() {
                               min-w-280px t:max-w-708px d:max-w-1140px"
           >
             More brands are trying to connect with the younger generation...
-            while they want to work for and support social concious brands
+            while they want to work for and support social conscious brands
           </div>
 
-          <div id="brands"
+          <div
+            id="brands"
             className="min-w-280px t:max-w-708px d:max-w-907px 
-            flex-1 flex flex-col t:flex-row t:justify-between 
-                        items-center text-center 
-                              text-13px leading-16-9px
-                              d:text-16px d:leading-24px
-                              "
+                      flex-1 flex flex-col t:flex-row  t:gap-39px d:gap-100px
+                      items-center text-center 
+                      text-13px leading-16-9px
+                      d:text-16px d:leading-24px
+                      -mb-11px t:-mb-74px d:-mb-22px
+                      "
           >
             <div>
               <Image
@@ -130,7 +132,7 @@ export default function CorporationsHome() {
                 {/*max-w-280px t:max-w-210px d:max-w-236px text-center */}
                 of GenZers value and would prefer to buy from brands that are{" "}
                 <span className="font-bold">eco-friendly</span> and that are
-                socially responsible
+                <span className="font-bold">socially responsible</span>
               </div>
             </div>
             <div>
@@ -151,13 +153,14 @@ export default function CorporationsHome() {
               </div>
             </div>
           </div>
-
           <div
-            className="min-w-280px t:max-w-708px d:max-w-907px border-4 border-black-900
+            className="min-w-280px t:max-w-708px d:max-w-907px 
           transform translate-y-35px t:translate-y-111px d:translate-y-95px"
           >
             <div aria-hidden className="flex-1">
-              <Image
+              {/*shadow-4-10-24-8*/}
+              <Image 
+                className="rounded-16pxi"
                 alt=""
                 src="/images/corporations/shape.png"
                 width={907}
@@ -239,6 +242,7 @@ export default function CorporationsHome() {
                              d:w-367px d:h-369px"
               >
                 <Image
+                  alt=""
                   src="/images/corporations/corporate-profile.png"
                   width={69}
                   height={60}
