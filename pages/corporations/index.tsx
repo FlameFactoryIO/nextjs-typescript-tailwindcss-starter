@@ -395,23 +395,23 @@ export default function CorporationsHome() {
       <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
         <div
           id="provide-contact"
-          className="flex flex-col t:grid t:grid-cols-2 t:gap-14px items-center text-center
+          className="flex flex-col t:grid t:grid-cols-2 items-center text-center
                     pt-44px px-20px pb-51px
-                    t:pt-47px t:px-29px
-                    d:px-170px d:gap-112px"
+                    t:pt-47px t:px-29px t:gap-14px
+                    d:px-170px d:gap-96px"
         >
           <div className="text-white text-center t:text-left d:text-left">
             <div
-              className="text-24px font-bold leading-28-8px pb-26px
-                            t:pt-29px 
-                            d:text-43px d:leading-51-6px"
+              className="max-w-280px text-24px font-bold leading-28-8px pb-26px
+                          t:max-w-353px t:pt-29px 
+                          d:max-w-465px d:text-43px d:leading-51-6px"
             >
               Ready to join us and help promote your corporate responsibility?
             </div>
             <div
-              className="font-light text-13px leading-16-9px pb-15px
-                            t:pb-62px
-                            d:pb-11px d:text-16px d:leading-24px"
+              className="max-w-280px font-light text-13px leading-16-9px pb-15px
+                          t:max-w-334px t:pb-62px
+                          d:max-w-452px d:pb-11px d:text-16px d:leading-24px"
             >
               Provide your contact information and we will get in touch with you
               on how to start partnering with us.
@@ -442,39 +442,50 @@ export default function CorporationsHome() {
               <div className="t:grid t:grid-cols-2 t:gap-21px items-center">
                 <div className="pb-20px">
                   <Input
-                    className="w-250px rounded-10px
-                                    t:w-313"
+                    className="max-w-250px rounded-10px
+                                t:max-w-313px
+                                d:max-w-250px"
                     placeholder="Contact Name"
                   />
                 </div>
                 <div className="pb-20px">
                   <Input
-                    className="w-250px rounded-10px"
+                            className="max-w-250px rounded-10px
+                            t:max-w-313px
+                            d:max-w-250px"
                     placeholder="Mobile Number"
                   />
                 </div>
                 <div className="pb-20px">
                   <Input
-                    className="w-250px rounded-10px"
+                            className="max-w-250px rounded-10px
+                            t:max-w-313px
+                            d:max-w-250px"
                     placeholder="Company Name"
                   />
                 </div>
                 <div className="pb-20px">
                   <Input
-                    className="w-250px rounded-10px"
+                            className="max-w-250px rounded-10px
+                            t:max-w-313px
+                            d:max-w-250px"
                     placeholder="Role/Position"
                   />
                 </div>
               </div>
               <div className="pb-20px">
                 <Input
-                  className="w-250px rounded-10px"
+                          className="max-w-250px rounded-10px
+                          t:max-w-647px
+                          d:max-w-515px"
                   placeholder="Email Address"
                 />
               </div>
               <div className="pb-20px">
                 <Input
-                  className="w-250px h-150px rounded-10px"
+                         className="max-w-250px h-180px rounded-10px
+                         t:max-w-647px
+                         d:max-w-515px d:h-227px"
                   placeholder="Comments"
                 />
               </div>
