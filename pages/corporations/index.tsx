@@ -367,7 +367,7 @@ export default function CorporationsHome() {
             <span className="text-primary-400">“</span>I love the vision behind
             Move the Chain. This is a movement driven by thoughtful people who
             are all about maximizing positive impact in the world we live in.
-            I'm excited to be a small part of it.
+            I&apos;m excited to be a small part of it.
             <span className="text-primary-400">”</span>
           </div>
           <div className="pt-6px d:pt-10px text-16px leading-24px d:text-18px">
