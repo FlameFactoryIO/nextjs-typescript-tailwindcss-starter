@@ -94,14 +94,15 @@ export default function CorporationsHome() {
             while they want to work for and support social concious brands
           </div>
 
-          <div
-            className="flex-1 flex flex-col t:flex-row t:justify-center 
+          <div id="brands"
+            className="min-w-280px t:max-w-708px d:max-w-907px 
+            flex-1 flex flex-col t:flex-row t:justify-between 
                         items-center text-center 
                               text-13px leading-16-9px
                               d:text-16px d:leading-24px
-                              min-w-280px t:max-w-708px d:max-w-280px"
+                              "
           >
-            <div aria-hidden className="t:flex-1">
+            <div>
               <Image
                 alt=""
                 src="/images/corporations/86.png"
@@ -109,30 +110,30 @@ export default function CorporationsHome() {
                 height={149}
                 objectFit="contain"
               />
-              <div className="w-280px t:max-w-210px d:max-w-236px text-center">
+              <div className="w-280px t:max-w-210px d:max-w-236px text-center t:flex-1">
                 of Millennials would consider{" "}
                 <span className="font-bold">taking a pay cut </span> to work at
                 a company whose mission and values align with their own.
               </div>
             </div>
 
-            <div aria-hidden className="t:flex-1">
+            <div>
               <Image
-              alt=""
+                alt=""
                 src="/images/corporations/55.png"
                 width={149}
                 height={149}
                 objectFit="contain"
               />
 
-              <div className="w-280px t:max-w-210px d:max-w-236px">
+              <div className="w-280px t:max-w-210px d:max-w-236px t:flex-1">
                 {/*max-w-280px t:max-w-210px d:max-w-236px text-center */}
                 of GenZers value and would prefer to buy from brands that are{" "}
                 <span className="font-bold">eco-friendly</span> and that are
                 socially responsible
               </div>
             </div>
-            <div aria-hidden className="t:flex-1">
+            <div>
               <Image
                 alt=""
                 src="/images/corporations/48.png"
@@ -141,7 +142,7 @@ export default function CorporationsHome() {
                 objectFit="contain"
               />
 
-              <div className="w-280px t:max-w-210px d:max-w-236px">
+              <div className="w-280px t:max-w-210px d:max-w-236px t:flex-1">
                 of GenZers say they would{" "}
                 <span className="font-bold">
                   participate in online games for a campaign benefiting a cause
