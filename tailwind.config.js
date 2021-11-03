@@ -42,6 +42,7 @@ module.exports = {
         "24pxi": "24px !important",
         "25px": "25px",
         "26px": "26px",
+        "40px": "40px",
       },
       borderWidth: {
         "1px": "1px",
@@ -66,6 +67,8 @@ module.exports = {
         "21-6px": "21.6px",
         "22px": "22px",
         "22-5px": "22.5px",
+        "23px": "23px",
+        "23-4px": "23.4px",
         "24px": "24px",
         "25px": "25px",
         "26px": "26px",
@@ -75,7 +78,7 @@ module.exports = {
         "30px": "30px",
         "31-2px": "31.2px",
         "33-6px": "33.6px",
-
+        "35-5px": "35.5px",
         "38px": "38px",
         "41px": "41px",
         "51-6px": "51.6px",
@@ -147,6 +150,7 @@ module.exports = {
         cream: "#FEF4F0",
         "blue-darker": "#080719",
         "blue-dark": "#0A173C",
+        "form-contact": "#FFFFFF",
       },
     },
   },

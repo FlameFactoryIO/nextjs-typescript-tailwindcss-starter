@@ -211,7 +211,7 @@ export default function CorporationsHome() {
             </div>
             <div
               className="flex flex-col t:flex-row gap-21px text-center pt-23px items-center justify-center
-                        t:gap-20px" 
+                        t:gap-20px"
             >
               <div
                 className="flex-1 bg-white w-280px h-240px rounded-26px pt-20px pb-14px
@@ -338,15 +338,18 @@ export default function CorporationsHome() {
       </div>
 
       <div
-        className="bg-cream px-20px pt-44px pb-44px
-                        t:pb-43px t:px-30px
-                        d:pt-73px d:pb-52px d:px-380px"
+        className="bg-cream"
       >
-        <div id="companies-we-call-partners" className="text-center">
+        <div
+          className="text-center flex flex-col items-center  px-20px pt-44px pb-44px
+                        t:pb-43px t:px-30px
+                        d:pt-73px d:pb-88px d:px-234px"
+          id="companies-we-call-partners"
+        >
           <div
-            className="pb-44px d:pb-66px
-                          font-bold text-24px leading-28-8px
-                          d:text-43px d:leading-51-6px"
+            className="pb-44px d:pb-66px max-w-280px font-bold text-24px leading-28-8px
+                    t:max-w-620px
+                    d:text-43px d:leading-51-6px d:max-w-640px"
           >
             Companies we call partners
           </div>
@@ -357,22 +360,22 @@ export default function CorporationsHome() {
           />
 
           <div
-            className="pt-17px font-light text-18px leading-23-4px
-                          d:pt-29px d:px-233px d:text-24px d:leading-35-5px"
+            className="pt-17px font-light text-18px leading-23-4px max-w-280px text-center
+                        t:max-w-708px
+                        d:max-w-914px d:pt-29px d:text-24px d:leading-35-5px"
           >
             <span className="text-primary-400">“</span>I love the vision behind
             Move the Chain. This is a movement driven by thoughtful people who
             are all about maximizing positive impact in the world we live in.
-            I'm excited to be a small part of it.
+            I&apos;m excited to be a small part of it.
             <span className="text-primary-400">”</span>
           </div>
-          <div className="pt-6px d:pt-10px">
+          <div className="pt-6px d:pt-10px text-16px leading-24px d:text-18px">
             <span className="text-primary-400 font-bold ">Roger Desai </span>{" "}
             <span className="font-bold">- CEO at Prove</span>
           </div>
         </div>
       </div>
-
       {/*<div className=" px-20px pt-50px pb-51px">
         <div
           id="frequently-asked-questions"
@@ -392,23 +395,23 @@ export default function CorporationsHome() {
       <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
         <div
           id="provide-contact"
-          className="flex flex-col t:grid t:grid-cols-2 t:gap-14px items-center text-center
+          className="flex flex-col t:grid t:grid-cols-2 items-center text-center
                     pt-44px px-20px pb-51px
-                    t:pt-47px t:px-29px
-                    d:px-170px d:gap-112px"
+                    t:pt-47px t:px-29px t:gap-14px
+                    d:px-170px d:gap-96px"
         >
           <div className="text-white text-center t:text-left d:text-left">
             <div
-              className="text-24px font-bold leading-28-8px pb-26px
-                            t:pt-29px 
-                            d:text-43px d:leading-51-6px"
+              className="max-w-280px text-24px font-bold leading-28-8px pb-26px
+                          t:max-w-353px t:pt-29px 
+                          d:max-w-465px d:text-43px d:leading-51-6px"
             >
               Ready to join us and help promote your corporate responsibility?
             </div>
             <div
-              className="font-light text-13px leading-16-9px pb-15px
-                            t:pb-62px
-                            d:pb-11px d:text-16px d:leading-24px"
+              className="max-w-280px font-light text-13px leading-16-9px pb-15px
+                          t:max-w-334px t:pb-62px
+                          d:max-w-452px d:pb-11px d:text-16px d:leading-24px"
             >
               Provide your contact information and we will get in touch with you
               on how to start partnering with us.
@@ -439,39 +442,50 @@ export default function CorporationsHome() {
               <div className="t:grid t:grid-cols-2 t:gap-21px items-center">
                 <div className="pb-20px">
                   <Input
-                    className="w-250px rounded-10px
-                                    t:w-313"
+                    className="max-w-250px rounded-10px
+                                t:max-w-313px
+                                d:max-w-250px"
                     placeholder="Contact Name"
                   />
                 </div>
                 <div className="pb-20px">
                   <Input
-                    className="w-250px rounded-10px"
+                            className="max-w-250px rounded-10px
+                            t:max-w-313px
+                            d:max-w-250px"
                     placeholder="Mobile Number"
                   />
                 </div>
                 <div className="pb-20px">
                   <Input
-                    className="w-250px rounded-10px"
+                            className="max-w-250px rounded-10px
+                            t:max-w-313px
+                            d:max-w-250px"
                     placeholder="Company Name"
                   />
                 </div>
                 <div className="pb-20px">
                   <Input
-                    className="w-250px rounded-10px"
+                            className="max-w-250px rounded-10px
+                            t:max-w-313px
+                            d:max-w-250px"
                     placeholder="Role/Position"
                   />
                 </div>
               </div>
               <div className="pb-20px">
                 <Input
-                  className="w-250px rounded-10px"
+                          className="max-w-250px rounded-10px
+                          t:max-w-647px
+                          d:max-w-515px"
                   placeholder="Email Address"
                 />
               </div>
               <div className="pb-20px">
                 <Input
-                  className="w-250px h-150px rounded-10px"
+                         className="max-w-250px h-180px rounded-10px
+                         t:max-w-647px
+                         d:max-w-515px d:h-227px"
                   placeholder="Comments"
                 />
               </div>

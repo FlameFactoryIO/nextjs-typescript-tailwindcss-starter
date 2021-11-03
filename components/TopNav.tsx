@@ -79,7 +79,7 @@ const TopNav: FC<{
     if (onSearch) {
       onSearch(searchValue);
     }
-  }, [searchValue]);
+  }, [onSearch, searchValue]);
 
   return (
     <>
@@ -188,8 +188,7 @@ const TopNav: FC<{
                 &nbsp;Log In
               </div>
             }
-            isSelected={router?.asPath === "/log-in"}
-            className="border-none"/>
+            className="border-none" />
         </div>
       )}
     </>
