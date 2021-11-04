@@ -12,7 +12,7 @@ const Input: FC<{
   className = "",
   value,
   placeholder,
-  onChange,
+  onChange = () => {},
   variant = "primary",
 }) =>
   <input

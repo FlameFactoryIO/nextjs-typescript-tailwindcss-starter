@@ -3,6 +3,7 @@ import Button from "./Button";
 import Link from "next/link";
 import Nonprofit from "../dtos/Nonprofit";
 import Ellipsis from "@quid/react-ellipsis"
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 const FeaturedNonprofit: FC<{
   nonprofit: Nonprofit,
@@ -27,6 +28,13 @@ const FeaturedNonprofit: FC<{
       <Ellipsis className="mt-18px font-light text-12px leading-15px block-with-text" maxHeight={50} title={nonprofit.description}>
         {nonprofit.description}
       </Ellipsis>
+
+      {nonprofit.city && nonprofit.province && (
+        <div className="flex items-center">
+          <span className="text-primary"><FaMapMarkerAlt /></span>{' '}
+          {nonprofit.city}, {nonprofit.province}
+        </div>
+      )}
 
       <Link href={`${nonprofit.path}`}>
         <a>

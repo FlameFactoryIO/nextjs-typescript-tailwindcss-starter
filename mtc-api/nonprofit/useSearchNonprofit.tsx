@@ -26,7 +26,7 @@ export const searchNonprofit = async ({
 
   const {
     data: { results },
-  } = await paypalClient.get('/customer/charities', {
+  } = await paypalClient.get('/v1/customer/charities', {
     params: {
       page: cursor + 1,
       name: search,
