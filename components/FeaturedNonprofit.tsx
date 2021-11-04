@@ -31,8 +31,9 @@ const FeaturedNonprofit: FC<{
 
       {nonprofit.city && nonprofit.province && (
         <div className="flex items-center">
-          <span className="text-primary"><FaMapMarkerAlt /></span>{' '}
-          {nonprofit.city}, {nonprofit.province}
+          <span className="text-primary">
+            <FaMapMarkerAlt /></span>{" "}
+            {nonprofit.city}, {nonprofit.province}
         </div>
       )}
 

@@ -232,8 +232,8 @@ export default function Home() {
         <div id="supporting" className="mx-auto text-center">
           <p className="text-18px leading-21-6px t:text-20px t:leading-24px d:text-28px d:leading-26px text-center">
             Supporting more than{" "}
-            <span className="font-bold text-primary">140k+</span> vetted
-            nonprofit organizations.
+            <span className="font-bold text-primary">140k+</span>{" "}
+            vetted nonprofit organizations.
           </p>
           <p className="text-12px leading-26px d:text-18px d:leading-26px font-bold">
             All donations are tax deductible.
@@ -354,8 +354,6 @@ export default function Home() {
                 border: "1px solid #E3E5E6",
               }}
             >
-              {" "}
-              {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
               <div className="d:text-20px d:leading-30px font-bold">
                 Looking for a cause to support?
               </div>
@@ -373,8 +371,6 @@ export default function Home() {
             className="d:hidden mt-23px t:mt-28px flex flex-col t:flex-row items-center justify-between rounded-26px p-15px t:p-20px"
             style={{ backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6" }}
           >
-            {" "}
-            {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
             <div className="t:text-left">
               <div className="text-16px leading-20-8px t:text-15px t:leading-22-5px font-bold">
                 Looking for a cause to support?
@@ -418,8 +414,7 @@ export default function Home() {
             All nonprofits on{" "}
             <span className="font-bold ">
               Move the Chain verified 501c3 nonprofit organizations
-            </span>
-            . All donations to any of the nonprofits are tax deductible.
+            </span>. All donations to any of the nonprofits are tax deductible.
           </p>
 
           <div className="grid grid-cols-1 t:grid-cols-3 d:grid-cols-4 mt-23px t:mt-30px d:mt-50px gap-32px">
@@ -509,8 +504,8 @@ export default function Home() {
               </p>
               <p className="mt-20px d:mt-25px d:-mr-10px text-14px leading-18-2px d:text-18px d:leading-24px font-light">
                 Whether you are a nonprofit looking for a{" "}
-                <span className="font-bold ">quality channel</span> to spread
-                their cause and raise funds, a donor looking to contribute, or a
+                <span className="font-bold ">quality channel</span>{" "}
+                to spread their cause and raise funds, a donor looking to contribute, or a
                 corporation looking to partner with nonprofits, we stand by you.{" "}
                 <span className="font-bold">
                   We want to Move the Chain together.

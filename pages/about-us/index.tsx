@@ -132,29 +132,28 @@ export default function AboutUs() {
           <div
             id="why-move-the-chain-info"
             className="
-            pt-43px px-0 
-            t:pt-58px t:pb-43px 
-            d:py-167px 
+            pt-43px px-0
+            t:pt-58px t:pb-43px
+            d:py-167px
             flex flex-col
             max-w-280px t:max-w-333px d:max-w-548px
             t:justify-self-end
             "
           >
             <div
-              className=" font-bold text-white text-center t:text-left 
+              className=" font-bold text-white text-center t:text-left
                             text-24px leading-28-8px d:text-43px d:leading-51-6px
                             pb-25px t:pb-20px d:pb-34px
                             "
             >
               <h1>
                 Why,{" "}
-                <span className=" text-primary">&#34;Move the Chain&#34; </span>{" "}
-                ?
+                <span className=" text-primary">&#34;Move the Chain&#34; </span>?
               </h1>
             </div>
             <div
               className="font-light text-white text-13px leading-16-9px t:leading-15-6px d:text-16px d:leading-24px
-                          flex flex-col 
+                          flex flex-col
                           gap-y-25px t:gap-y-20px d:gap-y-28px
 
                           t:min-w-333px d:max-w-none"
@@ -212,9 +211,9 @@ export default function AboutUs() {
       <div className="w-full bg-footer ">
         <div
           className="font-bold text-center
-        text-24px leading-28-8px  d:text-43px d:leading-51-6px 
+        text-24px leading-28-8px  d:text-43px d:leading-51-6px
         pt-103px px-20px pb-141px
-        t::pt-84px t:px-151px t:pb-137px 
+        t::pt-84px t:px-151px t:pb-137px
         d:pt-137px d:px-273px d:pb-201px"
         >
           What makes <span className="text-primary">Move the Chain</span>{" "}
@@ -225,16 +224,16 @@ export default function AboutUs() {
       <div className="w-full bg-gradient-to-b from-white to-cream">
         <div
           id="about-our-platform"
-          className="flex flex-col  
+          className="flex flex-col
         px-21px t:px-31px d:px-120
-        transform -translate-y-107px 
+        transform -translate-y-107px
         items-center
         t:max-h-554px d:max-h-772px
         gap-43px t:gap-25px d:gap-42px"
         >
           <div
             id="about-our-platform-cards"
-            className="flex-1 
+            className="flex-1
           flex flex-col t:flex-row
           gap-20px
           "
@@ -243,10 +242,10 @@ export default function AboutUs() {
               id="card-1"
               className="bg-white
                         pt-22px px-20px pb-21px
-                        rounded-26px 
+                        rounded-26px
                         flex-1 w-280px t:w-222px d:w-367px
                         border-1px  shadow-0-6-24"
-             
+
             >
               <img
                 className="mr-auto pb-15px"
@@ -254,13 +253,13 @@ export default function AboutUs() {
                 alt="logo"
               />
               <div
-                className="mr-auto  pb-6px text-left font-bold 
+                className="mr-auto  pb-6px text-left font-bold
                               text-16px  leading-24px d:text-20px d:leading-30px"
               >
                 No hidden costs
               </div>
               <p
-                className="mx-auto text-left 
+                className="mx-auto text-left
                             text-12px leading-15-6px d:text-14px d:leading-22px font-light"
               >
                 Move the Chain provides a free platform for nonprofits to
@@ -281,13 +280,13 @@ export default function AboutUs() {
                 alt="logo"
               />
               <div
-                className="mr-auto  pb-6px text-left font-bold 
+                className="mr-auto  pb-6px text-left font-bold
                               text-16px  leading-24px d:text-20px d:leading-30px"
               >
                 We operate from tips
               </div>
               <p
-                className="mx-auto text-left 
+                className="mx-auto text-left
                             text-12px leading-15-6px d:text-14px d:leading-22px font-light"
               >
                 We allow our donors to decide what our value is. Donors have the
@@ -308,13 +307,13 @@ export default function AboutUs() {
                 alt="logo"
               />
               <div
-                className="mr-auto  pb-6px text-left font-bold 
+                className="mr-auto  pb-6px text-left font-bold
                               text-16px  leading-24px d:text-20px d:leading-30px"
               >
                 We promote CSR
               </div>
               <p
-                className="mx-auto text-left 
+                className="mx-auto text-left
                             text-12px leading-15-6px d:text-14px d:leading-22px font-light"
               >
                 We partner with corporations to help engage their consumers,
@@ -324,18 +323,18 @@ export default function AboutUs() {
           </div>
           <div id="about-our-platform-girl" className="flex-1">
             <div
-              className="flex flex-col t:grid grid-cols-2 text-center t:text-left 
+              className="flex flex-col t:grid grid-cols-2 text-center t:text-left
                             gap-7px t:gap-43px d:gap-104px"
             >
               <div
-                className="px-21px 
+                className="px-21px
                             t:pt-92px t:px-0
-                            d:pt-226px 
+                            d:pt-226px
                               max-w-280px t:max-w-328px d:max-w-500px
                               t:justify-self-end"
               >
                 <h1
-                  className="font-bold 
+                  className="font-bold
                             pb-23px t:pb-21px d:pb-15px
                           text-24px leading-28-8px  d:text-42px d:leading-51-6px"
                 >
@@ -346,7 +345,7 @@ export default function AboutUs() {
                           text-13px leading-16-9px  d:text-16px d:leading-24px"
                 >
                   Our platform is easily accessible, and user friendly. In
-                  addition,
+                  addition,{" "}
                   <span className="text-primary font-bold">
                     our partnership with PayPal Giving Fund
                   </span>{" "}
@@ -388,16 +387,16 @@ export default function AboutUs() {
       <div className="w-full ">
         <div
           id="questions"
-          className="flex flex-col 
-        px-21px t:31px d:px-120  
-        transform -translate-y-112px 
+          className="flex flex-col
+        px-21px t:31px d:px-120
+        transform -translate-y-112px
         items-center
         max-h-750px t:max-h-340px d:max-h-448px
         gap-43px t:gap-25px d:gap-42px "
         >
           <div
             id="questions-cards"
-            className="flex-1 
+            className="flex-1
           flex flex-col t:flex-row
           gap-20px
           "
@@ -415,20 +414,20 @@ export default function AboutUs() {
                 alt="logo"
               />
               <div
-                className="mr-auto  pb-6px text-left font-bold 
+                className="mr-auto  pb-6px text-left font-bold
                               text-16px  leading-24px d:text-20px d:leading-30px"
               >
                 140K+ vetted nonprofits
               </div>
               <p
-                className="mx-auto text-left 
+                className="mx-auto text-left
                             text-12px leading-15-6px d:text-14px d:leading-22px font-light"
               >
-                <span className="font-bold">PayPal Giving Fund</span> gives us
-                access to their database of{" "}
-                <span className="font-bold">vetted nonprofits.</span> PPGF
-                requires strict guidelines for nonprofits to be included in
-                their directory.
+                <span className="font-bold">PayPal Giving Fund</span>{" "}
+                gives us access to their database of{" "}
+                <span className="font-bold">vetted nonprofits.</span>{" "}
+                PPGF requires strict guidelines for nonprofits to be included
+                in their directory.
               </p>
             </div>
             <div
@@ -444,16 +443,16 @@ export default function AboutUs() {
                 alt="logo"
               />
               <div
-                className="mr-auto  pb-6px text-left font-bold 
+                className="mr-auto  pb-6px text-left font-bold
                               text-16px  leading-24px d:text-20px d:leading-30px"
               >
                 Donation Processing
               </div>
               <p
-                className="mx-auto text-left 
+                className="mx-auto text-left
                             text-12px leading-15-6px d:text-14px d:leading-22px font-light"
               >
-                <span className="font-bold">PayPal </span>
+                <span className="font-bold">PayPal</span>{" "}
                 offers payment processing services, charging a small fee for
                 each donation. Donors have the choice to pay via{" "}
                 <span className="font-bold">PayPal or credit card.</span>
@@ -472,13 +471,13 @@ export default function AboutUs() {
                 alt="logo"
               />
               <div
-                className="mr-auto  pb-6px text-left font-bold 
+                className="mr-auto  pb-6px text-left font-bold
                               text-16px  leading-24px d:text-20px d:leading-30px"
               >
                 Tax Receipts
               </div>
               <p
-                className="mx-auto text-left 
+                className="mx-auto text-left
                             text-12px leading-15-6px d:text-14px d:leading-22px font-light"
               >
                 After each donation, a tax receipt is sent automatically via

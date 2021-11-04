@@ -84,7 +84,7 @@ const TopNav: FC<{
   return (
     <>
       <div className={`z-50 hidden d:flex fixed w-full select-none bg-white px-50px py-20px items-center ${className ?? ""}`}>
-        
+
         <Link href="/">
           <a className="flex">
             <svg width="41" height="37" viewBox="0 0 41 37" fill="none" xmlns="http://www.w3.org/2000/svg" className="min-w-42px">
@@ -164,11 +164,11 @@ const TopNav: FC<{
               className="z-10 h-full leading-snug font-normal absolute text-gray-400 bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3 cursor-pointer"
               onClick={handleSearchSubmit}
             >
-        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-             viewBox="0 0 24 24" className="w-6 h-6">
-        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-        </svg>
-        </span>
+              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                   viewBox="0 0 24 24" className="w-6 h-6">
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+            </span>
           </form>
 
           <SideNavItem title="About us" href="/about-us" className="mt-14px" />

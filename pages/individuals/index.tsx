@@ -26,18 +26,21 @@ export default function Individuals() {
                     <div className=" font-sans text-center text-white d:w-452px flex flex-col gap-17px
                                     t:text-left t:items-center t:gap-19px
                                     d:pt-113px d:pb-135px d:gap-37px">
-                        <div className="max-w-280px font-bold text-26px leading-31-2px 
+                        <div className="max-w-280px font-bold text-26px leading-31-2px
                                         t:max-w-341px
                                         d:max-w-452px d:text-48px d:leading-57-6px
                                         ">
                             <span className=" text-primary font-black ">Move the Chain</span>{" "}
                             is a platform for the modern donor.
                         </div>
-                        <div className=" max-w-279px text-16px leading-20-8px 
+                        <div className=" max-w-279px text-16px leading-20-8px
                                         t:max-w-343px
                                         d:max-w-494px d:text-18px d:leading-24px font-light
                                         ">
-                            We offer a social giving platform, changing the way you <span className="font-bold">give back</span> to causes you care about… and all donations <span className="font-bold">are tax deductible!</span>
+                            We offer a social giving platform, changing the way you{" "}
+                            <span className="font-bold">give back</span>{" "}
+                            to causes you care about… and all donations{" "}
+                            <span className="font-bold">are tax deductible!</span>{" "}
                             <div className="pt-10px font-bold">Receive an automated tax receipt after each donation.</div>
                         </div>
                     </div>
@@ -135,7 +138,9 @@ export default function Individuals() {
                                 <div className="font-light text-13px leading-16-9px pt-19px pb-15px
                                                 t:pt-22px t:pb-7px
                                                 d:text-16px d:leading-20-8px d:pt-18px d:pb-18px">
-                                    Our <span className="font-bold">easy search tool</span> allows you to find nonprofits of any size in your area and/or <span className="font-bold">causes that interest</span> you.
+                                    Our{" "}<span className="font-bold">easy search tool</span>{" "}
+                                    allows you to find nonprofits of any size in your area and/or{" "}
+                                    <span className="font-bold">causes that interest</span>{" "}you.
                                 </div>
                                 <div className="pb-20px">
                                     <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Search for nonprofit</Button>
@@ -188,7 +193,7 @@ export default function Individuals() {
                             />
                         </div>
 
-                        <div className="flex-1 max-w-280px 
+                        <div className="flex-1 max-w-280px
                                         t:max-w-220px
                                         d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left">
                             <div className="d:max-w-320px d:max-h-240px d:pt-24px">
@@ -199,7 +204,8 @@ export default function Individuals() {
                                 <div className="font-light text-13px leading-16-9px pt-19px pb-15px
                                                 t:pt-21px t:pb-13px
                                                 d:max-w-320px d:text-16px d:leading-20-8px d:pt-18px d:pb-18px">
-                                    Campaigns allow nonprofits to tell you exactly why they need to raise funds and how <span className="font-bold">your donations will make a difference.</span>
+                                    Campaigns allow nonprofits to tell you exactly why they need to raise funds and how{" "}
+                                    <span className="font-bold">your donations will make a difference.</span>
                                 </div>
                                 <div className="pb-20px">
                                     <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Find a campaign</Button>
@@ -232,7 +238,7 @@ export default function Individuals() {
                             />
                         </div>
 
-                        <div className="flex-1 max-w-280px 
+                        <div className="flex-1 max-w-280px
                                         t:max-w-220px
                                         d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left">
                             <div className="d:max-w-320px d:max-h-240px ">

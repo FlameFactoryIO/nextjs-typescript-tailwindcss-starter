@@ -39,17 +39,17 @@ export default function CorporationsHome() {
             </div>
             <div
               className="max-w-279px t:max-w-342px d:max-w-499px
-                            text-14px d:text-18px leading-18-2px d:leading-24px font-light
-                            pb-20px "
+                         text-14px d:text-18px leading-18-2px d:leading-24px font-light
+                         pb-20px"
             >
               While your corporation supports the community and various
               nonprofit organizations, consumers, clients and even employees are
               often unaware of how much you make a difference. We create{" "}
               <span className="font-bold">
-                transparency and increase consumer & employee engagement{" "}
-              </span>
-              through corporate
-              <span className="font-bold"> charitable giving.</span>
+                transparency and increase consumer & employee engagement
+              </span>{" "}
+              through corporate{" "}
+              <span className="font-bold">charitable giving.</span>
             </div>
             <Button
               variant="primary"
@@ -114,7 +114,7 @@ export default function CorporationsHome() {
               />
               <div className="w-280px t:max-w-210px d:max-w-236px text-center t:flex-1">
                 of Millennials would consider{" "}
-                <span className="font-bold">taking a pay cut </span> to work at
+                <span className="font-bold">taking a pay cut</span>{" "}to work at
                 a company whose mission and values align with their own.
               </div>
             </div>
@@ -131,7 +131,8 @@ export default function CorporationsHome() {
               <div className="w-280px t:max-w-210px d:max-w-236px t:flex-1">
                 {/*max-w-280px t:max-w-210px d:max-w-236px text-center */}
                 of GenZers value and would prefer to buy from brands that are{" "}
-                <span className="font-bold">eco-friendly</span> and that are
+                <span className="font-bold">eco-friendly</span>{" "}
+                and that are{" "}
                 <span className="font-bold">socially responsible</span>
               </div>
             </div>
@@ -205,8 +206,8 @@ export default function CorporationsHome() {
                 platform for corporations to{" "}
                 <span className="font-bold">
                   initiate fundraisers, promote their brand
-                </span>
-                , all that while <span className="font-bold">doing good</span>.
+                </span>, all that while{" "}
+                <span className="font-bold">doing good</span>.
               </div>
             </div>
             <div
@@ -371,7 +372,7 @@ export default function CorporationsHome() {
             <span className="text-primary-400">”</span>
           </div>
           <div className="pt-6px d:pt-10px text-16px leading-24px d:text-18px">
-            <span className="text-primary-400 font-bold ">Roger Desai </span>{" "}
+            <span className="text-primary-400 font-bold ">Roger Desai</span>{" "}
             <span className="font-bold">- CEO at Prove</span>
           </div>
         </div>
