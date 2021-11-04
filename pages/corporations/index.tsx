@@ -159,7 +159,7 @@ export default function CorporationsHome() {
           >
             <div aria-hidden className="flex-1">
               {/*shadow-4-10-24-8*/}
-              <Image 
+              <Image
                 className="rounded-16pxi"
                 alt=""
                 src="/images/corporations/shape.png"
@@ -181,8 +181,10 @@ export default function CorporationsHome() {
                        d:pt-213px d:pb-96px d:px-170px
                        flex flex-col items-center"
           >
-            <div className="flex flex-col d:flex-row items-center
-                            d:gap-66px ">
+            <div
+              className="flex flex-col d:flex-row items-center
+                            d:gap-66px "
+            >
               <div
                 className="flex-1 text-white font-bold text-center
                               text-24px leading-28-8px max-w-280px
@@ -337,9 +339,7 @@ export default function CorporationsHome() {
         </div>
       </div>
 
-      <div
-        className="bg-cream"
-      >
+      <div className="bg-cream">
         <div
           className="text-center flex flex-col items-center  px-20px pt-44px pb-44px
                         t:pb-43px t:px-30px
@@ -395,103 +395,117 @@ export default function CorporationsHome() {
       <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
         <div
           id="provide-contact"
-          className="flex flex-col t:grid t:grid-cols-2 items-center text-center
+          className="flex flex-col d:grid d:grid-cols-2
+                    items-center 
                     pt-44px px-20px pb-51px
                     t:pt-47px t:px-29px t:gap-14px
-                    d:px-170px d:gap-96px"
+                    d:px-0 d:gap-40px
+                    min-w-280px t:max-w-708px d:max-w-1140px mx-auto"
         >
-          <div className="text-white text-center t:text-left d:text-left">
-            <div
-              className="max-w-280px text-24px font-bold leading-28-8px pb-26px
-                          t:max-w-353px t:pt-29px 
-                          d:max-w-465px d:text-43px d:leading-51-6px"
-            >
-              Ready to join us and help promote your corporate responsibility?
+          <div
+            className="t:px-0 text-white text-center t:text-left d:text-left 
+                        flex flex-col t:grid t:grid-cols-2 d:grid-cols-1 d:grid-rows-2
+                        pb-56px t:pb-1px d:pb-33px d:items-center
+                          "
+          >
+            <div>
+              <div
+                className="min-w-280px 
+                          text-24px font-bold leading-28-8px pb-29px
+                           t:max-w-353px t:pt-0
+                          d:pt-0 d:pb-35px 
+                          d:max-w-550px d:text-43px d:leading-51-6px "
+              >
+                Ready to join us and help promote your corporate responsibility?
+              </div>
+              <div
+                className="min-w-280px font-light text-13px leading-19-5px d:text-18px d:leading-27px
+                          pb-26px t:pb-28px d:pb-0 
+                          t:max-w-334px  d:max-w-569px    mx-auto
+                          "
+              >
+                Provide your contact information and we will get in touch with
+                you on how to start partnering with us.
+              </div>
             </div>
-            <div
-              className="max-w-280px font-light text-13px leading-16-9px pb-15px
-                          t:max-w-334px t:pb-62px
-                          d:max-w-452px d:pb-11px d:text-16px d:leading-24px"
-            >
-              Provide your contact information and we will get in touch with you
-              on how to start partnering with us.
-            </div>
-            <div className="t:hidden d:block">
-              <Image
-                src="/images/corporations/contact-information.png"
-                width={469}
-                height={269}
-              />
+
+            <div className="min-w-280px t:max-w-340px d:max-w-550px ">
+              <div aria-hidden className="t:flex-1 rounded24px  d:m-0">
+                <Image
+                  alt=""
+                  src="/images/corporations/contact-information.png"
+                  width={550}
+                  height={296}
+                  objectFit="contain"
+                />
+              </div>
             </div>
           </div>
 
-          <div className=" t:gap-33px hidden t:block d:hidden">
-            <Image
-              src="/images/corporations/contact-information.png"
-              width={469}
-              height={269}
-            />
-          </div>
-
-          <div className="pt-40px t:text-center t:items-center t:px-31px">
+          <div className="w-full max-w-550px t:text-center t:items-center flex flex-col">
             <div
-              className="bg-white w-280px h-635px rounded-40px pt-30px px-15px pb-29px
-                            t:w-708px t:h-514px
-                            d:w-575px d:h-592px"
+              className="flex-1 bg-white min-w-280px h-636px rounded-24px shadow-0-3-16
+              pt-30px px-15px pb-29px
+              d:pt-20px d:px-20px d:pb-39px
+                            t:w-708px t:h-504px
+                            d:w-575px d:h-570px"
             >
-              <div className="t:grid t:grid-cols-2 t:gap-21px items-center">
-                <div className="pb-20px">
-                  <Input
-                    className="max-w-250px rounded-10px
+              <div
+                className="grid grid-rows-5 t:grid-cols-2 t:grid-rows-3 gap-y-20px gap-x-10px items-center
+              pb-20px"
+              >
+                <Input
+                  className=" min-w-250px rounded-10pxi
+                    bg-white border-1px border-solid border-input
                                 t:max-w-313px
                                 d:max-w-250px"
-                    placeholder="Contact Name"
-                  />
-                </div>
-                <div className="pb-20px">
-                  <Input
-                            className="max-w-250px rounded-10px
-                            t:max-w-313px
-                            d:max-w-250px"
-                    placeholder="Mobile Number"
-                  />
-                </div>
-                <div className="pb-20px">
-                  <Input
-                            className="max-w-250px rounded-10px
-                            t:max-w-313px
-                            d:max-w-250px"
-                    placeholder="Company Name"
-                  />
-                </div>
-                <div className="pb-20px">
-                  <Input
-                            className="max-w-250px rounded-10px
-                            t:max-w-313px
-                            d:max-w-250px"
-                    placeholder="Role/Position"
-                  />
-                </div>
-              </div>
-              <div className="pb-20px">
+                  placeholder="Contact Name"
+                />
                 <Input
-                          className="max-w-250px rounded-10px
+                  className="min-w-250px rounded-10pxi
+                    bg-white border-1px border-solid border-input
+                            t:max-w-313px
+                            d:max-w-250px"
+                  placeholder="Mobile Number"
+                />
+                <Input
+                  className="min-w-250px rounded-10pxi
+                    bg-white border-1px border-solid border-input
+                            t:max-w-313px
+                            d:max-w-250px"
+                  placeholder="Company Name"
+                />
+                <Input
+                  className="min-w-250px rounded-10pxi
+                    bg-white border-1px border-solid border-input
+                            t:max-w-313px
+                            d:max-w-250px"
+                  placeholder="Role/Position"
+                />
+                <Input
+                  className=" t:col-span-2
+                    min-w-250px rounded-10pxi
+                  bg-white border-1px border-solid border-input
                           t:max-w-647px
                           d:max-w-515px"
                   placeholder="Email Address"
                 />
               </div>
-              <div className="pb-20px">
+
+              <div className="pb-30px t:pb-40px">
                 <Input
-                         className="max-w-250px h-180px rounded-10px
+                  className="min-w-250px h-180px rounded-10pxi
+                  bg-white border-1px border-solid border-input 
                          t:max-w-647px
-                         d:max-w-515px d:h-227px"
+                         d:max-w-515px d:h-227px
+                         "
                   placeholder="Comments"
                 />
               </div>
+
               <div className="text-center">
-                <Button className="w-201px h-46px rounded-10px" type="submit">
-                  Join Us
+                <Button className="w-201px h-46px rounded-10pxi" type="submit">
+                  Join Us 🚀
                 </Button>
               </div>
             </div>

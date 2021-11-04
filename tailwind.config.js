@@ -92,6 +92,7 @@ module.exports = {
         "2-5-15": "2px 5px 15px rgba(0, 0, 0, 0.28)",
         "0-2-5": "0px 2px 5px rgba(0, 0, 0, 0.25)",
         "4-10-24-8": "4px 10px 24px 8px rgba(0, 0, 0, 0.35)",
+        "0-3-16":"0px 3px 16px rgba(0, 0, 0, 0.06)"
       },
       spacing: {},
       width: {},
@@ -151,6 +152,7 @@ module.exports = {
         "blue-darker": "#080719",
         "blue-dark": "#0A173C",
         "form-contact": "#FFFFFF",
+        input: "#D3D9E1",
       },
     },
   },
