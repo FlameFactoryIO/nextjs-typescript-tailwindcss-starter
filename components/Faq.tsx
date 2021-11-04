@@ -53,8 +53,8 @@ const Faq: FC = () => {
 
                     {/* LINK CONTAINER */}
                     <div className="text-primary underline bg-white cursor-pointer text-center 
-                                    pb-49px text-16px leading-20-8px
-                                    d:pb-73px d:text-18px d:leading-21-6px">
+                                    text-16px leading-20-8px
+                                    d:text-18px d:leading-21-6px">
                         <a>Have another question? Visit our Full FAQ page</a>
                     </div>
             </div>
