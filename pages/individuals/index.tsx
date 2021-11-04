@@ -100,7 +100,7 @@ export default function Individuals() {
 
                 </div>
             </div>
-
+            
 
 
             <div className="t:bg-gradient-to-b t:from-cream t:to-white">
@@ -112,26 +112,24 @@ export default function Individuals() {
                             ">
 
                     <div className="flex flex-col t:flex-row d:flex-col t:gap-24px items-center justify-center">
-                        <div className="flex items-start">
-
-                            <div className="flex-1 max-w-280px d:items-start
+                        <div className="flex-1 max-w-280px d:items-start
                                         t:max-w-220px
-                                        flex flex-col d:gap-20px d:max-w-660px d:text-left">
-                                <div className=" flex-1 d:max-w-320px d:max-h-240px">
-                                    <div className="font-bold text-18px leading-21-6px
+                                        d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left">
+                            <div className="d:max-w-320px d:max-h-240px">
+                                <div className="font-bold text-18px leading-21-6px
                                                 d:text-28px d:leading-33px  d:pt-3px">
-                                        Find a specific nonprofit or cause
-                                    </div>
-                                    <div className="font-light text-13px leading-16-9px pt-19px pb-15px
+                                    Find a specific nonprofit or cause
+                                </div>
+                                <div className="font-light text-13px leading-16-9px pt-19px pb-15px
                                                 t:pt-22px t:pb-7px
                                                 d:text-16px d:leading-20-8px d:pt-18px d:pb-18px">
-                                        Our <span className="font-bold">easy search tool</span> allows you to find nonprofits of any size in your area and/or <span className="font-bold">causes that interest</span> you.
-                                    </div>
-                                    <div className="pb-20px">
-                                        <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Search for nonprofit</Button>
-                                    </div>
+                                    Our <span className="font-bold">easy search tool</span> allows you to find nonprofits of any size in your area and/or <span className="font-bold">causes that interest</span> you.
                                 </div>
-                                <div className=" flex-1 max-w-280px max-h-210px
+                                <div className="pb-20px">
+                                    <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Search for nonprofit</Button>
+                                </div>
+                            </div>                     
+                                <div className="max-w-280px max-h-210px
                                                 t:max-w-220 t:max-h-166
                                                 d:max-w-320px d:max-h-240">
                                     <Image
@@ -149,9 +147,7 @@ export default function Individuals() {
                                         height={50}
                                     />
                                 </div>
-                            </div>
                         </div>
-
                         <div className="hidden t:hidden d:block">
                             <Image
                                 className="pb-10px "
@@ -179,7 +175,7 @@ export default function Individuals() {
                                 </div>
                             </div>
                             <div>
-                                <div className="max-w-280px max-h-210px
+                            <div className="max-w-280px max-h-210px
                                                 t:max-w-220 t:max-h-166
                                                 d:max-w-320px d:max-h-240">
                                     <Image
@@ -228,12 +224,12 @@ export default function Individuals() {
                             <div className="max-w-280px max-h-210px
                                                 t:max-w-220 t:max-h-166
                                                 d:max-w-320px d:max-h-240">
-                                <Image
-                                    src="/images/individuals/join-fundraiser.png"
-                                    width={320}
-                                    height={240}
-                                />
-                            </div>
+                                    <Image
+                                        src="/images/individuals/join-fundraiser.png"
+                                        width={320}
+                                        height={240}
+                                    />
+                         </div>
                         </div>
                     </div>
                 </div>
