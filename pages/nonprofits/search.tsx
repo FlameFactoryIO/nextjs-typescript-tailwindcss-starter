@@ -173,7 +173,7 @@ export default function NonprofitsSearch() {
               )}
             </div>
 
-            {!nonprofits.length ? (
+            {!nonprofits || !nonprofits.length ? (
               // empty results
               <div className="flex flex-col items-center justify-center mt-27px t:mt-47px d:mt-67px">
                 <Image src="/images/nonprofits/search/no-results.svg" width={218} height={218} />
