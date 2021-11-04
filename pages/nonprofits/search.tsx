@@ -199,12 +199,12 @@ export default function NonprofitsSearch() {
   );
 }
 
-export async function getStaticProps() {
-  const queryClient = new QueryClient() // new query client not to share data between users and server
-  await queryClient.prefetchQuery<Interest[]>(["INTERESTS"], getInterests);
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-  }
-}
+// export async function getStaticProps() {
+//   const queryClient = new QueryClient() // new query client not to share data between users and server
+//   await queryClient.prefetchQuery<Interest[]>(["INTERESTS"], getInterests);
+//   return {
+//     props: {
+//       dehydratedState: dehydrate(queryClient),
+//     },
+//   }
+// }
