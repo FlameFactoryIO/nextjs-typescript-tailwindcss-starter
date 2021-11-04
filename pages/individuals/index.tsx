@@ -31,7 +31,7 @@ export default function Individuals() {
                           "
                     >
                         <div
-                            className="font-bold text-26px leading-31-2px d:text-48px d:leading-57-6px
+                            className="d:max-w-452px font-bold text-26px leading-31-2px d:text-48px d:leading-57-6px
                             pb-22px t:pb-20px d:pb-28px d:pt-43px
                             shadow-0-2-5"
                         >
@@ -42,7 +42,7 @@ export default function Individuals() {
                             className="max-w-279px t:max-w-343px d:max-w-494px
                             text-16px d:text-18px leading-24px d:leading-24px font-light"
                         >
-                            We offer a social giving platform, changing the way you <span className="font-bold">give back</span> to causes you care about… and all donations <span className="font-bold">are tax deductible!</span>
+                            We offer a social giving platform, changing the way you <span className="font-bold">give back</span> to causes you care about… and <span className="font-bold">all</span> donations <span className="font-bold">are tax deductible!</span>
                             <div className="pt-10px font-bold">Receive an automated tax receipt after each donation.</div>
                         </div>
                     </div>
@@ -82,11 +82,11 @@ export default function Individuals() {
                         </div>
 
                     </div>
-                    <div className="bg-cream t:bg-white">
-                        <div className="flex flex-col items-center w-320px d:w-450px h-153px">
+                    <div className="bg-cream t:bg-white d:mb-471px">
+                        <div className="flex flex-col items-center w-320px d:w-450px">
                             <div className=" d:max-w-356px t:max-w-252 max-w-274px
                                                 d:max-h-130px max-h-80px
-                                                pt-72px t:pt-0">
+                                                t:pt-80px d:pt-0">
                                 <Image
                                     src="/images/individuals/people-are-raising.png"
                                     width={356}
@@ -100,138 +100,145 @@ export default function Individuals() {
 
                 </div>
             </div>
-            
+
 
 
             <div className="t:bg-gradient-to-b t:from-cream t:to-white">
                 <div id="find"
-                    className="text-center
+                    className="text-center flex flex-col items-center
                             pt-49px px-20px pb-50px
                             t:pt-132px t:pb-42px t:px-30px
-                            d:pt-161px d:pb-80px d:px-120px
+                            d:pt-148px d:pb-80px d:px-120px
                             ">
-
-                    <div className="flex flex-col t:flex-row d:flex-col t:gap-24px items-center justify-center">
-                        <div className="flex-1 max-w-280px d:items-start
+                    <div className="flex flex-col items-center t:flex-row t:gap-18px d:gap-30px">
+                        <div className="flex-1">
+                            <div className="flex flex-col t:flex-row d:flex-col t:gap-24px items-center justify-center">
+                                <div className="flex-1 max-w-280px d:items-center
                                         t:max-w-220px
                                         d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left">
-                            <div className="d:max-w-320px d:max-h-240px">
-                                <div className="font-bold text-18px leading-21-6px
-                                                d:text-28px d:leading-33px  d:pt-3px">
-                                    Find a specific nonprofit or cause
-                                </div>
-                                <div className="font-light text-13px leading-16-9px pt-19px pb-15px
+                                    <div className="d:max-w-320px d:max-h-240px">
+                                        <div className="font-bold text-18px leading-21-6px
+                                                d:text-28px d:leading-33px d:pt-13px">
+                                            Find a specific nonprofit or cause
+                                        </div>
+                                        <div className="font-light text-13px leading-16-9px pt-19px pb-15px
                                                 t:pt-22px t:pb-7px
                                                 d:text-16px d:leading-20-8px d:pt-18px d:pb-18px">
-                                    Our <span className="font-bold">easy search tool</span> allows you to find nonprofits of any size in your area and/or <span className="font-bold">causes that interest</span> you.
-                                </div>
-                                <div className="pb-20px">
-                                    <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Search for nonprofit</Button>
-                                </div>
-                            </div>                     
-                                <div className="max-w-280px max-h-210px
+                                            Our <span className="font-bold">easy search tool</span> allows you to find nonprofits of any size in your area and/or <span className="font-bold">causes that interest</span> you.
+                                        </div>
+                                        <div className="pb-20px">
+                                            <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Search for nonprofit</Button>
+                                        </div>
+                                    </div>
+                                    <div className="max-w-280px max-h-210px
                                                 t:max-w-220 t:max-h-166
                                                 d:max-w-320px d:max-h-240">
+                                        <Image
+                                            src="/images/individuals/find-cause.png"
+                                            width={320}
+                                            height={240}
+                                        />
+                                    </div>
+
+                                    <div className="text-center t:hidden pt-10px">
+                                        <Image
+                                            className="pb-6px "
+                                            src="/images/individuals/Vector-1.png"
+                                            width={100}
+                                            height={50}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="hidden t:hidden d:block">
                                     <Image
-                                        src="/images/individuals/find-cause.png"
-                                        width={320}
-                                        height={240}
+                                        className="pb-10px"
+                                        src="/images/individuals/Vector-1-d.png"
+                                        width={280}
+                                        height={60}
                                     />
                                 </div>
-
-                                <div className="text-center t:hidden">
-                                    <Image
-                                        className="pb-6px "
-                                        src="/images/individuals/Vector-1.png"
-                                        width={100}
-                                        height={50}
-                                    />
-                                </div>
-                        </div>
-                        <div className="hidden t:hidden d:block">
-                            <Image
-                                className="pb-10px "
-                                src="/images/individuals/Vector-1-d.png"
-                                width={280}
-                                height={60}
-                            />
-                        </div>
-
-                        <div className="flex-1 max-w-280px 
+                                <div className="flex-1 max-w-280px 
                                         t:max-w-220px
                                         d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left">
-                            <div className="d:max-w-320px d:max-h-240px d:pt-24px">
-                                <div className="font-bold text-18px leading-22px
+                                    <div className="d:max-w-320px d:max-h-240px d:pt-24px">
+                                        <div className="font-bold text-18px leading-22px
                                                 d:text-28px d:leading-34px">
-                                    Help raise funds
-                                </div>
-                                <div className="font-light text-13px leading-16-9px pt-19px pb-15px
+                                            Help raise funds
+                                        </div>
+                                        <div className="font-light text-13px leading-16-9px pt-19px pb-15px
                                                 t:pt-21px t:pb-13px
                                                 d:max-w-320px d:text-16px d:leading-20-8px d:pt-18px d:pb-18px">
-                                    Campaigns allow nonprofits to tell you exactly why they need to raise funds and how <span className="font-bold">your donations will make a difference.</span>
-                                </div>
-                                <div className="pb-20px">
-                                    <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Find a campaign</Button>
-                                </div>
-                            </div>
-                            <div>
-                            <div className="max-w-280px max-h-210px
+                                            Campaigns allow nonprofits to tell you exactly why they need to raise funds and how <span className="font-bold">your donations will make a difference.</span>
+                                        </div>
+                                        <div className="pb-20px">
+                                            <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">Find a campaign</Button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="max-w-280px max-h-210px 
                                                 t:max-w-220 t:max-h-166
                                                 d:max-w-320px d:max-h-240">
+                                            <Image
+                                                src="/images/individuals/help-raise.png"
+                                                width={320}
+                                                height={240}
+                                            />
+                                        </div>
+                                        <div className="t:hidden pt-10px">
+                                            <Image
+                                                className="pb-6px pt-10px"
+                                                src="/images/individuals/Vector-2.png"
+                                                width={100}
+                                                height={50}
+                                            />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div className=" hidden t:hidden d:block">
                                     <Image
-                                        src="/images/individuals/help-raise.png"
-                                        width={320}
-                                        height={240}
+                                        className="pb-10px "
+                                        src="/images/individuals/Vector-2-d.png"
+                                        width={280}
+                                        height={60}
                                     />
                                 </div>
-                                <div className="t:hidden">
-                                    <Image
-                                        className="pb-6px"
-                                        src="/images/individuals/Vector-2.png"
-                                        width={100}
-                                        height={50}
-                                    />
-                                </div>
-                            </div>
 
-                        </div>
-                        <div className=" hidden t:hidden d:block">
-                            <Image
-                                className="pb-10px "
-                                src="/images/individuals/Vector-2-d.png"
-                                width={280}
-                                height={60}
-                            />
-                        </div>
-
-                        <div className="flex-1 max-w-280px 
+                                <div className="flex-1 max-w-280px 
                                         t:max-w-220px
                                         d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left">
-                            <div className="d:max-w-320px d:max-h-240px ">
-                                <div className="font-bold text-18px leading-22px
+                                    <div className="d:max-w-320px d:max-h-240px ">
+                                        <div className="font-bold text-18px leading-22px
                                                 d:text-28px d:leading-33-6px d:pt-30px">
-                                    Join a fundraiser
-                                </div>
-                                <div className="font-light text-13px leading-16-9px pt-19px pb-15px
+                                            Join a fundraiser
+                                        </div>
+                                        <div className="font-light text-13px leading-16-9px pt-19px pb-15px
                                             t:pt-21px t:pb-28px
                                             d:max-w-320px d:text-16px d:leading-20-8px d:pt-18px d:pb-18px">
-                                    Companies sponsor fundraisers for specific causes. Join a fundraiser today and make your donation go further.
-                                </div>
-                                <div className="pb-20px">
-                                    <Button className="w-190px font-bold rounded-10px text-14px leading-24px">Join a fundraiser</Button>
-                                </div>
-                            </div>
-                            <div className="max-w-280px max-h-210px
+                                            Companies sponsor fundraisers for specific causes. Join a fundraiser today and make your donation go further.
+                                        </div>
+                                        <div className="pb-20px">
+                                            <Button className="w-190px font-bold rounded-10px text-14px leading-24px">Join a fundraiser</Button>
+                                        </div>
+                                    </div>
+                                    <div className="max-w-280px max-h-210px
                                                 t:max-w-220 t:max-h-166
                                                 d:max-w-320px d:max-h-240">
-                                    <Image
-                                        src="/images/individuals/join-fundraiser.png"
-                                        width={320}
-                                        height={240}
-                                    />
-                         </div>
+                                        <Image
+                                            src="/images/individuals/join-fundraiser.png"
+                                            width={320}
+                                            height={240}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col items-center d:w-450px">
+                            
                         </div>
                     </div>
+
                 </div>
             </div>
 
