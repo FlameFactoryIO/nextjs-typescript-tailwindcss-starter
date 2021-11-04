@@ -21,7 +21,7 @@ export default function CorporationsHome() {
           className="
             pt-86px pb-50px px-20px
             t:px-30px
-            d:pt-77px d:px-120px
+            d:pt-116px d:px-120px
             flex flex-col t:grid t:grid-cols-2 gap-40px t:gap-31px d:gap-49px items-center"
         >
           <div
@@ -32,24 +32,24 @@ export default function CorporationsHome() {
           >
             <div
               className="font-bold text-26px leading-31-2px d:text-48px d:leading-57-6px
-                            pb-22px t:pb-20px d:pb-28px d:pt-60px
+                            pb-22px t:pb-24px d:pb-28px d:pt-60px
                             shadow-0-2-5"
             >
               Connect your brand with consumers on a deeper level.
             </div>
             <div
               className="max-w-279px t:max-w-342px d:max-w-499px
-                         text-14px d:text-18px leading-18-2px d:leading-24px font-light
-                         pb-20px"
+                            text-14px t:text-16px d:text-18px leading-18-2px t:leading-24px d:leading-27px font-light
+                            pb-20px t:pb-23px"
             >
               While your corporation supports the community and various
               nonprofit organizations, consumers, clients and even employees are
               often unaware of how much you make a difference. We create{" "}
               <span className="font-bold">
-                transparency and increase consumer & employee engagement
-              </span>{" "}
-              through corporate{" "}
-              <span className="font-bold">charitable giving.</span>
+                transparency and increase consumer & employee engagement{" "}
+              </span>
+              through corporate
+              <span className="font-bold"> charitable giving.</span>
             </div>
             <Button
               variant="primary"
@@ -59,7 +59,7 @@ export default function CorporationsHome() {
             </Button>
           </div>
 
-          <div className="w-280px t:w-335px d:w-582px">
+          <div className="min-w-280px  t:w-335px d:w-582px">
             <div aria-hidden className="t:flex-1">
               <Image
                 alt=""
@@ -96,9 +96,9 @@ export default function CorporationsHome() {
 
           <div
             id="brands"
-            className="min-w-280px t:max-w-708px d:max-w-907px
+            className="min-w-280px t:max-w-708px d:max-w-907px 
                       flex-1 flex flex-col t:flex-row  t:gap-39px d:gap-100px
-                      items-center text-center
+                      items-center text-center 
                       text-13px leading-16-9px
                       d:text-16px d:leading-24px
                       -mb-11px t:-mb-74px d:-mb-22px
@@ -114,7 +114,7 @@ export default function CorporationsHome() {
               />
               <div className="w-280px t:max-w-210px d:max-w-236px text-center t:flex-1">
                 of Millennials would consider{" "}
-                <span className="font-bold">taking a pay cut</span>{" "}to work at
+                <span className="font-bold">taking a pay cut </span> to work at
                 a company whose mission and values align with their own.
               </div>
             </div>
@@ -131,8 +131,7 @@ export default function CorporationsHome() {
               <div className="w-280px t:max-w-210px d:max-w-236px t:flex-1">
                 {/*max-w-280px t:max-w-210px d:max-w-236px text-center */}
                 of GenZers value and would prefer to buy from brands that are{" "}
-                <span className="font-bold">eco-friendly</span>{" "}
-                and that are{" "}
+                <span className="font-bold">eco-friendly</span> and that are
                 <span className="font-bold">socially responsible</span>
               </div>
             </div>
@@ -155,7 +154,7 @@ export default function CorporationsHome() {
             </div>
           </div>
           <div
-            className="min-w-280px t:max-w-708px d:max-w-907px
+            className="min-w-280px t:max-w-708px d:max-w-907px 
           transform translate-y-35px t:translate-y-111px d:translate-y-95px"
           >
             <div aria-hidden className="flex-1">
@@ -182,8 +181,10 @@ export default function CorporationsHome() {
                        d:pt-213px d:pb-96px d:px-170px
                        flex flex-col items-center"
           >
-            <div className="flex flex-col d:flex-row items-center
-                            d:gap-66px ">
+            <div
+              className="flex flex-col d:flex-row items-center
+                            d:gap-66px "
+            >
               <div
                 className="flex-1 text-white font-bold text-center
                               text-24px leading-28-8px max-w-280px
@@ -206,8 +207,8 @@ export default function CorporationsHome() {
                 platform for corporations to{" "}
                 <span className="font-bold">
                   initiate fundraisers, promote their brand
-                </span>, all that while{" "}
-                <span className="font-bold">doing good</span>.
+                </span>
+                , all that while <span className="font-bold">doing good</span>.
               </div>
             </div>
             <div
@@ -217,17 +218,22 @@ export default function CorporationsHome() {
               <div
                 className="flex-1 bg-white w-280px h-240px rounded-26px pt-20px pb-14px
                              t:max-w-222px t:h-281px
-                             d:max-w-367px d:h-369px"
+                             d:max-w-367px d:h-369px
+                             flex flex-col items-center"
               >
-                <Image
-                  src="/images/corporations/corporate-fundraisers.png"
-                  width={55}
-                  height={69}
-                />
+                <div className="t:mb-14px">
+                  <Image
+                    alt=""
+                    src="/images/corporations/corporate-fundraisers.png"
+                    width={55}
+                    height={69}
+                  />
+                </div>
                 <div
                   className="font-bold text-16px leading-24px pb-11px
                                 t:leading-20-8px
-                                d:text-20px d:leading-30px"
+                                d:text-20px d:leading-30px
+                                t:pb-11px d:pb-15px"
                 >
                   Corporate Fundraisers
                 </div>
@@ -242,20 +248,23 @@ export default function CorporationsHome() {
                 </div>
               </div>
               <div
-                className="flex-1 bg-white max-w-280px h-240px rounded-26px pt-20px pb-14px
+                className="flex-1 bg-white max-w-280px h-240px rounded-26px pt-28px pb-14px
                              t:max-w-222px t:h-281px
                              d:max-w-367px d:h-369px"
               >
-                <Image
-                  alt=""
-                  src="/images/corporations/corporate-profile.png"
-                  width={69}
-                  height={60}
-                />
+                <div className="t:mb-14px">
+                  <Image
+                    alt=""
+                    src="/images/corporations/corporate-profile.png"
+                    width={69}
+                    height={60}
+                  />
+                </div>
                 <div
                   className="font-bold text-16px leading-24px pb-11px
                                 t:leading-20-8px
-                                d:text-20px d:leading-30px"
+                                d:text-20px d:leading-30px
+                                t:pb-11px d:pb-15px"
                 >
                   Corporate Profile
                 </div>
@@ -274,15 +283,19 @@ export default function CorporationsHome() {
                              t:max-w-222px t:h-281px
                              d:max-w-367px d:h-369px"
               >
-                <Image
-                  src="/images/corporations/web-api.png"
-                  width={64}
-                  height={64}
-                />
+                <div className="t:mb-14px">
+                  <Image
+                    alt=""
+                    src="/images/corporations/web-api.png"
+                    width={64}
+                    height={64}
+                  />
+                </div>
                 <div
                   className="font-bold text-16px leading-24px pb-11px
                                 t:leading-20-8px
-                                d:text-20px d:leading-30px"
+                                d:text-20px d:leading-30px
+                                t:pb-11px d:pb-15px"
                 >
                   Web API
                 </div>
@@ -310,6 +323,7 @@ export default function CorporationsHome() {
         >
           <div>
             <Image
+              alt=""
               src="/images/corporations/move-chain.png"
               width={77}
               height={45}
@@ -317,9 +331,9 @@ export default function CorporationsHome() {
           </div>
 
           <div
-            className="font-bold text-24px leading-28-8px pb-20px
+            className="font-bold text-24px leading-28-8px pb-20px 
                           t:pb-21px t:px-10px
-                          d:text-43px d:leading-51-6px d:pb-29px
+                          d:text-43px d:leading-51-6px d:pb-29px 
                           "
           >
             Why Move the Chain is right for your brand?
@@ -338,9 +352,7 @@ export default function CorporationsHome() {
         </div>
       </div>
 
-      <div
-        className="bg-cream"
-      >
+      <div className="bg-cream">
         <div
           className="text-center flex flex-col items-center  px-20px pt-44px pb-44px
                         t:pb-43px t:px-30px
@@ -372,7 +384,7 @@ export default function CorporationsHome() {
             <span className="text-primary-400">”</span>
           </div>
           <div className="pt-6px d:pt-10px text-16px leading-24px d:text-18px">
-            <span className="text-primary-400 font-bold ">Roger Desai</span>{" "}
+            <span className="text-primary-400 font-bold ">Roger Desai </span>{" "}
             <span className="font-bold">- CEO at Prove</span>
           </div>
         </div>
@@ -396,103 +408,117 @@ export default function CorporationsHome() {
       <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
         <div
           id="provide-contact"
-          className="flex flex-col t:grid t:grid-cols-2 items-center text-center
+          className="flex flex-col d:grid d:grid-cols-2
+                    items-center 
                     pt-44px px-20px pb-51px
                     t:pt-47px t:px-29px t:gap-14px
-                    d:px-170px d:gap-96px"
+                    d:px-0 d:gap-40px
+                    min-w-280px t:max-w-708px d:max-w-1140px mx-auto"
         >
-          <div className="text-white text-center t:text-left d:text-left">
-            <div
-              className="max-w-280px text-24px font-bold leading-28-8px pb-26px
-                          t:max-w-353px t:pt-29px
-                          d:max-w-465px d:text-43px d:leading-51-6px"
-            >
-              Ready to join us and help promote your corporate responsibility?
+          <div
+            className="t:px-0 text-white text-center t:text-left d:text-left 
+                        flex flex-col t:grid t:grid-cols-2 d:grid-cols-1 d:grid-rows-2
+                        pb-56px t:pb-1px d:pb-33px d:items-center
+                          "
+          >
+            <div>
+              <div
+                className="min-w-280px 
+                          text-24px font-bold leading-28-8px pb-29px
+                           t:max-w-353px t:pt-0
+                          d:pt-0 d:pb-35px 
+                          d:max-w-550px d:text-43px d:leading-51-6px "
+              >
+                Ready to join us and help promote your corporate responsibility?
+              </div>
+              <div
+                className="min-w-280px font-light text-13px leading-19-5px d:text-18px d:leading-27px
+                          pb-26px t:pb-28px d:pb-0 
+                          t:max-w-334px  d:max-w-569px    mx-auto
+                          "
+              >
+                Provide your contact information and we will get in touch with
+                you on how to start partnering with us.
+              </div>
             </div>
-            <div
-              className="max-w-280px font-light text-13px leading-16-9px pb-15px
-                          t:max-w-334px t:pb-62px
-                          d:max-w-452px d:pb-11px d:text-16px d:leading-24px"
-            >
-              Provide your contact information and we will get in touch with you
-              on how to start partnering with us.
-            </div>
-            <div className="t:hidden d:block">
-              <Image
-                src="/images/corporations/contact-information.png"
-                width={469}
-                height={269}
-              />
+
+            <div className="min-w-280px t:max-w-340px d:max-w-550px ">
+              <div aria-hidden className="t:flex-1 rounded24px  d:m-0">
+                <Image
+                  alt=""
+                  src="/images/corporations/contact-information.png"
+                  width={550}
+                  height={296}
+                  objectFit="contain"
+                />
+              </div>
             </div>
           </div>
 
-          <div className=" t:gap-33px hidden t:block d:hidden">
-            <Image
-              src="/images/corporations/contact-information.png"
-              width={469}
-              height={269}
-            />
-          </div>
-
-          <div className="pt-40px t:text-center t:items-center t:px-31px">
+          <div className="w-full max-w-550px t:text-center t:items-center flex flex-col">
             <div
-              className="bg-white w-280px h-635px rounded-40px pt-30px px-15px pb-29px
-                            t:w-708px t:h-514px
-                            d:w-575px d:h-592px"
+              className="flex-1 bg-white min-w-280px h-636px rounded-24px shadow-0-3-16
+              pt-30px px-15px pb-29px
+              d:pt-20px d:px-20px d:pb-39px
+                            t:w-708px t:h-504px
+                            d:w-575px d:h-570px"
             >
-              <div className="t:grid t:grid-cols-2 t:gap-21px items-center">
-                <div className="pb-20px">
-                  <Input
-                    className="max-w-250px rounded-10px
+              <div
+                className="grid grid-rows-5 t:grid-cols-2 t:grid-rows-3 gap-y-20px gap-x-10px items-center
+              pb-20px"
+              >
+                <Input
+                  className=" min-w-250px rounded-10pxi
+                    bg-white border-1px border-solid border-input
                                 t:max-w-313px
                                 d:max-w-250px"
-                    placeholder="Contact Name"
-                  />
-                </div>
-                <div className="pb-20px">
-                  <Input
-                            className="max-w-250px rounded-10px
-                            t:max-w-313px
-                            d:max-w-250px"
-                    placeholder="Mobile Number"
-                  />
-                </div>
-                <div className="pb-20px">
-                  <Input
-                            className="max-w-250px rounded-10px
-                            t:max-w-313px
-                            d:max-w-250px"
-                    placeholder="Company Name"
-                  />
-                </div>
-                <div className="pb-20px">
-                  <Input
-                            className="max-w-250px rounded-10px
-                            t:max-w-313px
-                            d:max-w-250px"
-                    placeholder="Role/Position"
-                  />
-                </div>
-              </div>
-              <div className="pb-20px">
+                  placeholder="Contact Name"
+                />
                 <Input
-                          className="max-w-250px rounded-10px
+                  className="min-w-250px rounded-10pxi
+                    bg-white border-1px border-solid border-input
+                            t:max-w-313px
+                            d:max-w-250px"
+                  placeholder="Mobile Number"
+                />
+                <Input
+                  className="min-w-250px rounded-10pxi
+                    bg-white border-1px border-solid border-input
+                            t:max-w-313px
+                            d:max-w-250px"
+                  placeholder="Company Name"
+                />
+                <Input
+                  className="min-w-250px rounded-10pxi
+                    bg-white border-1px border-solid border-input
+                            t:max-w-313px
+                            d:max-w-250px"
+                  placeholder="Role/Position"
+                />
+                <Input
+                  className=" t:col-span-2
+                    min-w-250px rounded-10pxi
+                  bg-white border-1px border-solid border-input
                           t:max-w-647px
                           d:max-w-515px"
                   placeholder="Email Address"
                 />
               </div>
-              <div className="pb-20px">
+
+              <div className="pb-30px t:pb-40px">
                 <Input
-                         className="max-w-250px h-180px rounded-10px
+                  className="min-w-250px h-180px rounded-10pxi
+                  bg-white border-1px border-solid border-input 
                          t:max-w-647px
-                         d:max-w-515px d:h-227px"
+                         d:max-w-515px d:h-227px
+                         "
                   placeholder="Comments"
                 />
               </div>
+
               <div className="text-center">
-                <Button className="w-201px h-46px rounded-10px" type="submit">
-                  Join Us
+                <Button className="w-201px h-46px rounded-10pxi" type="submit">
+                  Join Us 🚀
                 </Button>
               </div>
             </div>

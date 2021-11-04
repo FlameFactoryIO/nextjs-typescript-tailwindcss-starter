@@ -1,5 +1,4 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-
 module.exports = {
   mode: "jit",
   purge: {
@@ -94,6 +93,7 @@ module.exports = {
         "2-5-15": "2px 5px 15px rgba(0, 0, 0, 0.28)",
         "0-2-5": "0px 2px 5px rgba(0, 0, 0, 0.25)",
         "4-10-24-8": "4px 10px 24px 8px rgba(0, 0, 0, 0.35)",
+        "0-3-16": "0px 3px 16px rgba(0, 0, 0, 0.06)",
       },
       spacing: {},
       width: {},
@@ -102,6 +102,7 @@ module.exports = {
       maxWidth: {},
       minHeight: {},
       maxHeight: {},
+
       colors: {
         primary: {
           DEFAULT: "#E84300",
@@ -142,6 +143,7 @@ module.exports = {
           800: "#B3B3B3",
           900: "#999999",
         },
+        secondary: defaultTheme.colors.black,
         footer: "#F0F3F8",
         "we-connect-charities-bg-right": "#10143c",
         "looking-for-a-cause": "#F7F9FC",
@@ -151,11 +153,12 @@ module.exports = {
         "blue-darker": "#080719",
         "blue-dark": "#0A173C",
         "form-contact": "#FFFFFF",
-        "blue": "#091023",
+        blue: "#091023",
         "secondary-gray-1": "#DAE0E9",
         "secondary-gray-2": "#D3D9E1",
         "secondary-gray-3": "#A1AAAF",
         "search-border": "#E84300",
+        input: "#D3D9E1",
       },
     },
   },
