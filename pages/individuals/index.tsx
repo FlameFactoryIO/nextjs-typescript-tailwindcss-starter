@@ -63,30 +63,47 @@ export default function Individuals() {
 
             <div id="be-the-change"
                 className="bg-white pt-50px px-12px
-                           t:pt-39px t:pl-24px t:pr-30px
+                           t:pt-0 t:pl-24px t:pr-30px
                            d:pt-70px d:pl-32px d:pr-120px
-                           flex flex-col  items-center">
+                           flex flex-col  items-center ">
                 <div className="flex flex-col items-center t:flex-row t:gap-18px d:gap-30px">
-                    <div className="flex-1 max-w-280px t:max-w-368px d:max-w-748px">
+                    <div className="flex-1 items-end max-w-280px t:max-w-368px d:max-w-748px">
                         <div className="flex flex-col items-center">
                             <div className="max-w-176px font-bold text-center text-24px leading-28-8px pb-21px
                                 t:pb-32px
                                 d:text-43px d:leading-51-6px d:max-w-315px d:pb-46px">
                                 Be the change
                             </div>
-                            <Image
-                                src="/images/individuals/link-chain-d.png"
-                                width={748}
-                                height={578}
-                            />
+                            <div className="hidden d:block" style={{ marginBottom: -80 }}>
+                                <Image
+                                    src="/images/individuals/link-chain-d.png"
+                                    width={748}
+                                    height={578}
+                                />
+                            </div>
+                            <div className="hidden t:block d:hidden">
+                                <Image
+                                    src="/images/individuals/link-chain-d.png"
+                                    width={368}
+                                    height={287}
+                                />
+                            </div>
+                            <div className="t:hidden block" style={{ marginBottom: -30 }}>
+                                <Image
+                                    src="/images/individuals/link-chain-d.png"
+                                    width={279}
+                                    height={226}
+                                />
+                            </div>
+
                         </div>
 
                     </div>
-                    <div className="bg-cream t:bg-white d:mb-471px">
-                        <div className="flex flex-col items-center w-320px d:w-450px">
+                    <div className="d:mb-471px t:mb-226px hidden t:block">
+                        <div className="flex flex-col items-center d:w-450px min-w-280px">
                             <div className=" d:max-w-356px t:max-w-252 max-w-274px
-                                                d:max-h-130px max-h-80px
-                                                t:pt-80px d:pt-0">
+                                                d:max-h-130px 
+                                                pt-63px pb-10px t:pt-80px d:pt-0">
                                 <Image
                                     src="/images/individuals/people-are-raising.png"
                                     width={356}
@@ -95,8 +112,28 @@ export default function Individuals() {
 
                             </div>
 
+                            {/* componente de donations */}
+
                         </div>
                     </div>
+
+                </div>
+
+
+            </div>
+
+            <div className="bg-cream t:hidden block ">
+                <div className="flex flex-col items-center">
+                    <div className="pt-63px pb-10px px-10px">
+                        <Image
+                            src="/images/individuals/people-are-raising.png"
+                            width={274}
+                            height={80}
+                        />
+
+                    </div>
+
+                    {/* componente de donations mobile*/}
 
                 </div>
             </div>
@@ -235,7 +272,7 @@ export default function Individuals() {
                         </div>
 
                         <div className="flex flex-col items-center d:w-450px">
-                            
+
                         </div>
                     </div>
 
