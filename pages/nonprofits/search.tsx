@@ -98,7 +98,7 @@ export default function NonprofitsSearch() {
           </div>
           <div className="flex flex-col t:flex-row gap-5px items-center ">
             <Input
-              className="min-w-280px d:max-2-521px pb-10px t:pb-0px"
+              className="min-w-280px d:max-2-521px pb-10px t:pb-0px font-light"
               placeholder={"Search for a nonprofit or keyword"} 
               onChange={(value) => setNameFilter(value)}
             />
@@ -106,23 +106,28 @@ export default function NonprofitsSearch() {
           </div>
         </div>
       </div>
-      <div className="w-full bg-gradient-to-b from-cream to-white px-20px t:px-30px d:px-120px pt-84px t:pt-88px d:pt-110px">
-        <div className="min-w-280px t:max-w-1140px mx-auto flex flex-col d:flex-row gap-35px items-start">
+
+      <div className="w-full bg-gradient-to-b from-cream to-white ">
+        <div className="min-w-280px t:max-w-1140px mx-auto 
+        px-20px t:px-30px d:px-120px pt-84px t:pt-88px d:pt-110px
+        flex flex-col d:flex-row gap-35px items-center  d:items-start d:pb-81px ">
           <div
             id="filters"
-            className={`rounded-24px shadow-0-6-24 border-1px border-search-border border-opacity-20 bg-white p-15px select-none`}
+            className="rounded-24px shadow-0-6-24 border-1px border-search-border border-opacity-20 bg-white p-15px select-none
+            "
           >
-            <div className="mt-23px text-18px leading-27px font-bold">
+            <div className="mt-23px mb-31px d:mb-39px
+            text-18px leading-27px font-bold">
               Browse nonprofits by:
             </div>
-
+            <div className=" ont-light text-16px leading-24px">Location</div>
             <Input
-              className="mt-31px d:mt-39px"
+              className="rounded-10pxi border-primary "
               placeholder="Browse by location"
               onChange={(value) => setLocationFilter(value)}
             />
 
-            <div className="mt-23px">Causes</div>
+            <div className="mt-23px font-light text-16px leading-24px">Causes</div>
             <div
               className={`grid grid-cols-1 t:grid-cols-3 d:grid-cols-1 d:w-270px gap-10px overflow-hidden ${
                 !isFilterExpanded ? "h-327px t:h-200px d:h-467px" : ""
@@ -159,7 +164,7 @@ export default function NonprofitsSearch() {
                 <div className="absolute inset-0 transparent-gradient rounded-b-24px m-5px bottom-0 pt-10px">
                   <div className="relative">
                     <Button
-                      className="mx-auto rounded-24pxi text-12px leading-18px flex items-center gap-5px"
+                      className="mx-auto rounded-24pxi text-12px leading-18px flex items-center gap-5px font-medium"
                       onClick={() => setFilterExpanded(true)}
                     >
                       Load more
@@ -182,17 +187,17 @@ export default function NonprofitsSearch() {
             )}
           </div>
 
-          <div id="results" className="flex-1 flex flex-col">
-            <div className="flex flex-col border-b-2px border-gray-100 select-none">
+          <div id="results" className="flex-1 flex flex-col ">
+            <div className="flex flex-col border-b-2px border-gray-100 select-none ">
               {!nameFilter &&
               !locationFilter &&
               interestsFilter.length === 0 ? (
-                <div>Top Nonprofits</div>
+                <div className="text-13px leading-19-5px d:text-16px d:leading-24px font-light">Top Nonprofits</div>
               ) : (
                 // show selected filters
                 <>
-                  <div>Search results and top nonprofits for:</div>
-                  <div className="flex flex-row flex-wrap gap-x-20px gap-y-5px font-bold text-14px leading-21px">
+                  <div className="text-13px leading-19-5px d:text-16px d:leading-24px font-light">Search results and top nonprofits for:</div>
+                  <div className="flex flex-row flex-wrap gap-x-20px gap-y-5px font-bold text-12px leading-18px d:text-14px d:leading-21px">
                     {locationFilter && (
                       <div
                         className="flex items-center gap-2px"
@@ -229,13 +234,14 @@ export default function NonprofitsSearch() {
 
             {!nonprofits.length ? (
               // empty results
-              <div className="flex flex-col items-center justify-center mt-27px t:mt-47px d:mt-67px">
+              <div className="flex flex-col items-center justify-center mt-27px t:mt-47px d:mt-67px ">
                 <Image
                   src="/images/nonprofits/search/no-results.svg"
                   width={218}
                   height={218}
                 />
-                <div>
+                <div className="font-light text-13px leading-16-9px text-16px leading-24px
+                pb-46px">
                   There are <span className="font-bold">no matches</span> for
                   the search criteria.
                 </div>
@@ -243,7 +249,8 @@ export default function NonprofitsSearch() {
             ) : (
               <div
                 id="results"
-                className="flex-1 grid t:grid-cols-2 d:grid-cols-3 gap-y-40px t:gap-y-48px t:gap-x-30px d:gap-x-40px d:gap-y-20px"
+                className="flex-1 grid t:grid-cols-2 d:grid-cols-3 gap-y-40px t:gap-y-48px t:gap-x-30px d:gap-x-40px d:gap-y-20px
+                "
               >
                 {nonprofits.map((nonprofit) => (
                   <FeaturedNonprofit key={nonprofit.id} nonprofit={nonprofit} />

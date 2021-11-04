@@ -13,7 +13,7 @@ const FeaturedNonprofit: FC<{
   className = "",
 }) => {
   return (
-    <div className={`flex flex-col ${className}`}>
+    <div className={`flex flex-col w-full ${className}`}>
       <a href={`${nonprofit.path}`}>
         <div className="relative select-none cursor-pointer">
           <img src={nonprofit.bannerUrl} width="100%" height="100%" className="rounded-20px object-cover h-260px" />
