@@ -4,10 +4,6 @@ import Button from '../components/Button';
 const Questions: FC = () => {
 
     return (
-            // <div className="flex flex-col t:flex-row text-center text-white
-            //                 pt-44px px-21px pb-61px 
-            //                 t:pb-36px t:px-30px t:pt-50px                            
-            //                 items-center t:gap-52px">
               <div className="flex flex-col t:flex-row text-center text-white
                             pt-44px px-21px pb-61px 
                             t:pb-36px t:px-30px t:pt-50px

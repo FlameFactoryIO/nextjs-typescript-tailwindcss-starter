@@ -144,6 +144,7 @@ module.exports = {
         "blue-dark": "#0A173C",
         blue: "#091023",
         "blue-questions": "#091023",
+        "red-select-border": "#E8430033",
       },
     },
   },

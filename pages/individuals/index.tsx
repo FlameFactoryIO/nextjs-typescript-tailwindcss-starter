@@ -4,6 +4,7 @@ import TopNav from "../../components/TopNav";
 import Image from "next/image";
 import Button from '../../components/Button';
 import Questions from '../../components/Questions';
+import Faq from '../../components/Faq';
 
 // noinspection JSUnusedGlobalSymbols
 export default function Individuals() {
@@ -239,6 +240,12 @@ export default function Individuals() {
                         </div>
                     </div>
 
+                </div>
+            </div>
+
+            <div id="faq" className="w-full bg-gradient-to-b from-cream to-white">
+                <div className="w-280px t:w-768px d:w-1380px mx-auto items-center">
+                    <Faq />
                 </div>
             </div>
 
