@@ -8,7 +8,7 @@ import TopNav from "../../components/TopNav";
 import Input from "../../components/Input";
 import { useState } from "react";
 import { useSearchNonprofit } from "../../mtc-api/nonprofit/useSearchNonprofit";
-import { dehydrate, QueryClient, useQuery } from "react-query";
+import { useQuery } from "react-query";
 import { getInterests } from "../../mtc-api/interests/useGetInterests";
 import Interest from "../../dtos/Interest";
 import FeaturedNonprofit from "../../components/FeaturedNonprofit";
@@ -89,7 +89,7 @@ export default function NonprofitsSearch() {
       </div>
 
       <div className="w-full bg-gradient-to-b from-cream to-white px-20px t:px-30px d:px-120px pt-84px t:pt-88px d:pt-110px">
-        <div className="min-w-280px t:max-w-1140px mx-auto flex flex-col d:flex-row gap-35px items-start">
+        <div className="min-w-280px t:max-w-1140px mx-auto flex flex-col d:flex-row gap-35px d:items-start">
 
           <div id="filters" className={`rounded-24px shadow-0-6-24 border-1px border-search-border border-opacity-20 bg-white p-15px select-none`}>
             <div className="mt-23px text-18px leading-27px font-bold">Browse nonprofits by:</div>
@@ -174,12 +174,12 @@ export default function NonprofitsSearch() {
             </div>
 
             {!nonprofits || !nonprofits.length ? (
-              // empty results
               <div className="flex flex-col items-center justify-center mt-27px t:mt-47px d:mt-67px">
                 <Image src="/images/nonprofits/search/no-results.svg" width={218} height={218} />
                 <div>There are{' '}<span className="font-bold">no matches</span>{' '}for the search criteria.</div>
               </div>
             ) : (
+              // results grid
               <div id="results" className="flex-1 grid t:grid-cols-2 d:grid-cols-3 gap-y-40px t:gap-y-48px t:gap-x-30px d:gap-x-40px d:gap-y-20px">
                 {nonprofits.map((nonprofit) => (
                   <FeaturedNonprofit key={nonprofit.id} nonprofit={nonprofit} />
@@ -198,13 +198,3 @@ export default function NonprofitsSearch() {
     </div>
   );
 }
-
-// export async function getStaticProps() {
-//   const queryClient = new QueryClient() // new query client not to share data between users and server
-//   await queryClient.prefetchQuery<Interest[]>(["INTERESTS"], getInterests);
-//   return {
-//     props: {
-//       dehydratedState: dehydrate(queryClient),
-//     },
-//   }
-// }
