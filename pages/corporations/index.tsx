@@ -21,7 +21,7 @@ export default function CorporationsHome() {
           className="
             pt-86px pb-50px px-20px
             t:px-30px
-            d:pt-77px d:px-120px
+            d:pt-116px d:px-120px
             flex flex-col t:grid t:grid-cols-2 gap-40px t:gap-31px d:gap-49px items-center"
         >
           <div
@@ -32,15 +32,15 @@ export default function CorporationsHome() {
           >
             <div
               className="font-bold text-26px leading-31-2px d:text-48px d:leading-57-6px
-                            pb-22px t:pb-20px d:pb-28px d:pt-60px
+                            pb-22px t:pb-24px d:pb-28px d:pt-60px
                             shadow-0-2-5"
             >
               Connect your brand with consumers on a deeper level.
             </div>
             <div
               className="max-w-279px t:max-w-342px d:max-w-499px
-                            text-14px d:text-18px leading-18-2px d:leading-24px font-light
-                            pb-20px "
+                            text-14px t:text-16px d:text-18px leading-18-2px t:leading-24px d:leading-27px font-light
+                            pb-20px t:pb-23px"
             >
               While your corporation supports the community and various
               nonprofit organizations, consumers, clients and even employees are
@@ -59,7 +59,7 @@ export default function CorporationsHome() {
             </Button>
           </div>
 
-          <div className="w-280px  t:w-335px d:w-582px">
+          <div className="min-w-280px  t:w-335px d:w-582px">
             <div aria-hidden className="t:flex-1">
               <Image
                 alt=""
@@ -218,17 +218,22 @@ export default function CorporationsHome() {
               <div
                 className="flex-1 bg-white w-280px h-240px rounded-26px pt-20px pb-14px
                              t:max-w-222px t:h-281px
-                             d:max-w-367px d:h-369px"
+                             d:max-w-367px d:h-369px
+                             flex flex-col items-center"
               >
-                <Image
-                  src="/images/corporations/corporate-fundraisers.png"
-                  width={55}
-                  height={69}
-                />
+                <div className="t:mb-14px">
+                  <Image
+                    alt=""
+                    src="/images/corporations/corporate-fundraisers.png"
+                    width={55}
+                    height={69}
+                  />
+                </div>
                 <div
                   className="font-bold text-16px leading-24px pb-11px
                                 t:leading-20-8px
-                                d:text-20px d:leading-30px"
+                                d:text-20px d:leading-30px
+                                t:pb-11px d:pb-15px"
                 >
                   Corporate Fundraisers
                 </div>
@@ -243,20 +248,23 @@ export default function CorporationsHome() {
                 </div>
               </div>
               <div
-                className="flex-1 bg-white max-w-280px h-240px rounded-26px pt-20px pb-14px
+                className="flex-1 bg-white max-w-280px h-240px rounded-26px pt-28px pb-14px
                              t:max-w-222px t:h-281px
                              d:max-w-367px d:h-369px"
               >
-                <Image
-                  alt=""
-                  src="/images/corporations/corporate-profile.png"
-                  width={69}
-                  height={60}
-                />
+                <div className="t:mb-14px">
+                  <Image
+                    alt=""
+                    src="/images/corporations/corporate-profile.png"
+                    width={69}
+                    height={60}
+                  />
+                </div>
                 <div
                   className="font-bold text-16px leading-24px pb-11px
                                 t:leading-20-8px
-                                d:text-20px d:leading-30px"
+                                d:text-20px d:leading-30px
+                                t:pb-11px d:pb-15px"
                 >
                   Corporate Profile
                 </div>
@@ -275,15 +283,19 @@ export default function CorporationsHome() {
                              t:max-w-222px t:h-281px
                              d:max-w-367px d:h-369px"
               >
-                <Image
-                  src="/images/corporations/web-api.png"
-                  width={64}
-                  height={64}
-                />
+                <div className="t:mb-14px">
+                  <Image
+                    alt=""
+                    src="/images/corporations/web-api.png"
+                    width={64}
+                    height={64}
+                  />
+                </div>
                 <div
                   className="font-bold text-16px leading-24px pb-11px
                                 t:leading-20-8px
-                                d:text-20px d:leading-30px"
+                                d:text-20px d:leading-30px
+                                t:pb-11px d:pb-15px"
                 >
                   Web API
                 </div>
@@ -311,6 +323,7 @@ export default function CorporationsHome() {
         >
           <div>
             <Image
+              alt=""
               src="/images/corporations/move-chain.png"
               width={77}
               height={45}
