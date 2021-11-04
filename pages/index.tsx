@@ -280,7 +280,7 @@ export default function Home() {
               creating sustained movements for social change...
               <span className="text-primary-500 font-bold">”</span>
             </p>
-            <Link href="/about-us">
+            <Link href="/about-us" passHref={false}>
               <Button
                 type="button"
                 variant="primary"
@@ -320,35 +320,47 @@ export default function Home() {
             <span className="font-bold ">#Transparencyiskey</span>
           </p>
 
-          <div className="grid grid-cols-1 t:grid-cols-3 d:grid-cols-4 mt-23px t:mt-30px d:mt-50px gap-32px">
-            <div className="t:col-span-3 keen-slider" ref={trendingCampaignsSliderRef}>
-              {trendingCampaigns && trendingCampaigns.map((tc) => (
-                <TrendingCampaign
-                  key={tc.id}
-                  campaign={tc}
-                  variant="dark"
-                  className="keen-slider__slide"
-                />
-              ))}
-            </div>
-            {trendingCampaignsSlider && (
-              <div className="t:hidden dots">
-                {[...Array.from(Array(trendingCampaignsSlider.details().size).keys())].map((idx) => {
-                  return (
-                    <button
-                      key={idx}
-                      onClick={() => {
-                        trendingCampaignsSlider.moveToSlideRelative(idx)
-                      }}
-                      className={"dot" + (trendingCampaignsSliderCurrentSlide === idx ? " active" : "")}
-                    />
-                  )
-                })}
+          <div className="grid grid-cols-1 t:grid-cols-3 d:grid-cols-4 mt-23px t:mt-30px d:mt-50px gap-32px text-left">
+            {trendingCampaigns && trendingCampaigns.map((tc) => (
+              <TrendingCampaign
+                key={tc.id}
+                campaign={tc}
+                variant="dark"
+                className="hidden t:block"
+              />
+            ))}
+
+            <div className="t:hidden">
+              <div className="keen-slider" ref={trendingCampaignsSliderRef}>
+                {trendingCampaigns && trendingCampaigns.map((tc) => (
+                  <TrendingCampaign
+                    key={tc.id}
+                    campaign={tc}
+                    variant="dark"
+                    className="keen-slider__slide"
+                  />
+                ))}
               </div>
-            )}
+
+              {trendingCampaignsSlider && (
+                <div className="t:hidden dots">
+                  {[...Array.from(Array(trendingCampaignsSlider.details().size).keys())].map((idx) => {
+                    return (
+                      <button
+                        key={idx}
+                        onClick={() => {
+                          trendingCampaignsSlider.moveToSlideRelative(idx)
+                        }}
+                        className={"dot" + (trendingCampaignsSliderCurrentSlide === idx ? " active" : "")}
+                      />
+                    )
+                  })}
+                </div>
+              )}
+            </div>
 
             <div
-              className="hidden d:flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px"
+              className="hidden d:flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px text-center"
               style={{
                 backgroundColor: "#F7F9FC",
                 border: "1px solid #E3E5E6",
@@ -418,26 +430,41 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 t:grid-cols-3 d:grid-cols-4 mt-23px t:mt-30px d:mt-50px gap-32px">
-            <div className="t:col-span-3 keen-slider" ref={featuredNonprofitsSliderRef}>
-              {featuredNonprofits && featuredNonprofits.map((fnp) => (
-                <FeaturedNonprofit key={fnp.id} nonprofit={fnp} className="keen-slider__slide" />
-              ))}
-            </div>
-            {featuredNonprofitsSlider && (
-              <div className="t:hidden dots">
-                {[...Array.from(Array(featuredNonprofitsSlider.details().size).keys())].map((idx) => {
-                  return (
-                    <button
-                      key={idx}
-                      onClick={() => {
-                        featuredNonprofitsSlider.moveToSlideRelative(idx)
-                      }}
-                      className={"dot" + (featuredNonprofitsSliderCurrentSlide === idx ? " active" : "")}
-                    />
-                  )
-                })}
+            {featuredNonprofits && featuredNonprofits.map((fnp) => (
+              <FeaturedNonprofit
+                key={fnp.id}
+                nonprofit={fnp}
+                className="hidden t:block" />
+            ))}
+
+            <div className="t:hidden">
+              <div className="t:col-span-3 keen-slider" ref={featuredNonprofitsSliderRef}>
+                {featuredNonprofits && featuredNonprofits.map((fnp) => (
+                  <FeaturedNonprofit
+                    key={fnp.id}
+                    nonprofit={fnp}
+                    buttonClassName="w-220px"
+                    className="keen-slider__slide"
+                  />
+                ))}
               </div>
-            )}
+
+              {featuredNonprofitsSlider && (
+                <div className="t:hidden dots">
+                  {[...Array.from(Array(featuredNonprofitsSlider.details().size).keys())].map((idx) => {
+                    return (
+                      <button
+                        key={idx}
+                        onClick={() => {
+                          featuredNonprofitsSlider.moveToSlideRelative(idx)
+                        }}
+                        className={"dot" + (featuredNonprofitsSliderCurrentSlide === idx ? " active" : "")}
+                      />
+                    )
+                  })}
+                </div>
+              )}
+            </div>
 
             <div
               className="hidden d:flex d:flex-col d:gap-16px d:items-center d:justify-center rounded-26px"
@@ -484,7 +511,7 @@ export default function Home() {
             </Button>
           </div>
 
-          <Link href="/nonprofits">
+          <Link href="/nonprofits" passHref={false}>
             <Button className="hidden d:block mx-auto mt-57px rounded-6pxi">
               Discover more nonprofits
             </Button>
@@ -582,7 +609,7 @@ export default function Home() {
                   with them and their supporters to aim your efforts where you
                   are needed the most.
                 </p>
-                <Link href="/corporations">
+                <Link href="/corporations" passHref={false}>
                   <Button
                     type="button"
                     variant="primary"
