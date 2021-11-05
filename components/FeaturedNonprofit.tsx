@@ -15,7 +15,7 @@ const FeaturedNonprofit = ({
   buttonClassName?: string,
 }) => {
   return (
-    <div className={`flex flex-col mx-auto ${className} w-full`}>
+    <div className={`flex flex-col mx-auto w-full ${className}`}>
       <a href={`${nonprofit.path}`}>
         <div className="relative select-none cursor-pointer">
           {/* eslint-disable-next-line @next/next/no-img-element */}
