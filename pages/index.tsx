@@ -108,7 +108,7 @@ export default function Home() {
         </style>
       </Head>
 
-      <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
+      <TopNav onSearch={(searchValue) => window.alert(searchValue)}/>
 
       <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
         <div
@@ -131,14 +131,17 @@ export default function Home() {
             id="hero-we-connect"
             className=" min-w-280px t:min-w-343px  max-w-540px t:flex-1 t:order-2 order-1 flex flex-col "
           >
-            <p className="t:flex-1 text-white text-26px d:text-48px leading-31-2px d:leading-57-6px  text-center t:text-left font-bold  pb-12px t:pb-9px d:pb-19px ">
+            <p
+              className="t:flex-1 text-white text-26px d:text-48px leading-31-2px d:leading-57-6px  text-center t:text-left font-bold  pb-12px t:pb-9px d:pb-19px ">
               We connect charities, corporations and donors.
             </p>
-            <p className="t:flex-1 text-white text-14px d:text-18px leading-18-2px d:leading-26px  text-center t:text-left pb-13px t:pb-16px d:pb-17px">
+            <p
+              className="t:flex-1 text-white text-14px d:text-18px leading-18-2px d:leading-26px  text-center t:text-left pb-13px t:pb-16px d:pb-17px">
               Making a difference has never been more fun and rewarding.
             </p>
-            <div className="font-hand text-26px leading-38px d:text-32px text-primary pb-29px t:pb-9px d:pb-52px flex justify-start gap-20px">
-              <div>How you can help move the chain</div>
+            <div
+              className="font-hand leading-38px d:text-32px text-primary pb-29px t:pb-9px d:pb-22px flex justify-start gap-20px">
+              <span className=" text-50px">How you can help move the chain</span>
               <svg
                 className="ml-10px mt-15px"
                 width="42"
@@ -165,49 +168,56 @@ export default function Home() {
                     Individuals
                   </p>
                   <Link href="/individuals">
-                    <a className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px">
-                      Support a cause <img alt="" src="/images/home/➡.svg" />
+                    <a
+                      className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px">
+                      Support a cause <img alt="" src="/images/home/➡.svg"/>
                     </a>
                   </Link>
                 </div>
 
-                <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px d:flex-1">
+                <p
+                  className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px d:flex-1">
                   Donate, share and support your favorite nonprofits.
                 </p>
-                <div className="border-gray-500 border-b-1px d:hidden" />
-                <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px" />
+                <div className="border-gray-500 border-b-1px d:hidden"/>
+                <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
                 <Link href="/individuals">
-                  <a className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px">
+                  <a
+                    className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px">
                     <span>Support a cause</span>
-                    <img alt="" src="/images/home/➡.svg" />
+                    <img alt="" src="/images/home/➡.svg"/>
                   </a>
                 </Link>
               </div>
-              <div className="flex flex-col d:flex d:flex-row gap-20px divide-y-reverse ">
+              <div className="flex flex-col d:flex d:flex-row gap-20px divide-y-reverse">
                 <div className="flex-1 flex flex-col d:max-w-168px">
                   <div className="flex flex-row justify-between">
                     <p className="text-white text-16px leading-24px d:flex-1 font-bold d:pb-10px ">
                       Nonprofits
                     </p>
                     <Link href="/nonprofits">
-                      <a className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px">
-                        Claim your page <img alt="" src="/images/home/➡.svg" />
+                      <a
+                        className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px">
+                        Claim your page <img alt="" src="/images/home/➡.svg"/>
                       </a>
                     </Link>
                   </div>
 
-                  <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px hidden d:block d:h-49px d:flex-1">
+                  <p
+                    className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px hidden d:block d:h-49px d:flex-1">
                     Tell your story to raise funds.
                   </p>
-                  <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px d:hidden">
+                  <p
+                    className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px d:hidden">
                     Use your page to start fundraising.{" "}
                   </p>
-                  <div className="border-gray-500 border-b-1px d:hidden" />
-                  <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px" />
+                  <div className="border-gray-500 border-b-1px d:hidden"/>
+                  <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
                   <Link href="/individuals">
-                    <a className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px">
+                    <a
+                      className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px">
                       <span>Claim your page</span>
-                      <img alt="" src="/images/home/➡.svg" />
+                      <img alt="" src="/images/home/➡.svg"/>
                     </a>
                   </Link>
                 </div>
@@ -219,9 +229,10 @@ export default function Home() {
                     Corporations
                   </p>
                   <Link href="/corporations">
-                    <a className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px">
-                      <span>Sponsor an event</span>
-                      <img alt="" src="/images/home/➡.svg" />
+                    <a
+                      className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px">
+                      <span>Get started</span>
+                      <img alt="" src="/images/home/➡.svg"/>
                     </a>
                   </Link>
                 </div>
@@ -229,11 +240,12 @@ export default function Home() {
                 <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px">
                   Find nonprofits that need your support.
                 </p>
-                <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px" />
+                <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
                 <Link href="/corporations">
-                  <a className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px">
-                    <span>Sponsor an event</span>
-                    <img alt="" src="/images/home/➡.svg" />
+                  <a
+                    className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px">
+                    <span>Get started</span>
+                    <img alt="" src="/images/home/➡.svg"/>
                   </a>
                 </Link>
               </div>
@@ -347,8 +359,8 @@ export default function Home() {
             <div
               className="t:hidden">
               <div className="keen-slider"
-              ref={trendingCampaignsSliderRef}
-            >
+                   ref={trendingCampaignsSliderRef}
+              >
                 {trendingCampaigns &&
                 trendingCampaigns.map((tc) => (
                   <TrendingCampaign
@@ -362,25 +374,18 @@ export default function Home() {
 
               {trendingCampaignsSlider && (
                 <div className="t:hidden dots">
-                {[
-                  ...Array.from(
-                    Array(trendingCampaignsSlider.details().size).keys()
-                  ),
-                ].map((idx) => {
+                  {[
+                    ...Array.from(Array(trendingCampaignsSlider.details().size).keys()),
+                  ].map((idx) => {
                     return (
                       <button
                         key={idx}
                         onClick={() => {
-                        trendingCampaignsSlider.moveToSlideRelative(idx);
+                          trendingCampaignsSlider.moveToSlideRelative(idx);
                         }}
-                      className={
-                        "dot" +
-                        (trendingCampaignsSliderCurrentSlide === idx
-                          ? " active"
-                          : "")
-                      }
+                        className={`dot ${trendingCampaignsSliderCurrentSlide === idx ? "active" : ""}`}
                       />
-                  );
+                    );
                   })}
                 </div>
               )}
@@ -400,9 +405,11 @@ export default function Home() {
                 You can support campaigns by different nonprofits by donating,
                 sharing, or participating in challenges.
               </div>
-              <Button variant="primary" className="d:mt-22px rounded-10pxi">
-                View all campaigns 👉
-              </Button>
+              <Link href="/campaigns/search">
+                <Button variant="primary" className="d:mt-22px rounded-10pxi">
+                  View all campaigns 👉
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -461,7 +468,7 @@ export default function Home() {
               <FeaturedNonprofit
                 key={fnp.id}
                 nonprofit={fnp}
-                className="hidden t:block" />
+                className="hidden t:block"/>
             ))}
 
             <div className="t:hidden">
@@ -478,25 +485,20 @@ export default function Home() {
 
               {featuredNonprofitsSlider && (
                 <div className="t:hidden dots">
-                {[
-                  ...Array.from(
-                    Array(featuredNonprofitsSlider.details().size).keys()
-                  ),
-                ].map((idx) => {
+                  {[
+                    ...Array.from(
+                      Array(featuredNonprofitsSlider.details().size).keys()
+                    ),
+                  ].map((idx) => {
                     return (
                       <button
                         key={idx}
                         onClick={() => {
-                        featuredNonprofitsSlider.moveToSlideRelative(idx);
+                          featuredNonprofitsSlider.moveToSlideRelative(idx)
                         }}
-                      className={
-                        "dot" +
-                        (featuredNonprofitsSliderCurrentSlide === idx
-                          ? " active"
-                          : "")
-                      }
+                        className={`dot ${featuredNonprofitsSliderCurrentSlide === idx ? "active" : ""}`}
                       />
-                  );
+                    );
                   })}
                 </div>
               )}
@@ -547,7 +549,7 @@ export default function Home() {
             </Button>
           </div>
 
-          <Link href="/nonprofits" passHref={false}>
+          <Link href="/nonprofits/search" passHref={false}>
             <Button className="hidden d:block mx-auto mt-57px rounded-6pxi">
               Discover more nonprofits
             </Button>
@@ -555,7 +557,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="pt-44px t:pt-50px d:pt-100px pb-50px d:pb-100px px-20px t:px-30px d:px-120px bg-gradient-to-b from-cream to-white">
+      <div
+        className="pt-44px t:pt-50px d:pt-100px pb-50px d:pb-100px px-20px t:px-30px d:px-120px bg-gradient-to-b from-cream to-white">
         <div
           id="your-opportunity-to-make-impact"
           className="d:max-w-1140px mx-auto t:max-w-768px"
@@ -565,7 +568,8 @@ export default function Home() {
               <p className="t:mt-15px d:mt-63px text-24px leading-28-8px d:text-43px d:leading-52px font-bold">
                 Your opportunity to make an impact
               </p>
-              <p className="mt-20px d:mt-25px d:-mr-10px text-14px leading-18-2px d:text-18px d:leading-24px font-light">
+              <p
+                className="mt-20px d:mt-25px d:-mr-10px text-14px leading-18-2px d:text-18px d:leading-24px font-light">
                 Whether you are a nonprofit looking for a{" "}
                 <span className="font-bold ">quality channel</span>{" "}
                 to spread their cause and raise funds, a donor looking to contribute, or a
@@ -586,9 +590,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-20px t:mt-0 flex flex-1 t:transform t:-translate-y-276px t:-my-276px d:-translate-y-170px d:-my-170px">
+          <div
+            className="mt-20px t:mt-0 flex flex-1 t:transform t:-translate-y-276px t:-my-276px d:-translate-y-170px d:-my-170px">
             <div className="flex flex-col t:flex-row gap-10px d:gap-20px mx-auto t:mr-0">
-              <div className="flex-1 p-15px pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-160px text-center t:text-left bg-gradient-to-b from-blue-dark to-blue-darker">
+              <div
+                className="flex-1 p-15px pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-160px text-center t:text-left bg-gradient-to-b from-blue-dark to-blue-darker">
                 <h1 className="text-15px leading-22px d:text-20px d:leading-30px font-bold">
                   Individuals
                 </h1>
@@ -612,7 +618,8 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="flex-1 p-15px pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-170px text-center t:text-left bg-gradient-to-b from-blue-dark to-blue-darker">
+              <div
+                className="flex-1 p-15px pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-170px text-center t:text-left bg-gradient-to-b from-blue-dark to-blue-darker">
                 <h1 className="text-15px leading-22px d:text-20px d:leading-30px font-bold">
                   Nonprofits
                 </h1>
@@ -636,7 +643,8 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="flex-1 p-15px pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-170px text-center t:text-left bg-gradient-to-b from-blue-dark to-blue-darker">
+              <div
+                className="flex-1 p-15px pt-17px d:p-20px d:pt-25px flex flex-col rounded-24px text-white d:w-240px t:w-170px text-center t:text-left bg-gradient-to-b from-blue-dark to-blue-darker">
                 <h1 className="text-15px leading-22px d:text-20px d:leading-30px font-bold">
                   Corporations
                 </h1>
@@ -664,7 +672,7 @@ export default function Home() {
 
       <div id="footer" className="w-full bg-footer">
         <div className="w-320px t:w-708px d:w-1140px mx-auto">
-          <Footer />
+          <Footer/>
         </div>
       </div>
     </div>
