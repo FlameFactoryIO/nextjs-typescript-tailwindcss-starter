@@ -7,11 +7,11 @@ import Button from "../../components/Button";
 import TopNav from "../../components/TopNav";
 import Input from "../../components/Input";
 import { useState } from "react";
-import { useSearchNonprofit } from "../../mtc-api/nonprofit/useSearchNonprofit";
 import { dehydrate, QueryClient, useQuery } from "react-query";
 import { getInterests } from "../../mtc-api/interests/useGetInterests";
 import Interest from "../../dtos/Interest";
-import FeaturedNonprofit from "../../components/FeaturedNonprofit";
+import TrendingCampaign from "../../components/TrendingCampaign";
+import Campaign from "../../dtos/Campaign";
 
 const Remove = () => (
   <svg
@@ -29,7 +29,7 @@ const Remove = () => (
 );
 
 // noinspection JSUnusedGlobalSymbols
-export default function NonprofitsSearch() {
+export default function CampaignSearch() {
   const { data: interests } = useQuery<Interest[]>(["INTERESTS"], getInterests);
 
   const [nameFilter, setNameFilter] = useState("");
@@ -38,23 +38,17 @@ export default function NonprofitsSearch() {
 
   const [isFilterExpanded, setFilterExpanded] = useState(false);
 
-  const { data: nonprofits } = useSearchNonprofit({
-    ...(process.env.NEXT_PUBLIC_PAYPAL_URL.indexOf("sandbox") == -1
-      ? {
-          state: locationFilter,
-          cause_area: interestsFilter,
-        }
-      : {}),
-    search: nameFilter,
-    country_code: "US",
-    page: 1,
-    pageSize: 20,
-    options: {
-      refetchOnMount: false,
-      refetchOnWindowFocus: false,
-      enabled: !!(interestsFilter || locationFilter || nameFilter),
-    },
-  });
+  const campaigns: Campaign[] = [
+    campaign,
+    campaign,
+    campaign,
+    campaign,
+    campaign,
+    campaign,
+    campaign,
+    campaign,
+    campaign,
+  ]
 
   const handleInterestFilterToggle = (interest: Interest) => {
     setInterestsFilter((prev) => {
@@ -134,29 +128,29 @@ export default function NonprofitsSearch() {
               }`}
             >
               {interests &&
-                interests.map((interest) => {
-                  const t = interest.name.split(" ");
-                  const emoji = t.shift();
-                  const name = t.join(" ");
-                  return (
-                    <div
-                      key={interest.name}
-                      className={`
+              interests.map((interest) => {
+                const t = interest.name.split(" ");
+                const emoji = t.shift();
+                const name = t.join(" ");
+                return (
+                  <div
+                    key={interest.name}
+                    className={`
                         cursor-pointer rounded-10px border-1px border-secondary-gray-2 h-46px flex items-center px-20px gap-8px
                         text-13px leading-15-6px font-bold
                         ${
-                          interestsFilter?.indexOf(interest) > -1
-                            ? "border-none bg-primary text-white"
-                            : ""
-                        }
+                      interestsFilter?.indexOf(interest) > -1
+                        ? "border-none bg-primary text-white"
+                        : ""
+                    }
                        `}
-                      onClick={() => handleInterestFilterToggle(interest)}
-                    >
-                      <div className="text-22px leading-22px">{emoji}</div>
-                      <div>{name}</div>
-                    </div>
-                  );
-                })}
+                    onClick={() => handleInterestFilterToggle(interest)}
+                  >
+                    <div className="text-22px leading-22px">{emoji}</div>
+                    <div>{name}</div>
+                  </div>
+                );
+              })}
             </div>
 
             {!isFilterExpanded && (
@@ -232,7 +226,7 @@ export default function NonprofitsSearch() {
               )}
             </div>
 
-            {!nonprofits || !nonprofits.length ? (
+            {!campaigns || !campaigns.length ? (
               <div className="flex flex-col items-center justify-center mt-27px t:mt-47px d:mt-67px ">
                 <Image
                   src="/images/shared/no-results.svg"
@@ -254,8 +248,8 @@ export default function NonprofitsSearch() {
                 t:gap-x-30px t:gap-y-47px
                 d:gap-x-20px d:gap-y-40px"
               >
-                {nonprofits.map((nonprofit) => (
-                  <FeaturedNonprofit key={nonprofit.id} nonprofit={nonprofit} />
+                {campaigns.map((campaign) => (
+                  <TrendingCampaign key={campaign.id} campaign={campaign} />
                 ))}
               </div>
             )}
@@ -281,3 +275,46 @@ export async function getStaticProps() {
     },
   };
 }
+
+const campaign: Campaign = {
+  id: 1,
+  title: "Nature Scapes",
+  description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
+  startDate: new Date("2021-09-28T00:00:00-04:00"),
+  endDate: new Date("2022-09-28T00:00:00-04:00"),
+  goal: 10000,
+  raised: 2000,
+  donors: 50,
+  challenges: [],
+  payments: [],
+  // videoUrl: undefined,
+  imageUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+  createdAt: new Date("2021-09-01T00:00:00-04:00"),
+  updatedAt: new Date("2021-09-27T00:00:00-04:00"),
+  nonprofitId: 1,
+  nonprofit: {
+    id: 1,
+    logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+    path: "cool-nonprofit",
+    draftCampaigns: [],
+    pastCampaigns: [],
+    campaigns: [],
+    hasCampaigns: 1,
+    challenges: [],
+    claimed: true,
+    contacts: [],
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    interests: [],
+    locations: [],
+    name: "Cool nonprofit",
+    payments: [],
+    testimonials: [],
+  },
+  timesShared: 50,
+  order: 1,
+  isOpen: true,
+  totalSupporters: 150,
+  shares: 1,
+  totalChallenges: 1,
+};
