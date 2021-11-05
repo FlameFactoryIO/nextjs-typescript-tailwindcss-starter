@@ -22,6 +22,25 @@ Black.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   value: "value",
-
   disabled: true,
+};
+
+export const Multiline = Template.bind({});
+Multiline.args = {
+  value: "value",
+  multiline: true,
+};
+
+export const Multiline10Lines = Template.bind({});
+Multiline10Lines.args = {
+  value: "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n",
+  multiline: true,
+  rows: 10,
+};
+
+export const MultilineFixedHeight = Template.bind({});
+MultilineFixedHeight.args = {
+  value: "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n",
+  multiline: true,
+  className: "h-150px",
 };

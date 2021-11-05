@@ -496,23 +496,27 @@ export default function CorporationsHome() {
                   placeholder="Role/Position"
                 />
                 <Input
-                  className=" t:col-span-2
+                  className="
+                    t:col-span-2
                     min-w-250px rounded-10pxi
-                  bg-white border-1px border-solid border-input
-                          t:max-w-647px
-                          d:max-w-515px"
+                    bg-white border-1px border-solid border-input
+                    t:max-w-647px
+                    d:max-w-515px
+                  "
                   placeholder="Email Address"
                 />
               </div>
 
               <div className="pb-30px t:pb-40px">
                 <Input
-                  className="min-w-250px h-180px rounded-10pxi
-                  bg-white border-1px border-solid border-input
-                         t:max-w-647px
-                         d:max-w-515px d:h-227px
-                         "
+                  className="
+                    min-w-250px h-180px rounded-10pxi
+                    bg-white border-1px border-solid border-input
+                    t:max-w-647px
+                    d:max-w-515px d:h-227px
+                  "
                   placeholder="Comments"
+                  multiline
                 />
               </div>
 
