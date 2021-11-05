@@ -497,7 +497,7 @@ export default function AboutUs() {
         </div>
       </div>
       <div id="footer" className="w-full bg-footer">
-        <div className="w-280px t:w-708px d:w-1140px mx-auto">
+        <div className="w-320px t:w-708px d:w-1140px mx-auto">
           <Footer />
         </div>
       </div>

@@ -45,8 +45,8 @@ export default function Home() {
           "
             >
               Our purpose at{" "}
-              <span className="font-bold text-primary">Move the Chain</span>{" "}
-              is to offer a platform to help promote your cause and raise funds.
+              <span className="font-bold text-primary">Move the Chain</span> is
+              to offer a platform to help promote your cause and raise funds.
             </p>
             <p
               className=" text-16px leading-20-8px
@@ -58,8 +58,8 @@ export default function Home() {
                 mx-auto t:ml-0 t:mr-auto"
             >
               We offer a{" "}
-              <span className="font-bold text-white">free platform</span>{" "}
-              for your nonprofits allowing you to raise funds digitally, improve
+              <span className="font-bold text-white">free platform</span> for
+              your nonprofits allowing you to raise funds digitally, improve
               your online presence and expand your network to a broader
               audience.
             </p>
@@ -224,32 +224,31 @@ export default function Home() {
             <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px">
               With a simple click of a button, you can claim your page on Move
               the Chain! Follow those{" "}
-              <span className="font-bold">simple steps</span>{" "}to get started:
+              <span className="font-bold">simple steps</span> to get started:
             </p>
             <div className="px-20px">
               <ol className="list-decimal text-primary text-13px leading-17px flex flex-col gap-y-14px font-bold">
                 <li>
                   <p className="text-black font-light pl-9px">
                     Click on{" "}
-                    <span className="font-bold">“Claim your page”</span>{" "}
-                    and search for your nonprofit
+                    <span className="font-bold">“Claim your page”</span> and
+                    search for your nonprofit
                   </p>
                 </li>
                 <li>
                   <p className="text-black font-light pl-9px">
                     If you are part of{" "}
-                    <span className="font-bold">PayPal Giving Fund</span>,
-                    you will find your nonprofit. Simply click the{" "}
-                    <span className="font-bold">“Claim Page”</span>{" "}
-                    button to begin the process
+                    <span className="font-bold">PayPal Giving Fund</span>, you
+                    will find your nonprofit. Simply click the{" "}
+                    <span className="font-bold">“Claim Page”</span> button to
+                    begin the process
                   </p>
                 </li>
                 <li>
                   <p className="text-black font-light pl-9px">
                     If you are not registered with PayPal Giving Fund, simply
                     enroll your nonprofit so you can start accepting donations
-                    and create a{" "}
-                    <span className="font-bold"> profile</span> on
+                    and create a <span className="font-bold"> profile</span> on
                     Move the Chain
                   </p>
                 </li>
@@ -279,21 +278,18 @@ export default function Home() {
               Update your Profile
             </div>
             <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
-              Within{" "}
-              <span className="font-bold">a few minutes</span>{" "}
-              you can update your profile!
+              Within <span className="font-bold">a few minutes</span> you can
+              update your profile!
             </p>
             <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
               Be sure to include the best possible photos and videos to{" "}
-              <span className="font-bold">emphasize the great work</span>{" "}
-              you’re doing! Your “About” section should be both concise and
-              heartfelt.
+              <span className="font-bold">emphasize the great work</span> you’re
+              doing! Your “About” section should be both concise and heartfelt.
             </p>
             <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-12px font-light">
               This is your opportunity to create a profile that best represents
               your organization to{" "}
-              <span className="font-bold">maximize the potential</span>{" "}
-              of{" "}
+              <span className="font-bold">maximize the potential</span> of{" "}
               <span className="font-bold">turning visitors into donors!</span>
             </p>
           </div>
@@ -325,11 +321,11 @@ export default function Home() {
             </p>
             <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
               This is your{" "}
-              <span className="font-bold">opportunity to create </span>{" "}
-              a genuine and compelling video message that tells the story of{" "}
-              <span className="font-bold">your organization’s mission</span>{" "}
-              the cause you are trying to fund and how donations will be used to
-              do good
+              <span className="font-bold">opportunity to create </span> a
+              genuine and compelling video message that tells the story of{" "}
+              <span className="font-bold">your organization’s mission</span> the
+              cause you are trying to fund and how donations will be used to do
+              good
             </p>
           </div>
 
@@ -475,7 +471,7 @@ export default function Home() {
         </div>
       </div>
       <div id="footer" className="w-full bg-footer">
-        <div className="w-280px t:w-708px d:w-1140px mx-auto">
+        <div className="w-320px t:w-708px d:w-1140px mx-auto">
           <Footer />
         </div>
       </div>

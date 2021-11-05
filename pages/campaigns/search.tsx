@@ -48,7 +48,7 @@ export default function CampaignSearch() {
     campaign,
     campaign,
     campaign,
-  ]
+  ];
 
   const handleInterestFilterToggle = (interest: Interest) => {
     setInterestsFilter((prev) => {
@@ -81,14 +81,20 @@ export default function CampaignSearch() {
           t:max-w-707px d:max-w-780px
         "
         >
-          <div className="text-26px leading-31-2px d:text-48px d:leading-57-6px font-bold text-white text-center
-          pb-20px t:pb-22px d:pb-40px">
+          <div
+            className="text-26px leading-31-2px d:text-48px d:leading-57-6px font-bold text-white text-center
+          pb-20px t:pb-22px d:pb-40px"
+          >
             Discover more nonprofits
           </div>
-          <div className="text-16px leading-24px t:leading-20-8 d:text-18px d:leading-27px font-light text-white text-center
-          pb-20px t:pb-35px d:pb-33px">
-            All nonprofits on Move the Chain{" "}<span className="t:font-bold">verified 501c3 nonprofit</span>{" "}
-            organizations. All donations to any of the nonprofits are {" "}<span className="t:font-bold">tax deductible.</span>{" "}
+          <div
+            className="text-16px leading-24px t:leading-20-8 d:text-18px d:leading-27px font-light text-white text-center
+          pb-20px t:pb-35px d:pb-33px"
+          >
+            All nonprofits on Move the Chain{" "}
+            <span className="t:font-bold">verified 501c3 nonprofit</span>{" "}
+            organizations. All donations to any of the nonprofits are{" "}
+            <span className="t:font-bold">tax deductible.</span>{" "}
           </div>
           <div className="flex flex-col t:flex-row gap-5px items-center ">
             <Input
@@ -96,22 +102,28 @@ export default function CampaignSearch() {
               placeholder={"Search for a nonprofit or keyword"}
               onChange={(value) => setNameFilter(value)}
             />
-            <Button className="min-w-110px t:max-w-140px d:max-w-130px rounded-10pxi">Search</Button>
+            <Button className="min-w-110px t:max-w-140px d:max-w-130px rounded-10pxi">
+              Search
+            </Button>
           </div>
         </div>
       </div>
 
       <div className="w-full bg-gradient-to-b from-cream to-white ">
-        <div className="w-280px t:w-708px d:w-auto t:max-w-1140px mx-auto
+        <div
+          className="w-280px t:w-708px d:w-auto t:max-w-1140px mx-auto
         px-20px t:px-30px pt-84px t:pt-88px d:pt-110px
-        flex flex-col d:flex-row gap-35px d:items-start d:pb-81px ">
+        flex flex-col d:flex-row gap-35px d:items-start d:pb-81px "
+        >
           <div
             id="filters"
             className="rounded-24px shadow-0-6-24 border-1px border-search-border border-opacity-20 bg-white p-15px select-none
             "
           >
-            <div className="mt-23px mb-31px d:mb-39px
-            text-18px leading-27px font-bold">
+            <div
+              className="mt-23px mb-31px d:mb-39px
+            text-18px leading-27px font-bold"
+            >
               Browse nonprofits by:
             </div>
             <div className=" ont-light text-16px leading-24px">Location</div>
@@ -121,36 +133,38 @@ export default function CampaignSearch() {
               onChange={(value) => setLocationFilter(value)}
             />
 
-            <div className="mt-23px font-light text-16px leading-24px">Causes</div>
+            <div className="mt-23px font-light text-16px leading-24px">
+              Causes
+            </div>
             <div
               className={`grid grid-cols-1 t:grid-cols-3 d:grid-cols-1 d:w-270px gap-10px overflow-hidden ${
                 !isFilterExpanded ? "h-327px t:h-200px d:h-467px" : ""
               }`}
             >
               {interests &&
-              interests.map((interest) => {
-                const t = interest.name.split(" ");
-                const emoji = t.shift();
-                const name = t.join(" ");
-                return (
-                  <div
-                    key={interest.name}
-                    className={`
+                interests.map((interest) => {
+                  const t = interest.name.split(" ");
+                  const emoji = t.shift();
+                  const name = t.join(" ");
+                  return (
+                    <div
+                      key={interest.name}
+                      className={`
                         cursor-pointer rounded-10px border-1px border-secondary-gray-2 h-46px flex items-center px-20px gap-8px
                         text-13px leading-15-6px font-bold
                         ${
-                      interestsFilter?.indexOf(interest) > -1
-                        ? "border-none bg-primary text-white"
-                        : ""
-                    }
+                          interestsFilter?.indexOf(interest) > -1
+                            ? "border-none bg-primary text-white"
+                            : ""
+                        }
                        `}
-                    onClick={() => handleInterestFilterToggle(interest)}
-                  >
-                    <div className="text-22px leading-22px">{emoji}</div>
-                    <div>{name}</div>
-                  </div>
-                );
-              })}
+                      onClick={() => handleInterestFilterToggle(interest)}
+                    >
+                      <div className="text-22px leading-22px">{emoji}</div>
+                      <div>{name}</div>
+                    </div>
+                  );
+                })}
             </div>
 
             {!isFilterExpanded && (
@@ -186,11 +200,15 @@ export default function CampaignSearch() {
               {!nameFilter &&
               !locationFilter &&
               interestsFilter.length === 0 ? (
-                <div className="text-13px leading-19-5px d:text-16px d:leading-24px font-light">Top Nonprofits</div>
+                <div className="text-13px leading-19-5px d:text-16px d:leading-24px font-light">
+                  Top Nonprofits
+                </div>
               ) : (
                 // show selected filters
                 <>
-                  <div className="text-13px leading-19-5px d:text-16px d:leading-24px font-light">Search results and top nonprofits for:</div>
+                  <div className="text-13px leading-19-5px d:text-16px d:leading-24px font-light">
+                    Search results and top nonprofits for:
+                  </div>
                   <div className="flex flex-row flex-wrap gap-x-20px gap-y-5px font-bold text-12px leading-18px d:text-14px d:leading-21px">
                     {locationFilter && (
                       <div
@@ -233,9 +251,11 @@ export default function CampaignSearch() {
                   width={218}
                   height={218}
                 />
-                <div className="font-light text-13px leading-16-9px text-16px leading-24px
-                pb-46px">
-                  There are{' '}<span className="font-bold">no matches</span>{' '}for
+                <div
+                  className="font-light text-13px leading-16-9px text-16px leading-24px
+                pb-46px"
+                >
+                  There are <span className="font-bold">no matches</span> for
                   the search criteria.
                 </div>
               </div>
@@ -258,7 +278,7 @@ export default function CampaignSearch() {
       </div>
 
       <div id="footer" className="w-full bg-footer">
-        <div className="px-20px pt-30px pb-15px mx-auto">
+        <div className="w-320px t:w-708px d:w-1140px mx-auto">
           <Footer />
         </div>
       </div>
@@ -279,7 +299,8 @@ export async function getStaticProps() {
 const campaign: Campaign = {
   id: 1,
   title: "Nature Scapes",
-  description: "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
+  description:
+    "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
   startDate: new Date("2021-09-28T00:00:00-04:00"),
   endDate: new Date("2022-09-28T00:00:00-04:00"),
   goal: 10000,
@@ -288,13 +309,15 @@ const campaign: Campaign = {
   challenges: [],
   payments: [],
   // videoUrl: undefined,
-  imageUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
+  imageUrl:
+    "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
   createdAt: new Date("2021-09-01T00:00:00-04:00"),
   updatedAt: new Date("2021-09-27T00:00:00-04:00"),
   nonprofitId: 1,
   nonprofit: {
     id: 1,
-    logoUrl: "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
+    logoUrl:
+      "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
     path: "cool-nonprofit",
     draftCampaigns: [],
     pastCampaigns: [],
