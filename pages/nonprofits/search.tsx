@@ -264,7 +264,7 @@ export default function NonprofitsSearch() {
       </div>
 
       <div id="footer" className="w-full bg-footer">
-        <div className="px-20px pt-30px pb-15px mx-auto">
+        <div className="w-280px t:w-708px d:w-1140px mx-auto">
           <Footer />
         </div>
       </div>
