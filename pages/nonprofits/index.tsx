@@ -3,6 +3,8 @@ import Footer from "../../components/Footer";
 import Button from "../../components/Button";
 import TopNav from "../../components/TopNav";
 import Image from "next/image";
+import Questions from "../../components/Questions";
+import Faq from "../../components/Faq";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
@@ -247,8 +249,8 @@ export default function Home() {
                     If you are not registered with PayPal Giving Fund, simply
                     enroll your nonprofit so you can start accepting donations
                     and create a{" "}
-                    <span className="font-bold"> profile</span>{" "}
-                    on Move the Chain
+                    <span className="font-bold"> profile</span> on
+                    Move the Chain
                   </p>
                 </li>
               </ol>
@@ -258,7 +260,8 @@ export default function Home() {
           <div aria-hidden className="t:flex-1">
             <Image
               src="/images/nonprofits/step1.png"
-              width={540} height={500}
+              width={540}
+              height={500}
               objectFit="contain"
             />
           </div>
@@ -287,8 +290,8 @@ export default function Home() {
               heartfelt.
             </p>
             <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-12px font-light">
-              This is your opportunity to create a profile that best
-              represents your organization to{" "}
+              This is your opportunity to create a profile that best represents
+              your organization to{" "}
               <span className="font-bold">maximize the potential</span>{" "}
               of{" "}
               <span className="font-bold">turning visitors into donors!</span>
@@ -298,7 +301,8 @@ export default function Home() {
           <div aria-hidden className="t:flex-1 order-last t:order-first">
             <Image
               src="/images/nonprofits/step2.png"
-              width={473} height={500}
+              width={473}
+              height={500}
               objectFit="contain"
             />
           </div>
@@ -324,15 +328,16 @@ export default function Home() {
               <span className="font-bold">opportunity to create </span>{" "}
               a genuine and compelling video message that tells the story of{" "}
               <span className="font-bold">your organization’s mission</span>{" "}
-              the cause you are trying to fund and how donations will be used
-              to do good
+              the cause you are trying to fund and how donations will be used to
+              do good
             </p>
           </div>
 
           <div aria-hidden className="t:flex-1">
             <Image
               src="/images/nonprofits/step3.png"
-              width={499} height={512}
+              width={499}
+              height={512}
               objectFit="contain"
             />
           </div>
@@ -356,8 +361,8 @@ export default function Home() {
             <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
               The impact of sharing on social media, email and text messages
               cannot be understated in its ability to make your campaign
-              successful. Once your campaign is created, tell everyone about
-              it. The more you share, the more likely you are to{" "}
+              successful. Once your campaign is created, tell everyone about it.
+              The more you share, the more likely you are to{" "}
               <span className="font-bold">reach your goal.</span>
             </p>
           </div>
@@ -365,7 +370,8 @@ export default function Home() {
           <div aria-hidden className="t:flex-1 order-last t:order-first">
             <Image
               src="/images/nonprofits/step4.png"
-              width={540} height={500}
+              width={540}
+              height={500}
               objectFit="contain"
             />
           </div>
@@ -457,25 +463,15 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="px-20px pt-44px pb-50px t:pb-36px t:px-30px d:pt-52px d:pb-44px d:px-120px bg-gradient-to-b from-blue-dark to-blue-darker">
-        <div id="questions" className="d:max-w-1140px mx-auto">
-          <div className="text-20px leading-24px d:text-34px d:leading-41px text-white text-center t:text-left font-bold t:pb-14px">
-            Questions?
-          </div>
-          <div className="t:flex">
-            <p className="text-16px leading-20-8px d:text-18px d:leading-25px text-white text-center t:text-left font-light t:pr-77px d:pr-276px">
-              Do you have questions about Move the Chain? Reach out and we’ll be
-              happy to answer your questions!
-            </p>
+      <div id="faq" className="w-full bg-gradient-to-b from-cream to-white">
+        <div className="w-280px t:w-768px d:w-1380px mx-auto items-center">
+          <Faq />
+        </div>
+      </div>
 
-            <Button
-              type="button"
-              variant="primary"
-              className="w-140px h-46px rounded-10pxi whitespace-nowrap"
-            >
-              Contact Us
-            </Button>
-          </div>
+      <div id="questions" className="w-full bg-blue-questions">
+        <div className="w-280px t:w-768px d:w-1140px mx-auto items-center">
+          <Questions />
         </div>
       </div>
       <div id="footer" className="w-full bg-footer">

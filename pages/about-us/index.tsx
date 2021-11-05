@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import TopNav from "../../components/TopNav";
 import Image from "next/image";
 import Button from "../../components/Button";
+import Questions from '../../components/Questions';
 
 // noinspection JSUnusedGlobalSymbols
 export default function AboutUs() {
@@ -245,7 +246,6 @@ export default function AboutUs() {
                         rounded-26px
                         flex-1 w-280px t:w-222px d:w-367px
                         border-1px  shadow-0-6-24"
-
             >
               <img
                 className="mr-auto pb-15px"
@@ -386,12 +386,12 @@ export default function AboutUs() {
 
       <div className="w-full ">
         <div
-          id="questions"
+          id="cards-bot"
           className="flex flex-col
         px-21px t:31px d:px-120
-        transform -translate-y-112px
+        transform -translate-y-55px  t:-translate-y-143px d:-translate-y-120px
         items-center
-        max-h-750px t:max-h-340px d:max-h-448px
+        max-h-750px t:max-h-140px d:max-h-178px
         gap-43px t:gap-25px d:gap-42px "
         >
           <div
@@ -415,7 +415,7 @@ export default function AboutUs() {
               />
               <div
                 className="mr-auto  pb-6px text-left font-bold
-                              text-16px  leading-24px d:text-20px d:leading-30px"
+                              text-16px  leading-24px d:text-18px d:leading-27px"
               >
                 140K+ vetted nonprofits
               </div>
@@ -444,7 +444,7 @@ export default function AboutUs() {
               />
               <div
                 className="mr-auto  pb-6px text-left font-bold
-                              text-16px  leading-24px d:text-20px d:leading-30px"
+                              text-16px  leading-24px d:text-18px d:leading-27px"
               >
                 Donation Processing
               </div>
@@ -472,7 +472,7 @@ export default function AboutUs() {
               />
               <div
                 className="mr-auto  pb-6px text-left font-bold
-                              text-16px  leading-24px d:text-20px d:leading-30px"
+                              text-16px  leading-24px d:text-18px d:leading-27px"
               >
                 Tax Receipts
               </div>
@@ -489,25 +489,11 @@ export default function AboutUs() {
               </p>
             </div>
           </div>
-          <div
-            id="questions"
-            className="text-center mx-auto w-280px t:w-418px d:w-602px
-            "
-          >
-            <h1 className="font-bold  text-24px leading-28-8px d:text-43px d:leading-51-6px pb-20px d:pb-15px">
-              Questions?
-            </h1>
-            <p className=" font-light  text-14px leading-16-9px d:text-16px d:leading-24px pb-15px d:pb-30px">
-              Do you have questions about Move the Chain? Reach out and we’ll be
-              happy to answer your questions!
-            </p>
-            <Button
-              className=" font-bold rounded-10pxi text-14px leading-21px py-13px px-62px
-            w-200px"
-            >
-              Contact Us
-            </Button>
-          </div>
+        </div>
+      </div>
+      <div id="questions" className="w-full bg-blue-questions">
+        <div className="w-280px t:w-768px d:w-1140px mx-auto items-center">
+          <Questions />
         </div>
       </div>
       <div id="footer" className="w-full bg-footer">

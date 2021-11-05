@@ -82,6 +82,7 @@ module.exports = {
         "33-6px": "33.6px",
         "35-5px": "35.5px",
         "38px": "38px",
+        "40-8x": "40.8px",
         "41px": "41px",
         "51-6px": "51.6px",
         "52px": "52px",
@@ -131,6 +132,7 @@ module.exports = {
           800: "#000000",
           900: "#000000",
         },
+
         white: {
           DEFAULT: "#FFFFFF",
           50: "#FFFFFF",
@@ -155,6 +157,8 @@ module.exports = {
         "blue-dark": "#0A173C",
         "form-contact": "#FFFFFF",
         blue: "#091023",
+        "blue-questions": "#091023",
+        "red-select-border": "#E8430033",
         "secondary-gray-1": "#DAE0E9",
         "secondary-gray-2": "#D3D9E1",
         "secondary-gray-3": "#A1AAAF",
@@ -163,6 +167,7 @@ module.exports = {
       },
     },
   },
+
   variants: {
     extend: {},
   },
