@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,65 +7,79 @@ import Button from "../components/Button";
 import TopNav from "../components/TopNav";
 import FeaturedNonprofit from "../components/FeaturedNonprofit";
 import TrendingCampaign from "../components/TrendingCampaign";
-import {dehydrate, QueryClient, useQuery} from "react-query";
-import {getTrendingCampaigns} from "../mtc-api/campaign/useGetCampaigns";
+import { dehydrate, QueryClient, useQuery } from "react-query";
+import { getTrendingCampaigns } from "../mtc-api/campaign/useGetCampaigns";
 import Campaign from "../dtos/Campaign";
 import Nonprofit from "../dtos/Nonprofit";
-import {getFeaturedNonprofits} from "../mtc-api/nonprofit/useGetClaimedNonprofits";
+import { getFeaturedNonprofits } from "../mtc-api/nonprofit/useGetClaimedNonprofits";
 import "keen-slider/keen-slider.min.css";
-import {useKeenSlider} from "keen-slider/react";
+import { useKeenSlider } from "keen-slider/react";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
+  const { data: trendingCampaigns } = useQuery(
+    "TRENDING_CAMPAIGNS",
+    getTrendingCampaigns
+  );
+  const { data: featuredNonprofits } = useQuery(
+    "FEATURED_NONPROFITS",
+    getFeaturedNonprofits
+  );
 
-  const { data: trendingCampaigns } = useQuery("TRENDING_CAMPAIGNS", getTrendingCampaigns);
-  const { data: featuredNonprofits } = useQuery("FEATURED_NONPROFITS", getFeaturedNonprofits);
+  const [
+    trendingCampaignsSliderCurrentSlide,
+    setTrendingCampaignsSliderCurrentSlide,
+  ] = useState(0);
 
-  const [trendingCampaignsSliderCurrentSlide, setTrendingCampaignsSliderCurrentSlide] = useState(0);
-
-  const [trendingCampaignsSliderRef, trendingCampaignsSlider] = useKeenSlider<HTMLDivElement>({
-    initial: 0,
-    slideChanged(s) {
-      setTrendingCampaignsSliderCurrentSlide(s.details().relativeSlide)
-    },
-    spacing: 32,
-    loop: false,
-    mode: "snap",
-    breakpoints: {
-      "(max-width: 767px)": {
-        slidesPerView: 1,
+  const [trendingCampaignsSliderRef, trendingCampaignsSlider] =
+    useKeenSlider<HTMLDivElement>({
+      initial: 0,
+      slideChanged(s) {
+        setTrendingCampaignsSliderCurrentSlide(s.details().relativeSlide);
       },
-      "(min-width: 768px)": {
-        slidesPerView: 3,
+      spacing: 32,
+      loop: false,
+      mode: "snap",
+      breakpoints: {
+        "(max-width: 767px)": {
+          slidesPerView: 1,
+        },
+        "(min-width: 768px)": {
+          slidesPerView: 3,
+        },
       },
-    },
-  });
+    });
 
-  const [featuredNonprofitsSliderCurrentSlide, setFeaturedNonprofitsSliderCurrentSlide] = useState(0);
+  const [
+    featuredNonprofitsSliderCurrentSlide,
+    setFeaturedNonprofitsSliderCurrentSlide,
+  ] = useState(0);
 
-  const [featuredNonprofitsSliderRef, featuredNonprofitsSlider] = useKeenSlider<HTMLDivElement>({
-    initial: 0,
-    slideChanged(s) {
-      setFeaturedNonprofitsSliderCurrentSlide(s.details().relativeSlide)
-    },
-    spacing: 32,
-    loop: false,
-    mode: "snap",
-    breakpoints: {
-      "(max-width: 767px)": {
-        slidesPerView: 1,
+  const [featuredNonprofitsSliderRef, featuredNonprofitsSlider] =
+    useKeenSlider<HTMLDivElement>({
+      initial: 0,
+      slideChanged(s) {
+        setFeaturedNonprofitsSliderCurrentSlide(s.details().relativeSlide);
       },
-      "(min-width: 768px)": {
-        slidesPerView: 3,
+      spacing: 32,
+      loop: false,
+      mode: "snap",
+      breakpoints: {
+        "(max-width: 767px)": {
+          slidesPerView: 1,
+        },
+        "(min-width: 768px)": {
+          slidesPerView: 3,
+        },
       },
-    },
-  });
+    });
 
   return (
     <div className="w-full min-w-320px">
       <Head>
         <title>Move the Chain</title>
-        <style type="text/css">{`
+        <style type="text/css">
+          {`
           .dots {
             display: flex;
             padding: 10px 0;
@@ -160,8 +174,8 @@ export default function Home() {
                 <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px d:flex-1">
                   Donate, share and support your favorite nonprofits.
                 </p>
-                <div className="border-gray-500 border-b-1px d:hidden"/>
-                <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
+                <div className="border-gray-500 border-b-1px d:hidden" />
+                <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px" />
                 <Link href="/individuals">
                   <a className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px">
                     <span>Support a cause</span>
@@ -188,8 +202,8 @@ export default function Home() {
                   <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px d:hidden">
                     Use your page to start fundraising.{" "}
                   </p>
-                  <div className="border-gray-500 border-b-1px d:hidden"/>
-                  <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
+                  <div className="border-gray-500 border-b-1px d:hidden" />
+                  <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px" />
                   <Link href="/individuals">
                     <a className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px">
                       <span>Claim your page</span>
@@ -215,7 +229,7 @@ export default function Home() {
                 <p className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px">
                   Find nonprofits that need your support.
                 </p>
-                <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
+                <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px" />
                 <Link href="/corporations">
                   <a className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px">
                     <span>Sponsor an event</span>
@@ -321,28 +335,41 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 t:grid-cols-3 d:grid-cols-4 mt-23px t:mt-30px d:mt-50px gap-32px">
-            <div className="t:col-span-3 keen-slider" ref={trendingCampaignsSliderRef}>
-              {trendingCampaigns && trendingCampaigns.map((tc) => (
-                <TrendingCampaign
-                  key={tc.id}
-                  campaign={tc}
-                  variant="dark"
-                  className="keen-slider__slide"
-                />
-              ))}
+            <div
+              className="t:col-span-3 keen-slider"
+              ref={trendingCampaignsSliderRef}
+            >
+              {trendingCampaigns &&
+                trendingCampaigns.map((tc) => (
+                  <TrendingCampaign
+                    key={tc.id}
+                    campaign={tc}
+                    variant="dark"
+                    className="keen-slider__slide"
+                  />
+                ))}
             </div>
             {trendingCampaignsSlider && (
               <div className="t:hidden dots">
-                {[...Array.from(Array(trendingCampaignsSlider.details().size).keys())].map((idx) => {
+                {[
+                  ...Array.from(
+                    Array(trendingCampaignsSlider.details().size).keys()
+                  ),
+                ].map((idx) => {
                   return (
                     <button
                       key={idx}
                       onClick={() => {
-                        trendingCampaignsSlider.moveToSlideRelative(idx)
+                        trendingCampaignsSlider.moveToSlideRelative(idx);
                       }}
-                      className={"dot" + (trendingCampaignsSliderCurrentSlide === idx ? " active" : "")}
+                      className={
+                        "dot" +
+                        (trendingCampaignsSliderCurrentSlide === idx
+                          ? " active"
+                          : "")
+                      }
                     />
-                  )
+                  );
                 })}
               </div>
             )}
@@ -423,23 +450,40 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 t:grid-cols-3 d:grid-cols-4 mt-23px t:mt-30px d:mt-50px gap-32px">
-            <div className="t:col-span-3 keen-slider" ref={featuredNonprofitsSliderRef}>
-              {featuredNonprofits && featuredNonprofits.map((fnp) => (
-                <FeaturedNonprofit key={fnp.id} nonprofit={fnp} className="keen-slider__slide" />
-              ))}
+            <div
+              className="t:col-span-3 keen-slider"
+              ref={featuredNonprofitsSliderRef}
+            >
+              {featuredNonprofits &&
+                featuredNonprofits.map((fnp) => (
+                  <FeaturedNonprofit
+                    key={fnp.id}
+                    nonprofit={fnp}
+                    className="keen-slider__slide"
+                  />
+                ))}
             </div>
             {featuredNonprofitsSlider && (
               <div className="t:hidden dots">
-                {[...Array.from(Array(featuredNonprofitsSlider.details().size).keys())].map((idx) => {
+                {[
+                  ...Array.from(
+                    Array(featuredNonprofitsSlider.details().size).keys()
+                  ),
+                ].map((idx) => {
                   return (
                     <button
                       key={idx}
                       onClick={() => {
-                        featuredNonprofitsSlider.moveToSlideRelative(idx)
+                        featuredNonprofitsSlider.moveToSlideRelative(idx);
                       }}
-                      className={"dot" + (featuredNonprofitsSliderCurrentSlide === idx ? " active" : "")}
+                      className={
+                        "dot" +
+                        (featuredNonprofitsSliderCurrentSlide === idx
+                          ? " active"
+                          : "")
+                      }
                     />
-                  )
+                  );
                 })}
               </div>
             )}
@@ -614,12 +658,18 @@ export default function Home() {
 }
 
 export async function getStaticProps() {
-  const queryClient = new QueryClient() // new query client not to share data between users and server
-  await queryClient.prefetchQuery<Campaign[]>("TRENDING_CAMPAIGNS", getTrendingCampaigns);
-  await queryClient.prefetchQuery<Nonprofit[]>("FEATURED_NONPROFITS", getFeaturedNonprofits);
+  const queryClient = new QueryClient(); // new query client not to share data between users and server
+  await queryClient.prefetchQuery<Campaign[]>(
+    "TRENDING_CAMPAIGNS",
+    getTrendingCampaigns
+  );
+  await queryClient.prefetchQuery<Nonprofit[]>(
+    "FEATURED_NONPROFITS",
+    getFeaturedNonprofits
+  );
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
     },
-  }
+  };
 }

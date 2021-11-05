@@ -287,7 +287,7 @@ export default function Individuals() {
             </div>
 
             <div id="questions" className="w-full bg-blue-questions">
-                <div className="w-280px t:w-768px d:w-1380px mx-auto items-center">
+                <div className="w-280px t:w-768px d:w-1140px mx-auto items-center">
                     <Questions />
                 </div>
             </div>

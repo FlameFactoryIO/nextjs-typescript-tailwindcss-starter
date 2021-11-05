@@ -23,7 +23,7 @@ export default function CorporationsHome() {
             flex flex-col t:grid t:grid-cols-2 t:gap-30px items-center"
         >
           <div className="min-w-280px mx-auto t:mr-0 order-2 t:order-first">
-            <Image src="/images/corporations/hero.png" width={582} height={504} />
+            <Image alt="" src="/images/corporations/hero.png" width={582} height={504} />
           </div>
 
           <div className="max-w-380px text-center t:text-left text-white d:w-576px flex flex-col gap-17px d:gap-20px t:items-center t:max-w-343px d:max-w-520px d:pl-45px pb-35px">

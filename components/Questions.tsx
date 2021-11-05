@@ -10,7 +10,7 @@ const Questions: FC = () => {
                             d:px-0                            
                             mx-auto t:gap-52px
                             justify-between">
-              <div className="flex-1 text-center pb-20px 
+              <div className="flex-1 text-center pb-20px d:pb-0
                                 t:text-left t:max-w-491px d:max-w-725px
                                 ">
                     <div className="font-bold text-20px leading-24px 
@@ -22,7 +22,7 @@ const Questions: FC = () => {
                         Do you have questions about Move the Chain? Reach out and we’ll be happy to answer your questions!
                     </div>
                 </div>
-                <div className="t:pt-44px d:pt-62px t:mr-0">
+                <div className="t:pt-44px d:pt-41px t:mr-0">
                     <Button className="w-140px d:w-160px h-46px rounded-10pxi  
                                        font-bold text-14px leading-24px ">
                                            Contact Us</Button>
