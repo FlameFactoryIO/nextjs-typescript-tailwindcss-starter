@@ -281,7 +281,7 @@ export default function Individuals() {
           </div>
 
           <div id="faq" className="w-full bg-gradient-to-b from-cream to-white">
-              <div className="w-280px t:w-768px d:w-1380px mx-auto items-center">
+              <div className="w-280px t:w-768px d:w-1140px mx-auto items-center">
                   <Faq />
               </div>
           </div>
@@ -293,7 +293,7 @@ export default function Individuals() {
           </div>
 
           <div id="footer" className="w-full bg-footer">
-              <div className="w-280px t:w-708px d:w-1380px mx-auto">
+              <div className="w-280px t:w-708px d:w-1140px mx-auto">
                   <Footer />
               </div>
           </div>
