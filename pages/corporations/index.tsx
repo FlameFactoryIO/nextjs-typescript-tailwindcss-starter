@@ -96,9 +96,9 @@ export default function CorporationsHome() {
 
           <div
             id="brands"
-            className="min-w-280px t:max-w-708px d:max-w-907px 
+            className="min-w-280px t:max-w-708px d:max-w-907px
                       flex-1 flex flex-col t:flex-row  t:gap-39px d:gap-100px
-                      items-center text-center 
+                      items-center text-center
                       text-13px leading-16-9px
                       d:text-16px d:leading-24px
                       -mb-11px t:-mb-74px d:-mb-22px
@@ -154,7 +154,7 @@ export default function CorporationsHome() {
             </div>
           </div>
           <div
-            className="min-w-280px t:max-w-708px d:max-w-907px 
+            className="min-w-280px t:max-w-708px d:max-w-907px
           transform translate-y-35px t:translate-y-111px d:translate-y-95px"
           >
             <div aria-hidden className="flex-1">
@@ -331,9 +331,9 @@ export default function CorporationsHome() {
           </div>
 
           <div
-            className="font-bold text-24px leading-28-8px pb-20px 
+            className="font-bold text-24px leading-28-8px pb-20px
                           t:pb-21px t:px-10px
-                          d:text-43px d:leading-51-6px d:pb-29px 
+                          d:text-43px d:leading-51-6px d:pb-29px
                           "
           >
             Why Move the Chain is right for your brand?
@@ -409,31 +409,31 @@ export default function CorporationsHome() {
         <div
           id="provide-contact"
           className="flex flex-col d:grid d:grid-cols-2
-                    items-center 
+                    items-center
                     pt-44px px-20px pb-51px
                     t:pt-47px t:px-29px t:gap-14px
                     d:px-0 d:gap-40px
                     min-w-280px t:max-w-708px d:max-w-1140px mx-auto"
         >
           <div
-            className="t:px-0 text-white text-center t:text-left d:text-left 
+            className="t:px-0 text-white text-center t:text-left d:text-left
                         flex flex-col t:grid t:grid-cols-2 d:grid-cols-1 d:grid-rows-2
                         pb-56px t:pb-1px d:pb-33px d:items-center
                           "
           >
             <div>
               <div
-                className="min-w-280px 
+                className="min-w-280px
                           text-24px font-bold leading-28-8px pb-29px
                            t:max-w-353px t:pt-0
-                          d:pt-0 d:pb-35px 
+                          d:pt-0 d:pb-35px
                           d:max-w-550px d:text-43px d:leading-51-6px "
               >
                 Ready to join us and help promote your corporate responsibility?
               </div>
               <div
                 className="min-w-280px font-light text-13px leading-19-5px d:text-18px d:leading-27px
-                          pb-26px t:pb-28px d:pb-0 
+                          pb-26px t:pb-28px d:pb-0
                           t:max-w-334px  d:max-w-569px    mx-auto
                           "
               >
@@ -508,7 +508,7 @@ export default function CorporationsHome() {
               <div className="pb-30px t:pb-40px">
                 <Input
                   className="min-w-250px h-180px rounded-10pxi
-                  bg-white border-1px border-solid border-input 
+                  bg-white border-1px border-solid border-input
                          t:max-w-647px
                          d:max-w-515px d:h-227px
                          "

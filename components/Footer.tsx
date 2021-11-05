@@ -23,13 +23,13 @@ const Footer: FC = () => {
       pt-30px px-20px pb-16px
       t:pt-50px t:pb-14px t:px-0"
     >
-      <div id="title">
-        <img alt="" className="mx-auto" src="/images/mtc.svg" alt="logo" />
+      <div>
+        <img alt="" className="mx-auto" src="/images/mtc.svg"/>
         <div className="mx-auto text-center text-26px t:leading-16px font-bold  mt-13px t:mt-21px d:mt-16px">
           Move the Chain
         </div>
       </div>
-      <div id="body" className="flex flex-col t:grid t:grid-cols-2 t:gap-39px d:gap-229px t:w-full">
+      <div className="flex flex-col t:grid t:grid-cols-2 t:gap-39px d:gap-229px t:w-full">
         <div className="mt-36px d:mt-48px text-center t:text-left">
           <form onSubmit={handleSubscribeSubmit}>
             <h1 className="text-15px leading-22-5px t:text-18px t:leading-27px font-bold">
@@ -59,7 +59,8 @@ const Footer: FC = () => {
         </div>
         <div className="grid grid-cols-2  w-full t:ml-0">
           <div className="mx-0  mt-48px t:mt-48px">
-            <div className="text-15px leading-22-5px t:text-18px t:leading-27px d:text-18px font-bold d:font-extrabold  flex items-center whitespace-nowrap">
+            <div
+              className="text-15px leading-22-5px t:text-18px t:leading-27px d:text-18px font-bold d:font-extrabold  flex items-center whitespace-nowrap">
               Useful links
             </div>
             <ul className="text-13px t:text-14px  leading-25px pb-5px font-light t:font-light d:font-normal ">
@@ -102,19 +103,16 @@ const Footer: FC = () => {
               </li>
             </ul>
             <div className="flex flex-rows gap-10px t:pt-44px">
-              <FaFacebook className="w-32px h-32px" />
-              <FaLinkedin className="w-32px h-32px " />
-              <FaInstagram className="w-32px h-32px" />
+              <FaFacebook className="w-32px h-32px"/>
+              <FaLinkedin className="w-32px h-32px "/>
+              <FaInstagram className="w-32px h-32px"/>
             </div>
           </div>
         </div>
       </div>
-      <div id="footer" className="t:w-full">
+      <div className="t:w-full">
         <div className=" flex flex-col t:flex-row   justify-between text-center  border-t d:mt-40px mt-24px pt-18px">
-          <div
-            className="text-12px leading-19-5px t:text-14px t:leading-21px  font-bold 
-          "
-          >
+          <div className="text-12px leading-19-5px t:text-14px t:leading-21px font-bold">
             All rights reserved © Move the Chain
           </div>
           <div className="text-13px leading-16 t:text-14px t:leading-16px flex gap-5px justify-center mt-12px t:mt-0">
