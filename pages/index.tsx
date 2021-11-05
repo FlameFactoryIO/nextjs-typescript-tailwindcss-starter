@@ -125,6 +125,7 @@ export default function Home() {
               width={549}
               height={480}
               className="mx-auto"
+              alt="3 images of people helping each other and involvement in the community"
             />
           </div>
           <div
@@ -169,7 +170,10 @@ export default function Home() {
                   </p>
                   <Link href="/individuals">
                     <a
-                      className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px">
+                      className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px underline"
+                      aria-label="Support a cause"
+                      title="Support a cause"
+                    >
                       Support a cause <img alt="" src="/images/home/➡.svg"/>
                     </a>
                   </Link>
@@ -183,7 +187,11 @@ export default function Home() {
                 <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
                 <Link href="/individuals">
                   <a
-                    className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px">
+                    className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px
+                    d:flex d:flex-row d:items-center d:justify-between d:gap-5px underline"
+                    aria-label="Support a cause"
+                    title="Support a cause"
+                  >
                     <span>Support a cause</span>
                     <img alt="" src="/images/home/➡.svg"/>
                   </a>
@@ -197,7 +205,10 @@ export default function Home() {
                     </p>
                     <Link href="/nonprofits">
                       <a
-                        className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px">
+                        className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px underline"
+                        aria-label="Claim your page"
+                        title="Claim your page"
+                      >
                         Claim your page <img alt="" src="/images/home/➡.svg"/>
                       </a>
                     </Link>
@@ -205,7 +216,7 @@ export default function Home() {
 
                   <p
                     className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px hidden d:block d:h-49px d:flex-1">
-                    Tell your story to raise funds.
+                    Tell your story to raise <br className="hidden d:inline-block" /> funds.
                   </p>
                   <p
                     className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px d:hidden">
@@ -213,9 +224,13 @@ export default function Home() {
                   </p>
                   <div className="border-gray-500 border-b-1px d:hidden"/>
                   <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
-                  <Link href="/individuals">
+                  <Link href="/nonprofits">
                     <a
-                      className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px">
+                      className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px
+                      d:flex d:flex-row d:items-center d:justify-between d:gap-5px underline"
+                      aria-label="Claim your page"
+                      title="Claim your page"
+                    >
                       <span>Claim your page</span>
                       <img alt="" src="/images/home/➡.svg"/>
                     </a>
@@ -230,7 +245,10 @@ export default function Home() {
                   </p>
                   <Link href="/corporations">
                     <a
-                      className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px">
+                      className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px"
+                      aria-label="Get started as a corporation"
+                      title="Get started as a corporation"
+                    >
                       <span>Get started</span>
                       <img alt="" src="/images/home/➡.svg"/>
                     </a>
@@ -243,7 +261,11 @@ export default function Home() {
                 <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
                 <Link href="/corporations">
                   <a
-                    className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px   d:flex d:flex-row d:items-center d:justify-between d:gap-5px">
+                    className="hidden  d:text-14px d:leading-21px text-primary font-bold d:mt-15px
+                    d:flex d:flex-row d:items-center d:justify-between d:gap-5px underline"
+                    aria-label="Get started as a corporation"
+                    title="Get started as a corporation"
+                  >
                     <span>Get started</span>
                     <img alt="" src="/images/home/➡.svg"/>
                   </a>
