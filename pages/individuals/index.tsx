@@ -62,27 +62,28 @@ export default function Individuals() {
                 </div>
             </div>
 
+
             <div id="be-the-change"
                 className="bg-white pt-50px px-12px
-                           t:pt-0 t:pl-24px t:pr-30px
-                           d:pt-70px d:pl-32px d:pr-120px
-                           flex flex-col  items-center ">
-                <div className="flex flex-col items-center t:flex-row t:gap-18px d:gap-30px">
-                    <div className="flex-1 items-end max-w-280px t:max-w-368px d:max-w-748px">
+                           t:pl-24px t:pr-30px t:pb-0 t:max-h-355px
+                           d:pt-70px d:pl-32px d:pr-120px d:max-h-682px
+                           flex flex-col  items-center">
+                <div className="flex flex-col t:flex-row t:gap-18px d:gap-30px">
+                    <div className="flex-1 items-center max-w-280px t:max-w-368px d:max-w-748px">
                         <div className="flex flex-col items-center">
                             <div className="max-w-176px font-bold text-center text-24px leading-28-8px pb-21px
                                 t:pb-32px
                                 d:text-43px d:leading-51-6px d:max-w-315px d:pb-46px">
                                 Be the change
                             </div>
-                            <div className="hidden d:block" style={{ marginBottom: -80 }}>
+                            <div className="hidden d:block items-center text-center" style={{ marginBottom: -80 }}>
                                 <Image
                                     src="/images/individuals/link-chain-d.png"
                                     width={748}
                                     height={578}
                                 />
                             </div>
-                            <div className="hidden t:block d:hidden">
+                            <div className="hidden t:block d:hidden" style={{ marginBottom: -10 }}>
                                 <Image
                                     src="/images/individuals/link-chain-d.png"
                                     width={368}
@@ -100,11 +101,11 @@ export default function Individuals() {
                         </div>
 
                     </div>
-                    <div className="d:mb-471px t:mb-226px hidden t:block">
+                    <div className="d:mb-471px t:mb-326px hidden t:block">
                         <div className="flex flex-col items-center d:w-450px min-w-280px">
                             <div className=" d:max-w-356px t:max-w-252 max-w-274px
                                                 d:max-h-130px 
-                                                pt-63px pb-10px t:pt-80px d:pt-0">
+                                                pt-63px pb-10px d:pt-0 t:pt-0">
                                 <Image
                                     src="/images/individuals/people-are-raising.png"
                                     width={356}
@@ -138,7 +139,6 @@ export default function Individuals() {
 
                 </div>
             </div>
-
 
 
             <div className="t:bg-gradient-to-b t:from-cream t:to-white">
