@@ -14,6 +14,7 @@ import Nonprofit from "../dtos/Nonprofit";
 import { getFeaturedNonprofits } from "../mtc-api/nonprofit/useGetClaimedNonprofits";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
+import { HomeHeroArrow } from "../components/svg/HomeHeroArrow";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Home() {
@@ -174,7 +175,7 @@ export default function Home() {
                       aria-label="Support a cause"
                       title="Support a cause"
                     >
-                      Support a cause <img alt="" src="/images/home/➡.svg"/>
+                      Support a cause{' '}<HomeHeroArrow />
                     </a>
                   </Link>
                 </div>
@@ -192,8 +193,8 @@ export default function Home() {
                     aria-label="Support a cause"
                     title="Support a cause"
                   >
-                    <span>Support a cause</span>
-                    <img alt="" src="/images/home/➡.svg"/>
+                    Support a cause{' '}
+                    <HomeHeroArrow />
                   </a>
                 </Link>
               </div>
@@ -209,7 +210,7 @@ export default function Home() {
                         aria-label="Claim your page"
                         title="Claim your page"
                       >
-                        Claim your page <img alt="" src="/images/home/➡.svg"/>
+                        Claim your page{""}<HomeHeroArrow />
                       </a>
                     </Link>
                   </div>
@@ -230,8 +231,7 @@ export default function Home() {
                       aria-label="Claim your page"
                       title="Claim your page"
                     >
-                      <span>Claim your page</span>
-                      <img alt="" src="/images/home/➡.svg"/>
+                      Claim your page{""}<HomeHeroArrow />
                     </a>
                   </Link>
                 </div>
@@ -248,8 +248,7 @@ export default function Home() {
                       aria-label="Get started as a corporation"
                       title="Get started as a corporation"
                     >
-                      <span>Sponsor an event</span>
-                      <img alt="" src="/images/home/➡.svg"/>
+                      Sponsor an event{""}<HomeHeroArrow />
                     </a>
                   </Link>
                 </div>
@@ -265,8 +264,7 @@ export default function Home() {
                     aria-label="Get started as a corporation"
                     title="Get started as a corporation"
                   >
-                    <span>Sponsor an event</span>
-                    <img alt="" src="/images/home/➡.svg"/>
+                    Sponsor an event{""}<HomeHeroArrow />
                   </a>
                 </Link>
               </div>
@@ -307,6 +305,7 @@ export default function Home() {
             width={540}
             height={434}
             className="mx-auto"
+            alt="images illustrating how a circle of friends and family together can make a positive impact"
           />
         </div>
 
@@ -328,7 +327,11 @@ export default function Home() {
               <span className="text-primary-500 font-bold">”</span>
             </p>
             <Link href="/about-us" passHref={false}>
-              <a className="mx-auto mt-30px">
+              <a
+                className="mx-auto mt-30px"
+                aria-label="Get to know us"
+                title="Get to know us"
+              >
                 <Button
                   type="button"
                   variant="primary"
@@ -545,8 +548,6 @@ export default function Home() {
                 border: "1px solid #E3E5E6",
               }}
             >
-              {" "}
-              {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
               <div className="d:text-20px d:leading-30px font-bold">
                 Are you a nonprofit?
               </div>
@@ -625,6 +626,7 @@ export default function Home() {
                 width={549}
                 height={660}
                 layout="responsive"
+                alt="Images of people preserving and improving their communities"
               />
             </div>
           </div>
@@ -668,7 +670,7 @@ export default function Home() {
                   support.
                 </p>
                 <Link href="/nonprofits">
-                  <a className="mt-15pxmx-auto d:mx-0">
+                  <a className="mt-15px mx-auto d:mx-0">
                     <Button
                       type="button"
                       variant="primary"
