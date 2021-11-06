@@ -142,7 +142,7 @@ export default function Home() {
             </p>
             <div
               className="font-hand leading-38px d:text-32px text-primary pb-29px t:pb-9px d:pb-22px flex justify-start gap-20px">
-              <span className=" text-50px">How you can help move the chain</span>
+              <span className="text-35px d:text-45px">How you can help move the chain</span>
               <svg
                 className="ml-10px mt-15px"
                 width="42"
@@ -332,7 +332,7 @@ export default function Home() {
                 <Button
                   type="button"
                   variant="primary"
-                  className="rounded-10pxi"
+                  className="rounded-10pxi text-14px leading-21px w-182px h-46px"
                 >
                   Get to know us
                 </Button>
@@ -428,10 +428,12 @@ export default function Home() {
                 You can support campaigns by different nonprofits by donating,
                 sharing, or participating in challenges.
               </div>
-              <Link href="/campaigns/search">
-                <Button variant="primary" className="d:mt-22px rounded-10pxi">
-                  View all campaigns 👉
-                </Button>
+              <Link href="/campaigns/search" passHref>
+                <a>
+                  <Button variant="primary" className="d:mt-22px rounded-10pxi text-14px leading-21px h-46px w-213px">
+                    View all campaigns 👉
+                  </Button>
+                </a>
               </Link>
             </div>
           </div>
@@ -451,7 +453,7 @@ export default function Home() {
             </div>
             <Button
               variant="primary"
-              className="mt-22px t:m-0 rounded-10pxi whitespace-nowrap"
+              className="mt-22px t:m-0 rounded-10pxi whitespace-nowrap h-46px w-213px"
             >
               View all campaigns 👉
             </Button>
@@ -487,9 +489,9 @@ export default function Home() {
           </p>
 
           <Link href="/nonprofits/search" passHref={false}>
-            <a className="d:hidden mx-auto 
+            <a className="d:hidden mx-auto
                           mt-34px t:mt-25px">
-              <Button className="rounded-6pxi">
+              <Button className="rounded-10pxi text-14px leading-21px h-46px w-263px">
                 Discover more nonprofits
               </Button>
             </a>
@@ -554,7 +556,7 @@ export default function Home() {
               </div>
               <Link href="/nonprofits" passHref={false}>
                 <a className="d:mt-22px">
-                  <Button variant="primary" className="rounded-10pxi">
+                  <Button variant="primary" className="rounded-10pxi text-14px leading-21px h-46px w-213px">
                     Claim your page 👉
                   </Button>
                 </a>
@@ -566,8 +568,6 @@ export default function Home() {
             className="d:hidden mt-23px t:mt-28px flex flex-col t:flex-row items-center justify-between rounded-26px p-15px t:p-20px"
             style={{ backgroundColor: "#F7F9FC", border: "1px solid #E3E5E6" }}
           >
-            {" "}
-            {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
             <div className="t:text-left">
               <div className="text-16px leading-20-8px t:text-15px t:leading-22-5px font-bold">
                 Are you a nonprofit?
@@ -579,7 +579,7 @@ export default function Home() {
             </div>
             <Link href="/nonprofits" passHref={false}>
               <a className="mt-22px t:m-0">
-                <Button variant="primary" className="rounded-10pxi whitespace-nowrap">
+                <Button variant="primary" className="rounded-10pxi whitespace-nowrap text-14px leading-21px h-46px w-213px">
                   Claim your page 👉
                 </Button>
               </a>
@@ -588,7 +588,7 @@ export default function Home() {
 
           <Link href="/nonprofits/search" passHref={false}>
             <a className="hidden d:block mx-auto mt-57px">
-              <Button className="rounded-6pxi">
+              <Button className="rounded-10pxi text-14px leading-21px h-46px w-263px">
                 Discover more nonprofits
               </Button>
             </a>
@@ -648,7 +648,7 @@ export default function Home() {
                       type="button"
                       variant="primary"
                       className="mt-15px rounded-10pxi t:px-1px d:px-20px mx-auto d:mx-0
-                      text-13px leading-19-5px
+                      text-14px leading-21px
                       w-160px t:w-130px d:w-200px"
                     >
                       Support a cause
@@ -672,7 +672,7 @@ export default function Home() {
                     <Button
                       type="button"
                       variant="primary"
-                      className="rounded-10pxi text-13px leading-19-5px 
+                      className="rounded-10pxi text-14px leading-21px
                       t:px-1px d:px-20px
                       w-160px t:w-130px d:w-200px">
                       Claim your page
@@ -692,9 +692,9 @@ export default function Home() {
                   are needed the most.
                 </p>
                 <Link href="/corporations" passHref={false}>
-                  <a className="mt-15px mx-auto d:mx-0 ">                   
-                    <Button type="button" variant="primary" 
-                      className="rounded-10pxi t:px-1px d:px-20px text-13px leading-19-5px w-160px t:w-130px d:w-200px">
+                  <a className="mt-15px mx-auto d:mx-0 ">
+                    <Button type="button" variant="primary"
+                      className="rounded-10pxi t:px-1px d:px-20px text-14px leading-21px w-160px t:w-130px d:w-200px">
                         Find out more
                     </Button>
                   </a>
