@@ -51,6 +51,7 @@ module.exports = {
         "25px": "25px",
         "26px": "26px",
         "40px": "40px",
+                "50px": "50px",
       },
       borderWidth: {
         "1px": "1px",
@@ -104,6 +105,7 @@ module.exports = {
         "0-2-5": "0px 2px 5px rgba(0, 0, 0, 0.25)",
         "4-10-24-8": "4px 10px 24px 8px rgba(0, 0, 0, 0.35)",
         "0-3-16": "0px 3px 16px rgba(0, 0, 0, 0.06)",
+        "0-5-15": "0px 5px 15px rgba(0, 0, 0, 0.10)",
         "0-6-24_18":"0px 6px 24px rgba(0, 0, 0, 0.18)"
       },
       spacing: {},
@@ -175,6 +177,7 @@ module.exports = {
         "secondary-gray-3": "#A1AAAF",
         "search-border": "#E84300",
         input: "#D3D9E1",
+                gray: "#8E8E8E",
       },
     },
   },
