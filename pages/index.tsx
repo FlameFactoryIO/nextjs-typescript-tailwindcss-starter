@@ -213,7 +213,6 @@ export default function Home() {
                       </a>
                     </Link>
                   </div>
-
                   <p
                     className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px hidden d:block d:h-49px d:flex-1">
                     Tell your story to raise <br className="hidden d:inline-block" /> funds.
@@ -249,7 +248,7 @@ export default function Home() {
                       aria-label="Get started as a corporation"
                       title="Get started as a corporation"
                     >
-                      <span>Get started</span>
+                      <span>Sponsor an event</span>
                       <img alt="" src="/images/home/➡.svg"/>
                     </a>
                   </Link>
@@ -266,7 +265,7 @@ export default function Home() {
                     aria-label="Get started as a corporation"
                     title="Get started as a corporation"
                   >
-                    <span>Get started</span>
+                    <span>Sponsor an event</span>
                     <img alt="" src="/images/home/➡.svg"/>
                   </a>
                 </Link>
@@ -329,13 +328,15 @@ export default function Home() {
               <span className="text-primary-500 font-bold">”</span>
             </p>
             <Link href="/about-us" passHref={false}>
-              <Button
-                type="button"
-                variant="primary"
-                className="mx-auto mt-30px rounded-10pxi"
-              >
-                Get to know us
-              </Button>
+              <a className="mx-auto mt-30px">
+                <Button
+                  type="button"
+                  variant="primary"
+                  className="rounded-10pxi"
+                >
+                  Get to know us
+                </Button>
+              </a>
             </Link>
           </div>
         </div>
@@ -485,6 +486,15 @@ export default function Home() {
             </span>. All donations to any of the nonprofits are tax deductible.
           </p>
 
+          <Link href="/nonprofits/search" passHref={false}>
+            <a className="d:hidden mx-auto 
+                          mt-34px t:mt-25px">
+              <Button className="rounded-6pxi">
+                Discover more nonprofits
+              </Button>
+            </a>
+          </Link>
+
           <div className="grid grid-cols-1 t:grid-cols-3 d:grid-cols-4 mt-23px t:mt-30px d:mt-50px gap-32px">
             {featuredNonprofits && featuredNonprofits.map((fnp) => (
               <FeaturedNonprofit
@@ -536,15 +546,19 @@ export default function Home() {
               {" "}
               {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
               <div className="d:text-20px d:leading-30px font-bold">
-                Looking for a cause to support?
+                Are you a nonprofit?
               </div>
               <div className="font-light d:text-16px d:leading-20px d:px-20px d:text-center">
                 Tell your story to raise funds. We’re here to help you spread
                 the word.
               </div>
-              <Button variant="primary" className="d:mt-22px rounded-10pxi">
-                Claim your page 👉
-              </Button>
+              <Link href="/nonprofits" passHref={false}>
+                <a className="d:mt-22px">
+                  <Button variant="primary" className="rounded-10pxi">
+                    Claim your page 👉
+                  </Button>
+                </a>
+             </Link>
             </div>
           </div>
 
@@ -556,25 +570,28 @@ export default function Home() {
             {/* todo(eric): haceme una clase con el color de fondo y el color del borde (quizás es gray) */}
             <div className="t:text-left">
               <div className="text-16px leading-20-8px t:text-15px t:leading-22-5px font-bold">
-                Looking for a cause to support?
+                Are you a nonprofit?
               </div>
               <div className="mt-10px text-13px leading-16-9px font-light">
                 Tell your story to raise funds. We’re here to help you spread
                 the word.
               </div>
             </div>
-            <Button
-              variant="primary"
-              className="mt-22px t:m-0 rounded-10pxi whitespace-nowrap"
-            >
-              Claim your page 👉
-            </Button>
+            <Link href="/nonprofits" passHref={false}>
+              <a className="mt-22px t:m-0">
+                <Button variant="primary" className="rounded-10pxi whitespace-nowrap">
+                  Claim your page 👉
+                </Button>
+              </a>
+            </Link>
           </div>
 
           <Link href="/nonprofits/search" passHref={false}>
-            <Button className="hidden d:block mx-auto mt-57px rounded-6pxi">
-              Discover more nonprofits
-            </Button>
+            <a className="hidden d:block mx-auto mt-57px">
+              <Button className="rounded-6pxi">
+                Discover more nonprofits
+              </Button>
+            </a>
           </Link>
         </div>
       </div>
@@ -651,14 +668,13 @@ export default function Home() {
                   support.
                 </p>
                 <Link href="/nonprofits">
-                  <a>
+                  <a className="mt-15pxmx-auto d:mx-0">
                     <Button
                       type="button"
                       variant="primary"
-                      className="mt-15px rounded-10pxi t:px-1px d:px-20px mx-auto d:mx-0
-                      text-13px leading-19-5px
-                      w-160px t:w-130px d:w-200px"
-                    >
+                      className="rounded-10pxi text-13px leading-19-5px 
+                      t:px-1px d:px-20px
+                      w-160px t:w-130px d:w-200px">
                       Claim your page
                     </Button>
                   </a>
@@ -676,15 +692,12 @@ export default function Home() {
                   are needed the most.
                 </p>
                 <Link href="/corporations" passHref={false}>
-                  <Button
-                    type="button"
-                    variant="primary"
-                    className="mt-15px rounded-10pxi t:px-1px d:px-20px mx-auto d:mx-0
-                    text-13px leading-19-5px
-                    w-160px t:w-130px d:w-200px"
-                  >
-                    Find out more
-                  </Button>
+                  <a className="mt-15px mx-auto d:mx-0 ">                   
+                    <Button type="button" variant="primary" 
+                      className="rounded-10pxi t:px-1px d:px-20px text-13px leading-19-5px w-160px t:w-130px d:w-200px">
+                        Find out more
+                    </Button>
+                  </a>
                 </Link>
               </div>
             </div>

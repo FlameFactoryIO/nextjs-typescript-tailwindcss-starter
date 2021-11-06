@@ -160,19 +160,17 @@ export default function AboutUs() {
                           t:min-w-333px d:max-w-none"
             >
               <div>
-                Like in the game of football, the team does not need a touchdown
-                every play. At Move the Chain we seek to help our nonprofits
-                reach their goals play by play, 10 yards at a time working
-                together with viral donations and visibility to build their
-                team.
+                Like in the game of American football, when a team gets a first down, Move the Chain is about 
+                forward progress towards helping humanity. At Move the Chain, we seek to help nonprofits reach 
+                their goals, play by play, 10 yards at a time, working together to get the donations and 
+                visibility they need to build their teams.
               </div>
-              <div>
+              <div>                              
                 The goal at{" "}
                 <span className="text-primary font-bold">Move the Chain</span>{" "}
-                is to , is to spike viral donations, increasing much needed
-                visibility and awareness for nonprofits, and to the individuals
-                and corporations that work so hard to make a difference and get
-                closer to scoring a touchdown!
+                , is to spike viral donations, increasing much needed visibility and awareness for nonprofits, 
+                and to the individuals and corporations that work so hard to make a difference and get closer 
+                to scoring a touchdown!
               </div>
             </div>
           </div>
