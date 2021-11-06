@@ -53,7 +53,7 @@ export default function CorporationsHome() {
             </div>
             <Button
               variant="primary"
-              className="rounded-10pxi shadow-2-5-15 w-124px"
+              className="rounded-10pxi shadow-2-5-15 w-124px h-42px d:h-46px text-14px leading-24px  d:text-18px d:leading-24px"
             >
               Join us
             </Button>
