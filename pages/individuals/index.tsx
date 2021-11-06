@@ -1,10 +1,11 @@
 import Head from "next/head";
-import Footer from "../../components/Footer";
-import TopNav from "../../components/TopNav";
 import Image from "next/image";
-import Button from "../../components/Button";
+import TopNav from "../../components/TopNav";
+import Footer from "../../components/Footer";
 import Questions from "../../components/Questions";
 import Faq from "../../components/Faq";
+import Button from "../../components/Button";
+import DonationList from "../../components/DonationList";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Individuals() {
@@ -116,34 +117,55 @@ export default function Individuals() {
           <div className="d:mb-471px t:mb-326px hidden t:block">
             <div className="flex flex-col items-center d:w-450px min-w-280px">
               <div
-                className=" d:max-w-356px t:max-w-252 max-w-274px
-                                                d:max-h-130px
-                                                pt-63px pb-10px d:pt-0 t:pt-0"
+                className="
+                  flex
+                  max-w-274px t:max-w-252 d:max-w-356px d:max-h-130px
+                  t:h-100px t:-mt-20px
+                  d:h-auto d:mt-0
+                  pt-63px pb-10px d:pt-0 t:pt-0
+                "
               >
                 <Image
                   src="/images/individuals/people-are-raising.png"
                   width={356}
                   height={130}
+                  objectFit="contain"
                 />
               </div>
 
-              {/* componente de donations */}
+              <div className="flex flex-col
+                t:mt-9px d:mt-20px
+                t:w-320px d:w-450px
+                t:h-323px d:h-1539px
+                bg-footer rounded-20px
+                px-10px pt-25px pb-15px">
+                <DonationList className="flex-1" />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-cream t:hidden block ">
+      <div className="bg-gradient-to-b from-cream to-white t:hidden block ">
         <div className="flex flex-col items-center">
           <div className="pt-63px pb-10px px-10px">
             <Image
               src="/images/individuals/people-are-raising.png"
               width={274}
               height={80}
+              objectFit="contain"
             />
           </div>
 
-          {/* componente de donations mobile*/}
+          <div
+            className="flex flex-col
+                bg-footer rounded-20px
+                px-10px pt-25px pb-15px
+                w-320px h-402px
+            "
+          >
+            <DonationList className="flex-1" />
+          </div>
         </div>
       </div>
 

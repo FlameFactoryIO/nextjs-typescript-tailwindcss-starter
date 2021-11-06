@@ -24,13 +24,13 @@ const DonationList: FC<{
   }, [selected, recentDonations, topDonations]);
 
   return (
-    <div className={`flex flex-col ${className} h-400px`}>
-      <div className="font-bold uppercase grid grid-cols-2 text-center flex items-center justify-center select-none">
+    <div className={`flex flex-col overflow-hidden ${className}`}>
+      <div className="font-bold uppercase grid grid-cols-2 text-center flex items-center justify-center select-none text-12px leading-14px font-light">
         <div className="flex items-center justify-center">
-          <div className={`border-b-2 ${selected === "recent" ? "border-primary" : "border-transparent"} cursor-pointer`} onClick={() => {setSelected("recent")}}>Recent Donations</div>
+          <div className={`border-b-2 ${selected === "recent" ? "border-primary font-bold" : "border-transparent"} cursor-pointer`} onClick={() => {setSelected("recent")}}>Recent Donations</div>
         </div>
         <div className="flex items-center justify-center">
-          <div className={`border-b-2 ${selected === "top" ? "border-primary" : "border-transparent"} cursor-pointer`} onClick={() => {setSelected("top")}}>Top Donations</div>
+          <div className={`border-b-2 ${selected === "top" ? "border-primary font-bold" : "border-transparent"} cursor-pointer`} onClick={() => {setSelected("top")}}>Top Donations</div>
         </div>
       </div>
 

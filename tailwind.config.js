@@ -99,7 +99,9 @@ module.exports = {
       },
       spacing: {},
       width: {},
-      height: {},
+      height: {
+        "1539px": "1539px",
+      },
       minWidth: {},
       maxWidth: {},
       minHeight: {},
