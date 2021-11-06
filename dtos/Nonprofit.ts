@@ -36,8 +36,8 @@ export default interface Nonprofit {
   challenges: Challenge[];
   hasCampaigns: number;
   campaigns: Campaign[];
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
 
   /// Virtual Properties ///
   currentCampaign?: Campaign;
