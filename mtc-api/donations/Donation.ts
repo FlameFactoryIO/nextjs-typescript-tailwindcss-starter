@@ -1,12 +1,6 @@
-import { useInfiniteQuery } from "react-query";
 import client from "../apiClient";
-
-export interface PaginatedResult<T> {
-  data?: T[],
-  pageInfo?: {
-    total: number,
-  }
-}
+import { useInfiniteQuery } from "react-query";
+import { PaginatedResult } from "../../dtos/PaginatedResult";
 
 export interface Donation {
   id: string,
