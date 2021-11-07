@@ -6,6 +6,9 @@ import { getCampaign } from '../../mtc-api/campaign/useGetCampaign';
 import Footer from '../../components/Footer';
 import TopNav from "../../components/TopNav";
 import VideoPlayer from "../../components/VideoPlayer";
+import DonationList from "../../components/DonationList";
+import Button from "../../components/Button";
+import DonateButton from "../../components/DonationButton";
 
 const CampaignProfile = ({ id, campaign }) => {
 
@@ -35,6 +38,23 @@ const CampaignProfile = ({ id, campaign }) => {
       </Head>
       <div>
         <TopNav />
+        <div>
+          <div className="flex flex-col">
+            <div>Support</div>
+            <div>{campaign.nonprofit.name}</div>
+            <DonateButton
+              origin="campaigns"
+              nonprofitId={campaign.nonprofitId}
+              nonprofitName={campaign.nonprofit.name}
+              campaignId={id}
+              entityId={id}
+              entityType="campaign"
+              variant="black"
+            />
+            <Button variant="white">Share</Button>
+            <div>Donations</div>
+          </div>
+        </div>
         <VideoPlayer videoUrl={campaign.videoUrl} videoImage={campaign.imageUrl} />
         <div>
           Raising For

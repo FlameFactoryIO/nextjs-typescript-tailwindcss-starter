@@ -10,6 +10,7 @@ import useHandleClickOutside from '../components/useHandleClickOutside';
 import { logEvent } from '../utils/analytics';
 import TopNav from '../components/TopNav';
 import { FaUndo } from "react-icons/fa";
+import { CheckmarkCircleOutline } from "../components/svg/CheckmarkCircleOutline";
 
 const getOptionText = (option, currentAmount) => {
   let label = `${option}%`;
@@ -83,12 +84,12 @@ const PaymentScreen = () => {
       },
     }, undefined, {
       shallow: true,
-    }).then(r => {
-      console.debug("@@@ 4", router, r)
+    }).then(() => {
+      console.debug("@@@ 4", router)
     });
   };
 
-  const callCaptureEndpoint = useCallback((orderId) => {
+  const callCaptureEndpoint = (orderId) => {
     return fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/payment`, {
       method: 'POST',
       headers: {
@@ -106,14 +107,14 @@ const PaymentScreen = () => {
         tip: tipCents || null,
       }),
     }).then((res) => res.json());
-  }, [anonymousData.comment, anonymousData.displayName, params.campaignId, params.challengeId, params.originalPostId, params.postId, tipCents, userId]);
+  };
 
-  const redirect = useCallback(() => {
+  const redirect = () => {
     if (params.redirectUrl) {
       // @ts-ignore
       router.push(params.redirectUrl).catch();
     }
-  }, [params.redirectUrl, router]);
+  };
 
   const handleCreateOrder = (data, actions) => {
     if (currentAmount < 1) {
@@ -222,6 +223,7 @@ const PaymentScreen = () => {
       return <Loader />;
     }
   }
+
   const total = `$${(currentAmount * ((100 + tipCents) / 100)).toFixed(2)}`;
 
   return (
@@ -241,7 +243,7 @@ const PaymentScreen = () => {
       <div>
         {showSuccess && !params.redirectThanksPage ? (
           <div onClick={redirect}>
-            <img src={'/checkmark-circle-outline.svg'} width={77} />
+            <CheckmarkCircleOutline />
             <div>Thank you for donating!</div>
           </div>
         ) : null}
