@@ -4,9 +4,34 @@ import Image from "next/image";
 import TopNav from '../components/TopNav';
 import Button from '../components/Button';
 import Input from '../components/Input';
+import { useState } from "react";
 
 // noinspection JSUnusedGlobalSymbols
 export default function CreateAccount() {
+
+    const [eyeVisible, setEyeVisible] = useState(false);
+    const [eyeVisibleRepeat, setEyeVisibleRepeat] = useState(false);
+    const [typeInput, setTypeInput] = useState("password");
+    const [typeInputRepeat, setTypeInputRepeat] = useState("password");
+
+    const isVisible = (): void => {
+        if (eyeVisible) {
+            setTypeInput("text");
+        } else {
+            setTypeInput("password");
+        }
+        setEyeVisible(!eyeVisible);
+    };
+
+    const isVisibleRepeat = (): void => {
+        if (eyeVisible) {
+            setTypeInputRepeat("text");
+        } else {
+            setTypeInputRepeat("password");
+        }
+        setEyeVisibleRepeat(!eyeVisible);
+    };
+
     return (
         <div className="w-full min-w-320px">
             <Head>
@@ -28,7 +53,7 @@ export default function CreateAccount() {
                             height={578}
                         />
                     </div>
-                    <div className="flex-1">
+                    <div className="t:w-413px">
                         <div className="flex flex-col t:max-w-413px">
                             <div className="t:text-13px t:leading-18px items-start t:text-gray">
                                 Free of charge
@@ -53,12 +78,16 @@ export default function CreateAccount() {
                                 <img className="mx-auto absolute"
                                     src="/images/login/icon-password.svg"
                                 />
+                                <img className="absolute t:ml-387px t:mt-1"
+                                    src="/images/login/icon-eye-closed.svg"
+                                    onClick={isVisible}
+                                />
                                 <Input
                                     variant="white"
                                     className="max-w-423px"
                                     placeholder="Create password"
                                     icon={true}
-                                    type="password"
+                                    type={typeInput}
                                 />
                             </div>
                             <div className="flex flex-row t:gap-35px t:pb-31px font-light text-12px leading-25px">
@@ -67,8 +96,8 @@ export default function CreateAccount() {
                                         <li>Min. 8 characters</li>
                                         <li>Uppercase letter</li>
                                     </ul>
-                                    
-                                    
+
+
                                 </div>
                                 <div className="flex-row">
                                     <ul>
@@ -82,12 +111,16 @@ export default function CreateAccount() {
                                 <img className="mx-auto absolute"
                                     src="/images/login/icon-password.svg"
                                 />
+                                <img className="absolute t:ml-387px t:mt-1"
+                                    src="/images/login/icon-eye-closed.svg"
+                                    onClick={isVisibleRepeat}
+                                />
                                 <Input
                                     variant="white"
                                     className="max-w-423px"
                                     placeholder="Repeat password"
                                     icon={true}
-                                    type="password"
+                                    type={typeInputRepeat}
                                 />
                             </div>
                             <div className="flex flex-row items-start t:gap-20px">

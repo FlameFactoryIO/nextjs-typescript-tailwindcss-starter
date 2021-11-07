@@ -4,24 +4,38 @@ import Image from "next/image";
 import TopNav from '../components/TopNav';
 import Button from '../components/Button';
 import Input from '../components/Input';
+import { useState } from "react";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Login() {
+
+    const [eyeVisible, setEyeVisible] = useState(false);
+    const [typeInput, setTypeInput] = useState("password");
+
+    const isVisible = (): void => {
+        if (eyeVisible) {
+            setTypeInput("text");
+        } else {
+            setTypeInput("password");
+        }
+        setEyeVisible(!eyeVisible);
+    };
+
     return (
         <div className="w-full min-w-320px">
             <Head>
                 <title>Move the Chain</title>
             </Head>
 
-            <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
+            <TopNav className="hidden t:block" onSearch={(searchValue) => window.alert(searchValue)} />
 
             <div id="login"
-                className="t:pt-101px                          
+                className="t:pt-101px pt-20px                        
                           flex flex-col t:flex-row items-center justify-center">
 
                 <div className="flex flex-col t:flex-row items-center t:gap-30px t:pr-30px
                                                 t:shadow-0-5-15 t:rounded-50px ">
-                    <div className="t:w-t:w-473px t:max-h-578px">
+                    <div className="t:w-473px t:max-h-578px">
                         <Image
                             src="/images/login/login.png"
                             width={473}
@@ -46,6 +60,7 @@ export default function Login() {
                                     placeholder="Email address"
                                     icon={true}
                                     type="email"
+                                    pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
                                 />
 
                             </div>
@@ -53,12 +68,16 @@ export default function Login() {
                                 <img className="mx-auto absolute"
                                     src="/images/login/icon-password.svg"
                                 />
+                                <img className="absolute t:ml-367px t:mt-1"
+                                    src="/images/login/icon-eye-closed.svg"
+                                    onClick={isVisible}
+                                />
                                 <Input
                                     variant="white"
                                     className="max-w-423px"
                                     placeholder="Password"
                                     icon={true}
-                                    type="password"
+                                    type={typeInput}
                                 />
                             </div>
                             <div className="flex flex-row items-start t:gap-20px">

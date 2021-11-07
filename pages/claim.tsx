@@ -4,9 +4,24 @@ import Image from "next/image";
 import TopNav from '../components/TopNav';
 import Button from '../components/Button';
 import Input from '../components/Input';
+import { useState } from "react";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Claim() {
+
+    const [eyeVisible, setEyeVisible] = useState(false);
+    const [typeInput, setTypeInput] = useState("password");
+
+    const isVisible = (): void => {
+        if (eyeVisible) {
+            setTypeInput("text");
+        } else {
+            setTypeInput("password");
+        }
+        setEyeVisible(!eyeVisible);
+    };
+
+
     return (
         <div className="w-full min-w-320px">
             <Head>
@@ -28,21 +43,24 @@ export default function Claim() {
                             height={578}
                         />
                     </div>
-                    <div className="flex-1">
-                        <div className="flex flex-col t:max-w-413px">
+                    <div className="t:w-413px">
+                        <div className="flex flex-col t:w-413px">
                             <div className="t:text-13px t:leading-18px items-start t:text-gray">
                                 Free of charge
                             </div>
-                            <div className="t:text-38px t:leading-57px t:font-sans t:pb-64px font-bold">
-                                Claim your page 
+                            <div className="t:text-38px t:leading-57px t:font-sans t:pb-17px font-bold">
+                                Claim your page
+                            </div>
+                            <div className="t:text-14px t:leading-17px t:font-sans t:pb-64px">
+                                Already have a claimed page? Log in.
                             </div>
                             <div className="t:pb-39px">
-                                <img className="mx-auto absolute"
+                                <img className="mx-auto absolute t:mt-1"
                                     src="/images/login/icon-name.svg"
                                 />
                                 <Input
                                     variant="white"
-                                    className="max-w-423px"
+                                    className="max-w-413px"
                                     placeholder="Your first and last name"
                                     icon={true}
                                     type="text"
@@ -50,29 +68,35 @@ export default function Claim() {
 
                             </div>
                             <div className="t:pb-39px">
-                                <img className="mx-auto absolute"
+                                <img className="mx-auto absolute t:mt-1"
                                     src="/images/login/icon-role.svg"
                                 />
                                 <Input
                                     variant="white"
-                                    className="max-w-423px"
-                                    placeholder="Your role in the organisation"
+                                    className="max-w-413px"
+                                    placeholder="Your role in the organization"
                                     icon={true}
                                     type="text"
                                 />
 
                             </div>
                             <div className="t:pb-45px">
-                                <img className="mx-auto absolute"
+                                <img className="mx-auto absolute t:mt-1"
                                     src="/images/login/icon-password.svg"
+                                />
+                                <img className="absolute t:ml-387px t:mt-1"
+                                    src="/images/login/icon-eye-closed.svg"
+                                    onClick={isVisible}
                                 />
                                 <Input
                                     variant="white"
-                                    className="max-w-423px"
+                                    className="max-w-413px"
                                     placeholder="Password"
                                     icon={true}
-                                    type="password"
+                                    type={typeInput}
                                 />
+
+
                             </div>
                             <div className="flex flex-row items-center t:gap-20px">
                                 <div className="">
