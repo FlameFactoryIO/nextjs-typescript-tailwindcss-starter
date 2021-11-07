@@ -177,7 +177,12 @@ module.exports = {
         "secondary-gray-3": "#A1AAAF",
         "search-border": "#E84300",
         input: "#D3D9E1",
-                gray: "#8E8E8E",
+        "input-border": "#C6CACC",
+        gray: "#8E8E8E",
+      },
+      backgroundImage: {
+        "login-email": "url('/images/login/icon-email.svg')",
+        "login-password": "url('/images/login/icon-password.svg')",
       },
     },
   },

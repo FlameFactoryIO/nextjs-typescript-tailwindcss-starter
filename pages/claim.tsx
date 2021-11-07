@@ -6,7 +6,7 @@ import Button from '../components/Button';
 import Input from '../components/Input';
 
 // noinspection JSUnusedGlobalSymbols
-export default function Login() {
+export default function Claim() {
     return (
         <div className="w-full min-w-320px">
             <Head>
@@ -15,7 +15,7 @@ export default function Login() {
 
             <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
 
-            <div id="login"
+            <div id="claim"
                 className="t:pt-101px                          
                           flex flex-col t:flex-row items-center justify-center">
 
@@ -33,19 +33,32 @@ export default function Login() {
                             <div className="t:text-13px t:leading-18px items-start t:text-gray">
                                 Free of charge
                             </div>
-                            <div className="t:text-38px t:leading-57px t:font-sans t:pb-64px">
-                                Log in to account 🗝
+                            <div className="t:text-38px t:leading-57px t:font-sans t:pb-64px font-bold">
+                                Claim your page 
                             </div>
                             <div className="t:pb-39px">
                                 <img className="mx-auto absolute"
-                                    src="/images/login/icon-email.svg"
+                                    src="/images/login/icon-name.svg"
                                 />
                                 <Input
                                     variant="white"
                                     className="max-w-423px"
-                                    placeholder="Email address"
+                                    placeholder="Your first and last name"
                                     icon={true}
-                                    type="email"
+                                    type="text"
+                                />
+
+                            </div>
+                            <div className="t:pb-39px">
+                                <img className="mx-auto absolute"
+                                    src="/images/login/icon-role.svg"
+                                />
+                                <Input
+                                    variant="white"
+                                    className="max-w-423px"
+                                    placeholder="Your role in the organisation"
+                                    icon={true}
+                                    type="text"
                                 />
 
                             </div>
@@ -61,15 +74,12 @@ export default function Login() {
                                     type="password"
                                 />
                             </div>
-                            <div className="flex flex-row items-start t:gap-20px">
+                            <div className="flex flex-row items-center t:gap-20px">
                                 <div className="">
-                                    <Button className="t:max-w-93px text-14px leading-17px
-                                                       t:max-h-46px">
-                                        Login 🗝
+                                    <Button className="t:max-w-155px text-14px leading-17px
+                                                       t:max-h-50px">
+                                        Submit 💫
                                     </Button>
-                                </div>
-                                <div className="t:text-gray t:text-14px t:leading-21px items-center">
-                                    Send me the magic link 🔗
                                 </div>
                             </div>
 
