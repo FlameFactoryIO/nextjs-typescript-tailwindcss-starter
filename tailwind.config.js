@@ -9,8 +9,15 @@ module.exports = {
     ],
     safelist: [
       ...["primary", "black", "white"].flatMap((variant) => [
+        `hover:text-${variant}-200`,
+        `text-${variant}-500`,
         `bg-${variant}-500`,
+        `active:bg-${variant}-500`,
         `active:bg-${variant}-600`,
+        `checked:bg-${variant}-200`,
+        `checked:bg-${variant}-500`,
+        `focus:bg-${variant}-500`,
+        `hover:bg-${variant}-500`,
         `ring-${variant}-100`,
         `focus:ring-${variant}-50`,
       ]),
@@ -171,9 +178,17 @@ module.exports = {
   },
 
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ["checked"],
+      borderColor: ["checked"],
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 };
 
 const range = (start, end, step = 1) =>
