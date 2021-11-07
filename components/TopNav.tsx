@@ -160,6 +160,11 @@ const TopNav: FC<{
         <div className="flex-1 flex gap-20px items-center justify-center text-14px leading-21px">
           <TopNavItem title="About us" path={router?.asPath} href="/about-us" />
           <TopNavItem title="Individuals">
+          <TopNavItem
+              title="Getting started"
+              path={router?.asPath}
+              href="/individuals"
+            />
             <TopNavItem
               title="Join a corporate fundraiser"
               path={router?.asPath}
@@ -330,6 +335,11 @@ const TopNav: FC<{
 
           <SideNavItem title="About us" href="/about-us" className="mt-14px" />
           <SideNavItem title="Individuals">
+            <SideNavItem
+                title="Getting started"
+                href="/individuals"
+                className="border-none py-8px font-light"
+            />
             <SideNavItem
               title="Join a corporate fundraiser"
               href="/sign-up"
