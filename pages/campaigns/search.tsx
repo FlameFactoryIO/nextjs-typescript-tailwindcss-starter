@@ -91,7 +91,7 @@ export default function CampaignSearch() {
             className="text-16px leading-24px t:leading-20-8 d:text-18px d:leading-27px font-light text-white text-center
           pb-20px t:pb-35px d:pb-33px"
           >
-            Text about campaigns that can go on two rows. Text about campaigns that can go on two rows. 
+            Text about campaigns that can go on two rows. Text about campaigns that can go on two rows.
             Text about campaigns that can go on two rows.
           </div>
           <div className="flex flex-col t:flex-row gap-5px items-center ">
@@ -324,8 +324,8 @@ const campaign: Campaign = {
     challenges: [],
     claimed: true,
     contacts: [],
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    createdAt: "2021-09-01T00:00:00-04:00",
+    updatedAt: "2021-09-01T00:00:00-04:00",
     interests: [],
     locations: [],
     name: "Cool nonprofit",

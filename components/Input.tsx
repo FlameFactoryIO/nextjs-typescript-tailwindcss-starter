@@ -9,6 +9,7 @@ const Input: FC<{
   variant?: "primary" | "black" | "white",
   multiline?: boolean,
   rows?: number,
+  maxLength?: number,
 }> = ({
   disabled,
   className = "",
@@ -18,6 +19,7 @@ const Input: FC<{
   variant = "primary",
   multiline = false,
   rows = 4,
+  maxLength,
 }) =>
   multiline ? (
     <textarea
@@ -27,6 +29,7 @@ const Input: FC<{
       onChange={(e) => onChange(e.target.value)}
       value={value}
       disabled={disabled}
+      maxLength={maxLength}
     />
   ) : (
     <input
@@ -35,6 +38,7 @@ const Input: FC<{
       value={value}
       onChange={(e) => onChange(e.target.value)}
       disabled={disabled}
+      maxLength={maxLength}
     />
   );
 

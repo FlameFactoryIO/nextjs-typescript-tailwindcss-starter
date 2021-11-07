@@ -15,7 +15,6 @@
     "@types/debounce-promise": "^3.1.4",
     "amplitude-js": "^8.9.1",
     "axios": "^0.24.0",
-    "branch-sdk": "^2.59.0",
     "debounce-promise": "^3.1.2",
     "fscreen": "^1.2.0",
     "hls.js": "^1.0.11",
