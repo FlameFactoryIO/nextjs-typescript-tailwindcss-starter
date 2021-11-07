@@ -16,18 +16,20 @@ const FeaturedNonprofit = ({
 }) => {
   return (
     <div className={`flex flex-col mx-auto w-full ${className}`}>
-      <a href={`${nonprofit.path}`}>
-        <div className="relative select-none cursor-pointer">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={nonprofit.bannerUrl} width="100%" height="100%" className="rounded-20px object-cover h-260px" alt="" />
-
-          <div className="absolute left-10px bottom-10px right-0 flex items-center gap-10px">
+      <Link href={`/${nonprofit.name}`} passHref>
+        <a>
+          <div className="relative select-none cursor-pointer">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={nonprofit.logoUrl} width={50} height={50} className="rounded-full object-cover object-center" alt="" />
-            <div className="flex-1 text-white font-black text-18px leading-21px">{nonprofit.name}</div>
+            <img src={nonprofit.bannerUrl} width="100%" height="100%" className="rounded-20px object-cover h-260px" alt="" />
+
+            <div className="absolute left-10px bottom-10px right-0 flex items-center gap-10px">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={nonprofit.logoUrl} width={50} height={50} className="rounded-full object-cover object-center" alt="" />
+              <div className="flex-1 text-white font-black text-18px leading-21px">{nonprofit.name}</div>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </Link>
 
       <Ellipsis className="mt-18px font-light text-12px leading-15px block-with-text" maxHeight={50} title={nonprofit.description}>
         {nonprofit.description}

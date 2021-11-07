@@ -24,8 +24,8 @@ const TopNavItem: FC<{ title: string; path?: string; href?: string }> = ({
         </div>
         {isOpen && (
           <div
-            className="hidden d:flex d:flex-col bg-white border-1px  absolute
-                      z-50 top-22px -left-17px w-227px font-light leading-32-2px text-14px shadow-0-6-24_18 text-left  rounded-b-10px
+            className="hidden d:flex d:flex-col bg-white absolute
+                      z-50 top-22px -left-17px w-227px font-light leading-32-2px text-14px shadow-0-6-24_18 text-left rounded-b-10px
                       py-19px pl-20px pr-13px
                       "
           >
@@ -38,13 +38,14 @@ const TopNavItem: FC<{ title: string; path?: string; href?: string }> = ({
 
   return (
     <Link href={href}>
+      <div className=" cursor-pointer">
       <a
-        className={
-          path === href ? "border-b-2 border-primary-500 font-bold" : ""
-        }
+        className={path === href ? "border-b-2 border-primary-500 font-bold" : ""}
+        onClick={() => setOpen(false)}
       >
         {title}
       </a>
+      </div>
     </Link>
   );
 };

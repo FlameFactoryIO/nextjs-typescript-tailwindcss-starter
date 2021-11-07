@@ -30,7 +30,7 @@ export default function Login() {
             <TopNav className="hidden t:block" onSearch={(searchValue) => window.alert(searchValue)} />
 
             <div id="login"
-                className="t:pt-101px pt-20px                        
+                className="t:pt-101px pt-20px
                           flex flex-col t:flex-row items-center justify-center">
 
                 <div className="flex flex-col t:flex-row items-center t:gap-30px t:pr-30px
@@ -87,7 +87,7 @@ export default function Login() {
                                         Login 🗝
                                     </Button>
                                 </div>
-                                <div className="t:text-gray t:text-14px t:leading-21px items-center">
+                                <div className="t:text-gray-500 t:text-14px t:leading-21px items-center">
                                     Send me the magic link 🔗
                                 </div>
                             </div>

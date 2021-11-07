@@ -145,7 +145,6 @@ module.exports = {
           800: "#000000",
           900: "#000000",
         },
-
         white: {
           DEFAULT: "#FFFFFF",
           50: "#FFFFFF",
@@ -178,7 +177,7 @@ module.exports = {
         "search-border": "#E84300",
         input: "#D3D9E1",
         "input-border": "#C6CACC",
-        gray: "#8E8E8E",
+        // gray, red, green son nombres de colores reservados, usar otro nombre
       },
       backgroundImage: {
         "login-email": "url('/images/login/icon-email.svg')",

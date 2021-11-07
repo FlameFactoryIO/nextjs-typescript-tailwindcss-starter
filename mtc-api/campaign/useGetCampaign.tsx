@@ -6,11 +6,9 @@ export const getCampaign = (id, action?) => {
     .get(`/campaigns/${id}`, {
       params: { action },
     })
-    .then(({ data }) => {
-      return data;
-    });
+    .then(({ data }) => data);
 };
 
 export const useGetCampaign = (id, config) => {
-  return useQuery(["CAMPAIGNS", id], () => getCampaign(id), config);
+  return useQuery(["CAMPAIGN", id], () => getCampaign(id), config);
 };
