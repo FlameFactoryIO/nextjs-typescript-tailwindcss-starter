@@ -1,10 +1,12 @@
 import Head from "next/head";
-import Footer from "../../components/Footer";
-import TopNav from "../../components/TopNav";
+import Link from "next/link";
 import Image from "next/image";
-import Button from "../../components/Button";
+import TopNav from "../../components/TopNav";
+import Footer from "../../components/Footer";
 import Questions from "../../components/Questions";
 import Faq from "../../components/Faq";
+import Button from "../../components/Button";
+import DonationList from "../../components/DonationList";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Individuals() {
@@ -116,58 +118,79 @@ export default function Individuals() {
           <div className="d:mb-471px t:mb-326px hidden t:block">
             <div className="flex flex-col items-center d:w-450px min-w-280px">
               <div
-                className=" d:max-w-356px t:max-w-252 max-w-274px
-                                                d:max-h-130px
-                                                pt-63px pb-10px d:pt-0 t:pt-0"
+                className="
+                  flex
+                  max-w-274px t:max-w-252 d:max-w-356px d:max-h-130px
+                  t:h-100px t:-mt-20px
+                  d:h-auto d:mt-0
+                  pt-63px pb-10px d:pt-0 t:pt-0
+                "
               >
                 <Image
                   src="/images/individuals/people-are-raising.png"
                   width={356}
                   height={130}
+                  objectFit="contain"
                 />
               </div>
 
-              {/* componente de donations */}
+              <div className="flex flex-col
+                t:mt-9px d:mt-20px
+                t:w-320px d:w-450px
+                t:h-323px d:h-1539px
+                bg-footer rounded-20px
+                px-10px pt-25px pb-15px">
+                <DonationList className="flex-1" />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-cream t:hidden block ">
+      <div className="bg-gradient-to-b from-cream to-white t:hidden block ">
         <div className="flex flex-col items-center">
           <div className="pt-63px pb-10px px-10px">
             <Image
               src="/images/individuals/people-are-raising.png"
               width={274}
               height={80}
+              objectFit="contain"
             />
           </div>
 
-          {/* componente de donations mobile*/}
+          <div
+            className="flex flex-col
+                bg-footer rounded-20px
+                px-10px pt-25px pb-15px
+                w-320px h-402px
+            "
+          >
+            <DonationList className="flex-1" />
+          </div>
         </div>
       </div>
 
       <div className="t:bg-gradient-to-b t:from-cream t:to-white">
         <div
           id="find"
-          className="text-center flex flex-col items-center
-                            pt-49px px-20px pb-50px
-                            t:pt-132px t:pb-42px t:px-30px
-                            d:pt-148px d:pb-80px d:px-120px
-                            "
+          className="
+            text-center flex flex-col items-center
+            pt-49px px-20px pb-50px
+            t:pt-132px t:pb-42px t:px-30px
+            d:pt-148px d:pb-80px d:px-120px
+          "
         >
           <div className="flex flex-col items-center t:flex-row t:gap-18px d:gap-30px">
-            <div className="flex-1">
-              <div className="flex flex-col t:flex-row d:flex-col t:gap-24px items-center justify-center">
+            <div className="flex-1 flex flex-col t:flex-row d:flex-col t:gap-24px items-center justify-center">
                 <div
-                  className="flex-1 max-w-280px d:items-center
-                                        t:max-w-220px
-                                        d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left"
+                  className="
+                    flex-1 max-w-280px d:items-center t:max-w-220px
+                    d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left
+                  "
                 >
                   <div className="d:max-w-320px d:max-h-240px">
                     <div
-                      className="font-bold text-18px leading-21-6px
-                                                d:text-28px d:leading-33px d:pt-13px"
+                      className="font-bold text-18px leading-21-6px d:text-28px d:leading-33px d:pt-13px"
                     >
                       Find a specific nonprofit or cause
                     </div>
@@ -183,15 +206,21 @@ export default function Individuals() {
                       you.
                     </div>
                     <div className="pb-20px">
-                      <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">
-                        Search for nonprofit
-                      </Button>
+                      <Link href="/nonprofits/search" passHref>
+                        <a className="mt-9px">
+                          <Button className="w-190px font-bold rounded-10px text-14px leading-24px rounded-10pxi">
+                            Search for nonprofit
+                          </Button>
+                        </a>
+                      </Link>
                     </div>
                   </div>
                   <div
-                    className="max-w-280px max-h-210px
-                                                t:max-w-220 t:max-h-166
-                                                d:max-w-320px d:max-h-240"
+                    className="
+                      max-w-280px max-h-210px
+                      t:max-w-220 t:max-h-166
+                      d:max-w-320px d:max-h-240
+                    "
                   >
                     <Image
                       src="/images/individuals/find-cause.png"
@@ -241,9 +270,13 @@ export default function Individuals() {
                       </span>
                     </div>
                     <div className="pb-20px">
-                      <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px">
-                        Find a campaign
-                      </Button>
+                      <Link href="/campaigns/search" passHref>
+                        <a>
+                          <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px rounded-10pxi">
+                            Find a campaign
+                          </Button>
+                        </a>
+                      </Link>
                     </div>
                   </div>
                   <div>
@@ -298,15 +331,21 @@ export default function Individuals() {
                       fundraiser today and make your donation go further.
                     </div>
                     <div className="pb-20px">
-                      <Button className="w-190px font-bold rounded-10px text-14px leading-24px">
-                        Join a fundraiser
-                      </Button>
+                      <Link href="/prove" passHref>
+                        <a>
+                          <Button className="w-190px font-bold rounded-10px text-14px leading-24px rounded-10pxi">
+                            Join a fundraiser
+                          </Button>
+                        </a>
+                      </Link>
                     </div>
                   </div>
                   <div
-                    className="max-w-280px max-h-210px
-                                                t:max-w-220 t:max-h-166
-                                                d:max-w-320px d:max-h-240"
+                    className="
+                      max-w-280px max-h-210px
+                      t:max-w-220 t:max-h-166
+                      d:max-w-320px d:max-h-240
+                    "
                   >
                     <Image
                       src="/images/individuals/join-fundraiser.png"
@@ -316,9 +355,7 @@ export default function Individuals() {
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="flex flex-col items-center d:w-450px"></div>
+            <div className="flex flex-col items-center d:w-450px" />
           </div>
         </div>
       </div>

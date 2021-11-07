@@ -2,7 +2,6 @@ import Head from "next/head";
 import Footer from "../../components/Footer";
 import TopNav from "../../components/TopNav";
 import Image from "next/image";
-import Button from "../../components/Button";
 import Questions from '../../components/Questions';
 
 // noinspection JSUnusedGlobalSymbols
@@ -71,7 +70,7 @@ export default function AboutUs() {
               <div className="font-bold text-24px leading-28-8px d:text-43px d:leading-51-6px mx-auto">
                 Our Mission
               </div>
-              <div className="font-light text-13px leading-16-9px d:text-16px d:leading-24px mt-20px t:max-w-335px  mx-auto">
+              <div className="font-light text-13px leading-16-9px d:text-16px d:leading-24px mt-20px t:max-w-335px d:max-w-453px mx-auto d:mb-15px">
                 The mission of{" "}
                 <span className="text-primary font-bold">Move the Chain</span>{" "}
                 is to challenge society to evolve positively and make the world
@@ -96,7 +95,7 @@ export default function AboutUs() {
             pt-50px
             pb-20px px-20px
             t:pt-98px t:pb-40px t:px-30px
-            d:pt-120px d:pb-0 d:gap-0
+            d:pt-54px d:pb-0 d:gap-0
           "
         >
           <div className="d:max-w-570px mr-auto">
@@ -109,14 +108,13 @@ export default function AboutUs() {
                 width={558}
                 height={442}
               />
-              <div className="font-light text-25px leading-24px t:mt-35px">
+              <div className="font-light text-25px d:text-50px leading-24px t:mt-35px">
                 👐
               </div>
-
               <div className="font-bold text-24px leading-28-8px d:text-43px d:leading-51-6px mx-auto t:mt-6">
                 Our Vision
               </div>
-              <div className="t:font-light t:text-13px t:leading-16-9px t:mt-12px t:max-w-335px mx-auto">
+              <div className="t:font-light t:text-13px t:leading-19px t:mt-12px t:max-w-335px mx-auto d:text-16px d:leading-24px">
                 A world where everyone can make a positive change leveraging the
                 power of action and connection.
               </div>
@@ -142,10 +140,11 @@ export default function AboutUs() {
             "
           >
             <div
-              className=" font-bold text-white text-center t:text-left
-                            text-24px leading-28-8px d:text-43px d:leading-51-6px
-                            pb-25px t:pb-20px d:pb-34px
-                            "
+              className="
+                font-bold text-white text-center t:text-left
+                text-24px leading-28-8px d:text-43px d:leading-51-6px
+                pb-25px t:pb-20px d:pb-34px
+              "
             >
               <h1>
                 Why,{" "}
@@ -153,26 +152,25 @@ export default function AboutUs() {
               </h1>
             </div>
             <div
-              className="font-light text-white text-13px leading-16-9px t:leading-15-6px d:text-16px d:leading-24px
-                          flex flex-col
-                          gap-y-25px t:gap-y-20px d:gap-y-28px
-
-                          t:min-w-333px d:max-w-none"
+              className="
+                font-light text-white text-13px leading-16-9px t:leading-15-6px d:text-16px d:leading-24px
+                flex flex-col
+                gap-y-25px t:gap-y-20px d:gap-y-28px
+                t:min-w-333px d:max-w-none
+              "
             >
               <div>
-                Like in the game of football, the team does not need a touchdown
-                every play. At Move the Chain we seek to help our nonprofits
-                reach their goals play by play, 10 yards at a time working
-                together with viral donations and visibility to build their
-                team.
+                Like in the game of American football, when a team gets a first down, Move the Chain is about
+                forward progress towards helping humanity. At Move the Chain, we seek to help nonprofits reach
+                their goals, play by play, 10 yards at a time, working together to get the donations and
+                visibility they need to build their teams.
               </div>
               <div>
                 The goal at{" "}
                 <span className="text-primary font-bold">Move the Chain</span>{" "}
-                is to , is to spike viral donations, increasing much needed
-                visibility and awareness for nonprofits, and to the individuals
-                and corporations that work so hard to make a difference and get
-                closer to scoring a touchdown!
+                , is to spike viral donations, increasing much needed visibility and awareness for nonprofits,
+                and to the individuals and corporations that work so hard to make a difference and get closer
+                to scoring a touchdown!
               </div>
             </div>
           </div>

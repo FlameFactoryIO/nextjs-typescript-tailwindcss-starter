@@ -1,6 +1,5 @@
 import { useInfiniteQuery } from 'react-query';
 import client from '../apiClient';
-import React from 'react';
 
 const getResults = (data) => (data || []).flatMap((item) => item.results);
 

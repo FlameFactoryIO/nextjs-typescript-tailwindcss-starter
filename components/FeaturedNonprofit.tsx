@@ -19,11 +19,11 @@ const FeaturedNonprofit = ({
       <a href={`${nonprofit.path}`}>
         <div className="relative select-none cursor-pointer">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={nonprofit.bannerUrl} width="100%" height="100%" className="rounded-20px object-cover h-260px" />
+          <img src={nonprofit.bannerUrl} width="100%" height="100%" className="rounded-20px object-cover h-260px" alt="" />
 
           <div className="absolute left-10px bottom-10px right-0 flex items-center gap-10px">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={nonprofit.logoUrl} width={50} height={50} className="rounded-full object-cover object-center" />
+            <img src={nonprofit.logoUrl} width={50} height={50} className="rounded-full object-cover object-center" alt="" />
             <div className="flex-1 text-white font-black text-18px leading-21px">{nonprofit.name}</div>
           </div>
         </div>
@@ -42,7 +42,7 @@ const FeaturedNonprofit = ({
         </div>
       )}
 
-      <Link href={`/${nonprofit.path}`}>
+      <Link href={`/${nonprofit.name}`}>
         <a className="mt-10px flex flex-col items-center">
           <Button variant="black" className={`rounded-10pxi w-full ${buttonClassName}`}>
             Find out more

@@ -9,8 +9,15 @@ module.exports = {
     ],
     safelist: [
       ...["primary", "black", "white"].flatMap((variant) => [
+        `hover:text-${variant}-200`,
+        `text-${variant}-500`,
         `bg-${variant}-500`,
+        `active:bg-${variant}-500`,
         `active:bg-${variant}-600`,
+        `checked:bg-${variant}-200`,
+        `checked:bg-${variant}-500`,
+        `focus:bg-${variant}-500`,
+        `hover:bg-${variant}-500`,
         `ring-${variant}-100`,
         `focus:ring-${variant}-50`,
       ]),
@@ -99,7 +106,9 @@ module.exports = {
       },
       spacing: {},
       width: {},
-      height: {},
+      height: {
+        "1539px": "1539px",
+      },
       minWidth: {},
       maxWidth: {},
       minHeight: {},
@@ -169,15 +178,23 @@ module.exports = {
   },
 
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ["checked"],
+      borderColor: ["checked"],
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 };
 
 const range = (start, end, step = 1) =>
   Array.from({ length: (end - start) / step + 1 }, (_, i) => i + start);
 
-range(12, 50).forEach(
+range(1, 50).forEach(
   (i) => (module.exports.theme.extend.fontSize[`${i}px`] = `${i}px`)
 );
 range(1, 1000).forEach(
