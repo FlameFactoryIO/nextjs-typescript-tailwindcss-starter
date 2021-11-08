@@ -332,7 +332,7 @@ export default function CorporationsHome() {
 
           <div
             className="font-bold text-24px leading-28-8px pb-20px
-                          t:pb-21px t:px-10px
+                          t:pb-21px
                           d:text-43px d:leading-51-6px d:pb-29px
                           "
           >
