@@ -8,7 +8,7 @@ module.exports = {
       "./public/**/*.html",
     ],
     safelist: [
-      ...["primary", "black", "white"].flatMap((variant) => [
+      ...["primary", "black", "white", "green"].flatMap((variant) => [
         `hover:text-${variant}-200`,
         `text-${variant}-500`,
         `bg-${variant}-500`,
@@ -187,45 +187,30 @@ module.exports = {
       },
     },
   },
-
   variants: {
     extend: {
       backgroundColor: ["checked"],
       borderColor: ["checked"],
     },
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/line-clamp"),
-    require("@tailwindcss/aspect-ratio"),
-  ],
 };
 
 const range = (start, end, step = 1) =>
   Array.from({ length: (end - start) / step + 1 }, (_, i) => i + start);
 
-range(1, 50).forEach(
-  (i) => (module.exports.theme.extend.fontSize[`${i}px`] = `${i}px`)
-);
-range(1, 1000).forEach(
-  (i) => (module.exports.theme.extend.spacing[`${i}px`] = `${i}px`)
-);
-range(1, 1380).forEach(
-  (i) => (module.exports.theme.extend.width[`${i}px`] = `${i}px`)
-);
-range(1, 1380).forEach(
-  (i) => (module.exports.theme.extend.minWidth[`${i}px`] = `${i}px`)
-);
-range(1, 1380).forEach(
-  (i) => (module.exports.theme.extend.maxWidth[`${i}px`] = `${i}px`)
-);
-range(1, 1000).forEach(
-  (i) => (module.exports.theme.extend.height[`${i}px`] = `${i}px`)
-);
-range(1, 1000).forEach(
-  (i) => (module.exports.theme.extend.minHeight[`${i}px`] = `${i}px`)
-);
-range(1, 1000).forEach(
-  (i) => (module.exports.theme.extend.maxHeight[`${i}px`] = `${i}px`)
-);
+range(6, 50).forEach((i) => {
+  module.exports.theme.extend.fontSize[`${i}px`] = `${i}px`;
+});
+range(1, 1000).forEach((i) => {
+  module.exports.theme.extend.spacing[`${i}px`] = `${i}px`
+});
+range(1, 1380).forEach((i) => {
+  module.exports.theme.extend.width[`${i}px`] = `${i}px`;
+  module.exports.theme.extend.minWidth[`${i}px`] = `${i}px`;
+  module.exports.theme.extend.maxWidth[`${i}px`] = `${i}px`;
+});
+range(1, 1000).forEach((i) => {
+  module.exports.theme.extend.height[`${i}px`] = `${i}px`;
+  module.exports.theme.extend.minHeight[`${i}px`] = `${i}px`;
+  module.exports.theme.extend.maxHeight[`${i}px`] = `${i}px`;
+});

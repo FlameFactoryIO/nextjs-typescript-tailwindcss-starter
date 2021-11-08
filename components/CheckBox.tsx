@@ -5,7 +5,7 @@ const CheckBox: FC<{
   className?: string,
   value?: boolean,
   onChange?: (value: boolean) => void,
-  variant?: "primary" | "black" | "white",
+  variant?: "primary" | "black" | "green",
 }> = ({
   disabled,
   className = "",
@@ -18,7 +18,7 @@ const CheckBox: FC<{
     <input
       type="checkbox"
       className={`
-        appearance-none form-tick rounded-md w-16px h-16px mr-5px w-full text-${variant}-500 leading-24px
+        appearance-none rounded-md w-16px h-16px mr-5px w-full text-${variant}-500 leading-24px
         focus:outline-none focus:ring focus:ring-${variant}-50
         border border-gray-300 checked:border-transparent focus:outline-none
         ${disabled ?
@@ -31,5 +31,7 @@ const CheckBox: FC<{
     />
     {children}
   </label>;
+;
+
 
 export default CheckBox;

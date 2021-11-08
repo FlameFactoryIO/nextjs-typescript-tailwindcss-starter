@@ -30,10 +30,11 @@ const TopNavItem: FC<{ title: string; path?: string; href?: string }> = ({
         </div>
         {isOpen && (
           <div
-            className="hidden d:flex d:flex-col bg-white absolute
-                      z-50 top-22px -left-17px w-227px font-light leading-32-2px text-14px shadow-0-6-24_18 text-left rounded-b-10px
-                      py-19px pl-20px pr-13px
-                      "
+            className="
+              hidden d:flex d:flex-col bg-white absolute
+              z-40 top-22px -left-17px w-227px font-light leading-32-2px text-14px shadow-0-6-24_18 text-left rounded-b-10px
+              py-19px pl-20px pr-13px
+              "
           >
             {children}
           </div>
@@ -137,7 +138,7 @@ const TopNav: FC<{
   return (
     <>
       <div
-        className={`z-50 hidden d:flex fixed w-full select-none bg-white px-50px py-20px items-center ${
+        className={`z-40 hidden d:flex fixed w-full select-none bg-white px-50px py-20px items-center ${
           className ?? ""
         }`}
       >
@@ -235,7 +236,7 @@ const TopNav: FC<{
       </div>
 
       <div
-        className={`z-50 flex d:hidden fixed w-full select-none bg-white rounded-b-10pxi px-20px pt-12px pb-10px items-center ${
+        className={`z-40 flex d:hidden fixed w-full select-none bg-white rounded-b-10pxi px-20px pt-12px pb-10px items-center ${
           className ?? ""
         }`}
       >
@@ -281,7 +282,7 @@ const TopNav: FC<{
 
       {isOpen && (
         <div
-          className={`z-50 d:hidden fixed top-0 right-0 bottom-0 w-full max-w-320px bg-white flex-col select-none text-14px leading-18-2px font-medium pb-55px ${
+          className={`z-40 d:hidden fixed top-0 right-0 bottom-0 w-full max-w-320px bg-white flex-col select-none text-14px leading-18-2px font-medium pb-55px ${
             className ?? ""
           }`}
         >

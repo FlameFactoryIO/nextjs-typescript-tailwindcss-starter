@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
 import TopNav from '../components/TopNav';
 import Button from '../components/Button';
@@ -31,7 +30,7 @@ export default function Claim() {
             <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
 
             <div id="claim"
-                className="t:pt-101px                          
+                className="t:pt-101px
                           flex flex-col t:flex-row items-center justify-center">
 
                 <div className="flex flex-col t:flex-row items-center t:gap-30px t:pr-30px
@@ -59,10 +58,8 @@ export default function Claim() {
                                     src="/images/login/icon-name.svg"
                                 />
                                 <Input
-                                    variant="white"
                                     className="max-w-413px"
                                     placeholder="Your first and last name"
-                                    icon={true}
                                     type="text"
                                 />
 
@@ -72,10 +69,8 @@ export default function Claim() {
                                     src="/images/login/icon-role.svg"
                                 />
                                 <Input
-                                    variant="white"
                                     className="max-w-413px"
                                     placeholder="Your role in the organization"
-                                    icon={true}
                                     type="text"
                                 />
 
@@ -89,10 +84,8 @@ export default function Claim() {
                                     onClick={isVisible}
                                 />
                                 <Input
-                                    variant="white"
                                     className="max-w-413px"
                                     placeholder="Password"
-                                    icon={true}
                                     type={typeInput}
                                 />
 

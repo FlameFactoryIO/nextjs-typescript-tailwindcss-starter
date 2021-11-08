@@ -1,5 +1,6 @@
 import { type } from "os";
 import Input from "./Input";
+import Button from "./Button";
 
 // noinspection JSUnusedGlobalSymbols
 export default {
@@ -51,3 +52,55 @@ MultilineFixedHeight.args = {
   multiline: true,
   className: "h-150px",
 };
+
+export const PrefixAndSuffix = () => (
+  <div>
+    <Input
+      value="234567isjdfokljaslkdjfh"
+      prefix={
+        "ICON"
+      }
+      suffix="SUFFIX"
+    />
+    <br/>
+    <Input
+      value="234567isjdfokljaslkdjfh"
+      prefix={
+        "ICON"
+      }
+    />
+    <br/>
+    <Input
+      value="234567isjdfokljaslkdjfh"
+      suffix="SUFFIX"
+    />
+    <br/>
+    <Input
+      value="234567isjdfokljaslkdjfh"
+      prefix={
+        <Button>
+          Click
+        </Button>
+      }
+      suffix={
+        <Button>
+          Click
+        </Button>
+      }
+    />
+    <br/>
+    <Input
+      value="234567isjdfokljaslkdjfh"
+      prefix={
+        <Button className="h-60px">
+          Click
+        </Button>
+      }
+      suffix={
+        <Button className="h-60px">
+          Tall button
+        </Button>
+      }
+    />
+  </div>
+)

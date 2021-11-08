@@ -29,6 +29,14 @@ export const All = () => {
       <CheckBox disabled value={d} onChange={(checked) => setD(checked)}>
         Checked Disabled
       </CheckBox>
+      <br/>
+      <CheckBox value={a} onChange={(checked) => setA(checked)} variant="black">
+        Black
+      </CheckBox>
+      <br/>
+      <CheckBox value={a} onChange={(checked) => setA(checked)} variant="green">
+        Green
+      </CheckBox>
     </>
   )
 };

@@ -48,7 +48,7 @@ export default function NonprofitProfile({
           id="hero-section"
           className="px-20px pt-88px pb-0
           t:pt-147px t:px-120px  items-center t:items-start
-         
+
         "
         >
           {/* page preview */}
@@ -69,13 +69,13 @@ export default function NonprofitProfile({
           </div>
           {/* logo section */}
           <div>
-            {pageVariant == "2" && (
-              <div className="flex justify-between p-5px items-center border-1px border-yellow-border rounded-10px">
-                <div className="text-white text-14px leading-21px font-light">
-                  [ ] Page Preview
-                </div>
-              </div>
-            )}
+            {/*{pageVariant === "2" && (*/}
+            {/*  <div className="flex justify-between p-5px items-center border-1px border-yellow-border rounded-10px">*/}
+            {/*    <div className="text-white text-14px leading-21px font-light">*/}
+            {/*      [ ] Page Preview*/}
+            {/*    </div>*/}
+            {/*  </div>*/}
+            {/*)}*/}
             {pageVariant == "3" && (
               <div className="flex flex-col  t:flex-row mt-30px t:mt-40px items-center gap-16px">
                 <div
@@ -106,7 +106,7 @@ export default function NonprofitProfile({
 
                 <div className="">
                   <div
-                    className="text-white font-bold 
+                    className="text-white font-bold
                     text-26px leading-31-2px t:text-34px t:leading-40-8px
                     text-center t:text-left "
                   >
@@ -139,8 +139,8 @@ export default function NonprofitProfile({
                     </svg>
 
                     <div
-                      className="text-white font-light 
-                    text-12px leading-18px 
+                      className="text-white font-light
+                    text-12px leading-18px
                     text-center t:text-left"
                     >
                       {nonprofit.siteUrl}
@@ -152,18 +152,17 @@ export default function NonprofitProfile({
           </div>
           {/* image down */}
           <div
-            className="min-w-280px t:max-w-750px 
+            className="min-w-280px t:max-w-750px
           transform translate-y-30px t:translate-y-95px  "
           >
             <div aria-hidden className="flex-1">
               {/*shadow-4-10-24-8*/}
               <img
-                className="rounded-24px"
+                className="rounded-24px object-contain"
                 alt=""
                 src={nonprofit.bannerUrl}
                 width={750}
                 height={276}
-                objectFit="contain"
               />
             </div>
           </div>

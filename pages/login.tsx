@@ -8,25 +8,25 @@ import { useRouter } from "next/router";
 import { useCookies } from "react-cookie";
 import { useSendMagicLink } from "../mtc-api/auth/useSendMagicLink";
 import { useForgotPassword } from "../mtc-api/auth/useResetPassword";
+import Modal from "../components/Modal";
 
 const getErrorTitle = (e) => {
   if (e?.response?.data?.code == 'ACCOUNT_NOT_CREATED') {
-    return '⚠️ Email sent';
+    return 'Email sent';
   }
-  return '⚠️ Error';
+  return 'Error';
 };
 
 // noinspection JSUnusedGlobalSymbols
 export default function Login() {
   const router = useRouter();
 
-  const [,setCookie] = useCookies([
+  const [, setCookie] = useCookies([
     'token',
     'paypalId',
     'nonprofitOnboardingFinished',
   ]);
 
-  const [error, setError] = useState();
   const [modalInfo, setModalInfo] = useState<{type, title, body}>();
 
   const sendMagicLink = useSendMagicLink({
@@ -94,10 +94,11 @@ export default function Login() {
         });
         return;
       }
-      setError(
-        e?.response?.data?.message ||
-        'Oops there was an error ! Please try again',
-      );
+      setModalInfo({
+        type: "error",
+        title: undefined,
+        body: e?.response?.data?.message || 'Oops there was an error! Please try again',
+      });
     },
   });
 
@@ -107,19 +108,15 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const [isShowPassword, setShowPassword] = useState(false);
-  const handleToggleShowPassword = (): void => {
-    setShowPassword(previousValue => !previousValue);
-  };
 
   useEffect(() => {
-    // todo(hmassad) validate email
-    setEmailValid(!!email);
-    setCanLogin(!!email && !!password);
-    setCanLogin(!!email && !!password);
+    const isEmailValid = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email);
+    setEmailValid(isEmailValid);
+    setCanLogin(!!isEmailValid && !!password);
+    setCanLogin(!!isEmailValid && !!password);
   }, [email, password])
 
   const handleLogin = () => {
-    setError(undefined);
     setModalInfo(undefined);
     // @ts-ignore
     login.mutate({
@@ -168,7 +165,7 @@ export default function Login() {
             />
           </div>
           <div>
-            <div className="flex flex-col t:max-w-413px">
+            <form className="flex flex-col t:max-w-413px">
               <div className="t:text-13px t:leading-18px t:text-gray-500">
                 Free of charge
               </div>
@@ -177,53 +174,35 @@ export default function Login() {
               </div>
 
               <div className="t:pb-39px">
-                <img className="mx-auto absolute"
-                     src="/images/login/icon-email.svg"
-                />
                 <Input
-                  variant="white"
                   className="max-w-423px"
                   placeholder="Email address"
-                  icon={true}
                   type="email"
-                  pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                  // pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
                   onChange={setEmail}
+                  prefix={<img
+                    className="ml-6px"
+                    src={"/images/login/icon-email.svg"}
+                  />}
                 />
               </div>
 
               <div className="t:pb-45px">
-                <img className="mx-auto absolute"
-                     src="/images/login/icon-password.svg"
-                />
-                <img className="absolute t:ml-367px t:mt-1"
-                     src="/images/login/icon-eye-closed.svg"
-                     onClick={handleToggleShowPassword}
-                />
                 <Input
-                  variant="white"
                   className="max-w-423px"
                   placeholder="Password"
-                  icon={true}
                   type={isShowPassword ? "text" : "password"}
                   onChange={setPassword}
+                  prefix={<img
+                    className="ml-6px"
+                    src={"/images/login/icon-password.svg"}
+                  />}
+                  suffix={<img
+                    className="mr-6px" src="/images/login/icon-eye-closed.svg"
+                    onClick={() => setShowPassword(previousValue => !previousValue)}
+                  />}
                 />
               </div>
-
-              {error ? (
-                <div className="text-right text-red-500">{error}</div>
-              ) : null}
-
-              {modalInfo ? (
-                <div className={`${modalInfo.type === "info" ? "text-green-500" : "text-red-500 font-bold"}`}>
-                  <div>
-                    {modalInfo.title}
-                  </div>
-                  <div>
-                    {modalInfo.body}
-                  </div>
-                </div>
-              ): null}
-
 
               <div className="flex flex-row items-center t:gap-20px">
                 <Button
@@ -241,10 +220,23 @@ export default function Login() {
                   Send me the magic link 🔗
                 </a>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
+
+      {modalInfo && (
+        <Modal
+          header={modalInfo.title}
+          footer={
+            <Button onClick={() => setModalInfo(undefined)} className={`w-full`}>
+              OK
+            </Button>
+          }
+        >
+          {modalInfo.body}
+        </Modal>
+      )}
     </div>
   );
 }

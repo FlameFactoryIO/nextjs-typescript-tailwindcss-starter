@@ -1,59 +1,81 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 const Input: FC<{
+  type?: string,
   disabled?: boolean,
   className?: string,
   value?: string,
   placeholder?: string,
   onChange?: (value: string) => void,
-  variant?: "primary" | "black" | "white",
   multiline?: boolean,
   rows?: number,
   maxLength?: number,
-  icon?: boolean,
-  iconPath?: string,
-  type?: string,
-  pattern?: string,
+  prefix?: ReactNode,
+  suffix?: ReactNode,
 }> = ({
   disabled,
   className = "",
   value,
   placeholder,
   onChange = () => {},
-  variant = "primary",
   multiline = false,
   rows = 4,
   maxLength,
-  icon = false,
-  iconPath = "login-email",
   type = "text",
-  pattern = "",
-}) =>
-  multiline ? (
-    <textarea
-      className={`appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-24px focus:outline-none focus:ring focus:ring-${variant}-50 ${disabled ? "bg-gray-200 cursor-not-allowed" : ""} ${className}`}
-      placeholder={placeholder}
-      rows={rows}
-      onChange={(e) => onChange(e.target.value)}
-      value={value}
-      disabled={disabled}
-      maxLength={maxLength}
-    />
-  ) : (
-    <input
-      className={`appearance-none w-full text-gray-700 leading-24px focus:outline-none
-        ${disabled ? "bg-gray-200 cursor-not-allowed" : ""}
-        ${icon ?
-          `focus:ring focus:ring-${variant}-50 bg-${iconPath} border-0 border-b-1px border-input-border bg-left bg-no-repeat px-23px` :
-          `border rounded py-2 px-3`} ${className}`}
-      placeholder={placeholder}
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      disabled={disabled}
-      maxLength={maxLength}
-      type={type}
-      pattern={pattern}
-    />
+  prefix,
+  suffix,
+}) => {
+  if (multiline) {
+    return (
+      <textarea
+        // className={`appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-24px focus:outline-none focus:ring focus:ring-${variant}-50 ${disabled ? "bg-gray-200 cursor-not-allowed" : ""} ${className}`}
+        className={`appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-24px focus:outline-none ${disabled ? "bg-gray-200 cursor-not-allowed" : ""} ${className}`}
+        placeholder={placeholder}
+        rows={rows}
+        onChange={(e) => onChange(e.target.value)}
+        value={value}
+        disabled={disabled}
+        maxLength={maxLength}
+      />
+    );
+  }
+
+  return (
+    <div
+      className="w-full flex flex-wrap items-stretch relative h-15 bg-white items-center rounded border"
+    >
+      {prefix && (
+        <div className="flex justify-center pr-3px">
+          <span
+            className="flex items-center leading-normal bg-white rounded rounded-r-none whitespace-no-wrap text-gray-600"
+          >
+            {prefix}
+          </span>
+        </div>
+      )}
+      <input
+        type={type}
+        className={`
+          flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border-0 h-10 px-3 relative self-center outline-none
+          ${disabled ? "bg-gray-200 cursor-not-allowed" : ""}
+        `}
+        placeholder={placeholder}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        disabled={disabled}
+        maxLength={maxLength}
+      />
+      {suffix && (
+        <div className="flex pl-3px">
+          <span
+            className="flex items-center leading-normal bg-white rounded rounded-l-none border-0 whitespace-no-wrap text-gray-600"
+          >
+            {suffix}
+          </span>
+        </div>
+      )}
+    </div>
   );
+};
 
 export default Input;
