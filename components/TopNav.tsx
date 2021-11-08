@@ -1,7 +1,8 @@
-import { FC, ReactNode, useCallback, useState } from "react";
+import { FC, ReactNode, useCallback, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { FaChevronDown, FaChevronUp, FaUser } from "react-icons/fa";
+import useHandleClickOutside from "./useHandleClickOutside";
 
 const TopNavItem: FC<{ title: string; path?: string; href?: string }> = ({
   title,
@@ -10,13 +11,18 @@ const TopNavItem: FC<{ title: string; path?: string; href?: string }> = ({
   children,
 }) => {
   const [isOpen, setOpen] = useState<boolean>(false);
-  const router = useRouter();
-  const isSelected = router?.asPath === href;
+  // const router = useRouter();
+  // const isSelected = router?.asPath === href;
+
+  const ref = useRef(null);
+  useHandleClickOutside(ref, () => {
+    setOpen(false);
+  });
 
   if (!href) {
     return (
-      <div className="relative">
-        <div className="flex gap-5px cursor-pointer" onClick={(e) => setOpen(!isOpen)}>
+      <div className="relative" ref={ref}>
+        <div className="flex gap-5px cursor-pointer" onClick={() => setOpen(!isOpen)}>
           <div className={` ${isOpen ? "opacity-60" : ""}`}>{title}</div>
           <div className=" text-primary flex items-center">
             {isOpen ? <FaChevronUp /> : <FaChevronDown />}
@@ -80,7 +86,7 @@ const SideNavItem: FC<{
   }
 
   return (
-    <Link href={href}>
+    <Link href={href} passHref>
       <a
         className={`flex flex-col cursor-pointer p-20px border-b ${
           isSelected ? "bg-primary-500 text-white" : ""
@@ -220,7 +226,7 @@ const TopNav: FC<{
           </Link>
         </div>
 
-        <Link href="/log-in">
+        <Link href="/login" passHref>
           <a className="flex items-center">
             <FaUser className="text-primary" />
             &nbsp;Log In
@@ -361,7 +367,7 @@ const TopNav: FC<{
           <SideNavItem title="Corporations" href="/corporations" />
           <SideNavItem title="Resources" />
           <SideNavItem
-            href="/log-in"
+            href="/login"
             title={
               <div className="flex items-center">
                 <FaUser className="text-primary" />

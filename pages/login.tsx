@@ -1,101 +1,250 @@
-import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
 import TopNav from '../components/TopNav';
 import Button from '../components/Button';
 import Input from '../components/Input';
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLogin } from "../mtc-api/auth/useLogin";
+import { useRouter } from "next/router";
+import { useCookies } from "react-cookie";
+import { useSendMagicLink } from "../mtc-api/auth/useSendMagicLink";
+import { useForgotPassword } from "../mtc-api/auth/useResetPassword";
+
+const getErrorTitle = (e) => {
+  if (e?.response?.data?.code == 'ACCOUNT_NOT_CREATED') {
+    return '⚠️ Email sent';
+  }
+  return '⚠️ Error';
+};
 
 // noinspection JSUnusedGlobalSymbols
 export default function Login() {
+  const router = useRouter();
 
-    const [eyeVisible, setEyeVisible] = useState(false);
-    const [typeInput, setTypeInput] = useState("password");
+  const [,setCookie] = useCookies([
+    'token',
+    'paypalId',
+    'nonprofitOnboardingFinished',
+  ]);
 
-    const isVisible = (): void => {
-        if (eyeVisible) {
-            setTypeInput("text");
-        } else {
-            setTypeInput("password");
-        }
-        setEyeVisible(!eyeVisible);
-    };
+  const [error, setError] = useState();
+  const [modalInfo, setModalInfo] = useState<{type, title, body}>();
 
-    return (
-        <div className="w-full min-w-320px">
-            <Head>
-                <title>Move the Chain</title>
-            </Head>
+  const sendMagicLink = useSendMagicLink({
+    onSuccess: () => {
+      setModalInfo({
+        type: "info",
+        title: 'Email sent',
+        body: `Magic link has been sent to: ${email}`,
+      });
+    },
+    onError: (e) => {
+      setModalInfo({
+        type: "error",
+        title: getErrorTitle(e),
+        body:
+          e?.response?.data?.message ||
+          'Oops there was an error ! Please try again',
+      });
+    },
+  });
 
-            <TopNav className="hidden t:block" onSearch={(searchValue) => window.alert(searchValue)} />
+  const forgotPassword = useForgotPassword({
+    onSuccess: () => {
+      setModalInfo({
+        type: "info",
+        title: 'Email sent',
+        body: `Reset password link has been sent to: ${email}`,
+      });
+    },
+    onError: (e) => {
+      setModalInfo({
+        type: "error",
+        title: getErrorTitle(e),
+        body:
+          e?.response?.data?.message ||
+          'Oops there was an error ! Please try again',
+      });
+    },
+  });
 
-            <div id="login"
-                className="t:pt-101px pt-20px
-                          flex flex-col t:flex-row items-center justify-center">
+  const login = useLogin({
+    onSuccess: ({ data }) => {
+      setCookie('token', data.jwt, { path: '/' });
+      setCookie('paypalId', data.user.paypalId, { path: '/' });
+      setCookie(
+        'nonprofitOnboardingFinished',
+        data.user.nonprofitOnboardingFinished ? 1 : 0,
+        { path: '/' },
+      );
 
-                <div className="flex flex-col t:flex-row items-center t:gap-30px t:pr-30px
-                                                t:shadow-0-5-15 t:rounded-50px ">
-                    <div className="t:w-473px t:max-h-578px">
-                        <Image
-                            src="/images/login/login.png"
-                            width={473}
-                            height={578}
-                        />
-                    </div>
-                    <div className="flex-1">
-                        <div className="flex flex-col t:max-w-413px">
-                            <div className="t:text-13px t:leading-18px items-start t:text-gray">
-                                Free of charge
-                            </div>
-                            <div className="t:text-38px t:leading-57px t:font-sans t:pb-64px">
-                                Log in to account 🗝
-                            </div>
-                            <div className="t:pb-39px">
-                                <img className="mx-auto absolute"
-                                    src="/images/login/icon-email.svg"
-                                />
-                                <Input
-                                    variant="white"
-                                    className="max-w-423px"
-                                    placeholder="Email address"
-                                    icon={true}
-                                    type="email"
-                                    pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
-                                />
+      if (data.user.nonprofitOnboardingFinished) {
+        router.push('/admin/editview');
+        return;
+      }
+      router.push('/admin/nonprofit');
+    },
+    onError: (e) => {
+      if (e?.response?.data?.code == 'ACCOUNT_NOT_CREATED') {
+        setModalInfo({
+          type: "error",
+          title: getErrorTitle(e),
+          body:
+            e?.response?.data?.message ||
+            'Oops there was an error ! Please try again',
+        });
+        return;
+      }
+      setError(
+        e?.response?.data?.message ||
+        'Oops there was an error ! Please try again',
+      );
+    },
+  });
 
-                            </div>
-                            <div className="t:pb-45px">
-                                <img className="mx-auto absolute"
-                                    src="/images/login/icon-password.svg"
-                                />
-                                <img className="absolute t:ml-367px t:mt-1"
-                                    src="/images/login/icon-eye-closed.svg"
-                                    onClick={isVisible}
-                                />
-                                <Input
-                                    variant="white"
-                                    className="max-w-423px"
-                                    placeholder="Password"
-                                    icon={true}
-                                    type={typeInput}
-                                />
-                            </div>
-                            <div className="flex flex-row items-start t:gap-20px">
-                                <div className="">
-                                    <Button className="t:max-w-93px text-14px leading-17px
-                                                       t:max-h-46px">
-                                        Login 🗝
-                                    </Button>
-                                </div>
-                                <div className="t:text-gray-500 t:text-14px t:leading-21px items-center">
-                                    Send me the magic link 🔗
-                                </div>
-                            </div>
+  const [canLogin, setCanLogin] = useState(false);
+  const [isEmailValid, setEmailValid] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-                        </div>
-                    </div>
+  const [isShowPassword, setShowPassword] = useState(false);
+  const handleToggleShowPassword = (): void => {
+    setShowPassword(previousValue => !previousValue);
+  };
+
+  useEffect(() => {
+    // todo(hmassad) validate email
+    setEmailValid(!!email);
+    setCanLogin(!!email && !!password);
+    setCanLogin(!!email && !!password);
+  }, [email, password])
+
+  const handleLogin = () => {
+    setError(undefined);
+    setModalInfo(undefined);
+    // @ts-ignore
+    login.mutate({
+      provider: 'EMAIL',
+      email,
+      password,
+    });
+  };
+
+  const handleForgotPassword = () => {
+    if (isEmailValid && !sendMagicLink.isLoading) {
+      setModalInfo(undefined);
+      // @ts-ignore
+      forgotPassword.mutate({ email });
+    }
+  };
+
+  const handleRequestMagicLink = () => {
+    if (!isEmailValid) return;
+    if (!sendMagicLink.isLoading) {
+      setModalInfo(undefined);
+      // @ts-ignore
+      sendMagicLink.mutate({ email });
+    }
+  };
+
+  return (
+    <div className="w-full min-w-320px">
+      <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
+
+      <div
+        id="login"
+        className="
+          t:pt-101px pt-80px
+          flex flex-col t:flex-row items-center justify-center"
+      >
+        <div className="
+          flex flex-col t:flex-row items-center t:gap-30px t:pr-30px
+          t:shadow-0-5-15 t:rounded-50px"
+        >
+          <div className="t:w-473px t:max-h-578px">
+            <Image
+              src="/images/login/login.png"
+              width={473}
+              height={578}
+            />
+          </div>
+          <div>
+            <div className="flex flex-col t:max-w-413px">
+              <div className="t:text-13px t:leading-18px t:text-gray-500">
+                Free of charge
+              </div>
+              <div className="t:text-38px t:leading-57px t:font-black t:pb-64px">
+                Log in to account 🗝
+              </div>
+
+              <div className="t:pb-39px">
+                <img className="mx-auto absolute"
+                     src="/images/login/icon-email.svg"
+                />
+                <Input
+                  variant="white"
+                  className="max-w-423px"
+                  placeholder="Email address"
+                  icon={true}
+                  type="email"
+                  pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                  onChange={setEmail}
+                />
+              </div>
+
+              <div className="t:pb-45px">
+                <img className="mx-auto absolute"
+                     src="/images/login/icon-password.svg"
+                />
+                <img className="absolute t:ml-367px t:mt-1"
+                     src="/images/login/icon-eye-closed.svg"
+                     onClick={handleToggleShowPassword}
+                />
+                <Input
+                  variant="white"
+                  className="max-w-423px"
+                  placeholder="Password"
+                  icon={true}
+                  type={isShowPassword ? "text" : "password"}
+                  onChange={setPassword}
+                />
+              </div>
+
+              {error ? (
+                <div className="text-right text-red-500">{error}</div>
+              ) : null}
+
+              {modalInfo ? (
+                <div className={`${modalInfo.type === "info" ? "text-green-500" : "text-red-500 font-bold"}`}>
+                  <div>
+                    {modalInfo.title}
+                  </div>
+                  <div>
+                    {modalInfo.body}
+                  </div>
                 </div>
+              ): null}
+
+
+              <div className="flex flex-row items-center t:gap-20px">
+                <Button
+                  className="t:max-w-93px text-14px leading-17px t:max-h-46px"
+                  disabled={!canLogin}
+                  onClick={handleLogin}
+                >
+                  Login 🗝
+                </Button>
+                <a
+                  className={`t:text-14px t:leading-21px underline
+                    ${isEmailValid ? "cursor-pointer text-primary-500" : "cursor-not-allowed text-gray-300"}`}
+                  onClick={handleRequestMagicLink}
+                >
+                  Send me the magic link 🔗
+                </a>
+              </div>
             </div>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
