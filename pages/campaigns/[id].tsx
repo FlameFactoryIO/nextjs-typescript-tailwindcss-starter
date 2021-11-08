@@ -9,10 +9,16 @@ import VideoPlayer from "../../components/VideoPlayer";
 import Button from "../../components/Button";
 import DonateButton from "../../components/DonationButton";
 import Ellipsis from '@quid/react-ellipsis';
-import { now } from 'moment';
 import moment from 'moment';
+import { DonationList } from "../../components/Donations";
+import { useDonations } from "../../mtc-api/donations/Donation";
 
 const CampaignProfile = ({ id, campaign }) => {
+
+  const donations = useDonations({
+    type: "campaign",
+    campaignId: id,
+  });
 
   useEffect(() => {
     logEvent('View Campaign Page', {
@@ -80,12 +86,17 @@ const CampaignProfile = ({ id, campaign }) => {
                     <div className="divide-y bg-gray"></div>
                     <div className="t:text-24px t:leading-30px t:font-bold t:pb-30px">See who’s donating</div>
                     {campaign.raised > 0 ? (
-                      <>
-                        <div className="t:pb-20px text-gray-400 font-light ">Donations</div> {/* componente de donation*/}
-                      </>
+                      <div
+                        className="flex flex-col
+                            bg-footer rounded-20px
+                            px-10px pt-25px pb-15px
+                            w-320px h-402px
+                        "
+                      >
+                        <DonationList className="flex-1 text-left" donations={donations} />
+                      </div>
                     ) : (
                       <>
-
                         <div className="t:pb-20px text-gray-400 font-light">No donations yet.</div>
                         <div className="t:pb-20px text-gray-400 font-light">Be the first!</div>
                       </>
@@ -95,11 +106,7 @@ const CampaignProfile = ({ id, campaign }) => {
                 </div>
               </div>
             </>
-          ) : (
-            ""
-          )}
-
-
+          ) : null}
 
           <div className="flex-1 flex flex-col items-center t:px-100px  bg-footer">
             <div className="flex flex-col">
@@ -110,7 +117,7 @@ const CampaignProfile = ({ id, campaign }) => {
                   </div>
 
                   <div className="flex flex-row gap-20px items-start">
-                    <img src={campaign.logoUrl} className="rounded-full h-20px w-20px" />
+                    <img src={campaign.nonprofit.logoUrl} className="rounded-full h-40px w-40px object-cover" />
                     <div className="text-14px leading-20px text-gray-400
                               t:max-w-272px">
 
