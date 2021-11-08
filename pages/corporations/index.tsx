@@ -443,13 +443,14 @@ export default function CorporationsHome() {
             </div>
 
             <div className="min-w-280px t:max-w-340px d:max-w-550px ">
-              <div aria-hidden className="t:flex-1 rounded24px  d:m-0">
+              <div aria-hidden className="t:flex-1 d:m-0">
                 <Image
                   alt=""
                   src="/images/corporations/contact-information.png"
                   width={550}
                   height={296}
-                  objectFit="contain"
+                  objectFit="fill"
+                  className="rounded-24px"
                 />
               </div>
             </div>
