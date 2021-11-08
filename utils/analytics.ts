@@ -82,13 +82,13 @@ const initialize = () => {
     gtmId: process.env.NEXT_PUBLIC_GOOGLE_TAG,
   });
 
-  // if (!amplitudeInstance) {
-  //   const amplitude = require('amplitude-js');
-  //   amplitudeInstance = amplitude.getInstance('instance');
-  //   amplitudeInstance.init(process.env.NEXT_PUBLIC_AMPLITUDE_KEY); // initializes named instance of Amplitude client
-  //
-  //   loadBranch();
-  // }
+  if (!amplitudeInstance) {
+    const amplitude = require('amplitude-js');
+    amplitudeInstance = amplitude.getInstance('instance');
+    amplitudeInstance.init(process.env.NEXT_PUBLIC_AMPLITUDE_KEY); // initializes named instance of Amplitude client
+
+    // loadBranch();
+  }
 };
 
 const logEvent = (eventName, props) => {
