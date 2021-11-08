@@ -48,7 +48,7 @@ const CampaignProfile = ({ id, campaign }) => {
         <TopNav />
 
         <div id="campaign-id"
-          className="flex flex-col t:flex-row t:gap-50px">
+          className="flex flex-col d:flex-row items-center t:gap-50px pt-50px t:pt-0">
           {!moment().isAfter(campaign.endDate) ? (
             <>
               <div className="t:max-w-474px">
@@ -108,9 +108,9 @@ const CampaignProfile = ({ id, campaign }) => {
             </>
           ) : null}
 
-          <div className="flex-1 flex flex-col items-center t:px-100px  bg-footer">
+          <div className="flex-1 flex flex-col items-center t:px-100px pb-20px bg-footer">
             <div className="flex flex-col">
-              <div className="flex flex-col t:flex-row t:gap-50px">
+              <div className="flex flex-col t:flex-row t:gap-50px justify-center">
                 <div className="t:pt-120px">
                   <div className="flex flex-col  items-start t:pb-30px">
                     <VideoPlayer className="t:w-414px t:max-h-479px" videoUrl={campaign.videoUrl} videoImage={campaign.imageUrl} />
@@ -126,7 +126,7 @@ const CampaignProfile = ({ id, campaign }) => {
                   </div>
                 </div>
 
-                <div className="flex-1 t:pt-120px t:max-w-350px">
+                <div className="flex-1 pt-40px t:pt-120px t:max-w-350px">
                   <div className="flex flex-col gap-6px">
                     <div className="text-gray-400 font-light">
                       Raising For
@@ -137,7 +137,7 @@ const CampaignProfile = ({ id, campaign }) => {
 
                     <div className="relative h-6px">
                       <div className="bg-green-500 bg-opacity-40 h-6px rounded-full" />
-                      <div className="bg-green-500 h-6px rounded-full transform -translate-y-6px" style={{ maxWidth: `${Math.min(campaign.raised / campaign.goal * 100, 100)}%` }} />
+                      <div className="bg-green-500 h-6px rounded-full transform -translate-y-6px" style={{ maxWidth: `${Math.round(campaign.raised * 100 / campaign.goal)}%` }} />
                     </div>
                     <div className="text-14px text-right">
                       <span className="text-green-500 font-bold ">Raised ${campaign.raised}</span> of ${Math.round((campaign.goal / 1000 + Number.EPSILON) * 100) / 100}k Goal
@@ -237,7 +237,7 @@ const CampaignProfile = ({ id, campaign }) => {
               </div>
 
 
-              <div className="flex-1">
+              <div className="flex-1 items-center">
                 <a>
                   <Ellipsis className="mt-10px font-light text-12px leading-15px" maxHeight={40} title={campaign.description}>
                     {campaign.description}
