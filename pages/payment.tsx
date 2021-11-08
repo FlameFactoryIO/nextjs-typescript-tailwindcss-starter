@@ -262,7 +262,7 @@ const PaymentScreen = () => {
                 <span className="enter-your-donation flex-1 text-18px leading-27px font-light ">Your donation to</span>
                 <span className="charity-heart flex-1 text-28px leading-33-6px font-bold">{nonprofitName}</span>
 
-                <div className="flex flex-col t:flex-row justify-center  gap-22px  pt-42px pb-42px">
+                <div className="flex flex-col t:flex-row justify-center  items-center t:items-start gap-22px  pt-42px pb-42px px-10px">
 
 
                   <div className="max-w-474px rounded-30px shadow-0-3-16 px-20px pb-17px">
@@ -306,7 +306,16 @@ const PaymentScreen = () => {
 
                     <div className="flex flex-col t:flex-row items-center justify-center pt-15px  pb-20px">
                       <div className="flex-1 w-210px t:w-434px h-93px">
-                        <Input className="h-93px" onChange={handleAmountChanged} value={currentAmount.toString()} />
+                        <Input
+                          className="h-93px "
+                          onChange={handleAmountChanged}
+                          value={currentAmount.toString()}
+                          prefix={
+                            <img className="w-18px h-18px"
+                              src="/images/payment/icon-money.svg"
+                            />
+                          }
+                        />
                       </div>
                     </div>
                     <div className="box-buttons flex flex-col t:flex-row items-center justify-center gap-20px">
@@ -368,6 +377,11 @@ const PaymentScreen = () => {
                           className="text-12px"
                           value={tips.toString()}
                           onChange={handleTipsChanged}
+                          prefix={
+                            <img className="w-18px h-18px"
+                              src="/images/payment/icon-money.svg"
+                            />
+                          }
                         />
                       </div>
 
@@ -395,34 +409,34 @@ const PaymentScreen = () => {
                       <div className="pt-28px pb-14px text-16px leading-19px text-left font-bold">
                         Summary
                       </div>
-                      <div className="flex flex-row pb-5px gap-10px items-start">
-                        <div className="flex-1 text-12px leading-15px text-left">
+                      <div className="flex flex-row pb-5px gap-10px items-start max-w-207px">
+                        <div className="text-left text-12px leading-15px ">
                           Your donation
                         </div>
-                        <div className="flex-1 text-12px leading-15px text-left">${currentAmount.toFixed(2)}</div>
+                        <div className="flex-1 text-12px leading-15px text-right">${currentAmount.toFixed(2)}</div>
 
                       </div>
-                      <div className="flex flex-row  gap-10px pb-22px items-start">
+                      <div className="flex flex-row  gap-10px pb-22px items-start max-w-207px">
                         <div className="text-12px leading-15px text-left">
                           Move the Chain tip
                         </div>
-                        <div className="flex-1 text-12px leading-15px text-left">${(Number(totalNumber) - currentAmount).toFixed(2)}</div>
+                        <div className="flex-1 text-12px leading-15px text-right">${(Number(totalNumber) - currentAmount).toFixed(2)}</div>
 
                       </div>
 
 
-                      <hr className="w-197px border-1px bg-secondary-gray-1"></hr>
+                      <hr className="w-197px border-1px bg-secondary-gray-1 text-center justify-center"></hr>
                       <div className="pt-19px flex flex-row pb-34px gap-30px">
-                        <div className="text-secondary-green-1 text-14px leading-21px font-bold">
+                        <div className="text-left text-secondary-green-1 text-14px leading-21px font-bold">
                           Total amount
                         </div>
-                        <div className="text-secondary-green-1 text-14px leading-21px font-bold">
+                        <div className="flex-1 text-right text-secondary-green-1 text-14px leading-21px font-light">
                           <span className={'option-text'}>{total}</span>
                         </div>
                       </div>
 
                       <div>
-                        <div className="font-bold text-14px leading-21px">
+                        <div className="font-bold text-12px leading-21px text-justify pb-20px">
                           Choose your payment method
                         </div>
                         <PayPalButtons
