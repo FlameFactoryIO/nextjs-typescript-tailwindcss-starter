@@ -253,12 +253,13 @@ export default function NonprofitsSearch() {
             {!nonprofits || !nonprofits.length ? (
               <div className="flex flex-col items-center justify-center mt-27px t:mt-47px d:mt-67px ">
                 <Image
+                  alt=""
                   src="/images/shared/no-results.svg"
                   width={218}
                   height={218}
                 />
                 <div
-                  className="font-light text-13px leading-16-9px text-16px leading-24px
+                  className="font-light text-13px leading-16-9px d:text-16px d:leading-24px
                 pb-46px"
                 >
                   There are <span className="font-bold">no matches</span> for

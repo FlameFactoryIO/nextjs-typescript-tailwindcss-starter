@@ -489,7 +489,7 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
-      <div id="questions" className="w-full bg-blue-questions">
+      <div id="questions" className="w-full bg-blue">
         <div className="w-280px t:w-768px d:w-1140px mx-auto items-center">
           <Questions />
         </div>
