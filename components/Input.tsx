@@ -10,6 +10,10 @@ const Input: FC<{
   multiline?: boolean,
   rows?: number,
   maxLength?: number,
+  icon?: boolean,
+  iconPath?: string,
+  type?: string,
+  pattern?: string,
 }> = ({
   disabled,
   className = "",
@@ -20,6 +24,10 @@ const Input: FC<{
   multiline = false,
   rows = 4,
   maxLength,
+  icon = false,
+  iconPath = "login-email",
+  type = "text",
+  pattern = "",
 }) =>
   multiline ? (
     <textarea
@@ -33,12 +41,18 @@ const Input: FC<{
     />
   ) : (
     <input
-      className={`appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-24px focus:outline-none focus:ring focus:ring-${variant}-50 ${disabled ? "bg-gray-200 cursor-not-allowed" : ""} ${className}`}
+      className={`appearance-none w-full text-gray-700 leading-24px focus:outline-none
+        ${disabled ? "bg-gray-200 cursor-not-allowed" : ""}
+        ${icon ?
+          `focus:ring focus:ring-${variant}-50 bg-${iconPath} border-0 border-b-1px border-input-border bg-left bg-no-repeat px-23px` :
+          `border rounded py-2 px-3`} ${className}`}
       placeholder={placeholder}
       value={value}
       onChange={(e) => onChange(e.target.value)}
       disabled={disabled}
       maxLength={maxLength}
+      type={type}
+      pattern={pattern}
     />
   );
 

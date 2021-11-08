@@ -6,7 +6,6 @@ import { getCampaign } from '../../mtc-api/campaign/useGetCampaign';
 import Footer from '../../components/Footer';
 import TopNav from "../../components/TopNav";
 import VideoPlayer from "../../components/VideoPlayer";
-import DonationList from "../../components/DonationList";
 import Button from "../../components/Button";
 import DonateButton from "../../components/DonationButton";
 import Ellipsis from '@quid/react-ellipsis';

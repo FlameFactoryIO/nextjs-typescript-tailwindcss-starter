@@ -1,3 +1,4 @@
+import { type } from "os";
 import Input from "./Input";
 
 // noinspection JSUnusedGlobalSymbols
@@ -23,6 +24,12 @@ export const Disabled = Template.bind({});
 Disabled.args = {
   value: "value",
   disabled: true,
+};
+
+export const Icon = Template.bind({});
+Icon.args = {
+  placeholder: "placeholder input",
+  icon: true,
 };
 
 export const Multiline = Template.bind({});
