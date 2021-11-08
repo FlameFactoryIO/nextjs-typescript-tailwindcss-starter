@@ -498,11 +498,11 @@ export default function CorporationsHome() {
                 />
                 <Input
                   className="
-                    t:col-span-2
+                    col-span-2
                     min-w-250px rounded-10pxi
                     bg-white border-1px border-solid border-input
                     t:max-w-647px
-                    d:max-w-515px
+                    d:max-w-530px
                   "
                   placeholder="Email Address"
                 />
@@ -514,7 +514,7 @@ export default function CorporationsHome() {
                     min-w-250px h-180px rounded-10pxi
                     bg-white border-1px border-solid border-input
                     t:max-w-647px
-                    d:max-w-515px d:h-227px
+                    d:max-w-530px d:h-227px
                   "
                   placeholder="Comments"
                   multiline
