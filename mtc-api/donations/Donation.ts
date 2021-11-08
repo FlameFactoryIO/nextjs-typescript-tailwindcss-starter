@@ -2,6 +2,8 @@ import client from "../apiClient";
 import { useInfiniteQuery } from "react-query";
 import { PaginatedResult } from "../../dtos/PaginatedResult";
 
+type QueryType = "nonprofit" | "campaign" | "top" | "recent";
+
 export interface Donation {
   id: string,
   donor: string,
@@ -10,9 +12,19 @@ export interface Donation {
   date: string,
 }
 
-export const getDonations = async ({type, offset, limit} : {type: "top" | "recent", offset: number, limit: number}): Promise<PaginatedResult<Donation>> => {
+export const getDonations = async ({
+  type, nonprofitName, campaignId, offset, limit
+} : {
+  type: QueryType,
+  nonprofitName?: string,
+  campaignId?: number,
+  offset: number,
+  limit: number,
+}): Promise<PaginatedResult<Donation>> => {
   const { data } = await client.get(`/donations/${type}`, {
     params: {
+      nonprofitName,
+      campaignId,
       offset,
       limit,
     },
@@ -22,12 +34,21 @@ export const getDonations = async ({type, offset, limit} : {type: "top" | "recen
 
 const getResults = (data) => (data || []).flatMap((item) => item.results);
 
-export const useDonations = ({type, options = {}} : {type: "top" | "recent", options?: any}) => {
+export const useDonations = ({
+  type, nonprofitName, campaignId, options = {}
+} : {
+  type?: QueryType,
+  nonprofitName?: string,
+  campaignId?: number,
+  options?: any
+}) => {
   const query = useInfiniteQuery(
     ["DONATIONS", type],
     ({ pageParam }) => {
       return getDonations({
         type,
+        nonprofitName,
+        campaignId,
         offset: pageParam,
         limit: 25,
       });
