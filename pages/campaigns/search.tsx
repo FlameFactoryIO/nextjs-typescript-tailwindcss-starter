@@ -11,7 +11,7 @@ import { dehydrate, QueryClient, useQuery } from "react-query";
 import { getInterests } from "../../mtc-api/interests/useGetInterests";
 import Interest from "../../dtos/Interest";
 import TrendingCampaign from "../../components/TrendingCampaign";
-import Campaign from "../../dtos/Campaign";
+import { useSearchCampaigns } from "../../mtc-api/campaign/useGetCampaigns";
 
 const Remove = () => (
   <svg
@@ -30,25 +30,29 @@ const Remove = () => (
 
 // noinspection JSUnusedGlobalSymbols
 export default function CampaignSearch() {
-  const { data: interests } = useQuery<Interest[]>(["INTERESTS"], getInterests);
-
   const [nameFilter, setNameFilter] = useState("");
   const [locationFilter, setLocationFilter] = useState<string>("");
-  const [interestsFilter, setInterestsFilter] = useState([]);
+  const [interestsFilter, setInterestsFilter] = useState<Interest[]>([]);
 
   const [isFilterExpanded, setFilterExpanded] = useState(false);
 
-  const campaigns: Campaign[] = [
-    campaign,
-    campaign,
-    campaign,
-    campaign,
-    campaign,
-    campaign,
-    campaign,
-    campaign,
-    campaign,
-  ];
+  const { data: interests } = useQuery<Interest[]>(["INTERESTS"], getInterests);
+  const { data: campaigns } = useSearchCampaigns({
+    name: nameFilter,
+    location: locationFilter,
+    interests: interestsFilter,
+    // ...(process.env.NEXT_PUBLIC_PAYPAL_URL.indexOf("sandbox") == -1
+    //   ? {
+    //     state: locationFilter,
+    //     cause_area: interestsFilter,
+    //   }
+    //   : {}),
+    options: {
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+      enabled: !!(interestsFilter || locationFilter || nameFilter),
+    },
+  });
 
   const handleInterestFilterToggle = (interest: Interest) => {
     setInterestsFilter((prev) => {
@@ -62,7 +66,7 @@ export default function CampaignSearch() {
   return (
     <div className="w-full min-w-320px">
       <Head>
-        <title>Discover more nonprofits</title>
+        <title>Move the Chain: Discover campaigns</title>
         <style type="text/css">{`
           .transparent-gradient {
             background: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0.8));
@@ -110,8 +114,8 @@ export default function CampaignSearch() {
       <div className="w-full bg-gradient-to-b from-cream to-white ">
         <div
           className="w-280px t:w-708px d:w-auto t:max-w-1140px mx-auto
-        px-20px t:px-30px pt-84px t:pt-88px d:pt-110px
-        flex flex-col d:flex-row gap-35px d:items-start d:pb-81px "
+            px-20px t:px-30px pt-84px t:pt-88px d:pt-110px
+            flex flex-col d:flex-row gap-35px d:items-start d:pb-81px"
         >
           <div
             id="filters"
@@ -242,7 +246,7 @@ export default function CampaignSearch() {
               )}
             </div>
 
-            {!campaigns || !campaigns.length ? (
+            {!campaigns?.results?.length ? (
               <div className="flex flex-col items-center justify-center mt-27px t:mt-47px d:mt-67px ">
                 <Image
                   src="/images/shared/no-results.svg"
@@ -250,8 +254,7 @@ export default function CampaignSearch() {
                   height={218}
                 />
                 <div
-                  className="font-light text-13px leading-16-9px text-16px leading-24px
-                pb-46px"
+                  className="font-light text-13px leading-16-9px text-16px leading-24px pb-46px"
                 >
                   There are <span className="font-bold">no matches</span> for
                   the search criteria.
@@ -266,7 +269,7 @@ export default function CampaignSearch() {
                 t:gap-x-30px t:gap-y-47px
                 d:gap-x-20px d:gap-y-40px"
               >
-                {campaigns.map((campaign) => (
+                {campaigns?.results?.map((campaign) => (
                   <TrendingCampaign key={campaign.id} campaign={campaign} />
                 ))}
               </div>
@@ -284,58 +287,12 @@ export default function CampaignSearch() {
   );
 }
 
-export async function getStaticProps() {
-  const queryClient = new QueryClient(); // new query client not to share data between users and server
-  await queryClient.prefetchQuery<Interest[]>(["INTERESTS"], getInterests);
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
-}
-
-const campaign: Campaign = {
-  id: 1,
-  title: "Nature Scapes",
-  description:
-    "Campaigns are an opportunity for nonprofits to organize short burst fundraising to fund a specific need. The campaign is created by the nonprofit to explain the impact of your donation. #Transparencyiskey",
-  startDate: new Date("2021-09-28T00:00:00-04:00"),
-  endDate: new Date("2022-09-28T00:00:00-04:00"),
-  goal: 10000,
-  raised: 2000,
-  donors: 50,
-  challenges: [],
-  payments: [],
-  // videoUrl: undefined,
-  imageUrl:
-    "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,gravity=auto,dpr=1/https://mtc-media-staging.s3.us-east-2.amazonaws.com/Group%20114-min.jpg",
-  createdAt: new Date("2021-09-01T00:00:00-04:00"),
-  updatedAt: new Date("2021-09-27T00:00:00-04:00"),
-  nonprofitId: 1,
-  nonprofit: {
-    id: 1,
-    logoUrl:
-      "https://movethechain.com/cdn-cgi/image/format=auto,metadata=none,sharpen=1,fit=scale-down,q=75,dpr=1/https://pics.paypal.com/00/s/MzRiYjJlNDEtNjBlNC00ZmU2LWJjY2MtY2Q5MDgzYmQ2MTA4/file.JPG",
-    path: "cool-nonprofit",
-    draftCampaigns: [],
-    pastCampaigns: [],
-    campaigns: [],
-    hasCampaigns: 1,
-    challenges: [],
-    claimed: true,
-    contacts: [],
-    createdAt: "2021-09-01T00:00:00-04:00",
-    updatedAt: "2021-09-01T00:00:00-04:00",
-    interests: [],
-    locations: [],
-    name: "Cool nonprofit",
-    payments: [],
-    testimonials: [],
-  },
-  timesShared: 50,
-  order: 1,
-  isOpen: true,
-  totalSupporters: 150,
-  shares: 1,
-  totalChallenges: 1,
-};
+// export async function getStaticProps() {
+//   const queryClient = new QueryClient(); // new query client not to share data between users and server
+//   await queryClient.prefetchQuery<Interest[]>(["INTERESTS"], getInterests);
+//   return {
+//     props: {
+//       dehydratedState: dehydrate(queryClient),
+//     },
+//   };
+// }

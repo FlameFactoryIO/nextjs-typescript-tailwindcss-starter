@@ -6,7 +6,7 @@ import Footer from "../../components/Footer";
 import Questions from "../../components/Questions";
 import Faq from "../../components/Faq";
 import Button from "../../components/Button";
-import DonationList from "../../components/DonationList";
+import { TopAndRecentDonations } from "../../components/Donations";
 
 // noinspection JSUnusedGlobalSymbols
 export default function Individuals() {
@@ -140,7 +140,7 @@ export default function Individuals() {
                 t:h-323px d:h-1539px
                 bg-footer rounded-20px
                 px-10px pt-25px pb-15px">
-                <DonationList className="flex-1" />
+                <TopAndRecentDonations className="flex-1" />
               </div>
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function Individuals() {
                 w-320px h-402px
             "
           >
-            <DonationList className="flex-1" />
+            <TopAndRecentDonations className="flex-1" />
           </div>
         </div>
       </div>
