@@ -11,6 +11,7 @@ import { logEvent } from '../utils/analytics';
 import TopNav from '../components/TopNav';
 import { FaUndo } from "react-icons/fa";
 import { CheckmarkCircleOutline } from "../components/svg/CheckmarkCircleOutline";
+import { ButtonGroup, Buttons } from '../components/Button.stories';
 
 const getOptionText = (option, currentAmount) => {
   let label = `${option}%`;
@@ -47,6 +48,7 @@ const PaymentScreen = () => {
     displayName: '',
     comment: '',
   });
+  const [selected, setSelected] = useState('');
 
   useEffect(() => {
     const { campaignId, nonprofitId, nonprofitName } = params;
@@ -54,6 +56,7 @@ const PaymentScreen = () => {
   }, []);
 
   const handleAmountChanged = (newAmount) => {
+    setSelected(newAmount)
     if (newAmount.includes('.')) return;
     if (newAmount && !Number(newAmount)) return;
     if (newAmount && Number(newAmount) >= 50000) newAmount = '49999';
@@ -270,9 +273,13 @@ const PaymentScreen = () => {
 
                     {!userId ? (
                       <>
-                        <div className="text-14px leading-21px font-bold justify-center pb-31px pt-32px">
-                          I want to setup a recurring monthly donation ❤️
+                        <div className="flex flex-col t:flex-row  pb-31px pt-32px gap-5px">
+                          <div className="text-14px leading-21px font-bold text-left">
+                            I want to setup a recurring monthly donation ❤️
+                          </div>
+                          {/* boton toggle */}
                         </div>
+
                         <div className="flex flex-col t:flex-row items-center justify-center gap-14px">
                           <div className="flex-1 w-210px">
                             <Input
@@ -282,6 +289,7 @@ const PaymentScreen = () => {
                               }
                               value={anonymousData.displayName}
                               maxLength={30}
+                              className="h-46px"
                             />
 
                           </div>
@@ -295,7 +303,7 @@ const PaymentScreen = () => {
                               multiline
                               rows={1}
                               maxLength={250}
-                              className="max-h-46px"
+                              className="h-46px rounded-10px"
                             />
                           </div>
 
@@ -305,9 +313,9 @@ const PaymentScreen = () => {
                     ) : null}
 
                     <div className="flex flex-col t:flex-row items-center justify-center pt-15px  pb-20px">
-                      <div className="flex-1 w-210px t:w-434px h-93px">
+                      <div className="flex-1 w-210px max-w-434px max-h-93px">
                         <Input
-                          className="h-93px "
+                          className="h-93px text-center text-28px"
                           onChange={handleAmountChanged}
                           value={currentAmount.toString()}
                           prefix={
@@ -319,23 +327,42 @@ const PaymentScreen = () => {
                       </div>
                     </div>
                     <div className="box-buttons flex flex-col t:flex-row items-center justify-center gap-20px pb-11px">
-                      <div className="flex-1">
-                        <Button className="w-131px bg-secondary-green-1" onClick={() => handleAmountChanged('20')}>$20</Button>
-                      </div>
-                      <div className="flex-1">
-                        <Button className="w-131px bg-secondary-green-1" onClick={() => handleAmountChanged('50')}>$50</Button>
-                      </div>
-                      <div className="flex-1">
-                        <Button className="w-131px bg-secondary-green-1" onClick={() => handleAmountChanged('100')}>$100</Button>
+                      <div className="flex flex-col t:flex-row gap-20px">
+                        {['20', '50', '100'].map(n => (
+                          <Button key={n}
+                            variant="white"
+                            className={`
+                                w-131px
+                                text-28px
+                                font-light
+                                border
+                                border-green-500
+                                ring-green-500
+                                focus-green-500
+                                ${selected === n ?
+                                "bg-green-500 text-white" :
+                                "bg-white text-green-500"}
+                            `}
+                            onClick={() => handleAmountChanged(n)}
+                          >
+                            ${n}
+                          </Button>
+                        ))}
                       </div>
                     </div>
 
-                    {/*<div>
-                      <hr className="max-w-434px text-center border-1px bg-secondary-green-1"/>
-                      <div className="max-w-434px max-h-65px bg-secondary-green-2 text-center">
-
+                    <div className="hidden t:block max-w-434px">
+                      <div className={`flex flex-col ${currentAmount == 100 ? 'items-end': currentAmount == 50 ? 'items-center' : 'items-start'}`}>
+                        <img className="w-10px h-7px" src={'/images/payment/icon-poligon.svg'} />
                       </div>
-                    </div>*/}
+                      <hr className="text-center border-1px bg-green-600" />
+                      <div className=" flex h-65px text-center items-center justify-center 
+                                      text-12px leading-18px bg-green-100 text-green-600
+                                      rounded-b-10px">
+                        <span className="max-w-389px">Lorem Ipsum is simply dummy text of the orm something more longer to this ipsum. </span>
+                      </div>
+
+                    </div>
 
 
                     <div className="max-w-435px text-12px font-light leading-16px text-left pt-32px pb-10px">
@@ -343,25 +370,28 @@ const PaymentScreen = () => {
                     </div>
 
                     <div className="flex flex-col t:flex-row items-center justify-center gap-15px">
-                      <div className="rounded-10px border-1px t:w-210px t:h-36px justify-center">
+                      <div className="rounded-10px border-1px w-210px t:h-46px justify-center bg-white">
                         <div
-                          className={'small-rectangle rectangle tip-select'}
+                          className={`bg-white h-46px  ${showTipOptions ? 'rounded-t-10px' : 'rounded-10px'}  border-1px`}
                           onClick={(e) => {
                             e.stopPropagation();
                             setShowTipOptions(true);
                           }}>
-                          <span className={'option-text'}>
-                            {getOptionText(tipCents, currentAmount)}{' '}
-                            <img src={'/arrow-down.svg'} height={7} />
-                          </span>
+                          <div className="flex flex-row h-46px items-center justify-center gap-5px">
+                            <span className={'text-14px font-bold'}>
+                              {getOptionText(tipCents, currentAmount)}{' '}
+                            </span>
+                            <img className="h-7px" src={'/images/payment/shape.svg'} />
+                          </div>
+
                           {showTipOptions && (
-                            <div className={'tip-options-container'} ref={ref}>
+                            <div className={'bg-white rounded-b-10px border-1px'} style={{ marginTop: -1 }} ref={ref}>
                               {tipOptions.map((option) => {
                                 let label = getOptionText(option, currentAmount);
                                 return (
                                   <div
-                                    className={`tip-option ${tipCents === option ? 'tip-option-selected' : ''
-                                      }`}
+                                    className={`tip-option ${tipCents === option ? '' : ''
+                                      } hover:bg-gray-100`}
                                     key={option}
                                     onClick={(e) => {
                                       e.stopPropagation();
@@ -378,10 +408,10 @@ const PaymentScreen = () => {
                         </div>
                       </div>
 
-                      <div className="flex-1 w-147px">
+                      <div className="flex-1 w-210px">
                         <Input
                           placeholder={'Enter custom amount here'}
-                          className="text-12px"
+                          className="h-46px rounded-10px"
                           value={tips.toString()}
                           onChange={handleTipsChanged}
                           prefix={
@@ -406,6 +436,7 @@ const PaymentScreen = () => {
                       <CheckBox
                         value={isShareChecked}
                         onChange={handleShareChange}
+                        variant="green"
                       >
                         <span className="text-12px leading-18px font-light">Share my name and email with this charity.</span>
                       </CheckBox>
@@ -415,7 +446,7 @@ const PaymentScreen = () => {
                   </div>
 
                   <div className="max-w-240px rounded-30px shadow-0-3-16">
-                    <div className="px-14px">
+                    <div className="px-17px">
                       <div className="pt-28px pb-14px text-16px leading-19px text-left font-bold">
                         Summary
                       </div>
@@ -460,7 +491,7 @@ const PaymentScreen = () => {
                         />
                       </div>
 
-                      <p className="footer-text text-9px leading-11px text-justify pb-10px text-secondary-gray-5">
+                      <p className="footer-text text-9px leading-11px text-justify pb-10px  text-secondary-gray-5">
                         PayPal charges recipients a processing fee of 2.2% + $0.30 per
                         transaction. Your donation, which is typically tax deductible,
                         will be made to PayPal Giving Fund, a 501(c)(3) charity, subject
