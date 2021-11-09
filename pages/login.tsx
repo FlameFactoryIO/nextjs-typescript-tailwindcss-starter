@@ -9,6 +9,7 @@ import { useCookies } from "react-cookie";
 import { useSendMagicLink } from "../mtc-api/auth/useSendMagicLink";
 import { useForgotPassword } from "../mtc-api/auth/useResetPassword";
 import Modal from "../components/Modal";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const getErrorTitle = (e) => {
   if (e?.response?.data?.code == 'ACCOUNT_NOT_CREATED') {
@@ -116,7 +117,8 @@ export default function Login() {
     setCanLogin(!!isEmailValid && !!password);
   }, [email, password])
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
     setModalInfo(undefined);
     // @ts-ignore
     login.mutate({
@@ -165,7 +167,7 @@ export default function Login() {
             />
           </div>
           <div>
-            <form className="flex flex-col t:max-w-413px">
+            <form className="flex flex-col t:max-w-413px" onSubmit={handleLogin}>
               <div className="t:text-13px t:leading-18px t:text-gray-500">
                 Free of charge
               </div>
@@ -181,9 +183,10 @@ export default function Login() {
                   // pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
                   onChange={setEmail}
                   prefix={<img
-                    className="ml-6px"
+                    className="ml-18px"
                     src={"/images/login/icon-email.svg"}
                   />}
+                  autoComplete="email"
                 />
               </div>
 
@@ -194,21 +197,25 @@ export default function Login() {
                   type={isShowPassword ? "text" : "password"}
                   onChange={setPassword}
                   prefix={<img
-                    className="ml-6px"
+                    className="ml-18px"
                     src={"/images/login/icon-password.svg"}
                   />}
-                  suffix={<img
-                    className="mr-6px" src="/images/login/icon-eye-closed.svg"
+                  suffix={isShowPassword ? <FaEyeSlash
+                    className={`mr-18px text-gray-400 select-none cursor-pointer`}
+                    onClick={() => setShowPassword(previousValue => !previousValue)}
+                  /> : <FaEye
+                    className={`mr-18px text-gray-400 select-none cursor-pointer`}
                     onClick={() => setShowPassword(previousValue => !previousValue)}
                   />}
+                  autoComplete="current-password"
                 />
               </div>
 
               <div className="flex flex-row items-center t:gap-20px">
                 <Button
                   disabled={!canLogin}
-                  onClick={handleLogin}
                   size="small"
+                  type="submit"
                 >
                   Login 🗝
                 </Button>
