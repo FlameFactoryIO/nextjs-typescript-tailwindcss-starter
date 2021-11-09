@@ -58,7 +58,7 @@ const DonateButton: FC<{
         params.set("redirectThanksPage", "1");
         params.set(
           "redirectUrl",
-          `thanks?entityType=${encodeURIComponent(entityType)}&entityId=${encodeURIComponent(entityId)}&redirectUrl=${encodeURIComponent(router.pathname)}&action=donate`,
+          `/thank-you?entityType=${encodeURIComponent(entityType)}&entityId=${encodeURIComponent(entityId)}&redirectUrl=${encodeURIComponent(router.pathname)}&action=donate`,
         );
       } else {
         params.set("redirectUrl", router.pathname);
@@ -69,16 +69,15 @@ const DonateButton: FC<{
   return (
     <Link href={buildDonationUrl()} passHref>
       <div className={className}>
-        <a onClick={() => { logEvent("Clicked Donate", { origin })}}>
-          <Button
-            variant={variant}
-            type="button"
-            disabled={disabled}
-            className="w-full"
-          >
-            {children}
-          </Button>
-        </a>
+        <Button
+          variant={variant}
+          type="button"
+          disabled={disabled}
+          className="w-full"
+          onClick={() => { logEvent("Clicked Donate", { origin })}}
+        >
+          {children}
+        </Button>
       </div>
     </Link>
   );

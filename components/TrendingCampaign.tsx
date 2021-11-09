@@ -1,5 +1,11 @@
 import {FC, useState} from "react";
 import moment from "moment";
+import Image from "next/image";
+import Link from "next/link";
+import Ellipsis from "@quid/react-ellipsis"
+import VideoPlayer from "./VideoPlayer";
+import Campaign from "../dtos/Campaign";
+import {shareCampaign} from "../mtc-api/campaign/shareCampaign";
 import {
   FaCalendarAlt,
   FaInstagram,
@@ -8,25 +14,20 @@ import {
   FaRegEnvelope,
   FaTwitter,
 } from "react-icons/fa";
-import Image from "next/image";
-import Ellipsis from "@quid/react-ellipsis"
-import Button from "./Button";
-import VideoPlayer from "./VideoPlayer";
-import Campaign from "../dtos/Campaign";
-import {shareCampaign} from "../mtc-api/campaign/shareCampaign";
+import DonateButton from "./DonationButton";
 
 const TrendingCampaign: FC<{
   campaign: Campaign,
   onClick?: (campaign: Campaign) => void,
-  onDonate?: (campaign: Campaign) => void,
   variant?: "dark" | "light",
+  origin?: string,
   className?: string,
 }> = ({
   campaign,
   variant = "light",
   className= "",
+  origin = "",
   onClick = () => {},
-  onDonate = () => {},
 }) => {
   const [isShareMenuOpen, setShareMenuOpen] = useState(false);
 
@@ -103,9 +104,22 @@ const TrendingCampaign: FC<{
           <div className="font-bold text-12px leading-15px underline">Learn more</div>
         </a>
 
-        <Button onClick={() => onDonate(campaign)} variant={variant === "light" ? "black" : "white"} className="mt-10px rounded-8pxi mx-auto w-220px d:w-full">
-          Donate
-        </Button>
+        <Link href={"/payment"} passHref>
+          <a className="mt-10px">
+            <DonateButton
+              className=" rounded-8pxi mx-auto w-220px d:w-full"
+              variant={variant === "light" ? "black" : "white"}
+              origin={origin}
+              nonprofitId={campaign.nonprofit.paypalId || campaign.nonprofit.id.toString()}
+              nonprofitName={campaign.nonprofit.name}
+              campaignId={campaign.id}
+              entityType="campaign"
+              entityId="campaign.id"
+            >
+              Donate
+            </DonateButton>
+          </a>
+        </Link>
       </div>
     </div>
   );
