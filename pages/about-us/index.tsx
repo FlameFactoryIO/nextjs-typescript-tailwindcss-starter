@@ -351,8 +351,8 @@ export default function AboutUs() {
                   a matter of minutes.
                 </p>
               </div>
-              <div className="" style={{ marginBottom: -7 }}>
-                <div className="hidden d:block" style={{ marginBottom: -7 }}>
+              <div className="">
+                <div className="hidden d:block mt-20px">
                   <Image
                     className="rounded-24px"
                     src="/images/about-us/girl-about-our-platform.png"
@@ -360,7 +360,7 @@ export default function AboutUs() {
                     height={603}
                   />
                 </div>
-                <div className="hidden t:block d:hidden">
+                <div className="hidden t:block d:hidden mt-28px">
                   <Image
                     className="rounded-24px"
                     src="/images/about-us/girl-about-our-platform.png"
@@ -368,7 +368,7 @@ export default function AboutUs() {
                     height={390}
                   />
                 </div>
-                <div className="t:hidden">
+                <div className="t:hidden -mb-60px">
                   <Image
                     className="rounded-24px"
                     src="/images/about-us/girl-about-our-platform.png"

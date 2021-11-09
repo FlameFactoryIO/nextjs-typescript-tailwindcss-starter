@@ -47,7 +47,7 @@ const TopNavItem: FC<{ title: string; path?: string; href?: string }> = ({
     <Link href={href}>
       <div className=" cursor-pointer">
       <a
-        className={path === href ? "border-b-2 border-primary-500 font-bold" : ""}
+        className={`border-b-2 ${path === href ? "border-primary-500 font-bold" : "border-white"}`}
         onClick={() => setOpen(false)}
       >
         {title}
@@ -61,7 +61,7 @@ const SideNavItem: FC<{
   title: ReactNode;
   className?: string;
   href?: string;
-}> = ({ title, className, href, children }) => {
+}> = ({ title, className= "", href, children }) => {
   const [isOpen, setOpen] = useState<boolean>(false);
   const router = useRouter();
   const isSelected = router?.asPath === href;
@@ -69,9 +69,7 @@ const SideNavItem: FC<{
   if (!href) {
     return (
       <div
-        className={`flex flex-col cursor-pointer p-20px border-b ${
-          className ?? ""
-        }`}
+        className={`flex flex-col cursor-pointer p-20px ${className}`}
         onClick={() => setOpen((prev) => !prev)}
       >
         <div className="flex">
@@ -89,9 +87,10 @@ const SideNavItem: FC<{
   return (
     <Link href={href} passHref>
       <a
-        className={`flex flex-col cursor-pointer p-20px border-b ${
-          isSelected ? "bg-primary-500 text-white" : ""
-        } ${className ?? ""}`}
+        className={`flex flex-col cursor-pointer p-20px border-b
+          ${isSelected ? "bg-primary-500 text-white" : ""}
+          ${className}
+        `}
       >
         <div
           className="flex"
@@ -138,9 +137,7 @@ const TopNav: FC<{
   return (
     <>
       <div
-        className={`z-40 hidden d:flex fixed w-full select-none bg-white px-50px py-20px items-center ${
-          className ?? ""
-        }`}
+        className={`z-40 hidden d:flex fixed w-full select-none bg-white px-50px py-20px items-center ${className}`}
       >
         <Link href="/">
           <a className="flex">
@@ -236,9 +233,7 @@ const TopNav: FC<{
       </div>
 
       <div
-        className={`z-40 flex d:hidden fixed w-full select-none bg-white rounded-b-10pxi px-20px pt-12px pb-10px items-center ${
-          className ?? ""
-        }`}
+        className={`z-40 flex d:hidden fixed w-full select-none bg-white rounded-b-10pxi px-20px pt-12px pb-10px items-center ${className}`}
       >
         <Link href="/">
           <a className="flex">
@@ -282,9 +277,11 @@ const TopNav: FC<{
 
       {isOpen && (
         <div
-          className={`z-40 d:hidden fixed top-0 right-0 bottom-0 w-full max-w-320px bg-white flex-col select-none text-14px leading-18-2px font-medium pb-55px ${
-            className ?? ""
-          }`}
+          className={`
+            z-40 d:hidden fixed top-0 right-0 bottom-0
+            w-full max-w-320px
+            bg-white flex-col select-none
+            text-14px leading-18-2px font-medium pb-55px ${className}`}
         >
           <svg
             width="22"

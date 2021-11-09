@@ -41,7 +41,7 @@ const Input: FC<{
 
   return (
     <div
-      className={`w-full flex flex-wrap items-stretch relative min-h-46px bg-white items-center rounded-10px border ${className}`}
+      className={`w-full flex flex-wrap items-stretch relative min-h-46px bg-white items-center rounded-10px border ${disabled ? "bg-gray-200" : ""} ${className}`}
     >
       {prefix && (
         <div className="flex justify-center pr-3px">
