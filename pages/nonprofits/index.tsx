@@ -63,7 +63,7 @@ export default function Home() {
               your online presence and expand your network to a broader
               audience.
             </p>
-            <div className="mx-auto pt-24px  
+            <div className="mx-auto pt-24px
                             t:mx-0 t:pt-0 t:pl-31px ">
               <Button
                 type="button"
@@ -234,7 +234,7 @@ export default function Home() {
                 <li>
                   <p className="text-black font-light pl-9px">
                     Click on{" "}
-                    “<span className="font-bold text-primary underline">search your nonprofit</span>" and
+                    “<span className="font-bold text-primary underline">search your nonprofit</span>” and
                     claim your page
                   </p>
                 </li>
@@ -286,7 +286,7 @@ export default function Home() {
                   <p className="text-black font-light pl-9px">
                     Within <span className="font-bold">a few minutes</span> you can
                     update your profile!
-                  </p>               
+                  </p>
                 </li>
                 <li>
                   <p className="text-black font-light pl-9px">
