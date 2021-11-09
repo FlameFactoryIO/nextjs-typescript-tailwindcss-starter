@@ -318,7 +318,7 @@ const PaymentScreen = () => {
                         />
                       </div>
                     </div>
-                    <div className="box-buttons flex flex-col t:flex-row items-center justify-center gap-20px">
+                    <div className="box-buttons flex flex-col t:flex-row items-center justify-center gap-20px pb-11px">
                       <div className="flex-1">
                         <Button className="w-131px h-46px bg-secondary-green-1" onClick={() => handleAmountChanged('20')}>$20</Button>
                       </div>
@@ -330,13 +330,20 @@ const PaymentScreen = () => {
                       </div>
                     </div>
 
+                    {/*<div>
+                      <hr className="max-w-434px text-center border-1px bg-secondary-green-1"/>
+                      <div className="max-w-434px max-h-65px bg-secondary-green-2 text-center">
+                      
+                      </div>
+                    </div>*/}
+
 
                     <div className="max-w-435px text-12px font-light leading-16px text-left pt-32px pb-10px">
                       <span className="font-bold"> Move the Chain tip.</span> 🙌 Thank you for getting involved and supporting important our organization’s causes every month.
                     </div>
 
                     <div className="flex flex-col t:flex-row items-center justify-center gap-15px">
-                      <div className="t:w-210px t:h-36px rounded-10px border-1px text-center">
+                      <div className="rounded-10px border-1px t:w-210px t:h-36px justify-center">
                         <div
                           className={'small-rectangle rectangle tip-select'}
                           onClick={(e) => {
@@ -395,12 +402,15 @@ const PaymentScreen = () => {
                       *Move the Chain charges recipients a 3% platform fee for standard basic operating expenses.
                     </div>
 
-                    <CheckBox
-                      value={isShareChecked}
-                      onChange={handleShareChange}
-                    >
-                      Share my name and email with this charity.
-                    </CheckBox>
+                    <div className="text-left pt-20px">
+                      <CheckBox
+                        value={isShareChecked}
+                        onChange={handleShareChange}
+                      >
+                        <span className="text-12px leading-18px font-light">Share my name and email with this charity.</span>
+                      </CheckBox>
+                    </div>
+
 
                   </div>
 
