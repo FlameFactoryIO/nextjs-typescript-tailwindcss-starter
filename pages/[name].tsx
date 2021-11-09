@@ -168,12 +168,12 @@ export default function NonprofitProfile({
           </div>
         </div>
       </div>
-      <div className="w-full">
-        <div id="content" className="flex justify-between  mr-120px ">
+      <div className="w-full mt-40px t:mt-106px">
+        <div id="content" className="flex flex-col t:flex-row mt-  t:mr-120px ">
           <div>
             <div
               id="share-links"
-              className="flex items start gap-10px mt-40px t:mt-106px ml-20px t:ml-120px"
+              className="flex items start gap-10px  ml-20px t:ml-120px"
             >
               {nonprofit.facebook && (
                 <Link href={nonprofit.facebook} passHref>
