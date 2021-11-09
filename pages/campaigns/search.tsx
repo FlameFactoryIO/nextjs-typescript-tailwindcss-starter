@@ -82,8 +82,7 @@ export default function CampaignSearch() {
           t:pt-104px  t:pb-25px
           d:pt-148px  d:pb-49px
           flex flex-col items-center mx-auto
-          t:max-w-707px d:max-w-780px
-        "
+          t:max-w-707px d:max-w-780px"
         >
           <div
             className="
@@ -99,14 +98,16 @@ export default function CampaignSearch() {
           >
             Text about campaigns that can go on two rows. Text about campaigns that can go on two rows.
             Text about campaigns that can go on two rows.
+
+
           </div>
           <div className="flex flex-col t:flex-row gap-5px items-stretch">
             <Input
-              className="min-w-280px d:max-2-521px font-light"
-              placeholder={"Search for a campaign or keyword"}
+              className="min-w-280px d:max-w-521px font-light"
+              placeholder={"Campaign name or keyword"}
               onChange={(value) => setNameFilter(value)}
             />
-            <Button className="min-w-110px t:max-w-140px d:max-w-130px">
+            <Button>
               Search
             </Button>
           </div>
@@ -121,13 +122,9 @@ export default function CampaignSearch() {
         >
           <div
             id="filters"
-            className="rounded-24px shadow-0-6-24 border-1px border-search-border border-opacity-20 bg-white p-15px select-none
-            "
+            className="rounded-24px shadow-0-6-24 border-1px border-search-border border-opacity-20 bg-white p-15px select-none"
           >
-            <div
-              className="mt-23px mb-31px d:mb-39px
-            text-18px leading-27px font-bold"
-            >
+            <div className="mt-23px mb-31px d:mb-39px text-18px leading-27px font-bold">
               Browse campaigns by:
             </div>
             <div className=" ont-light text-16px leading-24px">Location</div>
@@ -156,12 +153,8 @@ export default function CampaignSearch() {
                       className={`
                         cursor-pointer rounded-10px border-1px border-secondary-gray-2 h-46px flex items-center px-20px gap-8px
                         text-13px leading-15-6px font-bold
-                        ${
-                          interestsFilter?.indexOf(interest) > -1
-                            ? "border-none bg-primary text-white"
-                            : ""
-                        }
-                       `}
+                        ${interestsFilter?.indexOf(interest) > -1 ? "border-none bg-primary text-white" : ""}
+                      `}
                       onClick={() => handleInterestFilterToggle(interest)}
                     >
                       <div className="text-22px leading-22px">{emoji}</div>

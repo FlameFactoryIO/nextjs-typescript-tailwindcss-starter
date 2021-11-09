@@ -1,6 +1,6 @@
-import { type } from "os";
 import Input from "./Input";
 import Button from "./Button";
+import { FaAnkh, FaEnvelope, FaVirusSlash, FaXRay } from "react-icons/fa";
 
 // noinspection JSUnusedGlobalSymbols
 export default {
@@ -25,33 +25,29 @@ export const Inputs = () => (
 
     <Input
       value="234567isjdfokljaslkdjfh"
-      prefix={
-        "ICON"
-      }
-      suffix="SUFFIX"
+      prefix={<FaEnvelope className="ml-14px" />}
+      suffix={<FaAnkh className="mr-14px" />}
+    />
+
+    <Input
+      value="234567isjdfokljaslkdjfh"
+      prefix={<FaXRay className="ml-14px" />}
+    />
+
+    <Input
+      value="234567isjdfokljaslkdjfh"
+      suffix={<FaVirusSlash className="mr-14px" />}
     />
 
     <Input
       value="234567isjdfokljaslkdjfh"
       prefix={
-        "ICON"
-      }
-    />
-
-    <Input
-      value="234567isjdfokljaslkdjfh"
-      suffix="SUFFIX"
-    />
-
-    <Input
-      value="234567isjdfokljaslkdjfh"
-      prefix={
-        <Button>
+        <Button className="rounded-r-none">
           Click
         </Button>
       }
       suffix={
-        <Button>
+        <Button className="rounded-l-none">
           Click
         </Button>
       }
@@ -60,12 +56,12 @@ export const Inputs = () => (
     <Input
       value="234567isjdfokljaslkdjfh"
       prefix={
-        <Button className="h-60px">
-          Click
+        <Button className="h-60px rounded-r-none">
+          Tall button
         </Button>
       }
       suffix={
-        <Button className="h-60px">
+        <Button className="h-60px rounded-l-none">
           Tall button
         </Button>
       }
