@@ -348,9 +348,9 @@ const PaymentScreen = () => {
                     </div>
 
                     <div className="flex flex-col t:flex-row items-center justify-center gap-15px">
-                      <div className="rounded-10px border-1px w-210px t:h-46px justify-center bg-white">
+                      <div className="rounded-10px border-1px w-210px t:h-46px justify-center overflow-visible z-50">
                         <div
-                          className={`bg-white h-46px  ${showTipOptions ? 'rounded-t-10px' : 'rounded-10px'}  border-1px`}
+                          className={`bg-white h-46px ${showTipOptions ? 'rounded-t-10px' : 'rounded-10px'}  border-1px select-none cursor-pointer`}
                           onClick={(e) => {
                             e.stopPropagation();
                             setShowTipOptions(true);
@@ -363,12 +363,11 @@ const PaymentScreen = () => {
                           </div>
 
                           {showTipOptions && (
-                            <div className={'bg-white rounded-b-10px border-1px'} style={{ marginTop: -1 }} ref={ref}>
+                            <div className="rounded-b-10px border-1px -mt-1px bg-white" ref={ref}>
                               {[0, 5, 10, 15, 20, 25].map((option) => {
                                 return (
                                   <div
-                                    className={`tip-option ${tipCents === option ? '' : ''
-                                      } hover:bg-gray-100`}
+                                    className={`${tipCents === option ? 'bg-green-200 hover:bg-green-300' : 'hover:bg-gray-100'} cursor-pointer`}
                                     key={option}
                                     onClick={(e) => {
                                       e.stopPropagation();
