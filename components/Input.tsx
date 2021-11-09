@@ -44,12 +44,8 @@ const Input: FC<{
       className={`w-full flex flex-wrap items-stretch relative min-h-46px bg-white items-center rounded-10px border ${disabled ? "bg-gray-200" : ""} ${className}`}
     >
       {prefix && (
-        <div className="flex justify-center pr-3px">
-          <span
-            className="flex items-center leading-normal bg-white rounded rounded-r-none whitespace-no-wrap text-gray-600"
-          >
-            {prefix}
-          </span>
+        <div className="flex items-center justify-center pr-3px">
+          {prefix}
         </div>
       )}
       <input
@@ -65,12 +61,8 @@ const Input: FC<{
         maxLength={maxLength}
       />
       {suffix && (
-        <div className="flex pl-3px">
-          <span
-            className="flex items-center leading-normal bg-white rounded rounded-l-none border-0 whitespace-no-wrap text-gray-600"
-          >
-            {suffix}
-          </span>
+        <div className="flex items-center justify-center pl-3px">
+          {suffix}
         </div>
       )}
     </div>

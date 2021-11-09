@@ -14,10 +14,6 @@ export const Buttons = () => (
     <Button variant="black" size="small">Small Black</Button>
     <Button disabled>Normal Inactive</Button>
     <Button disabled size="small">Small Inactive</Button>
-    <Button className={`
-      bg-white
-      bg-green-500
-    `}>Green Outline</Button>
   </div>
 );
 
