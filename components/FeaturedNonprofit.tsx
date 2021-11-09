@@ -46,7 +46,7 @@ const FeaturedNonprofit = ({
 
       <Link href={`/${nonprofit.name}`}>
         <a className="mt-10px flex flex-col items-center">
-          <Button variant="black" className={`rounded-10pxi w-full ${buttonClassName}`}>
+          <Button variant="black" className={`w-full ${buttonClassName}`}>
             Find out more
           </Button>
         </a>

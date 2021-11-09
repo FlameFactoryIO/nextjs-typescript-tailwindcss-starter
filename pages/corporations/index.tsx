@@ -11,11 +11,23 @@ export default function CorporationsHome() {
     <div className="w-full min-w-320px">
       <Head>
         <title>Move the Chain</title>
+        <style type="text/css">
+          {`
+            .hero-background {
+              background: url('/images/background-worldmap.png') center no-repeat, linear-gradient(90deg, #0A173D 0%, #0C163B 38.02%, #080613 100%);
+              background-size: cover;
+            }
+            .waves-background {
+              background: url('/images/background-waves.png') center no-repeat, linear-gradient(90deg, #0A173D 0%, #0C163B 38.02%, #080613 100%);
+              background-size: cover;
+            }
+          `}
+        </style>
       </Head>
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
 
-      <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
+      <div className="w-full hero-background">
         <div
           id="hero"
           className="
@@ -53,7 +65,8 @@ export default function CorporationsHome() {
             </div>
             <Button
               variant="primary"
-              className="rounded-10pxi shadow-2-5-15 w-124px h-42px d:h-46px text-14px leading-24px  d:text-18px d:leading-24px"
+              className="shadow-2-5-15 h-42px d:h-46px d:text-18px d:leading-24px"
+              size="small"
             >
               Join us
             </Button>
@@ -173,7 +186,7 @@ export default function CorporationsHome() {
       </div>
 
       <div>
-        <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
+        <div className="w-full waves-background">
           <div
             id="corporation"
             className="pt-82px pb-50px px-20px
@@ -332,7 +345,7 @@ export default function CorporationsHome() {
 
           <div
             className="font-bold text-24px leading-28-8px pb-20px
-                          t:pb-21px t:px-10px
+                          t:pb-21px
                           d:text-43px d:leading-51-6px d:pb-29px
                           "
           >
@@ -405,7 +418,7 @@ export default function CorporationsHome() {
         </div>
       </div>*/}
 
-      <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
+      <div className="w-full waves-background">
         <div
           id="provide-contact"
           className="flex flex-col d:grid d:grid-cols-2
@@ -418,8 +431,7 @@ export default function CorporationsHome() {
           <div
             className="t:px-0 text-white text-center t:text-left d:text-left
                         flex flex-col t:grid t:grid-cols-2 d:grid-cols-1 d:grid-rows-2
-                        pb-56px t:pb-1px d:pb-33px d:items-center
-                          "
+                        pb-56px t:pb-1px d:pb-33px d:items-center"
           >
             <div>
               <div
@@ -442,14 +454,15 @@ export default function CorporationsHome() {
               </div>
             </div>
 
-            <div className="min-w-280px t:max-w-340px d:max-w-550px ">
-              <div aria-hidden className="t:flex-1 rounded24px  d:m-0">
+            <div className="min-w-280px t:max-w-340px d:max-w-550px">
+              <div aria-hidden className="t:flex-1 d:m-0 ">
                 <Image
                   alt=""
                   src="/images/corporations/contact-information.png"
                   width={550}
-                  height={296}
-                  objectFit="contain"
+                  height={301}
+                  objectFit="fill"
+                  className="rounded-24px"
                 />
               </div>
             </div>
@@ -459,61 +472,45 @@ export default function CorporationsHome() {
             <div
               className="flex-1 bg-white min-w-280px h-636px rounded-24px shadow-0-3-16
               pt-30px px-15px pb-29px
-              d:pt-20px d:px-20px d:pb-39px
-                            t:w-708px t:h-504px
-                            d:w-575px d:h-570px"
+              d:pt-20px d:px-30px d:pb-39px
+              t:w-708px t:px-30px t:h-504px
+              d:w-575px d:h-570px"
             >
               <div
                 className="grid grid-rows-5 t:grid-cols-2 t:grid-rows-3 gap-y-20px gap-x-10px items-center
               pb-20px"
               >
                 <Input
-                  className=" min-w-250px rounded-10pxi
-                    bg-white border-1px border-solid border-input
-                                t:max-w-313px
-                                d:max-w-250px"
+                  className="min-w-250px bg-white border-1px border-solid border-input t:max-w-313px d:max-w-250px"
                   placeholder="Contact Name"
                 />
                 <Input
-                  className="min-w-250px rounded-10pxi
-                    bg-white border-1px border-solid border-input
-                            t:max-w-313px
-                            d:max-w-250px"
+                  className="min-w-250px bg-white border-1px border-solid border-input t:max-w-313px d:max-w-250px"
                   placeholder="Mobile Number"
                 />
                 <Input
-                  className="min-w-250px rounded-10pxi
-                    bg-white border-1px border-solid border-input
-                            t:max-w-313px
-                            d:max-w-250px"
+                  className="min-w-250px bg-white border-1px border-solid border-input t:max-w-313px d:max-w-250px"
                   placeholder="Company Name"
                 />
                 <Input
-                  className="min-w-250px rounded-10pxi
-                    bg-white border-1px border-solid border-input
-                            t:max-w-313px
-                            d:max-w-250px"
+                  className="min-w-250px bg-white border-1px border-solid border-input t:max-w-313px d:max-w-250px"
                   placeholder="Role/Position"
                 />
                 <Input
-                  className="
-                    t:col-span-2
-                    min-w-250px rounded-10pxi
-                    bg-white border-1px border-solid border-input
-                    t:max-w-647px
-                    d:max-w-515px
-                  "
+                  className="t:col-span-2 min-w-250px bg-white border-1px border-solid border-input
+                             t:max-w-642px d:max-w-522px"
                   placeholder="Email Address"
                 />
               </div>
 
-              <div className="pb-30px t:pb-40px">
-                <Input
+
+              <div className="grid grid-rows-1 t:grid-cols-1 items-center pb-30px t:pb-40px">
+              <Input
                   className="
-                    min-w-250px h-180px rounded-10pxi
+                    min-w-250px h-180px
                     bg-white border-1px border-solid border-input
-                    t:max-w-647px
-                    d:max-w-515px d:h-227px
+                    t:max-w-642px
+                    d:max-w-522px d:h-227px d:mx-0
                   "
                   placeholder="Comments"
                   multiline
@@ -521,7 +518,7 @@ export default function CorporationsHome() {
               </div>
 
               <div className="text-center">
-                <Button className="w-201px h-46px rounded-10pxi" type="submit">
+                <Button size="small" type="submit">
                   Join Us 🚀
                 </Button>
               </div>

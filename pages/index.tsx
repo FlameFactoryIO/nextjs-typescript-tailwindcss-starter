@@ -105,13 +105,24 @@ export default function Home() {
           .dot.active {
             background: #000;
           }
+          
+          .hero-background {
+            background: url('/images/background-worldmap.png') top no-repeat, linear-gradient(90deg, #0A173D 0%, #0C163B 38.02%, #080613 100%);
+            background-size: cover;
+          }
+
+          .trending-campaigns-background {
+            background: url('/images/background-waves.png') center no-repeat, linear-gradient(90deg, #0A173D 0%, #0C163B 38.02%, #080613 100%);
+            background-size: cover;
+          }
         `}
         </style>
       </Head>
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)}/>
 
-      <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
+      {/*bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right*/}
+      <div className="w-full hero-background">
         <div
           id="hero"
           className="
@@ -120,6 +131,7 @@ export default function Home() {
           d:pt-98px d:px-120px d:pb-59px
           flex flex-col t:grid t:grid-cols-2 gap-36px t:gap-20px d:gap-49px items-center"
         >
+          {/*<WorldMap />*/}
           <div id="hero-img" className=" mx-auto t:mr-0 order-2 t:order-first">
             <Image
               src="/images/home/hero.png"
@@ -335,7 +347,7 @@ export default function Home() {
                 <Button
                   type="button"
                   variant="primary"
-                  className="rounded-10pxi text-14px leading-21px w-182px h-46px"
+                  size="small"
                 >
                   Get to know us
                 </Button>
@@ -346,7 +358,7 @@ export default function Home() {
       </div>
 
       <div
-        className="bg-blue-dark
+        className="trending-campaigns-background
         px-20px pt-44px pb-50px
         t:px-30px t:pt-44px t:pb-50px
         d:px-120px d:py-82px"
@@ -433,7 +445,7 @@ export default function Home() {
               </div>
               <Link href="/campaigns/search" passHref>
                 <a>
-                  <Button variant="primary" className="d:mt-22px rounded-10pxi text-14px leading-21px h-46px w-213px">
+                  <Button variant="primary" className="d:mt-22px" size="small">
                     View all campaigns 👉
                   </Button>
                 </a>
@@ -456,7 +468,7 @@ export default function Home() {
             </div>
             <Button
               variant="primary"
-              className="mt-22px t:m-0 rounded-10pxi whitespace-nowrap h-46px w-213px"
+              className="mt-22px t:m-0 whitespace-nowrap"
             >
               View all campaigns 👉
             </Button>
@@ -492,9 +504,8 @@ export default function Home() {
           </p>
 
           <Link href="/nonprofits/search" passHref={false}>
-            <a className="d:hidden mx-auto
-                          mt-34px t:mt-25px">
-              <Button className="rounded-10pxi text-14px leading-21px h-46px w-263px">
+            <a className="d:hidden mx-auto mt-34px t:mt-25px">
+              <Button>
                 Discover more nonprofits
               </Button>
             </a>
@@ -557,7 +568,7 @@ export default function Home() {
               </div>
               <Link href="/nonprofits" passHref={false}>
                 <a className="d:mt-22px">
-                  <Button variant="primary" className="rounded-10pxi text-14px leading-21px h-46px w-213px">
+                  <Button variant="primary">
                     Claim your page 👉
                   </Button>
                 </a>
@@ -580,7 +591,7 @@ export default function Home() {
             </div>
             <Link href="/nonprofits" passHref={false}>
               <a className="mt-22px t:m-0">
-                <Button variant="primary" className="rounded-10pxi whitespace-nowrap text-14px leading-21px h-46px w-213px">
+                <Button variant="primary" className="whitespace-nowrap">
                   Claim your page 👉
                 </Button>
               </a>
@@ -589,7 +600,7 @@ export default function Home() {
 
           <Link href="/nonprofits/search" passHref={false}>
             <a className="hidden d:block mx-auto mt-57px">
-              <Button className="rounded-10pxi text-14px leading-21px h-46px w-263px">
+              <Button>
                 Discover more nonprofits
               </Button>
             </a>
@@ -645,13 +656,11 @@ export default function Home() {
                   causes.
                 </p>
                 <Link href="/individuals">
-                  <a>
+                  <a className="mt-15px mx-auto d:mx-0">
                     <Button
                       type="button"
                       variant="primary"
-                      className="mt-15px rounded-10pxi t:px-1px d:px-20px mx-auto d:mx-0
-                      text-14px leading-21px
-                      w-160px t:w-130px d:w-200px"
+                      className="t:px-0 w-200px t:w-130px d:w-200px"
                     >
                       Support a cause
                     </Button>
@@ -674,9 +683,8 @@ export default function Home() {
                     <Button
                       type="button"
                       variant="primary"
-                      className="rounded-10pxi text-14px leading-21px
-                      t:px-1px d:px-20px
-                      w-160px t:w-130px d:w-200px">
+                      className="t:px-0 w-200px t:w-130px d:w-200px"
+                    >
                       Claim your page
                     </Button>
                   </a>
@@ -695,8 +703,11 @@ export default function Home() {
                 </p>
                 <Link href="/corporations" passHref={false}>
                   <a className="mt-15px mx-auto d:mx-0 ">
-                    <Button type="button" variant="primary"
-                      className="rounded-10pxi t:px-1px d:px-20px text-14px leading-21px w-160px t:w-130px d:w-200px">
+                    <Button
+                      type="button"
+                      variant="primary"
+                      className="t:px-0 w-200px t:w-130px d:w-200px"
+                    >
                         Find out more
                     </Button>
                   </a>

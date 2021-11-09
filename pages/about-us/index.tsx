@@ -10,11 +10,23 @@ export default function AboutUs() {
     <div className="w-full min-w-320px ">
       <Head>
         <title>Move the Chain</title>
+        <style type="text/css">
+          {`
+            .hero-background {
+              background: url('/images/background-waves.png') center no-repeat, linear-gradient(90deg, #0A173D 0%, #0C163B 38.02%, #080613 100%);
+              background-size: cover;
+            }
+            .why-background {
+              background: url('/images/background-waves.png') top no-repeat, linear-gradient(90deg, #0A173D 0%, #0C163B 38.02%, #080613 100%);
+              background-size: cover;
+            }
+          `}
+        </style>
       </Head>
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
 
-      <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
+      <div className="w-full hero-background">
         <div
           id="hero"
           className="
@@ -123,7 +135,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <div className="w-full bg-blue-dark">
+      <div className="w-full why-background">
         <div
           id="why-move-the-chain"
           className="flex flex-col t:grid grid-cols-2 t:gap-30px items-center d:max-h-640px"
@@ -351,8 +363,8 @@ export default function AboutUs() {
                   a matter of minutes.
                 </p>
               </div>
-              <div className="" style={{ marginBottom: -7 }}>
-                <div className="hidden d:block" style={{ marginBottom: -7 }}>
+              <div className="">
+                <div className="hidden d:block mt-20px">
                   <Image
                     className="rounded-24px"
                     src="/images/about-us/girl-about-our-platform.png"
@@ -360,7 +372,7 @@ export default function AboutUs() {
                     height={603}
                   />
                 </div>
-                <div className="hidden t:block d:hidden">
+                <div className="hidden t:block d:hidden mt-28px">
                   <Image
                     className="rounded-24px"
                     src="/images/about-us/girl-about-our-platform.png"
@@ -368,7 +380,7 @@ export default function AboutUs() {
                     height={390}
                   />
                 </div>
-                <div className="t:hidden">
+                <div className="t:hidden -mb-60px">
                   <Image
                     className="rounded-24px"
                     src="/images/about-us/girl-about-our-platform.png"

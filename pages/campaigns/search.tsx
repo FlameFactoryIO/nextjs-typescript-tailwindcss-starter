@@ -71,40 +71,48 @@ export default function CampaignSearch() {
           .transparent-gradient {
             background: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0.8));
           }
-        `}</style>
+          .dots-background {
+            background: url('/images/background-dots.png') top no-repeat, linear-gradient(90deg, #0A173D 0%, #0C163B 38.02%, #080613 100%);;
+            background-size: cover;
+          }
+        `}
+        </style>
       </Head>
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
-      <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
+      <div className="w-full dots-background">
         <div
           id="hero"
           className="px-20px pt-82px pb-27px
           t:pt-104px  t:pb-25px
           d:pt-148px  d:pb-49px
           flex flex-col items-center mx-auto
-          t:max-w-707px d:max-w-780px
-        "
+          t:max-w-707px d:max-w-780px"
         >
           <div
-            className="text-26px leading-31-2px d:text-48px d:leading-57-6px font-bold text-white text-center
-          pb-20px t:pb-22px d:pb-40px"
+            className="
+              text-26px leading-31-2px d:text-48px d:leading-57-6px font-bold text-white text-center
+              pb-20px t:pb-22px d:pb-40px"
           >
             Discover campaigns
           </div>
           <div
-            className="text-16px leading-24px t:leading-20-8 d:text-18px d:leading-27px font-light text-white text-center
-          pb-20px t:pb-35px d:pb-33px"
+            className="
+              text-16px leading-24px t:leading-20-8 d:text-18px d:leading-27px font-light text-white text-center
+              pb-20px t:pb-35px d:pb-33px"
           >
             Text about campaigns that can go on two rows. Text about campaigns that can go on two rows.
             Text about campaigns that can go on two rows.
+
+
           </div>
-          <div className="flex flex-col t:flex-row gap-5px items-center ">
+          <div className="flex flex-col t:flex-row gap-5px items-stretch">
             <Input
-              className="min-w-280px d:max-2-521px pb-10px t:pb-0px font-light"
-              placeholder={"Search for a campaign or keyword"}
+              className="min-w-280px d:max-w-521px font-light"
+              placeholder={"Campaign name or keyword"}
               onChange={(value) => setNameFilter(value)}
             />
-            <Button className="min-w-110px t:max-w-140px d:max-w-130px rounded-10pxi">
+            <Button>
               Search
             </Button>
           </div>
@@ -119,18 +127,14 @@ export default function CampaignSearch() {
         >
           <div
             id="filters"
-            className="rounded-24px shadow-0-6-24 border-1px border-search-border border-opacity-20 bg-white p-15px select-none
-            "
+            className="rounded-24px shadow-0-6-24 border-1px border-search-border border-opacity-20 bg-white p-15px select-none"
           >
-            <div
-              className="mt-23px mb-31px d:mb-39px
-            text-18px leading-27px font-bold"
-            >
+            <div className="mt-23px mb-31px d:mb-39px text-18px leading-27px font-bold">
               Browse campaigns by:
             </div>
             <div className=" ont-light text-16px leading-24px">Location</div>
             <Input
-              className="rounded-10pxi border-primary "
+              className="border-primary"
               placeholder="Browse by location"
               onChange={(value) => setLocationFilter(value)}
             />
@@ -154,12 +158,8 @@ export default function CampaignSearch() {
                       className={`
                         cursor-pointer rounded-10px border-1px border-secondary-gray-2 h-46px flex items-center px-20px gap-8px
                         text-13px leading-15-6px font-bold
-                        ${
-                          interestsFilter?.indexOf(interest) > -1
-                            ? "border-none bg-primary text-white"
-                            : ""
-                        }
-                       `}
+                        ${interestsFilter?.indexOf(interest) > -1 ? "border-none bg-primary text-white" : ""}
+                      `}
                       onClick={() => handleInterestFilterToggle(interest)}
                     >
                       <div className="text-22px leading-22px">{emoji}</div>
@@ -174,7 +174,7 @@ export default function CampaignSearch() {
                 <div className="absolute inset-0 transparent-gradient rounded-b-24px m-5px bottom-0 pt-10px">
                   <div className="relative">
                     <Button
-                      className="mx-auto rounded-24pxi text-12px leading-18px flex items-center gap-5px font-medium"
+                      className="mx-auto rounded-24pxi text-12px leading-18px flex items-center gap-5px font-medium min-h-24px"
                       onClick={() => setFilterExpanded(true)}
                     >
                       Load more

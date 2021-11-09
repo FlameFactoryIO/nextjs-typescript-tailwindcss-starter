@@ -184,6 +184,7 @@ module.exports = {
                 "nonprofit-logo": "#E3E4E580",
                 "input-border": "#C6CACC",
                 "secondary-green-1": "#38C058",
+                "secondary-green-2": "#4abf51",
                 // gray, red, green son nombres de colores reservados, usar otro nombre
             },
             backgroundImage: {

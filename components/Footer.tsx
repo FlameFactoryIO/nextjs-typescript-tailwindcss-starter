@@ -40,16 +40,16 @@ const Footer: FC = () => {
               Never miss a new campaign, discover nonprofit organizations, and
               learn how you can make a difference.
             </div>
-            <div className="d:mt-28px flex flex-col d:flex-row d:flex-wrap  ">
+            <div className="d:mt-28px flex flex-col d:flex-row d:flex-wrap">
               <Input
-                className="rounded-10pxi
-                    bg-white border-1px border-solid border-input
-              t:min-w-300px t:max-w-300px t:mt-0 mt-25px t:mb-20px d:mb-0"
+                className="
+                  bg-white border-1px border-solid border-input
+                  t:min-w-300px t:max-w-300px t:mt-0 mt-25px t:mb-20px d:mb-0"
                 placeholder="Email address..."
                 onChange={handleEmailAddressChange}
               />
               <Button
-                className="mx-auto t:ml-1px t:mt-0 mt-15px d:ml-5px rounded-6pxi"
+                className="mx-auto t:ml-1px t:mt-0 mt-15px d:ml-5px"
                 type="submit"
               >
                 Subscribe

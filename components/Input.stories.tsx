@@ -1,106 +1,88 @@
-import { type } from "os";
 import Input from "./Input";
 import Button from "./Button";
+import { FaAnkh, FaEnvelope, FaVirusSlash, FaXRay } from "react-icons/fa";
 
 // noinspection JSUnusedGlobalSymbols
 export default {
   title: "Inputs",
 };
 
-const Template = (arguments_) => <Input {...arguments_} />;
 
-export const Primary = Template.bind({});
+export const Inputs = () => (
+  <div className="flex flex-col items-start gap-20px">
+    <Input
+      value="A nice input"
+    />
 
-Primary.args = {
-  value: "Value-test",
-};
+    <Input
+      placeholder="placeholder input"
+    />
 
-export const Black = Template.bind({});
-Black.args = {
-  placeholder: "placeholder input",
-  variant: "black",
-};
+    <Input
+      value="Disabled input"
+      disabled
+    />
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  value: "value",
-  disabled: true,
-};
+    <Input
+      value="234567isjdfokljaslkdjfh"
+      prefix={<FaEnvelope className="ml-14px" />}
+      suffix={<FaAnkh className="mr-14px" />}
+    />
 
-export const Icon = Template.bind({});
-Icon.args = {
-  placeholder: "placeholder input",
-  icon: true,
-};
+    <Input
+      value="234567isjdfokljaslkdjfh"
+      prefix={<FaXRay className="ml-14px" />}
+    />
 
-export const Multiline = Template.bind({});
-Multiline.args = {
-  value: "value",
-  multiline: true,
-};
+    <Input
+      value="234567isjdfokljaslkdjfh"
+      suffix={<FaVirusSlash className="mr-14px" />}
+    />
 
-export const Multiline10Lines = Template.bind({});
-Multiline10Lines.args = {
-  value: "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n",
-  multiline: true,
-  rows: 10,
-};
-
-export const MultilineFixedHeight = Template.bind({});
-MultilineFixedHeight.args = {
-  value: "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n",
-  multiline: true,
-  className: "h-150px",
-};
-
-export const PrefixAndSuffix = () => (
-  <div>
     <Input
       value="234567isjdfokljaslkdjfh"
       prefix={
-        "ICON"
-      }
-      suffix="SUFFIX"
-    />
-    <br/>
-    <Input
-      value="234567isjdfokljaslkdjfh"
-      prefix={
-        "ICON"
-      }
-    />
-    <br/>
-    <Input
-      value="234567isjdfokljaslkdjfh"
-      suffix="SUFFIX"
-    />
-    <br/>
-    <Input
-      value="234567isjdfokljaslkdjfh"
-      prefix={
-        <Button>
+        <Button className="rounded-r-none">
           Click
         </Button>
       }
       suffix={
-        <Button>
+        <Button className="rounded-l-none">
           Click
         </Button>
       }
     />
-    <br/>
+
     <Input
       value="234567isjdfokljaslkdjfh"
       prefix={
-        <Button className="h-60px">
-          Click
-        </Button>
-      }
-      suffix={
-        <Button className="h-60px">
+        <Button className="h-60px rounded-r-none">
           Tall button
         </Button>
       }
+      suffix={
+        <Button className="h-60px rounded-l-none">
+          Tall button
+        </Button>
+      }
+    />
+
+    <Input
+      multiline
+      value="value"
+    />
+
+    <Input
+      multiline
+      value={`1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11`}
+      rows={10}
+    />
+
+    <Input
+      multiline
+      value={`1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11`}
+      rows={10}
+      className="h-150px"
     />
   </div>
 )
