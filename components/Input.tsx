@@ -28,7 +28,7 @@ const Input: FC<{
   if (multiline) {
     return (
       <textarea
-        className={`appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-24px focus:outline-none ${disabled ? "bg-gray-200 cursor-not-allowed" : ""} ${className}`}
+        className={`appearance-none border rounded py-10px px-10px w-full text-gray-700 leading-24px focus:outline-none ${disabled ? "bg-gray-200 cursor-not-allowed" : ""} ${className}`}
         placeholder={placeholder}
         rows={rows}
         onChange={(e) => onChange(e.target.value)}

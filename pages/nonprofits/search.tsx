@@ -174,7 +174,7 @@ export default function NonprofitsSearch() {
                 <div className="absolute inset-0 transparent-gradient rounded-b-24px m-5px bottom-0 pt-10px">
                   <div className="relative">
                     <Button
-                      className="mx-auto rounded-24pxi text-12px leading-18px flex items-center gap-5px font-medium"
+                      className="mx-auto rounded-24pxi text-12px leading-18px flex items-center gap-5px font-medium min-h-24px"
                       onClick={() => setFilterExpanded(true)}
                     >
                       Load more
