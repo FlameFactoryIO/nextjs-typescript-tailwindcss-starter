@@ -71,11 +71,16 @@ export default function CampaignSearch() {
           .transparent-gradient {
             background: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0.8));
           }
-        `}</style>
+          .dots-background {
+            background: url('/images/background-dots.png') top no-repeat, linear-gradient(90deg, #0A173D 0%, #0C163B 38.02%, #080613 100%);;
+            background-size: cover;
+          }
+        `}
+        </style>
       </Head>
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
-      <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
+      <div className="w-full dots-background">
         <div
           id="hero"
           className="px-20px pt-82px pb-27px

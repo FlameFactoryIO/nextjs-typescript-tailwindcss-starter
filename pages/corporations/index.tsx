@@ -11,11 +11,23 @@ export default function CorporationsHome() {
     <div className="w-full min-w-320px">
       <Head>
         <title>Move the Chain</title>
+        <style type="text/css">
+          {`
+            .hero-background {
+              background: url('/images/background-worldmap.png') center no-repeat, linear-gradient(90deg, #0A173D 0%, #0C163B 38.02%, #080613 100%);
+              background-size: cover;
+            }
+            .waves-background {
+              background: url('/images/background-waves.png') center no-repeat, linear-gradient(90deg, #0A173D 0%, #0C163B 38.02%, #080613 100%);
+              background-size: cover;
+            }
+          `}
+        </style>
       </Head>
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
 
-      <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
+      <div className="w-full hero-background">
         <div
           id="hero"
           className="
@@ -174,7 +186,7 @@ export default function CorporationsHome() {
       </div>
 
       <div>
-        <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
+        <div className="w-full waves-background">
           <div
             id="corporation"
             className="pt-82px pb-50px px-20px
@@ -406,7 +418,7 @@ export default function CorporationsHome() {
         </div>
       </div>*/}
 
-      <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
+      <div className="w-full waves-background">
         <div
           id="provide-contact"
           className="flex flex-col d:grid d:grid-cols-2
@@ -419,8 +431,7 @@ export default function CorporationsHome() {
           <div
             className="t:px-0 text-white text-center t:text-left d:text-left
                         flex flex-col t:grid t:grid-cols-2 d:grid-cols-1 d:grid-rows-2
-                        pb-56px t:pb-1px d:pb-33px d:items-center
-                          "
+                        pb-56px t:pb-1px d:pb-33px d:items-center"
           >
             <div>
               <div
@@ -435,7 +446,7 @@ export default function CorporationsHome() {
               <div
                 className="min-w-280px font-light text-13px leading-19-5px d:text-18px d:leading-27px
                           pb-26px t:pb-28px d:pb-0
-                          t:max-w-334px  d:max-w-569px    mx-auto 
+                          t:max-w-334px  d:max-w-569px    mx-auto
                           "
               >
                 Provide your contact information and we will get in touch with
@@ -486,7 +497,7 @@ export default function CorporationsHome() {
                   placeholder="Role/Position"
                 />
                 <Input
-                  className="t:col-span-2 min-w-250px bg-white border-1px border-solid border-input 
+                  className="t:col-span-2 min-w-250px bg-white border-1px border-solid border-input
                              t:max-w-642px d:max-w-522px"
                   placeholder="Email Address"
                 />

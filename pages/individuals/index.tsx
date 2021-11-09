@@ -14,11 +14,19 @@ export default function Individuals() {
     <div className="w-full min-w-320px">
       <Head>
         <title>Move the Chain</title>
+        <style type="text/css">
+          {`
+            .hero-background {
+              background: url('/images/background-dots.png') center no-repeat, linear-gradient(90deg, #0A173D 0%, #0C163B 38.02%, #080613 100%);
+              background-size: cover;
+            }
+          `}
+        </style>
       </Head>
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
 
-      <div className="w-full bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right">
+      <div className="w-full hero-background">
         <div
           id="hero"
           className="

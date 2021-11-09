@@ -106,8 +106,13 @@ export default function Home() {
             background: #000;
           }
           
-          .hero-gradient {
-            background: url('/images/home/world map dots.png') top no-repeat, linear-gradient(90deg, #0A173D 0%, #0C163B 38.02%, #080613 100%);
+          .hero-background {
+            background: url('/images/background-worldmap.png') top no-repeat, linear-gradient(90deg, #0A173D 0%, #0C163B 38.02%, #080613 100%);
+            background-size: cover;
+          }
+
+          .trending-campaigns-background {
+            background: url('/images/background-waves.png') center no-repeat, linear-gradient(90deg, #0A173D 0%, #0C163B 38.02%, #080613 100%);
             background-size: cover;
           }
         `}
@@ -117,7 +122,7 @@ export default function Home() {
       <TopNav onSearch={(searchValue) => window.alert(searchValue)}/>
 
       {/*bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right*/}
-      <div className="w-full hero-gradient">
+      <div className="w-full hero-background">
         <div
           id="hero"
           className="
@@ -353,7 +358,7 @@ export default function Home() {
       </div>
 
       <div
-        className="bg-blue-dark
+        className="trending-campaigns-background
         px-20px pt-44px pb-50px
         t:px-30px t:pt-44px t:pb-50px
         d:px-120px d:py-82px"
