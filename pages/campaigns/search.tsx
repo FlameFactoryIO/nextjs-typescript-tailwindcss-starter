@@ -177,7 +177,6 @@ export default function CampaignSearch() {
                   <div className="relative">
                     <Button
                       className="mx-auto rounded-24pxi text-12px leading-18px flex items-center gap-5px font-medium min-h-24px"
-                      size="small"
                       onClick={() => setFilterExpanded(true)}
                     >
                       Load more
