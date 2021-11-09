@@ -63,11 +63,12 @@ export default function Home() {
               your online presence and expand your network to a broader
               audience.
             </p>
-            <div className="t:pl-31px">
+            <div className="mx-auto pt-24px  
+                            t:mx-0 t:pt-0 t:pl-31px ">
               <Button
                 type="button"
                 variant="primary"
-                className="hidden t:block"
+                className="t:block"
                 size="small"
               >
                 Get started
@@ -205,7 +206,7 @@ export default function Home() {
               className="mx-auto"
               size="small"
             >
-              Get started
+              Search your nonprofit
             </Button>
           </div>
         </div>
@@ -229,12 +230,12 @@ export default function Home() {
               <span className="font-bold">simple steps</span> to get started:
             </p>
             <div className="px-20px">
-              <ol className="list-decimal text-primary text-13px leading-17px flex flex-col gap-y-14px font-bold">
+              <ul className="list-disc text-primary text-13px leading-17px flex flex-col gap-y-14px font-bold">
                 <li>
                   <p className="text-black font-light pl-9px">
                     Click on{" "}
-                    <span className="font-bold">“Claim your page”</span> and
-                    search for your nonprofit
+                    “<span className="font-bold text-primary underline">search your nonprofit</span>" and
+                    claim your page
                   </p>
                 </li>
                 <li>
@@ -254,7 +255,7 @@ export default function Home() {
                     Move the Chain
                   </p>
                 </li>
-              </ol>
+              </ul>
             </div>
           </div>
 
@@ -279,21 +280,31 @@ export default function Home() {
             <div className="text-20px font-bold leading-24px d:text-34px d:leading-41px mb-22px">
               Update your Profile
             </div>
-            <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
-              Within <span className="font-bold">a few minutes</span> you can
-              update your profile!
-            </p>
-            <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
-              Be sure to include the best possible photos and videos to{" "}
-              <span className="font-bold">emphasize the great work</span> you’re
-              doing! Your “About” section should be both concise and heartfelt.
-            </p>
-            <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-12px font-light">
-              This is your opportunity to create a profile that best represents
-              your organization to{" "}
-              <span className="font-bold">maximize the potential</span> of{" "}
-              <span className="font-bold">turning visitors into donors!</span>
-            </p>
+            <div className="px-20px">
+              <ul className="list-disc text-primary text-13px leading-17px flex flex-col gap-y-14px font-bold">
+                <li>
+                  <p className="text-black font-light pl-9px">
+                    Within <span className="font-bold">a few minutes</span> you can
+                    update your profile!
+                  </p>               
+                </li>
+                <li>
+                  <p className="text-black font-light pl-9px">
+                    Be sure to include the best possible photos and videos to{" "}
+                    <span className="font-bold">emphasize the great work</span> you’re
+                    doing! Your “About” section should be both concise and heartfelt.
+                  </p>
+                </li>
+                <li>
+                  <p className="text-black font-light pl-9px">
+                    This is your opportunity to create a profile that best represents
+                    your organization to{" "}
+                    <span className="font-bold">maximize the potential</span> of{" "}
+                    <span className="font-bold">turning visitors into donors!</span>
+                  </p>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div aria-hidden className="t:flex-1 order-last t:order-first">
@@ -317,18 +328,26 @@ export default function Home() {
             <div className="text-20px font-bold leading-24px d:text-34px d:leading-41px mb-22px">
               Create a campaign!
             </div>
-            <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
-              Once you claim your page, you can get started right away by
-              launching a fundraising campaign.
-            </p>
-            <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
-              This is your{" "}
-              <span className="font-bold">opportunity to create </span> a
-              genuine and compelling video message that tells the story of{" "}
-              <span className="font-bold">your organization’s mission</span> the
-              cause you are trying to fund and how donations will be used to do
-              good
-            </p>
+            <div className="px-20px">
+              <ul className="list-disc text-primary text-13px leading-17px flex flex-col gap-y-14px font-bold">
+                <li>
+                  <p className="text-black font-light pl-9px">
+                    Once you claim your page, you can get started right away by
+                    launching a fundraising campaign.
+                  </p>
+                </li>
+                <li>
+                  <p className="text-black font-light pl-9px">
+                    This is your{" "}
+                    <span className="font-bold">opportunity to create </span> a
+                    genuine and compelling video message that tells the story of{" "}
+                    <span className="font-bold">your organization’s mission</span> the
+                    cause you are trying to fund and how donations will be used to do
+                    good
+                  </p>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div aria-hidden className="t:flex-1">
@@ -349,20 +368,25 @@ export default function Home() {
             <div className="px-51px py-9px  border-solid border-2 rounded-10px font-bold text-primary border-primary mr-auto mb-25px">
               Step 4
             </div>
-            <div className="text-20px  leading-24px d:text-34px d:leading-41px font-bold mb-22px">
-              Spread the word and ask your supporters to give.
+            <div className="px-20px">
+              <ul className="list-disc text-primary text-13px leading-17px flex flex-col gap-y-14px font-bold">
+                <li>
+                  <p className="text-black font-light pl-9px">
+                    Last but certainly not least,{" "}
+                    <span className="font-bold">sharing is key.</span>
+                  </p>
+                </li>
+                <li>
+                  <p className="text-black font-light pl-9px">
+                    The impact of sharing on social media, email and text messages
+                    cannot be understated in its ability to make your campaign
+                    successful. Once your campaign is created, tell everyone about it.
+                    The more you share, the more likely you are to{" "}
+                    <span className="font-bold">reach your goal.</span>
+                  </p>
+                </li>
+              </ul>
             </div>
-            <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
-              Last but certainly not least,{" "}
-              <span className="font-bold">sharing is key.</span>
-            </p>
-            <p className="text-13px leading-17px d:text-16px d:leading-20-8px pb-22px font-light">
-              The impact of sharing on social media, email and text messages
-              cannot be understated in its ability to make your campaign
-              successful. Once your campaign is created, tell everyone about it.
-              The more you share, the more likely you are to{" "}
-              <span className="font-bold">reach your goal.</span>
-            </p>
           </div>
 
           <div aria-hidden className="t:flex-1 order-last t:order-first">
@@ -376,7 +400,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="px-20px pb-43px pt-56px t:pt-46px t:px-30px d:pt-72px d:px-232px d:pb-68px  w-full bg-cream">
+      <div className="px-20px pb-43px pt-56px t:pt-46px t:px-30px d:pt-72px d:px-232px d:pb-68px  w-full bg-footer">
         <div id="what-nonprofit-are" className="flex flex-col gap-30px ">
           <div className="text-20px leading-24px d:text-34px d:leading-41px  text-center font-bold pb-20px">
             What nonprofits are saying about Move the Chain
@@ -428,7 +452,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <p className="text-16px leading-20-8px d:text-18px d:leading-25-2px text-center pb-40px t:w-708px d:max-w-914px mx-auto">
+          <p className="text-16px leading-20-8px d:text-18px d:leading-25-2px text-center t:w-708px d:max-w-914px mx-auto">
             <span className="font-bold text-primary">“</span>Move the Chain is
             helping us easily connect with new donors without having to worry
             about the back end of tax receipting - so we can focus on our
@@ -436,7 +460,7 @@ export default function Home() {
           </p>
           <div
             id="ceo-at-prove"
-            className="pb-80px t:pb-49px d:pb-69px flex flex-row justify-center gap-10px "
+            className="pb-57px t:pb-49px d:pb-69px flex flex-row justify-center gap-10px "
           >
             <div className="h-50px w-50px border-primary border-2px rounded-full p-2px">
               <img
