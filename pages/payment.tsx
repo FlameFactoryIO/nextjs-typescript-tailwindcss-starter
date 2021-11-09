@@ -143,7 +143,7 @@ const PaymentScreen = () => {
   };
 
   const capture = async (orderId) => {
-    console.debug("capture", {orderId});
+    console.debug("capture", { orderId });
 
     setLastOrderId(orderId);
     setShowLoader(true);
@@ -182,7 +182,7 @@ const PaymentScreen = () => {
     } catch (e) {
       console.error("capture", e);
       setShowError(true);
-    } finally{
+    } finally {
       setShowLoader(false);
     }
   };
@@ -252,14 +252,13 @@ const PaymentScreen = () => {
 
                     {!userId ? (
                       <>
-                        <div className="flex flex-col t:flex-row  pb-31px pt-32px gap-5px">
+                        {/*<div className="flex flex-col t:flex-row  pb-31px pt-32px gap-5px">
                           <div className="text-14px leading-21px font-bold text-left">
                             I want to setup a recurring monthly donation ❤️
                           </div>
-                          {/* boton toggle */}
-                        </div>
+                    </div>*/}
 
-                        <div className="flex flex-col t:flex-row items-center justify-center gap-14px">
+                        <div className="flex flex-col t:flex-row items-center justify-center gap-14px pt-32px">
                           <div className="flex-1 w-210px">
                             <Input
                               placeholder={'Your name'}
@@ -305,7 +304,7 @@ const PaymentScreen = () => {
                         />
                       </div>
                     </div>
-                    <div className="box-buttons flex flex-col t:flex-row items-center justify-center gap-20px pb-11px">
+                    <div className="box-buttons flex flex-col t:flex-row items-center justify-center gap-20px">
                       <div className="flex flex-col t:flex-row gap-20px">
                         {[20, 50, 100].map(n => (
                           <Button key={n}
@@ -330,7 +329,7 @@ const PaymentScreen = () => {
                       </div>
                     </div>
 
-                    <div className="hidden t:block max-w-434px">
+                    {/*<div className="hidden t:block max-w-434px">
                       <div className={`flex flex-col ${amount == 100 ? 'items-end': amount == 50 ? 'items-center' : 'items-start'}`}>
                         <img className="w-10px h-7px" src={'/images/payment/icon-poligon.svg'} />
                       </div>
@@ -340,10 +339,10 @@ const PaymentScreen = () => {
                                       rounded-b-10px">
                         <span className="max-w-389px">Lorem Ipsum is simply dummy text of the orm something more longer to this ipsum.</span>
                       </div>
-                    </div>
+                                </div>*/}
 
 
-                    <div className="max-w-435px text-12px font-light leading-16px text-left pt-32px pb-10px">
+                    <div className="max-w-435px text-12px font-light leading-16px text-left pt-36px pb-10px">
                       <span className="font-bold"> Move the Chain tip.</span>{" "}🙌 Thank you for getting involved and supporting important our organization’s causes every month.
                     </div>
 
@@ -421,30 +420,30 @@ const PaymentScreen = () => {
 
                   </div>
 
-                  <div className="max-w-240px rounded-30px shadow-0-3-16">
-                    <div className="px-17px">
-                      <div className="pt-28px pb-14px text-16px leading-19px text-left font-bold">
+                  <div className="max-w-474px t:max-w-240px rounded-30px shadow-0-3-16">
+                    <div className="px-17px ">
+                      <div className="pt-28px pb-20px text-16px leading-19px text-center t:text-left font-bold">
                         Summary
                       </div>
-                      <div className="flex flex-row pb-5px gap-10px items-start max-w-207px">
-                        <div className="text-left text-12px leading-15px ">
+                      <div className="flex flex-row pb-5px gap-10px items-center t:items-start t:max-w-207px mx-auto t:mr-0">
+                        <div className="text-center t:text-left text-12px leading-15px ">
                           Your donation
                         </div>
                         <div className="flex-1 text-12px leading-15px text-right">${amount.toFixed(2)}</div>
 
                       </div>
-                      <div className="flex flex-row  gap-10px pb-22px items-start max-w-207px">
-                        <div className="text-12px leading-15px text-left">
+                      <div className="flex flex-row  gap-20px t:gap-10px pb-22px items-center t:items-start t:max-w-207px">
+                        <div className="text-12px leading-15px text-center t:text-left">
                           Move the Chain tip
                         </div>
-                        <div className="flex-1 text-12px leading-15px text-right">${(Number(total) - amount).toFixed(2)}</div>
+                        <div className="flex-1 text-12px leading-15px  text-right">${(Number(total) - amount).toFixed(2)}</div>
 
                       </div>
 
 
-                      <hr className="w-197px border-1px bg-secondary-gray-1 text-center justify-center"/>
-                      <div className="pt-19px flex flex-row pb-34px gap-30px">
-                        <div className="text-left text-secondary-green-1 text-14px leading-21px font-bold">
+                      <hr className="border-1px bg-secondary-gray-1 text-center justify-center" />
+                      <div className="pt-19px flex flex-row pb-34px gap-30px items-center t:items-start t:max-w-207px">
+                        <div className="text-center t:text-left text-secondary-green-1 text-14px leading-21px font-bold">
                           Total amount
                         </div>
                         <div className="flex-1 text-right text-secondary-green-1 text-14px leading-21px font-light">
@@ -452,20 +451,23 @@ const PaymentScreen = () => {
                         </div>
                       </div>
 
-                      <div>
+                      <div className="flex flex-col items-center justify-items-center">
                         <div className="font-bold text-12px leading-21px text-justify pb-20px">
                           Choose your payment method
                         </div>
-                        <PayPalButtons
-                          forceReRender={[amount, challengeName, isShareChecked, nonprofitId, nonprofitName, tipCents]}
-                          // upgradeLSAT={true}
-                          createOrder={handleCreateOrder}
-                          onApprove={(data, actions) => capture(data.orderID)}
-                          // shippingPreference="NO_SHIPPING"
-                          style={{
-                            color: 'gold',
-                          }}
-                        />
+                        <div className="max-w-210px justify-center">
+                          <PayPalButtons
+                            forceReRender={[amount, challengeName, isShareChecked, nonprofitId, nonprofitName, tipCents]}
+                            // upgradeLSAT={true}
+                            createOrder={handleCreateOrder}
+                            onApprove={(data, actions) => capture(data.orderID)}
+                            // shippingPreference="NO_SHIPPING"
+                            style={{
+                              color: 'gold',
+                            }}
+                          />
+                        </div>
+
                       </div>
 
                       <p className="footer-text text-9px leading-11px text-justify pb-10px  text-secondary-gray-5">
