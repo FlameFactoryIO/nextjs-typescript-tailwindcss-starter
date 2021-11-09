@@ -28,7 +28,6 @@ const Input: FC<{
   if (multiline) {
     return (
       <textarea
-        // className={`appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-24px focus:outline-none focus:ring focus:ring-${variant}-50 ${disabled ? "bg-gray-200 cursor-not-allowed" : ""} ${className}`}
         className={`appearance-none border rounded py-2 px-3 w-full text-gray-700 leading-24px focus:outline-none ${disabled ? "bg-gray-200 cursor-not-allowed" : ""} ${className}`}
         placeholder={placeholder}
         rows={rows}
@@ -42,7 +41,7 @@ const Input: FC<{
 
   return (
     <div
-      className="w-full flex flex-wrap items-stretch relative h-15 bg-white items-center rounded border"
+      className={`w-full flex flex-wrap items-stretch relative min-h-46px bg-white items-center rounded-10px border ${className}`}
     >
       {prefix && (
         <div className="flex justify-center pr-3px">
@@ -56,7 +55,7 @@ const Input: FC<{
       <input
         type={type}
         className={`
-          flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border-0 h-10 px-3 relative self-center outline-none
+          flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border-0 px-20px relative self-center outline-none
           ${disabled ? "bg-gray-200 cursor-not-allowed" : ""}
         `}
         placeholder={placeholder}

@@ -320,13 +320,13 @@ const PaymentScreen = () => {
                     </div>
                     <div className="box-buttons flex flex-col t:flex-row items-center justify-center gap-20px">
                       <div className="flex-1">
-                        <Button className="w-131px h-46px bg-secondary-green-1" onClick={() => handleAmountChanged('20')}>$20</Button>
+                        <Button className="w-131px bg-secondary-green-1" onClick={() => handleAmountChanged('20')}>$20</Button>
                       </div>
                       <div className="flex-1">
-                        <Button className="w-131px h-46px bg-secondary-green-1" onClick={() => handleAmountChanged('50')}>$50</Button>
+                        <Button className="w-131px bg-secondary-green-1" onClick={() => handleAmountChanged('50')}>$50</Button>
                       </div>
                       <div className="flex-1">
-                        <Button className="w-131px h-46px bg-secondary-green-1 rounded-10px" onClick={() => handleAmountChanged('100')}>$100</Button>
+                        <Button className="w-131px bg-secondary-green-1" onClick={() => handleAmountChanged('100')}>$100</Button>
                       </div>
                     </div>
 
@@ -336,7 +336,7 @@ const PaymentScreen = () => {
                     </div>
 
                     <div className="flex flex-col t:flex-row items-center justify-center gap-15px">
-                      <div className="t:w-210px t:h-36px rounded-10px border-1px text-center">
+                      <div className="t:w-210px t:h-36px border-1px text-center">
                         <div
                           className={'small-rectangle rectangle tip-select'}
                           onClick={(e) => {

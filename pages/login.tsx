@@ -206,9 +206,9 @@ export default function Login() {
 
               <div className="flex flex-row items-center t:gap-20px">
                 <Button
-                  className="t:max-w-93px text-14px leading-17px t:max-h-46px"
                   disabled={!canLogin}
                   onClick={handleLogin}
+                  size="small"
                 >
                   Login 🗝
                 </Button>

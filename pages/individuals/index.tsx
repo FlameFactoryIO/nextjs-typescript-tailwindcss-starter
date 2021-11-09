@@ -208,7 +208,7 @@ export default function Individuals() {
                     <div className="pb-20px">
                       <Link href="/nonprofits/search" passHref>
                         <a className="mt-9px">
-                          <Button className="w-190px font-bold rounded-10px text-14px leading-24px rounded-10pxi">
+                          <Button size="small">
                             Search for nonprofit
                           </Button>
                         </a>
@@ -272,7 +272,7 @@ export default function Individuals() {
                     <div className="pb-20px">
                       <Link href="/campaigns/search" passHref>
                         <a>
-                          <Button className="w-190px font-bold rounded-10px text-14px leading-24px py-9px px-23px rounded-10pxi">
+                          <Button size="small">
                             Find a campaign
                           </Button>
                         </a>
@@ -282,8 +282,8 @@ export default function Individuals() {
                   <div>
                     <div
                       className="max-w-280px max-h-210px
-                                                t:max-w-220 t:max-h-166
-                                                d:max-w-320px d:max-h-240"
+                        t:max-w-220 t:max-h-166
+                        d:max-w-320px d:max-h-240"
                     >
                       <Image
                         src="/images/individuals/help-raise.png"
@@ -333,7 +333,7 @@ export default function Individuals() {
                     <div className="pb-20px">
                       <Link href="/prove" passHref>
                         <a>
-                          <Button className="w-190px font-bold rounded-10px text-14px leading-24px rounded-10pxi">
+                          <Button size="small">
                             Join a fundraiser
                           </Button>
                         </a>

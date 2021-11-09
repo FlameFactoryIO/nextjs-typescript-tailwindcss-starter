@@ -108,7 +108,7 @@ export default function NonprofitsSearch() {
               placeholder={"Search for a nonprofit or keyword"}
               onChange={(value) => setNameFilter(value)}
             />
-            <Button className="min-w-110px t:max-w-140px d:max-w-130px rounded-10pxi">
+            <Button className="min-w-110px t:max-w-140px d:max-w-130px">
               Search
             </Button>
           </div>
@@ -134,7 +134,7 @@ export default function NonprofitsSearch() {
             </div>
             <div className=" ont-light text-16px leading-24px">Location</div>
             <Input
-              className="rounded-10pxi border-primary "
+              className="border-primary"
               placeholder="Browse by location"
               onChange={(value) => setLocationFilter(value)}
             />
@@ -158,12 +158,8 @@ export default function NonprofitsSearch() {
                       className={`
                         cursor-pointer rounded-10px border-1px border-secondary-gray-2 h-46px flex items-center px-20px gap-8px
                         text-13px leading-15-6px font-bold
-                        ${
-                          interestsFilter?.indexOf(interest) > -1
-                            ? "border-none bg-primary text-white"
-                            : ""
-                        }
-                       `}
+                        ${interestsFilter?.indexOf(interest) > -1 ? "border-none bg-primary text-white" : ""}
+                      `}
                       onClick={() => handleInterestFilterToggle(interest)}
                     >
                       <div className="text-22px leading-22px">{emoji}</div>
