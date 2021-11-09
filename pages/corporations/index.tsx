@@ -435,7 +435,7 @@ export default function CorporationsHome() {
               <div
                 className="min-w-280px font-light text-13px leading-19-5px d:text-18px d:leading-27px
                           pb-26px t:pb-28px d:pb-0
-                          t:max-w-334px  d:max-w-569px    mx-auto
+                          t:max-w-334px  d:max-w-569px    mx-auto 
                           "
               >
                 Provide your contact information and we will get in touch with
@@ -443,13 +443,13 @@ export default function CorporationsHome() {
               </div>
             </div>
 
-            <div className="min-w-280px t:max-w-340px d:max-w-550px ">
-              <div aria-hidden className="t:flex-1 d:m-0">
+            <div className="min-w-280px t:max-w-340px d:max-w-550px">
+              <div aria-hidden className="t:flex-1 d:m-0 ">
                 <Image
                   alt=""
                   src="/images/corporations/contact-information.png"
                   width={550}
-                  height={296}
+                  height={301}
                   objectFit="fill"
                   className="rounded-24px"
                 />
@@ -461,9 +461,9 @@ export default function CorporationsHome() {
             <div
               className="flex-1 bg-white min-w-280px h-636px rounded-24px shadow-0-3-16
               pt-30px px-15px pb-29px
-              d:pt-20px d:px-20px d:pb-39px
-                            t:w-708px t:h-504px
-                            d:w-575px d:h-570px"
+              d:pt-20px d:px-30px d:pb-39px
+              t:w-708px t:px-30px t:h-504px
+              d:w-575px d:h-570px"
             >
               <div
                 className="grid grid-rows-5 t:grid-cols-2 t:grid-rows-3 gap-y-20px gap-x-10px items-center
@@ -486,18 +486,20 @@ export default function CorporationsHome() {
                   placeholder="Role/Position"
                 />
                 <Input
-                  className="t:col-span-2 min-w-250px bg-white border-1px border-solid border-input t:max-w-647px d:max-w-522px"
+                  className="t:col-span-2 min-w-250px bg-white border-1px border-solid border-input 
+                             t:max-w-642px d:max-w-522px"
                   placeholder="Email Address"
                 />
               </div>
 
-              <div className="pb-30px t:pb-40px">
-                <Input
+
+              <div className="grid grid-rows-1 t:grid-cols-1 items-center pb-30px t:pb-40px">
+              <Input
                   className="
                     min-w-250px h-180px
                     bg-white border-1px border-solid border-input
-                    t:max-w-647px
-                    d:max-w-522px d:h-227px
+                    t:max-w-642px
+                    d:max-w-522px d:h-227px d:mx-0
                   "
                   placeholder="Comments"
                   multiline
