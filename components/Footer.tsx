@@ -42,9 +42,9 @@ const Footer: FC = () => {
             </div>
             <div className="d:mt-28px flex flex-col d:flex-row d:flex-wrap  ">
               <Input
-                className="rounded-10pxi
-                    bg-white border-1px border-solid border-input
-              t:min-w-300px t:max-w-300px t:mt-0 mt-25px t:mb-20px d:mb-0"
+                className="
+                  bg-white border-1px border-solid border-input
+                  t:min-w-300px t:max-w-300px t:mt-0 mt-25px t:mb-20px d:mb-0"
                 placeholder="Email address..."
                 onChange={handleEmailAddressChange}
               />

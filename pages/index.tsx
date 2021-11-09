@@ -335,7 +335,7 @@ export default function Home() {
                 <Button
                   type="button"
                   variant="primary"
-                  className="rounded-10pxi text-14px leading-21px w-182px h-46px"
+                  size="small"
                 >
                   Get to know us
                 </Button>
@@ -433,7 +433,7 @@ export default function Home() {
               </div>
               <Link href="/campaigns/search" passHref>
                 <a>
-                  <Button variant="primary" className="d:mt-22px rounded-10pxi text-14px leading-21px h-46px w-213px">
+                  <Button variant="primary" className="d:mt-22px" size="small">
                     View all campaigns 👉
                   </Button>
                 </a>
@@ -456,7 +456,7 @@ export default function Home() {
             </div>
             <Button
               variant="primary"
-              className="mt-22px t:m-0 rounded-10pxi whitespace-nowrap h-46px w-213px"
+              className="mt-22px t:m-0 whitespace-nowrap"
             >
               View all campaigns 👉
             </Button>
@@ -492,9 +492,8 @@ export default function Home() {
           </p>
 
           <Link href="/nonprofits/search" passHref={false}>
-            <a className="d:hidden mx-auto
-                          mt-34px t:mt-25px">
-              <Button className="rounded-10pxi text-14px leading-21px h-46px w-263px">
+            <a className="d:hidden mx-auto mt-34px t:mt-25px">
+              <Button>
                 Discover more nonprofits
               </Button>
             </a>
@@ -557,7 +556,7 @@ export default function Home() {
               </div>
               <Link href="/nonprofits" passHref={false}>
                 <a className="d:mt-22px">
-                  <Button variant="primary" className="rounded-10pxi text-14px leading-21px h-46px w-213px">
+                  <Button variant="primary">
                     Claim your page 👉
                   </Button>
                 </a>
@@ -580,7 +579,7 @@ export default function Home() {
             </div>
             <Link href="/nonprofits" passHref={false}>
               <a className="mt-22px t:m-0">
-                <Button variant="primary" className="rounded-10pxi whitespace-nowrap text-14px leading-21px h-46px w-213px">
+                <Button variant="primary" className="whitespace-nowrap">
                   Claim your page 👉
                 </Button>
               </a>
@@ -589,7 +588,7 @@ export default function Home() {
 
           <Link href="/nonprofits/search" passHref={false}>
             <a className="hidden d:block mx-auto mt-57px">
-              <Button className="rounded-10pxi text-14px leading-21px h-46px w-263px">
+              <Button>
                 Discover more nonprofits
               </Button>
             </a>
@@ -645,13 +644,11 @@ export default function Home() {
                   causes.
                 </p>
                 <Link href="/individuals">
-                  <a>
+                  <a className="mt-15px mx-auto d:mx-0">
                     <Button
                       type="button"
                       variant="primary"
-                      className="mt-15px rounded-10pxi t:px-1px d:px-20px mx-auto d:mx-0
-                      text-14px leading-21px
-                      w-160px t:w-130px d:w-200px"
+                      className="t:px-0 w-200px t:w-130px d:w-200px"
                     >
                       Support a cause
                     </Button>
@@ -674,9 +671,8 @@ export default function Home() {
                     <Button
                       type="button"
                       variant="primary"
-                      className="rounded-10pxi text-14px leading-21px
-                      t:px-1px d:px-20px
-                      w-160px t:w-130px d:w-200px">
+                      className="t:px-0 w-200px t:w-130px d:w-200px"
+                    >
                       Claim your page
                     </Button>
                   </a>
@@ -695,8 +691,11 @@ export default function Home() {
                 </p>
                 <Link href="/corporations" passHref={false}>
                   <a className="mt-15px mx-auto d:mx-0 ">
-                    <Button type="button" variant="primary"
-                      className="rounded-10pxi t:px-1px d:px-20px text-14px leading-21px w-160px t:w-130px d:w-200px">
+                    <Button
+                      type="button"
+                      variant="primary"
+                      className="t:px-0 w-200px t:w-130px d:w-200px"
+                    >
                         Find out more
                     </Button>
                   </a>

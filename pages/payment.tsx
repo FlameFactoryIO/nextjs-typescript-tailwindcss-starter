@@ -39,6 +39,7 @@ const PaymentScreen = () => {
   const params = router.query;
 
   const [currentAmount, setCurrentAmount] = useState(0);
+  const [tips, setTips] = useState(0);
   const [isShareChecked, setIsShareChecked] = useState(false);
   const [nonprofitName, setNonProfitName] = useState(null);
   const [userId, setUserId] = useState(null);
@@ -70,6 +71,10 @@ const PaymentScreen = () => {
     }).then(r => {
       console.debug("@@@ 2", router, r)
     });
+  };
+
+  const handleTipsChanged = (newTips) => {
+    setTips(Number(newTips));
   };
 
   const handleShareChange = (newShareChecked) => {
@@ -132,9 +137,8 @@ const PaymentScreen = () => {
 
     //custom id:
     //nonprofitid|isdonorsharingcontact|reference|feesamount|fees(or)tip model|giftaidflag|programid
-    const customId = `${params.nonprofitId}|${params.checked}|${
-      params.challengeName || '0'
-    }|${fee}|1|0|121`;
+    const customId = `${params.nonprofitId}|${params.checked}|${params.challengeName || '0'
+      }|${fee}|1|0|121`;
 
     return actions.order.create({
       purchase_units: [
@@ -224,165 +228,292 @@ const PaymentScreen = () => {
     }
   }
 
-  const total = `$${(currentAmount * ((100 + tipCents) / 100)).toFixed(2)}`;
+  const totalNumber = tips != 0 ? (currentAmount + tips).toFixed(2) : (currentAmount * ((100 + tipCents) / 100)).toFixed(2);
+  const total = `$${totalNumber}`
 
   return (
     <div className="w-full min-w-320px">
       <TopNav />
-      <div>
-        {showError ? (
-          <div>
-            <div>Whoops, something went wrong!</div>
-            <div onClick={() => {lastOrderId && capture(lastOrderId)}}>
-              <div title={`Retry`} />
-              <FaUndo />
-            </div>
-          </div>
-        ) : null}
-      </div>
-      <div>
-        {showSuccess && !params.redirectThanksPage ? (
-          <div onClick={redirect}>
-            <CheckmarkCircleOutline />
-            <div>Thank you for donating!</div>
-          </div>
-        ) : null}
-        {!showSuccess ? (
-          <div className="main-container">
-            <div className="header-container">
-              <span className="enter-your-donation">Your donation to</span>
-              <span className="charity-heart">{nonprofitName}</span>
-            </div>
-            {!userId ? (
-              <>
-                <Input
-                  placeholder={'Your name'}
-                  onChange={(displayName) =>
-                    setAnonymousData({ ...anonymousData, displayName })
-                  }
-                  value={anonymousData.displayName}
-                  maxLength={30}
-                />
-                <Input
-                  onChange={(comment) =>
-                    setAnonymousData({ ...anonymousData, comment })
-                  }
-                  value={anonymousData.comment}
-                  placeholder={'Leave a comment'}
-                  multiline
-                  rows={4}
-                  maxLength={250}
-                />
-              </>
-            ) : null}
+      <div id="payment"
+        className="pt-50px t:pt-134px">
 
-            <Input onChange={handleAmountChanged} value={currentAmount.toString()} />
-
-            <div className="box-buttons">
-              <Button onClick={() => handleAmountChanged('20')}>$20</Button>
-              <Button onClick={() => handleAmountChanged('50')}>$50</Button>
-              <Button onClick={() => handleAmountChanged('100')}>$100</Button>
-            </div>
-            <div>Tip Move the Chain Services</div>
+        <div>
+          {showError ? (
             <div>
-              Move the Chain offers a free platform to nonprofits. We rely on
-              our donors&apos; generosity to operate our platform and continue to
-              help organizations.
+              <div>Whoops, something went wrong!</div>
+              <div onClick={() => { lastOrderId && capture(lastOrderId) }}>
+                <div title={`Retry`} />
+                <FaUndo />
+              </div>
             </div>
-            <div
-              className={'small-rectangle rectangle tip-select'}
-              onClick={(e) => {
-                e.stopPropagation();
-                setShowTipOptions(true);
-              }}>
-              <span className={'option-text'}>
-                {getOptionText(tipCents, currentAmount)}{' '}
-                <img src={'/arrow-down.svg'} height={7} />
-              </span>
-              {showTipOptions && (
-                <div className={'tip-options-container'} ref={ref}>
-                  {tipOptions.map((option) => {
-                    let label = getOptionText(option, currentAmount);
-                    return (
-                      <div
-                        className={`tip-option ${
-                          tipCents === option ? 'tip-option-selected' : ''
-                        }`}
-                        key={option}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setTipCents(option);
-                          setShowTipOptions(false);
-                        }}>
-                        {label}
+          ) : null}
+        </div>
+
+        <div>
+          {showSuccess && !params.redirectThanksPage ? (
+            <div onClick={redirect}>
+              <CheckmarkCircleOutline />
+              <div>Thank you for donating!</div>
+            </div>
+          ) : null}
+          {!showSuccess ? (
+            <div className="main-container">
+              <div className="header-container flex flex-col items-center text-center">
+                <span className="enter-your-donation flex-1 text-18px leading-27px font-light ">Your donation to</span>
+                <span className="charity-heart flex-1 text-28px leading-33-6px font-bold">{nonprofitName}</span>
+
+                <div className="flex flex-col t:flex-row justify-center  items-center t:items-start gap-22px  pt-42px pb-42px px-10px">
+
+
+                  <div className="max-w-474px rounded-30px shadow-0-3-16 px-20px pb-17px">
+
+
+                    {!userId ? (
+                      <>
+                        <div className="text-14px leading-21px font-bold justify-center pb-31px pt-32px">
+                          I want to setup a recurring monthly donation ❤️
+                        </div>
+                        <div className="flex flex-col t:flex-row items-center justify-center gap-14px">
+                          <div className="flex-1 w-210px">
+                            <Input
+                              placeholder={'Your name'}
+                              onChange={(displayName) =>
+                                setAnonymousData({ ...anonymousData, displayName })
+                              }
+                              value={anonymousData.displayName}
+                              maxLength={30}
+                            />
+
+                          </div>
+                          <div className="flex-1 w-210px">
+                            <Input
+                              onChange={(comment) =>
+                                setAnonymousData({ ...anonymousData, comment })
+                              }
+                              value={anonymousData.comment}
+                              placeholder={'Leave a comment'}
+                              multiline
+                              rows={1}
+                              maxLength={250}
+                              className="max-h-46px"
+                            />
+                          </div>
+
+                        </div>
+
+                      </>
+                    ) : null}
+
+                    <div className="flex flex-col t:flex-row items-center justify-center pt-15px  pb-20px">
+                      <div className="flex-1 w-210px t:w-434px h-93px">
+                        <Input
+                          className="h-93px "
+                          onChange={handleAmountChanged}
+                          value={currentAmount.toString()}
+                          prefix={
+                            <img className="w-18px h-18px"
+                              src="/images/payment/icon-money.svg"
+                            />
+                          }
+                        />
                       </div>
-                    );
-                  })}
+                    </div>
+                    <div className="box-buttons flex flex-col t:flex-row items-center justify-center gap-20px pb-11px">
+                      <div className="flex-1">
+                        <Button className="w-131px bg-secondary-green-1" onClick={() => handleAmountChanged('20')}>$20</Button>
+                      </div>
+                      <div className="flex-1">
+                        <Button className="w-131px bg-secondary-green-1" onClick={() => handleAmountChanged('50')}>$50</Button>
+                      </div>
+                      <div className="flex-1">
+                        <Button className="w-131px bg-secondary-green-1" onClick={() => handleAmountChanged('100')}>$100</Button>
+                      </div>
+                    </div>
+
+                    {/*<div>
+                      <hr className="max-w-434px text-center border-1px bg-secondary-green-1"/>
+                      <div className="max-w-434px max-h-65px bg-secondary-green-2 text-center">
+
+                      </div>
+                    </div>*/}
+
+
+                    <div className="max-w-435px text-12px font-light leading-16px text-left pt-32px pb-10px">
+                      <span className="font-bold"> Move the Chain tip.</span> 🙌 Thank you for getting involved and supporting important our organization’s causes every month.
+                    </div>
+
+                    <div className="flex flex-col t:flex-row items-center justify-center gap-15px">
+                      <div className="rounded-10px border-1px t:w-210px t:h-36px justify-center">
+                        <div
+                          className={'small-rectangle rectangle tip-select'}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setShowTipOptions(true);
+                          }}>
+                          <span className={'option-text'}>
+                            {getOptionText(tipCents, currentAmount)}{' '}
+                            <img src={'/arrow-down.svg'} height={7} />
+                          </span>
+                          {showTipOptions && (
+                            <div className={'tip-options-container'} ref={ref}>
+                              {tipOptions.map((option) => {
+                                let label = getOptionText(option, currentAmount);
+                                return (
+                                  <div
+                                    className={`tip-option ${tipCents === option ? 'tip-option-selected' : ''
+                                      }`}
+                                    key={option}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setTipCents(option);
+                                      setTips(0);
+                                      setShowTipOptions(false);
+                                    }}>
+                                    {label}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="flex-1 w-147px">
+                        <Input
+                          placeholder={'Enter custom amount here'}
+                          className="text-12px"
+                          value={tips.toString()}
+                          onChange={handleTipsChanged}
+                          prefix={
+                            <img className="w-18px h-18px"
+                              src="/images/payment/icon-money.svg"
+                            />
+                          }
+                        />
+                      </div>
+
+                      {/*<div className={'subtitle'}>Total:</div>
+                      <div className={'small-rectangle rectangle'}>
+                        <span className={'option-text'}>{total}</span>
+                            </div>*/}
+                    </div>
+
+                    <div className="pt-8px text-left text-10px leading-12px font-light text-secondary-gray-3 ">
+                      *Move the Chain charges recipients a 3% platform fee for standard basic operating expenses.
+                    </div>
+
+                    <div className="text-left pt-20px">
+                      <CheckBox
+                        value={isShareChecked}
+                        onChange={handleShareChange}
+                      >
+                        <span className="text-12px leading-18px font-light">Share my name and email with this charity.</span>
+                      </CheckBox>
+                    </div>
+
+
+                  </div>
+
+                  <div className="max-w-240px rounded-30px shadow-0-3-16">
+                    <div className="px-14px">
+                      <div className="pt-28px pb-14px text-16px leading-19px text-left font-bold">
+                        Summary
+                      </div>
+                      <div className="flex flex-row pb-5px gap-10px items-start max-w-207px">
+                        <div className="text-left text-12px leading-15px ">
+                          Your donation
+                        </div>
+                        <div className="flex-1 text-12px leading-15px text-right">${currentAmount.toFixed(2)}</div>
+
+                      </div>
+                      <div className="flex flex-row  gap-10px pb-22px items-start max-w-207px">
+                        <div className="text-12px leading-15px text-left">
+                          Move the Chain tip
+                        </div>
+                        <div className="flex-1 text-12px leading-15px text-right">${(Number(totalNumber) - currentAmount).toFixed(2)}</div>
+
+                      </div>
+
+
+                      <hr className="w-197px border-1px bg-secondary-gray-1 text-center justify-center"></hr>
+                      <div className="pt-19px flex flex-row pb-34px gap-30px">
+                        <div className="text-left text-secondary-green-1 text-14px leading-21px font-bold">
+                          Total amount
+                        </div>
+                        <div className="flex-1 text-right text-secondary-green-1 text-14px leading-21px font-light">
+                          <span className={'option-text'}>{total}</span>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="font-bold text-12px leading-21px text-justify pb-20px">
+                          Choose your payment method
+                        </div>
+                        <PayPalButtons
+                          // upgradeLSAT={true}
+                          createOrder={handleCreateOrder}
+                          onApprove={(data, actions) => capture(data.orderID)}
+                          // shippingPreference="NO_SHIPPING"
+                          style={{
+                            color: 'gold',
+                          }}
+                        />
+                      </div>
+
+                      <p className="footer-text text-9px leading-11px text-justify pb-10px text-secondary-gray-5">
+                        PayPal charges recipients a processing fee of 2.2% + $0.30 per
+                        transaction. Your donation, which is typically tax deductible,
+                        will be made to PayPal Giving Fund, a 501(c)(3) charity, subject
+                        to its{' '}
+                        <a
+                          className="hyperlink"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          href={
+                            'https://www.paypal.com/us/webapps/mpp/givingfund/policies/donor-terms-of-service'
+                          }>
+                          terms
+                        </a>
+                        . The charity you recommend typically will receive the funds
+                        within{' '}
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          href={
+                            'https://www.paypal.com/us/webapps/mpp/givingfund/policies/donation-delivery-policy#statement-2'
+                          }>
+                          15-45 days
+                        </a>{' '}
+                        of your original donation. This doesn&apos;t happen often, but if
+                        PayPal Giving Fund{' '}
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          href={
+                            'https://www.paypal.com/us/webapps/mpp/givingfund/policies/donation-delivery-policy#statement-5'
+                          }>
+                          cannot fund the charity you recommend
+                        </a>
+                        , it will reassign the funds to a similar charity and whenever
+                        possible will consult with you on the reassignment.
+                      </p>
+                    </div>
+
+
+
+
+                  </div>
+
+
                 </div>
-              )}
+              </div>
             </div>
-            <div className={'subtitle'}>Total:</div>
-            <div className={'small-rectangle rectangle'}>
-              <span className={'option-text'}>{total}</span>
-            </div>
+          ) : null}
+        </div>
 
-            <CheckBox
-              value={isShareChecked}
-              onChange={handleShareChange}
-            >
-              Share my name and email with this charity.
-            </CheckBox>
-
-            <PayPalButtons
-              // upgradeLSAT={true}
-              createOrder={handleCreateOrder}
-              onApprove={(data, actions) => capture(data.orderID)}
-              // shippingPreference="NO_SHIPPING"
-              style={{
-                color: 'gold',
-              }}
-            />
-
-            <p className="footer-text">
-              PayPal charges recipients a processing fee of 2.2% + $0.30 per
-              transaction. Your donation, which is typically tax deductible,
-              will be made to PayPal Giving Fund, a 501(c)(3) charity, subject
-              to its{' '}
-              <a
-                className="hyperlink"
-                rel="noopener noreferrer"
-                target="_blank"
-                href={
-                  'https://www.paypal.com/us/webapps/mpp/givingfund/policies/donor-terms-of-service'
-                }>
-                terms
-              </a>
-              . The charity you recommend typically will receive the funds
-              within{' '}
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href={
-                  'https://www.paypal.com/us/webapps/mpp/givingfund/policies/donation-delivery-policy#statement-2'
-                }>
-                15-45 days
-              </a>{' '}
-              of your original donation. This doesn&apos;t happen often, but if
-              PayPal Giving Fund{' '}
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href={
-                  'https://www.paypal.com/us/webapps/mpp/givingfund/policies/donation-delivery-policy#statement-5'
-                }>
-                cannot fund the charity you recommend
-              </a>
-              , it will reassign the funds to a similar charity and whenever
-              possible will consult with you on the reassignment.
-            </p>
-          </div>
-        ) : null}
       </div>
+
+
     </div>
   );
 };

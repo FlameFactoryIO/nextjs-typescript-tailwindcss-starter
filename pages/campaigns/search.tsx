@@ -86,25 +86,27 @@ export default function CampaignSearch() {
         "
         >
           <div
-            className="text-26px leading-31-2px d:text-48px d:leading-57-6px font-bold text-white text-center
-          pb-20px t:pb-22px d:pb-40px"
+            className="
+              text-26px leading-31-2px d:text-48px d:leading-57-6px font-bold text-white text-center
+              pb-20px t:pb-22px d:pb-40px"
           >
             Discover campaigns
           </div>
           <div
-            className="text-16px leading-24px t:leading-20-8 d:text-18px d:leading-27px font-light text-white text-center
-          pb-20px t:pb-35px d:pb-33px"
+            className="
+              text-16px leading-24px t:leading-20-8 d:text-18px d:leading-27px font-light text-white text-center
+              pb-20px t:pb-35px d:pb-33px"
           >
             Text about campaigns that can go on two rows. Text about campaigns that can go on two rows.
             Text about campaigns that can go on two rows.
           </div>
-          <div className="flex flex-col t:flex-row gap-5px items-center ">
+          <div className="flex flex-col t:flex-row gap-5px items-stretch">
             <Input
-              className="min-w-280px d:max-2-521px pb-10px t:pb-0px font-light"
+              className="min-w-280px d:max-2-521px font-light"
               placeholder={"Search for a campaign or keyword"}
               onChange={(value) => setNameFilter(value)}
             />
-            <Button className="min-w-110px t:max-w-140px d:max-w-130px rounded-10pxi">
+            <Button className="min-w-110px t:max-w-140px d:max-w-130px">
               Search
             </Button>
           </div>
@@ -130,7 +132,7 @@ export default function CampaignSearch() {
             </div>
             <div className=" ont-light text-16px leading-24px">Location</div>
             <Input
-              className="rounded-10pxi border-primary "
+              className="border-primary"
               placeholder="Browse by location"
               onChange={(value) => setLocationFilter(value)}
             />
@@ -175,6 +177,7 @@ export default function CampaignSearch() {
                   <div className="relative">
                     <Button
                       className="mx-auto rounded-24pxi text-12px leading-18px flex items-center gap-5px font-medium"
+                      size="small"
                       onClick={() => setFilterExpanded(true)}
                     >
                       Load more

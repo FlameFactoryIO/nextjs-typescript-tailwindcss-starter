@@ -53,7 +53,8 @@ export default function CorporationsHome() {
             </div>
             <Button
               variant="primary"
-              className="rounded-10pxi shadow-2-5-15 w-124px h-42px d:h-46px text-14px leading-24px  d:text-18px d:leading-24px"
+              className="shadow-2-5-15 w-124px h-42px d:h-46px d:text-18px d:leading-24px"
+              size="small"
             >
               Join us
             </Button>
@@ -469,41 +470,23 @@ export default function CorporationsHome() {
               pb-20px"
               >
                 <Input
-                  className=" min-w-250px rounded-10pxi
-                    bg-white border-1px border-solid border-input
-                                t:max-w-313px
-                                d:max-w-250px"
+                  className="min-w-250px bg-white border-1px border-solid border-input t:max-w-313px d:max-w-250px"
                   placeholder="Contact Name"
                 />
                 <Input
-                  className="min-w-250px rounded-10pxi
-                    bg-white border-1px border-solid border-input
-                            t:max-w-313px
-                            d:max-w-250px"
+                  className="min-w-250px bg-white border-1px border-solid border-input t:max-w-313px d:max-w-250px"
                   placeholder="Mobile Number"
                 />
                 <Input
-                  className="min-w-250px rounded-10pxi
-                    bg-white border-1px border-solid border-input
-                            t:max-w-313px
-                            d:max-w-250px"
+                  className="min-w-250px bg-white border-1px border-solid border-input t:max-w-313px d:max-w-250px"
                   placeholder="Company Name"
                 />
                 <Input
-                  className="min-w-250px rounded-10pxi
-                    bg-white border-1px border-solid border-input
-                            t:max-w-313px
-                            d:max-w-250px"
+                  className="min-w-250px bg-white border-1px border-solid border-input t:max-w-313px d:max-w-250px"
                   placeholder="Role/Position"
                 />
                 <Input
-                  className="
-                    col-span-2
-                    min-w-250px rounded-10pxi
-                    bg-white border-1px border-solid border-input
-                    t:max-w-647px
-                    d:max-w-530px
-                  "
+                  className="t:col-span-2 min-w-250px bg-white border-1px border-solid border-input t:max-w-647px d:max-w-515px"
                   placeholder="Email Address"
                 />
               </div>
@@ -511,7 +494,7 @@ export default function CorporationsHome() {
               <div className="pb-30px t:pb-40px">
                 <Input
                   className="
-                    min-w-250px h-180px rounded-10pxi
+                    min-w-250px h-180px
                     bg-white border-1px border-solid border-input
                     t:max-w-647px
                     d:max-w-530px d:h-227px
@@ -522,7 +505,7 @@ export default function CorporationsHome() {
               </div>
 
               <div className="text-center">
-                <Button className="w-201px h-46px rounded-10pxi" type="submit">
+                <Button size="small" type="submit">
                   Join Us 🚀
                 </Button>
               </div>

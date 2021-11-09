@@ -5,21 +5,13 @@ export default {
   title: "Buttons"
 }
 
-const Template = arguments_ => <Button {...arguments_} /> //creating a template
-
-export const Primary = Template.bind({})
-Primary.args = {
-  children: "Primary Button",
-}
-
-export const Black = Template.bind({})
-Black.args = {
-  children: "Black Button",
-  variant: "black",
-}
-
-export const White = Template.bind({})
-White.args = {
-  children: "White Button",
-  variant: "white",
-}
+export const Buttons = () => (
+  <div className="flex flex-col items-start gap-20px">
+    <Button>Normal Primary</Button>
+    <Button size="small">Small Primary</Button>
+    <Button variant="black">Normal Black</Button>
+    <Button variant="black" size="small">Small Black</Button>
+    <Button disabled>Normal Inactive</Button>
+    <Button disabled size="small">Small Inactive</Button>
+  </div>
+);

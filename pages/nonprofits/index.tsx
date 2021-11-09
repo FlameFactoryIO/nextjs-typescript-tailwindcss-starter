@@ -67,7 +67,8 @@ export default function Home() {
               <Button
                 type="button"
                 variant="primary"
-                className="px-30px  w-140px h-46px rounded-10pxi hidden t:block"
+                className="hidden t:block"
+                size="small"
               >
                 Get started
               </Button>
@@ -201,7 +202,8 @@ export default function Home() {
             <Button
               type="button"
               variant="primary"
-              className="mx-auto px-30px py-11px w-140px h-46px rounded-10pxi"
+              className="mx-auto"
+              size="small"
             >
               Get started
             </Button>
