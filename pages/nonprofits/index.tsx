@@ -266,6 +266,7 @@ export default function Home() {
               width={540}
               height={500}
               objectFit="contain"
+              alt="Mobile phone showing a user on the move the chain app and creating a campaign"
             />
           </div>
         </div>
@@ -314,6 +315,7 @@ export default function Home() {
               width={473}
               height={500}
               objectFit="contain"
+              alt="Tablet showing a nonprofit page that has little content and needs a nonprofit to complete there profile"
             />
           </div>
         </div>
@@ -357,6 +359,7 @@ export default function Home() {
               width={499}
               height={512}
               objectFit="contain"
+              alt="Mobile phone showing a user on the move the chain app and creating a campaign"
             />
           </div>
         </div>
@@ -396,6 +399,7 @@ export default function Home() {
               width={540}
               height={500}
               objectFit="contain"
+              alt="Sharing and giving got even more easier"
             />
           </div>
         </div>

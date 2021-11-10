@@ -26,6 +26,7 @@ export default {
 // noinspection JSUnusedGlobalSymbols
 export const Default = () => (
   <div className="">
+    MASONRY NO WORKING IN STORYBOOK
     <NonprofitProfileTabs />
   </div>
 );

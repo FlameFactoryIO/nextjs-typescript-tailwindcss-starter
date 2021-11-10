@@ -17,7 +17,7 @@ const NonprofitProfileTabs: FC<{
 
   return (
     <div className={`w-full flex flex-col overflow-hidden ${className}`}>
-      <div className="text-center flex gap-30px text-14px leading-16px font-light select-none">
+      <div className="text-center flex gap-30px text-14px leading-16px font-light select-none mb-40px">
         {["home", "our impact", "campaigns", "fundraiser", "posts", "contact"].map((tab: Tab) => (
           <div
             key={tab}
