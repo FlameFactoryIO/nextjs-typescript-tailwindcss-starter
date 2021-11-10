@@ -377,11 +377,6 @@ const PaymentScreen = () => {
                         onChange={handleTipsChanged}
                         prefix={<Money className="w-18px h-18px" />}
                       />
-
-                      {/*<div className={'subtitle'}>Total:</div>
-                      <div className={'small-rectangle rectangle'}>
-                        <span className={'option-text'}>{total}</span>
-                            </div>*/}
                     </div>
 
                     <div className="pt-8px text-left text-10px leading-12px font-light text-secondary-gray-3 ">
