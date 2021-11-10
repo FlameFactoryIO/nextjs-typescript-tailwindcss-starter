@@ -443,8 +443,8 @@ export default function Home() {
                 sharing, or participating in challenges.
               </div>
               <Link href="/campaigns/search" passHref>
-                <a>
-                  <Button variant="primary" className="d:mt-22px" size="small">
+                <a className="d:mt-22px">
+                  <Button variant="primary" size="small">
                     View all campaigns 👉
                   </Button>
                 </a>
@@ -465,12 +465,16 @@ export default function Home() {
                 sharing, or participating in challenges.
               </div>
             </div>
-            <Button
-              variant="primary"
-              className="mt-22px t:m-0 whitespace-nowrap"
-            >
-              View all campaigns 👉
-            </Button>
+            <Link href="/campaigns/search" passHref>
+              <a className="mt-22px t:m-0">
+                <Button
+                  variant="primary"
+                  className="whitespace-nowrap"
+                >
+                  View all campaigns 👉
+                </Button>
+              </a>
+            </Link>
           </div>
         </div>
       </div>

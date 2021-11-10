@@ -10,6 +10,7 @@ import { useSendMagicLink } from "../mtc-api/auth/useSendMagicLink";
 import { useForgotPassword } from "../mtc-api/auth/useResetPassword";
 import Modal from "../components/Modal";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { isValidEmail } from "../utils/validations";
 
 const getErrorTitle = (e) => {
   if (e?.response?.data?.code == 'ACCOUNT_NOT_CREATED') {
@@ -111,7 +112,7 @@ export default function Login() {
   const [isShowPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
-    const isEmailValid = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email);
+    const isEmailValid = isValidEmail(email);
     setEmailValid(isEmailValid);
     setCanLogin(!!isEmailValid && !!password);
     setCanLogin(!!isEmailValid && !!password);

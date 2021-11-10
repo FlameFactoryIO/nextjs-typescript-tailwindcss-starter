@@ -259,10 +259,8 @@ export default function NonprofitProfile({
       </div>
       {/* <div id="share-links" className="flex items start gap10px"></div>
       <div id="share-links" className="flex items start gap10px"></div> */}
-      <div id="footer" className="w-full bg-footer">
-        <div className="px-20px pt-30px pb-15px mx-auto">
-          <Footer />
-        </div>
+      <div className="w-full bg-footer">
+        <Footer />
       </div>
     </div>
   );

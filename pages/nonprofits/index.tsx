@@ -497,10 +497,8 @@ export default function Home() {
           <Questions />
         </div>
       </div>
-      <div id="footer" className="w-full bg-footer">
-        <div className="w-320px t:w-708px d:w-1140px mx-auto">
-          <Footer />
-        </div>
+      <div className="w-full bg-footer">
+        <Footer />
       </div>
     </div>
   );

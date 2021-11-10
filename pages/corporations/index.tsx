@@ -503,7 +503,6 @@ export default function CorporationsHome() {
                 />
               </div>
 
-
               <div className="grid grid-rows-1 t:grid-cols-1 items-center pb-30px t:pb-40px">
               <Input
                   className="
@@ -527,10 +526,8 @@ export default function CorporationsHome() {
         </div>
       </div>
 
-      <div id="footer" className="w-full bg-footer">
-        <div className="w-320px t:w-708px d:w-1140px mx-auto">
-          <Footer />
-        </div>
+      <div className="w-full bg-footer">
+        <Footer />
       </div>
     </div>
   );
