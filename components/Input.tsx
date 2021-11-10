@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useRef } from "react";
 
 const Input: FC<{
   type?: string,
@@ -29,6 +29,8 @@ const Input: FC<{
   autoComplete,
   inputClassName = "",
 }) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
   if (multiline) {
     return (
       <textarea
@@ -43,9 +45,16 @@ const Input: FC<{
     );
   }
 
+  const handleContainerClick = (e) => {
+    if (e.target === inputRef.current) {
+      inputRef.current?.focus();
+    }
+  }
+
   return (
     <div
       className={`w-full flex flex-wrap items-stretch relative min-h-46px bg-white items-center rounded-10px border ${disabled ? "bg-gray-200" : ""} ${className}`}
+      onClick={handleContainerClick}
     >
       {prefix && (
         <div className="flex items-center justify-center pr-3px">
@@ -53,6 +62,7 @@ const Input: FC<{
         </div>
       )}
       <input
+        ref={inputRef}
         type={type}
         autoComplete={autoComplete}
         className={`

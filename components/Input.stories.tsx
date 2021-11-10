@@ -42,13 +42,13 @@ export const Inputs = () => (
     <Input
       value="234567isjdfokljaslkdjfh"
       prefix={
-        <Button className="rounded-r-none">
-          Click
+        <Button className="rounded-r-none" onClick={() => console.log("Click Prefix")}>
+          Click Prefix
         </Button>
       }
       suffix={
-        <Button className="rounded-l-none">
-          Click
+        <Button className="rounded-l-none" onClick={() => console.log("Click Suffix")}>
+          Click Suffix
         </Button>
       }
     />
@@ -56,13 +56,13 @@ export const Inputs = () => (
     <Input
       value="234567isjdfokljaslkdjfh"
       prefix={
-        <Button className="h-60px rounded-r-none">
-          Tall button
+        <Button className="h-60px rounded-r-none" onClick={() => console.log("Tall Button Prefix")}>
+          Tall Button Prefix
         </Button>
       }
       suffix={
-        <Button className="h-60px rounded-l-none">
-          Tall button
+        <Button className="h-60px rounded-l-none" onClick={() => console.log("Tall Button Suffix")}>
+          Tall Button Suffix
         </Button>
       }
     />
