@@ -274,7 +274,7 @@ const PaymentScreen = () => {
                               setAnonymousData({ ...anonymousData, comment })
                             }
                             value={anonymousData.comment}
-                            placeholder={'Leave a comment'}
+                            placeholder={'Short comment'}
                             maxLength={250}
                           />
                         </div>
@@ -431,25 +431,21 @@ const PaymentScreen = () => {
                         </div>
                       </div>
 
-                      <div className="flex flex-col items-center justify-items-center">
-                        <div className="font-bold text-14px leading-21px text-justify pb-20px">
-                          Choose your payment method
+                      <div className="flex flex-col">
+                        <div className="font-bold text-14px leading-21px pb-20px">
+                          Payment method
                         </div>
-                        <div className="max-w-210px justify-center">
-                          <PayPalButtons
-                            forceReRender={[amount, challengeName, isShareChecked, nonprofitId, nonprofitName, tipCents]}
-                            // upgradeLSAT={true}
-                            createOrder={handleCreateOrder}
-                            onApprove={(data, actions) => capture(data.orderID)}
-                            // shippingPreference="NO_SHIPPING"
-                            style={{
-                              color: 'gold',
-                            }}
-                          />
-                        </div>
-
+                        <PayPalButtons
+                          forceReRender={[amount, challengeName, isShareChecked, nonprofitId, nonprofitName, tipCents]}
+                          // upgradeLSAT={true}
+                          createOrder={handleCreateOrder}
+                          onApprove={(data, actions) => capture(data.orderID)}
+                          // shippingPreference="NO_SHIPPING"
+                          style={{
+                            color: 'gold',
+                          }}
+                        />
                       </div>
-
                       <p className="footer-text text-9px leading-11px text-justify pb-10px  text-secondary-gray-5">
                         PayPal charges recipients a processing fee of 2.2% + $0.30 per
                         transaction. Your donation, which is typically tax deductible,
