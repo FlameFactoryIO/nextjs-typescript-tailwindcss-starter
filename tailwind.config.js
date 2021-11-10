@@ -36,6 +36,7 @@ module.exports = {
             },
             fontSize: {},
             borderRadius: {
+                "0px": "0px",
                 "6px": "6px",
                 "6pxi": "6px !important",
                 "8px": "8px",
@@ -196,6 +197,7 @@ module.exports = {
                 input: "#D3D9E1",
                 "nonprofit-logo": "#E3E4E580",
                 "input-border": "#C6CACC",
+                "secondary-violet": "#531dc6",
                 // "secondary-green-1": "#38C058", // reemplazado por green-500
                 // gray, red, green son nombres de colores reservados, usar otro nombre
                 // https://tailwindcss.com/docs/customizing-colors
