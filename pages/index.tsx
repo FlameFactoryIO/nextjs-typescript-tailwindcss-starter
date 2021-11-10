@@ -255,7 +255,7 @@ export default function Home() {
                   </p>
                   <Link href="/corporations">
                     <a
-                      className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px"
+                      className="d:hidden text-12px leading-18px text-primary font-bold  flex items-center justify-between gap-9px underline"
                       aria-label="Get started as a corporation"
                       title="Get started as a corporation"
                     >
