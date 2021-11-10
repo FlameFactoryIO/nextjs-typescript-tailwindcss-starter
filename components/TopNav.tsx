@@ -166,7 +166,7 @@ const TopNav: FC<{
           <TopNavItem title="About us" path={router?.asPath} href="/about-us" />
           <TopNavItem title="Individuals">
           <TopNavItem
-              title="Getting started"
+              title="Get started"
               path={router?.asPath}
               href="/individuals"
             />
@@ -341,7 +341,7 @@ const TopNav: FC<{
           <SideNavItem title="About us" href="/about-us" className="mt-14px" />
           <SideNavItem title="Individuals">
             <SideNavItem
-                title="Getting started"
+                title="Get started"
                 href="/individuals"
                 className="border-none py-8px font-light"
             />

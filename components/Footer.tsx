@@ -123,10 +123,10 @@ const Footer: FC = () => {
               <li>
                 <Link href="/corporations">Corporations</Link>
               </li>
-              <li>
-                <Link href="/nonprofits/search">Find your match</Link>
+              <li className="hidden">
+                <Link href="/">Find your match</Link>
               </li>
-              <li>
+              <li className="hidden">
                 <Link href="/faq">FAQs</Link>
               </li>
             </ul>
@@ -136,17 +136,17 @@ const Footer: FC = () => {
               Contact
             </div>
             <ul className="text-13px t:text-14px leading-25px pb-5px font-light t:font-light d:font-normal">
-              <li>
-                <Link href="/corporation-contact">Corporation Contact</Link>
+              <li className="hidden">
+                <Link href="/corporation-contact">Corporations Contact</Link>
               </li>
               <li>
-                <Link href="/customer-support">Customer Support</Link>
+                <Link href="mailto:support@movethechain.com?subject=Customer support">Customer Support</Link>
               </li>
               <li>
-                <Link href="/feature-suggestions">Feature Suggestions</Link>
+                <Link href="mailto:support@movethechain.com?subject=Feature suggestion">Feature Suggestions</Link>
               </li>
               <li>
-                <Link href="/legal-feedback">Legal Feedback</Link>
+                <Link href="mailto:legal@movethechain.com">Legal Feedback</Link>
               </li>
             </ul>
             <div className="flex flex-rows gap-10px t:pt-44px">

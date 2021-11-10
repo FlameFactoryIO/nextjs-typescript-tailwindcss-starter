@@ -227,11 +227,11 @@ export default function Home() {
                   </div>
                   <p
                     className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px hidden d:block d:h-49px d:flex-1">
-                    Tell your story to raise <br className="hidden d:inline-block" /> funds.
+                    Tell your story and create a campaign to raise funds.
                   </p>
                   <p
                     className="text-white text-12px leading-18px col-span-2 d:col-span-1 font-light pb-7px d:pb-13px d:hidden">
-                    Use your page to start fundraising.{" "}
+                    Tell your story and create a campaign to raise funds.
                   </p>
                   <div className="border-gray-500 border-b-1px d:hidden"/>
                   <div className="border-gray-500 border-b-1px hidden d:block h-1px  d:pb-15px"/>
@@ -259,7 +259,7 @@ export default function Home() {
                       aria-label="Get started as a corporation"
                       title="Get started as a corporation"
                     >
-                      Sponsor an event{""}<HomeHeroArrow />
+                      Find out more{""}<HomeHeroArrow />
                     </a>
                   </Link>
                 </div>
@@ -275,7 +275,7 @@ export default function Home() {
                     aria-label="Get started as a corporation"
                     title="Get started as a corporation"
                   >
-                    Sponsor an event{""}<HomeHeroArrow />
+                    Find out more{""}<HomeHeroArrow />
                   </a>
                 </Link>
               </div>

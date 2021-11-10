@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import Link from 'next/link';
 import Button from '../components/Button';
 
 const Questions: FC = () => {
@@ -19,9 +20,13 @@ const Questions: FC = () => {
         </div>
       </div>
       <div className="t:mt-44px d:mt-41px t:mr-0">
-        <Button size="small">
-          Contact Us
-        </Button>
+        <Link href="mailto:support@movethechain.com" passHref>
+          <a>
+            <Button size="small">
+              Contact Us
+            </Button>
+          </a>
+        </Link>
       </div>
     </div>
   )
