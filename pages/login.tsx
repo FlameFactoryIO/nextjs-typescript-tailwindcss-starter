@@ -28,7 +28,7 @@ export default function Login() {
     'nonprofitOnboardingFinished',
   ]);
 
-  const [modalInfo, setModalInfo] = useState<{type, title, body}>();
+  const [modalInfo, setModalInfo] = useState<{ type, title, body }>();
 
   const sendMagicLink = useSendMagicLink({
     onSuccess: () => {
@@ -159,25 +159,37 @@ export default function Login() {
           flex flex-col t:flex-row items-center t:gap-30px t:pr-30px
           t:shadow-0-5-15 t:rounded-50px"
         >
-          <div className="t:w-473px t:max-h-578px">
+          <div className="hidden t:block t:w-473px t:max-h-578px">
             <Image
               src="/images/login/login.png"
               width={473}
               height={578}
             />
           </div>
+          <div className="absolute -mt-8 t:hidden">
+            <Image
+                src="/images/login/logo-mobile.png"
+                width={60}
+                height={60}
+              />
+          </div>
+          <div className="flex flex-col items-center t:hidden w-280px h-84px rounded-12px bg-secondary-gray-6">
+            <div className="text-center font-black text-12px leading-15px max-w-250px pt-38px pb-13px">
+              The Sanctuary For Canines, Felines And Equines At NE Ohio Greyhound Rescue
+            </div>
+          </div>
           <div>
-            <form className="flex flex-col t:max-w-413px" onSubmit={handleLogin}>
-              <div className="t:text-13px t:leading-18px t:text-gray-500">
+            <form className="flex flex-col max-w-280px t:max-w-413px" onSubmit={handleLogin}>
+              <div className="text-13px leading-18px text-gray-500  pt-37px t:pt-0">
                 Free of charge
               </div>
-              <div className="t:text-38px t:leading-57px t:font-black t:pb-64px">
+              <div className="text-24px leading-36px t:text-38px t:leading-57px font-black pb-64px">
                 Log in to account 🗝
               </div>
 
-              <div className="t:pb-39px">
+              <div className="pb-39px">
                 <Input
-                  className="max-w-423px"
+                  className="max-w-280px t:max-w-423px"
                   placeholder="Email address"
                   type="email"
                   // pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
@@ -190,9 +202,9 @@ export default function Login() {
                 />
               </div>
 
-              <div className="t:pb-45px">
+              <div className="pb-45px">
                 <Input
-                  className="max-w-423px"
+                  className="max-w-280px t:max-w-423px"
                   placeholder="Password"
                   type={isShowPassword ? "text" : "password"}
                   onChange={setPassword}
@@ -211,7 +223,7 @@ export default function Login() {
                 />
               </div>
 
-              <div className="flex flex-row items-center t:gap-20px">
+              <div className="flex flex-col t:flex-row items-start t:items-center gap-13px t:gap-20px">
                 <Button
                   disabled={!canLogin}
                   size="small"
