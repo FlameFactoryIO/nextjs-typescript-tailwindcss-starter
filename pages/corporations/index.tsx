@@ -504,7 +504,7 @@ export default function CorporationsHome() {
               </div>
 
               <div className="grid grid-rows-1 t:grid-cols-1 items-center pb-30px t:pb-40px">
-              <Input
+                <Input
                   className="
                     min-w-250px h-180px
                     bg-white border-1px border-solid border-input

@@ -57,10 +57,7 @@ module.exports = {
                 "40px": "40px",
                 "50px": "50px",
             },
-            borderWidth: {
-                "1px": "1px",
-                "2px": "2px",
-            },
+            borderWidth: {},
             lineHeight: {
                 128: "1.56rem",
                 "13px": "13px",
@@ -235,4 +232,7 @@ range(1, 1000).forEach((i) => {
     module.exports.theme.extend.height[`${i}px`] = `${i}px`;
     module.exports.theme.extend.minHeight[`${i}px`] = `${i}px`;
     module.exports.theme.extend.maxHeight[`${i}px`] = `${i}px`;
+});
+range(1, 10).forEach((i) => {
+    module.exports.theme.extend.borderWidth[`${i}px`] = `${i}px`;
 });

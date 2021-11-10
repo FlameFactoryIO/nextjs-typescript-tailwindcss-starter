@@ -1,7 +1,7 @@
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { useSearchNonprofit } from "../mtc-api/nonprofit/useSearchNonprofit";
-import NonprofitProfileHome from "./NonprofitProfileHome";
+import NonprofitProfileTabs from "./NonprofitProfileTabs";
+
 // TODO(hmassad): mock http call with Mock Service Worker https://mswjs.io/docs/getting-started/install
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -13,7 +13,7 @@ const queryClient = new QueryClient({
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: "NonprofitProfileHome",
+  title: "NonprofitProfileTabs",
   decorators: [
     (Story) => (
       <QueryClientProvider client={queryClient}>
@@ -23,14 +23,9 @@ export default {
   ],
 };
 
-
-
 // noinspection JSUnusedGlobalSymbols
-export const NonprofitPrfileHome = () => {
-  
-  return (
-    <div className="bg-green-300 min-w-280px">
-      <NonprofitProfileHome />
-    </div>
-  );
-};
+export const Default = () => (
+  <div className="">
+    <NonprofitProfileTabs />
+  </div>
+);
