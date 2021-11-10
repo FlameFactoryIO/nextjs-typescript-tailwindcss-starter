@@ -121,7 +121,6 @@ export default function Home() {
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)}/>
 
-      {/*bg-gradient-to-r from-blue-dark to-we-connect-charities-bg-right*/}
       <div className="w-full hero-background">
         <div
           id="hero"

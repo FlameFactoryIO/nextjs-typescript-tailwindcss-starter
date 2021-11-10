@@ -43,7 +43,7 @@ export default function NonprofitProfile({
       </Head>
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
-      <div className="w-full bg-blue">
+      <div className="w-full bg-blue-darkest">
         <div
           id="hero-section"
           className="px-20px pt-88px pb-0

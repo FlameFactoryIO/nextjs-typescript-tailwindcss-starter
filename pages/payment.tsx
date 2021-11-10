@@ -11,6 +11,7 @@ import { logEvent } from '../utils/analytics';
 import TopNav from '../components/TopNav';
 import { FaUndo } from "react-icons/fa";
 import { CheckmarkCircleOutline } from "../components/svg/CheckmarkCircleOutline";
+import { Money } from "../components/svg/Money";
 
 const buildOptionText = (option, currentAmount) => {
   let label = `${option}%`;
@@ -249,7 +250,6 @@ const PaymentScreen = () => {
 
                   <div className="max-w-474px rounded-30px shadow-0-3-16 px-20px pb-17px">
 
-
                     {!userId ? (
                       <>
                         {/*<div className="flex flex-col t:flex-row  pb-31px pt-32px gap-5px">
@@ -259,74 +259,59 @@ const PaymentScreen = () => {
                     </div>*/}
 
                         <div className="flex flex-col t:flex-row items-center justify-center gap-14px pt-32px">
-                          <div className="flex-1 w-210px">
-                            <Input
-                              placeholder={'Your name'}
-                              onChange={(displayName) =>
-                                setAnonymousData({ ...anonymousData, displayName })
-                              }
-                              value={anonymousData.displayName}
-                              maxLength={30}
-                              className="h-46px"
-                            />
-
-                          </div>
-                          <div className="flex-1 w-210px">
-                            <Input
-                              onChange={(comment) =>
-                                setAnonymousData({ ...anonymousData, comment })
-                              }
-                              value={anonymousData.comment}
-                              placeholder={'Leave a comment'}
-                              multiline
-                              rows={1}
-                              maxLength={250}
-                              className="h-46px rounded-10px"
-                            />
-                          </div>
-
+                          <Input
+                            className="flex-1 w-full t:w-210px"
+                            placeholder={'Your name'}
+                            onChange={(displayName) =>
+                              setAnonymousData({ ...anonymousData, displayName })
+                            }
+                            value={anonymousData.displayName}
+                            maxLength={30}
+                          />
+                          <Input
+                            className="flex-1 w-full t:w-210px"
+                            onChange={(comment) =>
+                              setAnonymousData({ ...anonymousData, comment })
+                            }
+                            value={anonymousData.comment}
+                            placeholder={'Leave a comment'}
+                            maxLength={250}
+                          />
                         </div>
 
                       </>
                     ) : null}
 
-                    <div className="flex flex-col t:flex-row items-center justify-center pt-15px  pb-20px">
-                      <div className="flex-1 w-210px max-w-434px max-h-93px">
-                        <Input
-                          className="h-93px text-center text-28px"
-                          onChange={handleAmountChange}
-                          value={amount.toString()}
-                          prefix={
-                            <img className="w-18px h-18px"
-                              src="/images/payment/icon-money.svg"
-                            />
-                          }
-                        />
-                      </div>
-                    </div>
-                    <div className="box-buttons flex flex-col t:flex-row items-center justify-center gap-20px">
-                      <div className="flex flex-col t:flex-row gap-20px">
-                        {[20, 50, 100].map(n => (
-                          <Button key={n}
-                            variant="white"
-                            className={`
-                                flex-1
-                                text-28px
-                                font-light
-                                border
-                                border-green-500
-                                ring-green-500
-                                focus-green-500
-                                ${amount === n ?
-                                "bg-green-500 text-white" :
-                                "bg-white text-green-500"}
-                            `}
-                            onClick={() => setAmount(n)}
-                          >
-                            ${n}
-                          </Button>
-                        ))}
-                      </div>
+                    <Input
+                      className="mt-15px flex-1 text-center text-48px pr-30px"
+                      inputClassName={"text-center"}
+                      prefix={<Money className="w-18px h-18px ml-30px" />}
+                      onChange={handleAmountChange}
+                      value={amount.toString()}
+                    />
+
+                    <div className="mt-20px flex flex-col t:flex-row items-center justify-center gap-20px">
+                      {[20, 50, 100].map(n => (
+                        <Button key={n}
+                          variant="white"
+                          className={`
+                              w-full t:w-131px
+                              text-28px
+                              leading-33px
+                              font-light
+                              border
+                              border-green-500
+                              ring-green-500
+                              focus-green-500
+                              ${amount === n ?
+                              "bg-green-500 text-white" :
+                              "bg-white text-green-500"}
+                          `}
+                          onClick={() => setAmount(n)}
+                        >
+                          ${n}
+                        </Button>
+                      ))}
                     </div>
 
                     {/*<div className="hidden t:block max-w-434px">
@@ -347,13 +332,14 @@ const PaymentScreen = () => {
                     </div>
 
                     <div className="flex flex-col t:flex-row items-center justify-center gap-15px">
-                      <div className="rounded-10px border-1px w-210px t:h-46px justify-center overflow-visible z-50">
+                      <div className="rounded-10px border-1px w-full t:w-210px t:h-46px justify-center overflow-visible z-50">
                         <div
                           className={`bg-white h-46px ${showTipOptions ? 'rounded-t-10px' : 'rounded-10px'}  border-1px select-none cursor-pointer`}
                           onClick={(e) => {
                             e.stopPropagation();
                             setShowTipOptions(true);
-                          }}>
+                          }}
+                        >
                           <div className="flex flex-row h-46px items-center justify-center gap-5px">
                             <span className={'text-14px font-bold'}>
                               {buildOptionText(tipCents, amount)}{' '}
@@ -383,19 +369,14 @@ const PaymentScreen = () => {
                         </div>
                       </div>
 
-                      <div className="flex-1 w-210px">
-                        <Input
-                          placeholder={'Enter custom amount here'}
-                          className="h-46px rounded-10px"
-                          value={tips.toString()}
-                          onChange={handleTipsChanged}
-                          prefix={
-                            <img className="w-18px h-18px"
-                              src="/images/payment/icon-money.svg"
-                            />
-                          }
-                        />
-                      </div>
+                      <Input
+                        placeholder={'Enter custom amount here'}
+                        inputClassName={"text-center"}
+                        className="flex-1 h-46px"
+                        value={tips.toString()}
+                        onChange={handleTipsChanged}
+                        prefix={<Money className="w-18px h-18px" />}
+                      />
 
                       {/*<div className={'subtitle'}>Total:</div>
                       <div className={'small-rectangle rectangle'}>
@@ -426,33 +407,32 @@ const PaymentScreen = () => {
                         Summary
                       </div>
                       <div className="flex flex-row pb-5px gap-10px items-center t:items-start t:max-w-207px mx-auto t:mr-0">
-                        <div className="text-center t:text-left text-12px leading-15px ">
+                        <div className="text-center t:text-left text-12px leading-18px ">
                           Your donation
                         </div>
-                        <div className="flex-1 text-12px leading-15px text-right">${amount.toFixed(2)}</div>
+                        <div className="flex-1 text-12px leading-18px text-right">${amount.toFixed(2)}</div>
 
                       </div>
                       <div className="flex flex-row  gap-20px t:gap-10px pb-22px items-center t:items-start t:max-w-207px">
-                        <div className="text-12px leading-15px text-center t:text-left">
+                        <div className="text-12px leading-18px text-center t:text-left">
                           Move the Chain tip
                         </div>
-                        <div className="flex-1 text-12px leading-15px  text-right">${(Number(total) - amount).toFixed(2)}</div>
-
+                        <div className="flex-1 text-12px leading-18px text-right">${(Number(total) - amount).toFixed(2)}</div>
                       </div>
 
 
                       <hr className="border-1px bg-secondary-gray-1 text-center justify-center" />
                       <div className="pt-19px flex flex-row pb-34px gap-30px items-center t:items-start t:max-w-207px">
-                        <div className="text-center t:text-left text-secondary-green-1 text-14px leading-21px font-bold">
+                        <div className="text-center t:text-left text-green-500 text-14px leading-21px font-bold">
                           Total amount
                         </div>
-                        <div className="flex-1 text-right text-secondary-green-1 text-14px leading-21px font-light">
+                        <div className="flex-1 text-right text-green-500 text-16px leading-24px font-light">
                           <span className={'option-text'}>{`$${total}`}</span>
                         </div>
                       </div>
 
                       <div className="flex flex-col items-center justify-items-center">
-                        <div className="font-bold text-12px leading-21px text-justify pb-20px">
+                        <div className="font-bold text-14px leading-21px text-justify pb-20px">
                           Choose your payment method
                         </div>
                         <div className="max-w-210px justify-center">

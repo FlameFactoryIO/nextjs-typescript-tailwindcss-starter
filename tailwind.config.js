@@ -164,6 +164,19 @@ module.exports = {
                     800: "#B3B3B3",
                     900: "#999999",
                 },
+                green: {
+                    DEFAULT: '#38C058',
+                    '50': '#C2EDCC',
+                    '100': '#B3E9BF',
+                    '200': '#93DFA5',
+                    '300': '#73D68B',
+                    '400': '#54CD70',
+                    '500': '#38C058',
+                    '600': '#2B9544',
+                    '700': '#1F6930',
+                    '800': '#123E1C',
+                    '900': '#051208',
+                },
                 secondary: defaultTheme.colors.black,
                 footer: "#F0F3F8",
                 "we-connect-charities-bg-right": "#10143c",
@@ -173,7 +186,7 @@ module.exports = {
                 "blue-darker": "#080719",
                 "blue-dark": "#0A173C",
                 "form-contact": "#FFFFFF",
-                blue: "#091023",
+                "blue-darkest": "#091023",
                 "yellow-border": "#FBBC1B",
                 "red-select-border": "#E8430033",
                 "secondary-gray-1": "#DAE0E9",
@@ -186,9 +199,9 @@ module.exports = {
                 input: "#D3D9E1",
                 "nonprofit-logo": "#E3E4E580",
                 "input-border": "#C6CACC",
-                "secondary-green-1": "#38C058",
-                "secondary-green-2": "#4abf51",
+                // "secondary-green-1": "#38C058", // reemplazado por green-500
                 // gray, red, green son nombres de colores reservados, usar otro nombre
+                // https://tailwindcss.com/docs/customizing-colors
             },
             backgroundImage: {
                 "login-email": "url('/images/login/icon-email.svg')",

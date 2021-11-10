@@ -13,6 +13,7 @@ const Input: FC<{
   prefix?: ReactNode,
   suffix?: ReactNode,
   autoComplete?: string,
+  inputClassName?: string,
 }> = ({
   disabled,
   className = "",
@@ -26,6 +27,7 @@ const Input: FC<{
   prefix,
   suffix,
   autoComplete,
+  inputClassName = "",
 }) => {
   if (multiline) {
     return (
@@ -56,6 +58,7 @@ const Input: FC<{
         className={`
           flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border-0 px-20px relative self-center outline-none
           ${disabled ? "bg-gray-200 cursor-not-allowed" : ""}
+          ${inputClassName}
         `}
         placeholder={placeholder}
         value={value}
