@@ -1,11 +1,11 @@
 import { Block, EmptyBlock } from "./Block";
-import { GalleryIcon } from "./Icons";
+import { ContactInfoIcon } from "./Icons";
 import React, { useState } from "react";
 import Nonprofit from "../../dtos/Nonprofit";
 import Modal from "../Modal";
 import Button from "../Button";
 
-const GalleryBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ownsNonprofit: boolean}) => {
+const ContactsBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ownsNonprofit: boolean}) => {
   const [isEditorOpen, setEditorOpen] = useState(false);
 
   const handleSave = (
@@ -18,43 +18,39 @@ const GalleryBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ownsNon
     }
   };
 
-  if (!nonprofit?.impact) {
+  if (!nonprofit?.contacts?.length) {
     if (!ownsNonprofit) {
       return null;
     }
 
     return (
       <EmptyBlock
-        icon={<GalleryIcon />}
+        icon={<ContactInfoIcon />}
         text={
           <>
-            <span className="font-bold">
-              Upload and make an awesome gallery
-            </span>
+            <span className="font-bold">Add contact info</span>
             <br />
-            and include text if you want.
+            and make it easy to find out more about your cause.
           </>
         }
-        actionText="Add gallery"
+        actionText="Add contacts"
         onClick={() => setEditorOpen(true)}
       />
     );
   }
 
-  console.debug({impact: nonprofit.impact})
-
   return (
     <Block>
-      GALLERY
+      CONTACTS
 
       {isEditorOpen && (
         <Modal
-          header="Update your gallery"
+          header="Update your testimonials"
           onClose={() => setEditorOpen(false)}
           footer={<Button onClick={handleSave}>Save</Button>}
         >
           <div className="flex flex-col p-20px">
-            GALLERY EDITOR
+            TESTIMONIALS EDITOR
           </div>
         </Modal>
       )}
@@ -62,4 +58,4 @@ const GalleryBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ownsNon
   );
 };
 
-export default GalleryBlock;
+export default ContactsBlock;

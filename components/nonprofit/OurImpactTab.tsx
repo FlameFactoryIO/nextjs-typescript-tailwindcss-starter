@@ -1,64 +1,29 @@
-import { FC, useState } from "react";
-import Nonprofit from '../../dtos/Nonprofit';
-import AboutUsBigBlock from "./AboutUsBigBlock";
-import AboutUsEditor from './AboutUsEditor';
-import Interest from '../../dtos/Interest';
-import TestimonialsBlock from './TestimonialsBlock';
-import TestimonialsEditor from './TestimonialsEditor';
-import Testimonial from '../../dtos/Testimonial';
+import React, { FC } from "react";
+import Nonprofit from "../../dtos/Nonprofit";
+import MasonryList from "./MasonryList";
+import GalleryBlock from "./GalleryBlock";
+import TestimonialsBlock from "./TestimonialsBlock";
+import AboutUsBlock from "./AboutUsBlock";
 
-const OurImpactTab: FC<{
+const HomeTab: FC<{
   nonprofit: Nonprofit;
   ownsNonprofit: boolean;
 }> = ({ nonprofit, ownsNonprofit }) => {
-
-  const [isAboutUsEditorOpen, setAboutUsEditorOpen] = useState(false);
-  const [isTestimonialsEditorOpen, setTestimonialsEditorOpen] = useState(false);
-
-  const handleAboutUsSave = (
-    description: string,
-    interests: Interest[],
-    locations: string[]
-  ) => {
-    try {
-      // todo save to db
-    } catch (e) {
-    } finally {
-      setAboutUsEditorOpen(false);
-    }
-  };
-
-  const handleTestimonialsSave = (
-    testimonials: Testimonial[],
-  ) => {
-    try {
-      // todo save to db
-    } catch (e) {
-    } finally {
-      setTestimonialsEditorOpen(false);
-    }
-  };
-
+  if (!nonprofit) {
+    return null;
+  }
   return (
-    <div>
-      <AboutUsBigBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} onEditClick={() => setAboutUsEditorOpen(true)} ></AboutUsBigBlock>
-
-      <div className="pt-30px">
-        <TestimonialsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} onEditClick={() => setTestimonialsEditorOpen(true)}></TestimonialsBlock>
-      </div>
-      
-
-      {isAboutUsEditorOpen && (
-        <AboutUsEditor nonprofit={nonprofit} onSave={handleAboutUsSave} onCancel={() => setAboutUsEditorOpen(false)} />
-      )}
-
-      {isTestimonialsEditorOpen && (
-        <TestimonialsEditor nonprofit={nonprofit} onSave={handleTestimonialsSave} onCancel={() => setTestimonialsEditorOpen(false)} />
-      )}
+    <div
+      className="w-full m-0 p-0 min-w-280px
+      flex flex-col t:flex-row t:flex-wrap items-center gap-29px"
+    >
+      <AboutUsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} displayLocationAndInterests={true} />
+      <MasonryList>
+        <GalleryBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>
+        <TestimonialsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>
+      </MasonryList>
     </div>
-
-  )
-
+  );
 };
 
-export default OurImpactTab;
+export default HomeTab;

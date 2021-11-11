@@ -1,7 +1,5 @@
 import React, { FC, useState } from "react";
-import { FaClosedCaptioning, FaMapMarkerAlt } from "react-icons/fa";
-import Interest from "../../dtos/Interest";
-import Location from "../../dtos/Location";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import Button from "../Button";
 import CausesSelector from "../Causes";
 import Input from "../Input";
@@ -13,7 +11,7 @@ const AboutUsEditor: FC<{
   nonprofit: Nonprofit;
   onSave: (
     description: string,
-    interests: Interest[],
+    interests: number[],
     locations: string[]
   ) => void;
   onCancel: () => void;
@@ -22,7 +20,7 @@ const AboutUsEditor: FC<{
   const [locations, setLocations] = useState(
     nonprofit.locations.map((location) => location.address)
   );
-  const [interests, setInterests] = useState(nonprofit.interests);
+  const [interests, setInterests] = useState(nonprofit.interests.map(i => i.interest));
   const [location, setLocation] = useState("");
 
   return (
@@ -30,7 +28,7 @@ const AboutUsEditor: FC<{
       header="Update your profile"
       onClose={onCancel}
       footer={
-        <Button onClick={() => onSave(description, interests, locations)}>
+        <Button onClick={() => onSave(description, interests.map(i => i.id), locations)}>
           Save
         </Button>
       }
@@ -58,11 +56,11 @@ const AboutUsEditor: FC<{
             <div className="flex  gap-15px">
               <div id="location-input" className=" items-center flex-1">
                 <Input
-                  className="min-w-200px 
+                  className="min-w-200px
 
                       bg-white border-1px border-solid border-input
                       t:max-w-642px
-                     
+
                     "
                   value={location}
                   onChange={setLocation}

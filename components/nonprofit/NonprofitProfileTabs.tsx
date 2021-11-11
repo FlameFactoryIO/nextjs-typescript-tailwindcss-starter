@@ -17,9 +17,9 @@ const NonprofitProfileTabs: FC<{
   const [selected, setSelected] = useState<Tab>("home");
 
   return (
-    <div className={className}>
-      <div className="text-center select-none whitespace-nowrap mb-40px overflow-hidden h-39px max-w-full">
-        <div className="flex overflow-x-auto gap-30px text-14px leading-16px font-light">
+    <div className={`w-full flex flex-col ${className}`}>
+      <div className="overflow-x-auto mb-30px">
+        <div className="text-center flex gap-30px text-14px leading-16px font-light select-none">
           {["home", "our impact", "campaigns", "fundraiser", "posts", "contact"].map((tab: Tab) => (
             <div
               key={tab}

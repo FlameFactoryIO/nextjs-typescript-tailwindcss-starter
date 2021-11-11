@@ -1,11 +1,11 @@
 import Campaign from "./Campaign";
 import Challenge from "./Challenge";
 import Impact from "./Impact";
-import Interest from "./Interest";
 import Location from "./Location";
 import NonprofitContact from "./NonprofitContact";
 import Payment from "./Payment";
 import Testimonial from "./Testimonial";
+import InterestToNonprofit from "./InterestToNonprofit";
 
 export default interface Nonprofit {
   id: number;
@@ -45,7 +45,7 @@ export default interface Nonprofit {
   pastCampaigns: Campaign[];
   draftCampaigns: Campaign[];
 
-  interests: Interest[];
+  interests: InterestToNonprofit[];
   payments: Payment[];
   testimonials: Testimonial[];
   contacts: NonprofitContact[];

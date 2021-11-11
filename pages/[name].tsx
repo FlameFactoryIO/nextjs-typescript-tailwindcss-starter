@@ -120,7 +120,7 @@ export default function NonprofitProfile({
             <NonprofitProfileTabs nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} className="mt-26px" />
           </div>
 
-          <div className="flex-none bg-footer rounded-20px px-10px pt-25px pb-15px">
+          <div className="flex-none bg-footer rounded-20px px-10px pt-25px pb-15px t:max-w-300px">
             <div className="flex flex-col items-center">
               <div className=" font-hand text-primary font-middle text-42px -mb-10px" style={{transform: "rotate(-5.4deg)"}}>Support <span className="text-21px">❤</span>️</div>
               <ArrowIcon />
