@@ -19,7 +19,7 @@ const Modal: FC<{
         flex items-center justify-center`}
       >
         <div className="p-50px">
-          <div className={`bg-white border rounded-10px min-w-300px min-h-300px flex flex-col p-10px relative max-h-500px t:max-h-800px overflow-y-auto ${className}`}>
+          <div className={`bg-white border rounded-10px min-w-300px min-h-300px flex flex-col p-10px relative max-h-90vh overflow-y-auto ${className}`}>
             {header && (
               <>
                 <div className="absolute top-20px right-20px cursor-pointer" onClick={onClose}>

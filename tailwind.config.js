@@ -238,3 +238,11 @@ range(1, 1000).forEach((i) => {
 range(1, 10).forEach((i) => {
     module.exports.theme.extend.borderWidth[`${i}px`] = `${i}px`;
 });
+range(1, 100).forEach((i) => {
+    module.exports.theme.extend.height[`${i}vh`] = `${i}vh`;
+    module.exports.theme.extend.minHeight[`${i}vh`] = `${i}vh`;
+    module.exports.theme.extend.maxHeight[`${i}vh`] = `${i}vh`;
+    module.exports.theme.extend.width[`${i}vw`] = `${i}vw`;
+    module.exports.theme.extend.minWidth[`${i}vw`] = `${i}vw`;
+    module.exports.theme.extend.maxWidth[`${i}vw`] = `${i}vw`;
+});
