@@ -164,13 +164,10 @@ export default function AboutUs() {
               </h1>
             </div>
             <div
-              className="
-                font-light text-white text-13px leading-16-9px t:leading-15-6px d:text-16px d:leading-24px
-                flex flex-col
-                gap-y-25px t:gap-y-20px d:gap-y-28px
-                t:min-w-333px d:max-w-none
-              "
-            >
+              className="flex flex-col font-light text-white 
+                text-center text-13px leading-16-9px gap-y-25px 
+                t:text-left t:leading-15-6px t:min-w-333px t:gap-y-20px 
+                d:text-16px d:leading-24px d:max-w-none d:gap-y-28px">
               <div>
                 Like in the game of American football, when a team gets a first down, Move the Chain is about
                 forward progress towards helping humanity. At Move the Chain, we seek to help nonprofits reach
