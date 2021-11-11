@@ -1,12 +1,9 @@
 import React, { FC, ReactNode } from "react";
-import { Add } from "./Add";
+import { AddIcon } from "./AddIcon";
 
 export const Block: FC<{className?: string}> = ({className, children}) => (
-  <div className={`w-full
-    min-h-280px t:w-360px t:min-h-360px
-    border-1px border-primary border-dashed rounded-24px shadow-0-6-24_06 p-20px
-    bg-white
-    relative
+  <div className={`w-full p-20px
+    bg-white border-1px border-primary border-dashed rounded-24px shadow-0-6-24_06
     ${className}`}
   >
     {children}
@@ -24,7 +21,7 @@ export const EmptyBlock = ({
   actionText?: string,
   onClick?: () => void,
 }) => (
-  <Block className="flex flex-col items-center justify-center gap-16px min-h-280px t:w-360px t:min-h-360px">
+  <Block className="flex flex-col items-center justify-center gap-16px min-h-280px t:w-360px t:min-h-360px relative">
     {icon}
     {text && (
       <div className="font-light text-center text-13px leading-19-5px t:text-14px t:leading-21px">
@@ -36,7 +33,7 @@ export const EmptyBlock = ({
         <div className="font-bold text-14px leading-20px text-primary">
           {actionText}
         </div>
-        <Add />
+        <AddIcon />
       </div>
     )}
   </Block>

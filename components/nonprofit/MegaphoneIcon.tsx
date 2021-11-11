@@ -1,4 +1,4 @@
-export const Megaphone = ({className}: {className?: string}) => (
+export const MegaphoneIcon = ({className}: {className?: string}) => (
   <svg
     width="80"
     height="80"

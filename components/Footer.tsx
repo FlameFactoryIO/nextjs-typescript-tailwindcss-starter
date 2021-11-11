@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, useRef, useState } from "react";
 import Button from "./Button";
 import Input from "./Input";
 import Link from "next/link";
@@ -22,7 +22,6 @@ const Footer: FC = () => {
   const handleSubscribeSubmit = async (e) => {
     e.preventDefault();
 
-    console.debug("@@@", 1)
     setSubscribeState({ loading: true });
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -30,7 +29,6 @@ const Footer: FC = () => {
     }
     try {
       await subscribeToNewsletter(emailAddress)
-      console.debug("@@@", 2)
       setSubscribeState({
         success: true,
       });
@@ -38,10 +36,8 @@ const Footer: FC = () => {
         setSubscribeState(undefined);
         setEmailAddress("");
         timeoutRef.current = null;
-        console.debug("@@@", 4)
       }, 3000);
     } catch (e) {
-      console.debug("@@@", 3)
       setSubscribeState({
         error: e,
       });
