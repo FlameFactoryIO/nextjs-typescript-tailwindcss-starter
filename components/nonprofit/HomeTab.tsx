@@ -16,6 +16,7 @@ import Location from "../../dtos/Location";
 import Modal from "../Modal";
 import { FaBold } from "react-icons/fa";
 import { divide } from "rambda";
+import AboutUsBlock from "./AboutUsBlock";
 
 const HomeTab: FC<{
   nonprofit: Nonprofit;
@@ -81,21 +82,7 @@ const HomeTab: FC<{
           columnClassName="my-masonry-grid_column"
         >
           {nonprofit?.description ? (
-            <Block>
-              <div className="flex">
-                <div className="font-bold text-16px leading-30px t:text-20px ">
-                  About us
-                </div>
-                {ownsNonprofit && (
-                  <div onClick={(e) => setAboutUsEditorOpen(true)}>
-                    <EditPenIcon />
-                  </div>
-                )}
-              </div>
-              <div className="font-light text-13px leading-19-5px t:text-14px t:leading-21px">
-                {nonprofit.description}
-              </div>
-            </Block>
+            <AboutUsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} onEditClick={() => setAboutUsEditorOpen(true)} />
           ) : ownsNonprofit ? (
             <EmptyBlock
               icon={<GalleryIcon />}
@@ -109,7 +96,7 @@ const HomeTab: FC<{
                 </>
               }
               actionText="Add About Us"
-              onClick={() => setAboutUsEditorOpen(true)}
+              onClick={() => setAboutUsEditorOpen(false)}
             />
           ) : null}
 
@@ -171,7 +158,7 @@ const HomeTab: FC<{
           )}
         </Masonry>
       </div>
-      
+
       {isAboutUsEditorOpen && (
         <Modal  header={<div>Update your profile</div> }>
           <AboutUsEditor
