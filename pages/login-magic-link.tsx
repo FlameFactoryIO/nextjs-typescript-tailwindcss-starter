@@ -14,6 +14,8 @@ const LoginMagicLink = ({
     'token',
     'paypalId',
     'nonprofitOnboardingFinished',
+    'nonprofitName',
+    'nonprofitPath',
   ]);
   const router = useRouter();
   useEffect(() => {

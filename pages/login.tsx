@@ -27,6 +27,8 @@ export default function Login() {
     'token',
     'paypalId',
     'nonprofitOnboardingFinished',
+    'nonprofitName',
+    'nonprofitPath',
   ]);
 
   const [modalInfo, setModalInfo] = useState<{ type, title, body }>();
@@ -78,12 +80,19 @@ export default function Login() {
         data.user.nonprofitOnboardingFinished ? 1 : 0,
         { path: '/' },
       );
+      setCookie('nonprofitName', data.user.nonprofitName, { path: '/' });
+      setCookie('nonprofitPath', data.user.nonprofitPath, { path: '/' });
 
-      if (data.user.nonprofitOnboardingFinished) {
-        router.push('/admin/editview');
+      if (data.user.nonprofitPath) {
+        router.push(`/${data.user.nonprofitPath}`);
         return;
       }
-      router.push('/admin/nonprofit');
+      router.push('/').catch();
+      // if (data.user.nonprofitOnboardingFinished) {
+      //   router.push('/admin/editview');
+      //   return;
+      // }
+      // router.push('/admin/nonprofit');
     },
     onError: (e) => {
       if (e?.response?.data?.code == 'ACCOUNT_NOT_CREATED') {

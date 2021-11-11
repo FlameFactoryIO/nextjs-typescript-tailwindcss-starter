@@ -3,23 +3,24 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { FaChevronDown, FaChevronUp, FaUser } from "react-icons/fa";
 import useHandleClickOutside from "./useHandleClickOutside";
+import { useCookies } from "react-cookie";
 
-const TopNavItem: FC<{ title: string; path?: string; href?: string }> = ({
+const TopNavItem: FC<{ title: string; href?: string, onClick?: () => void }> = ({
   title,
-  path,
   href,
+  onClick = () => {},
   children,
 }) => {
   const [isOpen, setOpen] = useState<boolean>(false);
-  // const router = useRouter();
-  // const isSelected = router?.asPath === href;
+  const router = useRouter();
+  const isSelected = router?.asPath === href;
 
   const ref = useRef(null);
   useHandleClickOutside(ref, () => {
     setOpen(false);
   });
 
-  if (!href) {
+  if (!href && children) {
     return (
       <div className="relative" ref={ref}>
         <div className="flex gap-5px cursor-pointer" onClick={() => setOpen(!isOpen)}>
@@ -43,11 +44,22 @@ const TopNavItem: FC<{ title: string; path?: string; href?: string }> = ({
     );
   }
 
+  if (!href) {
+    return (
+      <div className="flex gap-5px cursor-pointer" onClick={() => {
+        setOpen(false);
+        onClick();
+      }}>
+        {title}
+      </div>
+    );
+  }
+
   return (
-    <Link href={href}>
+    <Link href={href} passHref>
       <div className=" cursor-pointer">
       <a
-        className={`border-b-2 ${path === href ? "border-primary-500 font-bold" : "border-white"}`}
+        className={`border-b-2 ${isSelected ? "border-primary-500 font-bold" : "border-white"}`}
         onClick={() => setOpen(false)}
       >
         {title}
@@ -58,18 +70,22 @@ const TopNavItem: FC<{ title: string; path?: string; href?: string }> = ({
 };
 
 const SideNavItem: FC<{
-  title: ReactNode;
-  className?: string;
-  href?: string;
-}> = ({ title, className= "", href, children }) => {
+  title: ReactNode,
+  className?: string,
+  href?: string,
+  onClick?: () => void,
+}> = ({ title, className= "", href, onClick = () => {}, children }) => {
   const [isOpen, setOpen] = useState<boolean>(false);
   const router = useRouter();
   const isSelected = router?.asPath === href;
 
-  if (!href) {
+  if (!href && children) {
     return (
       <div
-        className={`flex flex-col cursor-pointer p-20px ${className}`}
+        className={`flex flex-col cursor-pointer p-20px border-b
+          ${isSelected ? "bg-primary-500 text-white" : ""}
+          ${className}
+        `}
         onClick={() => setOpen((prev) => !prev)}
       >
         <div className="flex">
@@ -84,6 +100,22 @@ const SideNavItem: FC<{
     );
   }
 
+  if (!href) {
+    return (
+      <div
+        className={`flex flex-col cursor-pointer p-20px border-b
+          ${isSelected ? "bg-primary-500 text-white" : ""}
+          ${className}
+        `}
+        onClick={onClick}
+      >
+        <div className="flex">
+          <div className={`flex-1 ${isOpen ? "opacity-60" : ""}`}>{title}</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <Link href={href} passHref>
       <a
@@ -92,19 +124,9 @@ const SideNavItem: FC<{
           ${className}
         `}
       >
-        <div
-          className="flex"
-          onClick={children && (() => setOpen((prev) => !prev))}
-        >
+        <div className="flex">
           <div className={`flex-1 ${isOpen ? "opacity-60" : ""}`}>{title}</div>
-          {children ? (
-            <div className="cursor-pointer text-primary flex items-center">
-              {isOpen ? <FaChevronUp /> : <FaChevronDown />}
-            </div>
-          ) : null}
         </div>
-
-        {isOpen && <div className="flex-1 pt-10px">{children}</div>}
       </a>
     </Link>
   );
@@ -115,9 +137,16 @@ const TopNav: FC<{
   className?: string;
 }> = ({ onSearch, className }) => {
   const router = useRouter();
+  const [{ token, nonprofitPath, }, setCookie, removeCookie] = useCookies([
+    'token',
+    'paypalId',
+    'nonprofitOnboardingFinished',
+    'nonprofitName',
+    'nonprofitPath',
+  ]);
 
+  const loggedIn = !!token;
   const [isOpen, setOpen] = useState<boolean>(false);
-
   const [searchValue, setSearchValue] = useState<string>("");
 
   const handleSearchChange = (e) => {
@@ -133,6 +162,22 @@ const TopNav: FC<{
     },
     [onSearch, searchValue]
   );
+
+  const handleLogout = () => {
+    setOpen(false);
+
+    console.info('logging out');
+    removeCookie('token');
+    removeCookie('paypalId');
+    removeCookie('nonprofitOnboardingFinished');
+    removeCookie('nonprofitName');
+    removeCookie('nonprofitPath');
+
+    // allow cookies to be removed
+    setTimeout(() => {
+      router.reload();
+    }, 200);
+  }
 
   return (
     <>
@@ -163,44 +208,16 @@ const TopNav: FC<{
         </Link>
 
         <div className="flex-1 flex gap-20px items-center justify-center text-14px leading-21px">
-          <TopNavItem title="About us" path={router?.asPath} href="/about-us" />
+          <TopNavItem title="About us" href="/about-us" />
           <TopNavItem title="Individuals">
-          <TopNavItem
-              title="Get started"
-              path={router?.asPath}
-              href="/individuals"
-            />
-            <TopNavItem
-              title="Join a corporate fundraiser"
-              path={router?.asPath}
-              href="/sign-up"
-            />
-            <TopNavItem
-              title="Discover campaigns"
-              path={router?.asPath}
-              href="/campaigns/search"
-            />
-            <TopNavItem
-              title="Search nonprofits"
-              path={router?.asPath}
-              href="/nonprofits/search"
-            />
+          <TopNavItem title="Get started" href="/individuals" />
+            <TopNavItem title="Join a corporate fundraiser" href="/sign-up" />
+            <TopNavItem title="Discover campaigns" href="/campaigns/search" />
+            <TopNavItem title="Search nonprofits" href="/nonprofits/search" />
           </TopNavItem>
-          <TopNavItem
-            title="Nonprofits"
-            path={router?.asPath}
-            href="/nonprofits"
-          />
-          <TopNavItem
-            title="Corporations"
-            path={router?.asPath}
-            href="/corporations"
-          />
-          <TopNavItem
-            title="Resources"
-            path={router?.asPath}
-            href="/resources"
-          />
+          <TopNavItem title="Nonprofits" href="/nonprofits" />
+          <TopNavItem title="Corporations" href="/corporations" />
+          <TopNavItem title="Resources" href="/resources" />
         </div>
 
         <div className="mr-40px">
@@ -224,12 +241,22 @@ const TopNav: FC<{
           </Link>
         </div>
 
-        <Link href="/login" passHref>
-          <a className="flex items-center">
-            <FaUser className="text-primary" />
-            &nbsp;Log In
-          </a>
-        </Link>
+        { loggedIn ? (
+          <>
+            <TopNavItem title="Update page" href={`/${nonprofitPath}`} />
+            <TopNavItem
+              title="Log out"
+              onClick={handleLogout}
+            />
+          </>
+        ) : (
+          <Link href="/login" passHref>
+            <a className="flex items-center">
+              <FaUser className="text-primary" />
+              &nbsp;Log In
+            </a>
+          </Link>
+        )}
       </div>
 
       <div
@@ -364,16 +391,23 @@ const TopNav: FC<{
           <SideNavItem title="Nonprofits" href="/nonprofits" />
           <SideNavItem title="Corporations" href="/corporations" />
           <SideNavItem title="Resources" />
-          <SideNavItem
-            href="/login"
-            title={
-              <div className="flex items-center">
-                <FaUser className="text-primary" />
-                &nbsp;Log In
-              </div>
-            }
-            className="border-none"
-          />
+          { loggedIn ? (
+            <>
+              <SideNavItem title="Update page" href={`/${nonprofitPath}`} />
+              <SideNavItem title="Log out" onClick={handleLogout} />
+            </>
+          ) : (
+            <SideNavItem
+              href="/login"
+              title={
+                <div className="flex items-center">
+                  <FaUser className="text-primary" />
+                  &nbsp;Log In
+                </div>
+              }
+              className="border-none"
+            />
+          )}
         </div>
       )}
     </>
