@@ -37,7 +37,6 @@ export default function NonprofitProfile({
 }) {
   const [mode, setMode] = useState<Mode>(ownsNonprofit ? "edit" : "public");
 
-  console.debug("nonprofit ", JSON.stringify(nonprofit));
   return (
     <div className="w-full min-w-320px">
       <Head>
@@ -53,8 +52,8 @@ export default function NonprofitProfile({
 
       <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
 
-      <div className="w-full dots-background">
-        <div className="px-20px pt-50px h-500px d:pt-77px -mb-74px t:-mb-180px flex flex-col items-center t:items-stretch pt-60px">
+      <div className="dots-background">
+        <div className="max-w-1140px mx-auto px-20px pt-50px h-500px d:pt-77px -mb-74px t:-mb-180px flex flex-col items-center t:items-stretch pt-60px">
           <div className={`flex flex-col t:flex-row items-center t:items-start t:pt-60px gap-16px ${mode === "public" && "pt-46px"}`}>
 
             {mode !== "public" && (
@@ -101,6 +100,7 @@ export default function NonprofitProfile({
         </div>
       </div>
 
+      <div className="max-w-1140px mx-auto ">
       <div className="flex flex-col t:flex-row px-20px gap-20px">
           <div className="flex-1 flex flex-col">
             {nonprofit.bannerUrl ? (
@@ -131,6 +131,7 @@ export default function NonprofitProfile({
             <TopAndRecentDonations className="mt-20px h-600px t:h-auto" />
           </div>
         </div>
+      </div>
 
       <div className="w-full bg-footer">
         <Footer />
@@ -159,8 +160,8 @@ export const getServerSideProps = async ({ req, res, params, query }) => {
   try {
     const { name, paypalId } = query;
     const claiming = !!query.claim;
-    let nonprofit = cache.get(name);
 
+    let nonprofit = cache.get(name);
     if (!nonprofit) {
       nonprofit = await (paypalId
         ? getNonProfitDataByPaypalId(paypalId)

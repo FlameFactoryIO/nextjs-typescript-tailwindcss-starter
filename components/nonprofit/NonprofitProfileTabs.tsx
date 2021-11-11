@@ -16,17 +16,19 @@ const NonprofitProfileTabs: FC<{
   const [selected, setSelected] = useState<Tab>("home");
 
   return (
-    <div className={`w-full flex flex-col overflow-hidden ${className}`}>
-      <div className="text-center flex gap-30px text-14px leading-16px font-light select-none mb-40px">
-        {["home", "our impact", "campaigns", "fundraiser", "posts", "contact"].map((tab: Tab) => (
-          <div
-            key={tab}
-            className={`border-b-3px py-10px px-5px ${selected === tab ? "border-primary font-bold" : "border-transparent"} cursor-pointer uppercase whitespace-nowrap`}
-            onClick={() => {setSelected(tab)}}
-          >
-            {tab}
-          </div>
-        ))}
+    <div className={className}>
+      <div className="text-center select-none whitespace-nowrap mb-40px overflow-hidden h-39px max-w-full">
+        <div className="flex overflow-x-auto gap-30px text-14px leading-16px font-light">
+          {["home", "our impact", "campaigns", "fundraiser", "posts", "contact"].map((tab: Tab) => (
+            <div
+              key={tab}
+              className={`border-b-3px py-10px px-5px ${selected === tab ? "border-primary font-bold" : "border-transparent"} cursor-pointer uppercase whitespace-nowrap`}
+              onClick={() => {setSelected(tab)}}
+            >
+              {tab}
+            </div>
+          ))}
+        </div>
       </div>
 
       {selected === "home" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
