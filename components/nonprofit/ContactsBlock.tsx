@@ -50,7 +50,7 @@ const ContactsBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ownsNo
           footer={<Button onClick={handleSave}>Save</Button>}
         >
           <div className="flex flex-col p-20px">
-            TESTIMONIALS EDITOR
+            CONTACTS EDITOR
           </div>
         </Modal>
       )}

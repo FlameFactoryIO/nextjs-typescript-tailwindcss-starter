@@ -1,7 +1,11 @@
 import React, { FC, useState } from "react";
 import Nonprofit from "../../dtos/Nonprofit";
-import HomeTab from "./HomeTab";
-import OurImpactTab from "./OurImpactTab";
+import AboutUsBlock from "./AboutUsBlock";
+import MasonryList from "./MasonryList";
+import GalleryBlock from "./GalleryBlock";
+import TestimonialsBlock from "./TestimonialsBlock";
+import CampaignsBlock from "./CampaignsBlock";
+import ContactsBlock from "./ContactsBlock";
 
 type Tab = "home" | "our impact" | "campaigns" | "fundraiser" | "posts" | "contact";
 
@@ -32,12 +36,32 @@ const NonprofitProfileTabs: FC<{
         </div>
       </div>
 
-      {selected === "home" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
-      {selected === "our impact" && <OurImpactTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
-      {selected === "campaigns" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
-      {selected === "fundraiser" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
-      {selected === "posts" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
-      {selected === "contact" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
+      {selected === "home" && (
+        <div
+          className="w-full m-0 p-0 min-w-280px flex flex-col t:flex-row t:flex-wrap items-center gap-29px"
+        >
+          <MasonryList>
+            <AboutUsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
+            <GalleryBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
+            <CampaignsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
+            <ContactsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
+            <TestimonialsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
+          </MasonryList>
+        </div>
+      )}
+      {selected === "our impact" && (
+        <div className="w-full m-0 p-0 min-w-280px flex flex-col t:flex-row t:flex-wrap items-center gap-29px">
+          <AboutUsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} displayLocationAndInterests={true} />
+          <MasonryList>
+            <GalleryBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>
+            <TestimonialsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>
+          </MasonryList>
+        </div>
+      )}
+      {/*{selected === "campaigns" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}*/}
+      {/*{selected === "fundraiser" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}*/}
+      {/*{selected === "posts" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}*/}
+      {/*{selected === "contact" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}*/}
     </div>
   );
 };
