@@ -71,8 +71,8 @@ const AboutUsEditor: FC<{
           <div className="flex flex-col items-start">
             <div className="font-light text-10px">Location</div>
             {locations ? (
-              locations.map((location) => (
-                <div key={location} className="bg-gray-200">
+              locations.map((location,index) => (
+                <div key={`${location}_${index}`} className="bg-gray-200">
                   <FaMapMarkerAlt />
                   {location}
                   <FaClosedCaptioning />

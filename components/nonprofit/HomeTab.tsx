@@ -3,29 +3,38 @@ import Head from "next/head";
 import Masonry from "react-masonry-css";
 import Nonprofit from "../../dtos/Nonprofit";
 import { Block, EmptyBlock } from "./Block";
-import { MegaphoneIcon, GalleryIcon, ContactInfoIcon, TestimonialsIcon } from "./Icons";
+import {
+  MegaphoneIcon,
+  GalleryIcon,
+  ContactInfoIcon,
+  TestimonialsIcon,
+  EditPenIcon,
+} from "./Icons";
 import AboutUsEditor from "../AboutUsEditor";
 import Interest from "../../dtos/Interest";
 import Location from "../../dtos/Location";
+import Modal from "../Modal";
+import { FaBold } from "react-icons/fa";
+import { divide } from "rambda";
 
 const HomeTab: FC<{
-  nonprofit: Nonprofit,
-  ownsNonprofit: boolean,
-}> = ({
-  nonprofit,
-  ownsNonprofit
-}) => {
-
+  nonprofit: Nonprofit;
+  ownsNonprofit: boolean;
+}> = ({ nonprofit, ownsNonprofit }) => {
   const [isAboutUsEditorOpen, setAboutUsEditorOpen] = useState(false);
 
-  const handleAboutUsSave = (description: string, interests: Interest[], locations: Location[]) => {
-    try{
+  const handleAboutUsSave = (
+    description: string,
+    interests: Interest[],
+    locations: Location[]
+  ) => {
+    try {
       // todo save to db
     } catch (e) {
     } finally {
       setAboutUsEditorOpen(false);
     }
-  }
+  };
   if (!nonprofit) {
     null;
   }
@@ -73,8 +82,15 @@ const HomeTab: FC<{
         >
           {nonprofit?.description ? (
             <Block>
-              <div className="font-bold text-16px leading-30px t:text-20px ">
-                About us
+              <div className="flex">
+                <div className="font-bold text-16px leading-30px t:text-20px ">
+                  About us
+                </div>
+                {ownsNonprofit && (
+                  <div onClick={(e) => setAboutUsEditorOpen(true)}>
+                    <EditPenIcon />
+                  </div>
+                )}
               </div>
               <div className="font-light text-13px leading-19-5px t:text-14px t:leading-21px">
                 {nonprofit.description}
@@ -82,61 +98,89 @@ const HomeTab: FC<{
             </Block>
           ) : ownsNonprofit ? (
             <EmptyBlock
-              icon={<GalleryIcon/>}
-              text={<>
-                Add a description of the organization<br/>
-                <span className="font-bold">to inspire people to support your cause.</span>
-              </>}
+              icon={<GalleryIcon />}
+              text={
+                <>
+                  Add a description of the organization
+                  <br />
+                  <span className="font-bold">
+                    to inspire people to support your cause.
+                  </span>
+                </>
+              }
               actionText="Add About Us"
               onClick={() => setAboutUsEditorOpen(true)}
             />
-          ) : null }
+          ) : null}
 
-          {isAboutUsEditorOpen && (
-            <AboutUsEditor
-              nonprofit={nonprofit}
-              onSave={handleAboutUsSave}
-              onCancel={() => setAboutUsEditorOpen(false)}
+          {ownsNonprofit && (
+            <EmptyBlock
+              icon={<GalleryIcon />}
+              text={
+                <>
+                  <span className="font-bold">
+                    Upload and make awesome gallery
+                  </span>
+                  <br />
+                  and add some text if you want.
+                </>
+              }
+              actionText="Add gallery"
             />
           )}
-
-          <EmptyBlock
-            icon={<GalleryIcon/>}
-            text={<>
-              <span className="font-bold">Upload and make awesome gallery</span><br/>
-              and add some text if you want.
-            </>}
-            actionText="Add gallery"
-          />
-
-          <EmptyBlock
-            icon={<MegaphoneIcon/>}
-            text={<>
-              <span className="font-bold">The organization will make campaign</span><br/>
-              and add some text if you want.
-            </>}
-            actionText="Add campaign"
-          />
-
-          <EmptyBlock
-            icon={<ContactInfoIcon/>}
-            text={<>
-              <span className="font-bold">Add contact info</span><br/>
-              and make it easy to find out more about your cause.
-            </>}
-            actionText="Add contact"
-          />
-
-          <EmptyBlock
-            icon={<TestimonialsIcon/>}
-            text={<>
-              <span className="font-bold">Add testimonials info</span><br/>
-              and make it easy to find out more about your cause.
-            </>}
-            actionText="Add contact"
-          />
+          {ownsNonprofit && (
+            <EmptyBlock
+              icon={<MegaphoneIcon />}
+              text={
+                <>
+                  <span className="font-bold">
+                    The organization will make campaign
+                  </span>
+                  <br />
+                  and add some text if you want.
+                </>
+              }
+              actionText="Add campaign"
+            />
+          )}
+          {ownsNonprofit && (
+            <EmptyBlock
+              icon={<ContactInfoIcon />}
+              text={
+                <>
+                  <span className="font-bold">Add contact info</span>
+                  <br />
+                  and make it easy to find out more about your cause.
+                </>
+              }
+              actionText="Add contact"
+            />
+          )}
+          {ownsNonprofit && (
+            <EmptyBlock
+              icon={<TestimonialsIcon />}
+              text={
+                <>
+                  <span className="font-bold">Add testimonials info</span>
+                  <br />
+                  and make it easy to find out more about your cause.
+                </>
+              }
+              actionText="Add Testimonials"
+            />
+          )}
         </Masonry>
       </div>
+      
+      {isAboutUsEditorOpen && (
+        <Modal  header={<div>Update your profile</div> }>
+          <AboutUsEditor
+            nonprofit={nonprofit}
+            onSave={handleAboutUsSave}
+            onCancel={() => setAboutUsEditorOpen(false)}
+          />
+        </Modal>
+      )}
     </>
   );
 };
