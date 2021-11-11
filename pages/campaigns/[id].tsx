@@ -8,7 +8,7 @@ import TopNav from "../../components/TopNav";
 import VideoPlayer from "../../components/VideoPlayer";
 import Button from "../../components/Button";
 import DonateButton from "../../components/DonationButton";
-import Ellipsis from '@quid/react-ellipsis';
+import LinesEllipsis from 'react-lines-ellipsis'
 import moment from 'moment';
 import { DonationList } from "../../components/Donations";
 import { useDonations } from "../../mtc-api/donations/Donation";
@@ -20,13 +20,20 @@ const CampaignProfile = ({ id, campaign }) => {
     campaignId: id,
   });
 
+  const [line, setLine] = useState('10');
+
   useEffect(() => {
+    console.log(campaign)
     logEvent('View Campaign Page', {
       id,
       nonprofitId: campaign.nonprofit?.id,
       nonprofitName: campaign.nonprofit?.name,
     });
   }, []);
+
+  const handleShowMore = () => {
+    setLine((campaign.description.length).toString())
+  }
 
   return (
     <>
@@ -130,14 +137,17 @@ const CampaignProfile = ({ id, campaign }) => {
                         Created by <span className="font-bold">{campaign.nonprofit.name}</span>
                       </div>
                     </div>
-                    <a className="pt-10px">
-                        <Ellipsis className="mt-10px font-light text-14px leading-15px" maxHeight={20} title={campaign.description}>
-                          {campaign.description} 
-                        </Ellipsis>
-                      {/*<span className="font-bold text-12px leading-15px underline"> more</span>*/}
-                      
-                    </a>
 
+                    <div className="pt-20px">
+                      <LinesEllipsis
+                        text={campaign.description}
+                        maxLine={line}
+                        ellipsis='...more'
+                        trimRight
+                        basedOn='words'
+                        onClick={handleShowMore}
+                      />
+                    </div>
 
                   </div>
 
