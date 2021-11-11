@@ -24,7 +24,7 @@ const AboutUsBigBlock = ({ nonprofit, ownsNonprofit, onEditClick }) => (
         nonprofit.interests.map((interests, index) => (
           <div key={`${location}_${index}`} className="">
             <div className="flex items-center justify-center px-5px h-42px rounded-10px border-1px">
-              <span className="font-bold">{interests.name}</span>
+              <span className="font-bold">{interests.interest.name}</span>
             </div>
           </div>
         ))
