@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import Nonprofit from "../../dtos/Nonprofit";
 import HomeTab from "./HomeTab";
+import OurImpactTab from "./OurImpactTab";
 
 type Tab = "home" | "our impact" | "campaigns" | "fundraiser" | "posts" | "contact";
 
@@ -32,7 +33,7 @@ const NonprofitProfileTabs: FC<{
       </div>
 
       {selected === "home" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
-      {selected === "our impact" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
+      {selected === "our impact" && <OurImpactTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
       {selected === "campaigns" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
       {selected === "fundraiser" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
       {selected === "posts" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
