@@ -28,7 +28,7 @@ const CausesSelector = ({
   return (
     <>
       <div
-        className={`grid grid-cols-1 t:grid-cols-3 d:grid-cols-1 d:w-270px gap-10px overflow-hidden ${
+        className={`grid grid-cols-1  d:w-270px gap-10px overflow-hidden ${
           !isFilterExpanded ? "h-327px t:h-200px d:h-467px" : ""
         }`}
       >
