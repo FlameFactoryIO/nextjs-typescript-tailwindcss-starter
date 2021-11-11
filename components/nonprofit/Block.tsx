@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from "react";
-import { AddIcon } from "./AddIcon";
+import { AddIcon } from "./Icons";
 
 export const Block: FC<{className?: string}> = ({className, children}) => (
   <div className={`w-full p-20px
@@ -21,7 +21,7 @@ export const EmptyBlock = ({
   actionText?: string,
   onClick?: () => void,
 }) => (
-  <Block className="flex flex-col items-center justify-center gap-16px min-h-280px t:w-360px t:min-h-360px relative">
+  <Block className="flex flex-col items-center justify-center gap-16px min-h-280px t:min-h-360px relative">
     {icon}
     {text && (
       <div className="font-light text-center text-13px leading-19-5px t:text-14px t:leading-21px">

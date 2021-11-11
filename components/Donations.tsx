@@ -61,7 +61,7 @@ export const TopAndRecentDonations: FC<{
   maxItems?: number,
 }> = ({
   className = "",
-  maxItems = 50,
+  maxItems = 20,
 }) => {
   const [selected, setSelected] = useState<"recent" | "top">("recent");
 

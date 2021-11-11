@@ -2,6 +2,7 @@ import Campaign from "./Campaign";
 import Challenge from "./Challenge";
 import Impact from "./Impact";
 import Interest from "./Interest";
+import Location from "./Location";
 import NonprofitContact from "./NonprofitContact";
 import Payment from "./Payment";
 import Testimonial from "./Testimonial";

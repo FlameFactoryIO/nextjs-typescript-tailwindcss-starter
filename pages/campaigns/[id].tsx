@@ -8,7 +8,7 @@ import TopNav from "../../components/TopNav";
 import VideoPlayer from "../../components/VideoPlayer";
 import Button from "../../components/Button";
 import DonateButton from "../../components/DonationButton";
-import Ellipsis from '@quid/react-ellipsis';
+import LinesEllipsis from 'react-lines-ellipsis'
 import moment from 'moment';
 import { DonationList } from "../../components/Donations";
 import { useDonations } from "../../mtc-api/donations/Donation";
@@ -20,6 +20,8 @@ const CampaignProfile = ({ id, campaign }) => {
     campaignId: id,
   });
 
+  const [line, setLine] = useState('10');
+
   useEffect(() => {
     logEvent('View Campaign Page', {
       id,
@@ -27,6 +29,10 @@ const CampaignProfile = ({ id, campaign }) => {
       nonprofitName: campaign.nonprofit?.name,
     });
   }, []);
+
+  const handleShowMore = () => {
+    setLine((campaign.description.length).toString())
+  }
 
   return (
     <>
@@ -60,7 +66,7 @@ const CampaignProfile = ({ id, campaign }) => {
                                   px-20px  pb-20px
                                   t:px50px">
                     <div className="text-20px t:text-24px t:font-light pt-20px t:pt-40px">Support</div>
-                    <div className="text-20px t:text-24px t:leading-30px  font-bold
+                    <div className="text-16px t:text-24px t:leading-30px  font-bold
                                     pb-20px">
                       {campaign.nonprofit.name}
                     </div>
@@ -84,7 +90,7 @@ const CampaignProfile = ({ id, campaign }) => {
                       ""
                     )}
 
-                    <div className="text-20px t:text-24px t:leading-30px font-bold pb-20px t:pb-30px">
+                    <div className="text-16px t:text-24px t:leading-30px font-bold pb-20px t:pb-30px">
                       <div>
                         <hr className="border-1px mb-20px t:mb-30px bg-secondary-gray-1" />
                       </div>
@@ -117,36 +123,39 @@ const CampaignProfile = ({ id, campaign }) => {
             <div className="flex-1 order-first t:order-2 flex flex-col t:flex-row items-center pb-20px">
               <div className="">
                 <div className="flex flex-col d:flex-row d:items-start t:gap-20px d:gap-50px">
-                  <div className="flex flex-col items-start t:pb-30px">
-                    <div className="pt-20px t:pt-40px t:pb-20px">
+                  <div className="max-w-280px  flex flex-col items-start t:pb-30px">
+                    <div className="pt-20px t:pt-40px t:pb-20px justify-center">
                       <VideoPlayer className="max-w-280px max-h-239px t:max-w-414px d:max-h-479px" videoUrl={campaign.videoUrl} videoImage={campaign.imageUrl} />
                     </div>
 
                     <div className="flex flex-row gap-20px items-start pt-10px">
                       <img src={campaign.nonprofit.logoUrl} className="rounded-full h-30px w-30px t:h-40px t:w-40px object-cover" />
-                      <div className="pt-10px  t:text-14px leading-20px text-gray-400
+                      <div className="pt-5px text-12px t:text-14px leading-20px text-gray-400
                               t:max-w-272px">
 
                         Created by <span className="font-bold">{campaign.nonprofit.name}</span>
                       </div>
                     </div>
-                    <a className="pt-10px">
-                        <Ellipsis className="mt-10px font-light text-14px leading-15px" maxHeight={20} title={campaign.description}>
-                          {campaign.description} 
-                        </Ellipsis>
-                      {/*<span className="font-bold text-12px leading-15px underline"> more</span>*/}
-                      
-                    </a>
 
+                    <div className="pt-20px text-12px t:text-14px font-light">
+                      <LinesEllipsis
+                        text={campaign.description}
+                        maxLine={line}
+                        ellipsis='...more'
+                        trimRight
+                        basedOn='words'
+                        onClick={handleShowMore}
+                      />
+                    </div>
 
                   </div>
 
-                  <div className="flex-1 pt-20px t:pt-0 d:pt-40px t:max-w-350px">
+                  <div className="flex-1 pt-20px t:pt-0 d:pt-40px max-w-280px justify-center t:max-w-350px">
                     <div className="flex flex-col gap-6px">
                       <div className="text-gray-400 font-light">
                         Raising For
                       </div>
-                      <div className="text-20px font-bold t:pb-20px">
+                      <div className="text-16px t:text-20px font-bold t:pb-20px">
                         {campaign.nonprofit.name}
                       </div>
 

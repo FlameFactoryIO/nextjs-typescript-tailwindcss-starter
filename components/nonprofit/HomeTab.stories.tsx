@@ -1,6 +1,7 @@
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import HomeTab from "./HomeTab";
+import { mockNonprofit } from "../Mocks";
 
 // TODO(hmassad): mock http call with Mock Service Worker https://mswjs.io/docs/getting-started/install
 const queryClient = new QueryClient({
@@ -27,8 +28,8 @@ export default {
 export const Default = () => {
   return (
     <div className="w-full">
-      NO WORKING IN STORYBOOK
-      <HomeTab />
+      MASONRY NOT WORKING IN STORYBOOK
+      <HomeTab nonprofit={mockNonprofit} ownsNonprofit={false} />
     </div>
   );
 };
