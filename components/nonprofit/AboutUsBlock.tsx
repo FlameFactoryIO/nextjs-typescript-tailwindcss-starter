@@ -5,11 +5,11 @@ import React from "react";
 const AboutUsBlock = ({nonprofit, ownsNonprofit, onEditClick}) => (
   <Block>
     <div className="flex">
-      <div className="font-bold text-16px leading-30px t:text-20px ">
+      <div className="font-bold text-16px leading-30px t:text-20px">
         About us
       </div>
       {ownsNonprofit && (
-        <div onClick={onEditClick}>
+        <div onClick={onEditClick} className="cursor-pointer ml-5px">
           <EditPenIcon />
         </div>
       )}

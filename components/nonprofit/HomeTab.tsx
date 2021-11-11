@@ -160,12 +160,8 @@ const HomeTab: FC<{
       </div>
 
       {isAboutUsEditorOpen && (
-        <Modal  header={<div>Update your profile</div> }>
-          <AboutUsEditor
-            nonprofit={nonprofit}
-            onSave={handleAboutUsSave}
-            onCancel={() => setAboutUsEditorOpen(false)}
-          />
+        <Modal header="Update your profile" onClose={() => setAboutUsEditorOpen(false)}>
+          <AboutUsEditor nonprofit={nonprofit} onSave={handleAboutUsSave} />
         </Modal>
       )}
     </>

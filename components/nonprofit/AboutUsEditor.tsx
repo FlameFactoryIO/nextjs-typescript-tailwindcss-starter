@@ -14,8 +14,7 @@ const AboutUsEditor: FC<{
     interests: Interest[],
     locations: Location[]
   ) => void;
-  onCancel: () => void;
-}> = ({ nonprofit, onSave = () => {}, onCancel = () => {} }) => {
+}> = ({ nonprofit, onSave = () => {} }) => {
   const [description, setDescription] = useState(nonprofit.description);
   const [locations, setLocations] = useState(
     nonprofit.locations.map((location) => location.address)
