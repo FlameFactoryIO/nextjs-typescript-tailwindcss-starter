@@ -11,12 +11,15 @@ import AboutUsEditor from "./AboutUsEditor";
 import Interest from "../../dtos/Interest";
 import AboutUsBlock from "./AboutUsBlock";
 import MasonryList from "./MasonryList";
+import Campaign from "../../dtos/Campaign";
+import CampaignEditor from "./CampaignEditor";
 
 const HomeTab: FC<{
   nonprofit: Nonprofit;
   ownsNonprofit: boolean;
 }> = ({ nonprofit, ownsNonprofit }) => {
   const [isAboutUsEditorOpen, setAboutUsEditorOpen] = useState(false);
+  const [isCampaignEditorOpen, setCampaignEditorOpen] = useState(false);
 
   const handleAboutUsSave = (
     description: string,
@@ -31,6 +34,15 @@ const HomeTab: FC<{
     }
   };
 
+  const handleCampaignSave = (campaign: Campaign) => {
+    try {
+      // todo save to db
+    } catch (e) {
+    } finally {
+      setCampaignEditorOpen(false);
+    }
+  };
+
   if (!nonprofit) {
     return null;
   }
@@ -41,7 +53,11 @@ const HomeTab: FC<{
     >
       <MasonryList>
         {nonprofit?.description ? (
-          <AboutUsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} onEditClick={() => setAboutUsEditorOpen(true)} />
+          <AboutUsBlock
+            nonprofit={nonprofit}
+            ownsNonprofit={ownsNonprofit}
+            onEditClick={() => setAboutUsEditorOpen(true)}
+          />
         ) : ownsNonprofit ? (
           <EmptyBlock
             icon={<GalleryIcon />}
@@ -87,6 +103,7 @@ const HomeTab: FC<{
               </>
             }
             actionText="Add campaign"
+            onClick={() => setCampaignEditorOpen(true)}
           />
         )}
         {ownsNonprofit && (
@@ -118,7 +135,18 @@ const HomeTab: FC<{
       </MasonryList>
 
       {isAboutUsEditorOpen && (
-        <AboutUsEditor nonprofit={nonprofit} onSave={handleAboutUsSave} onCancel={() => setAboutUsEditorOpen(false)} />
+        <AboutUsEditor
+          nonprofit={nonprofit}
+          onSave={handleAboutUsSave}
+          onCancel={() => setAboutUsEditorOpen(false)}
+        />
+      )}
+      {isCampaignEditorOpen && (
+        <CampaignEditor
+          nonprofit={nonprofit}
+          onSave={handleCampaignSave}
+          onCancel={() => setAboutUsEditorOpen(false)}
+        />
       )}
     </div>
   );

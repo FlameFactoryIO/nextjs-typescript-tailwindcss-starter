@@ -29,3 +29,13 @@ export default interface Campaign {
   shares: number;
   totalChallenges?: number;
 }
+
+export interface CampaignEditorParameters {
+  campaignId?: number;
+  title: string;
+  description: string;
+  startDate: Date;
+  endDate: Date;
+  goal: number;
+  fileUrl?: string;
+}

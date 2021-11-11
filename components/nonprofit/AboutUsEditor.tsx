@@ -25,7 +25,6 @@ const AboutUsEditor: FC<{
   const [interests, setInterests] = useState(nonprofit.interests);
   const [location, setLocation] = useState("");
 
-  console.debug("@@@ locations, ", JSON.stringify(locations));
   return (
     <Modal
       header="Update your profile"
