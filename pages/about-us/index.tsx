@@ -90,7 +90,7 @@ export default function AboutUs() {
                 empowering to donate and promote good causes.
               </div>
               <Image
-                alt=""
+                alt="Image of female holding a smart phone with text that reads “Giving back just became more transparent and fun” and a message from Girls who code that reads “We win a battle for our cause, thanks to all our supporters.” also an image of Lee Corso with a quote “Giving is not just about making a donation. It is about making a difference.”"
                 src="/images/about-us/our-mission.png"
                 layout="responsive"
                 objectFit="contain"
@@ -113,7 +113,7 @@ export default function AboutUs() {
           <div className="d:max-w-570px mr-auto">
             <div className="mx-auto t:ml-0 text-center">
               <Image
-                alt=""
+                alt="4 people with arms around each other watching a sunrise"
                 src="/images/about-us/our-vision.png"
                 layout="responsive"
                 objectFit="contain"
@@ -192,7 +192,7 @@ export default function AboutUs() {
           >
             <div className="hidden d:block" style={{ marginBottom: -7 }}>
               <Image
-                alt=""
+                alt="Football on a field being measured with chain markers"
                 className="rounded-24px"
                 src="/images/about-us/istockphoto-ball.png"
                 width={575}
