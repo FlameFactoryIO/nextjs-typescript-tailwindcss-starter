@@ -30,103 +30,114 @@ const HomeTab: FC<{
     null;
   }
   return (
-    <div
-      className="w-full m-0 p-0 min-w-280px
-      flex flex-col t:flex-row t:flex-wrap items-center gap-29px"
-    >
+    <>
       <Head>
         <style type="text/css">
           {`
             .my-masonry-grid {
               display: flex;
-              margin-left: -15px; /* gutter size offset */
               width: auto;
             }
             .my-masonry-grid_column {
-              padding-left: 15px; /* gutter size */
               background-clip: padding-box;
             }
+
             /* Style your items */
             .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
               margin-bottom: 15px;
             }
+            
+            @media screen and (min-width: 768px) {
+              .my-masonry-grid_column:nth-child(odd) {
+                margin-right: 7.5px;
+              }
+              .my-masonry-grid_column:nth-child(even) {
+                margin-left: 7.5px;
+              }
+            }
           `}
         </style>
       </Head>
-      <Masonry
-        breakpointCols={{
-          default: 2,
-          767: 1,
-        }}
-        className="w-full -mr-15px my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
+
+      <div
+        className="w-full m-0 p-0 min-w-280px
+        flex flex-col t:flex-row t:flex-wrap items-center gap-29px"
       >
-        {nonprofit?.description ? (
-          <Block>
-            <div className="font-bold text-16px leading-30px t:text-20px ">
-              About us
-            </div>
-            <div className="font-light text-13px leading-19-5px t:text-14px t:leading-21px">
-              {nonprofit.description}
-            </div>
-          </Block>
-        ) : ownsNonprofit ? (
+        <Masonry
+          breakpointCols={{
+            default: 2,
+            767: 1,
+          }}
+          className="w-full my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {nonprofit?.description ? (
+            <Block>
+              <div className="font-bold text-16px leading-30px t:text-20px ">
+                About us
+              </div>
+              <div className="font-light text-13px leading-19-5px t:text-14px t:leading-21px">
+                {nonprofit.description}
+              </div>
+            </Block>
+          ) : ownsNonprofit ? (
+            <EmptyBlock
+              icon={<GalleryIcon/>}
+              text={<>
+                Add a description of the organization<br/>
+                <span className="font-bold">to inspire people to support your cause.</span>
+              </>}
+              actionText="Add About Us"
+              onClick={() => setAboutUsEditorOpen(true)}
+            />
+          ) : null }
+
+          {isAboutUsEditorOpen && (
+            <AboutUsEditor
+              nonprofit={nonprofit}
+              onSave={handleAboutUsSave}
+              onCancel={() => setAboutUsEditorOpen(false)}
+            />
+          )}
+
           <EmptyBlock
             icon={<GalleryIcon/>}
             text={<>
-              Add a description of the organization<br/>
-              <span className="font-bold">to inspire people to support your cause.</span>
+              <span className="font-bold">Upload and make awesome gallery</span><br/>
+              and add some text if you want.
             </>}
-            actionText="Add About Us"
-            onClick={() => setAboutUsEditorOpen(true)}
+            actionText="Add gallery"
           />
-        ) : null }
 
-        {isAboutUsEditorOpen && (
-          <AboutUsEditor
-            nonprofit={nonprofit}
-            onSave={handleAboutUsSave}
-            onCancel={() => setAboutUsEditorOpen(false)}
+          <EmptyBlock
+            icon={<MegaphoneIcon/>}
+            text={<>
+              <span className="font-bold">The organization will make campaign</span><br/>
+              and add some text if you want.
+            </>}
+            actionText="Add campaign"
           />
-        )}
 
-        <EmptyBlock
-          icon={<GalleryIcon/>}
-          text={<>
-            <span className="font-bold">Upload and make awesome gallery</span><br/>
-            and add some text if you want.
-          </>}
-          actionText="Add gallery"
-        />
+          <EmptyBlock
+            icon={<ContactInfoIcon/>}
+            text={<>
+              <span className="font-bold">Add contact info</span><br/>
+              and make it easy to find out more about your cause.
+            </>}
+            actionText="Add contact"
+          />
 
-        <EmptyBlock
-          icon={<MegaphoneIcon/>}
-          text={<>
-            <span className="font-bold">The organization will make campaign</span><br/>
-            and add some text if you want.
-          </>}
-          actionText="Add campaign"
-        />
-
-        <EmptyBlock
-          icon={<ContactInfoIcon/>}
-          text={<>
-            <span className="font-bold">Add contact info</span><br/>
-            and make it easy to find out more about your cause.
-          </>}
-          actionText="Add contact"
-        />
-
-        <EmptyBlock
-          icon={<TestimonialsIcon/>}
-          text={<>
-            <span className="font-bold">Add testimonials info</span><br/>
-            and make it easy to find out more about your cause.
-          </>}
-          actionText="Add contact"
-        />
-      </Masonry>
-    </div>
+          <EmptyBlock
+            icon={<TestimonialsIcon/>}
+            text={<>
+              <span className="font-bold">Add testimonials info</span><br/>
+              and make it easy to find out more about your cause.
+            </>}
+            actionText="Add contact"
+          />
+        </Masonry>
+      </div>
+    </>
   );
 };
 
