@@ -1,11 +1,11 @@
 import React, { FC, useState } from "react";
 import { FaClosedCaptioning, FaMapMarkerAlt } from "react-icons/fa";
-import Interest from "../dtos/Interest";
-import Location from "../dtos/Location";
-import Button from "./Button";
-import CausesSelector from "./Causes";
-import Input from "./Input";
-import Nonprofit from "../dtos/Nonprofit";
+import Interest from "../../dtos/Interest";
+import Location from "../../dtos/Location";
+import Button from "../Button";
+import CausesSelector from "../Causes";
+import Input from "../Input";
+import Nonprofit from "../../dtos/Nonprofit";
 
 const AboutUsEditor: FC<{
   nonprofit: Nonprofit;
@@ -53,7 +53,7 @@ const AboutUsEditor: FC<{
 
                     bg-white border-1px border-solid border-input
                     t:max-w-642px
-                    d:max-w-522px 
+                    d:max-w-522px
                   "
                 value={location}
                 onChange={setLocation}

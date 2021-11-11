@@ -2,7 +2,7 @@ import AboutUsEditor from "./AboutUsEditor";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { FaAnkh, FaEnvelope, FaVirusSlash, FaXRay } from "react-icons/fa";
 import React from "react";
-import { mockNonprofit } from "./Mocks";
+import { mockNonprofit } from "../Mocks";
 
 // TODO(hmassad): mock http call with Mock Service Worker https://mswjs.io/docs/getting-started/install
 const queryClient = new QueryClient({

@@ -10,7 +10,7 @@ import {
   TestimonialsIcon,
   EditPenIcon,
 } from "./Icons";
-import AboutUsEditor from "../AboutUsEditor";
+import AboutUsEditor from "./AboutUsEditor";
 import Interest from "../../dtos/Interest";
 import Location from "../../dtos/Location";
 import Modal from "../Modal";
