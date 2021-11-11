@@ -7,6 +7,7 @@ import CausesSelector from "../Causes";
 import Input from "../Input";
 import Nonprofit from "../../dtos/Nonprofit";
 import Modal from "../Modal";
+import { CloseIcon } from "./Icons";
 
 const AboutUsEditor: FC<{
   nonprofit: Nonprofit;
@@ -15,7 +16,7 @@ const AboutUsEditor: FC<{
     interests: Interest[],
     locations: string[]
   ) => void;
-  onCancel: () => void,
+  onCancel: () => void;
 }> = ({ nonprofit, onSave = () => {}, onCancel = () => {} }) => {
   const [description, setDescription] = useState(nonprofit.description);
   const [locations, setLocations] = useState(
@@ -24,16 +25,23 @@ const AboutUsEditor: FC<{
   const [interests, setInterests] = useState(nonprofit.interests);
   const [location, setLocation] = useState("");
 
+  console.debug("@@@ locations, ", JSON.stringify(locations));
   return (
-    <Modal header="Update your profile" onClose={onCancel}
-           footer={<Button onClick={() => onSave(description, interests, locations)}>Save</Button>}
+    <Modal
+      header="Update your profile"
+      onClose={onCancel}
+      footer={
+        <Button onClick={() => onSave(description, interests, locations)}>
+          Save
+        </Button>
+      }
     >
       <div className="flex flex-col p-20px">
         <div className="flex flex-col">
           <div className="font-bold text-20px">About</div>
           <div id="about-input" className=" pb-30px t:pb-40px">
             <Input
-              className="w-full h-180px d:h-227px d:mx-0
+              className="w-full h-180px t:h-227px t:mx-0
                       bg-white border-1px border-solid border-input"
               placeholder="Add description"
               value={description}
@@ -51,11 +59,11 @@ const AboutUsEditor: FC<{
             <div className="flex  gap-15px">
               <div id="location-input" className=" items-center flex-1">
                 <Input
-                  className="min-w-200px
+                  className="min-w-200px 
 
                       bg-white border-1px border-solid border-input
                       t:max-w-642px
-                      d:max-w-522px
+                     
                     "
                   value={location}
                   onChange={setLocation}
@@ -73,15 +81,20 @@ const AboutUsEditor: FC<{
             <div className="flex flex-col items-start">
               <div className="font-light text-10px">Location</div>
               {locations ? (
-                locations.map((location,index) => (
-                  <div key={`${location}_${index}`} className="bg-gray-200">
+                locations.map((location, index) => (
+                  <div
+                    key={`${location}_${index}`}
+                    className="bg-gray-200 flex p-7px rounded-10px gap-10px mt-10px items-center t:max-w-321px"
+                  >
                     <FaMapMarkerAlt />
-                    {location}
-                    <FaClosedCaptioning />
+                    <span title={location} className="overflow-ellipsis overflow-hidden max-w-220px">{location}</span>
+                    <CloseIcon className="bg-none"/>
                   </div>
                 ))
               ) : (
-                <div className="text-gray-500 font-light">Specify locations</div>
+                <div className="text-gray-500 font-light">
+                  Specify locations
+                </div>
               )}
             </div>
           </div>

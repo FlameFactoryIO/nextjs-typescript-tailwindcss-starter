@@ -1,4 +1,5 @@
-import { FC, ReactNode } from "react";
+import React, { FC, ReactNode } from "react";
+import { CloseIcon } from "./nonprofit/Icons";
 
 const Modal: FC<{
   className?: string,
@@ -43,11 +44,5 @@ const Modal: FC<{
   );
 }
 
-const CloseIcon = ({className = ""}:{className?: string}) => (
-  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-    <circle cx="15" cy="15" r="15" fill="#E84300" fillOpacity="0.15"/>
-    <path d="M15.0006 13.5588L20.0447 8.51465L21.4856 9.95553L16.4415 14.9996L21.4856 20.0438L20.0447 21.4846L15.0006 16.4405L9.95651 21.4846L8.51562 20.0438L13.5597 14.9996L8.51562 9.95553L9.95651 8.51465L15.0006 13.5588Z" fill="#E84300"/>
-  </svg>
-);
 
 export default Modal;
