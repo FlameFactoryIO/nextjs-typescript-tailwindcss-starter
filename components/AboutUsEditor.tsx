@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { FaClosedCaptioning, FaMapPin, FaXRay } from "react-icons/fa";
+import { FaClosedCaptioning, FaMapMarkerAlt } from "react-icons/fa";
 import Interest from "../dtos/Interest";
 import Location from "../dtos/Location";
 import Button from "./Button";
@@ -8,16 +8,18 @@ import Input from "./Input";
 import Nonprofit from "../dtos/Nonprofit";
 
 const AboutUsEditor: FC<{
-  nonprofit: Nonprofit,
-  onSave: (description: string, interests: Interest[], locations: Location[]) => void,
-  onCancel: () => void,
-}> = ({
-  nonprofit,
-  onSave = () => {},
-  onCancel = () => {},
-}) => {
+  nonprofit: Nonprofit;
+  onSave: (
+    description: string,
+    interests: Interest[],
+    locations: Location[]
+  ) => void;
+  onCancel: () => void;
+}> = ({ nonprofit, onSave = () => {}, onCancel = () => {} }) => {
   const [description, setDescription] = useState(nonprofit.description);
-  const [locations, setLocations] = useState(nonprofit.locations);
+  const [locations, setLocations] = useState(
+    nonprofit.locations.map((location) => location.address)
+  );
   const [interests, setInterests] = useState(nonprofit.interests);
 
   const [location, setLocation] = useState("");
@@ -47,7 +49,7 @@ const AboutUsEditor: FC<{
           <div className="flex  gap-15px">
             <div id="location-input" className=" items-center flex-1">
               <Input
-                className="min-w-50px
+                className="min-w-200px
 
                     bg-white border-1px border-solid border-input
                     t:max-w-642px
@@ -55,34 +57,43 @@ const AboutUsEditor: FC<{
                   "
                 value={location}
                 onChange={setLocation}
-                prefix={<FaMapPin className="ml-14px" />}
+                prefix={<FaMapMarkerAlt className="ml-14px" />}
                 placeholder="Add Location"
               />
             </div>
-            <Button size="small">Add</Button>
+            <Button
+              size="small"
+              onClick={() => setLocations([...locations, location])}
+            >
+              Add
+            </Button>
           </div>
           <div className="flex flex-col items-start">
             <div className="font-light text-10px">Location</div>
-            {locations
-              ? locations.map((location: Location) => (
-                  <div key={location.address} className="bg-gray-200">
-                    <FaMapPin />
-                    {location.address}
-                    <FaClosedCaptioning />
-                  </div>
+            {locations ? (
+              locations.map((location) => (
+                <div key={location} className="bg-gray-200">
+                  <FaMapMarkerAlt />
+                  {location}
+                  <FaClosedCaptioning />
+                </div>
               ))
-              : <div className="text-gray-500 font-light">Specify locations</div>}
+            ) : (
+              <div className="text-gray-500 font-light">Specify locations</div>
+            )}
           </div>
         </div>
         <div id="add-more-categories" className="flex flex-col gap-11px ">
           <div className="font-bold">Add more categories</div>
           <CausesSelector
-            onChange={onInterestsChange}
+            onChange={setInterests}
             interests={interests}
             showLoadMore={false}
           />
         </div>
       </div>
+      <div className="flex item-center "></div>
+      <Button className="mx-auto m-10px" variant="primary" type="submit"   size="small">SAVE</Button>
     </div>
   );
 };

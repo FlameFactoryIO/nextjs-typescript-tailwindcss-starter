@@ -26,7 +26,9 @@ const HomeTab: FC<{
       setAboutUsEditorOpen(false);
     }
   }
-
+  if (!nonprofit) {
+    null;
+  }
   return (
     <div
       className="w-full m-0 p-0 min-w-280px
