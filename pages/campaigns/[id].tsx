@@ -216,7 +216,7 @@ const CampaignProfile = ({ id, campaign }) => {
                           </>
                         ) : (
                           <div className="flex flex-col t:flex-row gap-10px items-center justify-center text-center pt-20px t:pt-40px">
-                            <div className="flex-1 flex flex-col gap-5px items-center justify-center bg-white rounded-10px w-96px h-86px">
+                            <div className="flex flex-col gap-5px items-center justify-center bg-white rounded-10px w-96px h-86px">
                               <img className="w-16px h-16px"
                                 src="/images/campaign/icon-plus.svg"
                               />
@@ -224,7 +224,7 @@ const CampaignProfile = ({ id, campaign }) => {
                                 Raised {Math.round(campaign.raised * 100 / campaign.goal)}% of the goal
                               </span>
                             </div>
-                            <div className="flex-1 flex flex-col gap-5px items-center justify-center bg-white rounded-10px w-96px h-86px">
+                            <div className="flex flex-col gap-5px items-center justify-center bg-white rounded-10px w-96px h-86px">
                               <img className="w-16px h-16px items-center "
                                 src="/images/campaign/raised.svg"
                               />
@@ -232,7 +232,7 @@ const CampaignProfile = ({ id, campaign }) => {
                                 {campaign.totalChallenges} challenges created
                               </span>
                             </div>
-                            <div className="flex-1 flex flex-col gap-5px items-center justify-center bg-white rounded-10px w-96px h-86px">
+                            <div className="flex flex-col gap-5px items-center justify-center bg-white rounded-10px w-96px h-86px">
                               <img className="w-16px h-16px items-center"
                                 src="/images/campaign/icon-telegram.svg"
                               />
