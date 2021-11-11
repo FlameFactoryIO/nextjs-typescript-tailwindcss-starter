@@ -56,7 +56,7 @@ const HomeTab: FC<{
           default: 2,
           767: 1,
         }}
-        className="w-full -mr-15px my-masonry-grid"
+        className="w-full my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
         {nonprofit?.description ? (

@@ -117,7 +117,7 @@ export default function NonprofitProfile({
               {nonprofit.youtube && <YoutubeIcon />}
               <Button size="small" className="ml-auto">Follow</Button>
             </div>
-            <NonprofitProfileTabs className="mt-26px" />
+            <NonprofitProfileTabs nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} className="mt-26px" />
           </div>
 
           <div className="flex-none bg-footer rounded-20px px-10px pt-25px pb-15px">

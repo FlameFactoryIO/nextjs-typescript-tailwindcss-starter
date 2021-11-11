@@ -5,8 +5,8 @@ import HomeTab from "./HomeTab";
 type Tab = "home" | "our impact" | "campaigns" | "fundraiser" | "posts" | "contact";
 
 const NonprofitProfileTabs: FC<{
-  nonprofit?: Nonprofit;
-  ownsNonprofit?: boolean,
+  nonprofit: Nonprofit;
+  ownsNonprofit: boolean,
   className?: string,
 }> = ({
   nonprofit,
@@ -29,12 +29,12 @@ const NonprofitProfileTabs: FC<{
         ))}
       </div>
 
-      {selected === "home" && <HomeTab/>}
-      {selected === "our impact" && <HomeTab/>}
-      {selected === "campaigns" && <HomeTab/>}
-      {selected === "fundraiser" && <HomeTab/>}
-      {selected === "posts" && <HomeTab/>}
-      {selected === "contact" && <HomeTab/>}
+      {selected === "home" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
+      {selected === "our impact" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
+      {selected === "campaigns" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
+      {selected === "fundraiser" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
+      {selected === "posts" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
+      {selected === "contact" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}
     </div>
   );
 };
