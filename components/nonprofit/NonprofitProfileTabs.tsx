@@ -6,6 +6,7 @@ import GalleryBlock from "./GalleryBlock";
 import TestimonialsBlock from "./TestimonialsBlock";
 import CampaignsBlock from "./CampaignsBlock";
 import ContactsBlock from "./ContactsBlock";
+import ClosedCampaignsBlock from "./ClosedCampaignsBlock";
 
 type Tab = "home" | "our impact" | "campaigns" | "fundraiser" | "posts" | "contact";
 
@@ -24,7 +25,7 @@ const NonprofitProfileTabs: FC<{
     <div className={`w-full flex flex-col ${className}`}>
       <div className="overflow-x-auto mb-30px">
         <div className="text-center flex gap-30px text-14px leading-16px font-light select-none">
-          {["home", "our impact", "campaigns", "fundraiser", "posts", "contact"].map((tab: Tab) => (
+          {["home", "our impact", "campaigns", /*"fundraiser", "posts",*/ "contact"].map((tab: Tab) => (
             <div
               key={tab}
               className={`border-b-3px py-10px px-5px ${selected === tab ? "border-primary font-bold" : "border-transparent"} cursor-pointer uppercase whitespace-nowrap`}
@@ -58,10 +59,17 @@ const NonprofitProfileTabs: FC<{
           </MasonryList>
         </div>
       )}
-      {/*{selected === "campaigns" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}*/}
+      {selected === "campaigns" && (
+        <div className="w-full m-0 p-0 min-w-280px flex flex-col t:flex-row t:flex-wrap items-center gap-29px">
+          <CampaignsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
+          <ClosedCampaignsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
+        </div>
+      )}
       {/*{selected === "fundraiser" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}*/}
       {/*{selected === "posts" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}*/}
-      {/*{selected === "contact" && <HomeTab nonprofit={nonprofit} ownsNonprofit={ownsNonprofit}/>}*/}
+      {selected === "contact" && (
+        <ContactsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
+      )}
     </div>
   );
 };

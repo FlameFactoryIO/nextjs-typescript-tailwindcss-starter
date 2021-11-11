@@ -43,8 +43,8 @@ const AboutUsBlock = ({
             Add a description of the organization
             <br />
             <span className="font-bold">
-                  to inspire people to support your cause.
-                </span>
+              to inspire people to support your cause.
+            </span>
           </>
         }
         actionText="Add About Us"
@@ -72,19 +72,15 @@ const AboutUsBlock = ({
 
       {displayLocationAndInterests && (
         <div className="flex flex-wrap items-center gap-y-5px gap-x-10px pt-14px text-13px">
-          {nonprofit.interests?.map((interests, index) => (
-            <div key={`${location}_${index}`} className="">
-              <div className="flex items-center justify-center px-5px h-42px rounded-10px border-1px">
-                <span className="font-bold">{interests.interest.name}</span>
-              </div>
+          {nonprofit.interests?.map((interests) => (
+            <div key={interests.id} className="flex items-center justify-center px-5px h-42px rounded-10px border-1px">
+              <span className="font-bold">{interests.interest.name}</span>
             </div>
           ))}
-          {nonprofit.locations?.map((location, index) => (
-            <div key={`${location}_${index}`} className="">
-              <div className="flex items-center justify-center gap-8px px-5px h-42px rounded-10px border-1px">
-                <FaMapMarkerAlt />
-                <span title={location.address} className="overflow-ellipsis overflow-hidden max-w-220px">{location.address}</span>
-              </div>
+          {nonprofit.locations?.map((location) => (
+            <div key={location.id} className="flex items-center justify-center gap-8px px-5px h-42px rounded-10px border-1px">
+              <FaMapMarkerAlt />
+              <span title={location.address} className="overflow-ellipsis overflow-hidden max-w-220px">{location.address}</span>
             </div>
           ))}
         </div>

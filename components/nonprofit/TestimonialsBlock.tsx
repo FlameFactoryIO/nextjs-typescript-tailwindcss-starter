@@ -54,8 +54,8 @@ const TestimonialsBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ow
       </div>
 
       <div className="flex flex-col t:flex-wrap gap-y-3px gap-x-50px">
-        {nonprofit.testimonials.map((testimonial, index) => (
-          <div key={`${location}_${index}`} className="t:max-w-320px">
+        {nonprofit.testimonials.map((testimonial) => (
+          <div key={testimonial.id} className="t:max-w-320px">
             <span className="font-bold text-13px leading-17px t:text-14px t:leading-20px">{testimonial.name}</span><br />
             <div className="pt-7px text-12px leading-18px t:text-16px">
               {`${testimonial.comments} - `}
@@ -72,7 +72,7 @@ const TestimonialsBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ow
           footer={<Button onClick={handleSave}>Save</Button>}
         >
           <div className="flex flex-col gap-10px ">
-            {nonprofit.testimonials.map((testimonial, index) => (
+            {nonprofit.testimonials.map((testimonial) => (
               <div key={testimonial.id} className="rounded-10px border-1px p-10px">
 
                 <div className="flex flex-row items-center gap-10px text-13px leading-17px t:text-14px t:leading-20px pb-10px">

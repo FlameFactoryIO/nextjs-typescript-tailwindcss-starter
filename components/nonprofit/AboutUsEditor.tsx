@@ -78,9 +78,9 @@ const AboutUsEditor: FC<{
             <div className="flex flex-col items-start">
               <div className="font-light text-10px">Location</div>
               {locations ? (
-                locations.map((location, index) => (
+                locations.map((location) => (
                   <div
-                    key={`${location}_${index}`}
+                    key={location}
                     className="bg-gray-200 flex p-7px rounded-10px gap-10px mt-10px items-center t:max-w-321px"
                   >
                     <FaMapMarkerAlt />
