@@ -1,18 +1,19 @@
 import { FC, ReactNode } from "react";
 
 const Modal: FC<{
-  className?,
+  className?: string,
   header?: ReactNode,
   footer?: ReactNode,
 }> = ({
+  className = "",
   header,
   children,
   footer,
 }) => {
   return (
       <div
-        className="z-50 fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full
-        flex items-center justify-center"
+        className={`z-50 fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-screen w-screen
+        flex items-center justify-center ${className}`}
       >
         <div className="bg-white border rounded-10px min-w-300px min-h-300px flex flex-col p-10px">
           {header && (
