@@ -27,7 +27,7 @@ const HomeTab: FC<{
   const handleAboutUsSave = (
     description: string,
     interests: Interest[],
-    locations: Location[]
+    locations: string[]
   ) => {
     try {
       // todo save to db
@@ -160,9 +160,7 @@ const HomeTab: FC<{
       </div>
 
       {isAboutUsEditorOpen && (
-        <Modal header="Update your profile" onClose={() => setAboutUsEditorOpen(false)}>
-          <AboutUsEditor nonprofit={nonprofit} onSave={handleAboutUsSave} />
-        </Modal>
+        <AboutUsEditor nonprofit={nonprofit} onSave={handleAboutUsSave} onCancel={() => setAboutUsEditorOpen(false)} />
       )}
     </>
   );
