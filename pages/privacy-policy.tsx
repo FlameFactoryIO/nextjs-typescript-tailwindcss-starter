@@ -3,7 +3,7 @@ import TopNav from "../components/TopNav";
 import Footer from "../components/Footer";
 
 // noinspection JSUnusedGlobalSymbols
-export default function Ccpa() {
+export default function PrivacyPolicy() {
   return (
     <div className="w-full min-w-320px text-20px">
       <TopNav onSearch={(searchValue) => window.alert(searchValue)}/>
