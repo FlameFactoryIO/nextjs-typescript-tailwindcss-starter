@@ -1,13 +1,32 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import Head from "next/head";
 import Masonry from "react-masonry-css";
 import Nonprofit from "../../dtos/Nonprofit";
 import { Block, EmptyBlock } from "./Block";
 import { MegaphoneIcon, GalleryIcon, ContactInfoIcon, TestimonialsIcon } from "./Icons";
+import AboutUsEditor from "../AboutUsEditor";
+import Interest from "../../dtos/Interest";
+import Location from "../../dtos/Location";
 
 const HomeTab: FC<{
-  nonprofit?: Nonprofit;
-}> = ({ nonprofit }) => {
+  nonprofit: Nonprofit,
+  ownsNonprofit: boolean,
+}> = ({
+  nonprofit,
+  ownsNonprofit
+}) => {
+
+  const [isAboutUsEditorOpen, setAboutUsEditorOpen] = useState(false);
+
+  const handleAboutUsSave = (description: string, interests: Interest[], locations: Location[]) => {
+    try{
+      // todo save to db
+    } catch (e) {
+    } finally {
+      setAboutUsEditorOpen(false);
+    }
+  }
+
   return (
     <div
       className="w-full m-0 p-0 min-w-280px
@@ -25,7 +44,6 @@ const HomeTab: FC<{
               padding-left: 15px; /* gutter size */
               background-clip: padding-box;
             }
-            
             /* Style your items */
             .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
               margin-bottom: 15px;
@@ -38,7 +56,7 @@ const HomeTab: FC<{
           default: 2,
           767: 1,
         }}
-        className="w-full my-masonry-grid"
+        className="w-full -mr-15px my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
         {nonprofit?.description ? (
@@ -50,7 +68,7 @@ const HomeTab: FC<{
               {nonprofit.description}
             </div>
           </Block>
-        ) : (
+        ) : ownsNonprofit ? (
           <EmptyBlock
             icon={<GalleryIcon/>}
             text={<>
@@ -58,6 +76,15 @@ const HomeTab: FC<{
               <span className="font-bold">to inspire people to support your cause.</span>
             </>}
             actionText="Add About Us"
+            onClick={() => setAboutUsEditorOpen(true)}
+          />
+        ) : null }
+
+        {isAboutUsEditorOpen && (
+          <AboutUsEditor
+            nonprofit={nonprofit}
+            onSave={handleAboutUsSave}
+            onCancel={() => setAboutUsEditorOpen(false)}
           />
         )}
 

@@ -4,23 +4,23 @@ import Interest from "../dtos/Interest";
 import Location from "../dtos/Location";
 import Button from "./Button";
 import Input from "./Input";
+import Nonprofit from "../dtos/Nonprofit";
 
 const AboutUsEditor: FC<{
-  description?: string;
-  interests: Interest[];
-  locations: Location[];
-  onDescriptionChange: (value: string) => void;
-  onInterestsChange: (value: string) => void;
-  onLocationsChange: (value: string) => void;
+  nonprofit: Nonprofit,
+  onSave: (description: string, interests: Interest[], locations: Location[]) => void,
+  onCancel: () => void,
 }> = ({
-  description = "",
-  interests = [],
-  locations = [],
-  onDescriptionChange = () => {},
-  onInterestsChange = () => {},
-  onLocationsChange = () => {},
+  nonprofit,
+  onSave = () => {},
+  onCancel = () => {},
 }) => {
+  const [description, setDescription] = useState(nonprofit.description);
+  const [locations, setLocations] = useState(nonprofit.locations);
+  const [interests, setInterests] = useState(nonprofit.interests);
+
   const [location, setLocation] = useState("");
+
   return (
     // SECTION CONTAINER
     <div className="flex flex-col p-20px">
@@ -31,21 +31,19 @@ const AboutUsEditor: FC<{
           className=" items-center pb-30px t:pb-40px"
         >
           <Input
-            className="w-full
-                    h-180px
-                    bg-white border-1px border-solid border-input d:h-227px d:mx-0
-                  "
+            className="w-full h-180px d:h-227px d:mx-0
+                    bg-white border-1px border-solid border-input"
             placeholder="Add description"
             value={description}
             multiline
-            onChange={onDescriptionChange}
+            onChange={setDescription}
           />
         </div>
       </div>
       <div className="flex gap-30px items-center justify-center">
         <div
           id="add-location"
-          className="flex-1  flex flex-col gap-12px items-start"
+          className="flex-1 flex flex-col gap-12px items-start"
         >
           <div>Add Location</div>
           <div className="flex">
@@ -55,7 +53,7 @@ const AboutUsEditor: FC<{
             >
               <Input
                 className="min-w-50px
-                    
+
                     bg-white border-1px border-solid border-input
                     t:max-w-642px
                     d:max-w-522px d:h-227px d:mx-0
@@ -71,14 +69,14 @@ const AboutUsEditor: FC<{
           <div className="flex flex-col items-start">
             <div>Location</div>
             {locations
-              ? locations.map((location: Location) => {
-                  <div className="bg-gray-200">
+              ? locations.map((location: Location) => (
+                  <div key={location.address} className="bg-gray-200">
                     <FaMapPin />
                     {location.address}
                     <FaClosedCaptioning />
-                  </div>;
-                })
-              : null}
+                  </div>
+              ))
+              : <div className="text-gray-500 font-light">Specify locations</div>}
           </div>
         </div>
         <div id="add-more-categories" className="flex"></div>
