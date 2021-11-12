@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Nonprofit from "../../dtos/Nonprofit";
 import Head from "next/head";
 import { Block, EmptyBlock } from "./Block";
-import { GalleryIcon } from "./Icons";
+import { EditPenIcon, GalleryIcon } from "./Icons";
 import Modal from "../Modal";
 import Button from "../Button";
 import "keen-slider/keen-slider.min.css";
@@ -57,8 +57,6 @@ const GalleryBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ownsNon
     );
   }
 
-  console.debug({impact: nonprofit.impact})
-
   return (
     <Block className="overflow-hidden">
       <Head>
@@ -93,6 +91,17 @@ const GalleryBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ownsNon
         </style>
       </Head>
 
+      <div className="flex">
+        <div className="font-bold text-16px leading-30px t:text-20px">
+          Gallery
+        </div>
+        {ownsNonprofit && (
+          <div onClick={() => setEditorOpen(true)} className="cursor-pointer ml-5px">
+            <EditPenIcon />
+          </div>
+        )}
+      </div>
+
       <div className="keen-slider" ref={sliderRef}>
         {Object.values(nonprofit.impact).map((m) => (
           <div key={m.id} className="keen-slider__slide flex items-center justify-center">
@@ -108,7 +117,7 @@ const GalleryBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ownsNon
                 {m.imageUrl && (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
-                    // className="object-contain rounded-10px overflow-hidden"
+                    className="object-contain rounded-10px overflow-hidden"
                     src={m.imageUrl}
                     alt=""
                   />
