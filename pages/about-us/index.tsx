@@ -138,18 +138,16 @@ export default function AboutUs() {
       <div className="w-full why-background">
         <div
           id="why-move-the-chain"
-          className="flex flex-col t:grid grid-cols-2 t:gap-30px items-center d:max-h-640px"
+          className="flex flex-col t:grid grid-cols-2 t:gap-30px items-center d:max-h-480px"
         >
           <div
             id="why-move-the-chain-info"
             className="
             pt-43px px-0
-            t:pt-58px t:pb-43px
-            d:py-167px
+            t:pt-30px t:pb-43px
             flex flex-col
             max-w-280px t:max-w-333px d:max-w-548px
-            t:justify-self-end
-            "
+            t:justify-self-end"
           >
             <div
               className="
@@ -164,9 +162,9 @@ export default function AboutUs() {
               </h1>
             </div>
             <div
-              className="flex flex-col font-light text-white 
-                text-center text-13px leading-16-9px gap-y-25px 
-                t:text-left t:leading-15-6px t:min-w-333px t:gap-y-20px 
+              className="flex flex-col font-light text-white
+                text-center text-13px leading-16-9px gap-y-25px
+                t:text-left t:leading-15-6px t:min-w-333px t:gap-y-20px
                 d:text-16px d:leading-24px d:max-w-none d:gap-y-28px">
               <div>
                 Like in the game of American football, when a team gets a first down, Move the Chain is about
@@ -187,29 +185,32 @@ export default function AboutUs() {
             id="why-move-the-chain-img"
             className="min-w-280px t:flex-1 transform translate-y-39px t:translate-y-30px d:translate-y-88px"
           >
-            <div className="hidden d:block" style={{ marginBottom: -7 }}>
+            <div className="hidden d:block">
               <Image
                 alt="Football on a field being measured with chain markers"
                 className="rounded-24px"
-                src="/images/about-us/istockphoto-ball.png"
-                width={575}
-                height={603}
+                src="/images/about-us/football-d.png"
+                width={520}
+                height={460}
               />
             </div>
             <div className="hidden t:block d:hidden">
               <Image
+                alt="Football on a field being measured with chain markers"
                 className="rounded-24px"
-                src="/images/about-us/istockphoto-ball.png"
+                src="/images/about-us/football-t.png"
                 width={344}
                 height={361}
               />
             </div>
-            <div className="t:hidden">
+            <div className="t:hidden w-full">
               <Image
+                alt="Football on a field being measured with chain markers"
                 className="rounded-24px"
-                src="/images/about-us/istockphoto-ball.png"
+                src="/images/about-us/football-m.png"
                 width={280}
-                height={295}
+                height={300}
+                layout="responsive"
               />
             </div>
           </div>
