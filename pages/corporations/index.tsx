@@ -255,9 +255,8 @@ export default function CorporationsHome() {
                                  t:px-15px
                                  d:text-16px d:leading-24px d:px-39px"
                 >
-                  Host fundraisers where customers and emloyees participate in
-                  fun challenges in exchange for donations to the corporation’s
-                  chosen nonprofit
+                  Host fundraisers where customers and employees participate in targeted
+                  surveys in exchange for donations to the corporation’s chosen nonprofit.
                 </div>
               </div>
               <div
