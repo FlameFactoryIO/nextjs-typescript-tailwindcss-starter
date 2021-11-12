@@ -34,7 +34,7 @@ const GalleryBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ownsNon
     }
   };
 
-  if (!nonprofit?.impact) {
+  if (!nonprofit?.impact || !Object.keys(nonprofit?.impact).length) {
     if (!ownsNonprofit) {
       return null;
     }

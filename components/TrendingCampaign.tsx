@@ -1,7 +1,6 @@
 import {FC, useState} from "react";
 import moment from "moment";
 import Image from "next/image";
-import Link from "next/link";
 import Ellipsis from "@quid/react-ellipsis"
 import VideoPlayer from "./VideoPlayer";
 import Campaign from "../dtos/Campaign";
@@ -40,7 +39,8 @@ const TrendingCampaign: FC<{
           {campaign.videoUrl ? (
             <VideoPlayer videoUrl={campaign.videoUrl} videoImage={campaign.imageUrl} className="rounded-20px w-full h-320px" />
           ) : (
-            <img src={campaign.imageUrl} className="rounded-20px object-cover h-320px" />
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={campaign.imageUrl} className="rounded-20px object-cover h-320px" alt="" />
           )}
 
           <div className="absolute top-10px right-10px bg-black bg-opacity-70 text-white rounded-full w-40px">
@@ -80,6 +80,7 @@ const TrendingCampaign: FC<{
         <a href={`/campaigns/${campaign.id}`} className={`${textColor} mt-10px`}>
           <div className="flex gap-10px">
             <div className="w-60px h-60px rounded-25px">
+              {/* eslint-disable-next-line jsx-a11y/alt-text */}
               <Image src={campaign.nonprofit.logoUrl} width={60} height={60} objectFit="cover" objectPosition="center" className="rounded-full" />
             </div>
             <div className="flex-1 flex flex-col justify-center gap-6px">
@@ -104,22 +105,18 @@ const TrendingCampaign: FC<{
           <div className="font-bold text-12px leading-15px underline">Learn more</div>
         </a>
 
-        <Link href={"/payment"} passHref>
-          <a className="mt-10px">
-            <DonateButton
-              className=" rounded-8pxi mx-auto w-220px d:w-full"
-              variant={variant === "light" ? "black" : "white"}
-              origin={origin}
-              nonprofitId={campaign.nonprofit.paypalId || campaign.nonprofit.id.toString()}
-              nonprofitName={campaign.nonprofit.name}
-              campaignId={campaign.id}
-              entityType="campaign"
-              entityId="campaign.id"
-            >
-              Donate
-            </DonateButton>
-          </a>
-        </Link>
+        <DonateButton
+          className="mt-10px rounded-8pxi mx-auto w-220px d:w-full"
+          variant={variant === "light" ? "black" : "white"}
+          origin={origin}
+          nonprofitId={campaign.nonprofit.paypalId || campaign.nonprofit.id.toString()}
+          nonprofitName={campaign.nonprofit.name}
+          campaignId={campaign.id}
+          entityType="campaign"
+          entityId="campaign.id"
+        >
+          Donate
+        </DonateButton>
       </div>
     </div>
   );
