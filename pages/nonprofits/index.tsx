@@ -39,21 +39,21 @@ export default function Home() {
           >
             <p
               className="text-26px text-white text-center t:text-left
-          leading-31-2px d:text-48px d:leading-57-6px
-          pb-19px
-          px-20px t:pl-31px t:pr-0 t:max-w-579px d:max-w-1040px
-          mx-auto t:ml-0 t:mr-auto
-          relative
-          "
+                leading-31-2px d:text-48px d:leading-57-6px font-bold
+                pb-19px
+                px-20px t:pl-31px t:pr-0 t:max-w-579px d:max-w-1040px
+                mx-auto t:ml-0 t:mr-auto
+                relative
+                "
             >
               Our purpose at{" "}
               <span className="font-bold text-primary">Move the Chain</span> is
               to offer a platform to help promote your cause and raise funds.
             </p>
             <p
-              className=" text-16px leading-20-8px
-              d:text-18px d:leading-26px
-              text-white text-center t:text-left
+              className="text-16px leading-20-8px
+                d:text-18px d:leading-26px
+                text-white text-center t:text-left
                 font-light
                 px-20px  t:pl-31px t:pr-0 t:max-w-375px d:max-w-545px
                 t:pb-25px d:pb-53px
@@ -81,27 +81,25 @@ export default function Home() {
           </div>
           <div
             id="hero-img"
-            className="flex flex-col items-center t:items-end
-          t:absolute   bottom-0 right-10
-          t:pt-94px
-          "
+            className="flex flex-col items-center t:items-end t:absolute bottom-0 right-10 t:pt-94px -mb-7px"
           >
             <div className="block t:hidden d:block">
               <Image
-                alt=""
+                alt="12 images that are depicting causes that non-profits support"
                 src="/images/nonprofits/hero.png"
                 width={640}
                 height={449}
-                objectFit="contain"
+                objectFit="cover"
               />
             </div>
 
-            <div className="hidden t:block d:hidden ">
+            <div className="hidden t:block d:hidden">
               <Image
-                alt=""
+                alt="12 images that are depicting causes that non-profits support"
                 src="/images/nonprofits/hero.png"
                 width={400}
                 height={282}
+                objectFit="cover"
               />
             </div>
             {/* <div className="t:hidden bg-yellow-300">
