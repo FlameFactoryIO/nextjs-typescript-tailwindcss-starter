@@ -157,7 +157,7 @@ export default function Login() {
 
   return (
     <div className="w-full min-w-320px">
-      <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
+      <TopNav />
 
       <div
         id="login"

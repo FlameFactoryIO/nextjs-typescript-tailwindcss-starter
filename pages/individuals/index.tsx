@@ -24,7 +24,7 @@ export default function Individuals() {
         </style>
       </Head>
 
-      <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
+      <TopNav />
 
       <div className="w-full hero-background">
         <div

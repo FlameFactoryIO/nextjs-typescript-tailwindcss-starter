@@ -79,7 +79,7 @@ export default function CampaignSearch() {
         </style>
       </Head>
 
-      <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
+      <TopNav />
       <div className="w-full dots-background">
         <div
           id="hero"
