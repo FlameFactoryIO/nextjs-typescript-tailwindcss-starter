@@ -1,5 +1,5 @@
 import { Block, EmptyBlock } from "./Block";
-import { ContactInfoIcon, EditPenIcon } from "./Icons";
+import { ContactInfoIcon, EditPenIcon, Envelope, Phone, World } from "./Icons";
 import React, { useState } from "react";
 import Nonprofit from "../../dtos/Nonprofit";
 import Modal from "../Modal";
@@ -69,28 +69,31 @@ const ContactsBlock = ({
     );
   } else {
     if (nonprofit?.contacts?.length) {
-      {
-        nonprofit.contacts.map((contact) => {
-          <Block>
-            <div className="flex">
-              <div className="font-bold text-16px leading-30px t:text-20px">
-                {contact.branch}
+      return (
+        <>
+          {nonprofit.contacts.map((contact) => (
+            <Block key={contact.id} className="flex flex-col gap-10px">
+              <div className="flex">
+                <div className="font-bold text-16px leading-30px t:text-20px">
+                  {contact.branch}
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col font-light text-13px leading-19-5px t:text-14px t:leading-21px">
-              <FaMailBulk />
-              <span className="underline">{contact.primaryEmailAddress}</span>
-            </div>{" "}
-            <div className="flex flex-col font-light text-13px leading-19-5px t:text-14px t:leading-21px">
-              <FaPhone />
-              <span>{contact.primaryPhoneNumber}</span>
-            </div>{" "}
-            <div className="flex flex-col font-light text-13px leading-19-5px t:text-14px t:leading-21px">
-              <span>{contact.website}</span>
-            </div>
-          </Block>;
-        });
-      }
+              <div className="flex gap-5px font-light text-13px leading-19-5px t:text-14px t:leading-21px">
+                <Envelope />
+                <span className="underline">{contact.primaryEmailAddress}</span>
+              </div>{" "}
+              <div className="flex gap-5px font-light text-13px leading-19-5px t:text-14px t:leading-21px">
+                <Phone />
+                <span>{contact.primaryPhoneNumber}</span>
+              </div>{" "}
+              <div className="flex gap-5px font-light text-13px leading-19-5px t:text-14px t:leading-21px">
+                <World />
+                <span>{contact.website}</span>
+              </div>
+            </Block>
+          ))}
+        </>
+      );
     } else {
       return null;
     }

@@ -56,11 +56,7 @@ const NonprofitProfileTabs: FC<{
         <div className="w-full m-0 p-0 min-w-280px flex flex-col t:flex-row t:flex-wrap items-center gap-29px">
           <MasonryList>
             <AboutUsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
-            <GalleryBlock
-              nonprofit={nonprofit}
-              ownsNonprofit={ownsNonprofit}
-              onEditClick={() => {}}
-            />
+            <GalleryBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
             <CampaignsBlock
               nonprofit={nonprofit}
               ownsNonprofit={ownsNonprofit}
