@@ -133,7 +133,7 @@ export default function NonprofitProfile({
         </div>
       </div>
 
-      <div className="w-full bg-footer">
+      <div className="w-full bg-footer mt-20px">
         <Footer />
       </div>
     </div>

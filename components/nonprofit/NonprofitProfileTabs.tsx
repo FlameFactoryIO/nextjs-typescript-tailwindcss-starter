@@ -4,7 +4,7 @@ import AboutUsBlock from "./AboutUsBlock";
 import MasonryList from "./MasonryList";
 import GalleryBlock from "./GalleryBlock";
 import TestimonialsBlock from "./TestimonialsBlock";
-import CampaignsBlock from "./CampaignsBlock";
+import CampaignBlock from "./CampaignBlock";
 import ContactsBlock from "./ContactsBlock";
 import ClosedCampaignsBlock from "./ClosedCampaignsBlock";
 
@@ -44,7 +44,7 @@ const NonprofitProfileTabs: FC<{
           <MasonryList>
             <AboutUsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
             <GalleryBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
-            <CampaignsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
+            <CampaignBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
             <ContactsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
             <TestimonialsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
           </MasonryList>
@@ -61,7 +61,7 @@ const NonprofitProfileTabs: FC<{
       )}
       {selected === "campaigns" && (
         <div className="w-full m-0 p-0 min-w-280px flex flex-col t:flex-row t:flex-wrap items-center gap-29px">
-          <CampaignsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
+          <CampaignBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
           <ClosedCampaignsBlock nonprofit={nonprofit} ownsNonprofit={ownsNonprofit} />
         </div>
       )}

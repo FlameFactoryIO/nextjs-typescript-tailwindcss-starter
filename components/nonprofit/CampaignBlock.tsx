@@ -5,7 +5,7 @@ import Nonprofit from "../../dtos/Nonprofit";
 import Modal from "../Modal";
 import Button from "../Button";
 
-const CampaignsBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ownsNonprofit: boolean}) => {
+const CampaignBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ownsNonprofit: boolean}) => {
   const [isEditorOpen, setEditorOpen] = useState(false);
 
   const handleSave = (
@@ -43,7 +43,7 @@ const CampaignsBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ownsN
 
   return (
     <Block>
-      CURRENT CAMPAIGN AND PREVIOUS CAMPAIGNS
+      CURRENT CAMPAIGN
 
       {isEditorOpen && (
         <Modal
@@ -52,7 +52,7 @@ const CampaignsBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ownsN
           footer={<Button onClick={handleSave}>Save</Button>}
         >
           <div className="flex flex-col p-20px">
-            CAMPAIGNS EDITOR
+            CAMPAIGN EDITOR
           </div>
         </Modal>
       )}
@@ -60,4 +60,4 @@ const CampaignsBlock = ({nonprofit, ownsNonprofit}: {nonprofit: Nonprofit, ownsN
   );
 };
 
-export default CampaignsBlock;
+export default CampaignBlock;
