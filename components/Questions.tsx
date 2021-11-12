@@ -20,13 +20,11 @@ const Questions: FC = () => {
         </div>
       </div>
       <div className="t:mt-44px d:mt-41px t:mr-0">
-        <Link href="mailto:support@movethechain.com" passHref>
-          <a>
-            <Button size="small">
-              Contact Us
-            </Button>
-          </a>
-        </Link>
+        <a href="mailto:support@movethechain.com">
+          <Button size="small">
+            Contact Us
+          </Button>
+        </a>
       </div>
     </div>
   )

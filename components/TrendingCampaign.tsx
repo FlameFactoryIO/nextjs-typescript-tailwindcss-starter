@@ -113,7 +113,7 @@ const TrendingCampaign: FC<{
           nonprofitName={campaign.nonprofit.name}
           campaignId={campaign.id}
           entityType="campaign"
-          entityId="campaign.id"
+          entityId={campaign.id.toString()}
         >
           Donate
         </DonateButton>

@@ -24,7 +24,7 @@ export default function AboutUs() {
         </style>
       </Head>
 
-      <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
+      <TopNav />
 
       <div className="w-full hero-background">
         <div
@@ -41,6 +41,7 @@ export default function AboutUs() {
                 src="/images/about-us/hero-d.png"
                 width={575}
                 height={598}
+                alt=""
               />
             </div>
             <div className="hidden t:block d:hidden">
@@ -48,10 +49,11 @@ export default function AboutUs() {
                 src="/images/about-us/hero-t.png"
                 width={575}
                 height={444}
+                alt=""
               />
             </div>
             <div className="t:hidden">
-              <Image src="/images/about-us/hero.png" width={378} height={444} />
+              <Image src="/images/about-us/hero.png" width={378} height={444} alt="" />
             </div>
           </div>
 
@@ -384,6 +386,7 @@ export default function AboutUs() {
                     src="/images/about-us/girl-about-our-platform.png"
                     width={277}
                     height={328}
+                    alt="Female user holding a smart phone with the logo’s of Move the Chain + PayPal"
                   />
                 </div>
               </div>
@@ -417,19 +420,17 @@ export default function AboutUs() {
                         flex-1 w-280px t:w-222px d:w-367px"
             >
               <img
-                className="mr-auto pb-15px"
+                className="pb-15px"
                 src="/images/about-us/warrior.png"
                 alt="logo"
               />
               <div
-                className="mr-auto  pb-6px text-left font-bold
-                              text-16px  leading-24px d:text-18px d:leading-27px"
+                className="pb-6px text-left font-bold text-16px leading-24px d:text-18px d:leading-27px -mr-15px"
               >
                 140K+ vetted nonprofits
               </div>
               <p
-                className="mx-auto text-left
-                            text-12px leading-15-6px d:text-14px d:leading-22px font-light"
+                className="mx-auto text-left text-12px leading-15-6px d:text-14px d:leading-22px font-light"
               >
                 <span className="font-bold">PayPal Giving Fund</span>{" "}
                 gives us access to their database of{" "}
