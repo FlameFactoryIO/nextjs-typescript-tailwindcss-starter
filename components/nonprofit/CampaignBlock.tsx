@@ -81,7 +81,7 @@ export const CampaignHomeBlock = ({
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-5px t:gap-30px mt-12px">
+      <div className="flex flex-col gap-5px t:gap-30px mt-12px items-center">
         <div className="relative select-none">
           {nonprofit.currentCampaign.videoUrl ? (
             <VideoPlayer
@@ -351,7 +351,7 @@ const CampaignBlock = ({
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-5px t:gap-30px mt-12px t:flex-row">
+      <div className="flex flex-col gap-5px t:gap-30px mt-12px t:flex-row items-center">
         <div className="relative select-none">
           {nonprofit.currentCampaign.videoUrl ? (
             <VideoPlayer
