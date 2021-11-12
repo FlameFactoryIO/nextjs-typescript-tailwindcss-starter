@@ -57,9 +57,11 @@ export default function Individuals() {
               <span className="font-bold">give back</span> to causes you care
               about… and <span className="font-bold">all</span> donations{" "}
               <span className="font-bold">are tax deductible!</span>
-              <div className="pt-10px font-bold">
+              <br/>
+              <br/>
+              <span className="mt-1rem font-bold">
                 Receive an automated tax receipt after each donation.
-              </div>
+              </span>
             </div>
           </div>
 
