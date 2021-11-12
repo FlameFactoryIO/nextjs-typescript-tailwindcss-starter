@@ -420,14 +420,13 @@ export default function CorporationsHome() {
                         t:max-w-708px
                         d:max-w-914px d:pt-29px d:text-24px d:leading-35-5px"
           >
-            <span className="text-primary-400">“</span>I love the vision behind
-            Move the Chain. This is a movement driven by thoughtful people who
-            are all about maximizing positive impact in the world we live in.
-            I&apos;m excited to be a small part of it.
+            <span className="text-primary-400">“</span>
+              I love the vision behind Move the Chain. This is a movement driven by incredibly talented founders
+              whose passion for social good will change the world. I couldn&apos;t be more thrilled to play a small role.
             <span className="text-primary-400">”</span>
           </div>
           <div className="pt-6px d:pt-10px text-16px leading-24px d:text-18px">
-            <span className="text-primary-400 font-bold ">Roger Desai </span>{" "}
+            <span className="text-primary-400 font-bold ">Rodger Desai </span>{" "}
             <span className="font-bold">- CEO at Prove</span>
           </div>
         </div>
