@@ -260,7 +260,7 @@ export default function AboutUs() {
               <img
                 className="mr-auto pb-15px"
                 src="/images/about-us/eye.png"
-                alt="logo"
+                alt=""
               />
               <div
                 className="mr-auto  pb-6px text-left font-bold
@@ -287,7 +287,7 @@ export default function AboutUs() {
               <img
                 className="mr-auto pb-15px"
                 src="/images/about-us/hand.png"
-                alt="logo"
+                alt=""
               />
               <div
                 className="mr-auto  pb-6px text-left font-bold
@@ -314,7 +314,7 @@ export default function AboutUs() {
               <img
                 className="mr-auto pb-15px"
                 src="/images/about-us/hands-world.png"
-                alt="logo"
+                alt=""
               />
               <div
                 className="mr-auto  pb-6px text-left font-bold
@@ -422,7 +422,7 @@ export default function AboutUs() {
               <img
                 className="pb-15px"
                 src="/images/about-us/warrior.png"
-                alt="logo"
+                alt=""
               />
               <div
                 className="pb-6px text-left font-bold text-16px leading-24px d:text-18px d:leading-27px -mr-15px"
@@ -449,7 +449,7 @@ export default function AboutUs() {
               <img
                 className="mr-auto pb-15px"
                 src="/images/about-us/cash-to-cloud.png"
-                alt="logo"
+                alt=""
               />
               <div
                 className="mr-auto  pb-6px text-left font-bold
@@ -477,7 +477,7 @@ export default function AboutUs() {
               <img
                 className="mr-auto pb-15px"
                 src="/images/about-us/contract.png"
-                alt="logo"
+                alt=""
               />
               <div
                 className="mr-auto  pb-6px text-left font-bold
