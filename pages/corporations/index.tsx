@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Head from "next/head";
 import Footer from "../../components/Footer";
 import TopNav from "../../components/TopNav";
@@ -7,6 +8,31 @@ import Input from "../../components/Input";
 
 // noinspection JSUnusedGlobalSymbols
 export default function CorporationsHome() {
+  const [isSubmitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(null);
+  const [contactName, setContactName] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [rolePosition, setRolePosition] = useState("");
+  const [emailAddress, setEmailAddress] = useState("");
+  const [comments, setComments] = useState("");
+
+  const handleContactFormSubmit = () => {
+    setError(null);
+    try {
+      setContactName("");
+      setMobileNumber("");
+      setCompanyName("");
+      setRolePosition("");
+      setEmailAddress("");
+      setComments("");
+    } catch (e) {
+      setError(e);
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
   return (
     <div className="w-full min-w-320px">
       <Head>
@@ -63,6 +89,7 @@ export default function CorporationsHome() {
               through corporate
               <span className="font-bold"> charitable giving.</span>
             </div>
+            <a href="#provide-contact">
             <Button
               variant="primary"
               className="shadow-2-5-15 h-42px d:h-46px d:text-18px d:leading-24px"
@@ -70,6 +97,7 @@ export default function CorporationsHome() {
             >
               Join us
             </Button>
+            </a>
           </div>
 
           <div className="min-w-280px  t:w-335px d:w-582px">
@@ -471,37 +499,52 @@ export default function CorporationsHome() {
           </div>
 
           <div className="w-full max-w-550px t:text-center t:items-center flex flex-col">
-            <div
+            <form
               className="flex-1 bg-white min-w-280px h-636px rounded-24px shadow-0-3-16
               pt-30px px-15px pb-29px
               d:pt-20px d:px-30px d:pb-39px
               t:w-708px t:px-30px t:h-504px
               d:w-575px d:h-570px"
+              onSubmit={handleContactFormSubmit}
             >
               <div
-                className="grid grid-rows-5 t:grid-cols-2 t:grid-rows-3 gap-y-20px gap-x-10px items-center
-              pb-20px"
+                className="grid grid-rows-5 t:grid-cols-2 t:grid-rows-3 gap-y-20px gap-x-10px items-center pb-20px"
               >
                 <Input
                   className="min-w-250px bg-white border-1px border-solid border-input t:max-w-313px d:max-w-250px"
                   placeholder="Contact Name"
+                  value={contactName}
+                  onChange={setContactName}
+                  disabled={isSubmitting}
                 />
                 <Input
                   className="min-w-250px bg-white border-1px border-solid border-input t:max-w-313px d:max-w-250px"
                   placeholder="Mobile Number"
+                  value={mobileNumber}
+                  onChange={setMobileNumber}
+                  disabled={isSubmitting}
                 />
                 <Input
                   className="min-w-250px bg-white border-1px border-solid border-input t:max-w-313px d:max-w-250px"
                   placeholder="Company Name"
+                  value={companyName}
+                  onChange={setCompanyName}
+                  disabled={isSubmitting}
                 />
                 <Input
                   className="min-w-250px bg-white border-1px border-solid border-input t:max-w-313px d:max-w-250px"
                   placeholder="Role/Position"
+                  value={rolePosition}
+                  onChange={setRolePosition}
+                  disabled={isSubmitting}
                 />
                 <Input
                   className="t:col-span-2 min-w-250px bg-white border-1px border-solid border-input
                              t:max-w-642px d:max-w-522px"
                   placeholder="Email Address"
+                  value={emailAddress}
+                  onChange={setEmailAddress}
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -515,15 +558,18 @@ export default function CorporationsHome() {
                   "
                   placeholder="Comments"
                   multiline
+                  value={comments}
+                  onChange={setComments}
+                  disabled={isSubmitting}
                 />
               </div>
 
               <div className="text-center">
-                <Button size="small" type="submit">
+                <Button size="small" type="submit" disabled={isSubmitting}>
                   Join Us 🚀
                 </Button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
