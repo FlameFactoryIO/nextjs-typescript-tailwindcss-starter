@@ -42,7 +42,7 @@ export const DonationList: FC<{
           <div key={d.id} className={`mr-1px mb-10px flex flex-col`}>
             <div className={`pt-10px pb-12px px-10px bg-white rounded-tl-10px rounded-tr-10px ${index % 2 === 0 ? "rounded-br-10px  tri-right btm-right" : "rounded-bl-10px tri-right btm-left"}`}>
               <div className="flex items-center">
-                <div className="flex-1 font-bold text-14px leading-19px">{d.donor || <span className="font-light opacity-50 italic">Undisclosed donor</span>}</div>
+                <div className="flex-1 font-bold text-14px leading-19px">{d.donor || <span className="font-light opacity-50">Anonymous</span>}</div>
                 <div className="font-light opacity-50 text-11px leading-14px">{timeago.format(d.date)}</div>
               </div>
               <div className="mt-3px font-light text-11px leading-14px">Donated{" "}<span className="font-bold text-green-500">${d.amount}</span>{" "}to{" "}<span className="font-bold">{d.nonprofit}</span></div>

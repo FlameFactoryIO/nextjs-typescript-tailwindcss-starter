@@ -4,7 +4,6 @@ import Image from "next/image";
 import TopNav from "../../components/TopNav";
 import Footer from "../../components/Footer";
 import Questions from "../../components/Questions";
-import Faq from "../../components/Faq";
 import Button from "../../components/Button";
 import { TopAndRecentDonations } from "../../components/Donations";
 
@@ -104,6 +103,7 @@ export default function Individuals() {
                   src="/images/individuals/link-chain-d.png"
                   width={748}
                   height={578}
+                  alt=""
                 />
               </div>
               <div
@@ -114,6 +114,7 @@ export default function Individuals() {
                   src="/images/individuals/link-chain-d.png"
                   width={368}
                   height={287}
+                  alt=""
                 />
               </div>
               <div className="t:hidden block" style={{ marginBottom: -30 }}>
@@ -121,6 +122,7 @@ export default function Individuals() {
                   src="/images/individuals/link-chain-d.png"
                   width={279}
                   height={226}
+                  alt=""
                 />
               </div>
             </div>
@@ -141,6 +143,7 @@ export default function Individuals() {
                   width={356}
                   height={130}
                   objectFit="contain"
+                  alt="People are raising money for causes they are passionate about"
                 />
               </div>
 
@@ -165,6 +168,7 @@ export default function Individuals() {
               width={274}
               height={80}
               objectFit="contain"
+              alt="People are raising money for causes they are passionate about"
             />
           </div>
 
@@ -186,7 +190,7 @@ export default function Individuals() {
           className="
             text-center flex flex-col items-center
             pt-49px px-20px pb-50px
-            t:pt-132px t:pb-42px t:px-30px
+            t:pt-152px t:pb-42px t:px-30px
             d:pt-148px d:pb-80px d:px-120px
           "
         >
@@ -236,6 +240,7 @@ export default function Individuals() {
                       src="/images/individuals/find-cause.png"
                       width={320}
                       height={240}
+                      alt=""
                     />
                   </div>
 
@@ -245,6 +250,7 @@ export default function Individuals() {
                       src="/images/individuals/Vector-1.png"
                       width={100}
                       height={50}
+                      alt=""
                     />
                   </div>
                 </div>
@@ -254,6 +260,7 @@ export default function Individuals() {
                     src="/images/individuals/Vector-1-d.png"
                     width={280}
                     height={60}
+                    alt=""
                   />
                 </div>
                 <div
@@ -299,6 +306,7 @@ export default function Individuals() {
                         src="/images/individuals/help-raise.png"
                         width={320}
                         height={240}
+                        alt=""
                       />
                     </div>
                     <div className="t:hidden pt-10px">
@@ -307,6 +315,7 @@ export default function Individuals() {
                         src="/images/individuals/Vector-2.png"
                         width={100}
                         height={50}
+                        alt=""
                       />
                     </div>
                   </div>
@@ -317,19 +326,15 @@ export default function Individuals() {
                     src="/images/individuals/Vector-2-d.png"
                     width={280}
                     height={60}
+                    alt=""
                   />
                 </div>
 
                 <div
-                  className="flex-1 max-w-280px
-                                        t:max-w-220px
-                                        d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left"
+                  className="flex-1 max-w-280px t:max-w-220px d:grid d:grid-cols-2 d:gap-20px d:max-w-660px d:text-left"
                 >
                   <div className="d:max-w-320px d:max-h-240px ">
-                    <div
-                      className="font-bold text-18px leading-22px
-                                                d:text-28px d:leading-33-6px d:pt-30px"
-                    >
+                    <div className="font-bold text-18px leading-22px d:text-28px d:leading-33-6px d:pt-30px">
                       Join a fundraiser
                     </div>
                     <div
@@ -340,14 +345,14 @@ export default function Individuals() {
                       Companies sponsor fundraisers for specific causes. Join a
                       fundraiser today and make your donation go further.
                     </div>
-                    <div className="pb-20px">
-                      <Link href="/prove" passHref>
-                        <a>
-                          <Button size="small">
+                    <div className="pb-20px cursor-not-allowed">
+                      {/*<Link href="/prove" passHref>*/}
+                      {/*  <a>*/}
+                          <Button size="small" disabled>
                             Join a fundraiser
                           </Button>
-                        </a>
-                      </Link>
+                        {/*</a>*/}
+                      {/*</Link>*/}
                     </div>
                   </div>
                   <div
@@ -361,6 +366,7 @@ export default function Individuals() {
                       src="/images/individuals/join-fundraiser.png"
                       width={320}
                       height={240}
+                      alt=""
                     />
                   </div>
                 </div>
