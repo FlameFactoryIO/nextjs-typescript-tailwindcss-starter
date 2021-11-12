@@ -36,12 +36,12 @@ export default function AboutUs() {
             flex flex-col t:grid grid-cols-2 t:gap-30px items-center"
         >
           <div className="min-w-280px mx-auto t:mr-0 order-2 t:order-first">
-            <div className="hidden d:block" style={{ marginBottom: -7 }}>
+            <div className="hidden d:block -mb-7px">
               <Image
                 src="/images/about-us/hero-d.png"
                 width={575}
                 height={598}
-                alt=""
+                alt="Group of 9 images depicting people giving back to their communities"
               />
             </div>
             <div className="hidden t:block d:hidden">
@@ -49,11 +49,11 @@ export default function AboutUs() {
                 src="/images/about-us/hero-t.png"
                 width={575}
                 height={444}
-                alt=""
+                alt="Group of 9 images depicting people giving back to their communities"
               />
             </div>
             <div className="t:hidden">
-              <Image src="/images/about-us/hero.png" width={378} height={444} alt="" />
+              <Image src="/images/about-us/hero.png" width={378} height={444} alt="Group of 9 images depicting people giving back to their communities" />
             </div>
           </div>
 
