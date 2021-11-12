@@ -119,7 +119,7 @@ export default function Home() {
         </style>
       </Head>
 
-      <TopNav onSearch={(searchValue) => window.alert(searchValue)}/>
+      <TopNav />
 
       <div className="w-full hero-background">
         <div

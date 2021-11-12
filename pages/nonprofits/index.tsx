@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Footer from "../../components/Footer";
 import Button from "../../components/Button";
 import TopNav from "../../components/TopNav";
@@ -66,14 +67,16 @@ export default function Home() {
             </p>
             <div className="mx-auto pt-24px
                             t:mx-0 t:pt-0 t:pl-31px ">
-              <Button
-                type="button"
-                variant="primary"
-                className="t:block"
-                size="small"
-              >
-                Get started
-              </Button>
+              <Link href={"#step-1"} passHref>
+                <Button
+                  type="button"
+                  variant="primary"
+                  className="t:block"
+                  size="small"
+                >
+                  Get started
+                </Button>
+              </Link>
             </div>
           </div>
           <div

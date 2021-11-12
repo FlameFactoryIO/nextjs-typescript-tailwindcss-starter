@@ -27,7 +27,7 @@ export default function Claim() {
                 <title>Move the Chain</title>
             </Head>
 
-            <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
+            <TopNav />
 
             <div id="claim"
                 className="t:pt-101px

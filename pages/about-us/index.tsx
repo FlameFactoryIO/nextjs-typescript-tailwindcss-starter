@@ -36,12 +36,12 @@ export default function AboutUs() {
             flex flex-col t:grid grid-cols-2 t:gap-30px items-center"
         >
           <div className="min-w-280px mx-auto t:mr-0 order-2 t:order-first">
-            <div className="hidden d:block" style={{ marginBottom: -7 }}>
+            <div className="hidden d:block -mb-7px">
               <Image
                 src="/images/about-us/hero-d.png"
                 width={575}
                 height={598}
-                alt=""
+                alt="Group of 9 images depicting people giving back to their communities"
               />
             </div>
             <div className="hidden t:block d:hidden">
@@ -49,11 +49,11 @@ export default function AboutUs() {
                 src="/images/about-us/hero-t.png"
                 width={575}
                 height={444}
-                alt=""
+                alt="Group of 9 images depicting people giving back to their communities"
               />
             </div>
             <div className="t:hidden">
-              <Image src="/images/about-us/hero.png" width={378} height={444} alt="" />
+              <Image src="/images/about-us/hero.png" width={378} height={444} alt="Group of 9 images depicting people giving back to their communities" />
             </div>
           </div>
 
@@ -260,7 +260,7 @@ export default function AboutUs() {
               <img
                 className="mr-auto pb-15px"
                 src="/images/about-us/eye.png"
-                alt="logo"
+                alt=""
               />
               <div
                 className="mr-auto  pb-6px text-left font-bold
@@ -287,7 +287,7 @@ export default function AboutUs() {
               <img
                 className="mr-auto pb-15px"
                 src="/images/about-us/hand.png"
-                alt="logo"
+                alt=""
               />
               <div
                 className="mr-auto  pb-6px text-left font-bold
@@ -314,7 +314,7 @@ export default function AboutUs() {
               <img
                 className="mr-auto pb-15px"
                 src="/images/about-us/hands-world.png"
-                alt="logo"
+                alt=""
               />
               <div
                 className="mr-auto  pb-6px text-left font-bold
@@ -422,7 +422,7 @@ export default function AboutUs() {
               <img
                 className="pb-15px"
                 src="/images/about-us/warrior.png"
-                alt="logo"
+                alt=""
               />
               <div
                 className="pb-6px text-left font-bold text-16px leading-24px d:text-18px d:leading-27px -mr-15px"
@@ -449,7 +449,7 @@ export default function AboutUs() {
               <img
                 className="mr-auto pb-15px"
                 src="/images/about-us/cash-to-cloud.png"
-                alt="logo"
+                alt=""
               />
               <div
                 className="mr-auto  pb-6px text-left font-bold
@@ -477,7 +477,7 @@ export default function AboutUs() {
               <img
                 className="mr-auto pb-15px"
                 src="/images/about-us/contract.png"
-                alt="logo"
+                alt=""
               />
               <div
                 className="mr-auto  pb-6px text-left font-bold

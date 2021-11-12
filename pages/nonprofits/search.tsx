@@ -80,7 +80,7 @@ export default function NonprofitsSearch() {
         `}</style>
       </Head>
 
-      <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
+      <TopNav />
       <div className="w-full waves-background">
         <div
           id="hero"

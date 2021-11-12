@@ -38,7 +38,7 @@ export default function CreateAccount() {
         <title>Move the Chain</title>
       </Head>
 
-      <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
+      <TopNav />
 
       <div id="create-account"
            className="t:pt-101px
