@@ -208,7 +208,7 @@ export const CampaignHomeBlock = ({
           </div>
         </div>
         <div className="flex flex-col">
-          <div className="mt-0t:mt-30px text-12px leading-16px font-light">
+          <div className="mt-0 t:mt-30px text-12px leading-16px font-light">
             Raising for
           </div>
           <div className="text-13px leading-16px font-bold mt-10px">
@@ -477,8 +477,8 @@ const CampaignBlock = ({
             )}
           </div>
         </div>
-        <div className="flex flex-col">
-          <div className="mt-0t:mt-30px text-12px leading-16px font-light">
+        <div className=" flex flex-col t:w-360px">
+          <div className="mt-0 t:mt-30px text-12px leading-16px font-light">
             Raising for
           </div>
           <div className="text-13px leading-16px font-bold mt-10px">
