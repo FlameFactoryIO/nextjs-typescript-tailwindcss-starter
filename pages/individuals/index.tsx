@@ -368,11 +368,11 @@ export default function Individuals() {
         </div>
       </div>
 
-      <div id="faq" className="w-full bg-gradient-to-b from-cream to-white">
-        <div className="w-280px t:w-768px d:w-1140px mx-auto items-center">
-          <Faq />
-        </div>
-      </div>
+      {/*<div id="faq" className="w-full bg-gradient-to-b from-cream to-white">*/}
+      {/*  <div className="w-280px t:w-768px d:w-1140px mx-auto items-center">*/}
+      {/*    <Faq />*/}
+      {/*  </div>*/}
+      {/*</div>*/}
 
       <div id="questions" className="w-full bg-blue-darkest">
         <div className="w-280px t:w-768px d:w-1140px mx-auto items-center">

@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 export default function PrivacyPolicy() {
   return (
     <div className="w-full min-w-320px text-20px">
-      <TopNav onSearch={(searchValue) => window.alert(searchValue)}/>
+      <TopNav />
 
       <div className="pt-80px d:pt-100px pb-150px d:pt-77px px-20px">
         <h1 className="text-48px font-bold">Privacy Policy</h1>

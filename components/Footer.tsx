@@ -136,13 +136,13 @@ const Footer: FC = () => {
                 <Link href="/corporation-contact">Corporations Contact</Link>
               </li>
               <li>
-                <Link href="mailto:support@movethechain.com?subject=Customer support">Customer Support</Link>
+                <a href="mailto:support@movethechain.com?subject=Customer support">Customer Support</a>
               </li>
               <li>
-                <Link href="mailto:support@movethechain.com?subject=Feature suggestion">Feature Suggestions</Link>
+                <a href="mailto:support@movethechain.com?subject=Feature suggestion">Feature Suggestions</a>
               </li>
               <li>
-                <Link href="mailto:legal@movethechain.com">Legal Feedback</Link>
+                <a href="mailto:legal@movethechain.com">Legal Feedback</a>
               </li>
             </ul>
             <div className="flex flex-rows gap-10px t:pt-44px">

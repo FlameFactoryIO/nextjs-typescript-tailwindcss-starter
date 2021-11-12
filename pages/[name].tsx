@@ -50,7 +50,7 @@ export default function NonprofitProfile({
         </style>
       </Head>
 
-      <TopNav onSearch={(searchValue) => window.alert(searchValue)} />
+      <TopNav />
 
       <div className="dots-background">
         <div className="max-w-1140px mx-auto px-20px pt-50px h-500px d:pt-77px -mb-74px t:-mb-180px flex flex-col items-center t:items-stretch pt-60px">

@@ -1,4 +1,4 @@
-import { FC, ReactNode, useCallback, useRef, useState } from "react";
+import { FC, ReactNode, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { FaChevronDown, FaChevronUp, FaUser } from "react-icons/fa";
@@ -133,11 +133,10 @@ const SideNavItem: FC<{
 };
 
 const TopNav: FC<{
-  onSearch?: (searchValue: string) => void;
   className?: string;
-}> = ({ onSearch, className }) => {
+}> = ({ className }) => {
   const router = useRouter();
-  const [{ token, nonprofitPath, }, setCookie, removeCookie] = useCookies([
+  const [{ token, nonprofitPath, },, removeCookie] = useCookies([
     'token',
     'paypalId',
     'nonprofitOnboardingFinished',
@@ -147,21 +146,6 @@ const TopNav: FC<{
 
   const loggedIn = !!token;
   const [isOpen, setOpen] = useState<boolean>(false);
-  const [searchValue, setSearchValue] = useState<string>("");
-
-  const handleSearchChange = (e) => {
-    setSearchValue(e.target.value);
-  };
-
-  const handleSearchSubmit = useCallback(
-    (e) => {
-      e.preventDefault();
-      if (onSearch) {
-        onSearch(searchValue);
-      }
-    },
-    [onSearch, searchValue]
-  );
 
   const handleLogout = () => {
     setOpen(false);
@@ -211,17 +195,16 @@ const TopNav: FC<{
           <TopNavItem title="About us" href="/about-us" />
           <TopNavItem title="Individuals">
           <TopNavItem title="Get started" href="/individuals" />
-            <TopNavItem title="Join a corporate fundraiser" href="/sign-up" />
+            {/*<TopNavItem title="Join a corporate fundraiser" href="/sign-up" />*/}
             <TopNavItem title="Discover campaigns" href="/campaigns/search" />
             <TopNavItem title="Search nonprofits" href="/nonprofits/search" />
           </TopNavItem>
           <TopNavItem title="Nonprofits" href="/nonprofits" />
           <TopNavItem title="Corporations" href="/corporations" />
-          <TopNavItem title="Resources" href="/resources" />
         </div>
 
         <div className="mr-40px">
-          <Link href="/search">
+          <Link href="/nonprofits/search">
             <a>
               <svg
                 width="17"
@@ -243,7 +226,7 @@ const TopNav: FC<{
 
         { loggedIn ? (
           <>
-            <TopNavItem title="Update page" href={`/${nonprofitPath}`} />
+            {/*<TopNavItem title="Update page" href={`/${nonprofitPath}`} />*/}
             <TopNavItem
               title="Log out"
               onClick={handleLogout}
@@ -337,34 +320,6 @@ const TopNav: FC<{
             />
           </svg>
 
-          <form
-            className="relative flex w-full items-stretch bg-gray-200 mt-40px"
-            onSubmit={handleSearchSubmit}
-          >
-            <input
-              type="text"
-              placeholder="Search"
-              onChange={handleSearchChange}
-              className="pl-20px py-14px placeholder-gray-400 text-16px leading-24px text-gray-900 relative bg-gray-200 outline-none focus:outline-none w-full pr-10"
-            />
-            <span
-              className="z-10 h-full leading-snug font-normal absolute text-gray-400 bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3 cursor-pointer"
-              onClick={handleSearchSubmit}
-            >
-              <svg
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                className="w-6 h-6"
-              >
-                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </span>
-          </form>
-
           <SideNavItem title="About us" href="/about-us" className="mt-14px" />
           <SideNavItem title="Individuals">
             <SideNavItem
@@ -372,11 +327,11 @@ const TopNav: FC<{
                 href="/individuals"
                 className="border-none py-8px font-light"
             />
-            <SideNavItem
-              title="Join a corporate fundraiser"
-              href="/sign-up"
-              className="border-none py-8px font-light"
-            />
+            {/*<SideNavItem*/}
+            {/*  title="Join a corporate fundraiser"*/}
+            {/*  href="/sign-up"*/}
+            {/*  className="border-none py-8px font-light"*/}
+            {/*/>*/}
             <SideNavItem
               title="Discover campaigns"
               href="/campaigns/search"
@@ -390,7 +345,6 @@ const TopNav: FC<{
           </SideNavItem>
           <SideNavItem title="Nonprofits" href="/nonprofits" />
           <SideNavItem title="Corporations" href="/corporations" />
-          <SideNavItem title="Resources" />
           { loggedIn ? (
             <>
               <SideNavItem title="Update page" href={`/${nonprofitPath}`} />
