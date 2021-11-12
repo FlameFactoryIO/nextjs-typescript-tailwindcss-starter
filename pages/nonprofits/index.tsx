@@ -413,61 +413,52 @@ export default function Home() {
           <div
             aria-hidden
             id="nonprofits-logos"
-            className="grid grid-cols-5 mx-auto"
+            className="grid grid-cols-3 mx-auto"
           >
-            <div className="flex">
+            {/*<div className="flex">*/}
+            {/*  <img*/}
+            {/*    alt=""*/}
+            {/*    src="/images/nonprofits/arrow-left.svg"*/}
+            {/*    className="w-40px"*/}
+            {/*  />*/}
+            {/*</div>*/}
+            <div className="flex items-center justify-center">
               <img
                 alt=""
-                src="/images/nonprofits/arrow-left.svg"
-                className="w-40px"
+                src="/images/nonprofits/logo-1.png"
+                className="bg-white rounded-full"
               />
             </div>
             <div className="flex items-center justify-center">
-              <div className="border-purple-200 border-2px rounded-full p-4px">
-                <img
-                  alt=""
-                  src="/images/nonprofits/prove.png"
-                  className="bg-white rounded-full"
-                />
-              </div>
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="border-primary border-2px rounded-full p-4px">
-                <img
-                  alt=""
-                  src="/images/nonprofits/girls-who-code.png"
-                  className="bg-white rounded-full"
-                />
-              </div>
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="border-purple-200 border-2px rounded-full p-4px">
-                <img
-                  alt=""
-                  src="/images/nonprofits/chrons.png"
-                  className="bg-white rounded-full"
-                />
-              </div>
-            </div>
-            <div className="flex">
               <img
                 alt=""
-                src="/images/nonprofits/arrow-right.svg"
-                className="w-40px ml-auto"
+                src="/images/nonprofits/logo-2.png"
+                className="bg-white rounded-full"
               />
             </div>
+            <div className="flex items-center justify-center">
+              <img
+                alt=""
+                src="/images/nonprofits/logo-3.png"
+                className="bg-white rounded-full"
+              />
+            </div>
+            {/*<div className="flex">*/}
+            {/*  <img*/}
+            {/*    alt=""*/}
+            {/*    src="/images/nonprofits/arrow-right.svg"*/}
+            {/*    className="w-40px ml-auto"*/}
+            {/*  />*/}
+            {/*</div>*/}
           </div>
           <p className="text-16px leading-20-8px d:text-18px d:leading-25-2px text-center t:w-708px d:max-w-914px mx-auto">
-            <span className="font-bold text-primary">“</span>Move the Chain is
-            helping us easily connect with new donors without having to worry
-            about the back end of tax receipting - so we can focus on our
-            mission.<span className="font-bold text-primary">”</span>
+            <span className="font-bold text-primary">“</span>
+            Move the Chain made it very easy to share our impact and needs with donors.
+            <span className="font-bold text-primary">”</span>
           </p>
-          <div
-            id="ceo-at-prove"
-            className="pb-57px t:pb-49px d:pb-69px flex flex-row justify-center gap-10px "
-          >
-            <div className="h-50px w-50px border-primary border-2px rounded-full p-2px">
+
+          <div className="d:max-w-914px mx-auto text-center">
+            <div className=" h-50px w-50px border-primary border-2px rounded-full p-2px mx-auto">
               <img
                 alt=""
                 src="/images/nonprofits/ceo.png"
@@ -475,26 +466,19 @@ export default function Home() {
               />
             </div>
 
-            <div className="flex flex-col text-16px leading-20-8px d:text-18px d:leading-24px">
-              <span className="font-bold text-primary">Name of individual</span>
-              <span className="font-bold">- CEO at Girls Who Code</span>
+            <div className="text-16px leading-20-8px d:text-18px d:leading-24px mt-10px">
+              <div className="font-bold text-primary">Sam Gordon</div>
+              <div className="font-bold">Director of Development at Boys & Girls Club of Stamford</div>
             </div>
           </div>
-
-          {/*<div className="text-24px leading-28-8px d:text-43px d:leading-51-6px text-center font-bold pb-24px">*/}
-          {/*  Frequently Asked Questions*/}
-          {/*</div>*/}
-          {/*<div className="text-16px leading-20-8px d:text-18px d:leading-21-6px text-center text-primary underline font-bold pb-24px">*/}
-          {/*  Have another quesiton? Visit our Full FAQ page*/}
-          {/*</div>*/}
         </div>
       </div>
 
-      <div id="faq" className="w-full bg-gradient-to-b from-cream to-white">
-        <div className="w-280px t:w-768px d:w-1140px mx-auto items-center">
-          <Faq />
-        </div>
-      </div>
+      {/*<div id="faq" className="w-full bg-gradient-to-b from-cream to-white">*/}
+      {/*  <div className="w-280px t:w-768px d:w-1140px mx-auto items-center">*/}
+      {/*    <Faq />*/}
+      {/*  </div>*/}
+      {/*</div>*/}
 
       <div id="questions" className="w-full bg-blue-darkest">
         <div className="w-280px t:w-768px d:w-1140px mx-auto items-center">
